@@ -1,0 +1,15 @@
+* C:\Users\b59mi\Documents\Business\4th Year Engineering\Semester 1\ECE490\Analog-Drum-Machine\Mixer\Mixer.asc
+XU1 0 N001 vdd! -vdd! Out OP77
+C1 0 vdd! 100n
+C2 Out N001 47p
+R1 N002 N001 22k
+R3 N001 N003 47k
+R4 0 Out 22k
+R2 Out N002 100k
+V1 vdd! 0 15V
+V2 N003 0 wavefile=Basic_Rock_135.wav
+V3 0 -vdd! 15V
+.tran 0 1s 0
+.lib ADI.lib
+.backanno
+.end
