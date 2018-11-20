@@ -1,0 +1,65 @@
+* C:\Users\b59mi\Documents\Business\4th Year Engineering\Semester 1\ECE490\Analog-Drum-Machine\Cowbell\Cowbell.asc
+V1 N025 0 PULSE(0 5 0 10u 10u 0.000625 0.00125)
+R1 N026 N025 33k
+R2 0 N026 2.2k
+R3 N027 pos 470k
+R4 0 N028 100
+Q1 N020 N027 N028 0 Q2N3904
+C1 N027 N026 10µ
+XD1 N021 N020 1n4148
+C2 N018 N022 0.0022µ
+R6 N018 0 2.2k
+C3 N023 N018 .01µ
+R7 N019 N023 470k
+XU1 0 N023 pos neg N019 uA741
+C4 N024 N019 1µ
+R8 N024 N029 8.2k
+XU2 N029 0 N030 pot_pow Rtot=5K wiper=.5 Rtap=1k tap=0.5
+C5 N031 N030 .022µ
+R9 N031 0 22k
+XU3 N031 out pos neg out uA741
+V2 N013 0 PULSE(0 5 0 10u 10u 0.000925 0.00185)
+R10 N014 N013 33k
+R11 0 N014 2.2k
+R12 N015 pos 470k
+R13 0 N016 100
+Q2 N009 N015 N016 0 Q2N3904
+C6 N015 N014 10µ
+XD2 N010 N009 1n4148
+R15 N021 N011 100k
+R14 N011 N010 100k
+R16 N017 N010 10k
+C7 N018 N017 .0022µ
+C8 N019 N018 .0033µ
+R5 N022 N021 10k
+R17 N012 N011 33k
+C9 0 N012 1µ
+C10 N011 0 .47µ
+XD3 N008 N011 1n4148
+R18 N005 N008 1k
+R19 N003 N006 22k
+R20 N002 N003 4.7k
+Q4 N006 N007 0 0 Q2N3904
+R21 N004 N007 22k
+R22 N007 0 10k
+V3 N004 0 PULSE(0 14 1 10u 10u 0.001 1 4)
+V4 N002 0 14
+V5 0 neg 15
+V6 pos 0 15
+Q3 N005 N003 N002 0 2N3906
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\b59mi\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.inc Q2N3904.lib
+* Special thanks to Kurt James Werner for making the original TR808\nCowbell circuit from the service manual easier to read!
+.inc 1n4148.sub
+.inc uA741.sub
+.tran 0 5 0.5
+.wave output.wav 16 44.1K V(out)
+* Trigger Logic
+* Oscillator 1
+* Oscillator 2
+.inc 2N3906.lib
+.lib potentiometer_standard.lib
+.backanno
+.end
