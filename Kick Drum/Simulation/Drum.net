@@ -1,0 +1,64 @@
+* C:\Users\Koltin Kosik-Harvey\Documents\GitHub\Analog-Drum-Machine\Kick Drum\Simulation\Drum.asc
+V1 VCC 0 15 Rser=0.01
+V2 0 VEE 15 Rser=0.01
+R1 N014 VELOCITY 22k
+R2 N014 0 10k
+Q1 N013 N014 0 0 2N3904
+R3 N011 N013 10k
+R4 TRIG N011 4.7k
+Q2 Vtrig N011 TRIG 0 BC857A
+R5 N007 Vtrig 8.2k
+R6 0 N007 2.7k
+Q3 N004 N007 0 0 2N3904
+C1 N004 0 100n
+R§500kTrim VCC N004 47k
+C2 Vrp N001 0.033µ
+D1 Vrp 0 1N4148
+C3 N012 Vtrig 0.015µ
+R9 N012 Vtrig 100k
+R10 N012 0 4.7k
+D2 0 N012 1N4148
+XU1 N012 N003 VCC VEE Vbridge-t LT1001
+R11 N003 Vbridge-t 4700k
+C4 FREQ N003 0.01µ
+C5 Vbridge-t FREQ 0.01µ
+R§50kTrim FREQ Vc 10k
+R§100kTrim2 Vc 0 40k
+R14 FREQ Vrp 1000k
+R15 LOWPASS FREQ 470k
+R18 Vtone Vbridge-t 3.3k
+C6 Vtone 0 1µ
+R20 DECAY Vbridge-t 47k
+XU2 N009 DECAY VCC VEE LOWPASS LT1001
+R21 N009 0 22k
+R§500kTrim2 P001 DECAY 47k
+C7 LOWPASS P001 0.1µ
+R23 LOWPASS DECAY 5k
+C8 Vlevel Vtone 2.2µ
+R24 Vlevel 0 5k
+V3 TRIG 0 PULSE(0 5 0.001 0.0001 0.0001 0.001 0.8 4) Rser=0.01
+V4 VELOCITY 0 10 Rser=0.01
+XU3 0 N010 VCC VEE OUT LT1001
+R25 N010 Vlevel 5k
+R26 OUT N010 5k
+Q7 Vc N006 0 0 2N3904
+R7 N008 0 4.7k
+D3 N008 N002 D
+Q4 VCC N004 N008 0 2N3906
+D4 N002 N005 D
+C9 N002 0 2.2µ
+R8 N006 N005 47k
+C10 N005 0 2.2µ
+R12 N005 0 10k
+R13 N002 0 10k
+D5 N002 N001 D
+.model D D
+.lib C:\Users\Koltin Kosik-Harvey\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\Koltin Kosik-Harvey\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.wave "C:\Users\Koltin Kosik-Harvey\Documents\GitHub\Analog-Drum-Machine\Kick Drum\drum.wav" 16 44.1k V(out)
+.tran 0 4 0 0.00001
+.lib LTC.lib
+.backanno
+.end
