@@ -5990,7 +5990,6 @@ BUFFER</text>
 Tri State
 BUFFER</text>
 <wire x1="170.18" y1="99.06" x2="170.18" y2="101.6" width="0.1524" layer="94"/>
-<text x="166.878" y="101.854" size="1.778" layer="94">LOAD</text>
 <text x="40.64" y="91.44" size="1.778" layer="94">D-FF
 IN (0)</text>
 <wire x1="177.8" y1="96.52" x2="180.34" y2="96.52" width="0.1524" layer="94"/>
@@ -6019,6 +6018,7 @@ Select</text>
 <wire x1="50.8" y1="73.66" x2="52.07" y2="72.644" width="0.1524" layer="94"/>
 <text x="40.64" y="71.12" size="1.778" layer="94">D-FF
 IN (1)</text>
+<text x="167.64" y="101.6" size="1.778" layer="94">READ</text>
 </plain>
 <instances>
 <instance part="FRAME5" gate="G$1" x="0" y="0" smashed="yes"/>

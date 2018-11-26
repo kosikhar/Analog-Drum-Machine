@@ -4959,6 +4959,7 @@ LEDS</text>
 <wire x1="233.68" y1="149.86" x2="236.22" y2="154.94" width="0.1524" layer="94"/>
 <wire x1="236.22" y1="154.94" x2="233.68" y2="160.02" width="0.1524" layer="94"/>
 <wire x1="215.9" y1="160.02" x2="233.68" y2="160.02" width="0.1524" layer="94"/>
+<text x="185.42" y="27.94" size="3.81" layer="94">BUTTON INPUT BUFFER</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
