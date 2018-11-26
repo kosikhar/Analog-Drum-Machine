@@ -251,6 +251,7 @@ Based on the following sources:
 <part name="IC1" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*386" device="N" package3d_urn="urn:adsk.eagle:package:2921/1"/>
 <part name="FRAME2" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 <part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
+<part name="FRAME4" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1028,8 +1029,8 @@ State Diagram</text>
 <wire x1="55.88" y1="149.86" x2="58.42" y2="147.32" width="0.1524" layer="94"/>
 <wire x1="55.88" y1="144.78" x2="58.42" y2="147.32" width="0.1524" layer="94"/>
 <text x="45.72" y="162.56" size="1.778" layer="94">INT = (00)'</text>
-<text x="45.72" y="170.18" size="1.778" layer="94">Write Zeros to RAM
-State Machine</text>
+<text x="73.66" y="167.64" size="1.778" layer="94">Write Zeros to RAM
+State Diagram</text>
 <text x="64.516" y="146.304" size="1.778" layer="94">S0</text>
 <text x="97.536" y="146.304" size="1.778" layer="94">S1</text>
 <text x="106.68" y="160.02" size="1.778" layer="94">READ/LOAD/PNR = '0'</text>
@@ -1037,9 +1038,9 @@ State Machine</text>
 <wire x1="73.66" y1="147.32" x2="91.44" y2="147.32" width="0.1524" layer="94"/>
 <wire x1="88.9" y1="149.86" x2="91.44" y2="147.32" width="0.1524" layer="94"/>
 <wire x1="91.44" y1="147.32" x2="88.9" y2="144.78" width="0.1524" layer="94"/>
-<text x="109.22" y="149.86" size="1.778" layer="94">(Write Enable)' = '0'</text>
-<text x="109.22" y="147.32" size="1.778" layer="94">(Output Enable)' = '1'</text>
-<text x="109.22" y="144.78" size="1.778" layer="94">LCK2 = '0'</text>
+<text x="109.22" y="149.86" size="1.778" layer="94">(Write Enable)' = '1'</text>
+<text x="109.22" y="147.32" size="1.778" layer="94">(Output Enable)' = '0'</text>
+<text x="109.22" y="144.78" size="1.778" layer="94">(LCK2)' = '1'</text>
 <circle x="99.06" y="127" radius="7.62" width="0.1524" layer="94"/>
 <wire x1="99.06" y1="139.7" x2="99.06" y2="134.62" width="0.1524" layer="94"/>
 <wire x1="101.6" y1="137.16" x2="99.06" y2="134.62" width="0.1524" layer="94"/>
@@ -1051,15 +1052,13 @@ State Machine</text>
 <wire x1="115.316" y1="127" x2="116.078" y2="126.238" width="0.1524" layer="94"/>
 <text x="116.84" y="124.46" size="1.778" layer="94">INT = "00"
 DONE = 0 (RCO='1')</text>
-<text x="109.22" y="142.24" size="1.778" layer="94">(Reset Timer)' = '0'</text>
+<text x="109.22" y="142.24" size="1.778" layer="94">(Reset Timer)' = '1'</text>
 <circle x="99.06" y="101.6" radius="7.62" width="0.1524" layer="94"/>
 <wire x1="99.06" y1="119.38" x2="99.06" y2="109.22" width="0.1524" layer="94"/>
 <wire x1="101.6" y1="111.76" x2="99.06" y2="109.22" width="0.1524" layer="94"/>
 <wire x1="99.06" y1="109.22" x2="96.52" y2="111.76" width="0.1524" layer="94"/>
-<text x="20.32" y="157.48" size="1.778" layer="94">LCK2 = '1'</text>
-<text x="20.32" y="154.94" size="1.778" layer="94">(Write Enable)' = '1'</text>
-<text x="20.32" y="152.4" size="1.778" layer="94">(Output Enable)' = '1'</text>
-<text x="20.32" y="149.86" size="1.778" layer="94">(Reset Timer)' = '1'</text>
+<text x="30.48" y="157.48" size="1.778" layer="94">(LCK2)' = '0'</text>
+<text x="22.86" y="152.4" size="1.778" layer="94">(Reset Timer)' = '0'</text>
 <text x="132.08" y="129.54" size="1.778" layer="94">A Counter goes through
 all memory locations writing
 them to zero.</text>
@@ -1079,11 +1078,115 @@ them to zero.</text>
 <wire x1="68.58" y1="132.08" x2="66.04" y2="134.62" width="0.1524" layer="94"/>
 <text x="104.14" y="111.76" size="1.778" layer="94">INT = "00"
 DONE = 1 (RCO='0')</text>
-<text x="109.22" y="101.6" size="1.778" layer="94">(Write Enable)' = '1'</text>
+<text x="109.22" y="101.6" size="1.778" layer="94">(Write Enable)' = '0'</text>
+<text x="76.2" y="149.86" size="1.778" layer="94">INT = "00"</text>
+<wire x1="92.456" y1="105.664" x2="86.36" y2="109.22" width="0.1524" layer="94"/>
+<wire x1="88.9" y1="107.696" x2="88.9" y2="106.68" width="0.1524" layer="94"/>
+<wire x1="88.9" y1="107.696" x2="89.662" y2="108.204" width="0.1524" layer="94"/>
+<text x="83.312" y="109.22" size="1.778" layer="94">S1</text>
+<text x="81.28" y="104.14" size="1.778" layer="94">INT ="00"</text>
+<text x="66.04" y="99.06" size="1.778" layer="94">INT = (00)'</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0" smashed="yes"/>
 <instance part="FRAME3" gate="G$2" x="172.72" y="0" smashed="yes">
+<attribute name="LAST_DATE_TIME" x="185.42" y="1.27" size="2.54" layer="94"/>
+<attribute name="SHEET" x="259.08" y="1.27" size="2.54" layer="94"/>
+<attribute name="DRAWING_NAME" x="190.5" y="19.05" size="2.54" layer="94"/>
+</instance>
+</instances>
+<busses>
+</busses>
+<nets>
+</nets>
+</sheet>
+<sheet>
+<plain>
+<text x="91.44" y="175.26" size="1.778" layer="94">Write Buffer to
+Memory</text>
+<circle x="96.52" y="152.4" radius="7.62" width="0.1524" layer="94"/>
+<text x="94.996" y="151.384" size="1.778" layer="94">S0</text>
+<circle x="142.24" y="152.4" radius="7.62" width="0.1524" layer="94"/>
+<text x="140.716" y="151.384" size="1.778" layer="94">S1</text>
+<wire x1="104.14" y1="152.4" x2="134.62" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="132.08" y1="154.94" x2="134.62" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="132.08" y1="149.86" x2="134.62" y2="152.4" width="0.1524" layer="94"/>
+<text x="111.76" y="154.94" size="1.778" layer="94">INT = "10"</text>
+<wire x1="88.9" y1="152.4" x2="81.28" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="81.28" y1="152.4" x2="81.28" y2="167.64" width="0.1524" layer="94"/>
+<wire x1="81.28" y1="167.64" x2="96.52" y2="167.64" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="167.64" x2="96.52" y2="160.02" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="160.02" x2="99.06" y2="162.56" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="160.02" x2="93.98" y2="162.56" width="0.1524" layer="94"/>
+<text x="83.82" y="165.1" size="1.778" layer="94">INT = (10)'</text>
+<circle x="142.24" y="129.54" radius="7.62" width="0.1524" layer="94"/>
+<text x="63.5" y="162.56" size="1.778" layer="94">LOAD = '0'</text>
+<text x="63.5" y="170.18" size="1.778" layer="94">(LCK1)' = '0'</text>
+<text x="152.4" y="160.02" size="1.778" layer="94">LOAD = '1'</text>
+<text x="152.4" y="157.48" size="1.778" layer="94">Toggle = '1'</text>
+<text x="152.4" y="162.56" size="1.778" layer="94">(LCK1)' = '1'</text>
+<text x="167.64" y="162.56" size="1.778" layer="94">EN0 = '1'</text>
+<text x="167.64" y="160.02" size="1.778" layer="94">EN1 = '0'</text>
+<text x="152.4" y="152.4" size="1.778" layer="94">(Write Enable)' = '0'</text>
+<text x="152.4" y="149.86" size="1.778" layer="94">(Output Enable)' = '0'</text>
+<text x="152.4" y="167.64" size="1.778" layer="94">READ/PNR/RESET = '0'</text>
+<text x="140.716" y="128.524" size="1.778" layer="94">S2</text>
+<wire x1="66.04" y1="152.4" x2="76.2" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="81.28" y1="152.4" x2="76.2" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="73.66" y1="154.94" x2="76.2" y2="152.4" width="0.1524" layer="94"/>
+<wire x1="73.66" y1="149.86" x2="76.2" y2="152.4" width="0.1524" layer="94"/>
+<text x="58.42" y="149.86" size="1.778" layer="94">All if 
+INT = (10)'</text>
+<wire x1="142.24" y1="144.78" x2="142.24" y2="137.16" width="0.1524" layer="94"/>
+<wire x1="142.24" y1="137.16" x2="144.78" y2="139.7" width="0.1524" layer="94"/>
+<wire x1="142.24" y1="137.16" x2="139.7" y2="139.7" width="0.1524" layer="94"/>
+<text x="152.4" y="132.08" size="1.778" layer="94">(Write Enable)' = '0'</text>
+<text x="127" y="137.16" size="1.778" layer="94">INT = "10"</text>
+<text x="152.4" y="129.54" size="1.778" layer="94">Toggle = '1'</text>
+<circle x="142.24" y="106.68" radius="7.62" width="0.1524" layer="94"/>
+<wire x1="142.24" y1="121.92" x2="142.24" y2="114.3" width="0.1524" layer="94"/>
+<wire x1="142.24" y1="114.3" x2="144.78" y2="116.84" width="0.1524" layer="94"/>
+<wire x1="142.24" y1="114.3" x2="139.7" y2="116.84" width="0.1524" layer="94"/>
+<text x="140.716" y="105.664" size="1.778" layer="94">S3</text>
+<text x="125.73" y="112.014" size="1.778" layer="94">INT = "10"</text>
+<text x="152.4" y="109.22" size="1.778" layer="94">(Write Enable)' = '1'</text>
+<circle x="119.38" y="106.68" radius="7.62" width="0.1524" layer="94"/>
+<circle x="96.52" y="106.68" radius="7.62" width="0.1524" layer="94"/>
+<wire x1="111.76" y1="106.68" x2="104.14" y2="106.68" width="0.1524" layer="94"/>
+<wire x1="104.14" y1="106.68" x2="106.68" y2="109.22" width="0.1524" layer="94"/>
+<wire x1="104.14" y1="106.68" x2="106.68" y2="104.14" width="0.1524" layer="94"/>
+<wire x1="127" y1="106.68" x2="134.62" y2="106.68" width="0.1524" layer="94"/>
+<wire x1="127" y1="106.68" x2="129.54" y2="109.22" width="0.1524" layer="94"/>
+<wire x1="127" y1="106.68" x2="129.54" y2="104.14" width="0.1524" layer="94"/>
+<circle x="96.52" y="129.54" radius="7.62" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="137.16" x2="96.52" y2="144.78" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="144.78" x2="93.98" y2="142.24" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="144.78" x2="99.06" y2="142.24" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="114.3" x2="96.52" y2="121.92" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="121.92" x2="93.98" y2="119.38" width="0.1524" layer="94"/>
+<wire x1="96.52" y1="121.92" x2="99.06" y2="119.38" width="0.1524" layer="94"/>
+<wire x1="102.616" y1="134.62" x2="136.652" y2="147.32" width="0.1524" layer="94" curve="-38.893711"/>
+<wire x1="109.728" y1="139.7" x2="108.712" y2="139.7" width="0.1524" layer="94"/>
+<wire x1="109.728" y1="139.7" x2="109.22" y2="138.684" width="0.1524" layer="94"/>
+<text x="106.68" y="134.62" size="1.778" layer="94">INT = "10"</text>
+<text x="83.82" y="139.7" size="1.778" layer="94">INT = (10)'</text>
+<text x="127" y="119.38" size="1.778" layer="94">INT = "10"</text>
+<text x="102.87" y="112.014" size="1.778" layer="94">INT = "10"</text>
+<text x="117.856" y="105.664" size="1.778" layer="94">S4</text>
+<text x="94.996" y="105.664" size="1.778" layer="94">S5</text>
+<text x="94.996" y="128.524" size="1.778" layer="94">S6</text>
+<text x="97.79" y="117.094" size="1.778" layer="94">INT = "10"</text>
+<text x="114.3" y="96.52" size="1.778" layer="94">EN0 = 0</text>
+<text x="63.5" y="160.02" size="1.778" layer="94">Toggle = '0'</text>
+<text x="53.34" y="157.48" size="1.778" layer="94">READ/PNR/RESET = 'X'</text>
+<text x="63.5" y="167.64" size="1.778" layer="94">EN1 = 'X'</text>
+<text x="63.5" y="165.1" size="1.778" layer="94">EN0 = '0'</text>
+<text x="55.88" y="175.26" size="1.778" layer="94">(Write Enable)' = 'X'</text>
+<text x="55.88" y="172.72" size="1.778" layer="94">(Output Enable)' = 'X'</text>
+</plain>
+<instances>
+<instance part="FRAME4" gate="G$1" x="0" y="0" smashed="yes"/>
+<instance part="FRAME4" gate="G$2" x="172.72" y="0" smashed="yes">
 <attribute name="LAST_DATE_TIME" x="185.42" y="1.27" size="2.54" layer="94"/>
 <attribute name="SHEET" x="259.08" y="1.27" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="190.5" y="19.05" size="2.54" layer="94"/>
