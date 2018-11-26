@@ -1,0 +1,28 @@
+* SpiceNetList
+* 
+* Exported from Sequencer Block Diagram.sch at 2018-11-26 1:52 AM
+* 
+* EAGLE Version 9.2.2 Copyright (c) 1988-2018 Autodesk, Inc.
+* 
+.TEMP=25.000000
+* --------- .OPTIONS ---------
+* --------- .PARAMS ---------
+
+* --------- devices ---------
+_IC1 VCC 
+
+* --------- simulation ---------
+.print DC V(VCC)
+.print AC V(VCC)
+.print TRAN V(VCC)
+.END
+
+
+
+
+
+
+
+
+
+
