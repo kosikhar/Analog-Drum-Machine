@@ -895,125 +895,125 @@ LETTER landscape</description>
 <wire x1="170.18" y1="116.84" x2="170.18" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="BUTTON_2" class="0">
+<net name="KNOB_2" class="0">
 <segment>
 <wire x1="142.24" y1="160.02" x2="152.4" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="3"/>
-<label x="129.54" y="160.02" size="1.778" layer="95"/>
-<label x="129.54" y="160.02" size="1.778" layer="95"/>
-<label x="129.54" y="160.02" size="1.778" layer="95"/>
+<label x="132.08" y="160.02" size="1.778" layer="95"/>
+<label x="132.08" y="160.02" size="1.778" layer="95"/>
+<label x="132.08" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_3" class="0">
+<net name="KNOB_3" class="0">
 <segment>
 <wire x1="142.24" y1="157.48" x2="152.4" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="5"/>
-<label x="129.54" y="157.48" size="1.778" layer="95"/>
+<label x="132.08" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_4" class="0">
+<net name="KNOB_4" class="0">
 <segment>
 <wire x1="142.24" y1="154.94" x2="152.4" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="7"/>
-<label x="129.54" y="154.94" size="1.778" layer="95"/>
+<label x="132.08" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_5" class="0">
+<net name="KNOB_5" class="0">
 <segment>
 <wire x1="142.24" y1="152.4" x2="152.4" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="9"/>
-<label x="129.54" y="152.4" size="1.778" layer="95"/>
+<label x="132.08" y="152.4" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_6" class="0">
+<net name="KNOB_6" class="0">
 <segment>
 <wire x1="142.24" y1="149.86" x2="152.4" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="11"/>
-<label x="129.54" y="149.86" size="1.778" layer="95"/>
+<label x="132.08" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_7" class="0">
+<net name="KNOB_7" class="0">
 <segment>
 <wire x1="142.24" y1="147.32" x2="152.4" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="13"/>
-<label x="129.54" y="147.32" size="1.778" layer="95"/>
+<label x="132.08" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_8" class="0">
+<net name="KNOB_8" class="0">
 <segment>
 <wire x1="142.24" y1="144.78" x2="152.4" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="15"/>
-<label x="129.54" y="144.78" size="1.778" layer="95"/>
+<label x="132.08" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_9" class="0">
+<net name="KNOB_9" class="0">
 <segment>
 <wire x1="142.24" y1="142.24" x2="152.4" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="17"/>
-<label x="129.54" y="142.24" size="1.778" layer="95"/>
+<label x="132.08" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_10" class="0">
+<net name="KNOB_10" class="0">
 <segment>
 <wire x1="142.24" y1="139.7" x2="152.4" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="19"/>
-<label x="129.54" y="139.7" size="1.778" layer="95"/>
+<label x="132.08" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_11" class="0">
+<net name="KNOB_11" class="0">
 <segment>
 <wire x1="142.24" y1="137.16" x2="152.4" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="21"/>
-<label x="129.54" y="137.16" size="1.778" layer="95"/>
+<label x="132.08" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_12" class="0">
+<net name="KNOB_12" class="0">
 <segment>
 <wire x1="142.24" y1="134.62" x2="152.4" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="23"/>
-<label x="129.54" y="134.62" size="1.778" layer="95"/>
+<label x="132.08" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_13" class="0">
+<net name="KNOB_13" class="0">
 <segment>
 <wire x1="142.24" y1="132.08" x2="152.4" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="25"/>
-<label x="129.54" y="132.08" size="1.778" layer="95"/>
+<label x="132.08" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_14" class="0">
+<net name="KNOB_14" class="0">
 <segment>
 <wire x1="142.24" y1="129.54" x2="152.4" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="27"/>
-<label x="129.54" y="129.54" size="1.778" layer="95"/>
+<label x="132.08" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_15" class="0">
+<net name="KNOB_15" class="0">
 <segment>
 <wire x1="142.24" y1="127" x2="152.4" y2="127" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="29"/>
-<label x="129.54" y="127" size="1.778" layer="95"/>
+<label x="132.08" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_16" class="0">
+<net name="KNOB_16" class="0">
 <segment>
 <wire x1="142.24" y1="124.46" x2="152.4" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="31"/>
-<label x="129.54" y="124.46" size="1.778" layer="95"/>
+<label x="132.08" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_17" class="0">
+<net name="KNOB_17" class="0">
 <segment>
 <wire x1="142.24" y1="121.92" x2="152.4" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="33"/>
-<label x="129.54" y="121.92" size="1.778" layer="95"/>
+<label x="132.08" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BUTTON_18" class="0">
+<net name="KNOB_18" class="0">
 <segment>
 <wire x1="142.24" y1="119.38" x2="152.4" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="35"/>
-<label x="129.54" y="119.38" size="1.778" layer="95"/>
+<label x="132.08" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1024,11 +1024,11 @@ LETTER landscape</description>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="37"/>
 </segment>
 </net>
-<net name="BUTTON_1" class="0">
+<net name="KNOB_1" class="0">
 <segment>
 <wire x1="142.24" y1="162.56" x2="152.4" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="KNOB_CONNECTIONS" gate="G$1" pin="1"/>
-<label x="129.54" y="162.56" size="1.778" layer="95"/>
+<label x="132.08" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
