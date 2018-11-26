@@ -1260,8 +1260,26 @@ INT = (01)'</text>
 <text x="63.5" y="177.8" size="1.778" layer="94">LOAD/PNR/RESET = 'X'</text>
 <text x="63.5" y="190.5" size="1.778" layer="94">EN0 = "X"</text>
 <text x="63.5" y="187.96" size="1.778" layer="94">EN1 = "0"</text>
-<text x="137.16" y="172.72" size="1.778" layer="94">EN1 = "1"</text>
+<text x="137.16" y="152.4" size="1.778" layer="94">EN1 = "1"</text>
 <text x="137.16" y="170.18" size="1.778" layer="94">LOAD/PNR/RESET = '0'</text>
+<text x="137.16" y="167.64" size="1.778" layer="94">(Write Enable)' = '0'</text>
+<text x="137.16" y="160.02" size="1.778" layer="94">(Output Enable)' = '0'</text>
+<text x="137.16" y="165.1" size="1.778" layer="94">(LCK1)' = '1'</text>
+<text x="137.16" y="154.94" size="1.778" layer="94">EN0 = "0"</text>
+<text x="137.16" y="137.16" size="1.778" layer="94">(Output Enable)' = '1'</text>
+<text x="99.06" y="124.46" size="1.778" layer="94">EN1 = '0'</text>
+<text x="137.16" y="172.72" size="1.778" layer="94">READ = '1'</text>
+<text x="137.16" y="157.48" size="1.778" layer="94">Toggle = '0'</text>
+<text x="137.16" y="134.62" size="1.778" layer="94">Toggle = '0'</text>
+<text x="99.06" y="121.92" size="1.778" layer="94">Toggle = '0'</text>
+<text x="58.42" y="137.16" size="1.778" layer="94">Toggle = 'X'</text>
+<text x="50.8" y="134.62" size="1.778" layer="94">(Output Enable)' = 0</text>
+<text x="58.42" y="132.08" size="1.778" layer="94">READ = '0'</text>
+<wire x1="166.37" y1="175.26" x2="167.64" y2="175.26" width="0.1524" layer="94"/>
+<wire x1="167.64" y1="175.26" x2="167.64" y2="165.1" width="0.1524" layer="94"/>
+<wire x1="167.64" y1="165.1" x2="166.624" y2="165.1" width="0.1524" layer="94"/>
+<text x="170.18" y="167.64" size="1.778" layer="94">Don't Change from
+S1- S3</text>
 </plain>
 <instances>
 <instance part="FRAME5" gate="G$1" x="0" y="0" smashed="yes"/>
