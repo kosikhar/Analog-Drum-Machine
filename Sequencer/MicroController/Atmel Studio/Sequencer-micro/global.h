@@ -11,6 +11,4 @@
 
 
 
-
-
 #endif /* GLOBAL_H_ */

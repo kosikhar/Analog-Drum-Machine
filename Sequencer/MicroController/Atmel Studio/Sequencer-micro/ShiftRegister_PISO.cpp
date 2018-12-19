@@ -11,9 +11,11 @@
 // default constructor
 ShiftRegister_PISO::ShiftRegister_PISO()
 {
+	
 } //ShiftRegister_PISO
 
 // default destructor
 ShiftRegister_PISO::~ShiftRegister_PISO()
 {
+
 } //~ShiftRegister_PISO
