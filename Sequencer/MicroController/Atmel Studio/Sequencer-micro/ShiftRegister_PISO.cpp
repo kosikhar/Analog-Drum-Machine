@@ -5,7 +5,6 @@
 * Author: Koltin Kosik-Harvey
 */
 
-
 #include "ShiftRegister_PISO.h"
 
 // default constructor

@@ -8,7 +8,7 @@
  #include "global.h"
  #include <avr/interrupt.h>
 
- ISR( TIMER0_COMPA_vect, ISR_NOBLOCK ){
+ ISR( TIMER1_COMPA_vect, ISR_NOBLOCK ){
 
 	
 

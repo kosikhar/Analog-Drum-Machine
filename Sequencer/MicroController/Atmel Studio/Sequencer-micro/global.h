@@ -9,6 +9,21 @@
 #ifndef GLOBAL_H_
 #define GLOBAL_H_
 
+#define F_CPU 16000000UL
 
+#include <avr/io.h>
+#include <util/delay.h>
+
+#include "timer.h"
+//Timer for keeping track of time.
+extern Timer timer;
+
+//functions for setting up interrupt registers
+#include "interrupts.h"
+
+//Object for controlling a SIPO shift register
+#include "ShiftRegister_SIPO.h"
+extern ShiftRegister_SIPO outputShiftRegister;
+extern ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
 
 #endif /* GLOBAL_H_ */

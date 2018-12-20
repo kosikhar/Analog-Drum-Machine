@@ -11,19 +11,17 @@
 
 #include "global.h"
 
-
 class ShiftRegister_PISO
 {
 	//variables
 	public:
-	protected:
+		uint8_t input_byte;
 	private:
 
 	//functions
 	public:
 		ShiftRegister_PISO();
 		~ShiftRegister_PISO();
-	protected:
 	private:
 		ShiftRegister_PISO( const ShiftRegister_PISO &c );
 		ShiftRegister_PISO& operator=( const ShiftRegister_PISO &c );

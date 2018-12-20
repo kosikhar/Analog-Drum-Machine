@@ -8,3 +8,7 @@ main.cpp
 
 ShiftRegister_PISO.cpp
 
+ShiftRegister_SIPO.cpp
+
+timer.cpp
+
