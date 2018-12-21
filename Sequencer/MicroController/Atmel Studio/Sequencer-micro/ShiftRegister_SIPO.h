@@ -31,9 +31,9 @@ class ShiftRegister_SIPO
 	//variables
 	public:
 		//Array of bytes to output. 
-		uint8_t * output_bytes;
+		volatile uint8_t * * output_bytes;
 		//Next array of bytes to output.
-		uint8_t * output_bytes_buffer;
+		volatile uint8_t * * output_bytes_buffer;
 
 		//Keep track of number of shifts.
 		uint8_t shiftCounter;

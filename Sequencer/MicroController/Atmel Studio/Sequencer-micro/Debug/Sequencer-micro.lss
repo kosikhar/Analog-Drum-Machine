@@ -13,21 +13,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000614  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000f8  00000000  00000000  00000650  2**0
+  5 .debug_aranges 00000100  00000000  00000000  00000650  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000018a9  00000000  00000000  00000748  2**0
+  6 .debug_info   00001aa6  00000000  00000000  00000750  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000cce  00000000  00000000  00001ff1  2**0
+  7 .debug_abbrev 00000cec  00000000  00000000  000021f6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000645  00000000  00000000  00002cbf  2**0
+  8 .debug_line   00000668  00000000  00000000  00002ee2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000001f4  00000000  00000000  00003304  2**2
+  9 .debug_frame  00000204  00000000  00000000  0000354c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000008a2  00000000  00000000  000034f8  2**0
+ 10 .debug_str    00000910  00000000  00000000  00003750  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000034a  00000000  00000000  00003d9a  2**0
+ 11 .debug_loc    00000380  00000000  00000000  00004060  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000b8  00000000  00000000  000040e4  2**0
+ 12 .debug_ranges 000000c0  00000000  00000000  000043e0  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -119,12 +119,12 @@ Disassembly of section .text:
   bc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 000000c0 <__vector_14>:
-
  #include "global.h"
  #include <avr/interrupt.h>
 
-//Call every 10us, will be used to keep global timing
-ISR( TIMER0_COMPA_vect, ISR_NOBLOCK ){
+//Call every 10us, will be used for controlling shift registers
+ISR( TIMER0_COMPA_vect, ISR_NOBLOCK )
+{
   c0:	78 94       	sei
   c2:	1f 92       	push	r1
   c4:	0f 92       	push	r0
@@ -143,12 +143,10 @@ ISR( TIMER0_COMPA_vect, ISR_NOBLOCK ){
   de:	bf 93       	push	r27
   e0:	ef 93       	push	r30
   e2:	ff 93       	push	r31
-
 	timer.incrementTimer();
   e4:	87 e1       	ldi	r24, 0x17	; 23
   e6:	91 e0       	ldi	r25, 0x01	; 1
   e8:	0e 94 43 01 	call	0x286	; 0x286 <_ZN5Timer14incrementTimerEv>
-
 }
   ec:	ff 91       	pop	r31
   ee:	ef 91       	pop	r30
@@ -173,7 +171,7 @@ ISR( TIMER0_COMPA_vect, ISR_NOBLOCK ){
 	//Setting up Timer0 (8-bit timer) to trigger ISR after 10us
 	
 	//TIMSK0 is the TC0 Interrupt Mask Register
-	//We will enable interrupt on compare match with OCR0A
+	//We will enable interrupt on compare match with OCR0A / OCR0B
 	TIMSK0 |= (1 << TOIE0) | (1 << OCIE0A);
  10e:	ee e6       	ldi	r30, 0x6E	; 110
  110:	f0 e0       	ldi	r31, 0x00	; 0
@@ -181,7 +179,7 @@ ISR( TIMER0_COMPA_vect, ISR_NOBLOCK ){
  114:	83 60       	ori	r24, 0x03	; 3
  116:	80 83       	st	Z, r24
 	
-	//With 16MHz clk, we would need 160 steps to get 10us.
+	//With 16MHz clk, we would need 160 steps to get 10us. 
 	OCR0A = (uint8_t) 160;
  118:	80 ea       	ldi	r24, 0xA0	; 160
  11a:	87 bd       	out	0x27, r24	; 39

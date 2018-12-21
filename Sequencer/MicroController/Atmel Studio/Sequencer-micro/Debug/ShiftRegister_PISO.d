@@ -15,9 +15,10 @@ ShiftRegister_PISO.d ShiftRegister_PISO.o: .././ShiftRegister_PISO.cpp \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././timer.h .././interrupts.h .././ShiftRegister_SIPO.h \
+ .././timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ .././interrupts.h .././ShiftRegister_SIPO.h
 
 .././ShiftRegister_PISO.h:
 
@@ -55,10 +56,10 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 .././timer.h:
 
-.././interrupts.h:
-
-.././ShiftRegister_SIPO.h:
-
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+.././interrupts.h:
+
+.././ShiftRegister_SIPO.h:

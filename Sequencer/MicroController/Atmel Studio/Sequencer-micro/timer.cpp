@@ -13,9 +13,10 @@ Timer::Timer()
 	//initialize timer at 0
 	microseconds_times10 = 0;
 	milliseconds = 0;
-	
+
 } //timer
 
+//Increments the timer by 1us
 void Timer::incrementTimer(){
 	microseconds_times10++;
 	
@@ -32,9 +33,17 @@ void Timer::reset( void )
 	milliseconds = 0;
 }
 
-uint8_t Timer::elapsed_micros( uint8_t comparison )
+uint8_t Timer::elapsed_micros_fast( uint8_t comparison )
 {
 	return (microseconds_times10 - comparison);
+}
+
+TimerSnapShot* Timer::takeSnapShot( TimerSnapShot * snapshot )
+{
+	snapshot->microseconds_times10 = microseconds_times10;
+	snapshot->milliseconds = milliseconds;
+
+	return snapshot;
 }
 
 uint32_t Timer::elapsed_millis( uint32_t comparison )

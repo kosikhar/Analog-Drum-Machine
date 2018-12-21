@@ -31,8 +31,8 @@ void ShiftRegister_SIPO::ShiftRegisterInit( uint8_t numShiftRegisters, ShiftRegi
 	pinout = pins;
 	
 	//Initialize array. If I'm using 2 shift registers I need 2 bytes.
-	output_bytes = (uint8_t *) malloc( numShiftRegisters );
-	output_bytes_buffer = (uint8_t *) malloc( numShiftRegisters );
+	output_bytes = (uint8_t **) malloc( numShiftRegisters );
+	output_bytes_buffer = (uint8_t **) malloc( numShiftRegisters );
 	
 	//Setup pins on the 328p to utilize the shift register.
 	this->setupPins();
@@ -47,18 +47,31 @@ void ShiftRegister_SIPO::shiftBits( void )
 	// See if in the middle of shifting
 	if ( shiftLock == false ){	
 
-		//if not check if all bits are shifted
-		if ( doneWork == true){
+		//Check if done shifting bits
+		if ( doneWork == false){
 
 			//if there is work, continue running this method.
-			shiftLock = true;	
+			shiftLock = true;
 
-		} else {
+		} else {			
+			//If there's more work, move buffer to output_bytes
+			//Since we been here a little long, return
+			if ( moreWork == true ){
+				for(int i=0; i < size ; i++){
+					output_bytes[i] = output_bytes_buffer[i];
+				}		
+			}		
+			doneWork = false;
+			shiftLock = false;
+			shiftCounter = 0;	
 			return;
 		}
 	} else {
 		return; 
 	}
+
+	
+	
 	
 } //ShiftBits
 

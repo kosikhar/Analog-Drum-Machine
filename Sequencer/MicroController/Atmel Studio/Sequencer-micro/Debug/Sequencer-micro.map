@@ -57,8 +57,10 @@ Discarded input sections
  .bss           0x00000000        0x0 timer.o
  .text._ZN5Timer5resetEv
                 0x00000000        0xe timer.o
- .text._ZN5Timer14elapsed_microsEh
+ .text._ZN5Timer19elapsed_micros_fastEh
                 0x00000000        0x8 timer.o
+ .text._ZN5Timer12takeSnapShotEP13TimerSnapShot
+                0x00000000       0x20 timer.o
  .text._ZN5Timer6microsEv
                 0x00000000        0x6 timer.o
  .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -569,7 +571,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xf8
+.debug_aranges  0x00000000      0x100
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 interrupts.o
@@ -578,60 +580,60 @@ END GROUP
  .debug_aranges
                 0x00000058       0x48 ShiftRegister_SIPO.o
  .debug_aranges
-                0x000000a0       0x58 timer.o
+                0x000000a0       0x60 timer.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x18a9
+.debug_info     0x00000000     0x1aa6
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_info    0x000005f4      0x24f interrupts.o
- .debug_info    0x00000843      0x687 main.o
- .debug_info    0x00000eca      0x610 ShiftRegister_SIPO.o
- .debug_info    0x000014da      0x3cf timer.o
+ .debug_info    0x000005f4      0x2bf interrupts.o
+ .debug_info    0x000008b3      0x6f7 main.o
+ .debug_info    0x00000faa      0x680 ShiftRegister_SIPO.o
+ .debug_info    0x0000162a      0x47c timer.o
 
-.debug_abbrev   0x00000000      0xcce
+.debug_abbrev   0x00000000      0xcec
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_abbrev  0x000005a2      0x132 interrupts.o
- .debug_abbrev  0x000006d4      0x21b main.o
- .debug_abbrev  0x000008ef      0x250 ShiftRegister_SIPO.o
- .debug_abbrev  0x00000b3f      0x18f timer.o
+ .debug_abbrev  0x000005a2      0x141 interrupts.o
+ .debug_abbrev  0x000006e3      0x21b main.o
+ .debug_abbrev  0x000008fe      0x250 ShiftRegister_SIPO.o
+ .debug_abbrev  0x00000b4e      0x19e timer.o
 
-.debug_line     0x00000000      0x645
+.debug_line     0x00000000      0x668
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
  .debug_line    0x00000133       0xe0 interrupts.o
  .debug_line    0x00000213      0x142 main.o
  .debug_line    0x00000355      0x18b ShiftRegister_SIPO.o
- .debug_line    0x000004e0      0x165 timer.o
+ .debug_line    0x000004e0      0x188 timer.o
 
-.debug_frame    0x00000000      0x1f4
+.debug_frame    0x00000000      0x204
  *(.debug_frame)
  .debug_frame   0x00000000       0x7c interrupts.o
  .debug_frame   0x0000007c       0x44 main.o
  .debug_frame   0x000000c0       0x94 ShiftRegister_SIPO.o
- .debug_frame   0x00000154       0xa0 timer.o
+ .debug_frame   0x00000154       0xb0 timer.o
 
-.debug_str      0x00000000      0x8a2
+.debug_str      0x00000000      0x910
  *(.debug_str)
  .debug_str     0x00000000      0x208 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_str     0x00000208      0x310 interrupts.o
-                                0x35e (size before relaxing)
- .debug_str     0x00000518      0x2ce main.o
-                                0x640 (size before relaxing)
- .debug_str     0x000007e6       0x86 ShiftRegister_SIPO.o
-                                0x5d9 (size before relaxing)
- .debug_str     0x0000086c       0x36 timer.o
-                                0x34e (size before relaxing)
+ .debug_str     0x00000208      0x375 interrupts.o
+                                0x3ca (size before relaxing)
+ .debug_str     0x0000057d      0x2ce main.o
+                                0x6ac (size before relaxing)
+ .debug_str     0x0000084b       0x86 ShiftRegister_SIPO.o
+                                0x645 (size before relaxing)
+ .debug_str     0x000008d1       0x3f timer.o
+                                0x3c3 (size before relaxing)
 
-.debug_loc      0x00000000      0x34a
+.debug_loc      0x00000000      0x380
  *(.debug_loc)
  .debug_loc     0x00000000       0xcb interrupts.o
  .debug_loc     0x000000cb       0x52 main.o
  .debug_loc     0x0000011d      0x15e ShiftRegister_SIPO.o
- .debug_loc     0x0000027b       0xcf timer.o
+ .debug_loc     0x0000027b      0x105 timer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -651,12 +653,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0xb8
+.debug_ranges   0x00000000       0xc0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 interrupts.o
  .debug_ranges  0x00000018       0x20 main.o
  .debug_ranges  0x00000038       0x38 ShiftRegister_SIPO.o
- .debug_ranges  0x00000070       0x48 timer.o
+ .debug_ranges  0x00000070       0x50 timer.o
 
 .debug_macro
  *(.debug_macro)
