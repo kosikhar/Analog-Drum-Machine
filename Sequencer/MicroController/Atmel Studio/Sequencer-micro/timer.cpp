@@ -42,6 +42,16 @@ uint32_t Timer::elapsed_millis( uint32_t comparison )
 	return (milliseconds - comparison);	
 }
 
+uint8_t Timer::micros( void )
+{
+	return microseconds_times10;
+}
+
+uint32_t Timer::millis( void )
+{
+	return milliseconds;
+}
+
 // default destructor
 Timer::~Timer()
 {

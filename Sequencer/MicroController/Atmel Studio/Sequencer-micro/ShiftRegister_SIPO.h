@@ -32,6 +32,8 @@ class ShiftRegister_SIPO
 	public:
 		//Array of bytes to output. 
 		uint8_t * output_bytes;
+		//Next array of bytes to output.
+		uint8_t * output_bytes_buffer;
 
 		//Keep track of number of shifts.
 		uint8_t shiftCounter;
@@ -48,8 +50,11 @@ class ShiftRegister_SIPO
 		//prevents the shift method from recursively being called by interrupt.
 		volatile uint8_t shiftLock;
 		
-		//When there's new bits to be shifted.
-		volatile uint8_t newWork;
+		//Once all bits are shifted, the "doneWork" flag goes high
+		volatile uint8_t doneWork;
+
+		//Once new bits needed to be shifted this would go high.
+		volatile uint8_t moreWork;
 
 	private:
 		//Reference to a global timer object to keep track
