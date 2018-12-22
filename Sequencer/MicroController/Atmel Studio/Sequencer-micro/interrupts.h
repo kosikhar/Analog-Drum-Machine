@@ -9,6 +9,8 @@
 #ifndef INTERRUPTS_H_
 #define INTERRUPTS_H_
 
+#include <avr/interrupt.h>
+
 //Setup the registers for configuring the 328's timers.
 void setUpTimerInterrupts( void );
 

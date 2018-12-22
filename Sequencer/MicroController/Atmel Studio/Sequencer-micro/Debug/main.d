@@ -17,7 +17,9 @@ main.d main.o: .././main.cpp .././global.h \
  .././timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././interrupts.h .././ShiftRegister_SIPO.h
+ .././interrupts.h \
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+ .././ShiftRegister_SIPO.h
 
 .././global.h:
 
@@ -58,5 +60,7 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 .././interrupts.h:
+
+z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 .././ShiftRegister_SIPO.h:
