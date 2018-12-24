@@ -39,15 +39,15 @@ class ShiftRegister_SIPO
 		
 		//Waits for interrupt to allow method to run
 		volatile uint8_t enabled;
+		
+		//Size of the previous array. This would be number of shift
+		//registers in use.
+		uint8_t size;
 
 	private:
 		//Reference to a global timer object to keep track
 		//of shifting timing.
 		Timer * timer;
-		
-		//Size of the previous array. This would be number of shift
-		//registers in use.
-		uint8_t size;
 		
 		//Array of bytes to output.
 		uint8_t * output_bytes;
@@ -74,7 +74,7 @@ class ShiftRegister_SIPO
 		void loadBytes( uint8_t * bytesToLoad );
 		
 		//Used for clocking the shift register. Uses interrupt
-		void wait_10us( void );
+		void wait_1us( void );
 		
 		//TODO Clear the shift register
 		void clear( void );

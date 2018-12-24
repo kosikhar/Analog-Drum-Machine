@@ -9,8 +9,8 @@
 
 Timer timer;
 
-//Initialize the output shift register.
-ShiftRegister_SIPO outputShiftRegister;
+//Initialize seven segment display
+SevenSeg sevenSegmentDisplay;
 ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
 
 
@@ -22,8 +22,8 @@ int main(void)
 	outputShiftRegister_pinout.latch = 1;
 	outputShiftRegister_pinout.shift = 2;
 	
-	outputShiftRegister.ShiftRegisterInit(1, &outputShiftRegister_pinout);
-	outputShiftRegister.getTimerReference(&timer);
+	sevenSegmentDisplay.sevenSegInit(1, &outputShiftRegister_pinout);
+	sevenSegmentDisplay.getTimerReference(&timer);
 
 	//Enable Timer interrupts
 	setUpTimerInterrupts();
@@ -33,14 +33,14 @@ int main(void)
 	
 	//Declare Byte to write to shift register
 	uint8_t counter = 0;
-	uint8_t bytesToWrite [1];
+	uint8_t numberToPrint [1];
 	
 	//Used for blinking LED
 	uint32_t LEDTimer = timer.millis();
 	uint8_t LEDValueNext = 1;
 	
 	//Used for controlling how fast shift register updates
-	uint32_t SIPO_ShiftRegisterTimer = timer.millis();
+	uint32_t sevenSegUpdateTimer = timer.millis();
 	
     /* Replace with your application code */
     while (1) 
@@ -61,22 +61,24 @@ int main(void)
 			LEDTimer = timer.millis();
 		}
 		
-		if( (timer.elapsed_millis( SIPO_ShiftRegisterTimer) > 10) ){
+		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 200) ){
 			
-			//Outputs are in negative logic
-			bytesToWrite[0]  = ~ counter;
 			
-			//Load in output byte
-			outputShiftRegister.loadBytes( bytesToWrite );
+			numberToPrint[0]  = counter;
 			
-			//Shift out the byte
-			outputShiftRegister.shiftBits();
+			if (numberToPrint[0] >= 10 ){
+				numberToPrint[0] = 0;
+				counter = 0;
+			}
+			
+			//Print the number to seven segment display.
+			sevenSegmentDisplay.printNumbers( numberToPrint );
 			
 			//increment counter
 			counter++;
 			
 			//Reset timer
-			SIPO_ShiftRegisterTimer = timer.millis();
+			sevenSegUpdateTimer = timer.millis();
 		}
     }
 }

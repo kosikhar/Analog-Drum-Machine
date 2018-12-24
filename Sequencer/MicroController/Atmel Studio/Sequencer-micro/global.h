@@ -23,7 +23,10 @@ extern Timer timer;
 
 //Object for controlling a SIPO shift register
 #include "ShiftRegister_SIPO.h"
-extern ShiftRegister_SIPO outputShiftRegister;
-extern ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
+extern ShiftRegister_SIPO_pinout sevenSeg_pinout;
+
+//Object that controls a 7 segment display.
+#include "SevenSeg.h"
+extern SevenSeg sevenSegmentDisplay;
 
 #endif /* GLOBAL_H_ */

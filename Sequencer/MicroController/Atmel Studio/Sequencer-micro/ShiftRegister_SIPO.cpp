@@ -46,8 +46,8 @@ void ShiftRegister_SIPO::shiftBits( void )
 {		
 	//Starting shifting with shift/serial/latch at 0
 	SIPO_PORT &= ~( pinout_byte );	
-	//Wait 10us
-	this->wait_10us();
+	//Wait 1us
+	this->wait_1us();
 	
 	for( int j=0; j < size ; j++){
 		
@@ -64,19 +64,19 @@ void ShiftRegister_SIPO::shiftBits( void )
 				SIPO_PORT &= ~(1 << pinout->serial);
 			}
 			
-			this->wait_10us();
+			this->wait_1us();
 			
 			//Shift bin in.			
 			SIPO_PORT &= ~(1 << pinout->shift);
-			this->wait_10us();
+			this->wait_1us();
 			SIPO_PORT |= (1 << pinout->shift);
-			this->wait_10us();
+			this->wait_1us();
 		}
 	}
 	
 	//Latch output	
 	SIPO_PORT &= ~(1 << pinout->latch);
-	this->wait_10us();
+	this->wait_1us();
 	SIPO_PORT |= (1 << pinout->latch);
 	
 } //ShiftBits
@@ -117,7 +117,7 @@ void ShiftRegister_SIPO::loadBytes( uint8_t * bytesToLoad )
 // 	disableShifting();
 // }
 
-void ShiftRegister_SIPO::wait_10us( void )
+void ShiftRegister_SIPO::wait_1us( void )
 {
 	//Variable to find the difference between a current value
 	//of a timer and a previous value
