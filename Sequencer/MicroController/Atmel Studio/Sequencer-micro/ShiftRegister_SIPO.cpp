@@ -12,12 +12,9 @@ ShiftRegister_SIPO::ShiftRegister_SIPO()
 {
 	//initialize size variable
 	size = 0;
-
-	//initialize the shift counter.
-	shiftCounter = 0;
-
-	//initialize a the shift lock to be zero
-	shiftLock = 0;
+	
+	//Initialize enabled to 0
+	enabled = 0;
 	
 } //ShiftRegister_SIPO
 
@@ -29,13 +26,6 @@ void ShiftRegister_SIPO::ShiftRegisterInit( uint8_t numShiftRegisters, ShiftRegi
 	
 	//Store shift register pinout for later use
 	pinout = pins;
-	
-	//initialize doneWork
-	doneWork = true;
-	//initialize shiftLock
-	shiftLock = false;
-	//initialize moreWork
-	moreWork = false;
 	
 	//startup disabled
 	enabled = false;
@@ -53,92 +43,51 @@ void ShiftRegister_SIPO::ShiftRegisterInit( uint8_t numShiftRegisters, ShiftRegi
 //This will be called in a timer based interrupt so it would need to be locked
 //to prevent recursion.
 void ShiftRegister_SIPO::shiftBits( void )
-{	
-	//If shift register not enabled, return
-	if (enabled != true){
-		return;
-	}
-	
-	// See if in the middle of shifting
-	if ( shiftLock == false ){	
-
-		//Check if done shifting bits
-		if ( doneWork == true){
-						
-			//If there's more work, move buffer to output_bytes
-			//Since we been here a little long, return
-			if ( moreWork == true ){
-				for(int i=0; i <= size ; i++){
-					output_bytes[i] = output_bytes_buffer[i];
-				}		
-			}		
-			doneWork = false;
-			moreWork = false;
-			shiftCounter = 0;
-			return;
-		}
-			
-	} else {
-		return; 
-	}
-	
-	//block recursive interrupt calls.
-	shiftLock = true;
-
-	//Start with all values low then wait 10us
-	SIPO_PORT &= ~( pinout_byte );
+{		
+	//Starting shifting with shift/serial/latch at 0
+	SIPO_PORT &= ~( pinout_byte );	
 	//Wait 10us
-	microSnap = timer->micros();
-	while ( timer->elapsed_micros_fast(microSnap) < 1);
+	this->wait_10us();
 	
-	for(int j=0; j <= size; j++){
-		for (int i=0; i <= 8; i++){	
-			//figure out if bit needs to be set or cleared
-			if( (1 << i) & ( output_bytes[j] ) ){
-				//Set serial bit
+	for( int j=0; j < size ; j++){
+		
+		for ( int i=0; i < (8*size); i++){
+			
+			//Load serial pin with bit
+			
+			//If the bit needs to be set to 1...
+			if( output_bytes[j] & (1 << i) ){
 				SIPO_PORT |= (1 << pinout->serial);
+				
+			//Else set to 0
 			} else {
-				//Clear serial bit
 				SIPO_PORT &= ~(1 << pinout->serial);
 			}
 			
-			//Wait 10us
-			microSnap = timer->micros();
-			while ( timer->elapsed_micros_fast(microSnap) < 2);
+			this->wait_10us();
 			
-			//Shift. Send shift pulse
-			this->pulse10us( pinout->shift );		
+			//Shift bin in.			
+			SIPO_PORT &= ~(1 << pinout->shift);
+			this->wait_10us();
+			SIPO_PORT |= (1 << pinout->shift);
+			this->wait_10us();
 		}
 	}
 	
-	//Latch. Send Latch pulse
-	this->pulse10us( pinout->latch );
-	
-	//Finished shifting
-	doneWork = true;
-	shiftLock = false;
-	//Disable. Interrupt will re-enable
-	this->disable();
+	//Latch output	
+	SIPO_PORT &= ~(1 << pinout->latch);
+	this->wait_10us();
+	SIPO_PORT |= (1 << pinout->latch);
 	
 } //ShiftBits
-
-void ShiftRegister_SIPO::enable( void )
-{
-	enabled = true;
-}
-
-void ShiftRegister_SIPO::disable( void )
-{
-	enabled = false;
-}
 
 void ShiftRegister_SIPO::setupPins( void ) 
 {
 	//setup the pinout byte
 	pinout_byte = (1 << pinout->shift) | (1 << pinout->latch) | (1 << pinout->serial);	
 
-	// Initialize these pins to be 0.
-	SIPO_PORT &= ~( pinout_byte );
+	// Initialize these pins to be 1.
+	SIPO_PORT |= ( pinout_byte );
 
 	// Set pins to be output.
 	SIPO_DDR |= pinout_byte;
@@ -147,25 +96,47 @@ void ShiftRegister_SIPO::setupPins( void )
 
 void ShiftRegister_SIPO::loadBytes( uint8_t * bytesToLoad )
 {
-	moreWork = true;
-	doneWork = false;
 	for(int i=0; i <= size; i++){
-		output_bytes_buffer[i] = bytesToLoad[i];
+		output_bytes[i] = bytesToLoad[i];
 	}
 }
 
-void ShiftRegister_SIPO::pulse10us( uint8_t pin )
+// void ShiftRegister_SIPO::wait_10us( void )
+// {
+// 	//Enables an interrupt to toggle enable every 5ms
+// 	enableShifting();
+// 	
+// 	//Waits until enabled is low (takes max 5us)
+// 	while( enabled == true );
+// 	//Waits until enabled is high (5 us)
+// 	while( enabled == false );
+// 	
+// 	//Time elapsed so far has been 5us to 10us
+// 	
+// 	//Disable interrupt so program can actually run
+// 	disableShifting();
+// }
+
+void ShiftRegister_SIPO::wait_10us( void )
 {
-	//Set pin to 1
-	SIPO_PORT |= (1 << pin);
-	//wait 10us
-	microSnap = timer->micros();
-	while( timer->elapsed_micros_fast(microSnap) < 2);
-	//Set pin to 0.
-	SIPO_PORT &= ~(1 << pin);
-	//wait 10us
-	microSnap = timer->micros();
-	while( timer->elapsed_micros_fast(microSnap) < 2);
+	//Variable to find the difference between a current value
+	//of a timer and a previous value
+	uint8_t difference = 0;
+	
+	//Read the value of the TCNT0 timer0 
+	uint8_t timerValue = TCNT2;
+	
+	//Wait until difference is 16 == 1us
+	while( difference < 16 ){
+		difference = TCNT2 - timerValue;
+	}
+}
+
+void ShiftRegister_SIPO::toggleEnable( void )
+{
+	//This will just toggle 0 to 1, and 1 to 0.
+	//ie 0000 xor 0001 = 0001 ; 0001 xor 0001 = 0000
+	enabled ^= (uint8_t) 0x01; 
 }
 
 void ShiftRegister_SIPO::getTimerReference( Timer * ptr )

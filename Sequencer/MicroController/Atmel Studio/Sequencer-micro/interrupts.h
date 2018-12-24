@@ -14,4 +14,8 @@
 //Setup the registers for configuring the 328's timers.
 void setUpTimerInterrupts( void );
 
+void enableShifting( void );
+
+void disableShifting( void );
+
 #endif /* INTERRUPTS_H_ */
