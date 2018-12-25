@@ -10,29 +10,17 @@
 // default constructor
 ShiftRegister_SIPO::ShiftRegister_SIPO()
 {
-	//initialize size variable
-	size = 0;
-	
-	//Initialize enabled to 0
-	enabled = 0;
-	
 } //ShiftRegister_SIPO
 
 
-void ShiftRegister_SIPO::ShiftRegisterInit( uint8_t numShiftRegisters, ShiftRegister_SIPO_pinout * pins )
+void ShiftRegister_SIPO::ShiftRegisterInit( ShiftRegister_SIPO_pinout * pins )
 {
-	//Store the size for later use.
-	size = numShiftRegisters;
-	
+
 	//Store shift register pinout for later use
 	pinout = pins;
 	
-	//startup disabled
-	enabled = false;
-	
-	//Initialize array. If I'm using 2 shift registers I need 2 bytes.
-	output_bytes = (uint8_t *) malloc(numShiftRegisters) ;
-	output_bytes_buffer = (uint8_t *) malloc(numShiftRegisters);
+	//start off with output byte 0
+	output_byte = 0;
 	
 	//Setup pins on the 328p to utilize the shift register.
 	this->setupPins();
@@ -48,36 +36,24 @@ void ShiftRegister_SIPO::shiftBits( void )
 	SIPO_PORT &= ~( pinout_byte );	
 	//Wait 1us
 	this->wait_1us();
-	
-	for( int j=0; j < size ; j++){
 		
-		for ( int i=0; i < (8*size); i++){
+	for ( int i=0; i < 8; i++){
 			
-			//Load serial pin with bit
+		//Load serial pin with bit
 			
-			//If the bit needs to be set to 1...
-			if( output_bytes[j] & (1 << i) ){
-				SIPO_PORT |= (1 << pinout->serial);
+		//If the bit needs to be set to 1...
+		if( output_byte & (1 << i) ){
+			SIPO_PORT |= (1 << pinout->serial);
 				
-			//Else set to 0
-			} else {
-				SIPO_PORT &= ~(1 << pinout->serial);
-			}
-			
-			this->wait_1us();
-			
-			//Shift bin in.			
-			SIPO_PORT &= ~(1 << pinout->shift);
-			this->wait_1us();
-			SIPO_PORT |= (1 << pinout->shift);
-			this->wait_1us();
+		//Else set to 0
+		} else {
+			SIPO_PORT &= ~(1 << pinout->serial);
 		}
+			
+		this->wait_1us();
+			
+		this->singleShift();
 	}
-	
-	//Latch output	
-	SIPO_PORT &= ~(1 << pinout->latch);
-	this->wait_1us();
-	SIPO_PORT |= (1 << pinout->latch);
 	
 } //ShiftBits
 
@@ -94,11 +70,26 @@ void ShiftRegister_SIPO::setupPins( void )
 
 } //SetupPins
 
-void ShiftRegister_SIPO::loadBytes( uint8_t * bytesToLoad )
+void ShiftRegister_SIPO::latchOutput( void )
 {
-	for(int i=0; i <= size; i++){
-		output_bytes[i] = bytesToLoad[i];
-	}
+	//Latch output
+	SIPO_PORT &= ~(1 << pinout->latch);
+	this->wait_1us();
+	SIPO_PORT |= (1 << pinout->latch);
+}
+
+void ShiftRegister_SIPO::singleShift( void )
+{
+	//Shift single bit in.
+	SIPO_PORT &= ~(1 << pinout->shift);
+	this->wait_1us();
+	SIPO_PORT |= (1 << pinout->shift);
+	this->wait_1us();
+}
+
+void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
+{
+	output_byte = byteToLoad;
 }
 
 // void ShiftRegister_SIPO::wait_10us( void )
@@ -132,13 +123,6 @@ void ShiftRegister_SIPO::wait_1us( void )
 	}
 }
 
-void ShiftRegister_SIPO::toggleEnable( void )
-{
-	//This will just toggle 0 to 1, and 1 to 0.
-	//ie 0000 xor 0001 = 0001 ; 0001 xor 0001 = 0000
-	enabled ^= (uint8_t) 0x01; 
-}
-
 void ShiftRegister_SIPO::getTimerReference( Timer * ptr )
 {
 	timer = ptr;
@@ -149,6 +133,4 @@ void ShiftRegister_SIPO::getTimerReference( Timer * ptr )
 // default destructor
 ShiftRegister_SIPO::~ShiftRegister_SIPO()
 {
-	free(output_bytes);
-	free(output_bytes_buffer);
 } //~ShiftRegister_SIPO

@@ -22,7 +22,7 @@ int main(void)
 	outputShiftRegister_pinout.latch = 1;
 	outputShiftRegister_pinout.shift = 2;
 	
-	sevenSegmentDisplay.sevenSegInit(1, &outputShiftRegister_pinout);
+	sevenSegmentDisplay.sevenSegInit(2, &outputShiftRegister_pinout);
 	sevenSegmentDisplay.getTimerReference(&timer);
 
 	//Enable Timer interrupts
@@ -33,7 +33,7 @@ int main(void)
 	
 	//Declare Byte to write to shift register
 	uint8_t counter = 0;
-	uint8_t numberToPrint [1];
+	uint8_t numberToPrint [2];
 	
 	//Used for blinking LED
 	uint32_t LEDTimer = timer.millis();
@@ -47,7 +47,9 @@ int main(void)
     {
 		
 		//Toggle LED every 500ms
-		if(timer.elapsed_millis( LEDTimer ) > 500){
+		if(timer.elapsed_millis( LEDTimer ) > 250){
+		//Reset timer.
+		LEDTimer = timer.millis();
 			if( LEDValueNext == 1 ){
 				//Set Test LED to OFF
 				PORTD |= (1 << PORTD0);
@@ -57,28 +59,25 @@ int main(void)
 				PORTD &= ~(1 << PORTD0);
 				LEDValueNext = 1;
 			}
-			//Reset timer.
-			LEDTimer = timer.millis();
 		}
 		
-		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 200) ){
+		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 1000) ){
+			//Reset timer
+			sevenSegUpdateTimer = timer.millis();
 			
-			
-			numberToPrint[0]  = counter;
-			
-			if (numberToPrint[0] >= 10 ){
-				numberToPrint[0] = 0;
-				counter = 0;
-			}
+			numberToPrint[1] = (uint8_t) counter / 10; 
+			numberToPrint[0] = (uint8_t) counter - (10*numberToPrint[1]);
 			
 			//Print the number to seven segment display.
 			sevenSegmentDisplay.printNumbers( numberToPrint );
 			
 			//increment counter
 			counter++;
-			
-			//Reset timer
-			sevenSegUpdateTimer = timer.millis();
+						
+			if (counter >= 100 ){
+				numberToPrint[0] = 0;
+				counter = 0;
+			}
 		}
     }
 }

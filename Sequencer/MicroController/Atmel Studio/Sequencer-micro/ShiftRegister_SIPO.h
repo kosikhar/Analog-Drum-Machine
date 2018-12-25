@@ -36,24 +36,15 @@ class ShiftRegister_SIPO
 		ShiftRegister_SIPO_pinout * pinout;
 		//instead of a struct convert a to a byte.
 		uint8_t pinout_byte;
-		
-		//Waits for interrupt to allow method to run
-		volatile uint8_t enabled;
-		
-		//Size of the previous array. This would be number of shift
-		//registers in use.
-		uint8_t size;
 
 	private:
 		//Reference to a global timer object to keep track
 		//of shifting timing.
 		Timer * timer;
 		
-		//Array of bytes to output.
-		uint8_t * output_bytes;
-		//Next array of bytes to output.
-		uint8_t * output_bytes_buffer;
-
+		//Byte to output.
+		uint8_t output_byte;
+		
 	//functions
 	public:
 		ShiftRegister_SIPO();
@@ -62,16 +53,19 @@ class ShiftRegister_SIPO
 		ShiftRegister_SIPO( uint8_t numShiftRegisters );
 		
 		//Initialize the object.
-		void ShiftRegisterInit( uint8_t numShiftRegisters, ShiftRegister_SIPO_pinout * pins );
+		void ShiftRegisterInit( ShiftRegister_SIPO_pinout * pins );
 		
 		//Shift the shift register to the left.
 		void shiftBits( void );
 		
-		//Called by a timed interrupt
-		void toggleEnable( void );
+		//Latches what was shifted into the shift register
+		void latchOutput( void );
+		
+		//Sends a shift pulse
+		void singleShift( void );
 		
 		//Used for loading in bytes.
-		void loadBytes( uint8_t * bytesToLoad );
+		void loadByte( uint8_t byteToLoad );
 		
 		//Used for clocking the shift register. Uses interrupt
 		void wait_1us( void );
