@@ -16,8 +16,8 @@ class Timer
 {
 	//variables
 	public:
-		//Interrupt increments milliseconds every 1ms
-		volatile uint32_t milliseconds;
+		//Interrupt increments every 0.1ms
+		volatile uint32_t step;
 	private:
 
 	//functions
@@ -28,7 +28,7 @@ class Timer
 		void fixTimer( void );
 		void reset( void );
 
-		//returns elapsed time in milliseconds in comparison to some point in time
+		//returns elapsed time in tenths of milliseconds in comparison to some point in time
 		uint32_t elapsed_millis( uint32_t comparison );
 		
 		//Snap shot of number of milliseconds since reset/epoch 

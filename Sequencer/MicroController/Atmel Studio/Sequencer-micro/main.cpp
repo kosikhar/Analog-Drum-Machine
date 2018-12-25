@@ -7,6 +7,7 @@
 
 #include "global.h"
 
+//Timer increments every 0.1ms
 Timer timer;
 
 //Initialize seven segment display
@@ -41,13 +42,16 @@ int main(void)
 	
 	//Used for controlling how fast shift register updates
 	uint32_t sevenSegUpdateTimer = timer.millis();
+	//Used for controlling how fast seven seg shift registers get latched
+	uint32_t sevenSegLatchTimer = timer.millis();
+	//Used for controlling when to shift bits.
+	uint8_t shiftComplete = 0;
 	
     /* Replace with your application code */
     while (1) 
     {
-		
-		//Toggle LED every 500ms
-		if(timer.elapsed_millis( LEDTimer ) > 250){
+		//TASK 1 - Blinky --> Toggle LED every 250ms
+		if(timer.elapsed_millis( LEDTimer ) > 2500){
 		//Reset timer.
 		LEDTimer = timer.millis();
 			if( LEDValueNext == 1 ){
@@ -61,15 +65,18 @@ int main(void)
 			}
 		}
 		
-		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 1000) ){
+		//TASK 2 - Load shift register with bit map of seven segment display every 10ms
+		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 5) 
+				&& (shiftComplete == false) ) { 
+					
 			//Reset timer
 			sevenSegUpdateTimer = timer.millis();
 			
 			numberToPrint[1] = (uint8_t) counter / 10; 
 			numberToPrint[0] = (uint8_t) counter - (10*numberToPrint[1]);
 			
-			//Print the number to seven segment display.
-			sevenSegmentDisplay.printNumbers( numberToPrint );
+			//Prepare shift registers to hold bit map for seven segment display
+			sevenSegmentDisplay.printNumbers_NOLATCH( numberToPrint );
 			
 			//increment counter
 			counter++;
@@ -78,7 +85,23 @@ int main(void)
 				numberToPrint[0] = 0;
 				counter = 0;
 			}
+			
+			shiftComplete = true;
 		}
-    }
+		
+		//TASK 3 - Latch shift register at specific rate. 100ms.
+		if ( (timer.elapsed_millis(sevenSegLatchTimer) >  1000)
+				&& ( shiftComplete == true )){
+			
+			//Reset Timer
+			sevenSegLatchTimer = timer.millis();
+			
+			//Latch shift registers. Output should show on seven segment display
+			sevenSegmentDisplay.latchOutput();
+			
+			//Shift in new values
+			shiftComplete = false;
+		}
+	}
 }
 

@@ -10,27 +10,27 @@
 // default constructor
 Timer::Timer()
 {
-	milliseconds = 0;
+	step = 0;
 } //timer
 
 //Increments the timer by 1us
 void Timer::incrementTimer(){
-	milliseconds++;
+	step++;
 }
 
 void Timer::reset( void )
 {
-	milliseconds = 0;
+	step = 0;
 }
 
 uint32_t Timer::elapsed_millis( uint32_t comparison )
 {	
-	return (milliseconds - comparison);	
+	return (step - comparison);	
 }
 
 uint32_t Timer::millis( void )
 {
-	return milliseconds;
+	return step;
 }
 
 // default destructor

@@ -29,8 +29,8 @@ void setUpTimerInterrupts( void )
 	//We will enable interrupt on compare match with OCR0A
 	TIMSK0 |= (1 << OCIE0A);
 	
-	//With 16MHz/64 = 250kHz clk, we would need 250 steps to get 1ms. 
-	OCR0A = (uint8_t) 250;
+	//With 16MHz/64 = 250kHz clk, we would need 250 steps to get 0.1ms. 
+	OCR0A = (uint8_t) 25;
 
 	//Disconnect OC0A, and use CTC mode
 	TCCR0A = (uint8_t) (1 << WGM01);
@@ -41,7 +41,7 @@ void setUpTimerInterrupts( void )
 	//Setting up Timer2 (8-bit Timer). We are just going to use
 	//measuring small time scales in the us
 	
-	OCR2A = (uint8_t) 254;
+	OCR2A = (uint8_t) 255;
 	
 	//Disconnect OC2A, and use CTC mode
 	TCCR2A = (uint8_t) (1 << WGM21);

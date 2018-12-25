@@ -32,12 +32,16 @@ class SevenSeg : public ShiftRegister_SIPO
 				
 		//If you only have one, display you can only print 1 number obviously
 		void printNumbers( uint8_t * Bytes );
+		
+		//Shifts in numbers without latching. Allows for a quick latch call to be made
+		void printNumbers_NOLATCH( uint8_t * Bytes);
 				
 		//If you only printing one number, no need to make an array!
 		void printNumbers( uint8_t Byte );
 			
 		~SevenSeg();
 	private:
+		void shiftInBytes( uint8_t * Bytes);
 
 }; //SevenSeg
 
