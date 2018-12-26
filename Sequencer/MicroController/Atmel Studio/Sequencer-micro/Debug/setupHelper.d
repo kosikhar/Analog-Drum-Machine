@@ -1,5 +1,4 @@
-ShiftRegister_PISO.d ShiftRegister_PISO.o: .././ShiftRegister_PISO.cpp \
- .././ShiftRegister_PISO.h .././global.h \
+setupHelper.d setupHelper.o: .././setupHelper.cpp .././global.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -18,8 +17,6 @@ ShiftRegister_PISO.d ShiftRegister_PISO.o: .././ShiftRegister_PISO.cpp \
  .././interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  .././ShiftRegister_SIPO.h .././SevenSeg.h
-
-.././ShiftRegister_PISO.h:
 
 .././global.h:
 

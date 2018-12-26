@@ -39,9 +39,11 @@ SUBDIRS :=
 C_SRCS +=  \
 ../interrupts.cpp \
 ../main.cpp \
+../setupHelper.cpp \
 ../SevenSeg.cpp \
 ../ShiftRegister_PISO.cpp \
 ../ShiftRegister_SIPO.cpp \
+../tasks.cpp \
 ../timer.cpp
 
 
@@ -54,33 +56,41 @@ ASM_SRCS +=
 OBJS +=  \
 interrupts.o \
 main.o \
+setupHelper.o \
 SevenSeg.o \
 ShiftRegister_PISO.o \
 ShiftRegister_SIPO.o \
+tasks.o \
 timer.o
 
 OBJS_AS_ARGS +=  \
 interrupts.o \
 main.o \
+setupHelper.o \
 SevenSeg.o \
 ShiftRegister_PISO.o \
 ShiftRegister_SIPO.o \
+tasks.o \
 timer.o
 
 C_DEPS +=  \
 interrupts.d \
 main.d \
+setupHelper.d \
 SevenSeg.d \
 ShiftRegister_PISO.d \
 ShiftRegister_SIPO.d \
+tasks.d \
 timer.d
 
 C_DEPS_AS_ARGS +=  \
 interrupts.d \
 main.d \
+setupHelper.d \
 SevenSeg.d \
 ShiftRegister_PISO.d \
 ShiftRegister_SIPO.d \
+tasks.d \
 timer.d
 
 OUTPUT_FILE_PATH +=Sequencer-micro.elf
@@ -111,6 +121,13 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
+./setupHelper.o: .././setupHelper.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./SevenSeg.o: .././SevenSeg.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
@@ -126,6 +143,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./ShiftRegister_SIPO.o: .././ShiftRegister_SIPO.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./tasks.o: .././tasks.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

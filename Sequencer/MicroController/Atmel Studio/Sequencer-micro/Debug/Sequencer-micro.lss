@@ -3,31 +3,31 @@ Sequencer-micro.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         0000000c  00800100  000005d4  00000668  2**0
+  0 .data         0000000c  00800100  0000075e  000007f2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000005d4  00000000  00000000  00000094  2**1
+  1 .text         0000075e  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000019  0080010c  0080010c  00000674  2**0
+  2 .bss          0000002e  0080010c  0080010c  000007fe  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000674  2**0
+  3 .comment      00000030  00000000  00000000  000007fe  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000006a4  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000830  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000168  00000000  00000000  000006e0  2**0
+  5 .debug_aranges 00000220  00000000  00000000  0000086c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00002417  00000000  00000000  00000848  2**0
+  6 .debug_info   00002dfa  00000000  00000000  00000a8c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000f46  00000000  00000000  00002c5f  2**0
+  7 .debug_abbrev 000011d1  00000000  00000000  00003886  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000094b  00000000  00000000  00003ba5  2**0
+  8 .debug_line   00000cc2  00000000  00000000  00004a57  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000358  00000000  00000000  000044f0  2**2
+  9 .debug_frame  000004d8  00000000  00000000  0000571c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000b32  00000000  00000000  00004848  2**0
+ 10 .debug_str    00000db8  00000000  00000000  00005bf4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000008ce  00000000  00000000  0000537a  2**0
+ 11 .debug_loc    000008e8  00000000  00000000  000069ac  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000118  00000000  00000000  00005c48  2**0
+ 12 .debug_ranges 000001b0  00000000  00000000  00007294  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -44,8 +44,8 @@ Disassembly of section .text:
   20:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   24:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   28:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
-  2c:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
-  30:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
+  2c:	0c 94 c5 00 	jmp	0x18a	; 0x18a <__vector_11>
+  30:	0c 94 86 00 	jmp	0x10c	; 0x10c <__vector_12>
   34:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   38:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__vector_14>
   3c:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
@@ -61,10 +61,10 @@ Disassembly of section .text:
   64:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
 
 00000068 <__ctors_start>:
-  68:	45 01       	movw	r8, r10
+  68:	5c 01       	movw	r10, r24
 
 0000006a <__ctors_end>:
-  6a:	4e 01       	movw	r8, r28
+  6a:	65 01       	movw	r12, r10
 
 0000006c <__dtors_end>:
   6c:	11 24       	eor	r1, r1
@@ -78,8 +78,8 @@ Disassembly of section .text:
   78:	11 e0       	ldi	r17, 0x01	; 1
   7a:	a0 e0       	ldi	r26, 0x00	; 0
   7c:	b1 e0       	ldi	r27, 0x01	; 1
-  7e:	e4 ed       	ldi	r30, 0xD4	; 212
-  80:	f5 e0       	ldi	r31, 0x05	; 5
+  7e:	ee e5       	ldi	r30, 0x5E	; 94
+  80:	f7 e0       	ldi	r31, 0x07	; 7
   82:	02 c0       	rjmp	.+4      	; 0x88 <__do_copy_data+0x10>
   84:	05 90       	lpm	r0, Z+
   86:	0d 92       	st	X+, r0
@@ -97,7 +97,7 @@ Disassembly of section .text:
   96:	1d 92       	st	X+, r1
 
 00000098 <.do_clear_bss_start>:
-  98:	a5 32       	cpi	r26, 0x25	; 37
+  98:	aa 33       	cpi	r26, 0x3A	; 58
   9a:	b2 07       	cpc	r27, r18
   9c:	e1 f7       	brne	.-8      	; 0x96 <.do_clear_bss_loop>
 
@@ -108,1025 +108,1245 @@ Disassembly of section .text:
   a4:	04 c0       	rjmp	.+8      	; 0xae <__do_global_ctors+0x10>
   a6:	21 97       	sbiw	r28, 0x01	; 1
   a8:	fe 01       	movw	r30, r28
-  aa:	0e 94 d7 02 	call	0x5ae	; 0x5ae <__tablejump2__>
+  aa:	0e 94 9c 03 	call	0x738	; 0x738 <__tablejump2__>
   ae:	c4 33       	cpi	r28, 0x34	; 52
   b0:	d1 07       	cpc	r29, r17
   b2:	c9 f7       	brne	.-14     	; 0xa6 <__do_global_ctors+0x8>
-  b4:	0e 94 9c 00 	call	0x138	; 0x138 <main>
-  b8:	0c 94 dd 02 	jmp	0x5ba	; 0x5ba <__do_global_dtors>
+  b4:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <main>
+  b8:	0c 94 a2 03 	jmp	0x744	; 0x744 <__do_global_dtors>
 
 000000bc <__bad_interrupt>:
   bc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 000000c0 <__vector_14>:
-#include "global.h"
-#include "interrupts.h"
 
-//Call every 10us, will be used for controlling shift registers
-ISR( TIMER0_COMPA_vect, ISR_NOBLOCK )
+void disableShifting( void )
 {
-  c0:	78 94       	sei
-  c2:	1f 92       	push	r1
-  c4:	0f 92       	push	r0
-  c6:	0f b6       	in	r0, 0x3f	; 63
-  c8:	0f 92       	push	r0
-  ca:	11 24       	eor	r1, r1
-  cc:	2f 93       	push	r18
-  ce:	3f 93       	push	r19
-  d0:	4f 93       	push	r20
-  d2:	5f 93       	push	r21
-  d4:	6f 93       	push	r22
-  d6:	7f 93       	push	r23
-  d8:	8f 93       	push	r24
-  da:	9f 93       	push	r25
-  dc:	af 93       	push	r26
-  de:	bf 93       	push	r27
-  e0:	ef 93       	push	r30
-  e2:	ff 93       	push	r31
-	//Increment timer every 1ms
-	timer.incrementTimer();
-  e4:	81 e2       	ldi	r24, 0x21	; 33
-  e6:	91 e0       	ldi	r25, 0x01	; 1
-  e8:	0e 94 b0 02 	call	0x560	; 0x560 <_ZN5Timer14incrementTimerEv>
+	//TIMSK2 is the TC2 Interrupt Mask Register
+	//We will disable interrupt on compare match with OCR2A
+	TIMSK2 &= ~(1 << OCIE2A);
+  c0:	1f 92       	push	r1
+  c2:	0f 92       	push	r0
+  c4:	0f b6       	in	r0, 0x3f	; 63
+  c6:	0f 92       	push	r0
+  c8:	11 24       	eor	r1, r1
+  ca:	2f 93       	push	r18
+  cc:	3f 93       	push	r19
+  ce:	4f 93       	push	r20
+  d0:	5f 93       	push	r21
+  d2:	6f 93       	push	r22
+  d4:	7f 93       	push	r23
+  d6:	8f 93       	push	r24
+  d8:	9f 93       	push	r25
+  da:	af 93       	push	r26
+  dc:	bf 93       	push	r27
+  de:	ef 93       	push	r30
+  e0:	ff 93       	push	r31
+  e2:	8b e2       	ldi	r24, 0x2B	; 43
+  e4:	91 e0       	ldi	r25, 0x01	; 1
+  e6:	0e 94 75 03 	call	0x6ea	; 0x6ea <_ZN5Timer14incrementTimerEv>
+  ea:	ff 91       	pop	r31
+  ec:	ef 91       	pop	r30
+  ee:	bf 91       	pop	r27
+  f0:	af 91       	pop	r26
+  f2:	9f 91       	pop	r25
+  f4:	8f 91       	pop	r24
+  f6:	7f 91       	pop	r23
+  f8:	6f 91       	pop	r22
+  fa:	5f 91       	pop	r21
+  fc:	4f 91       	pop	r20
+  fe:	3f 91       	pop	r19
+ 100:	2f 91       	pop	r18
+ 102:	0f 90       	pop	r0
+ 104:	0f be       	out	0x3f, r0	; 63
+ 106:	0f 90       	pop	r0
+ 108:	1f 90       	pop	r1
+ 10a:	18 95       	reti
+
+0000010c <__vector_12>:
+ 10c:	78 94       	sei
+ 10e:	1f 92       	push	r1
+ 110:	0f 92       	push	r0
+ 112:	0f b6       	in	r0, 0x3f	; 63
+ 114:	0f 92       	push	r0
+ 116:	11 24       	eor	r1, r1
+ 118:	8f 93       	push	r24
+ 11a:	81 e0       	ldi	r24, 0x01	; 1
+ 11c:	80 93 0d 01 	sts	0x010D, r24	; 0x80010d <enableShift>
+ 120:	8f 91       	pop	r24
+ 122:	0f 90       	pop	r0
+ 124:	0f be       	out	0x3f, r0	; 63
+ 126:	0f 90       	pop	r0
+ 128:	1f 90       	pop	r1
+ 12a:	18 95       	reti
+
+0000012c <_Z20setUpTimerInterruptsv>:
+ 12c:	ee e6       	ldi	r30, 0x6E	; 110
+ 12e:	f0 e0       	ldi	r31, 0x00	; 0
+ 130:	80 81       	ld	r24, Z
+ 132:	82 60       	ori	r24, 0x02	; 2
+ 134:	80 83       	st	Z, r24
+ 136:	89 e1       	ldi	r24, 0x19	; 25
+ 138:	87 bd       	out	0x27, r24	; 39
+ 13a:	92 e0       	ldi	r25, 0x02	; 2
+ 13c:	94 bd       	out	0x24, r25	; 36
+ 13e:	83 e0       	ldi	r24, 0x03	; 3
+ 140:	85 bd       	out	0x25, r24	; 37
+ 142:	ef e6       	ldi	r30, 0x6F	; 111
+ 144:	f0 e0       	ldi	r31, 0x00	; 0
+ 146:	80 81       	ld	r24, Z
+ 148:	86 60       	ori	r24, 0x06	; 6
+ 14a:	80 83       	st	Z, r24
+ 14c:	20 e4       	ldi	r18, 0x40	; 64
+ 14e:	36 e0       	ldi	r19, 0x06	; 6
+ 150:	30 93 89 00 	sts	0x0089, r19	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
+ 154:	20 93 88 00 	sts	0x0088, r18	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
+ 158:	21 e0       	ldi	r18, 0x01	; 1
+ 15a:	30 e0       	ldi	r19, 0x00	; 0
+ 15c:	30 93 8b 00 	sts	0x008B, r19	; 0x80008b <__TEXT_REGION_LENGTH__+0x7e008b>
+ 160:	20 93 8a 00 	sts	0x008A, r18	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
+ 164:	89 e0       	ldi	r24, 0x09	; 9
+ 166:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
+ 16a:	8f ef       	ldi	r24, 0xFF	; 255
+ 16c:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7e00b3>
+ 170:	90 93 b0 00 	sts	0x00B0, r25	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7e00b0>
+ 174:	81 e0       	ldi	r24, 0x01	; 1
+ 176:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7e00b1>
+ 17a:	78 94       	sei
+ 17c:	08 95       	ret
+
+0000017e <_Z25disableTimerOneInterruptsv>:
 }
-  ec:	ff 91       	pop	r31
-  ee:	ef 91       	pop	r30
-  f0:	bf 91       	pop	r27
-  f2:	af 91       	pop	r26
-  f4:	9f 91       	pop	r25
-  f6:	8f 91       	pop	r24
-  f8:	7f 91       	pop	r23
-  fa:	6f 91       	pop	r22
-  fc:	5f 91       	pop	r21
-  fe:	4f 91       	pop	r20
- 100:	3f 91       	pop	r19
- 102:	2f 91       	pop	r18
- 104:	0f 90       	pop	r0
- 106:	0f be       	out	0x3f, r0	; 63
- 108:	0f 90       	pop	r0
- 10a:	1f 90       	pop	r1
- 10c:	18 95       	reti
 
-0000010e <_Z20setUpTimerInterruptsv>:
+void disableTimerOneInterrupts( void )
 {
-	//Setting up Timer0 (8-bit timer) to trigger ISR after 10us
-	
-	//TIMSK0 is the TC0 Interrupt Mask Register
-	//We will enable interrupt on compare match with OCR0A
-	TIMSK0 |= (1 << OCIE0A);
- 10e:	ee e6       	ldi	r30, 0x6E	; 110
- 110:	f0 e0       	ldi	r31, 0x00	; 0
- 112:	80 81       	ld	r24, Z
- 114:	82 60       	ori	r24, 0x02	; 2
- 116:	80 83       	st	Z, r24
-	
-	//With 16MHz/64 = 250kHz clk, we would need 250 steps to get 0.1ms. 
-	OCR0A = (uint8_t) 25;
- 118:	89 e1       	ldi	r24, 0x19	; 25
- 11a:	87 bd       	out	0x27, r24	; 39
+	TIMSK1 &= ~((1 << OCIE1A) | (1 << OCIE2B));
+ 17e:	ef e6       	ldi	r30, 0x6F	; 111
+ 180:	f0 e0       	ldi	r31, 0x00	; 0
+ 182:	80 81       	ld	r24, Z
+ 184:	89 7f       	andi	r24, 0xF9	; 249
+ 186:	80 83       	st	Z, r24
+ 188:	08 95       	ret
 
-	//Disconnect OC0A, and use CTC mode
-	TCCR0A = (uint8_t) (1 << WGM01);
- 11c:	82 e0       	ldi	r24, 0x02	; 2
- 11e:	84 bd       	out	0x24, r24	; 36
+0000018a <__vector_11>:
+	enableShift = true;
+}
 
-	//Use clk div64 as input to the timer making timer run at 250kHz
-	TCCR0B = (uint8_t) (1 << CS01) | (1 << CS00);
- 120:	93 e0       	ldi	r25, 0x03	; 3
- 122:	95 bd       	out	0x25, r25	; 37
-	
-	//Setting up Timer2 (8-bit Timer). We are just going to use
-	//measuring small time scales in the us
-	
-	OCR2A = (uint8_t) 255;
- 124:	9f ef       	ldi	r25, 0xFF	; 255
- 126:	90 93 b3 00 	sts	0x00B3, r25	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7e00b3>
-	
-	//Disconnect OC2A, and use CTC mode
-	TCCR2A = (uint8_t) (1 << WGM21);
- 12a:	80 93 b0 00 	sts	0x00B0, r24	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7e00b0>
-	
-	//Use clk div1 as input to the timer making timer run at 16MHz
-	TCCR2B = (uint8_t) (1 << CS20);
- 12e:	81 e0       	ldi	r24, 0x01	; 1
- 130:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7e00b1>
-	
-	//Enable Interrupts Globally.
-	sei();
- 134:	78 94       	sei
- 136:	08 95       	ret
+uint8_t enableLatch;
+ISR( TIMER1_COMPA_vect, ISR_NOBLOCK )
+{
+ 18a:	78 94       	sei
+ 18c:	1f 92       	push	r1
+ 18e:	0f 92       	push	r0
+ 190:	0f b6       	in	r0, 0x3f	; 63
+ 192:	0f 92       	push	r0
+ 194:	11 24       	eor	r1, r1
+ 196:	2f 93       	push	r18
+ 198:	3f 93       	push	r19
+ 19a:	4f 93       	push	r20
+ 19c:	5f 93       	push	r21
+ 19e:	6f 93       	push	r22
+ 1a0:	7f 93       	push	r23
+ 1a2:	8f 93       	push	r24
+ 1a4:	9f 93       	push	r25
+ 1a6:	af 93       	push	r26
+ 1a8:	bf 93       	push	r27
+ 1aa:	ef 93       	push	r30
+ 1ac:	ff 93       	push	r31
+	enableLatch = true;
+ 1ae:	81 e0       	ldi	r24, 0x01	; 1
+ 1b0:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <__data_end>
+	disableTimerOneInterrupts();
+ 1b4:	0e 94 bf 00 	call	0x17e	; 0x17e <_Z25disableTimerOneInterruptsv>
+}
+ 1b8:	ff 91       	pop	r31
+ 1ba:	ef 91       	pop	r30
+ 1bc:	bf 91       	pop	r27
+ 1be:	af 91       	pop	r26
+ 1c0:	9f 91       	pop	r25
+ 1c2:	8f 91       	pop	r24
+ 1c4:	7f 91       	pop	r23
+ 1c6:	6f 91       	pop	r22
+ 1c8:	5f 91       	pop	r21
+ 1ca:	4f 91       	pop	r20
+ 1cc:	3f 91       	pop	r19
+ 1ce:	2f 91       	pop	r18
+ 1d0:	0f 90       	pop	r0
+ 1d2:	0f be       	out	0x3f, r0	; 63
+ 1d4:	0f 90       	pop	r0
+ 1d6:	1f 90       	pop	r1
+ 1d8:	18 95       	reti
 
-00000138 <main>:
-SevenSeg sevenSegmentDisplay;
-ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
+000001da <_Z24enableTimerOneInterruptsv>:
+}
 
+void enableTimerOneInterrupts( void )
+{
+	//Enable interrupt on compare match with OCR1A and OCR1B
+	TIMSK1 |= (1 << OCIE1A) | (1 << OCIE2B);
+ 1da:	ef e6       	ldi	r30, 0x6F	; 111
+ 1dc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1de:	80 81       	ld	r24, Z
+ 1e0:	86 60       	ori	r24, 0x06	; 6
+ 1e2:	80 83       	st	Z, r24
+ 1e4:	08 95       	ret
+
+000001e6 <main>:
+#include "global.h"
 
 int main(void)
 {	
- 138:	cf 93       	push	r28
- 13a:	df 93       	push	r29
- 13c:	00 d0       	rcall	.+0      	; 0x13e <main+0x6>
- 13e:	1f 92       	push	r1
- 140:	cd b7       	in	r28, 0x3d	; 61
- 142:	de b7       	in	r29, 0x3e	; 62
-	//Pins on port C for the output shift register
-	//TODO put this into a function. Its ugly
-	outputShiftRegister_pinout.serial = 0;
- 144:	ec e0       	ldi	r30, 0x0C	; 12
- 146:	f1 e0       	ldi	r31, 0x01	; 1
- 148:	12 82       	std	Z+2, r1	; 0x02
-	outputShiftRegister_pinout.latch = 1;
- 14a:	81 e0       	ldi	r24, 0x01	; 1
- 14c:	81 83       	std	Z+1, r24	; 0x01
-	outputShiftRegister_pinout.shift = 2;
- 14e:	82 e0       	ldi	r24, 0x02	; 2
- 150:	80 83       	st	Z, r24
+	//Setup variables for timing
+	setupTimers();
+ 1e6:	0e 94 1d 01 	call	0x23a	; 0x23a <_Z11setupTimersv>
 	
-	sevenSegmentDisplay.sevenSegInit(2, &outputShiftRegister_pinout);
- 152:	af 01       	movw	r20, r30
- 154:	62 e0       	ldi	r22, 0x02	; 2
- 156:	8f e0       	ldi	r24, 0x0F	; 15
- 158:	91 e0       	ldi	r25, 0x01	; 1
- 15a:	0e 94 7f 01 	call	0x2fe	; 0x2fe <_ZN8SevenSeg12sevenSegInitEhP25ShiftRegister_SIPO_pinout>
-	sevenSegmentDisplay.getTimerReference(&timer);
- 15e:	61 e2       	ldi	r22, 0x21	; 33
- 160:	71 e0       	ldi	r23, 0x01	; 1
- 162:	8f e0       	ldi	r24, 0x0F	; 15
- 164:	91 e0       	ldi	r25, 0x01	; 1
- 166:	0e 94 a5 02 	call	0x54a	; 0x54a <_ZN18ShiftRegister_SIPO17getTimerReferenceEP5Timer>
-
-	//Enable Timer interrupts
+	//Setup Blinky task
+	setupBlinky();
+ 1ea:	0e 94 3a 01 	call	0x274	; 0x274 <_Z11setupBlinkyv>
+	
+	//Setup Shift Registers
+	setupShiftRegisters();
+ 1ee:	0e 94 40 01 	call	0x280	; 0x280 <_Z19setupShiftRegistersv>
+	
+	//Setup seven segment display
+	setupSevenSegment();
+ 1f2:	0e 94 48 01 	call	0x290	; 0x290 <_Z17setupSevenSegmentv>
+	
+	//Setup Timers + interrupts
 	setUpTimerInterrupts();
- 16a:	0e 94 87 00 	call	0x10e	; 0x10e <_Z20setUpTimerInterruptsv>
+ 1f6:	0e 94 96 00 	call	0x12c	; 0x12c <_Z20setUpTimerInterruptsv>
 	
-	//Set LED on port D data direction to output
-	DDRD |= (1 << PORTD0);
- 16e:	50 9a       	sbi	0x0a, 0	; 10
-	//Declare Byte to write to shift register
-	uint8_t counter = 0;
-	uint8_t numberToPrint [2];
-	
-	//Used for blinking LED
-	uint32_t LEDTimer = timer.millis();
- 170:	81 e2       	ldi	r24, 0x21	; 33
- 172:	91 e0       	ldi	r25, 0x01	; 1
- 174:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 178:	2b 01       	movw	r4, r22
- 17a:	3c 01       	movw	r6, r24
-	uint8_t LEDValueNext = 1;
-	
-	//Used for controlling how fast shift register updates
-	uint32_t sevenSegUpdateTimer = timer.millis();
- 17c:	81 e2       	ldi	r24, 0x21	; 33
- 17e:	91 e0       	ldi	r25, 0x01	; 1
- 180:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 184:	4b 01       	movw	r8, r22
- 186:	5c 01       	movw	r10, r24
-	//Used for controlling how fast seven seg shift registers get latched
-	uint32_t sevenSegLatchTimer = timer.millis();
- 188:	81 e2       	ldi	r24, 0x21	; 33
- 18a:	91 e0       	ldi	r25, 0x01	; 1
- 18c:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 190:	6b 01       	movw	r12, r22
- 192:	7c 01       	movw	r14, r24
-	//Used for controlling when to shift bits.
-	uint8_t shiftComplete = 0;
- 194:	00 e0       	ldi	r16, 0x00	; 0
-	uint8_t counter = 0;
-	uint8_t numberToPrint [2];
-	
-	//Used for blinking LED
-	uint32_t LEDTimer = timer.millis();
-	uint8_t LEDValueNext = 1;
- 196:	21 e0       	ldi	r18, 0x01	; 1
- 198:	2b 83       	std	Y+3, r18	; 0x03
-	
-	//Set LED on port D data direction to output
-	DDRD |= (1 << PORTD0);
-	
-	//Declare Byte to write to shift register
-	uint8_t counter = 0;
- 19a:	10 e0       	ldi	r17, 0x00	; 0
-		//Reset timer.
-		LEDTimer = timer.millis();
-			if( LEDValueNext == 1 ){
-				//Set Test LED to OFF
-				PORTD |= (1 << PORTD0);
-				LEDValueNext = 0;
- 19c:	31 2c       	mov	r3, r1
-				&& (shiftComplete == false) ) { 
-					
-			//Reset timer
-			sevenSegUpdateTimer = timer.millis();
-			
-			numberToPrint[1] = (uint8_t) counter / 10; 
- 19e:	0f 2e       	mov	r0, r31
- 1a0:	fd ec       	ldi	r31, 0xCD	; 205
- 1a2:	2f 2e       	mov	r2, r31
- 1a4:	f0 2d       	mov	r31, r0
-	
-    /* Replace with your application code */
     while (1) 
     {
-		//TASK 1 - Blinky --> Toggle LED every 250ms
-		if(timer.elapsed_millis( LEDTimer ) > 2500){
- 1a6:	b3 01       	movw	r22, r6
- 1a8:	a2 01       	movw	r20, r4
- 1aa:	81 e2       	ldi	r24, 0x21	; 33
- 1ac:	91 e0       	ldi	r25, 0x01	; 1
- 1ae:	0e 94 be 02 	call	0x57c	; 0x57c <_ZN5Timer14elapsed_millisEm>
- 1b2:	65 3c       	cpi	r22, 0xC5	; 197
- 1b4:	79 40       	sbci	r23, 0x09	; 9
- 1b6:	81 05       	cpc	r24, r1
- 1b8:	91 05       	cpc	r25, r1
- 1ba:	78 f0       	brcs	.+30     	; 0x1da <main+0xa2>
-		//Reset timer.
-		LEDTimer = timer.millis();
- 1bc:	81 e2       	ldi	r24, 0x21	; 33
- 1be:	91 e0       	ldi	r25, 0x01	; 1
- 1c0:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 1c4:	2b 01       	movw	r4, r22
- 1c6:	3c 01       	movw	r6, r24
-			if( LEDValueNext == 1 ){
- 1c8:	8b 81       	ldd	r24, Y+3	; 0x03
- 1ca:	81 30       	cpi	r24, 0x01	; 1
- 1cc:	19 f4       	brne	.+6      	; 0x1d4 <main+0x9c>
-				//Set Test LED to OFF
-				PORTD |= (1 << PORTD0);
- 1ce:	58 9a       	sbi	0x0b, 0	; 11
-				LEDValueNext = 0;
- 1d0:	3b 82       	std	Y+3, r3	; 0x03
- 1d2:	03 c0       	rjmp	.+6      	; 0x1da <main+0xa2>
-			} else {
-				//Set Test LED to ON
-				PORTD &= ~(1 << PORTD0);
- 1d4:	58 98       	cbi	0x0b, 0	; 11
-				LEDValueNext = 1;
- 1d6:	91 e0       	ldi	r25, 0x01	; 1
- 1d8:	9b 83       	std	Y+3, r25	; 0x03
-			}
-		}
+		getNextTask();
+ 1fa:	0e 94 c5 02 	call	0x58a	; 0x58a <_Z11getNextTaskv>
 		
-		//TASK 2 - Load shift register with bit map of seven segment display every 10ms
-		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 5) 
- 1da:	b5 01       	movw	r22, r10
- 1dc:	a4 01       	movw	r20, r8
- 1de:	81 e2       	ldi	r24, 0x21	; 33
- 1e0:	91 e0       	ldi	r25, 0x01	; 1
- 1e2:	0e 94 be 02 	call	0x57c	; 0x57c <_ZN5Timer14elapsed_millisEm>
-				&& (shiftComplete == false) ) { 
- 1e6:	66 30       	cpi	r22, 0x06	; 6
- 1e8:	71 05       	cpc	r23, r1
- 1ea:	81 05       	cpc	r24, r1
- 1ec:	91 05       	cpc	r25, r1
- 1ee:	30 f0       	brcs	.+12     	; 0x1fc <main+0xc4>
- 1f0:	00 23       	and	r16, r16
- 1f2:	91 f0       	breq	.+36     	; 0x218 <main+0xe0>
- 1f4:	03 c0       	rjmp	.+6      	; 0x1fc <main+0xc4>
-			
-			//increment counter
-			counter++;
-						
-			if (counter >= 100 ){
-				numberToPrint[0] = 0;
- 1f6:	39 82       	std	Y+1, r3	; 0x01
-				counter = 0;
- 1f8:	10 e0       	ldi	r17, 0x00	; 0
- 1fa:	3a c0       	rjmp	.+116    	; 0x270 <main+0x138>
-			
-			shiftComplete = true;
-		}
-		
-		//TASK 3 - Latch shift register at specific rate. 100ms.
-		if ( (timer.elapsed_millis(sevenSegLatchTimer) >  1000)
- 1fc:	b7 01       	movw	r22, r14
- 1fe:	a6 01       	movw	r20, r12
- 200:	81 e2       	ldi	r24, 0x21	; 33
- 202:	91 e0       	ldi	r25, 0x01	; 1
- 204:	0e 94 be 02 	call	0x57c	; 0x57c <_ZN5Timer14elapsed_millisEm>
-				&& ( shiftComplete == true )){
- 208:	69 3e       	cpi	r22, 0xE9	; 233
- 20a:	73 40       	sbci	r23, 0x03	; 3
- 20c:	81 05       	cpc	r24, r1
- 20e:	91 05       	cpc	r25, r1
- 210:	50 f2       	brcs	.-108    	; 0x1a6 <main+0x6e>
- 212:	01 30       	cpi	r16, 0x01	; 1
- 214:	41 f6       	brne	.-112    	; 0x1a6 <main+0x6e>
- 216:	20 c0       	rjmp	.+64     	; 0x258 <main+0x120>
-		//TASK 2 - Load shift register with bit map of seven segment display every 10ms
-		if( (timer.elapsed_millis( sevenSegUpdateTimer ) > 5) 
-				&& (shiftComplete == false) ) { 
-					
-			//Reset timer
-			sevenSegUpdateTimer = timer.millis();
- 218:	81 e2       	ldi	r24, 0x21	; 33
- 21a:	91 e0       	ldi	r25, 0x01	; 1
- 21c:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 220:	4b 01       	movw	r8, r22
- 222:	5c 01       	movw	r10, r24
-			
-			numberToPrint[1] = (uint8_t) counter / 10; 
- 224:	12 9d       	mul	r17, r2
- 226:	81 2d       	mov	r24, r1
- 228:	11 24       	eor	r1, r1
- 22a:	86 95       	lsr	r24
- 22c:	86 95       	lsr	r24
- 22e:	86 95       	lsr	r24
- 230:	8a 83       	std	Y+2, r24	; 0x02
-			numberToPrint[0] = (uint8_t) counter - (10*numberToPrint[1]);
- 232:	88 0f       	add	r24, r24
- 234:	98 2f       	mov	r25, r24
- 236:	99 0f       	add	r25, r25
- 238:	99 0f       	add	r25, r25
- 23a:	89 0f       	add	r24, r25
- 23c:	91 2f       	mov	r25, r17
- 23e:	98 1b       	sub	r25, r24
- 240:	99 83       	std	Y+1, r25	; 0x01
-			
-			//Prepare shift registers to hold bit map for seven segment display
-			sevenSegmentDisplay.printNumbers_NOLATCH( numberToPrint );
- 242:	be 01       	movw	r22, r28
- 244:	6f 5f       	subi	r22, 0xFF	; 255
- 246:	7f 4f       	sbci	r23, 0xFF	; 255
- 248:	8f e0       	ldi	r24, 0x0F	; 15
- 24a:	91 e0       	ldi	r25, 0x01	; 1
- 24c:	0e 94 c2 01 	call	0x384	; 0x384 <_ZN8SevenSeg20printNumbers_NOLATCHEPh>
-			
-			//increment counter
-			counter++;
- 250:	1f 5f       	subi	r17, 0xFF	; 255
-						
-			if (counter >= 100 ){
- 252:	14 36       	cpi	r17, 0x64	; 100
- 254:	80 f6       	brcc	.-96     	; 0x1f6 <main+0xbe>
- 256:	0c c0       	rjmp	.+24     	; 0x270 <main+0x138>
-		//TASK 3 - Latch shift register at specific rate. 100ms.
-		if ( (timer.elapsed_millis(sevenSegLatchTimer) >  1000)
-				&& ( shiftComplete == true )){
-			
-			//Reset Timer
-			sevenSegLatchTimer = timer.millis();
- 258:	81 e2       	ldi	r24, 0x21	; 33
- 25a:	91 e0       	ldi	r25, 0x01	; 1
- 25c:	0e 94 d0 02 	call	0x5a0	; 0x5a0 <_ZN5Timer6millisEv>
- 260:	6b 01       	movw	r12, r22
- 262:	7c 01       	movw	r14, r24
-			
-			//Latch shift registers. Output should show on seven segment display
-			sevenSegmentDisplay.latchOutput();
- 264:	8f e0       	ldi	r24, 0x0F	; 15
- 266:	91 e0       	ldi	r25, 0x01	; 1
- 268:	0e 94 03 02 	call	0x406	; 0x406 <_ZN18ShiftRegister_SIPO11latchOutputEv>
-			
-			//Shift in new values
-			shiftComplete = false;
- 26c:	03 2d       	mov	r16, r3
- 26e:	9b cf       	rjmp	.-202    	; 0x1a6 <main+0x6e>
-			
-			shiftComplete = true;
-		}
-		
-		//TASK 3 - Latch shift register at specific rate. 100ms.
-		if ( (timer.elapsed_millis(sevenSegLatchTimer) >  1000)
- 270:	b7 01       	movw	r22, r14
- 272:	a6 01       	movw	r20, r12
- 274:	81 e2       	ldi	r24, 0x21	; 33
- 276:	91 e0       	ldi	r25, 0x01	; 1
- 278:	0e 94 be 02 	call	0x57c	; 0x57c <_ZN5Timer14elapsed_millisEm>
-				&& ( shiftComplete == true )){
- 27c:	69 3e       	cpi	r22, 0xE9	; 233
- 27e:	73 40       	sbci	r23, 0x03	; 3
- 280:	81 05       	cpc	r24, r1
- 282:	91 05       	cpc	r25, r1
- 284:	48 f7       	brcc	.-46     	; 0x258 <main+0x120>
- 286:	01 e0       	ldi	r16, 0x01	; 1
- 288:	8e cf       	rjmp	.-228    	; 0x1a6 <main+0x6e>
+		switch (taskSelection){
+ 1fe:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <taskSelection>
+ 202:	82 30       	cpi	r24, 0x02	; 2
+ 204:	71 f0       	breq	.+28     	; 0x222 <main+0x3c>
+ 206:	28 f4       	brcc	.+10     	; 0x212 <main+0x2c>
+ 208:	88 23       	and	r24, r24
+ 20a:	a1 f0       	breq	.+40     	; 0x234 <main+0x4e>
+ 20c:	81 30       	cpi	r24, 0x01	; 1
+ 20e:	31 f0       	breq	.+12     	; 0x21c <main+0x36>
+ 210:	f4 cf       	rjmp	.-24     	; 0x1fa <main+0x14>
+ 212:	83 30       	cpi	r24, 0x03	; 3
+ 214:	49 f0       	breq	.+18     	; 0x228 <main+0x42>
+ 216:	84 30       	cpi	r24, 0x04	; 4
+ 218:	51 f0       	breq	.+20     	; 0x22e <main+0x48>
+ 21a:	ef cf       	rjmp	.-34     	; 0x1fa <main+0x14>
+			case LATCH_SHIFT_REGISTERS_TASK:				
+				//Run latchShiftRegisters
+				latchShiftRegisters();
+ 21c:	0e 94 64 03 	call	0x6c8	; 0x6c8 <_Z19latchShiftRegistersv>
+				break;
+ 220:	ec cf       	rjmp	.-40     	; 0x1fa <main+0x14>
+			case LOAD_SHIFT_REGISTERS_TASK:
+				//Run LoadShiftRegisters
+				loadShiftRegisters();
+ 222:	0e 94 46 03 	call	0x68c	; 0x68c <_Z18loadShiftRegistersv>
+				break;
+ 226:	e9 cf       	rjmp	.-46     	; 0x1fa <main+0x14>
+			case INCREMENT_COUNTER_TASK:
+				//Run increment counter task
+				incrementCounter();
+ 228:	0e 94 35 03 	call	0x66a	; 0x66a <_Z16incrementCounterv>
+				break;
+ 22c:	e6 cf       	rjmp	.-52     	; 0x1fa <main+0x14>
+			case BLINKY_TASK:
+				//Run Blinky
+				blinky();
+ 22e:	0e 94 28 03 	call	0x650	; 0x650 <_Z6blinkyv>
+				break;
+ 232:	e3 cf       	rjmp	.-58     	; 0x1fa <main+0x14>
+			case DO_NOTHING:
+				doNothing();
+ 234:	0e 94 c1 02 	call	0x582	; 0x582 <_Z9doNothingv>
+				break;
+ 238:	e0 cf       	rjmp	.-64     	; 0x1fa <main+0x14>
 
-0000028a <_GLOBAL__sub_I_timer>:
- */ 
+0000023a <_Z11setupTimersv>:
+uint32_t IncrementCounterTimer;
 
-#include "global.h"
+void setupTimers( void )
+{
+	//Used for blinking LED
+	LEDTaskTimer = timer.millis();
+ 23a:	8b e2       	ldi	r24, 0x2B	; 43
+ 23c:	91 e0       	ldi	r25, 0x01	; 1
+ 23e:	0e 94 95 03 	call	0x72a	; 0x72a <_ZN5Timer6millisEv>
+ 242:	60 93 12 01 	sts	0x0112, r22	; 0x800112 <LEDTaskTimer>
+ 246:	70 93 13 01 	sts	0x0113, r23	; 0x800113 <LEDTaskTimer+0x1>
+ 24a:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <LEDTaskTimer+0x2>
+ 24e:	90 93 15 01 	sts	0x0115, r25	; 0x800115 <LEDTaskTimer+0x3>
+	
+	//Used for incrementing counter
+	IncrementCounterTimer = timer.millis();
+ 252:	8b e2       	ldi	r24, 0x2B	; 43
+ 254:	91 e0       	ldi	r25, 0x01	; 1
+ 256:	0e 94 95 03 	call	0x72a	; 0x72a <_ZN5Timer6millisEv>
+ 25a:	60 93 0e 01 	sts	0x010E, r22	; 0x80010e <IncrementCounterTimer>
+ 25e:	70 93 0f 01 	sts	0x010F, r23	; 0x80010f <IncrementCounterTimer+0x1>
+ 262:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <IncrementCounterTimer+0x2>
+ 266:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <IncrementCounterTimer+0x3>
+	
+	//Initialize the latching timers.
+	enableLatch = false;
+ 26a:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <__data_end>
+	enableShift = false;
+ 26e:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <enableShift>
+ 272:	08 95       	ret
+
+00000274 <_Z11setupBlinkyv>:
+}
+
+void setupBlinky( void )
+{
+	//Used for Task - "Blinky". Indicates next value of LED
+	LEDValueNext = 1;
+ 274:	81 e0       	ldi	r24, 0x01	; 1
+ 276:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <LEDValueNext>
+	
+	//Set LED on port D data direction to output
+	DDRD |= (1 << PORTD0);
+ 27a:	50 9a       	sbi	0x0a, 0	; 10
+	
+	//Used for the "Do Nothing LED"
+	DDRD |= (1 << PORTD1);
+ 27c:	51 9a       	sbi	0x0a, 1	; 10
+ 27e:	08 95       	ret
+
+00000280 <_Z19setupShiftRegistersv>:
+}
+
+void setupShiftRegisters( void )
+{
+	//Pins on port C for the output shift register
+	outputShiftRegister_pinout.serial = 0;
+ 280:	e6 e1       	ldi	r30, 0x16	; 22
+ 282:	f1 e0       	ldi	r31, 0x01	; 1
+ 284:	12 82       	std	Z+2, r1	; 0x02
+	outputShiftRegister_pinout.latch = 1;
+ 286:	81 e0       	ldi	r24, 0x01	; 1
+ 288:	81 83       	std	Z+1, r24	; 0x01
+	outputShiftRegister_pinout.shift = 2;
+ 28a:	82 e0       	ldi	r24, 0x02	; 2
+ 28c:	80 83       	st	Z, r24
+ 28e:	08 95       	ret
+
+00000290 <_Z17setupSevenSegmentv>:
+}
+
+void setupSevenSegment()
+{
+	//Setup SevenSegmentDisplay object
+	sevenSegmentDisplay.sevenSegInit(2, &outputShiftRegister_pinout);
+ 290:	46 e1       	ldi	r20, 0x16	; 22
+ 292:	51 e0       	ldi	r21, 0x01	; 1
+ 294:	62 e0       	ldi	r22, 0x02	; 2
+ 296:	89 e1       	ldi	r24, 0x19	; 25
+ 298:	91 e0       	ldi	r25, 0x01	; 1
+ 29a:	0e 94 96 01 	call	0x32c	; 0x32c <_ZN8SevenSeg12sevenSegInitEhP25ShiftRegister_SIPO_pinout>
+	sevenSegmentDisplay.getTimerReference(&timer);
+ 29e:	6b e2       	ldi	r22, 0x2B	; 43
+ 2a0:	71 e0       	ldi	r23, 0x01	; 1
+ 2a2:	89 e1       	ldi	r24, 0x19	; 25
+ 2a4:	91 e0       	ldi	r25, 0x01	; 1
+ 2a6:	0e 94 bc 02 	call	0x578	; 0x578 <_ZN18ShiftRegister_SIPO17getTimerReferenceEP5Timer>
+	
+	//Declare Byte to write to shift register
+	counter = 0;
+ 2aa:	10 92 37 01 	sts	0x0137, r1	; 0x800137 <counter>
+	
+	//Used for controlling when to shift bits.
+	shiftComplete = 0;
+ 2ae:	10 92 34 01 	sts	0x0134, r1	; 0x800134 <shiftComplete>
+	
+	//Used for indicating if there's more to shift
+	moreShiftWork = false;
+ 2b2:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <moreShiftWork>
+ 2b6:	08 95       	ret
+
+000002b8 <_GLOBAL__sub_I_LEDValueNext>:
+uint8_t numbersToPrint [2];
+uint8_t shiftComplete;
+uint8_t moreShiftWork;
 
 //Timer increments every 0.1ms
 Timer timer;
- 28a:	81 e2       	ldi	r24, 0x21	; 33
- 28c:	91 e0       	ldi	r25, 0x01	; 1
- 28e:	0e 94 aa 02 	call	0x554	; 0x554 <_ZN5TimerC1Ev>
+ 2b8:	8b e2       	ldi	r24, 0x2B	; 43
+ 2ba:	91 e0       	ldi	r25, 0x01	; 1
+ 2bc:	0e 94 6b 03 	call	0x6d6	; 0x6d6 <_ZN5TimerC1Ev>
 
 //Initialize seven segment display
 SevenSeg sevenSegmentDisplay;
- 292:	8f e0       	ldi	r24, 0x0F	; 15
- 294:	91 e0       	ldi	r25, 0x01	; 1
- 296:	0e 94 57 01 	call	0x2ae	; 0x2ae <_ZN8SevenSegC1Ev>
- 29a:	08 95       	ret
+ 2c0:	89 e1       	ldi	r24, 0x19	; 25
+ 2c2:	91 e0       	ldi	r25, 0x01	; 1
+ 2c4:	0e 94 6e 01 	call	0x2dc	; 0x2dc <_ZN8SevenSegC1Ev>
+ 2c8:	08 95       	ret
 
-0000029c <_GLOBAL__sub_D_timer>:
- 29c:	8f e0       	ldi	r24, 0x0F	; 15
- 29e:	91 e0       	ldi	r25, 0x01	; 1
- 2a0:	0e 94 c5 01 	call	0x38a	; 0x38a <_ZN8SevenSegD1Ev>
- */ 
-
-#include "global.h"
+000002ca <_GLOBAL__sub_D_LEDValueNext>:
+ 2ca:	89 e1       	ldi	r24, 0x19	; 25
+ 2cc:	91 e0       	ldi	r25, 0x01	; 1
+ 2ce:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <_ZN8SevenSegD1Ev>
+uint8_t numbersToPrint [2];
+uint8_t shiftComplete;
+uint8_t moreShiftWork;
 
 //Timer increments every 0.1ms
 Timer timer;
- 2a4:	81 e2       	ldi	r24, 0x21	; 33
- 2a6:	91 e0       	ldi	r25, 0x01	; 1
- 2a8:	0e 94 d6 02 	call	0x5ac	; 0x5ac <_ZN5TimerD1Ev>
- 2ac:	08 95       	ret
+ 2d2:	8b e2       	ldi	r24, 0x2B	; 43
+ 2d4:	91 e0       	ldi	r25, 0x01	; 1
+ 2d6:	0e 94 9b 03 	call	0x736	; 0x736 <_ZN5TimerD1Ev>
+ 2da:	08 95       	ret
 
-000002ae <_ZN8SevenSegC1Ev>:
+000002dc <_ZN8SevenSegC1Ev>:
 	//Shift in the Byte
 	this->shiftBits();
 	
 	//latch output
 	this->latchOutput();
 }
- 2ae:	0f 93       	push	r16
- 2b0:	1f 93       	push	r17
- 2b2:	cf 93       	push	r28
- 2b4:	df 93       	push	r29
- 2b6:	00 d0       	rcall	.+0      	; 0x2b8 <_ZN8SevenSegC1Ev+0xa>
- 2b8:	00 d0       	rcall	.+0      	; 0x2ba <_ZN8SevenSegC1Ev+0xc>
- 2ba:	00 d0       	rcall	.+0      	; 0x2bc <_ZN8SevenSegC1Ev+0xe>
- 2bc:	cd b7       	in	r28, 0x3d	; 61
- 2be:	de b7       	in	r29, 0x3e	; 62
- 2c0:	8c 01       	movw	r16, r24
- 2c2:	0e 94 c8 01 	call	0x390	; 0x390 <_ZN18ShiftRegister_SIPOC1Ev>
- 2c6:	8b e0       	ldi	r24, 0x0B	; 11
- 2c8:	e0 e0       	ldi	r30, 0x00	; 0
- 2ca:	f1 e0       	ldi	r31, 0x01	; 1
- 2cc:	d8 01       	movw	r26, r16
- 2ce:	17 96       	adiw	r26, 0x07	; 7
- 2d0:	01 90       	ld	r0, Z+
- 2d2:	0d 92       	st	X+, r0
- 2d4:	8a 95       	dec	r24
- 2d6:	e1 f7       	brne	.-8      	; 0x2d0 <_ZN8SevenSegC1Ev+0x22>
- 2d8:	ce 01       	movw	r24, r28
- 2da:	01 96       	adiw	r24, 0x01	; 1
- 2dc:	0e 94 c8 01 	call	0x390	; 0x390 <_ZN18ShiftRegister_SIPOC1Ev>
- 2e0:	ce 01       	movw	r24, r28
- 2e2:	01 96       	adiw	r24, 0x01	; 1
- 2e4:	0e 94 a9 02 	call	0x552	; 0x552 <_ZN18ShiftRegister_SIPOD1Ev>
- 2e8:	26 96       	adiw	r28, 0x06	; 6
- 2ea:	0f b6       	in	r0, 0x3f	; 63
- 2ec:	f8 94       	cli
- 2ee:	de bf       	out	0x3e, r29	; 62
- 2f0:	0f be       	out	0x3f, r0	; 63
- 2f2:	cd bf       	out	0x3d, r28	; 61
- 2f4:	df 91       	pop	r29
- 2f6:	cf 91       	pop	r28
- 2f8:	1f 91       	pop	r17
- 2fa:	0f 91       	pop	r16
- 2fc:	08 95       	ret
+ 2dc:	0f 93       	push	r16
+ 2de:	1f 93       	push	r17
+ 2e0:	cf 93       	push	r28
+ 2e2:	df 93       	push	r29
+ 2e4:	00 d0       	rcall	.+0      	; 0x2e6 <_ZN8SevenSegC1Ev+0xa>
+ 2e6:	00 d0       	rcall	.+0      	; 0x2e8 <_ZN8SevenSegC1Ev+0xc>
+ 2e8:	00 d0       	rcall	.+0      	; 0x2ea <_ZN8SevenSegC1Ev+0xe>
+ 2ea:	cd b7       	in	r28, 0x3d	; 61
+ 2ec:	de b7       	in	r29, 0x3e	; 62
+ 2ee:	8c 01       	movw	r16, r24
+ 2f0:	0e 94 df 01 	call	0x3be	; 0x3be <_ZN18ShiftRegister_SIPOC1Ev>
+ 2f4:	8b e0       	ldi	r24, 0x0B	; 11
+ 2f6:	e0 e0       	ldi	r30, 0x00	; 0
+ 2f8:	f1 e0       	ldi	r31, 0x01	; 1
+ 2fa:	d8 01       	movw	r26, r16
+ 2fc:	17 96       	adiw	r26, 0x07	; 7
+ 2fe:	01 90       	ld	r0, Z+
+ 300:	0d 92       	st	X+, r0
+ 302:	8a 95       	dec	r24
+ 304:	e1 f7       	brne	.-8      	; 0x2fe <_ZN8SevenSegC1Ev+0x22>
+ 306:	ce 01       	movw	r24, r28
+ 308:	01 96       	adiw	r24, 0x01	; 1
+ 30a:	0e 94 df 01 	call	0x3be	; 0x3be <_ZN18ShiftRegister_SIPOC1Ev>
+ 30e:	ce 01       	movw	r24, r28
+ 310:	01 96       	adiw	r24, 0x01	; 1
+ 312:	0e 94 c0 02 	call	0x580	; 0x580 <_ZN18ShiftRegister_SIPOD1Ev>
+ 316:	26 96       	adiw	r28, 0x06	; 6
+ 318:	0f b6       	in	r0, 0x3f	; 63
+ 31a:	f8 94       	cli
+ 31c:	de bf       	out	0x3e, r29	; 62
+ 31e:	0f be       	out	0x3f, r0	; 63
+ 320:	cd bf       	out	0x3d, r28	; 61
+ 322:	df 91       	pop	r29
+ 324:	cf 91       	pop	r28
+ 326:	1f 91       	pop	r17
+ 328:	0f 91       	pop	r16
+ 32a:	08 95       	ret
 
-000002fe <_ZN8SevenSeg12sevenSegInitEhP25ShiftRegister_SIPO_pinout>:
- 2fe:	1f 93       	push	r17
- 300:	cf 93       	push	r28
- 302:	df 93       	push	r29
- 304:	ec 01       	movw	r28, r24
- 306:	16 2f       	mov	r17, r22
- 308:	ba 01       	movw	r22, r20
- 30a:	0e 94 f0 01 	call	0x3e0	; 0x3e0 <_ZN18ShiftRegister_SIPO17ShiftRegisterInitEP25ShiftRegister_SIPO_pinout>
- 30e:	1e 83       	std	Y+6, r17	; 0x06
- 310:	df 91       	pop	r29
- 312:	cf 91       	pop	r28
- 314:	1f 91       	pop	r17
- 316:	08 95       	ret
+0000032c <_ZN8SevenSeg12sevenSegInitEhP25ShiftRegister_SIPO_pinout>:
+ 32c:	1f 93       	push	r17
+ 32e:	cf 93       	push	r28
+ 330:	df 93       	push	r29
+ 332:	ec 01       	movw	r28, r24
+ 334:	16 2f       	mov	r17, r22
+ 336:	ba 01       	movw	r22, r20
+ 338:	0e 94 07 02 	call	0x40e	; 0x40e <_ZN18ShiftRegister_SIPO17ShiftRegisterInitEP25ShiftRegister_SIPO_pinout>
+ 33c:	1e 83       	std	Y+6, r17	; 0x06
+ 33e:	df 91       	pop	r29
+ 340:	cf 91       	pop	r28
+ 342:	1f 91       	pop	r17
+ 344:	08 95       	ret
 
-00000318 <_ZN8SevenSeg12shiftInBytesEPh>:
- 318:	df 92       	push	r13
- 31a:	ef 92       	push	r14
- 31c:	ff 92       	push	r15
- 31e:	0f 93       	push	r16
- 320:	1f 93       	push	r17
- 322:	cf 93       	push	r28
- 324:	df 93       	push	r29
- 326:	fc 01       	movw	r30, r24
- 328:	26 81       	ldd	r18, Z+6	; 0x06
- 32a:	22 23       	and	r18, r18
- 32c:	19 f1       	breq	.+70     	; 0x374 <_ZN8SevenSeg12shiftInBytesEPh+0x5c>
- 32e:	8c 01       	movw	r16, r24
- 330:	c6 2f       	mov	r28, r22
- 332:	d7 2f       	mov	r29, r23
- 334:	e1 2c       	mov	r14, r1
- 336:	f1 2c       	mov	r15, r1
- 338:	0f 2e       	mov	r0, r31
- 33a:	fa e0       	ldi	r31, 0x0A	; 10
- 33c:	df 2e       	mov	r13, r31
- 33e:	f0 2d       	mov	r31, r0
- 340:	fe 01       	movw	r30, r28
- 342:	88 81       	ld	r24, Y
- 344:	8a 30       	cpi	r24, 0x0A	; 10
- 346:	08 f0       	brcs	.+2      	; 0x34a <_ZN8SevenSeg12shiftInBytesEPh+0x32>
- 348:	d8 82       	st	Y, r13
- 34a:	21 96       	adiw	r28, 0x01	; 1
- 34c:	80 81       	ld	r24, Z
- 34e:	f8 01       	movw	r30, r16
- 350:	e8 0f       	add	r30, r24
- 352:	f1 1d       	adc	r31, r1
- 354:	67 81       	ldd	r22, Z+7	; 0x07
- 356:	c8 01       	movw	r24, r16
- 358:	0e 94 f7 01 	call	0x3ee	; 0x3ee <_ZN18ShiftRegister_SIPO8loadByteEh>
- 35c:	c8 01       	movw	r24, r16
- 35e:	0e 94 5a 02 	call	0x4b4	; 0x4b4 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
- 362:	ff ef       	ldi	r31, 0xFF	; 255
- 364:	ef 1a       	sub	r14, r31
- 366:	ff 0a       	sbc	r15, r31
- 368:	f8 01       	movw	r30, r16
- 36a:	86 81       	ldd	r24, Z+6	; 0x06
- 36c:	90 e0       	ldi	r25, 0x00	; 0
- 36e:	e8 16       	cp	r14, r24
- 370:	f9 06       	cpc	r15, r25
- 372:	34 f3       	brlt	.-52     	; 0x340 <_ZN8SevenSeg12shiftInBytesEPh+0x28>
- 374:	df 91       	pop	r29
- 376:	cf 91       	pop	r28
- 378:	1f 91       	pop	r17
- 37a:	0f 91       	pop	r16
- 37c:	ff 90       	pop	r15
- 37e:	ef 90       	pop	r14
- 380:	df 90       	pop	r13
- 382:	08 95       	ret
+00000346 <_ZN8SevenSeg12shiftInBytesEPh>:
+ 346:	df 92       	push	r13
+ 348:	ef 92       	push	r14
+ 34a:	ff 92       	push	r15
+ 34c:	0f 93       	push	r16
+ 34e:	1f 93       	push	r17
+ 350:	cf 93       	push	r28
+ 352:	df 93       	push	r29
+ 354:	fc 01       	movw	r30, r24
+ 356:	26 81       	ldd	r18, Z+6	; 0x06
+ 358:	22 23       	and	r18, r18
+ 35a:	19 f1       	breq	.+70     	; 0x3a2 <_ZN8SevenSeg12shiftInBytesEPh+0x5c>
+ 35c:	8c 01       	movw	r16, r24
+ 35e:	c6 2f       	mov	r28, r22
+ 360:	d7 2f       	mov	r29, r23
+ 362:	e1 2c       	mov	r14, r1
+ 364:	f1 2c       	mov	r15, r1
+ 366:	0f 2e       	mov	r0, r31
+ 368:	fa e0       	ldi	r31, 0x0A	; 10
+ 36a:	df 2e       	mov	r13, r31
+ 36c:	f0 2d       	mov	r31, r0
+ 36e:	fe 01       	movw	r30, r28
+ 370:	88 81       	ld	r24, Y
+ 372:	8a 30       	cpi	r24, 0x0A	; 10
+ 374:	08 f0       	brcs	.+2      	; 0x378 <_ZN8SevenSeg12shiftInBytesEPh+0x32>
+ 376:	d8 82       	st	Y, r13
+ 378:	21 96       	adiw	r28, 0x01	; 1
+ 37a:	80 81       	ld	r24, Z
+ 37c:	f8 01       	movw	r30, r16
+ 37e:	e8 0f       	add	r30, r24
+ 380:	f1 1d       	adc	r31, r1
+ 382:	67 81       	ldd	r22, Z+7	; 0x07
+ 384:	c8 01       	movw	r24, r16
+ 386:	0e 94 0e 02 	call	0x41c	; 0x41c <_ZN18ShiftRegister_SIPO8loadByteEh>
+ 38a:	c8 01       	movw	r24, r16
+ 38c:	0e 94 71 02 	call	0x4e2	; 0x4e2 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
+ 390:	ff ef       	ldi	r31, 0xFF	; 255
+ 392:	ef 1a       	sub	r14, r31
+ 394:	ff 0a       	sbc	r15, r31
+ 396:	f8 01       	movw	r30, r16
+ 398:	86 81       	ldd	r24, Z+6	; 0x06
+ 39a:	90 e0       	ldi	r25, 0x00	; 0
+ 39c:	e8 16       	cp	r14, r24
+ 39e:	f9 06       	cpc	r15, r25
+ 3a0:	34 f3       	brlt	.-52     	; 0x36e <_ZN8SevenSeg12shiftInBytesEPh+0x28>
+ 3a2:	df 91       	pop	r29
+ 3a4:	cf 91       	pop	r28
+ 3a6:	1f 91       	pop	r17
+ 3a8:	0f 91       	pop	r16
+ 3aa:	ff 90       	pop	r15
+ 3ac:	ef 90       	pop	r14
+ 3ae:	df 90       	pop	r13
+ 3b0:	08 95       	ret
 
-00000384 <_ZN8SevenSeg20printNumbers_NOLATCHEPh>:
- 384:	0e 94 8c 01 	call	0x318	; 0x318 <_ZN8SevenSeg12shiftInBytesEPh>
- 388:	08 95       	ret
+000003b2 <_ZN8SevenSeg20printNumbers_NOLATCHEPh>:
+ 3b2:	0e 94 a3 01 	call	0x346	; 0x346 <_ZN8SevenSeg12shiftInBytesEPh>
+ 3b6:	08 95       	ret
 
-0000038a <_ZN8SevenSegD1Ev>:
+000003b8 <_ZN8SevenSegD1Ev>:
 
 // default destructor
 SevenSeg::~SevenSeg()
- 38a:	0e 94 a9 02 	call	0x552	; 0x552 <_ZN18ShiftRegister_SIPOD1Ev>
- 38e:	08 95       	ret
+ 3b8:	0e 94 c0 02 	call	0x580	; 0x580 <_ZN18ShiftRegister_SIPOD1Ev>
+ 3bc:	08 95       	ret
 
-00000390 <_ZN18ShiftRegister_SIPOC1Ev>:
+000003be <_ZN18ShiftRegister_SIPOC1Ev>:
 */
 
 #include "ShiftRegister_SIPO.h"
 
 // default constructor
 ShiftRegister_SIPO::ShiftRegister_SIPO()
- 390:	08 95       	ret
+ 3be:	08 95       	ret
 
-00000392 <_ZN18ShiftRegister_SIPO9setupPinsEv>:
+000003c0 <_ZN18ShiftRegister_SIPO9setupPinsEv>:
 	}
 	
 } //ShiftBits
 
 void ShiftRegister_SIPO::setupPins( void ) 
 {
- 392:	fc 01       	movw	r30, r24
+ 3c0:	fc 01       	movw	r30, r24
 	//setup the pinout byte
 	pinout_byte = (1 << pinout->shift) | (1 << pinout->latch) | (1 << pinout->serial);	
- 394:	a0 81       	ld	r26, Z
- 396:	b1 81       	ldd	r27, Z+1	; 0x01
- 398:	21 e0       	ldi	r18, 0x01	; 1
- 39a:	30 e0       	ldi	r19, 0x00	; 0
- 39c:	a9 01       	movw	r20, r18
- 39e:	0c 90       	ld	r0, X
- 3a0:	02 c0       	rjmp	.+4      	; 0x3a6 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x14>
- 3a2:	44 0f       	add	r20, r20
- 3a4:	55 1f       	adc	r21, r21
- 3a6:	0a 94       	dec	r0
- 3a8:	e2 f7       	brpl	.-8      	; 0x3a2 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x10>
- 3aa:	c9 01       	movw	r24, r18
- 3ac:	11 96       	adiw	r26, 0x01	; 1
- 3ae:	0c 90       	ld	r0, X
- 3b0:	11 97       	sbiw	r26, 0x01	; 1
- 3b2:	02 c0       	rjmp	.+4      	; 0x3b8 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x26>
- 3b4:	88 0f       	add	r24, r24
- 3b6:	99 1f       	adc	r25, r25
- 3b8:	0a 94       	dec	r0
- 3ba:	e2 f7       	brpl	.-8      	; 0x3b4 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x22>
- 3bc:	84 2b       	or	r24, r20
- 3be:	12 96       	adiw	r26, 0x02	; 2
- 3c0:	0c 90       	ld	r0, X
- 3c2:	02 c0       	rjmp	.+4      	; 0x3c8 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x36>
- 3c4:	22 0f       	add	r18, r18
- 3c6:	33 1f       	adc	r19, r19
- 3c8:	0a 94       	dec	r0
- 3ca:	e2 f7       	brpl	.-8      	; 0x3c4 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x32>
- 3cc:	28 2b       	or	r18, r24
- 3ce:	22 83       	std	Z+2, r18	; 0x02
+ 3c2:	a0 81       	ld	r26, Z
+ 3c4:	b1 81       	ldd	r27, Z+1	; 0x01
+ 3c6:	21 e0       	ldi	r18, 0x01	; 1
+ 3c8:	30 e0       	ldi	r19, 0x00	; 0
+ 3ca:	a9 01       	movw	r20, r18
+ 3cc:	0c 90       	ld	r0, X
+ 3ce:	02 c0       	rjmp	.+4      	; 0x3d4 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x14>
+ 3d0:	44 0f       	add	r20, r20
+ 3d2:	55 1f       	adc	r21, r21
+ 3d4:	0a 94       	dec	r0
+ 3d6:	e2 f7       	brpl	.-8      	; 0x3d0 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x10>
+ 3d8:	c9 01       	movw	r24, r18
+ 3da:	11 96       	adiw	r26, 0x01	; 1
+ 3dc:	0c 90       	ld	r0, X
+ 3de:	11 97       	sbiw	r26, 0x01	; 1
+ 3e0:	02 c0       	rjmp	.+4      	; 0x3e6 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x26>
+ 3e2:	88 0f       	add	r24, r24
+ 3e4:	99 1f       	adc	r25, r25
+ 3e6:	0a 94       	dec	r0
+ 3e8:	e2 f7       	brpl	.-8      	; 0x3e2 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x22>
+ 3ea:	84 2b       	or	r24, r20
+ 3ec:	12 96       	adiw	r26, 0x02	; 2
+ 3ee:	0c 90       	ld	r0, X
+ 3f0:	02 c0       	rjmp	.+4      	; 0x3f6 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x36>
+ 3f2:	22 0f       	add	r18, r18
+ 3f4:	33 1f       	adc	r19, r19
+ 3f6:	0a 94       	dec	r0
+ 3f8:	e2 f7       	brpl	.-8      	; 0x3f2 <_ZN18ShiftRegister_SIPO9setupPinsEv+0x32>
+ 3fa:	28 2b       	or	r18, r24
+ 3fc:	22 83       	std	Z+2, r18	; 0x02
 
 	// Initialize these pins to be 1.
 	SIPO_PORT |= ( pinout_byte );
- 3d0:	88 b1       	in	r24, 0x08	; 8
- 3d2:	28 2b       	or	r18, r24
- 3d4:	28 b9       	out	0x08, r18	; 8
+ 3fe:	88 b1       	in	r24, 0x08	; 8
+ 400:	28 2b       	or	r18, r24
+ 402:	28 b9       	out	0x08, r18	; 8
 
 	// Set pins to be output.
 	SIPO_DDR |= pinout_byte;
- 3d6:	97 b1       	in	r25, 0x07	; 7
- 3d8:	82 81       	ldd	r24, Z+2	; 0x02
- 3da:	89 2b       	or	r24, r25
- 3dc:	87 b9       	out	0x07, r24	; 7
- 3de:	08 95       	ret
+ 404:	97 b1       	in	r25, 0x07	; 7
+ 406:	82 81       	ldd	r24, Z+2	; 0x02
+ 408:	89 2b       	or	r24, r25
+ 40a:	87 b9       	out	0x07, r24	; 7
+ 40c:	08 95       	ret
 
-000003e0 <_ZN18ShiftRegister_SIPO17ShiftRegisterInitEP25ShiftRegister_SIPO_pinout>:
+0000040e <_ZN18ShiftRegister_SIPO17ShiftRegisterInitEP25ShiftRegister_SIPO_pinout>:
 
 void ShiftRegister_SIPO::ShiftRegisterInit( ShiftRegister_SIPO_pinout * pins )
 {
 
 	//Store shift register pinout for later use
 	pinout = pins;
- 3e0:	fc 01       	movw	r30, r24
- 3e2:	71 83       	std	Z+1, r23	; 0x01
- 3e4:	60 83       	st	Z, r22
+ 40e:	fc 01       	movw	r30, r24
+ 410:	71 83       	std	Z+1, r23	; 0x01
+ 412:	60 83       	st	Z, r22
 	
 	//start off with output byte 0
 	output_byte = 0;
- 3e6:	15 82       	std	Z+5, r1	; 0x05
+ 414:	15 82       	std	Z+5, r1	; 0x05
 	
 	//Setup pins on the 328p to utilize the shift register.
 	this->setupPins();
- 3e8:	0e 94 c9 01 	call	0x392	; 0x392 <_ZN18ShiftRegister_SIPO9setupPinsEv>
- 3ec:	08 95       	ret
+ 416:	0e 94 e0 01 	call	0x3c0	; 0x3c0 <_ZN18ShiftRegister_SIPO9setupPinsEv>
+ 41a:	08 95       	ret
 
-000003ee <_ZN18ShiftRegister_SIPO8loadByteEh>:
+0000041c <_ZN18ShiftRegister_SIPO8loadByteEh>:
 	this->wait_1us();
 }
 
 void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
 {
 	output_byte = byteToLoad;
- 3ee:	fc 01       	movw	r30, r24
- 3f0:	65 83       	std	Z+5, r22	; 0x05
- 3f2:	08 95       	ret
+ 41c:	fc 01       	movw	r30, r24
+ 41e:	65 83       	std	Z+5, r22	; 0x05
+ 420:	08 95       	ret
 
-000003f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>:
+00000422 <_ZN18ShiftRegister_SIPO8wait_1usEv>:
 	//Variable to find the difference between a current value
 	//of a timer and a previous value
 	uint8_t difference = 0;
 	
 	//Read the value of the TCNT0 timer0 
 	uint8_t timerValue = TCNT2;
- 3f4:	90 91 b2 00 	lds	r25, 0x00B2	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7e00b2>
+ 422:	90 91 b2 00 	lds	r25, 0x00B2	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7e00b2>
 	
 	//Wait until difference is 16 == 1us
 	while( difference < 16 ){
 		difference = TCNT2 - timerValue;
- 3f8:	e2 eb       	ldi	r30, 0xB2	; 178
- 3fa:	f0 e0       	ldi	r31, 0x00	; 0
- 3fc:	80 81       	ld	r24, Z
+ 426:	e2 eb       	ldi	r30, 0xB2	; 178
+ 428:	f0 e0       	ldi	r31, 0x00	; 0
+ 42a:	80 81       	ld	r24, Z
 	
 	//Read the value of the TCNT0 timer0 
 	uint8_t timerValue = TCNT2;
 	
 	//Wait until difference is 16 == 1us
 	while( difference < 16 ){
- 3fe:	89 1b       	sub	r24, r25
- 400:	80 31       	cpi	r24, 0x10	; 16
- 402:	e0 f3       	brcs	.-8      	; 0x3fc <_ZN18ShiftRegister_SIPO8wait_1usEv+0x8>
+ 42c:	89 1b       	sub	r24, r25
+ 42e:	80 31       	cpi	r24, 0x10	; 16
+ 430:	e0 f3       	brcs	.-8      	; 0x42a <_ZN18ShiftRegister_SIPO8wait_1usEv+0x8>
 		difference = TCNT2 - timerValue;
 	}
 }
- 404:	08 95       	ret
+ 432:	08 95       	ret
 
-00000406 <_ZN18ShiftRegister_SIPO11latchOutputEv>:
+00000434 <_ZN18ShiftRegister_SIPO11latchOutputEv>:
 	SIPO_DDR |= pinout_byte;
 
 } //SetupPins
 
 void ShiftRegister_SIPO::latchOutput( void )
 {
- 406:	0f 93       	push	r16
- 408:	1f 93       	push	r17
- 40a:	cf 93       	push	r28
- 40c:	df 93       	push	r29
- 40e:	8c 01       	movw	r16, r24
+ 434:	0f 93       	push	r16
+ 436:	1f 93       	push	r17
+ 438:	cf 93       	push	r28
+ 43a:	df 93       	push	r29
+ 43c:	8c 01       	movw	r16, r24
 	//Latch output
 	SIPO_PORT &= ~(1 << pinout->latch);
- 410:	98 b1       	in	r25, 0x08	; 8
- 412:	d8 01       	movw	r26, r16
- 414:	ed 91       	ld	r30, X+
- 416:	fc 91       	ld	r31, X
- 418:	c1 e0       	ldi	r28, 0x01	; 1
- 41a:	d0 e0       	ldi	r29, 0x00	; 0
- 41c:	9e 01       	movw	r18, r28
- 41e:	01 80       	ldd	r0, Z+1	; 0x01
- 420:	02 c0       	rjmp	.+4      	; 0x426 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x20>
- 422:	22 0f       	add	r18, r18
- 424:	33 1f       	adc	r19, r19
- 426:	0a 94       	dec	r0
- 428:	e2 f7       	brpl	.-8      	; 0x422 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x1c>
- 42a:	82 2f       	mov	r24, r18
- 42c:	80 95       	com	r24
- 42e:	89 23       	and	r24, r25
- 430:	88 b9       	out	0x08, r24	; 8
+ 43e:	98 b1       	in	r25, 0x08	; 8
+ 440:	d8 01       	movw	r26, r16
+ 442:	ed 91       	ld	r30, X+
+ 444:	fc 91       	ld	r31, X
+ 446:	c1 e0       	ldi	r28, 0x01	; 1
+ 448:	d0 e0       	ldi	r29, 0x00	; 0
+ 44a:	9e 01       	movw	r18, r28
+ 44c:	01 80       	ldd	r0, Z+1	; 0x01
+ 44e:	02 c0       	rjmp	.+4      	; 0x454 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x20>
+ 450:	22 0f       	add	r18, r18
+ 452:	33 1f       	adc	r19, r19
+ 454:	0a 94       	dec	r0
+ 456:	e2 f7       	brpl	.-8      	; 0x450 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x1c>
+ 458:	82 2f       	mov	r24, r18
+ 45a:	80 95       	com	r24
+ 45c:	89 23       	and	r24, r25
+ 45e:	88 b9       	out	0x08, r24	; 8
 	this->wait_1us();
- 432:	c8 01       	movw	r24, r16
- 434:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>
+ 460:	c8 01       	movw	r24, r16
+ 462:	0e 94 11 02 	call	0x422	; 0x422 <_ZN18ShiftRegister_SIPO8wait_1usEv>
 	SIPO_PORT |= (1 << pinout->latch);
- 438:	88 b1       	in	r24, 0x08	; 8
- 43a:	d8 01       	movw	r26, r16
- 43c:	ed 91       	ld	r30, X+
- 43e:	fc 91       	ld	r31, X
- 440:	01 80       	ldd	r0, Z+1	; 0x01
- 442:	02 c0       	rjmp	.+4      	; 0x448 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x42>
- 444:	cc 0f       	add	r28, r28
- 446:	dd 1f       	adc	r29, r29
- 448:	0a 94       	dec	r0
- 44a:	e2 f7       	brpl	.-8      	; 0x444 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x3e>
- 44c:	c8 2b       	or	r28, r24
- 44e:	c8 b9       	out	0x08, r28	; 8
+ 466:	88 b1       	in	r24, 0x08	; 8
+ 468:	d8 01       	movw	r26, r16
+ 46a:	ed 91       	ld	r30, X+
+ 46c:	fc 91       	ld	r31, X
+ 46e:	01 80       	ldd	r0, Z+1	; 0x01
+ 470:	02 c0       	rjmp	.+4      	; 0x476 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x42>
+ 472:	cc 0f       	add	r28, r28
+ 474:	dd 1f       	adc	r29, r29
+ 476:	0a 94       	dec	r0
+ 478:	e2 f7       	brpl	.-8      	; 0x472 <_ZN18ShiftRegister_SIPO11latchOutputEv+0x3e>
+ 47a:	c8 2b       	or	r28, r24
+ 47c:	c8 b9       	out	0x08, r28	; 8
 }
- 450:	df 91       	pop	r29
- 452:	cf 91       	pop	r28
- 454:	1f 91       	pop	r17
- 456:	0f 91       	pop	r16
- 458:	08 95       	ret
+ 47e:	df 91       	pop	r29
+ 480:	cf 91       	pop	r28
+ 482:	1f 91       	pop	r17
+ 484:	0f 91       	pop	r16
+ 486:	08 95       	ret
 
-0000045a <_ZN18ShiftRegister_SIPO11singleShiftEv>:
+00000488 <_ZN18ShiftRegister_SIPO11singleShiftEv>:
 
 void ShiftRegister_SIPO::singleShift( void )
 {
- 45a:	0f 93       	push	r16
- 45c:	1f 93       	push	r17
- 45e:	cf 93       	push	r28
- 460:	df 93       	push	r29
- 462:	8c 01       	movw	r16, r24
+ 488:	0f 93       	push	r16
+ 48a:	1f 93       	push	r17
+ 48c:	cf 93       	push	r28
+ 48e:	df 93       	push	r29
+ 490:	8c 01       	movw	r16, r24
 	//Shift single bit in.
 	SIPO_PORT &= ~(1 << pinout->shift);
- 464:	98 b1       	in	r25, 0x08	; 8
- 466:	d8 01       	movw	r26, r16
- 468:	ed 91       	ld	r30, X+
- 46a:	fc 91       	ld	r31, X
- 46c:	c1 e0       	ldi	r28, 0x01	; 1
- 46e:	d0 e0       	ldi	r29, 0x00	; 0
- 470:	9e 01       	movw	r18, r28
- 472:	00 80       	ld	r0, Z
- 474:	02 c0       	rjmp	.+4      	; 0x47a <_ZN18ShiftRegister_SIPO11singleShiftEv+0x20>
- 476:	22 0f       	add	r18, r18
- 478:	33 1f       	adc	r19, r19
- 47a:	0a 94       	dec	r0
- 47c:	e2 f7       	brpl	.-8      	; 0x476 <_ZN18ShiftRegister_SIPO11singleShiftEv+0x1c>
- 47e:	82 2f       	mov	r24, r18
- 480:	80 95       	com	r24
- 482:	89 23       	and	r24, r25
- 484:	88 b9       	out	0x08, r24	; 8
+ 492:	98 b1       	in	r25, 0x08	; 8
+ 494:	d8 01       	movw	r26, r16
+ 496:	ed 91       	ld	r30, X+
+ 498:	fc 91       	ld	r31, X
+ 49a:	c1 e0       	ldi	r28, 0x01	; 1
+ 49c:	d0 e0       	ldi	r29, 0x00	; 0
+ 49e:	9e 01       	movw	r18, r28
+ 4a0:	00 80       	ld	r0, Z
+ 4a2:	02 c0       	rjmp	.+4      	; 0x4a8 <_ZN18ShiftRegister_SIPO11singleShiftEv+0x20>
+ 4a4:	22 0f       	add	r18, r18
+ 4a6:	33 1f       	adc	r19, r19
+ 4a8:	0a 94       	dec	r0
+ 4aa:	e2 f7       	brpl	.-8      	; 0x4a4 <_ZN18ShiftRegister_SIPO11singleShiftEv+0x1c>
+ 4ac:	82 2f       	mov	r24, r18
+ 4ae:	80 95       	com	r24
+ 4b0:	89 23       	and	r24, r25
+ 4b2:	88 b9       	out	0x08, r24	; 8
 	this->wait_1us();
- 486:	c8 01       	movw	r24, r16
- 488:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>
+ 4b4:	c8 01       	movw	r24, r16
+ 4b6:	0e 94 11 02 	call	0x422	; 0x422 <_ZN18ShiftRegister_SIPO8wait_1usEv>
 	SIPO_PORT |= (1 << pinout->shift);
- 48c:	88 b1       	in	r24, 0x08	; 8
- 48e:	d8 01       	movw	r26, r16
- 490:	ed 91       	ld	r30, X+
- 492:	fc 91       	ld	r31, X
- 494:	00 80       	ld	r0, Z
- 496:	02 c0       	rjmp	.+4      	; 0x49c <_ZN18ShiftRegister_SIPO11singleShiftEv+0x42>
- 498:	cc 0f       	add	r28, r28
- 49a:	dd 1f       	adc	r29, r29
- 49c:	0a 94       	dec	r0
- 49e:	e2 f7       	brpl	.-8      	; 0x498 <_ZN18ShiftRegister_SIPO11singleShiftEv+0x3e>
- 4a0:	c8 2b       	or	r28, r24
- 4a2:	c8 b9       	out	0x08, r28	; 8
+ 4ba:	88 b1       	in	r24, 0x08	; 8
+ 4bc:	d8 01       	movw	r26, r16
+ 4be:	ed 91       	ld	r30, X+
+ 4c0:	fc 91       	ld	r31, X
+ 4c2:	00 80       	ld	r0, Z
+ 4c4:	02 c0       	rjmp	.+4      	; 0x4ca <_ZN18ShiftRegister_SIPO11singleShiftEv+0x42>
+ 4c6:	cc 0f       	add	r28, r28
+ 4c8:	dd 1f       	adc	r29, r29
+ 4ca:	0a 94       	dec	r0
+ 4cc:	e2 f7       	brpl	.-8      	; 0x4c6 <_ZN18ShiftRegister_SIPO11singleShiftEv+0x3e>
+ 4ce:	c8 2b       	or	r28, r24
+ 4d0:	c8 b9       	out	0x08, r28	; 8
 	this->wait_1us();
- 4a4:	c8 01       	movw	r24, r16
- 4a6:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>
+ 4d2:	c8 01       	movw	r24, r16
+ 4d4:	0e 94 11 02 	call	0x422	; 0x422 <_ZN18ShiftRegister_SIPO8wait_1usEv>
 }
- 4aa:	df 91       	pop	r29
- 4ac:	cf 91       	pop	r28
- 4ae:	1f 91       	pop	r17
- 4b0:	0f 91       	pop	r16
- 4b2:	08 95       	ret
+ 4d8:	df 91       	pop	r29
+ 4da:	cf 91       	pop	r28
+ 4dc:	1f 91       	pop	r17
+ 4de:	0f 91       	pop	r16
+ 4e0:	08 95       	ret
 
-000004b4 <_ZN18ShiftRegister_SIPO9shiftBitsEv>:
+000004e2 <_ZN18ShiftRegister_SIPO9shiftBitsEv>:
 
 //Shifts in a bit into the shift register.
 //This will be called in a timer based interrupt so it would need to be locked
 //to prevent recursion.
 void ShiftRegister_SIPO::shiftBits( void )
 {		
- 4b4:	ef 92       	push	r14
- 4b6:	ff 92       	push	r15
- 4b8:	0f 93       	push	r16
- 4ba:	1f 93       	push	r17
- 4bc:	cf 93       	push	r28
- 4be:	df 93       	push	r29
- 4c0:	ec 01       	movw	r28, r24
+ 4e2:	ef 92       	push	r14
+ 4e4:	ff 92       	push	r15
+ 4e6:	0f 93       	push	r16
+ 4e8:	1f 93       	push	r17
+ 4ea:	cf 93       	push	r28
+ 4ec:	df 93       	push	r29
+ 4ee:	ec 01       	movw	r28, r24
 	//Starting shifting with shift/serial/latch at 0
 	SIPO_PORT &= ~( pinout_byte );	
- 4c2:	98 b1       	in	r25, 0x08	; 8
- 4c4:	8a 81       	ldd	r24, Y+2	; 0x02
- 4c6:	80 95       	com	r24
- 4c8:	89 23       	and	r24, r25
- 4ca:	88 b9       	out	0x08, r24	; 8
+ 4f0:	98 b1       	in	r25, 0x08	; 8
+ 4f2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4f4:	80 95       	com	r24
+ 4f6:	89 23       	and	r24, r25
+ 4f8:	88 b9       	out	0x08, r24	; 8
 	//Wait 1us
 	this->wait_1us();
- 4cc:	ce 01       	movw	r24, r28
- 4ce:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>
+ 4fa:	ce 01       	movw	r24, r28
+ 4fc:	0e 94 11 02 	call	0x422	; 0x422 <_ZN18ShiftRegister_SIPO8wait_1usEv>
 		
 	for ( int i=0; i < 8; i++){
- 4d2:	00 e0       	ldi	r16, 0x00	; 0
- 4d4:	10 e0       	ldi	r17, 0x00	; 0
+ 500:	00 e0       	ldi	r16, 0x00	; 0
+ 502:	10 e0       	ldi	r17, 0x00	; 0
 		if( output_byte & (1 << i) ){
 			SIPO_PORT |= (1 << pinout->serial);
 				
 		//Else set to 0
 		} else {
 			SIPO_PORT &= ~(1 << pinout->serial);
- 4d6:	ee 24       	eor	r14, r14
- 4d8:	e3 94       	inc	r14
- 4da:	f1 2c       	mov	r15, r1
+ 504:	ee 24       	eor	r14, r14
+ 506:	e3 94       	inc	r14
+ 508:	f1 2c       	mov	r15, r1
 	for ( int i=0; i < 8; i++){
 			
 		//Load serial pin with bit
 			
 		//If the bit needs to be set to 1...
 		if( output_byte & (1 << i) ){
- 4dc:	8d 81       	ldd	r24, Y+5	; 0x05
- 4de:	90 e0       	ldi	r25, 0x00	; 0
- 4e0:	00 2e       	mov	r0, r16
- 4e2:	02 c0       	rjmp	.+4      	; 0x4e8 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x34>
- 4e4:	95 95       	asr	r25
- 4e6:	87 95       	ror	r24
- 4e8:	0a 94       	dec	r0
- 4ea:	e2 f7       	brpl	.-8      	; 0x4e4 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x30>
- 4ec:	80 ff       	sbrs	r24, 0
- 4ee:	0d c0       	rjmp	.+26     	; 0x50a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x56>
+ 50a:	8d 81       	ldd	r24, Y+5	; 0x05
+ 50c:	90 e0       	ldi	r25, 0x00	; 0
+ 50e:	00 2e       	mov	r0, r16
+ 510:	02 c0       	rjmp	.+4      	; 0x516 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x34>
+ 512:	95 95       	asr	r25
+ 514:	87 95       	ror	r24
+ 516:	0a 94       	dec	r0
+ 518:	e2 f7       	brpl	.-8      	; 0x512 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x30>
+ 51a:	80 ff       	sbrs	r24, 0
+ 51c:	0d c0       	rjmp	.+26     	; 0x538 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x56>
 			SIPO_PORT |= (1 << pinout->serial);
- 4f0:	28 b1       	in	r18, 0x08	; 8
- 4f2:	e8 81       	ld	r30, Y
- 4f4:	f9 81       	ldd	r31, Y+1	; 0x01
- 4f6:	c7 01       	movw	r24, r14
- 4f8:	02 80       	ldd	r0, Z+2	; 0x02
- 4fa:	02 c0       	rjmp	.+4      	; 0x500 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x4c>
- 4fc:	88 0f       	add	r24, r24
- 4fe:	99 1f       	adc	r25, r25
- 500:	0a 94       	dec	r0
- 502:	e2 f7       	brpl	.-8      	; 0x4fc <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x48>
- 504:	82 2b       	or	r24, r18
- 506:	88 b9       	out	0x08, r24	; 8
- 508:	0e c0       	rjmp	.+28     	; 0x526 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x72>
+ 51e:	28 b1       	in	r18, 0x08	; 8
+ 520:	e8 81       	ld	r30, Y
+ 522:	f9 81       	ldd	r31, Y+1	; 0x01
+ 524:	c7 01       	movw	r24, r14
+ 526:	02 80       	ldd	r0, Z+2	; 0x02
+ 528:	02 c0       	rjmp	.+4      	; 0x52e <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x4c>
+ 52a:	88 0f       	add	r24, r24
+ 52c:	99 1f       	adc	r25, r25
+ 52e:	0a 94       	dec	r0
+ 530:	e2 f7       	brpl	.-8      	; 0x52a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x48>
+ 532:	82 2b       	or	r24, r18
+ 534:	88 b9       	out	0x08, r24	; 8
+ 536:	0e c0       	rjmp	.+28     	; 0x554 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x72>
 				
 		//Else set to 0
 		} else {
 			SIPO_PORT &= ~(1 << pinout->serial);
- 50a:	98 b1       	in	r25, 0x08	; 8
- 50c:	e8 81       	ld	r30, Y
- 50e:	f9 81       	ldd	r31, Y+1	; 0x01
- 510:	97 01       	movw	r18, r14
- 512:	02 80       	ldd	r0, Z+2	; 0x02
- 514:	02 c0       	rjmp	.+4      	; 0x51a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x66>
- 516:	22 0f       	add	r18, r18
- 518:	33 1f       	adc	r19, r19
- 51a:	0a 94       	dec	r0
- 51c:	e2 f7       	brpl	.-8      	; 0x516 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x62>
- 51e:	82 2f       	mov	r24, r18
- 520:	80 95       	com	r24
- 522:	89 23       	and	r24, r25
- 524:	88 b9       	out	0x08, r24	; 8
+ 538:	98 b1       	in	r25, 0x08	; 8
+ 53a:	e8 81       	ld	r30, Y
+ 53c:	f9 81       	ldd	r31, Y+1	; 0x01
+ 53e:	97 01       	movw	r18, r14
+ 540:	02 80       	ldd	r0, Z+2	; 0x02
+ 542:	02 c0       	rjmp	.+4      	; 0x548 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x66>
+ 544:	22 0f       	add	r18, r18
+ 546:	33 1f       	adc	r19, r19
+ 548:	0a 94       	dec	r0
+ 54a:	e2 f7       	brpl	.-8      	; 0x544 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x62>
+ 54c:	82 2f       	mov	r24, r18
+ 54e:	80 95       	com	r24
+ 550:	89 23       	and	r24, r25
+ 552:	88 b9       	out	0x08, r24	; 8
 		}
 			
 		this->wait_1us();
- 526:	ce 01       	movw	r24, r28
- 528:	0e 94 fa 01 	call	0x3f4	; 0x3f4 <_ZN18ShiftRegister_SIPO8wait_1usEv>
+ 554:	ce 01       	movw	r24, r28
+ 556:	0e 94 11 02 	call	0x422	; 0x422 <_ZN18ShiftRegister_SIPO8wait_1usEv>
 			
 		this->singleShift();
- 52c:	ce 01       	movw	r24, r28
- 52e:	0e 94 2d 02 	call	0x45a	; 0x45a <_ZN18ShiftRegister_SIPO11singleShiftEv>
+ 55a:	ce 01       	movw	r24, r28
+ 55c:	0e 94 44 02 	call	0x488	; 0x488 <_ZN18ShiftRegister_SIPO11singleShiftEv>
 	//Starting shifting with shift/serial/latch at 0
 	SIPO_PORT &= ~( pinout_byte );	
 	//Wait 1us
 	this->wait_1us();
 		
 	for ( int i=0; i < 8; i++){
- 532:	0f 5f       	subi	r16, 0xFF	; 255
- 534:	1f 4f       	sbci	r17, 0xFF	; 255
- 536:	08 30       	cpi	r16, 0x08	; 8
- 538:	11 05       	cpc	r17, r1
- 53a:	81 f6       	brne	.-96     	; 0x4dc <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x28>
+ 560:	0f 5f       	subi	r16, 0xFF	; 255
+ 562:	1f 4f       	sbci	r17, 0xFF	; 255
+ 564:	08 30       	cpi	r16, 0x08	; 8
+ 566:	11 05       	cpc	r17, r1
+ 568:	81 f6       	brne	.-96     	; 0x50a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x28>
 		this->wait_1us();
 			
 		this->singleShift();
 	}
 	
 } //ShiftBits
- 53c:	df 91       	pop	r29
- 53e:	cf 91       	pop	r28
- 540:	1f 91       	pop	r17
- 542:	0f 91       	pop	r16
- 544:	ff 90       	pop	r15
- 546:	ef 90       	pop	r14
- 548:	08 95       	ret
+ 56a:	df 91       	pop	r29
+ 56c:	cf 91       	pop	r28
+ 56e:	1f 91       	pop	r17
+ 570:	0f 91       	pop	r16
+ 572:	ff 90       	pop	r15
+ 574:	ef 90       	pop	r14
+ 576:	08 95       	ret
 
-0000054a <_ZN18ShiftRegister_SIPO17getTimerReferenceEP5Timer>:
+00000578 <_ZN18ShiftRegister_SIPO17getTimerReferenceEP5Timer>:
 	}
 }
 
 void ShiftRegister_SIPO::getTimerReference( Timer * ptr )
 {
 	timer = ptr;
- 54a:	fc 01       	movw	r30, r24
- 54c:	74 83       	std	Z+4, r23	; 0x04
- 54e:	63 83       	std	Z+3, r22	; 0x03
- 550:	08 95       	ret
+ 578:	fc 01       	movw	r30, r24
+ 57a:	74 83       	std	Z+4, r23	; 0x04
+ 57c:	63 83       	std	Z+3, r22	; 0x03
+ 57e:	08 95       	ret
 
-00000552 <_ZN18ShiftRegister_SIPOD1Ev>:
+00000580 <_ZN18ShiftRegister_SIPOD1Ev>:
 
 } //getTimerReference
 
 
 // default destructor
 ShiftRegister_SIPO::~ShiftRegister_SIPO()
- 552:	08 95       	ret
+ 580:	08 95       	ret
 
-00000554 <_ZN5TimerC1Ev>:
-	step++;
+00000582 <_Z9doNothingv>:
 }
 
-void Timer::reset( void )
+void doNothing( void ){
+	
+	//Turn ON "Do Nothing LED"
+	PORTD &= ~(1 << PORTD1);
+ 582:	59 98       	cbi	0x0b, 1	; 11
+ 584:	08 95       	ret
+
+00000586 <_Z11doSomethingv>:
+}
+
+void doSomething( void ){
+	
+	//Turn OFF the "Do Nothing LED"
+	PORTD |= (1 << PORTD1);
+ 586:	59 9a       	sbi	0x0b, 1	; 11
+ 588:	08 95       	ret
+
+0000058a <_Z11getNextTaskv>:
+
+uint8_t taskSelection;
+void getNextTask( void )
 {
-	step = 0;
- 554:	fc 01       	movw	r30, r24
- 556:	10 82       	st	Z, r1
- 558:	11 82       	std	Z+1, r1	; 0x01
- 55a:	12 82       	std	Z+2, r1	; 0x02
- 55c:	13 82       	std	Z+3, r1	; 0x03
- 55e:	08 95       	ret
+	//TASK 1 - Latch
+	if ( (enableLatch == true) && ( shiftComplete == true )){
+ 58a:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <__data_end>
+ 58e:	81 30       	cpi	r24, 0x01	; 1
+ 590:	49 f4       	brne	.+18     	; 0x5a4 <_Z11getNextTaskv+0x1a>
+ 592:	80 91 34 01 	lds	r24, 0x0134	; 0x800134 <shiftComplete>
+ 596:	81 30       	cpi	r24, 0x01	; 1
+ 598:	29 f4       	brne	.+10     	; 0x5a4 <_Z11getNextTaskv+0x1a>
+			
+		//Reset enable latching
+		enableLatch = false;
+ 59a:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <__data_end>
+	
+		taskSelection = LATCH_SHIFT_REGISTERS_TASK;
+ 59e:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <taskSelection>
+ 5a2:	53 c0       	rjmp	.+166    	; 0x64a <_Z11getNextTaskv+0xc0>
+	
+	//TASK 2 - Shift
+	} else if ( (enableShift == true) && (moreShiftWork == true) ) {
+ 5a4:	80 91 0d 01 	lds	r24, 0x010D	; 0x80010d <enableShift>
+ 5a8:	81 30       	cpi	r24, 0x01	; 1
+ 5aa:	51 f4       	brne	.+20     	; 0x5c0 <_Z11getNextTaskv+0x36>
+ 5ac:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <moreShiftWork>
+ 5b0:	81 30       	cpi	r24, 0x01	; 1
+ 5b2:	31 f4       	brne	.+12     	; 0x5c0 <_Z11getNextTaskv+0x36>
+		
+		//Reset 
+		enableShift = false;
+ 5b4:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <enableShift>
+		
+		taskSelection = LOAD_SHIFT_REGISTERS_TASK;
+ 5b8:	82 e0       	ldi	r24, 0x02	; 2
+ 5ba:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <taskSelection>
+ 5be:	45 c0       	rjmp	.+138    	; 0x64a <_Z11getNextTaskv+0xc0>
+	
+	//TASK 3 - Increment Timer
+	} else if ( (timer.elapsed_millis( IncrementCounterTimer ) > COUNTER_UPDATE) ){
+ 5c0:	40 91 0e 01 	lds	r20, 0x010E	; 0x80010e <IncrementCounterTimer>
+ 5c4:	50 91 0f 01 	lds	r21, 0x010F	; 0x80010f <IncrementCounterTimer+0x1>
+ 5c8:	60 91 10 01 	lds	r22, 0x0110	; 0x800110 <IncrementCounterTimer+0x2>
+ 5cc:	70 91 11 01 	lds	r23, 0x0111	; 0x800111 <IncrementCounterTimer+0x3>
+ 5d0:	8b e2       	ldi	r24, 0x2B	; 43
+ 5d2:	91 e0       	ldi	r25, 0x01	; 1
+ 5d4:	0e 94 83 03 	call	0x706	; 0x706 <_ZN5Timer14elapsed_millisEm>
+ 5d8:	65 36       	cpi	r22, 0x65	; 101
+ 5da:	71 05       	cpc	r23, r1
+ 5dc:	81 05       	cpc	r24, r1
+ 5de:	91 05       	cpc	r25, r1
+ 5e0:	80 f0       	brcs	.+32     	; 0x602 <_Z11getNextTaskv+0x78>
+		
+		//Reset timer
+		IncrementCounterTimer = timer.millis();
+ 5e2:	8b e2       	ldi	r24, 0x2B	; 43
+ 5e4:	91 e0       	ldi	r25, 0x01	; 1
+ 5e6:	0e 94 95 03 	call	0x72a	; 0x72a <_ZN5Timer6millisEv>
+ 5ea:	60 93 0e 01 	sts	0x010E, r22	; 0x80010e <IncrementCounterTimer>
+ 5ee:	70 93 0f 01 	sts	0x010F, r23	; 0x80010f <IncrementCounterTimer+0x1>
+ 5f2:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <IncrementCounterTimer+0x2>
+ 5f6:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <IncrementCounterTimer+0x3>
+		
+		taskSelection = INCREMENT_COUNTER_TASK;
+ 5fa:	83 e0       	ldi	r24, 0x03	; 3
+ 5fc:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <taskSelection>
+ 600:	24 c0       	rjmp	.+72     	; 0x64a <_Z11getNextTaskv+0xc0>
+	
+	//TASK 4 - Blinky
+	} else if (timer.elapsed_millis( LEDTaskTimer ) > LED_UPDATE){
+ 602:	40 91 12 01 	lds	r20, 0x0112	; 0x800112 <LEDTaskTimer>
+ 606:	50 91 13 01 	lds	r21, 0x0113	; 0x800113 <LEDTaskTimer+0x1>
+ 60a:	60 91 14 01 	lds	r22, 0x0114	; 0x800114 <LEDTaskTimer+0x2>
+ 60e:	70 91 15 01 	lds	r23, 0x0115	; 0x800115 <LEDTaskTimer+0x3>
+ 612:	8b e2       	ldi	r24, 0x2B	; 43
+ 614:	91 e0       	ldi	r25, 0x01	; 1
+ 616:	0e 94 83 03 	call	0x706	; 0x706 <_ZN5Timer14elapsed_millisEm>
+ 61a:	65 3c       	cpi	r22, 0xC5	; 197
+ 61c:	79 40       	sbci	r23, 0x09	; 9
+ 61e:	81 05       	cpc	r24, r1
+ 620:	91 05       	cpc	r25, r1
+ 622:	80 f0       	brcs	.+32     	; 0x644 <_Z11getNextTaskv+0xba>
+			
+		//Reset timer.
+		LEDTaskTimer = timer.millis();
+ 624:	8b e2       	ldi	r24, 0x2B	; 43
+ 626:	91 e0       	ldi	r25, 0x01	; 1
+ 628:	0e 94 95 03 	call	0x72a	; 0x72a <_ZN5Timer6millisEv>
+ 62c:	60 93 12 01 	sts	0x0112, r22	; 0x800112 <LEDTaskTimer>
+ 630:	70 93 13 01 	sts	0x0113, r23	; 0x800113 <LEDTaskTimer+0x1>
+ 634:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <LEDTaskTimer+0x2>
+ 638:	90 93 15 01 	sts	0x0115, r25	; 0x800115 <LEDTaskTimer+0x3>
+			
+		taskSelection = BLINKY_TASK;
+ 63c:	84 e0       	ldi	r24, 0x04	; 4
+ 63e:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <taskSelection>
+ 642:	03 c0       	rjmp	.+6      	; 0x64a <_Z11getNextTaskv+0xc0>
+		
+	//IDLE - DO NOTHING!!!
+	} else {
+		
+		//Do nothing
+		taskSelection = DO_NOTHING;
+ 644:	10 92 39 01 	sts	0x0139, r1	; 0x800139 <taskSelection>
+		return;
+ 648:	08 95       	ret
+	}
+	
+	//Turn off the IDLE light.
+	doSomething();
+ 64a:	0e 94 c3 02 	call	0x586	; 0x586 <_Z11doSomethingv>
+ 64e:	08 95       	ret
 
-00000560 <_ZN5Timer14incrementTimerEv>:
- 560:	fc 01       	movw	r30, r24
- 562:	40 81       	ld	r20, Z
- 564:	51 81       	ldd	r21, Z+1	; 0x01
- 566:	62 81       	ldd	r22, Z+2	; 0x02
- 568:	73 81       	ldd	r23, Z+3	; 0x03
- 56a:	4f 5f       	subi	r20, 0xFF	; 255
- 56c:	5f 4f       	sbci	r21, 0xFF	; 255
- 56e:	6f 4f       	sbci	r22, 0xFF	; 255
- 570:	7f 4f       	sbci	r23, 0xFF	; 255
- 572:	40 83       	st	Z, r20
- 574:	51 83       	std	Z+1, r21	; 0x01
- 576:	62 83       	std	Z+2, r22	; 0x02
- 578:	73 83       	std	Z+3, r23	; 0x03
- 57a:	08 95       	ret
+00000650 <_Z6blinkyv>:
+}
 
-0000057c <_ZN5Timer14elapsed_millisEm>:
+//Toggles and LED on and off
+void blinky( void )
+{
+	if( LEDValueNext == 1 ){
+ 650:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <LEDValueNext>
+ 654:	81 30       	cpi	r24, 0x01	; 1
+ 656:	21 f4       	brne	.+8      	; 0x660 <_Z6blinkyv+0x10>
+		//Set Test LED to OFF
+		PORTD |= (1 << PORTD0);
+ 658:	58 9a       	sbi	0x0b, 0	; 11
+		LEDValueNext = 0;
+ 65a:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <LEDValueNext>
+ 65e:	08 95       	ret
+		
+	} else {
+		//Set Test LED to ON
+		PORTD &= ~(1 << PORTD0);
+ 660:	58 98       	cbi	0x0b, 0	; 11
+		LEDValueNext = 1;	
+ 662:	81 e0       	ldi	r24, 0x01	; 1
+ 664:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <LEDValueNext>
+ 668:	08 95       	ret
+
+0000066a <_Z16incrementCounterv>:
+}
+
+void incrementCounter( void )
+{
+	//increment counter
+	counter++;
+ 66a:	80 91 37 01 	lds	r24, 0x0137	; 0x800137 <counter>
+ 66e:	8f 5f       	subi	r24, 0xFF	; 255
+ 670:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <counter>
+		
+	if (counter >= 100 ){
+ 674:	84 36       	cpi	r24, 0x64	; 100
+ 676:	20 f0       	brcs	.+8      	; 0x680 <_Z16incrementCounterv+0x16>
+		numbersToPrint[0] = 0;
+ 678:	10 92 35 01 	sts	0x0135, r1	; 0x800135 <numbersToPrint>
+		counter = 0;
+ 67c:	10 92 37 01 	sts	0x0137, r1	; 0x800137 <counter>
+	}
+		
+	//Shift in new value
+	moreShiftWork = true;
+ 680:	81 e0       	ldi	r24, 0x01	; 1
+ 682:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <moreShiftWork>
+	
+	//Timer one controls when to shift, thus is disabled
+	//when it's not required.
+	enableTimerOneInterrupts();
+ 686:	0e 94 ed 00 	call	0x1da	; 0x1da <_Z24enableTimerOneInterruptsv>
+ 68a:	08 95       	ret
+
+0000068c <_Z18loadShiftRegistersv>:
+}
+
+void loadShiftRegisters( void )
+{
+	numbersToPrint[1] = (uint8_t) counter / 10;
+ 68c:	90 91 37 01 	lds	r25, 0x0137	; 0x800137 <counter>
+ 690:	8d ec       	ldi	r24, 0xCD	; 205
+ 692:	98 9f       	mul	r25, r24
+ 694:	81 2d       	mov	r24, r1
+ 696:	11 24       	eor	r1, r1
+ 698:	86 95       	lsr	r24
+ 69a:	86 95       	lsr	r24
+ 69c:	86 95       	lsr	r24
+ 69e:	e5 e3       	ldi	r30, 0x35	; 53
+ 6a0:	f1 e0       	ldi	r31, 0x01	; 1
+ 6a2:	81 83       	std	Z+1, r24	; 0x01
+	numbersToPrint[0] = (uint8_t) counter - (10*numbersToPrint[1]);
+ 6a4:	88 0f       	add	r24, r24
+ 6a6:	28 2f       	mov	r18, r24
+ 6a8:	22 0f       	add	r18, r18
+ 6aa:	22 0f       	add	r18, r18
+ 6ac:	82 0f       	add	r24, r18
+ 6ae:	98 1b       	sub	r25, r24
+ 6b0:	90 83       	st	Z, r25
+				
+	//Prepare shift registers to hold bit map for seven segment display
+	sevenSegmentDisplay.printNumbers_NOLATCH( numbersToPrint );
+ 6b2:	bf 01       	movw	r22, r30
+ 6b4:	89 e1       	ldi	r24, 0x19	; 25
+ 6b6:	91 e0       	ldi	r25, 0x01	; 1
+ 6b8:	0e 94 d9 01 	call	0x3b2	; 0x3b2 <_ZN8SevenSeg20printNumbers_NOLATCHEPh>
+	
+	//Shift is complete	
+	shiftComplete = true;
+ 6bc:	81 e0       	ldi	r24, 0x01	; 1
+ 6be:	80 93 34 01 	sts	0x0134, r24	; 0x800134 <shiftComplete>
+	
+	//Shift work is done
+	moreShiftWork = false;
+ 6c2:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <moreShiftWork>
+ 6c6:	08 95       	ret
+
+000006c8 <_Z19latchShiftRegistersv>:
+}
+
+void latchShiftRegisters( void )
+{
+	//Latch shift registers. Output should show on seven segment display
+	sevenSegmentDisplay.latchOutput();
+ 6c8:	89 e1       	ldi	r24, 0x19	; 25
+ 6ca:	91 e0       	ldi	r25, 0x01	; 1
+ 6cc:	0e 94 1a 02 	call	0x434	; 0x434 <_ZN18ShiftRegister_SIPO11latchOutputEv>
+	
+	shiftComplete = false;
+ 6d0:	10 92 34 01 	sts	0x0134, r1	; 0x800134 <shiftComplete>
+ 6d4:	08 95       	ret
+
+000006d6 <_ZN5TimerC1Ev>:
+	fixedTime = this->millis();
+}
+
+void Timer::resumeTimer( void )
+{
+	step = fixedTime;
+ 6d6:	fc 01       	movw	r30, r24
+ 6d8:	10 82       	st	Z, r1
+ 6da:	11 82       	std	Z+1, r1	; 0x01
+ 6dc:	12 82       	std	Z+2, r1	; 0x02
+ 6de:	13 82       	std	Z+3, r1	; 0x03
+ 6e0:	14 82       	std	Z+4, r1	; 0x04
+ 6e2:	15 82       	std	Z+5, r1	; 0x05
+ 6e4:	16 82       	std	Z+6, r1	; 0x06
+ 6e6:	17 82       	std	Z+7, r1	; 0x07
+ 6e8:	08 95       	ret
+
+000006ea <_ZN5Timer14incrementTimerEv>:
+ 6ea:	fc 01       	movw	r30, r24
+ 6ec:	40 81       	ld	r20, Z
+ 6ee:	51 81       	ldd	r21, Z+1	; 0x01
+ 6f0:	62 81       	ldd	r22, Z+2	; 0x02
+ 6f2:	73 81       	ldd	r23, Z+3	; 0x03
+ 6f4:	4f 5f       	subi	r20, 0xFF	; 255
+ 6f6:	5f 4f       	sbci	r21, 0xFF	; 255
+ 6f8:	6f 4f       	sbci	r22, 0xFF	; 255
+ 6fa:	7f 4f       	sbci	r23, 0xFF	; 255
+ 6fc:	40 83       	st	Z, r20
+ 6fe:	51 83       	std	Z+1, r21	; 0x01
+ 700:	62 83       	std	Z+2, r22	; 0x02
+ 702:	73 83       	std	Z+3, r23	; 0x03
+ 704:	08 95       	ret
+
+00000706 <_ZN5Timer14elapsed_millisEm>:
 }
 
 uint32_t Timer::elapsed_millis( uint32_t comparison )
 {	
- 57c:	0f 93       	push	r16
- 57e:	1f 93       	push	r17
+ 706:	0f 93       	push	r16
+ 708:	1f 93       	push	r17
 	return (step - comparison);	
- 580:	fc 01       	movw	r30, r24
- 582:	80 81       	ld	r24, Z
- 584:	91 81       	ldd	r25, Z+1	; 0x01
- 586:	a2 81       	ldd	r26, Z+2	; 0x02
- 588:	b3 81       	ldd	r27, Z+3	; 0x03
- 58a:	8c 01       	movw	r16, r24
- 58c:	9d 01       	movw	r18, r26
- 58e:	04 1b       	sub	r16, r20
- 590:	15 0b       	sbc	r17, r21
- 592:	26 0b       	sbc	r18, r22
- 594:	37 0b       	sbc	r19, r23
- 596:	c9 01       	movw	r24, r18
- 598:	b8 01       	movw	r22, r16
+ 70a:	fc 01       	movw	r30, r24
+ 70c:	80 81       	ld	r24, Z
+ 70e:	91 81       	ldd	r25, Z+1	; 0x01
+ 710:	a2 81       	ldd	r26, Z+2	; 0x02
+ 712:	b3 81       	ldd	r27, Z+3	; 0x03
+ 714:	8c 01       	movw	r16, r24
+ 716:	9d 01       	movw	r18, r26
+ 718:	04 1b       	sub	r16, r20
+ 71a:	15 0b       	sbc	r17, r21
+ 71c:	26 0b       	sbc	r18, r22
+ 71e:	37 0b       	sbc	r19, r23
+ 720:	c9 01       	movw	r24, r18
+ 722:	b8 01       	movw	r22, r16
 }
- 59a:	1f 91       	pop	r17
- 59c:	0f 91       	pop	r16
- 59e:	08 95       	ret
+ 724:	1f 91       	pop	r17
+ 726:	0f 91       	pop	r16
+ 728:	08 95       	ret
 
-000005a0 <_ZN5Timer6millisEv>:
+0000072a <_ZN5Timer6millisEv>:
 
 uint32_t Timer::millis( void )
 {
 	return step;
- 5a0:	fc 01       	movw	r30, r24
- 5a2:	60 81       	ld	r22, Z
- 5a4:	71 81       	ldd	r23, Z+1	; 0x01
- 5a6:	82 81       	ldd	r24, Z+2	; 0x02
- 5a8:	93 81       	ldd	r25, Z+3	; 0x03
+ 72a:	fc 01       	movw	r30, r24
+ 72c:	60 81       	ld	r22, Z
+ 72e:	71 81       	ldd	r23, Z+1	; 0x01
+ 730:	82 81       	ldd	r24, Z+2	; 0x02
+ 732:	93 81       	ldd	r25, Z+3	; 0x03
 }
- 5aa:	08 95       	ret
+ 734:	08 95       	ret
 
-000005ac <_ZN5TimerD1Ev>:
+00000736 <_ZN5TimerD1Ev>:
 
 // default destructor
 Timer::~Timer()
- 5ac:	08 95       	ret
+ 736:	08 95       	ret
 
-000005ae <__tablejump2__>:
- 5ae:	ee 0f       	add	r30, r30
- 5b0:	ff 1f       	adc	r31, r31
- 5b2:	05 90       	lpm	r0, Z+
- 5b4:	f4 91       	lpm	r31, Z
- 5b6:	e0 2d       	mov	r30, r0
- 5b8:	09 94       	ijmp
+00000738 <__tablejump2__>:
+ 738:	ee 0f       	add	r30, r30
+ 73a:	ff 1f       	adc	r31, r31
+ 73c:	05 90       	lpm	r0, Z+
+ 73e:	f4 91       	lpm	r31, Z
+ 740:	e0 2d       	mov	r30, r0
+ 742:	09 94       	ijmp
 
-000005ba <__do_global_dtors>:
- 5ba:	10 e0       	ldi	r17, 0x00	; 0
- 5bc:	c5 e3       	ldi	r28, 0x35	; 53
- 5be:	d0 e0       	ldi	r29, 0x00	; 0
- 5c0:	04 c0       	rjmp	.+8      	; 0x5ca <__do_global_dtors+0x10>
- 5c2:	fe 01       	movw	r30, r28
- 5c4:	0e 94 d7 02 	call	0x5ae	; 0x5ae <__tablejump2__>
- 5c8:	21 96       	adiw	r28, 0x01	; 1
- 5ca:	c6 33       	cpi	r28, 0x36	; 54
- 5cc:	d1 07       	cpc	r29, r17
- 5ce:	c9 f7       	brne	.-14     	; 0x5c2 <__do_global_dtors+0x8>
- 5d0:	f8 94       	cli
+00000744 <__do_global_dtors>:
+ 744:	10 e0       	ldi	r17, 0x00	; 0
+ 746:	c5 e3       	ldi	r28, 0x35	; 53
+ 748:	d0 e0       	ldi	r29, 0x00	; 0
+ 74a:	04 c0       	rjmp	.+8      	; 0x754 <__do_global_dtors+0x10>
+ 74c:	fe 01       	movw	r30, r28
+ 74e:	0e 94 9c 03 	call	0x738	; 0x738 <__tablejump2__>
+ 752:	21 96       	adiw	r28, 0x01	; 1
+ 754:	c6 33       	cpi	r28, 0x36	; 54
+ 756:	d1 07       	cpc	r29, r17
+ 758:	c9 f7       	brne	.-14     	; 0x74c <__do_global_dtors+0x8>
+ 75a:	f8 94       	cli
 
-000005d2 <__stop_program>:
- 5d2:	ff cf       	rjmp	.-2      	; 0x5d2 <__stop_program>
+0000075c <__stop_program>:
+ 75c:	ff cf       	rjmp	.-2      	; 0x75c <__stop_program>

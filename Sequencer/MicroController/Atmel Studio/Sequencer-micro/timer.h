@@ -16,16 +16,19 @@ class Timer
 {
 	//variables
 	public:
-		//Interrupt increments every 0.1ms
+		//Interrupt increments every 1ms
 		volatile uint32_t step;
 	private:
-
+		//Used for fixing the timer.
+		uint32_t fixedTime;
+		
 	//functions
 	public:
 		Timer();
 
 		void incrementTimer( void );
 		void fixTimer( void );
+		void resumeTimer( void );
 		void reset( void );
 
 		//returns elapsed time in tenths of milliseconds in comparison to some point in time

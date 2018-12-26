@@ -18,4 +18,8 @@ void enableShifting( void );
 
 void disableShifting( void );
 
+void disableTimerOneInterrupts( void );
+
+void enableTimerOneInterrupts( void );
+
 #endif /* INTERRUPTS_H_ */
