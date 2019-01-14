@@ -33,11 +33,16 @@ extern SevenSeg sevenSegmentDisplay;
 //setup function declaration and globals
 //Variables for storing the current time
 extern uint32_t LEDTaskTimer;
+extern uint32_t triggerHighTimer;
+extern uint32_t triggerLowTimer;
 extern uint32_t IncrementCounterTimer;
 void setupTimers( void );
 
 extern uint8_t LEDValueNext;
 void setupBlinky();
+
+extern uint8_t triggerLow;
+void setupTrigger();
 
 extern uint8_t shiftComplete;
 void setupShiftRegisters();
@@ -53,14 +58,21 @@ void setupSevenSegment();
 //We use the timers for selecting tasks.
 #define LED_UPDATE 2500 //Update LED every 250ms
 #define COUNTER_UPDATE 100 //Update counter every 10ms
+#define TRIGGER_LOW 10000 //How long trigger is low
+#define TRIGGER_HIGH 10 //How long trigger is HIGH
 
 extern uint8_t taskSelection;
 void getNextTask( void );
 
-#define BLINKY_TASK 4
+#define BLINKY_TASK 6
 void blinky( void );
 
-#define INCREMENT_COUNTER_TASK 3
+#define SET_TRIGGER_HIGH 3
+void set_HIGH( void );
+#define SET_TRIGGER_LOW 4
+void set_LOW( void );
+
+#define INCREMENT_COUNTER_TASK 5
 void incrementCounter( void );
 
 #define LOAD_SHIFT_REGISTERS_TASK 2

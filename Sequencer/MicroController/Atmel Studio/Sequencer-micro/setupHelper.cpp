@@ -10,6 +10,9 @@
 //Global Variables for "Blinky"
 uint8_t LEDValueNext; //Indicates the next value for the LED
 
+//Global for the trigger state
+uint8_t triggerLow;
+
 //Global Variables for "LoadShiftRegisters"
 uint8_t counter;
 uint8_t numbersToPrint [2];
@@ -26,6 +29,8 @@ ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
 //Initialize variables that well keep track of when tasks run
 uint32_t LEDTaskTimer;
 uint32_t IncrementCounterTimer;
+uint32_t triggerHighTimer;
+uint32_t triggerLowTimer;
 
 void setupTimers( void )
 {
@@ -34,6 +39,10 @@ void setupTimers( void )
 	
 	//Used for incrementing counter
 	IncrementCounterTimer = timer.millis();
+	
+	//Used for the trigger
+	triggerLowTimer = timer.millis();
+	triggerHighTimer = timer.millis();
 	
 	//Initialize the latching timers.
 	enableLatch = false;
@@ -50,6 +59,13 @@ void setupBlinky( void )
 	
 	//Used for the "Do Nothing LED"
 	DDRD |= (1 << PORTD1);
+}
+
+void setupTrigger( void )
+{
+	DDRD |= (1 << PORTD2);
+	
+	triggerLow = true;
 }
 
 void setupShiftRegisters( void )

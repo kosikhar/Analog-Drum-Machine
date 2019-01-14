@@ -17,6 +17,9 @@ int main(void)
 	//Setup Blinky task
 	setupBlinky();
 	
+	//Setup the Trigger
+	setupTrigger();
+	
 	//Setup Shift Registers
 	setupShiftRegisters();
 	
@@ -42,6 +45,12 @@ int main(void)
 			case INCREMENT_COUNTER_TASK:
 				//Run increment counter task
 				incrementCounter();
+				break;
+			case SET_TRIGGER_LOW:
+				set_LOW();
+				break;
+			case SET_TRIGGER_HIGH:
+				set_HIGH();
 				break;
 			case BLINKY_TASK:
 				//Run Blinky

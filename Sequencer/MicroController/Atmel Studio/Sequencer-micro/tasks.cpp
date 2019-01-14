@@ -16,6 +16,7 @@ void getNextTask( void )
 		enableLatch = false;
 	
 		taskSelection = LATCH_SHIFT_REGISTERS_TASK;
+		return;
 	
 	//TASK 2 - Shift
 	} else if ( (enableShift == true) && (moreShiftWork == true) ) {
@@ -24,22 +25,49 @@ void getNextTask( void )
 		enableShift = false;
 		
 		taskSelection = LOAD_SHIFT_REGISTERS_TASK;
+		return;
 	
-	//TASK 3 - Increment Timer
+	//TASK 3 - Set trigger High
+	} else if ( (timer.elapsed_millis( triggerHighTimer ) > TRIGGER_HIGH) && (triggerLow == true) ){
+		
+		triggerLow = false;
+		
+		//Reset the set low timer
+		triggerLowTimer = timer.millis();
+		
+		taskSelection = SET_TRIGGER_LOW;
+		return;
+	
+	//TASK 4 - Set trigger LOW
+	} else if ( (timer.elapsed_millis( triggerLowTimer ) > TRIGGER_LOW) && (triggerLow == false) ){
+		
+		triggerLow = true;
+		
+		//Reset set high timer
+		triggerHighTimer = timer.millis();
+		
+		taskSelection = SET_TRIGGER_HIGH;
+		return;
+		
+	//TASK 5 - Increment Timer
 	} else if ( (timer.elapsed_millis( IncrementCounterTimer ) > COUNTER_UPDATE) ){
 		
 		//Reset timer
 		IncrementCounterTimer = timer.millis();
 		
 		taskSelection = INCREMENT_COUNTER_TASK;
+		
+		return;
 	
-	//TASK 4 - Blinky
+	//TASK 6 - Blinky
 	} else if (timer.elapsed_millis( LEDTaskTimer ) > LED_UPDATE){
 			
 		//Reset timer.
 		LEDTaskTimer = timer.millis();
 			
 		taskSelection = BLINKY_TASK;
+		
+		return;
 		
 	//IDLE - DO NOTHING!!!
 	} else {
@@ -78,6 +106,15 @@ void blinky( void )
 		PORTD &= ~(1 << PORTD0);
 		LEDValueNext = 1;	
 	}
+}
+
+void set_HIGH( void )
+{
+	PORTD |= ( 1 << PORTD2);
+}
+void set_LOW( void )
+{
+	PORTD &= ~( 1 << PORTD2);
 }
 
 void incrementCounter( void )
