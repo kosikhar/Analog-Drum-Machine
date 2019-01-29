@@ -20326,9 +20326,9 @@ R2 3 2 {val-val*var/100}
 <attribute name="NAME" x="222.25" y="90.551" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="227.584" y="82.804" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="R2" gate="G$1" x="241.3" y="78.74" smashed="yes" rot="R90">
-<attribute name="NAME" x="245.11" y="82.931" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="249.428" y="77.978" size="1.778" layer="96" rot="R180"/>
+<instance part="R2" gate="G$1" x="241.3" y="78.74" smashed="yes" rot="MR90">
+<attribute name="NAME" x="242.57" y="82.931" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="233.172" y="77.978" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="R20" gate="G$1" x="231.14" y="119.38" smashed="yes" rot="R90">
 <attribute name="NAME" x="226.314" y="124.587" size="1.778" layer="95"/>
@@ -20929,12 +20929,12 @@ R2 3 2 {val-val*var/100}
 <pinref part="IC4" gate="A" pin="OUT"/>
 <wire x1="256.54" y1="104.14" x2="254" y2="104.14" width="0.1524" layer="91"/>
 <label x="248.92" y="86.36" size="1.778" layer="95"/>
-<pinref part="R2" gate="G$1" pin="A"/>
-<wire x1="246.38" y1="78.74" x2="248.92" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="78.74" x2="248.92" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="R31" gate="G$1" pin="2"/>
 <wire x1="256.54" y1="104.14" x2="256.54" y2="144.78" width="0.1524" layer="91"/>
 <junction x="256.54" y="104.14"/>
+<pinref part="R2" gate="G$1" pin="E"/>
+<wire x1="246.38" y1="78.74" x2="248.92" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="POT1" class="0">
