@@ -19863,7 +19863,7 @@ R2 3 2 {val-val*var/100}
 <part name="IC3" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="IC4" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="IC5" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
-<part name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="40n"/>
+<part name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="47n"/>
 <part name="R24" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
 <part name="R25" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="22k"/>
 <part name="GND14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
@@ -20845,13 +20845,6 @@ R2 3 2 {val-val*var/100}
 <label x="53.34" y="43.18" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="POT2_3" class="0">
-<segment>
-<pinref part="T4" gate="G1" pin="C"/>
-<label x="167.64" y="157.48" size="1.778" layer="95" rot="R180"/>
-<wire x1="167.64" y1="149.86" x2="167.64" y2="154.94" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="SW3" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="15"/>
@@ -20970,6 +20963,11 @@ R2 3 2 {val-val*var/100}
 <pinref part="R34" gate="G$1" pin="S"/>
 <wire x1="111.76" y1="48.26" x2="111.76" y2="50.8" width="0.1524" layer="91"/>
 <label x="109.22" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="T4" gate="G1" pin="C"/>
+<label x="167.64" y="157.48" size="1.778" layer="95" rot="R180"/>
+<wire x1="167.64" y1="149.86" x2="167.64" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DGND" class="0">
