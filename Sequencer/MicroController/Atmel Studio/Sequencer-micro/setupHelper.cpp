@@ -8,7 +8,7 @@
 #include "setupHelper.h"
 #include "interrupts.h"
 
-SetupHelper::SetupHelper( Timer & timerRef, ShiftRegister_SIPO_pinout & outputPinoutRef, 
+SetupHelper::SetupHelper( Timer & timerRef, ShiftRegister_pinout & outputPinoutRef, 
 							SevenSeg & sevenSegRef, Trigger & triggerRef, Counter & counterRef, Latch & latchRef )
 {	
 	//Pins on port C for the output shift register

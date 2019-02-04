@@ -12,7 +12,7 @@
 SevenSeg sevenSegmentDisplay;
 
 //Define a pointer to a shift register pinout struct
-ShiftRegister_SIPO_pinout outputSIPO_Pinout;
+ShiftRegister_pinout outputSIPO_Pinout;
 
 //Define a pointer to a timer object.
 Timer timer;
@@ -58,8 +58,8 @@ int main(void)
 	
 	//Add tasks
 	taskManager.addTask( latchTask , 0);
-	taskManager.addTask( sevenSegmentDisplayTask, 0);
-	taskManager.addTask( triggerTask, 16 );
+	taskManager.addTask( sevenSegmentDisplayTask, 64);
+	taskManager.addTask( triggerTask, 0 );
 	taskManager.addTask( counterTask, 128);
 	
     while (1) 

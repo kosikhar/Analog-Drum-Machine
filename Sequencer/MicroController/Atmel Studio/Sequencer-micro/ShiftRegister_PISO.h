@@ -9,22 +9,33 @@
 #ifndef __SHIFTREGISTER_PISO_H__
 #define __SHIFTREGISTER_PISO_H__
 
-#include "avr/io.h"
+#include <avr/io.h>
+#include "setupHelper.h"
+
+#define PISO_PORT PORTC
+#define PISO_DDR DDRC
 
 class ShiftRegister_PISO
 {
 	//variables
 	public:
-		uint8_t input_byte;
+		//Structure holds the pinout info 
+		ShiftRegister_pinout * pinout;
+		
+		
 	private:
+		//Reference to a global timer object
+		Timer * timer;
+
+		//Input Byte
+		uint8_t input_byte;
 
 	//functions
 	public:
 		ShiftRegister_PISO();
+
 		~ShiftRegister_PISO();
 	private:
-		ShiftRegister_PISO( const ShiftRegister_PISO &c );
-		ShiftRegister_PISO& operator=( const ShiftRegister_PISO &c );
 
 }; //ShiftRegister_PISO
 

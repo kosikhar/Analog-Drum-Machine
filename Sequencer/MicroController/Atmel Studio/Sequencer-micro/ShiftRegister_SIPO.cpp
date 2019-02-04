@@ -10,16 +10,14 @@
 // default constructor
 ShiftRegister_SIPO::ShiftRegister_SIPO()
 {
-	//Pins on port C for the output shift register
-	pinout->serial = 0;
-	pinout->latch = 1;
-	pinout->shift = 2;
 	
 } //ShiftRegister_SIPO
 
 
-void ShiftRegister_SIPO::ShiftRegisterInit( ShiftRegister_SIPO_pinout * pins )
+void ShiftRegister_SIPO::ShiftRegisterInit( Timer * timerPtr, ShiftRegister_pinout * pins )
 {
+	//Get timer reference
+	timer = timerPtr;
 
 	//Store shift register pinout for later use
 	pinout = pins;
@@ -39,8 +37,9 @@ void ShiftRegister_SIPO::shiftBits( void )
 {		
 	//Starting shifting with shift/serial/latch at 0
 	SIPO_PORT &= ~( pinout_byte );	
+
 	//Wait 1us
-	this->wait_1us();
+	timer->wait_1us();
 		
 	for ( int i=0; i < 8; i++){
 			
@@ -55,7 +54,7 @@ void ShiftRegister_SIPO::shiftBits( void )
 			SIPO_PORT &= ~(1 << pinout->serial);
 		}
 			
-		this->wait_1us();
+		timer->wait_1us();
 			
 		this->singleShift();
 	}
@@ -79,7 +78,7 @@ void ShiftRegister_SIPO::latchOutput( void )
 {
 	//Latch output
 	SIPO_PORT &= ~(1 << pinout->latch);
-	this->wait_1us();
+	timer->wait_1us();
 	SIPO_PORT |= (1 << pinout->latch);
 }
 
@@ -87,9 +86,9 @@ void ShiftRegister_SIPO::singleShift( void )
 {
 	//Shift single bit in.
 	SIPO_PORT &= ~(1 << pinout->shift);
-	this->wait_1us();
+	timer->wait_1us();
 	SIPO_PORT |= (1 << pinout->shift);
-	this->wait_1us();
+	timer->wait_1us();
 }
 
 void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
@@ -112,21 +111,6 @@ void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
 // 	//Disable interrupt so program can actually run
 // 	disableShifting();
 // }
-
-void ShiftRegister_SIPO::wait_1us( void )
-{
-	//Variable to find the difference between a current value
-	//of a timer and a previous value
-	uint8_t difference = 0;
-	
-	//Read the value of the TCNT0 timer0 
-	uint8_t timerValue = TCNT2;
-	
-	//Wait until difference is 16 == 1us
-	while( difference < 16 ){
-		difference = TCNT2 - timerValue;
-	}
-}
 
 void ShiftRegister_SIPO::getTimerReference( Timer * ptr )
 {

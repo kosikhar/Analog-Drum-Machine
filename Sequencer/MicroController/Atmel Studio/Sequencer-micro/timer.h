@@ -36,6 +36,9 @@ class Timer
 		
 		//Snap shot of number of milliseconds since reset/epoch 
 		uint32_t millis( void );
+
+		//Uses timer2 to create a delay of 1us.
+		void wait_1us( void );
 		
 		~Timer();
 	private:

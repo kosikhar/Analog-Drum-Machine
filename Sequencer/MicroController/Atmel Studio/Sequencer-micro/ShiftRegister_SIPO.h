@@ -10,22 +10,14 @@
 #define __SHIFTREGISTER_SIPO_H__
 
 #include <avr/io.h>
-#include <stdlib.h>
 #include "timer.h"
 #include "interrupts.h"
+#include "setupHelper.h"
 
 //Port and Data Direction registers for the
 //Serial input, Serial output registers.
 #define SIPO_PORT PORTC
 #define SIPO_DDR DDRC
-
-//Use port C
-struct ShiftRegister_SIPO_pinout{
-	uint8_t shift;
-	uint8_t latch;
-	uint8_t serial;
-};
-
 
 class ShiftRegister_SIPO
 {
@@ -33,13 +25,12 @@ class ShiftRegister_SIPO
 	public:
 		
 		//Structure that holds the information of the pinout
-		ShiftRegister_SIPO_pinout * pinout;
+		ShiftRegister_pinout * pinout;
 		//instead of a struct convert a to a byte.
 		uint8_t pinout_byte;
 
 	private:
-		//Reference to a global timer object to keep track
-		//of shifting timing.
+		//Reference to a global timer object
 		Timer * timer;
 		
 		//Byte to output.
@@ -53,7 +44,7 @@ class ShiftRegister_SIPO
 		ShiftRegister_SIPO( uint8_t numShiftRegisters );
 		
 		//Initialize the object.
-		void ShiftRegisterInit( ShiftRegister_SIPO_pinout * pins );
+		void ShiftRegisterInit( Timer * timerPtr, ShiftRegister_pinout * pins );
 		
 		//Shift the shift register to the left.
 		void shiftBits( void );
@@ -66,9 +57,6 @@ class ShiftRegister_SIPO
 		
 		//Used for loading in bytes.
 		void loadByte( uint8_t byteToLoad );
-		
-		//Used for clocking the shift register. Uses interrupt
-		void wait_1us( void );
 		
 		//TODO Clear the shift register
 		void clear( void );

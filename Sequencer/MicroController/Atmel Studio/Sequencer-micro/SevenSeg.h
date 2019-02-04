@@ -38,7 +38,7 @@ class SevenSeg : public ShiftRegister_SIPO
 	public:
 		SevenSeg();
 		
-		void sevenSegInit(uint8_t numberOfDisplays, ShiftRegister_SIPO_pinout * pinout);
+		void sevenSegInit(uint8_t numberOfDisplays,  ShiftRegister_pinout * pinout);
 		
 		//runs seven segment display task. non-blocking
 		void run( void );
