@@ -19,9 +19,12 @@ class SevenSeg : public ShiftRegister_SIPO
 	//variables
 	public:
 		
-		//Flag for indicating that shifting is done
+		//Flag for indicating that display is ready to be latched (show)
 		uint8_t shiftComplete;
-		
+
+		//Flag for indicating that there is content to print
+		uint8_t newContentToPrint;
+
 	private:
 		uint8_t size;
 	
@@ -38,7 +41,7 @@ class SevenSeg : public ShiftRegister_SIPO
 	public:
 		SevenSeg();
 		
-		void sevenSegInit(uint8_t numberOfDisplays,  ShiftRegister_pinout * pinout);
+		void sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr, Counter * counterPtr );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );

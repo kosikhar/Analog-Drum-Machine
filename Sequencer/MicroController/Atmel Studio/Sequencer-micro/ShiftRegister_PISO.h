@@ -19,9 +19,10 @@ class ShiftRegister_PISO
 {
 	//variables
 	public:
-		//Structure holds the pinout info 
-		ShiftRegister_pinout * pinout;
-		
+		//pinout info 
+		uint8_t shiftPin;
+		uint8_t latchPin;
+		uint8_t serialPin;
 		
 	private:
 		//Reference to a global timer object

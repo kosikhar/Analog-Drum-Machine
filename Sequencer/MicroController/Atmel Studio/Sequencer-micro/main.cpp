@@ -11,9 +11,6 @@
 //Define a pointer to a seven segment display object.
 SevenSeg sevenSegmentDisplay;
 
-//Define a pointer to a shift register pinout struct
-ShiftRegister_pinout outputSIPO_Pinout;
-
 //Define a pointer to a timer object.
 Timer timer;
 
@@ -51,7 +48,7 @@ void counterTask( void ){
 int main(void)
 {	
 	//SetupHelper is a one-line setup object.
-	SetupHelper setupHelper(timer, outputSIPO_Pinout, sevenSegmentDisplay, trigger, counter, latch); 
+	SetupHelper setupHelper(timer, sevenSegmentDisplay, trigger, counter, latch); 
 	
 	//Initialize task manager
 	TaskManager taskManager( &timer );

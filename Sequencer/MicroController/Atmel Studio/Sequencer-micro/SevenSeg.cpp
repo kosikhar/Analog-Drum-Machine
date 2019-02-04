@@ -12,16 +12,22 @@ SevenSeg::SevenSeg()
 	ShiftRegister_SIPO();
 } //SevenSeg
 
-void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, ShiftRegister_SIPO_pinout * pinout )
+void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr, Counter * counterPtr )
 {
-	//Initialize the shift register. Including pins
-	ShiftRegisterInit(pinout);
+	//Get reference to external timer
+	this->getTimerReference( timerPtr );
+
+	//Get reference to external counter task
+	this->getCounterRef(counterPtr);
 	
 	//Store this variable for later.
 	size = numberOfDisplays;
 	
 	//initialize shift complete flag
 	shiftComplete = false;
+
+	//initialize flag for indicating if there's content to print
+	newContentToPrint = false;
 }
 
 void SevenSeg::run( void )

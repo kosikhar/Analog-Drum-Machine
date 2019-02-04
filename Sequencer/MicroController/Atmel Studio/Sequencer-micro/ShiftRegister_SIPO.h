@@ -24,9 +24,11 @@ class ShiftRegister_SIPO
 	//variables
 	public:
 		
-		//Structure that holds the information of the pinout
-		ShiftRegister_pinout * pinout;
-		//instead of a struct convert a to a byte.
+		//information of the pinout
+		uint8_t shiftPin;
+		uint8_t latchPin;
+		uint8_t serialPin;
+		//converts pinout to a byte.
 		uint8_t pinout_byte;
 
 	private:
@@ -42,9 +44,6 @@ class ShiftRegister_SIPO
 		
 		//Constructor that calls the ShiftRegisterInit
 		ShiftRegister_SIPO( uint8_t numShiftRegisters );
-		
-		//Initialize the object.
-		void ShiftRegisterInit( Timer * timerPtr, ShiftRegister_pinout * pins );
 		
 		//Shift the shift register to the left.
 		void shiftBits( void );

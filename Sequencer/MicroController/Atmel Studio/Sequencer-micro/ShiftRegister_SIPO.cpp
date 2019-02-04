@@ -10,24 +10,16 @@
 // default constructor
 ShiftRegister_SIPO::ShiftRegister_SIPO()
 {
-	
-} //ShiftRegister_SIPO
+	serialPin = 0;
+	latchPin = 1;
+	shiftPin = 2;	
 
-
-void ShiftRegister_SIPO::ShiftRegisterInit( Timer * timerPtr, ShiftRegister_pinout * pins )
-{
-	//Get timer reference
-	timer = timerPtr;
-
-	//Store shift register pinout for later use
-	pinout = pins;
-	
 	//start off with output byte 0
 	output_byte = 0;
-	
-	//Setup pins on the 328p to utilize the shift register.
+
+	//Setup pins for shift register
 	this->setupPins();
-	
+
 } //ShiftRegister_SIPO
 
 //Shifts in a bit into the shift register.
@@ -47,11 +39,11 @@ void ShiftRegister_SIPO::shiftBits( void )
 			
 		//If the bit needs to be set to 1...
 		if( output_byte & (1 << i) ){
-			SIPO_PORT |= (1 << pinout->serial);
+			SIPO_PORT |= (1 << serialPin);
 				
 		//Else set to 0
 		} else {
-			SIPO_PORT &= ~(1 << pinout->serial);
+			SIPO_PORT &= ~(1 << serialPin);
 		}
 			
 		timer->wait_1us();
@@ -64,7 +56,7 @@ void ShiftRegister_SIPO::shiftBits( void )
 void ShiftRegister_SIPO::setupPins( void ) 
 {
 	//setup the pinout byte
-	pinout_byte = (1 << pinout->shift) | (1 << pinout->latch) | (1 << pinout->serial);	
+	pinout_byte = (1 << shiftPin) | (1 << latchPin) | (1 << serialPin);	
 
 	// Initialize these pins to be 1.
 	SIPO_PORT |= ( pinout_byte );
@@ -77,17 +69,17 @@ void ShiftRegister_SIPO::setupPins( void )
 void ShiftRegister_SIPO::latchOutput( void )
 {
 	//Latch output
-	SIPO_PORT &= ~(1 << pinout->latch);
+	SIPO_PORT &= ~(1 << latchPin);
 	timer->wait_1us();
-	SIPO_PORT |= (1 << pinout->latch);
+	SIPO_PORT |= (1 << latchPin);
 }
 
 void ShiftRegister_SIPO::singleShift( void )
 {
 	//Shift single bit in.
-	SIPO_PORT &= ~(1 << pinout->shift);
+	SIPO_PORT &= ~(1 << shiftPin);
 	timer->wait_1us();
-	SIPO_PORT |= (1 << pinout->shift);
+	SIPO_PORT |= (1 << shiftPin);
 	timer->wait_1us();
 }
 

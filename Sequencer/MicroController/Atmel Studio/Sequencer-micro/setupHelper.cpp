@@ -8,13 +8,9 @@
 #include "setupHelper.h"
 #include "interrupts.h"
 
-SetupHelper::SetupHelper( Timer & timerRef, ShiftRegister_pinout & outputPinoutRef, 
+SetupHelper::SetupHelper( Timer & timerRef, 
 							SevenSeg & sevenSegRef, Trigger & triggerRef, Counter & counterRef, Latch & latchRef )
 {	
-	//Pins on port C for the output shift register
-	outputPinoutRef.serial = 0;
-	outputPinoutRef.latch = 1;
-	outputPinoutRef.shift = 2;
 	
 	//Setup Counter
 	counterRef.getTimerRef( &timerRef );
@@ -23,11 +19,9 @@ SetupHelper::SetupHelper( Timer & timerRef, ShiftRegister_pinout & outputPinoutR
 	triggerRef.getTimerRef( &timerRef );
 
 	//Setup SevenSegmentDisplay object
-	sevenSegRef.sevenSegInit(NUM_DISPLAYS, &outputPinoutRef);
-	sevenSegRef.getTimerReference( &timerRef );
-	sevenSegRef.getCounterRef( &counterRef );
+	sevenSegRef.sevenSegInit( NUM_DISPLAYS, &timerRef, &counterRef );
 	
-	//Setup Latch object
+	//Setup Latch object with objects that require latching
 	latchRef.getSevenSegRef( &sevenSegRef );
 	
 	setUpTimerInterrupts();

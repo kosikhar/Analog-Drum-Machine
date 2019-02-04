@@ -17,18 +17,9 @@
 #include "Latch.h"
 #include "Trigger.h"
 
-extern Timer timer;
-
-//Pinouts for shift registers
-struct ShiftRegister_pinout{
-	uint8_t shift;
-	uint8_t latch;
-	uint8_t serial;
-};
-
 class SetupHelper{
 	public:
-		SetupHelper( Timer & timerRef, ShiftRegister_pinout & outputPinoutRef,
+		SetupHelper( Timer & timerRef,
 			SevenSeg & sevenSegRef, Trigger & triggerRef, Counter & counterRef, Latch & latchRef );
 };
 
