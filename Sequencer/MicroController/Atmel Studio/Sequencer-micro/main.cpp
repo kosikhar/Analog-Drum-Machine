@@ -4,64 +4,67 @@
  * Created: 2018-12-09 11:42:26 AM
  * Author : Koltin Kosik-Harvey
  */
- 
-//Global contains many declarations.
-//View for context.
-#include "global.h"
+
+#include "setupHelper.h"
+#include "TaskManager.h"
+
+//Define a pointer to a seven segment display object.
+SevenSeg sevenSegmentDisplay;
+
+//Define a pointer to a shift register pinout struct
+ShiftRegister_SIPO_pinout outputSIPO_Pinout;
+
+//Define a pointer to a timer object.
+Timer timer;
+
+//Initialize the blinky object
+//Blinks an LED on an off.
+Blinky blinky;
+
+//Initialize the trigger object
+Trigger trigger;
+
+//Initialize the counter object
+//Task counts to 100 then resets.
+Counter counter;
+
+//initialize latching object. Controls latching output on shift registers
+Latch latch;
+
+//Task for latching
+void latchTask( void ){
+	latch.run();
+}
+//Task for Seven Segment display
+void sevenSegmentDisplayTask( void ){
+	sevenSegmentDisplay.run();
+}
+//Task for triggering
+void triggerTask( void ){
+	trigger.run();
+}
+//Task for counting
+void counterTask( void ){
+	counter.run();
+}
 
 int main(void)
 {	
-	//Setup variables for timing
-	setupTimers();
+	//SetupHelper is a one-line setup object.
+	SetupHelper setupHelper(timer, outputSIPO_Pinout, sevenSegmentDisplay, trigger, counter, latch); 
 	
-	//Setup Blinky task
-	setupBlinky();
+	//Initialize task manager
+	TaskManager taskManager( &timer );
 	
-	//Setup the Trigger
-	setupTrigger();
-	
-	//Setup Shift Registers
-	setupShiftRegisters();
-	
-	//Setup seven segment display
-	setupSevenSegment();
-	
-	//Setup Timers + interrupts
-	setUpTimerInterrupts();
+	//Add tasks
+	taskManager.addTask( latchTask , 0);
+	taskManager.addTask( sevenSegmentDisplayTask, 0);
+	taskManager.addTask( triggerTask, 16 );
+	taskManager.addTask( counterTask, 128);
 	
     while (1) 
     {
-		getNextTask();
-		
-		switch (taskSelection){
-			case LATCH_SHIFT_REGISTERS_TASK:				
-				//Run latchShiftRegisters
-				latchShiftRegisters();
-				break;
-			case LOAD_SHIFT_REGISTERS_TASK:
-				//Run LoadShiftRegisters
-				loadShiftRegisters();
-				break;
-			case INCREMENT_COUNTER_TASK:
-				//Run increment counter task
-				incrementCounter();
-				break;
-			case SET_TRIGGER_LOW:
-				set_LOW();
-				break;
-			case SET_TRIGGER_HIGH:
-				set_HIGH();
-				break;
-			case BLINKY_TASK:
-				//Run Blinky
-				blinky();
-				break;
-			case DO_NOTHING:
-				doNothing();
-				break;
-				//Do nothing
-		}
-		
+		taskManager.runTasks();
 	}
 }
 

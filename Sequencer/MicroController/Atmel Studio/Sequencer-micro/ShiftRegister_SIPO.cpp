@@ -10,6 +10,11 @@
 // default constructor
 ShiftRegister_SIPO::ShiftRegister_SIPO()
 {
+	//Pins on port C for the output shift register
+	pinout->serial = 0;
+	pinout->latch = 1;
+	pinout->shift = 2;
+	
 } //ShiftRegister_SIPO
 
 

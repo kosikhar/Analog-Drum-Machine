@@ -9,7 +9,7 @@
 #ifndef __SHIFTREGISTER_PISO_H__
 #define __SHIFTREGISTER_PISO_H__
 
-#include "global.h"
+#include "avr/io.h"
 
 class ShiftRegister_PISO
 {

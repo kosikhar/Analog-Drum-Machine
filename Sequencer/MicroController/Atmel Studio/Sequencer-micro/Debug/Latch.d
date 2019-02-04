@@ -1,5 +1,5 @@
-setupHelper.d setupHelper.o: .././setupHelper.cpp .././setupHelper.h \
- .././timer.h \
+Latch.d Latch.o: .././Latch.cpp .././Latch.h .././SevenSeg.h \
+ .././ShiftRegister_SIPO.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -14,13 +14,15 @@ setupHelper.d setupHelper.o: .././setupHelper.cpp .././setupHelper.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././ShiftRegister_SIPO.h .././interrupts.h \
+ .././timer.h .././interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././SevenSeg.h .././Counter.h .././Blinky.h .././Latch.h .././Trigger.h
+ .././Counter.h
 
-.././setupHelper.h:
+.././Latch.h:
 
-.././timer.h:
+.././SevenSeg.h:
+
+.././ShiftRegister_SIPO.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -50,18 +52,10 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
-.././ShiftRegister_SIPO.h:
+.././timer.h:
 
 .././interrupts.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-.././SevenSeg.h:
-
 .././Counter.h:
-
-.././Blinky.h:
-
-.././Latch.h:
-
-.././Trigger.h:

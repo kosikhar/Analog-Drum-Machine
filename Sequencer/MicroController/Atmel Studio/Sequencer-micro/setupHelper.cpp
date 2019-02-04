@@ -5,89 +5,31 @@
  *  Author: Koltin Kosik-Harvey
  */ 
 
-#include "global.h"
+#include "setupHelper.h"
+#include "interrupts.h"
 
-//Global Variables for "Blinky"
-uint8_t LEDValueNext; //Indicates the next value for the LED
-
-//Global for the trigger state
-uint8_t triggerLow;
-
-//Global Variables for "LoadShiftRegisters"
-uint8_t counter;
-uint8_t numbersToPrint [2];
-uint8_t shiftComplete;
-uint8_t moreShiftWork;
-
-//Timer increments every 0.1ms
-Timer timer;
-
-//Initialize seven segment display
-SevenSeg sevenSegmentDisplay;
-ShiftRegister_SIPO_pinout outputShiftRegister_pinout;
-
-//Initialize variables that well keep track of when tasks run
-uint32_t LEDTaskTimer;
-uint32_t IncrementCounterTimer;
-uint32_t triggerHighTimer;
-uint32_t triggerLowTimer;
-
-void setupTimers( void )
-{
-	//Used for blinking LED
-	LEDTaskTimer = timer.millis();
-	
-	//Used for incrementing counter
-	IncrementCounterTimer = timer.millis();
-	
-	//Used for the trigger
-	triggerLowTimer = timer.millis();
-	triggerHighTimer = timer.millis();
-	
-	//Initialize the latching timers.
-	enableLatch = false;
-	enableShift = false;
-}
-
-void setupBlinky( void )
-{
-	//Used for Task - "Blinky". Indicates next value of LED
-	LEDValueNext = 1;
-	
-	//Set LED on port D data direction to output
-	DDRD |= (1 << PORTD0);
-	
-	//Used for the "Do Nothing LED"
-	DDRD |= (1 << PORTD1);
-}
-
-void setupTrigger( void )
-{
-	DDRD |= (1 << PORTD2);
-	
-	triggerLow = true;
-}
-
-void setupShiftRegisters( void )
-{
+SetupHelper::SetupHelper( Timer & timerRef, ShiftRegister_SIPO_pinout & outputPinoutRef, 
+							SevenSeg & sevenSegRef, Trigger & triggerRef, Counter & counterRef, Latch & latchRef )
+{	
 	//Pins on port C for the output shift register
-	outputShiftRegister_pinout.serial = 0;
-	outputShiftRegister_pinout.latch = 1;
-	outputShiftRegister_pinout.shift = 2;
-}
+	outputPinoutRef.serial = 0;
+	outputPinoutRef.latch = 1;
+	outputPinoutRef.shift = 2;
+	
+	//Setup Counter
+	counterRef.getTimerRef( &timerRef );
+	
+	//Setup Trigger
+	triggerRef.getTimerRef( &timerRef );
 
-void setupSevenSegment()
-{
 	//Setup SevenSegmentDisplay object
-	sevenSegmentDisplay.sevenSegInit(2, &outputShiftRegister_pinout);
-	sevenSegmentDisplay.getTimerReference(&timer);
+	sevenSegRef.sevenSegInit(NUM_DISPLAYS, &outputPinoutRef);
+	sevenSegRef.getTimerReference( &timerRef );
+	sevenSegRef.getCounterRef( &counterRef );
 	
-	//Declare Byte to write to shift register
-	counter = 0;
+	//Setup Latch object
+	latchRef.getSevenSegRef( &sevenSegRef );
 	
-	//Used for controlling when to shift bits.
-	shiftComplete = 0;
+	setUpTimerInterrupts();
 	
-	//Used for indicating if there's more to shift
-	moreShiftWork = false;
 }

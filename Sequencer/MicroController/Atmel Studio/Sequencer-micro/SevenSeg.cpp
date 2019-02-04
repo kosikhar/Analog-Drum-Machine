@@ -19,6 +19,36 @@ void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, ShiftRegister_SIPO_pinout 
 	
 	//Store this variable for later.
 	size = numberOfDisplays;
+	
+	//initialize shift complete flag
+	shiftComplete = false;
+}
+
+void SevenSeg::run( void )
+{
+	//check if the counter has updated
+	if (counter->counterUpdated == true){
+		
+		//Reset this flag
+		counter->counterUpdated = false;
+		
+		//numberToPrint[0] is the ones place. n mod 10 gives the ones
+		numbersToPrint[0] = counter->counterValue % 10;
+		for( int i=1; i < NUM_DISPLAYS ; i++){
+			//numberToPrint[1++] gets the 10s, 100s, etc.
+			numbersToPrint[i] = counter->counterValue / (10*i);
+		}
+		
+		//Prepare shift registers to hold bit map for seven segment display
+		this->printNumbers_NOLATCH( numbersToPrint );
+		
+		shiftComplete = true;
+	}
+}
+
+void SevenSeg::getCounterRef( Counter * counterPtr)
+{
+	counter = counterPtr;
 }
 
 void SevenSeg::printNumbers( uint8_t * Bytes )

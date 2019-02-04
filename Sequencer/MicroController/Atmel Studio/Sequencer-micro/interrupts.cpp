@@ -5,8 +5,8 @@
  *  Author: Koltin Kosik-Harvey
  */ 
 
-#include "global.h"
 #include "interrupts.h"
+#include "setupHelper.h"
 
 //Call every 100us, will be used for controlling timing
 ISR( TIMER0_COMPA_vect, ISR_BLOCK )
@@ -14,18 +14,13 @@ ISR( TIMER0_COMPA_vect, ISR_BLOCK )
 	//Increment timer every 1ms
 	timer.incrementTimer();
 }
-
-uint8_t enableShift;
 //Well be used to update shift registers in a timely fashion
 ISR( TIMER1_COMPB_vect, ISR_NOBLOCK)
 {
-	enableShift = true;
 }
 
-uint8_t enableLatch;
 ISR( TIMER1_COMPA_vect, ISR_NOBLOCK )
 {
-	enableLatch = true;
 	disableTimerOneInterrupts();
 }
 
