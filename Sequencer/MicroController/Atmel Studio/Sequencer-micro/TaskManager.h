@@ -11,7 +11,7 @@
 
 #include "timer.h"
 
-#define TOTAL_TASK_COUNT 4
+#define TOTAL_TASK_COUNT 5
 
 //Should be a prime number uint8
 #define RANDOM_GEN_SEED 7

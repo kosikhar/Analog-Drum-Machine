@@ -6,7 +6,6 @@
  */ 
 
 #include "interrupts.h"
-#include "setupHelper.h"
 
 //Call every 100us, will be used for controlling timing
 ISR( TIMER0_COMPA_vect, ISR_BLOCK )

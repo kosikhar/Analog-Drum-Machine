@@ -1,4 +1,5 @@
-main.d main.o: .././main.cpp .././setupHelper.h .././timer.h \
+main.d main.o: .././main.cpp .././setupTasks.h .././TaskManager.h \
+ .././timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -13,12 +14,13 @@ main.d main.o: .././main.cpp .././setupHelper.h .././timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././ShiftRegister_SIPO.h .././interrupts.h \
+ .././SevenSeg.h .././ShiftRegister_SIPO.h .././interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././SevenSeg.h .././Counter.h .././Blinky.h .././Latch.h .././Trigger.h \
- .././TaskManager.h
+ .././Blinky.h .././Trigger.h .././Counter.h .././Latch.h
 
-.././setupHelper.h:
+.././setupTasks.h:
+
+.././TaskManager.h:
 
 .././timer.h:
 
@@ -50,20 +52,18 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
+.././SevenSeg.h:
+
 .././ShiftRegister_SIPO.h:
 
 .././interrupts.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-.././SevenSeg.h:
-
-.././Counter.h:
-
 .././Blinky.h:
-
-.././Latch.h:
 
 .././Trigger.h:
 
-.././TaskManager.h:
+.././Counter.h:
+
+.././Latch.h:

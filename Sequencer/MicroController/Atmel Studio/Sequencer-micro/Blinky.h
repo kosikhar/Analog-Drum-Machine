@@ -11,7 +11,7 @@
 
 #include "timer.h"
 
-#define LED_UPDATE 2500 //Update LED every 250ms
+#define LED_UPDATE 5000 //Update LED every 500ms
 
 class Blinky
 {

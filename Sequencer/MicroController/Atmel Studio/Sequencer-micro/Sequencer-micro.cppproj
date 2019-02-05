@@ -36,7 +36,7 @@
   <documentation help="" />
   <offline-documentation help="" />
   <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.28.1" />
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
   </dependencies>
 </framework-data>
     </AsfFrameworkConfig>
@@ -200,10 +200,7 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="setupHelper.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="setupHelper.h">
+    <Compile Include="setupTasks.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SevenSeg.cpp">

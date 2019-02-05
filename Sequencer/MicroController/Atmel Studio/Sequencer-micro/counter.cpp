@@ -17,14 +17,13 @@ Counter::Counter()
 	//Initialize timeStamp to zero
 	timeStamp = 0;
 	
-	//Initialize counterUpdated to false
-	counterUpdated = false;
-	
 } //counter
 
-void Counter::getTimerRef( Timer * timerPtr )
+void Counter::init( Timer * timerPtr, SevenSeg * sevenSegPtr)
 {
 	timer = timerPtr;
+	
+	sevenSeg = sevenSegPtr;
 }
 
 void Counter::run( void )
@@ -42,9 +41,12 @@ void Counter::run( void )
 		if ( counterValue >= 100 ){
 			counterValue = 0;
 		}
-			
-		//flag that the counter has been updated.	
-		counterUpdated = true;	
+		
+		//Update the content for the sevenSeg to print
+		sevenSeg->contentToPrint = counterValue;
+		
+		//flag that the counter has been updated, and that seven seg has content to print
+		sevenSeg->newContentToPrint = true;	
 	}
 		
 }

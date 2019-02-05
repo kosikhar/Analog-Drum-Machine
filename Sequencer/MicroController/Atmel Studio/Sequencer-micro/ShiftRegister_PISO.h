@@ -10,7 +10,7 @@
 #define __SHIFTREGISTER_PISO_H__
 
 #include <avr/io.h>
-#include "setupHelper.h"
+#include "timer.h"
 
 #define PISO_PORT PORTC
 #define PISO_DDR DDRC

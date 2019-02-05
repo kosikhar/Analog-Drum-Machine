@@ -14,7 +14,7 @@ Blinky::Blinky()
 	//Set LED on port D data direction to output
 	DDRD |= (1 << PORTD0);
 		
-	//Used for the "Do Nothing LED"
+	//Used for the "Status LED"
 	DDRD |= (1 << PORTD1);
 	
 	//Used for Task - "Blinky". Indicates next value of LED

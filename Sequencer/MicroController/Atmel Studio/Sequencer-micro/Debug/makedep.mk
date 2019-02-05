@@ -12,8 +12,6 @@ Latch.cpp
 
 main.cpp
 
-setupHelper.cpp
-
 SevenSeg.cpp
 
 ShiftRegister_PISO.cpp

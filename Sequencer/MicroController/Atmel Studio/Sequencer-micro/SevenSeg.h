@@ -10,7 +10,6 @@
 #define __SEVENSEG_H__
 
 #include "ShiftRegister_SIPO.h"
-#include "Counter.h"
 
 #define NUM_DISPLAYS 2
 
@@ -24,6 +23,10 @@ class SevenSeg : public ShiftRegister_SIPO
 
 		//Flag for indicating that there is content to print
 		uint8_t newContentToPrint;
+				
+		//Content to be printed. Must be a number. (for now)
+		uint8_t contentToPrint;
+
 
 	private:
 		uint8_t size;
@@ -32,16 +35,14 @@ class SevenSeg : public ShiftRegister_SIPO
 		 	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
 	 	};
 		 
-		//A pointer to the counter object
-		Counter * counter;
-		
+		//Values to be printed to each seven seg display
 		uint8_t numbersToPrint [NUM_DISPLAYS];
 
 	//functions
 	public:
 		SevenSeg();
 		
-		void sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr, Counter * counterPtr );
+		void sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );
@@ -54,9 +55,6 @@ class SevenSeg : public ShiftRegister_SIPO
 				
 		//If you only printing one number, no need to make an array!
 		void printNumbers( uint8_t Byte );
-		
-		//Reference to the counter, as that's getting fed to the display.
-		void getCounterRef( Counter * counterPtr);
 			
 		~SevenSeg();
 	private:

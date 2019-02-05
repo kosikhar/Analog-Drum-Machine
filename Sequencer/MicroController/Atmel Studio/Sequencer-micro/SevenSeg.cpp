@@ -10,15 +10,15 @@
 SevenSeg::SevenSeg() 
 {
 	ShiftRegister_SIPO();
+	
+	//Init content to print to 0
+	contentToPrint = 0;
 } //SevenSeg
 
-void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr, Counter * counterPtr )
+void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr)
 {
 	//Get reference to external timer
 	this->getTimerReference( timerPtr );
-
-	//Get reference to external counter task
-	this->getCounterRef(counterPtr);
 	
 	//Store this variable for later.
 	size = numberOfDisplays;
@@ -33,16 +33,16 @@ void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr, Counter 
 void SevenSeg::run( void )
 {
 	//check if the counter has updated
-	if (counter->counterUpdated == true){
+	if (newContentToPrint == true){
 		
 		//Reset this flag
-		counter->counterUpdated = false;
+		newContentToPrint = false;
 		
 		//numberToPrint[0] is the ones place. n mod 10 gives the ones
-		numbersToPrint[0] = counter->counterValue % 10;
+		numbersToPrint[0] = contentToPrint % 10;
 		for( int i=1; i < NUM_DISPLAYS ; i++){
 			//numberToPrint[1++] gets the 10s, 100s, etc.
-			numbersToPrint[i] = counter->counterValue / (10*i);
+			numbersToPrint[i] = contentToPrint / (10*i);
 		}
 		
 		//Prepare shift registers to hold bit map for seven segment display
@@ -50,11 +50,6 @@ void SevenSeg::run( void )
 		
 		shiftComplete = true;
 	}
-}
-
-void SevenSeg::getCounterRef( Counter * counterPtr)
-{
-	counter = counterPtr;
 }
 
 void SevenSeg::printNumbers( uint8_t * Bytes )

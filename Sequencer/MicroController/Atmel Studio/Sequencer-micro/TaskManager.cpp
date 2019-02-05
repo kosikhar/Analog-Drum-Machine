@@ -12,16 +12,6 @@
 TaskManager::TaskManager( Timer * timerPtr )
 {
 	
-// 	//Used for blinking LED
-// 	LEDTaskTimer = timer.millis();
-// 		
-// 	//Used for incrementing counter
-// 	IncrementCounterTimer = timer.millis();
-// 		
-// 	//Used for the trigger
-// 	triggerLowTimer = timer.millis();
-// 	triggerHighTimer = timer.millis();
-
 	timer = timerPtr;
 	
 	//At initialization there should be zero loaded tasks. 

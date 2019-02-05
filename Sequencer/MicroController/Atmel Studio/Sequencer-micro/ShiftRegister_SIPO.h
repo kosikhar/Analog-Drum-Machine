@@ -12,7 +12,6 @@
 #include <avr/io.h>
 #include "timer.h"
 #include "interrupts.h"
-#include "setupHelper.h"
 
 //Port and Data Direction registers for the
 //Serial input, Serial output registers.

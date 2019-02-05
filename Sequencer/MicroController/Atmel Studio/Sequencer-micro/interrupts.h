@@ -10,6 +10,7 @@
 #define INTERRUPTS_H_
 
 #include <avr/interrupt.h>
+#include "timer.h"
 
 extern Timer timer;
 

@@ -10,23 +10,23 @@
 #define __COUNTER_H__
 
 #include "timer.h"
+#include "SevenSeg.h"
 
-#define COUNTER_UPDATE 1000 //Update counter every 100ms
+#define COUNTER_UPDATE 100 //Update counter every 10ms
 
 class Counter
 {
 	//variables
 	public:
-		//Keep track if the counter has updated.
-		//used as a flag.
-		uint8_t counterUpdated;
-		
-		//Value off the counter.
+		//Value of the counter.
 		uint8_t counterValue;
 		
 	private:
 		//A timer for keeping track of time.
 		Timer * timer;
+		
+		//Reference to external seven seg object which will print counter to
+		SevenSeg * sevenSeg;
 		
 		//Stores a time stamp
 		uint32_t timeStamp;
@@ -38,8 +38,8 @@ class Counter
 		//Runs the counter task. Non-Blocking		
 		void run( void );
 		
-		//Gets a reference to the global timer
-		void getTimerRef( Timer * timerPtr);
+		//Gets a reference to the global timer and seven segment
+		void init( Timer * timerPtr, SevenSeg * sevenSegPtr);
 		
 		~Counter();
 	private:
