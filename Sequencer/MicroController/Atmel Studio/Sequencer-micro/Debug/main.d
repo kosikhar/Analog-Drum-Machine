@@ -1,5 +1,5 @@
-main.d main.o: .././main.cpp .././setupTasks.h .././TaskManager.h \
- .././timer.h \
+main.d main.o: .././main.cpp .././Tasks/setupTasks.h \
+ .././Tasks/TaskManager.h .././Tasks/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -14,15 +14,18 @@ main.d main.o: .././main.cpp .././setupTasks.h .././TaskManager.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- .././SevenSeg.h .././ShiftRegister_SIPO.h .././interrupts.h \
+ .././Tasks/SevenSeg.h .././Tasks/../Shift_Register/ShiftRegister_SIPO.h \
+ .././Tasks/../Shift_Register/../timer.h \
+ .././Tasks/../Shift_Register/../interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././Blinky.h .././Trigger.h .././Counter.h .././Latch.h
+ .././Tasks/../Shift_Register/../timer.h .././Tasks/Blinky.h \
+ .././Tasks/Trigger.h .././Tasks/Counter.h .././Tasks/Latch.h
 
-.././setupTasks.h:
+.././Tasks/setupTasks.h:
 
-.././TaskManager.h:
+.././Tasks/TaskManager.h:
 
-.././timer.h:
+.././Tasks/../timer.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -52,18 +55,22 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
-.././SevenSeg.h:
+.././Tasks/SevenSeg.h:
 
-.././ShiftRegister_SIPO.h:
+.././Tasks/../Shift_Register/ShiftRegister_SIPO.h:
 
-.././interrupts.h:
+.././Tasks/../Shift_Register/../timer.h:
+
+.././Tasks/../Shift_Register/../interrupts.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-.././Blinky.h:
+.././Tasks/../Shift_Register/../timer.h:
 
-.././Trigger.h:
+.././Tasks/Blinky.h:
 
-.././Counter.h:
+.././Tasks/Trigger.h:
 
-.././Latch.h:
+.././Tasks/Counter.h:
+
+.././Tasks/Latch.h:

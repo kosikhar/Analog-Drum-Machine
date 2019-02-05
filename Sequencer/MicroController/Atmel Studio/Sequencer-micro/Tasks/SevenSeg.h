@@ -9,7 +9,7 @@
 #ifndef __SEVENSEG_H__
 #define __SEVENSEG_H__
 
-#include "ShiftRegister_SIPO.h"
+#include "../Shift_Register/ShiftRegister_SIPO.h"
 
 #define NUM_DISPLAYS 2
 

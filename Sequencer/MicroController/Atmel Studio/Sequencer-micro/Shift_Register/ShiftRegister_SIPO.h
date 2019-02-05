@@ -10,8 +10,8 @@
 #define __SHIFTREGISTER_SIPO_H__
 
 #include <avr/io.h>
-#include "timer.h"
-#include "interrupts.h"
+#include "../timer.h"
+#include "../interrupts.h"
 
 //Port and Data Direction registers for the
 //Serial input, Serial output registers.

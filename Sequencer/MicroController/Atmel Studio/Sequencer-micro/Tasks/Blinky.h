@@ -9,7 +9,7 @@
 #ifndef __BLINKY_H__
 #define __BLINKY_H__
 
-#include "timer.h"
+#include "../timer.h"
 
 #define LED_UPDATE 5000 //Update LED every 500ms
 

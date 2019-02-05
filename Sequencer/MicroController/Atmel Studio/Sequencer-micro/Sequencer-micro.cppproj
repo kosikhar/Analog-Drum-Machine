@@ -170,64 +170,64 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Blinky.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Blinky.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Counter.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Counter.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="global.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="interrupts.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="interrupts.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Latch.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Latch.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="setupTasks.h">
+    <Compile Include="Shift_Register\ShiftRegister_PISO.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SevenSeg.cpp">
+    <Compile Include="Shift_Register\ShiftRegister_PISO.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SevenSeg.h">
+    <Compile Include="Shift_Register\ShiftRegister_SIPO.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ShiftRegister_PISO.cpp">
+    <Compile Include="Shift_Register\ShiftRegister_SIPO.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ShiftRegister_PISO.h">
+    <Compile Include="Tasks\Blinky.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ShiftRegister_SIPO.cpp">
+    <Compile Include="Tasks\Blinky.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ShiftRegister_SIPO.h">
+    <Compile Include="Tasks\Counter.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TaskManager.cpp">
+    <Compile Include="Tasks\Counter.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TaskManager.h">
+    <Compile Include="Tasks\Latch.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="tasks.cpp">
+    <Compile Include="Tasks\Latch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\setupTasks.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\SevenSeg.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\SevenSeg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\TaskManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\TaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\Trigger.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\Trigger.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="timer.cpp">
@@ -236,12 +236,10 @@
     <Compile Include="timer.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Trigger.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Trigger.h">
-      <SubType>compile</SubType>
-    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shift_Register" />
+    <Folder Include="Tasks" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

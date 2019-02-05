@@ -1,5 +1,5 @@
-TaskManager.d TaskManager.o: .././TaskManager.cpp .././TaskManager.h \
- .././timer.h \
+Tasks/Latch.d Tasks/Latch.o: ../Tasks/Latch.cpp ../Tasks/Latch.h \
+ ../Tasks/SevenSeg.h ../Tasks/../Shift_Register/ShiftRegister_SIPO.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -12,12 +12,18 @@ TaskManager.d TaskManager.o: .././TaskManager.cpp .././TaskManager.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
+ ../Tasks/../Shift_Register/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../Tasks/../Shift_Register/../interrupts.h \
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+ ../Tasks/../Shift_Register/../timer.h
 
-.././TaskManager.h:
+../Tasks/Latch.h:
 
-.././timer.h:
+../Tasks/SevenSeg.h:
+
+../Tasks/../Shift_Register/ShiftRegister_SIPO.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -43,6 +49,14 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
+../Tasks/../Shift_Register/../timer.h:
+
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../Tasks/../Shift_Register/../interrupts.h:
+
+z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+
+../Tasks/../Shift_Register/../timer.h:

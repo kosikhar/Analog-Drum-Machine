@@ -1,4 +1,5 @@
-Blinky.d Blinky.o: .././Blinky.cpp .././Blinky.h .././timer.h \
+Tasks/Trigger.d Tasks/Trigger.o: ../Tasks/Trigger.cpp ../Tasks/Trigger.h \
+ ../Tasks/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -14,9 +15,9 @@ Blinky.d Blinky.o: .././Blinky.cpp .././Blinky.h .././timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
 
-.././Blinky.h:
+../Tasks/Trigger.h:
 
-.././timer.h:
+../Tasks/../timer.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 

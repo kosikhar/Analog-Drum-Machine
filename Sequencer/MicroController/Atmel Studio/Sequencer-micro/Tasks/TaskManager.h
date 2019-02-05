@@ -9,7 +9,7 @@
 #ifndef __TASKMANAGER_H__
 #define __TASKMANAGER_H__
 
-#include "timer.h"
+#include "../timer.h"
 
 #define TOTAL_TASK_COUNT 5
 

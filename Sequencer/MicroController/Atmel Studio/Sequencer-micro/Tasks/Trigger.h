@@ -9,7 +9,7 @@
 #ifndef __TRIGGER_H__
 #define __TRIGGER_H__
 
-#include "timer.h"
+#include "../timer.h"
 
 //Unit is 0.1ms 
 #define TRIGGER_LOW 10000 //How long trigger is low (1s)

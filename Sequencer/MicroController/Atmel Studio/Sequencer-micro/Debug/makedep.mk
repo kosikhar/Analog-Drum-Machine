@@ -2,27 +2,25 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-Blinky.cpp
-
-Counter.cpp
-
 interrupts.cpp
-
-Latch.cpp
 
 main.cpp
 
-SevenSeg.cpp
+Shift_Register\ShiftRegister_PISO.cpp
 
-ShiftRegister_PISO.cpp
+Shift_Register\ShiftRegister_SIPO.cpp
 
-ShiftRegister_SIPO.cpp
+Tasks\Blinky.cpp
 
-TaskManager.cpp
+Tasks\Counter.cpp
 
-tasks.cpp
+Tasks\Latch.cpp
+
+Tasks\SevenSeg.cpp
+
+Tasks\TaskManager.cpp
+
+Tasks\Trigger.cpp
 
 timer.cpp
-
-Trigger.cpp
 
