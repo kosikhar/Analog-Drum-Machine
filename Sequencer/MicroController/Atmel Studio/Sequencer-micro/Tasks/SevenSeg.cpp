@@ -9,10 +9,12 @@
 // default constructor
 SevenSeg::SevenSeg() 
 {
-	ShiftRegister_SIPO();
+	ShiftRegister_SIPO(&SIPO_PORT, &SIPO_DDR, 
+						SIPO_SHIFT_PIN, SIPO_LATCH_PIN, SIPO_SERIAL_PIN);
 	
 	//Init content to print to 0
 	contentToPrint = 0;
+
 } //SevenSeg
 
 void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr)

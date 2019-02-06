@@ -11,7 +11,18 @@
 
 #include "../Shift_Register/ShiftRegister_SIPO.h"
 
+//How many 7 seg displays are used.
 #define NUM_DISPLAYS 2
+
+//Port and Data Direction registers for the
+//Serial output shift registers
+#define SIPO_PORT PORTC
+#define SIPO_DDR DDRC
+
+//Pinout for the SIPO shift registers
+#define SIPO_SERIAL_PIN 0
+#define SIPO_LATCH_PIN 1
+#define SIPO_SHIFT_PIN 2
 
 class SevenSeg : public ShiftRegister_SIPO
 {
@@ -58,6 +69,7 @@ class SevenSeg : public ShiftRegister_SIPO
 			
 		~SevenSeg();
 	private:
+
 		void shiftInBytes( uint8_t * Bytes);
 
 }; //SevenSeg

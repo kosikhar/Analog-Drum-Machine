@@ -12,27 +12,14 @@
 #include <avr/io.h>
 #include "../timer.h"
 #include "../interrupts.h"
+#include "ShiftRegister.h"
 
-//Port and Data Direction registers for the
-//Serial input, Serial output registers.
-#define SIPO_PORT PORTC
-#define SIPO_DDR DDRC
-
-class ShiftRegister_SIPO
+class ShiftRegister_SIPO : public ShiftRegister
 {
 	//variables
 	public:
-		
-		//information of the pinout
-		uint8_t shiftPin;
-		uint8_t latchPin;
-		uint8_t serialPin;
-		//converts pinout to a byte.
-		uint8_t pinout_byte;
 
 	private:
-		//Reference to a global timer object
-		Timer * timer;
 		
 		//Byte to output.
 		uint8_t output_byte;
@@ -40,33 +27,24 @@ class ShiftRegister_SIPO
 	//functions
 	public:
 		ShiftRegister_SIPO();
-		
-		//Constructor that calls the ShiftRegisterInit
-		ShiftRegister_SIPO( uint8_t numShiftRegisters );
+
+		//Sets up pinout with constructor
+		ShiftRegister_SIPO( volatile uint8_t * port, volatile uint8_t * dataDir,
+				uint8_t shift, uint8_t latch, uint8_t serial);
+
 		
 		//Shift the shift register to the left.
 		void shiftBits( void );
-		
-		//Latches what was shifted into the shift register
-		void latchOutput( void );
-		
-		//Sends a shift pulse
-		void singleShift( void );
 		
 		//Used for loading in bytes.
 		void loadByte( uint8_t byteToLoad );
 		
 		//TODO Clear the shift register
 		void clear( void );
-
-		//Get reference to the timer object.
-		void getTimerReference( Timer * ptr );
 		
 		//Destructor
 		~ShiftRegister_SIPO();				
 	private:
-		ShiftRegister_SIPO( const ShiftRegister_SIPO &c );
-		ShiftRegister_SIPO& operator=( const ShiftRegister_SIPO &c );
 		
 		//Pin out Setup
 		void setupPins( void );

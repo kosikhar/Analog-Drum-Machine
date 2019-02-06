@@ -11,6 +11,7 @@
 
 #include <avr/io.h>
 #include "../timer.h"
+#include "../interrupts.h"
 
 #define PISO_PORT PORTC
 #define PISO_DDR DDRC
@@ -31,9 +32,14 @@ class ShiftRegister_PISO
 		//Input Byte
 		uint8_t input_byte;
 
+		//Byte that contains pinout, easier to work with
+		uint8_t pinout_byte;
+
 	//functions
 	public:
 		ShiftRegister_PISO();
+
+		void getTimerReference( Timer * ptr );
 
 		~ShiftRegister_PISO();
 	private:

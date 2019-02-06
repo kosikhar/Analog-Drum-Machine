@@ -6,6 +6,8 @@ interrupts.cpp
 
 main.cpp
 
+Shift_Register\ShiftRegister.cpp
+
 Shift_Register\ShiftRegister_PISO.cpp
 
 Shift_Register\ShiftRegister_SIPO.cpp

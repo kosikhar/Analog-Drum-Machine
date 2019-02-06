@@ -10,8 +10,12 @@
 // default constructor
 ShiftRegister_PISO::ShiftRegister_PISO()
 {
-	
+	shiftPin = 3;
+	latchPin = 4;
+	serialPin = 5;
 } //ShiftRegister_PISO
+
+
 
 // default destructor
 ShiftRegister_PISO::~ShiftRegister_PISO()
