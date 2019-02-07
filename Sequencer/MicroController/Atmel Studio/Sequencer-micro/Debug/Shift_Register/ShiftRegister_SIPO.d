@@ -18,7 +18,8 @@ Shift_Register/ShiftRegister_SIPO.d Shift_Register/ShiftRegister_SIPO.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  ../Shift_Register/../interrupts.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../Shift_Register/../timer.h ../Shift_Register/ShiftRegister.h
+ ../Shift_Register/../timer.h ../Shift_Register/ShiftRegister.h \
+ ../Shift_Register/../Pins/Pin.h
 
 ../Shift_Register/ShiftRegister_SIPO.h:
 
@@ -59,3 +60,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Shift_Register/../timer.h:
 
 ../Shift_Register/ShiftRegister.h:
+
+../Shift_Register/../Pins/Pin.h:

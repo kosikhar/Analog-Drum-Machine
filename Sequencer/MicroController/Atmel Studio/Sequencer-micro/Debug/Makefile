@@ -33,6 +33,7 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../Pins \
 ../Shift_Register \
 ../Tasks
 
@@ -41,6 +42,8 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../interrupts.cpp \
 ../main.cpp \
+../memory.cpp \
+../Pins/Pin.cpp \
 ../Shift_Register/ShiftRegister.cpp \
 ../Shift_Register/ShiftRegister_PISO.cpp \
 ../Shift_Register/ShiftRegister_SIPO.cpp \
@@ -62,6 +65,8 @@ ASM_SRCS +=
 OBJS +=  \
 interrupts.o \
 main.o \
+memory.o \
+Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
@@ -76,6 +81,8 @@ timer.o
 OBJS_AS_ARGS +=  \
 interrupts.o \
 main.o \
+memory.o \
+Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
@@ -90,6 +97,8 @@ timer.o
 C_DEPS +=  \
 interrupts.d \
 main.d \
+memory.d \
+Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
@@ -104,6 +113,8 @@ timer.d
 C_DEPS_AS_ARGS +=  \
 interrupts.d \
 main.d \
+memory.d \
+Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
@@ -154,7 +165,18 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
+
+
 ./%.o: .././%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Pins/%.o: ../Pins/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

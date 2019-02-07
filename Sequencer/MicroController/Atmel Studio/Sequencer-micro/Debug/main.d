@@ -19,7 +19,8 @@ main.d main.o: .././main.cpp .././Tasks/setupTasks.h \
  .././Tasks/../Shift_Register/../interrupts.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  .././Tasks/../Shift_Register/../timer.h \
- .././Tasks/../Shift_Register/ShiftRegister.h .././Tasks/Blinky.h \
+ .././Tasks/../Shift_Register/ShiftRegister.h \
+ .././Tasks/../Shift_Register/../Pins/Pin.h .././Tasks/Blinky.h \
  .././Tasks/Trigger.h .././Tasks/Counter.h .././Tasks/Latch.h
 
 .././Tasks/setupTasks.h:
@@ -69,6 +70,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././Tasks/../Shift_Register/../timer.h:
 
 .././Tasks/../Shift_Register/ShiftRegister.h:
+
+.././Tasks/../Shift_Register/../Pins/Pin.h:
 
 .././Tasks/Blinky.h:
 

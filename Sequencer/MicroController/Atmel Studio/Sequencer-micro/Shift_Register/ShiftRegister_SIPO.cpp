@@ -8,31 +8,27 @@
 #include "ShiftRegister_SIPO.h"
 
 //Constructs object
-ShiftRegister_SIPO::ShiftRegister_SIPO()
+ShiftRegister_SIPO::ShiftRegister_SIPO() : ShiftRegister()
 {
-	//Constructor for ShiftRegister
-	ShiftRegister();
-
 	//start off with output byte 0
 	output_byte = 0;
 
 } //ShiftRegister_SIPO
 
 //Constructs object with pinout
-ShiftRegister_SIPO::ShiftRegister_SIPO( volatile uint8_t * port, volatile uint8_t * dataDir,
-						uint8_t shift, uint8_t latch, uint8_t serial)
+ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )
 {
-	//Constructor for Shift register
-	ShiftRegister( port, dataDir, shift, latch, serial );
+	//Start off with output byte 0
+	output_byte = 0;
 }
 
 //Shifts in a bit into the shift register.
-//This will be called in a timer based interrupt so it would need to be locked
-//to prevent recursion.
 void ShiftRegister_SIPO::shiftBits( void )
 {		
 	//Starting shifting with shift/serial/latch at 0
-	*shiftRegisterPort  &= ~( pinout_byte );	
+	shiftPin->setLow();
+	latchPin->setLow();
+	serialPin->setLow();
 
 	//Wait 1us
 	timer->wait_1us();
@@ -43,11 +39,13 @@ void ShiftRegister_SIPO::shiftBits( void )
 			
 		//If the bit needs to be set to 1...
 		if( output_byte & (1 << i) ){
-			*shiftRegisterPort |= (1 << serialPin);
+
+			serialPin->setHigh();
 				
 		//Else set to 0
 		} else {
-			*shiftRegisterPort &= ~(1 << serialPin);
+			
+			serialPin->setLow();
 		}
 			
 		timer->wait_1us();

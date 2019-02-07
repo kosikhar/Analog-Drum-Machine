@@ -5,24 +5,23 @@
 * Author: k0s
 */
 
-
 #ifndef __SEVENSEG_H__
 #define __SEVENSEG_H__
 
+#include <stdlib.h>
 #include "../Shift_Register/ShiftRegister_SIPO.h"
 
 //How many 7 seg displays are used.
 #define NUM_DISPLAYS 2
 
+//Pinout for the SIPO shift registers
+#define SEVSEG_SERIAL_PIN 0
+#define SEVSEG_LATCH_PIN 1
+#define SEVSEG_SHIFT_PIN 2
+
 //Port and Data Direction registers for the
 //Serial output shift registers
-#define SIPO_PORT PORTC
-#define SIPO_DDR DDRC
-
-//Pinout for the SIPO shift registers
-#define SIPO_SERIAL_PIN 0
-#define SIPO_LATCH_PIN 1
-#define SIPO_SHIFT_PIN 2
+//#define SEVSEG_PIN_PORT PORTC
 
 class SevenSeg : public ShiftRegister_SIPO
 {
@@ -37,6 +36,10 @@ class SevenSeg : public ShiftRegister_SIPO
 				
 		//Content to be printed. Must be a number. (for now)
 		uint8_t contentToPrint;
+
+		Pin * shift_pin;
+		Pin * latch_pin;
+		Pin * serial_pin;
 
 
 	private:

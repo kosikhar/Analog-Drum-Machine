@@ -29,9 +29,7 @@ class ShiftRegister_SIPO : public ShiftRegister
 		ShiftRegister_SIPO();
 
 		//Sets up pinout with constructor
-		ShiftRegister_SIPO( volatile uint8_t * port, volatile uint8_t * dataDir,
-				uint8_t shift, uint8_t latch, uint8_t serial);
-
+		ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial );
 		
 		//Shift the shift register to the left.
 		void shiftBits( void );

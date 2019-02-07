@@ -17,7 +17,7 @@ Shift_Register/ShiftRegister.d Shift_Register/ShiftRegister.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  ../Shift_Register/../interrupts.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../Shift_Register/../timer.h
+ ../Shift_Register/../timer.h ../Shift_Register/../Pins/Pin.h
 
 ../Shift_Register/ShiftRegister.h:
 
@@ -56,3 +56,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 ../Shift_Register/../timer.h:
+
+../Shift_Register/../Pins/Pin.h:

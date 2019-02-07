@@ -6,6 +6,10 @@ interrupts.cpp
 
 main.cpp
 
+memory.cpp
+
+Pins\Pin.cpp
+
 Shift_Register\ShiftRegister.cpp
 
 Shift_Register\ShiftRegister_PISO.cpp

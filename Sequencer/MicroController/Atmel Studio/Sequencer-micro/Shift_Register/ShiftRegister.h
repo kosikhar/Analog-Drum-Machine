@@ -12,6 +12,7 @@
 #include <avr/io.h>
 #include "../timer.h"
 #include "../interrupts.h"
+#include "../Pins/Pin.h"
 
 class ShiftRegister
 {
@@ -21,24 +22,21 @@ class ShiftRegister
 		//Reference to global timer object
 		Timer * timer;
 
-		//Shift Register pinout
-		uint8_t shiftPin;
-		uint8_t latchPin;
-		uint8_t serialPin;
-		//Port, Data Direction Register
-		volatile uint8_t * shiftRegisterPort;
-		volatile uint8_t * shiftRegisterDataDir;
-
 		//A byte that will organize those pins
 		uint8_t pinout_byte;
+
+		//Shift Register pinout
+		Pin * shiftPin;
+		Pin * latchPin;
+		Pin * serialPin;
+
 	private:
 
 	//functions
 	public: 
 		ShiftRegister();
 
-		ShiftRegister(volatile uint8_t * port, volatile uint8_t * dataDir,
-						uint8_t shift, uint8_t latch, uint8_t serial);
+		ShiftRegister( Pin * shift, Pin * latch, Pin * serial );
 
 		//Get a reference to the global timer object
 		void getTimerReference( Timer * timerPtr );
@@ -48,10 +46,6 @@ class ShiftRegister
 
 		//Sends pulse to the shift pin
 		void singleShift( void );
-
-		//Get the pin numbers for the shift register to operate on
-		void getPinout( volatile uint8_t * port, volatile uint8_t * dataDir,
-						 uint8_t shift, uint8_t latch, uint8_t serial);
 
 		~ShiftRegister();
 
