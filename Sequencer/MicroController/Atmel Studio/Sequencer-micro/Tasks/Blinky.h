@@ -10,6 +10,7 @@
 #define __BLINKY_H__
 
 #include "../timer.h"
+#include "../Pins/Pin.h"
 
 #define LED_UPDATE 5000 //Update LED every 500ms
 
@@ -27,6 +28,8 @@ class Blinky
 		
 		//Stores a time stamp
 		uint32_t timeStamp;
+		
+		Pin * blinkyPin;
 		
 	//functions
 	public:

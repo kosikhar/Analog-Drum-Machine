@@ -8,8 +8,8 @@
 #ifndef __SEVENSEG_H__
 #define __SEVENSEG_H__
 
-#include <stdlib.h>
 #include "../Shift_Register/ShiftRegister_SIPO.h"
+#include <avr/pgmspace.h>
 
 //How many 7 seg displays are used.
 #define NUM_DISPLAYS 2
@@ -37,15 +37,10 @@ class SevenSeg : public ShiftRegister_SIPO
 		//Content to be printed. Must be a number. (for now)
 		uint8_t contentToPrint;
 
-		Pin * shift_pin;
-		Pin * latch_pin;
-		Pin * serial_pin;
-
-
 	private:
 		uint8_t size;
 	
-	 	const uint8_t sevenSegBitMap [11]	= {
+	 	uint8_t sevenSegBitMap [11]	= {
 		 	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
 	 	};
 		 
@@ -54,7 +49,7 @@ class SevenSeg : public ShiftRegister_SIPO
 
 	//functions
 	public:
-		SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr );
+		SevenSeg( uint8_t numberOfDisplays, Timer * timerPtr );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );

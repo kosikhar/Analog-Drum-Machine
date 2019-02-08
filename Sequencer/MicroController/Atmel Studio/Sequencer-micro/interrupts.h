@@ -12,7 +12,7 @@
 #include <avr/interrupt.h>
 #include "timer.h"
 
-extern Timer timer;
+extern Timer * timer;
 
 //Setup the registers for configuring the 328's timers.
 void setUpTimerInterrupts( void );

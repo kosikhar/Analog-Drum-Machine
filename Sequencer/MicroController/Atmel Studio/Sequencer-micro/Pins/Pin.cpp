@@ -62,13 +62,13 @@ void Pin::write( uint8_t set )
 void Pin::setHigh( void )
 {
 	//set the pin high
-	*port_register |= (1 << pinNumber);
+	*port_register |= pinNumber;
 }
 
 //Sets the pin low
 void Pin::setLow( void )
 {
-	*port_register &= ~(1 << pinNumber);
+	*port_register &= ~pinNumber;
 }
 
 // default destructor

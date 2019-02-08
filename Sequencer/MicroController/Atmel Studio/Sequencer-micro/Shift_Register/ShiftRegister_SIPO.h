@@ -26,7 +26,7 @@ class ShiftRegister_SIPO : public ShiftRegister
 		
 	//functions
 	public:
-		ShiftRegister_SIPO();
+		ShiftRegister_SIPO( void );
 
 		//Sets up pinout with constructor
 		ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial );

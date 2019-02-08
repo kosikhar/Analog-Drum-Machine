@@ -58,6 +58,9 @@ int main(void)
 
 	//Initialize seven segment display task
 	sevenSegmentDisplay = new SevenSeg(NUM_DISPLAYS, timer);
+	
+	//Initialize the latching task
+	latch = new Latch( sevenSegmentDisplay );
 
 	//Initialize blinky task
 	blinky = new Blinky( timer );
@@ -75,7 +78,7 @@ int main(void)
 	TaskManager taskManager( timer );
 	
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
-	taskManager.addTask( latchTask , 32);
+	taskManager.addTask( latchTask , 64);
 	taskManager.addTask( sevenSegmentDisplayTask, 128);
 	taskManager.addTask( triggerTask,  32);
 	taskManager.addTask( counterTask, 128);

@@ -23,6 +23,7 @@ class ShiftRegister_PISO : public ShiftRegister
 
 	//functions
 	public:
+		
 		ShiftRegister_PISO();
 
 		//Sets up pinout with constructor

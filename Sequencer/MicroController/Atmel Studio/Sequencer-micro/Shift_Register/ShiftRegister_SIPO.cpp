@@ -7,13 +7,13 @@
 
 #include "ShiftRegister_SIPO.h"
 
-//Constructs object
-ShiftRegister_SIPO::ShiftRegister_SIPO() : ShiftRegister()
+//Constructs object with pinout
+ShiftRegister_SIPO::ShiftRegister_SIPO( void ) : ShiftRegister()
 {
-	//start off with output byte 0
+	//Start off with output byte 0
 	output_byte = 0;
+}
 
-} //ShiftRegister_SIPO
 
 //Constructs object with pinout
 ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )
@@ -26,8 +26,8 @@ ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial )
 void ShiftRegister_SIPO::shiftBits( void )
 {		
 	//Starting shifting with shift/serial/latch at 0
-	shiftPin->setLow();
 	latchPin->setLow();
+	shiftPin->setLow();
 	serialPin->setLow();
 
 	//Wait 1us

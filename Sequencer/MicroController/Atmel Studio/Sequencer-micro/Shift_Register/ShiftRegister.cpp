@@ -8,10 +8,9 @@
 
 #include "ShiftRegister.h"
 
-// Constructor
-ShiftRegister::ShiftRegister()
+ShiftRegister::ShiftRegister( void )
 {
-	
+	//Do nothing
 }
 
 ShiftRegister::ShiftRegister( Pin * shift, Pin * latch, Pin * serial )
@@ -24,11 +23,11 @@ ShiftRegister::ShiftRegister( Pin * shift, Pin * latch, Pin * serial )
 void ShiftRegister::singleShift( void )
 {
 	//Shift single bit in.
-	shiftPin->setLow();
+	shiftPin->setHigh();
 	//wait
 	timer->wait_1us();
 	//Set shift high
-	shiftPin->setHigh();
+	shiftPin->setLow();
 	//wait
 	timer->wait_1us();
 }
@@ -36,11 +35,12 @@ void ShiftRegister::singleShift( void )
 void ShiftRegister::latch( void )
 {
 	//Latch output
-	latchPin->setLow();
+	latchPin->setHigh();
 	//wait
 	timer->wait_1us();
 	//Set latch high
-	latchPin->setHigh();
+	latchPin->setLow();
+
 }
 
 void ShiftRegister::getTimerReference( Timer * ptr )

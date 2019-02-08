@@ -7,7 +7,7 @@
 #include "SevenSeg.h"
 
 // default constructor
-SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr )
+SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer * timerPtr ) : ShiftRegister_SIPO()
 {
 	//Init content to print to 0
 	contentToPrint = 0;
@@ -24,20 +24,12 @@ SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr )
 	//initialize flag for indicating if there's content to print
 	newContentToPrint = false;
 
-	//Intialize pins
-	shift_pin = new Pin(SEVSEG_SHIFT_PIN, &SEVSEG_PIN_PORT, OUTPUT );
-	latch_pin = new Pin(SEVSEG_LATCH_PIN, &SEVSEG_PIN_PORT, OUTPUT );
-	serial_pin = new Pin(SEVSEG_SERIAL_PIN, &SEVSEG_PIN_PORT, OUTPUT );
-
-	//Initialize Shift Register object.
-	ShiftRegister_SIPO( shift_pin, latch_pin, serial_pin );
+	//Initialize pins
+	shiftPin = new Pin(SEVSEG_SHIFT_PIN, &PORTC, OUTPUT );
+	latchPin = new Pin(SEVSEG_LATCH_PIN, &PORTC, OUTPUT );
+	serialPin = new Pin(SEVSEG_SERIAL_PIN, &PORTC, OUTPUT );
 
 } //SevenSeg
-
-void SevenSeg::sevenSegInit()
-{
-
-}
 
 void SevenSeg::run( void )
 {

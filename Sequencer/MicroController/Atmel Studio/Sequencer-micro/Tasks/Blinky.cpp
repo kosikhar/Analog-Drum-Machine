@@ -26,9 +26,31 @@ Blinky::Blinky( Timer * timerPtr )
 	//Get reference to the timer
 	timer = timerPtr;
 	
+	blinkyPin = new Pin(0, &PORTD, OUTPUT);
+	
 } //Blinky
 
 //Runs the Blinky task. Blinks led on an off. 
+// void Blinky::run()
+// {
+// 	if ( timer->elapsed_millis( timeStamp ) > LED_UPDATE ) {
+// 		
+// 		//Update time stamp
+// 		timeStamp = timer->millis();
+// 		
+// 		if( LEDValueNext == 1 ){
+// 			//Set Test LED to OFF
+// 			PORTD |= (1 << PORTD0);
+// 			LEDValueNext = 0;
+// 			
+// 		} else {
+// 			//Set Test LED to ON
+// 			PORTD &= ~(1 << PORTD0);
+// 			LEDValueNext = 1;
+// 		}
+// 	}
+// }
+
 void Blinky::run()
 {
 	if ( timer->elapsed_millis( timeStamp ) > LED_UPDATE ) {
@@ -38,12 +60,12 @@ void Blinky::run()
 		
 		if( LEDValueNext == 1 ){
 			//Set Test LED to OFF
-			PORTD |= (1 << PORTD0);
+			blinkyPin->setHigh();
 			LEDValueNext = 0;
 			
-		} else {
+			} else {
 			//Set Test LED to ON
-			PORTD &= ~(1 << PORTD0);
+			blinkyPin->setLow();
 			LEDValueNext = 1;
 		}
 	}

@@ -7,11 +7,12 @@
 
 #include "ShiftRegister_PISO.h"
 
-// default constructor
-ShiftRegister_PISO::ShiftRegister_PISO() : ShiftRegister()
+//Constructs object with pinout
+ShiftRegister_PISO::ShiftRegister_PISO( void ) : ShiftRegister()
 {
+	//Start off with input byte = 0
 	input_byte = 0;
-} //ShiftRegister_PISO
+}
 
 //Constructs object with pinout
 ShiftRegister_PISO::ShiftRegister_PISO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )

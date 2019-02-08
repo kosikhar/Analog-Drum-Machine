@@ -18,6 +18,12 @@ class ShiftRegister
 {
 	//variables
 	public:
+		
+		//Shift Register pinout
+		Pin * shiftPin;
+		Pin * latchPin;
+		Pin * serialPin;
+		
 	protected:
 		//Reference to global timer object
 		Timer * timer;
@@ -25,17 +31,13 @@ class ShiftRegister
 		//A byte that will organize those pins
 		uint8_t pinout_byte;
 
-		//Shift Register pinout
-		Pin * shiftPin;
-		Pin * latchPin;
-		Pin * serialPin;
-
 	private:
 
 	//functions
 	public: 
-		ShiftRegister();
-
+		
+		ShiftRegister( void );
+	
 		ShiftRegister( Pin * shift, Pin * latch, Pin * serial );
 
 		//Get a reference to the global timer object

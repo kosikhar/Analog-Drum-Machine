@@ -17,7 +17,7 @@ Latch::Latch( SevenSeg * sevenSegPtr )
 
 void Latch::run( void )
 {
-	if( sevenSegmentDisplay->shiftComplete == true ){
+	if( sevenSegmentDisplay->shiftComplete == true){
 		
 		//Reset the shift complete flag
 		sevenSegmentDisplay->shiftComplete = false;
