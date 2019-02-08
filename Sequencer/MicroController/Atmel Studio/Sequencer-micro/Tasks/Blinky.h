@@ -30,12 +30,10 @@ class Blinky
 		
 	//functions
 	public:
-		Blinky();
+		Blinky( Timer * timerPtr  );
 		
 		//Blinks led on and off. Non-Blocking.
 		void run( void );
-		
-		void getTimerRef( Timer * timerPtr);
 		
 		~Blinky();
 	private:

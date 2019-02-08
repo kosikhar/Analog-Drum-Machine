@@ -31,13 +31,10 @@ class Trigger
 		
 	//functions
 	public:
-		Trigger();
+		Trigger( Timer * timerPtr );
 		
 		//runs the trigger task. Non-Blocking.
 		void run(void);
-		
-		//gets reference to a timer
-		void getTimerRef(Timer * timerPtr);
 		
 		uint8_t condition(void);
 		

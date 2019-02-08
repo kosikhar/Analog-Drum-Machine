@@ -9,7 +9,7 @@
 #include "Blinky.h"
 
 //Initialize the pins. 
-Blinky::Blinky()
+Blinky::Blinky( Timer * timerPtr )
 {
 	//Set LED on port D data direction to output
 	DDRD |= (1 << PORTD0);
@@ -23,12 +23,10 @@ Blinky::Blinky()
 	//initialize time stamp to zero
 	timeStamp = 0;
 	
-} //Blinky
-
-void Blinky::getTimerRef(Timer * timerPtr)
-{
+	//Get reference to the timer
 	timer = timerPtr;
-}
+	
+} //Blinky
 
 //Runs the Blinky task. Blinks led on an off. 
 void Blinky::run()

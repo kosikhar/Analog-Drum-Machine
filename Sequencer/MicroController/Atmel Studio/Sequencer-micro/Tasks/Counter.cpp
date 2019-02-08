@@ -9,22 +9,19 @@
 #include "Counter.h"
 
 // default constructor
-Counter::Counter()
+Counter::Counter(Timer * timerPtr, SevenSeg * sevenSegPtr)
 {
 	//initialize counter to zero
 	counterValue = 0;
 	
 	//Initialize timeStamp to zero
 	timeStamp = 0;
+
+	//References to the timer and seven seg display
+	timer = timerPtr;
+	sevenSeg = sevenSegPtr;
 	
 } //counter
-
-void Counter::init( Timer * timerPtr, SevenSeg * sevenSegPtr)
-{
-	timer = timerPtr;
-	
-	sevenSeg = sevenSegPtr;
-}
 
 void Counter::run( void )
 {

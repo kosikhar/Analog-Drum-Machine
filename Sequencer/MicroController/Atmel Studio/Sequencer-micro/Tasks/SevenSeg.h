@@ -45,7 +45,7 @@ class SevenSeg : public ShiftRegister_SIPO
 	private:
 		uint8_t size;
 	
-	 	uint8_t sevenSegBitMap [11]	= {
+	 	const uint8_t sevenSegBitMap [11]	= {
 		 	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
 	 	};
 		 
@@ -54,9 +54,7 @@ class SevenSeg : public ShiftRegister_SIPO
 
 	//functions
 	public:
-		SevenSeg();
-		
-		void sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr );
+		SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );

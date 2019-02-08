@@ -9,14 +9,11 @@
 #include "Latch.h"
 
 // default constructor
-Latch::Latch()
+Latch::Latch( SevenSeg * sevenSegPtr )
 {
-} //Latch
-
-void Latch::getSevenSegRef( SevenSeg * sevenSegPtr )
-{
+	//Reference to the seven segment display
 	sevenSegmentDisplay = sevenSegPtr;
-}
+} //Latch
 
 void Latch::run( void )
 {

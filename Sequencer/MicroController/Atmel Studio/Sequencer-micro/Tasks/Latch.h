@@ -22,11 +22,8 @@ class Latch
 		
 	//functions
 	public:
-		Latch();
-		
-		//Get reference to SevenSeg display
-		void getSevenSegRef( SevenSeg * sevenSegPtr );
-		
+		Latch( SevenSeg * sevenSegPtr  );
+	
 		//run the latching task. Non-blocking
 		void run( void );
 		
