@@ -42,7 +42,7 @@ class ShiftRegister
 		void getTimerReference( Timer * timerPtr );
 
 		//Sends pulse to the latch pin
-		void latchOutput( void );
+		void latch( void );
 
 		//Sends pulse to the shift pin
 		void singleShift( void );

@@ -26,7 +26,7 @@ void Latch::run( void )
 		sevenSegmentDisplay->shiftComplete = false;
 		
 		//Latch shift registers. Output should show on seven segment display
-		sevenSegmentDisplay->latchOutput();
+		sevenSegmentDisplay->latch();
 	}
 }
 

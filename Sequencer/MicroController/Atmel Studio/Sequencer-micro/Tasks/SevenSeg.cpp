@@ -28,9 +28,9 @@ void SevenSeg::sevenSegInit(uint8_t numberOfDisplays, Timer * timerPtr)
 	//initialize flag for indicating if there's content to print
 	newContentToPrint = false;
 
-	shift_pin = new Pin(SEVSEG_SHIFT_PIN, &PORTC, OUTPUT );
-	latch_pin = new Pin(SEVSEG_LATCH_PIN, &PORTC, OUTPUT );
-	serial_pin = new Pin(SEVSEG_SERIAL_PIN, &PORTC, OUTPUT );
+	shift_pin = new Pin(SEVSEG_SHIFT_PIN, &SEVSEG_PIN_PORT, OUTPUT );
+	latch_pin = new Pin(SEVSEG_LATCH_PIN, &SEVSEG_PIN_PORT, OUTPUT );
+	serial_pin = new Pin(SEVSEG_SERIAL_PIN, &SEVSEG_PIN_PORT, OUTPUT );
 
 	//Initialize Shift Register object.
 	ShiftRegister_SIPO( shift_pin, latch_pin, serial_pin );
@@ -64,7 +64,7 @@ void SevenSeg::printNumbers( uint8_t * Bytes )
 	this->shiftInBytes( Bytes );
 
 	//Latch
-	this->latchOutput();
+	this->latch();
 }
 
 void SevenSeg::printNumbers_NOLATCH( uint8_t * Bytes)
@@ -101,7 +101,7 @@ void SevenSeg::printNumbers( uint8_t Byte )
 	this->shiftBits();
 	
 	//latch output
-	this->latchOutput();
+	this->latch();
 }
 
 // default destructor

@@ -33,7 +33,7 @@ void ShiftRegister::singleShift( void )
 	timer->wait_1us();
 }
 
-void ShiftRegister::latchOutput( void )
+void ShiftRegister::latch( void )
 {
 	//Latch output
 	latchPin->setLow();

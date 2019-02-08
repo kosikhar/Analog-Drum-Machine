@@ -21,7 +21,7 @@
 
 //Port and Data Direction registers for the
 //Serial output shift registers
-//#define SEVSEG_PIN_PORT PORTC
+#define SEVSEG_PIN_PORT PORTC
 
 class SevenSeg : public ShiftRegister_SIPO
 {

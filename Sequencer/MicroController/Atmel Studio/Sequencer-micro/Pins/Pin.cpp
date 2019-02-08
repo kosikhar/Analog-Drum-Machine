@@ -10,9 +10,9 @@
 // default constructor
 Pin::Pin(uint8_t PIN_NUMBER, volatile uint8_t * PortRegister, uint8_t DIRECTION)
 {
-	pin_register = (uint8_t *) PortRegister - 2;
-	data_direction_reg = (uint8_t *) PortRegister - 1;
-	port_register = (uint8_t *) PortRegister;
+	pin_register = PortRegister - 2;
+	data_direction_reg = PortRegister - 1;
+	port_register = PortRegister;
 	
 	//Stores pin number as a mask. Makes it easier for operations like setting the pin value
 	pinNumber = (1 << PIN_NUMBER);

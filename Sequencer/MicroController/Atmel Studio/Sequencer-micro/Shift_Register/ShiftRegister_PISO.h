@@ -28,8 +28,12 @@ class ShiftRegister_PISO : public ShiftRegister
 		//Sets up pinout with constructor
 		ShiftRegister_PISO( Pin * shift, Pin * latch, Pin * serial);
 
-		//Shift bits into the input_byte variable
+		//Shift bits into the input_byte variable. Must latch the shift register
+		//with this->latch()
 		void shiftBits( void );
+
+		//Reads the byte that was shifted in
+		uint8_t readByte( void );
 
 		~ShiftRegister_PISO();
 	private:

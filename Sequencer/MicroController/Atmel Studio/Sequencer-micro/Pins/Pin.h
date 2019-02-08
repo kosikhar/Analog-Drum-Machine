@@ -22,11 +22,11 @@ class Pin
 	//variables
 	public:
 		//Address to data direction and port registers
-		uint8_t * data_direction_reg;
-		uint8_t * port_register;
+		volatile uint8_t * data_direction_reg;
+		volatile uint8_t * port_register;
 
 		//Input pin register address
-		uint8_t * pin_register;
+		volatile uint8_t * pin_register;
 
 		//Stores the pin number as a mask
 		uint8_t pinNumber;

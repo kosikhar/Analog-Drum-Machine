@@ -22,8 +22,9 @@ ShiftRegister_PISO::ShiftRegister_PISO( Pin * shift, Pin * latch, Pin * serial )
 
 void ShiftRegister_PISO::shiftBits( void )
 {
-	//Start shifting with shift = 0
+	//Start shifting with shift/serial/latch at 0
 	shiftPin->setLow();
+	latchPin->setLow();
 
 	//Wait 1us
 	timer->wait_1us();
@@ -32,10 +33,24 @@ void ShiftRegister_PISO::shiftBits( void )
 	for( int i=0; i < 8 ; i++){
 		
 		//Read incoming bit on the serial 
+		if( serialPin->read() > 0 ){
+			//shift a 1 into the input byte
+			input_byte = input_byte | (1 << i);
+		} else {
+			//shift a 0 into the input byte
+			input_byte = input_byte & ~(1 << i);
+		}
 
+		timer->wait_1us();
+
+		this->singleShift();
 	}
 }
 
+uint8_t ShiftRegister_PISO::readByte( void )
+{
+	return input_byte;
+}
 // default destructor
 ShiftRegister_PISO::~ShiftRegister_PISO()
 {
