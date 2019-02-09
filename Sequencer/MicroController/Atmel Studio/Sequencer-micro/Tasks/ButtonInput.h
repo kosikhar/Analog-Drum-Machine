@@ -12,6 +12,9 @@
 //object for dealing with PISO shift registers
 #include "../Shift_Register/ShiftRegister_PISO.h"
 
+//Using 16 Buttons
+#define NUM_BUTTONS 16
+
 class ButtonInput : public ShiftRegister_PISO
 {
 	//variables

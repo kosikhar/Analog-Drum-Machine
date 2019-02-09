@@ -11,7 +11,6 @@
 // default constructor
 ButtonInput::ButtonInput() : ShiftRegister_PISO()
 {
-	
 } //ButtonInput
 
 // default destructor
