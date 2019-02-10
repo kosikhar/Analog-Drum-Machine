@@ -14,11 +14,18 @@
 
 //Using 16 Buttons
 #define NUM_BUTTONS 16
+//Using 2 Shift Registers
+#define NUM_SHIFT_REGISTERS 2
 
 class ButtonInput : public ShiftRegister_PISO
 {
 	//variables
 	public:
+		//Variable to indicate if there is a new input to process
+		uint8_t newInput;
+		
+		//Incoming bytes from the shift registers
+		uint8_t inputBytes [NUM_SHIFT_REGISTERS];
 	protected:
 	private:
 
@@ -26,6 +33,11 @@ class ButtonInput : public ShiftRegister_PISO
 	public:
 		ButtonInput();
 		~ButtonInput();
+		
+		void read( void );
+		
+		//Reads value of a button in the array.
+		uint8_t readBit( uint8_t index );
 	protected:
 	private:
 		ButtonInput( const ButtonInput &c );
