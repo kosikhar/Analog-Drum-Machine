@@ -17984,6 +17984,28 @@ DIN A3, landscape with location and doc. field</description>
 <text x="2.5654" y="-0.635" size="1.27" layer="22" ratio="6" rot="SMR0">6</text>
 <text x="-7.4168" y="-2.6924" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
 </package>
+<package name="1-770875-0">
+<pad name="6" x="0" y="0" drill="1.4" shape="square"/>
+<pad name="3" x="0" y="-4.14" drill="1.4" shape="square"/>
+<pad name="5" x="4.14" y="0" drill="1.4" shape="square"/>
+<pad name="2" x="4.14" y="-4.14" drill="1.4" shape="square"/>
+<pad name="4" x="8.28" y="0" drill="1.4" shape="square"/>
+<pad name="1" x="8.28" y="-4.14" drill="1.4" shape="square"/>
+<pad name="NULL" x="12.73" y="0" drill="3.18" shape="square"/>
+<circle x="-1" y="-5" radius="1" width="0" layer="21"/>
+<wire x1="-2.845" y1="2.845" x2="-2.845" y2="-6.985" width="0.127" layer="51"/>
+<wire x1="-2.845" y1="-6.985" x2="0" y2="-7" width="0.127" layer="51"/>
+<wire x1="-2.845" y1="2.845" x2="11.155" y2="2.845" width="0.127" layer="51"/>
+<wire x1="11.155" y1="2.845" x2="11.155" y2="-6.985" width="0.127" layer="51"/>
+<wire x1="11.155" y1="-6.985" x2="11.155" y2="-7" width="0.127" layer="51"/>
+<wire x1="-2.845" y1="-6.985" x2="11.155" y2="-6.985" width="0.127" layer="51"/>
+<wire x1="-3" y1="3" x2="-3" y2="-7" width="0.127" layer="21"/>
+<wire x1="-3" y1="-7" x2="11" y2="-7" width="0.127" layer="21"/>
+<wire x1="11" y1="-7" x2="11" y2="3" width="0.127" layer="21"/>
+<wire x1="11" y1="3" x2="-3" y2="3" width="0.127" layer="21"/>
+<text x="-1" y="4" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-9" size="1.27" layer="25">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="CON6_2X3_P163_RAMNL">
@@ -18019,7 +18041,7 @@ DIN A3, landscape with location and doc. field</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="1-770875-0" prefix="J">
+<deviceset name="1-770875-0" prefix="CON">
 <gates>
 <gate name="A" symbol="CON6_2X3_P163_RAMNL" x="0" y="0"/>
 </gates>
@@ -18038,6 +18060,19 @@ DIN A3, landscape with location and doc. field</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="17708750" constant="no"/>
 <attribute name="VENDOR" value="TE Connectivity" constant="no"/>
 </technology>
+</technologies>
+</device>
+<device name="1-770875-0_VERTICAL" package="1-770875-0">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+<connect gate="A" pin="3" pad="3"/>
+<connect gate="A" pin="4" pad="4"/>
+<connect gate="A" pin="5" pad="5"/>
+<connect gate="A" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -18113,7 +18148,7 @@ DIN A3, landscape with location and doc. field</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
 <part name="MASTER_OUT" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND14" library="audio amplifier example" library_urn="urn:adsk.eagle:library:970892" deviceset="GND" device="" value="SUP"/>
-<part name="POWER" library="Capstone" deviceset="1-770875-0" device=""/>
+<part name="CON1" library="Capstone" deviceset="1-770875-0" device="1-770875-0_VERTICAL"/>
 </parts>
 <sheets>
 <sheet>
@@ -18317,7 +18352,7 @@ Same Footprint as LM741P</text>
 <attribute name="VALUE" x="184.15" y="22.86" size="1.778" layer="96"/>
 </instance>
 <instance part="GND14" gate="G$1" x="182.88" y="22.86" smashed="yes" rot="MR0"/>
-<instance part="POWER" gate="A" x="215.9" y="60.96" smashed="yes">
+<instance part="CON1" gate="A" x="215.9" y="60.96" smashed="yes">
 <attribute name="NAME" x="220.0656" y="66.2686" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 </instance>
 </instances>
@@ -18419,7 +18454,7 @@ Same Footprint as LM741P</text>
 <segment>
 <wire x1="215.9" y1="50.8" x2="203.2" y2="50.8" width="0.1524" layer="91"/>
 <label x="203.2" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="POWER" gate="A" pin="5"/>
+<pinref part="CON1" gate="A" pin="5"/>
 </segment>
 <segment>
 <wire x1="63.5" y1="96.52" x2="50.8" y2="96.52" width="0.1524" layer="91"/>
@@ -18519,9 +18554,9 @@ Same Footprint as LM741P</text>
 <wire x1="213.36" y1="58.42" x2="205.74" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="58.42" x2="205.74" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="G$1" pin="GND"/>
-<pinref part="POWER" gate="A" pin="1"/>
-<pinref part="POWER" gate="A" pin="2"/>
-<pinref part="POWER" gate="A" pin="3"/>
+<pinref part="CON1" gate="A" pin="1"/>
+<pinref part="CON1" gate="A" pin="2"/>
+<pinref part="CON1" gate="A" pin="3"/>
 </segment>
 <segment>
 <pinref part="MASTER_OUT" gate="G$1" pin="2"/>
@@ -18606,7 +18641,7 @@ Same Footprint as LM741P</text>
 <segment>
 <wire x1="215.9" y1="53.34" x2="213.36" y2="53.34" width="0.1524" layer="91"/>
 <label x="213.36" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="POWER" gate="A" pin="4"/>
+<pinref part="CON1" gate="A" pin="4"/>
 </segment>
 <segment>
 <wire x1="63.5" y1="99.06" x2="43.18" y2="99.06" width="0.1524" layer="91"/>
@@ -19093,7 +19128,7 @@ Same Footprint as LM741P</text>
 <segment>
 <wire x1="215.9" y1="48.26" x2="213.36" y2="48.26" width="0.1524" layer="91"/>
 <label x="213.36" y="48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="POWER" gate="A" pin="6"/>
+<pinref part="CON1" gate="A" pin="6"/>
 </segment>
 <segment>
 <wire x1="63.5" y1="93.98" x2="43.18" y2="93.98" width="0.1524" layer="91"/>
