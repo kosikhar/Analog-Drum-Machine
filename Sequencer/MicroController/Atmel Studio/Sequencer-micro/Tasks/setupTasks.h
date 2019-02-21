@@ -10,9 +10,7 @@
 #define SETUPTASKS_H_
 
 #include "TaskManager.h"
-
 #include "../timer.h"
-
 #include "SevenSeg.h"
 #include "Blinky.h"
 #include "Trigger.h"

@@ -10,20 +10,35 @@
 #define __INPUTPOLL_H__
 
 //Object that helps control shifting.
-#include "../Shift_Register/ShiftRegister_PISO.h"
+//Well be used for latching
+#include "ButtonInput.h"
+
+//Poll the input shift register every 100ms
+#define POLLING_TIME 1000 
 
 //Dedicated to polling the input shift registers
 //latches them in.
-class InputPoll : ShiftRegister_PISO
+class InputPoll
 {
 	//variables
 	public:
 	protected:
 	private:
-
+		//Reference to the buttonInput object
+		ButtonInput * buttonInput;
+		
+		//Reference to global timer
+		Timer * timer;
+		
+		//Time stamp for timer
+		uint32_t timeStamp;
+		
 	//functions
 	public:
-		InputPoll();
+		InputPoll( Timer * timerPtr, ButtonInput * buttonInputPtr );
+		
+		void run( void );
+		
 		~InputPoll();
 	protected:
 	private:

@@ -8,9 +8,9 @@
 
 #include "ButtonInput.h"
 
-// default constructor
-ButtonInput::ButtonInput() : ShiftRegister_PISO()
+ButtonInput::ButtonInput()
 {
+	
 } //ButtonInput
 
 // default destructor

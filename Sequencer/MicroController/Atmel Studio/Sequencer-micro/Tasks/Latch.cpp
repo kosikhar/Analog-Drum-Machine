@@ -8,7 +8,6 @@
 
 #include "Latch.h"
 
-// default constructor
 Latch::Latch( SevenSeg * sevenSegPtr )
 {
 	//Reference to the seven segment display
