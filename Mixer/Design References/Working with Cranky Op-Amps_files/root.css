@@ -1,0 +1,487 @@
+/* YUI Fonts (http://developer.yahoo.com/yui/fonts/) portable sizes:
+
+  px  %
+  ==  ====
+  10  77
+  11  85
+  12  93
+  13  100
+  14  108
+  15  116
+  16  123.1
+  17  131
+  18  138.5
+  19  146.5
+  20  153.9
+  21  161.6
+  22  167
+  23  174
+  25  189
+  26  197
+*/
+
+.annotation {
+  font-style: italic;
+  font-size: 77%;
+}
+
+.button {
+  border: 0;
+  cursor: pointer;
+}
+
+.centered {
+  margin: auto;
+  text-align: center;
+}
+
+.equation {
+  font-family: "Times New Roman", "Times Roman", "Times", serif;
+  font-size: 85%;
+  font-style: italic;
+  white-space: nowrap;
+} 
+
+.error {
+  background-color: inherit;
+  color: red;
+}
+
+.footnote {
+  font-size: 77%;
+  vertical-align: super;
+}
+
+.footnotetext {
+  font-size: 77%;
+  margin-left: 40pt;
+}
+
+.formula {
+  font-family: "Times New Roman", "Times Roman", "Times", serif;
+  font-size: 85%;
+  font-style: italic;
+  margin-left: 56pt;
+  text-indent: -16pt;
+} 
+
+.frac-num {
+  font-size: 60%;
+	position: relative;
+	top: -0.8em;
+	left: -0.15em;
+}
+
+.frac-den {
+  font-size: 60%;
+	position: relative;
+	top: 0.3em;
+	left: 0.15em;
+}
+
+.help {
+  cursor: pointer;
+  margin-left: 5px; 
+  margin-right: 8px;
+}
+
+.inset {
+  margin-left: 40pt;
+}
+
+.large {
+  font-size: 123.1%;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+.small {
+  font-size: 77%;
+}
+
+.subscript {
+  font-size: 70%;
+  position: relative;
+  top: 0.3em;
+}
+
+.superscript {
+  font-size: 70%;
+  position: relative;
+  top: -0.7em;
+}
+
+.warning {
+  background-color: inherit;
+  color: #8B0000;
+}
+
+A:link    { color: #491e00; background-color: inherit; }
+A:visited { color: #7d2e01; background-color: inherit; }
+A:hover   { color: black; background-color: inherit; } /* temporary; fix open <a> tags! */
+A:active  { color: #da7417; background-color: inherit; }
+
+B {
+  background-color: inherit;
+  color: #501000;
+}
+
+BODY {
+  background-color: #FFFFEE;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+DIV#body {
+  margin: 20px 40px 10px 20px;
+}
+DIV#body.edgetoedge {
+  margin: 0 30px 0 20px;
+}
+
+DIV.videoPlayer {
+	background-color: #EEEEDD;
+	border: 1px solid #3c2800;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+	float: right;
+	margin: 0 0 10px 20px;
+  padding: 10px;
+}
+DIV.videoPlayer .title {
+  color: #501000;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 93%;
+	font-weight: bold;
+	margin: 0 0 8px 0;
+}
+DIV.videoPlayer iframe {
+	border-left:  1px solid #997;
+	border-right: 1px solid #997;
+}
+
+BODY, INPUT, TEXTAREA {
+  font-family:
+    "Georgia",
+    "Luxi Serif",
+    "New Century Schoolbook",
+    "Times New Roman",
+    "Times",
+    serif;
+  font-size: 100%;
+}
+
+CODE { font-weight: bold; }
+
+DIV.equation {
+  border: 3px solid #3c2800;
+  background-color: white;
+  color: #501000;
+  float: right;
+  font-size: 77%;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 10px;
+  text-align: center;
+}
+DIV.equation > img {
+  margin-bottom: 6px;
+}
+
+DIV.twocolleft {
+  float: left;
+  margin-right: 20px;
+}
+
+DIV.twocolleft > P, DIV.twocolright > P {
+  font-size: 85%;
+  margin-left: 20px;
+  max-width: 480px;
+}
+
+DIV.twocolleft IMG, DIV.twocolright IMG {
+  border: 1px solid #501000;
+}
+
+DIV.twocolright {
+  float: left;
+}
+
+H1, H2, H3, H4, H5, H6,
+.fauxh1, .fauxh2, .fauxh3, .fauxh4, .fauxh5, .fauxh6, .navbarhead {
+  background-color: inherit;
+  color: #501000;
+  font-family:
+    "verdana",
+    "luxi sans",
+    "helvetica narrow",
+    "arial condensed",
+    "arial",
+    "univers",
+    sans-serif;
+  font-weight: bold;
+}
+
+H1, .fauxh1, .navbarhead { font-size: 182%; }
+H2, .fauxh2 { font-size: 167%; }
+H3, .fauxh3 { font-size: 153.9%; }
+H4, .fauxh4 { font-size: 123.1%; }
+H5, .fauxh5 { font-size: 100%; }
+H6, .fauxh6 { font-size: 85%; }
+
+H5.links { margin-left: 20pt; }
+H5.secbreak { margin-left: 20pt; }
+
+/* <hr noshade> alternative for HTML Strict */
+HR.noshade {
+  background-color: #766;    /* for Mozilla and Firefox */
+  border: 0px solid #766;
+  color: #766;               /* for IE */
+  height: 1px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+IMG.annotation {
+  border: 3px solid #3c2800;
+  clear: both;
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+IMG.bordered {
+  border: 3px solid #3c2800;
+}
+
+LI {
+  line-height: 140%;
+  margin-left: 40px;
+}
+
+LI P {
+  margin-left: 0;
+}
+
+P {
+  line-height: 140%;
+  margin-left: 20pt;
+}
+
+P.aside {
+  margin-left: 80pt;
+  margin-right: 80pt;
+  font-style: italic;
+  font-size: 77%;
+}
+
+P.links {
+  margin-left: 40pt;
+  font-size: 77%;
+}
+
+P.nomargin {
+  margin-left: 0pt;
+}
+
+P.notification {
+  font-size: 85%;
+  text-align: center;
+}
+
+P.sansserif {
+  font-family:
+    "verdana",
+    "luxi sans",
+    "helvetica narrow",
+    "arial condensed",
+    "arial",
+    "univers",
+    sans-serif;
+}
+
+P.stats {
+  margin-left: 40pt;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 77%;
+}
+
+SPAN.required {
+  background-color: inherit;
+  color: red;
+  font-size: 85%;
+  margin-left: 10px;
+}
+
+TABLE.fullwidth {
+  border: none;
+  margin: auto;
+  text-align: center;
+  width: 95%;
+}
+
+TABLE.info {
+  border: none;
+  border-collapse: collapse;
+  margin-left: 40px;
+}
+
+TD.alt {
+  background-color: #FFE4B5;
+  color: inherit;
+  font-size: 77%;
+  vertical-align: top; 
+}
+
+TD.border {
+  background-color: black;
+  color: inherit;
+}
+
+TD.emptytopleft {
+  border-left: none;
+  border-top: none;
+}
+
+TD.halfwidth {
+  width: 50%;
+}
+
+TD.head {
+  background-color: #FFE4B5;
+  color: #501000;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 123.1%;
+  font-weight: bold;
+}
+
+TD.img {
+  background-color: #ffffe0;
+  color: black;
+}
+
+TD.info {
+  background-color: #F5DEB3;
+  border: solid 1px;
+  border-color: #501000;
+  color: inherit;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 77%;
+  vertical-align: top; 
+}
+
+TD.label {
+  color: #401000;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+
+TD.rec {
+  background-color: #F5DEB3;
+  color: inherit;
+  font-size: 77%;
+  font-weight: bold;
+  vertical-align: top; 
+}
+
+TD.shophead {
+  background-color: #FFF8DC; /* cornsilk */
+  color: #501000;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 123.1%;
+  font-weight: bold;
+  height: 80px;
+}
+
+TD.thirdwidth {
+  width: 33%;
+}
+
+TH.info {
+  background-color: #D2B48C;
+  border: solid 1px;
+  border-color: #401000;
+  color: #501000;
+  font-family:
+    "Verdana",
+    "Luxi Sans",
+    "Helvetica Narrow",
+    "Arial Condensed",
+    "Arial",
+    "Univers",
+    sans-serif;
+  font-size: 108%;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+/***********************************************************************
+ LightBox 2.04 CSS, modified
+***********************************************************************/
+#lightbox{  position: absolute; left: 0; width: 100%; z-index: 100; text-align: center; line-height: 0; }
+#lightbox img{ width: auto; height: auto;}
+#lightbox a img{ border: none; }
+
+#outerImageContainer{ position: relative; background-color: #ffffee; width: 250px; height: 250px; margin: 0 auto; }
+#imageContainer{ padding: 10px; }
+
+#loading{ position: absolute; top: 40%; left: 0%; height: 25%; width: 100%; text-align: center; line-height: 0; }
+#hoverNav{ position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10; }
+#imageContainer>#hoverNav{ left: 0;}
+#hoverNav a{ outline: none;}
+
+#prevLink, #nextLink{ width: 49%; height: 100%; background-image: url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */ display: block; }
+#prevLink { left: 0; float: left;}
+#nextLink { right: 0; float: right;}
+#prevLink:hover, #prevLink:visited:hover { background: url(/bitmaps/lightbox/prevlabel.gif) left 15% no-repeat; }
+#nextLink:hover, #nextLink:visited:hover { background: url(/bitmaps/lightbox/nextlabel.gif) right 15% no-repeat; }
+
+#imageDataContainer{ font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; margin: 0 auto; line-height: 1.4em; overflow: auto; width: 100% ; }
+
+#imageData{ padding:0 10px; color: #666; }
+#imageData #imageDetails{ width: 70%; float: left; text-align: left; }  
+#imageData #caption{ font-weight: bold; }
+#imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;  }     
+#imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em; outline: none;}    
+
+#overlay{ position: absolute; top: 0; left: 0; z-index: 90; width: 100%; height: 500px; background-color: #000; }
+
