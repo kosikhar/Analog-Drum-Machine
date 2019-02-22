@@ -20,23 +20,19 @@ InputPoll::InputPoll( Timer * timerPtr, ButtonInput * buttonInputPtr )
 	timeStamp = timer->millis();
 } //InputPoll
 
-InputPoll::run( void )
+void InputPoll::run( void )
 {
 	//Latch input with th polling time.
 	if ( timer->elapsed_millis(timeStamp) > POLLING_TIME ){
-		
-		//Wait until previous shifts have been completed.
-		if ( buttonInput->shiftComplete == true ){
 				
-			//Reset the shift complete flag
-			buttonInput->shiftComplete = false;
+		//Indicate there is a new input to process
+		buttonInput->newInput = true;
 				
-			//Latch shift registers. Output should show on seven segment display
-			buttonInput->latch();
+		//Latch shift registers. Input now can be shifted into uC
+		buttonInput->latch();
 			
-			//Update time stamp
-			timeStamp->millis();
-		}
+		//Update time stamp
+		timeStamp->millis();
 	}
 
 }

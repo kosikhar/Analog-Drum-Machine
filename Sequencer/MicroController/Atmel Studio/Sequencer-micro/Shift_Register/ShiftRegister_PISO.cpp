@@ -21,6 +21,7 @@ ShiftRegister_PISO::ShiftRegister_PISO( Pin * shift, Pin * latch, Pin * serial )
 	input_byte = 0;
 }
 
+//Shifts a bytes out of the shift register
 void ShiftRegister_PISO::shiftBits( void )
 {
 	//Start shifting with shift/serial/latch at 0
