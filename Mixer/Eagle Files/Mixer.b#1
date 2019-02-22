@@ -2403,7 +2403,9 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="2"/>
 <contactref element="C1" pad="1"/>
 <wire x1="63.61" y1="51.069984375" x2="63.61" y2="46.96453125" width="0.2" layer="1"/>
-<wire x1="63.61" y1="46.96453125" x2="63.61" y2="42.859078125" width="0.2" layer="1"/>
+<wire x1="63.61" y1="46.96453125" x2="63.61" y2="45" width="0.2" layer="1"/>
+<wire x1="63.61" y1="45" x2="63.61" y2="42.859078125" width="0.2" layer="1"/>
+<wire x1="63.61" y1="42.859078125" x2="63.61" y2="38.753625" width="0.2" layer="1"/>
 <wire x1="63.61" y1="38.753625" x2="63.61" y2="34.648171875" width="0.2" layer="1"/>
 <wire x1="63.61" y1="34.648171875" x2="63.61" y2="30.54271875" width="0.2" layer="1"/>
 <wire x1="63.61" y1="30.54271875" x2="63.61" y2="26.437265625" width="0.2" layer="1"/>
@@ -2412,15 +2414,13 @@ design rules under a new name.</description>
 <wire x1="63.61" y1="18.226359375" x2="63.61" y2="14.12090625" width="0.2" layer="1"/>
 <wire x1="63.61" y1="14.12090625" x2="63.61" y2="10.015453125" width="0.2" layer="1"/>
 <wire x1="63.61" y1="10.015453125" x2="63.61" y2="5.91" width="0.2" layer="1"/>
-<wire x1="61" y1="42.81" x2="60.905" y2="42.905" width="0.2" layer="1"/>
-<wire x1="60.905" y1="42.905" x2="60" y2="43.81" width="0.2" layer="1"/>
+<wire x1="63.61" y1="45" x2="61.42" y2="42.81" width="0.2" layer="1"/>
+<wire x1="61.42" y1="42.81" x2="61" y2="42.81" width="0.2" layer="1"/>
+<wire x1="61" y1="42.81" x2="60" y2="43.81" width="0.2" layer="1"/>
 <wire x1="60" y1="43.81" x2="57.54" y2="43.81" width="0.2" layer="1"/>
 <wire x1="57.54" y1="43.81" x2="56" y2="42.27" width="0.2" layer="1"/>
 <wire x1="56" y1="42.27" x2="51.81" y2="42.27" width="0.2" layer="1"/>
 <wire x1="51.81" y1="42.27" x2="49.27" y2="44.81" width="0.2" layer="1"/>
-<wire x1="63.61" y1="42.859078125" x2="63.61" y2="38.753625" width="0.1524" layer="1"/>
-<wire x1="63.61" y1="42.859078125" x2="60.950921875" y2="42.859078125" width="0.1524" layer="1"/>
-<wire x1="60.950921875" y1="42.859078125" x2="60.905" y2="42.905" width="0.1524" layer="1"/>
 </signal>
 <signal name="-12V">
 <contactref element="IC1" pad="4"/>
@@ -2483,7 +2483,7 @@ design rules under a new name.</description>
 <contactref element="TO_POTS" pad="30"/>
 <contactref element="TO_POTS" pad="36"/>
 <contactref element="TO_POTS" pad="40"/>
-<polygon width="0.1524" layer="16" thermals="no">
+<polygon width="0.1524" layer="16">
 <vertex x="-1" y="60"/>
 <vertex x="95" y="60"/>
 <vertex x="95" y="-1"/>
@@ -2492,13 +2492,12 @@ design rules under a new name.</description>
 <contactref element="CON1" pad="1"/>
 <contactref element="CON1" pad="2"/>
 <contactref element="CON1" pad="3"/>
-<polygon width="0.2" layer="1" thermals="no">
+<polygon width="0.2" layer="1">
 <vertex x="-2" y="61"/>
 <vertex x="96" y="61"/>
 <vertex x="96" y="-2"/>
 <vertex x="-2" y="-2"/>
 </polygon>
-<contactref element="INSTRUMENTS_IN" pad="8"/>
 </signal>
 <signal name="N$2">
 <contactref element="IC1" pad="3"/>

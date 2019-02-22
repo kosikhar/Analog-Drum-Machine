@@ -18519,8 +18519,6 @@ Same Footprint as LM741P</text>
 <segment>
 <wire x1="-25.4" y1="124.46" x2="-25.4" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="G$1" pin="GND"/>
-<pinref part="INSTRUMENTS_IN" gate="A" pin="8"/>
-<wire x1="-25.4" y1="124.46" x2="-17.78" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="INSTRUMENTS_IN" gate="A" pin="12"/>
