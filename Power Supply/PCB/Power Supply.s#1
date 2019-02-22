@@ -1259,7 +1259,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="Q7" library="Capstone" deviceset="2N4401" device="" value="2N4401"/>
 <part name="C18" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
 <part name="C19" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="0.1uF/50V"/>
-<part name="U$66" library="Capstone" deviceset="THYRISTOR_4A" device=""/>
+<part name="SCR1" library="Capstone" deviceset="THYRISTOR_4A" device=""/>
 <part name="D14" library="Capstone" deviceset="1W_ZENER" device="" value="6.2V"/>
 <part name="R15" library="Capstone" deviceset="0.25W_RES" device="" value="100 OHM"/>
 <part name="C20" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="1uF/50V"/>
@@ -1550,7 +1550,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="303.784" y="101.981" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="303.784" y="96.901" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="U$66" gate="G$1" x="360.68" y="104.14" smashed="yes">
+<instance part="SCR1" gate="G$1" x="360.68" y="104.14" smashed="yes">
 <attribute name="NAME" x="363.22" y="104.14" size="1.778" layer="95"/>
 <attribute name="VALUE" x="363.22" y="101.6" size="1.778" layer="96"/>
 </instance>
@@ -1767,7 +1767,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="342.9" y1="91.44" x2="342.9" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="342.9" y1="86.36" x2="327.66" y2="86.36" width="0.1524" layer="91"/>
 <junction x="327.66" y="86.36"/>
-<pinref part="U$66" gate="G$1" pin="C"/>
+<pinref part="SCR1" gate="G$1" pin="C"/>
 <wire x1="360.68" y1="101.6" x2="360.68" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="360.68" y1="86.36" x2="342.9" y2="86.36" width="0.1524" layer="91"/>
 <junction x="342.9" y="86.36"/>
@@ -2478,14 +2478,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="342.9" y1="99.06" x2="342.9" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="342.9" y1="101.6" x2="327.66" y2="101.6" width="0.1524" layer="91"/>
 <junction x="327.66" y="101.6"/>
-<pinref part="U$66" gate="G$1" pin="G"/>
+<pinref part="SCR1" gate="G$1" pin="G"/>
 <wire x1="342.9" y1="101.6" x2="358.14" y2="101.6" width="0.1524" layer="91"/>
 <junction x="342.9" y="101.6"/>
 </segment>
 </net>
 <net name="OV_THYRISTOR" class="0">
 <segment>
-<pinref part="U$66" gate="G$1" pin="A"/>
+<pinref part="SCR1" gate="G$1" pin="A"/>
 <wire x1="360.68" y1="106.68" x2="360.68" y2="109.22" width="0.1524" layer="91"/>
 <label x="353.06" y="109.22" size="1.778" layer="95"/>
 </segment>
