@@ -21687,17 +21687,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <busses>
 </busses>
 <nets>
-<net name="N$2" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="1"/>
-<pinref part="T2" gate="G1" pin="C"/>
-<wire x1="111.76" y1="86.36" x2="111.76" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="81.28" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="81.28" x2="111.76" y2="81.28" width="0.1524" layer="91"/>
-<junction x="111.76" y="81.28"/>
-</segment>
-</net>
 <net name="+12V" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="1"/>
@@ -21864,6 +21853,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="248.92" y1="215.9" x2="248.92" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="248.92" y1="218.44" x2="248.92" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
+<junction x="248.92" y="215.9"/>
 </segment>
 </net>
 <net name="SW3" class="0">
@@ -22281,12 +22271,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="D1" gate="G$1" pin="C"/>
 </segment>
 </net>
-<net name="N$12" class="0">
-<segment>
-<wire x1="111.76" y1="81.28" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="R13" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
@@ -22365,9 +22349,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="236.22" y1="116.84" x2="241.3" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="241.3" y1="116.84" x2="246.38" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="116.84" x2="248.92" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="C10" gate="G$1" pin="1"/>
-<wire x1="246.38" y1="101.6" x2="248.92" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="236.22" y1="101.6" x2="241.3" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="101.6" x2="246.38" y2="101.6" width="0.1524" layer="91"/>
@@ -22490,9 +22472,36 @@ In this library the device names are the same as the pin names of the symbols, t
 <junction x="241.3" y="200.66"/>
 </segment>
 </net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="T2" gate="G1" pin="C"/>
+<wire x1="111.76" y1="86.36" x2="111.76" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="81.28" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="81.28" x2="111.76" y2="81.28" width="0.1524" layer="91"/>
+<junction x="111.76" y="81.28"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="81.28" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,274.32,91.44,IC1,V+,+12V,,,"/>
+<approved hash="104,1,274.32,106.68,IC1,V-,-12V,,,"/>
+<approved hash="106,1,297.18,157.48,N$24,,,,,"/>
+<approved hash="106,1,312.42,157.48,N$25,,,,,"/>
+<approved hash="106,1,312.42,160.02,N$26,,,,,"/>
+<approved hash="106,1,312.42,175.26,POT5,,,,,"/>
+<approved hash="106,1,297.18,172.72,POT8,,,,,"/>
+<approved hash="106,1,312.42,165.1,SW1,,,,,"/>
+<approved hash="106,1,312.42,162.56,SW2,,,,,"/>
+<approved hash="106,1,297.18,167.64,SW3,,,,,"/>
+<approved hash="113,1,304.8,169.89,SV1,,,,,"/>
+<approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
