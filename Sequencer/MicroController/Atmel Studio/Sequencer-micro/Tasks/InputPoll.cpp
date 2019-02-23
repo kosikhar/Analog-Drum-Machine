@@ -8,13 +8,13 @@
 
 #include "InputPoll.h"
 
-InputPoll::InputPoll( Timer * timerPtr, ButtonInput * buttonInputPtr )
+InputPoll::InputPoll( Timer & timerPtr, DigitalInput & buttonInputPtr )
 {
 	//Get reference to the Button 
-	buttonInput = buttonInputPtr;
+	buttonInput = &buttonInputPtr;
 	
 	//Timer reference
-	timer = timerPtr;
+	timer = &timerPtr;
 	
 	//Initialize the time stamp
 	timeStamp = timer->millis();
@@ -32,7 +32,7 @@ void InputPoll::run( void )
 		buttonInput->latch();
 			
 		//Update time stamp
-		timeStamp->millis();
+		timeStamp = timer->millis();
 	}
 
 }

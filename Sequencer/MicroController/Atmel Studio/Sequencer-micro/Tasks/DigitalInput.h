@@ -1,23 +1,28 @@
 /* 
-* ButtonInput.h
+* DigitalInput.h
 *
 * Created: 2019-02-08 7:14:29 PM
 * Author: Koltin Kosik-Harvey
 */
 
 
-#ifndef __BUTTONINPUT_H__
-#define __BUTTONINPUT_H__
+#ifndef __DIGITALINPUT_H__
+#define __DIGITALINPUT_H__
 
 //object for dealing with PISO shift registers
 #include "../Shift_Register/ShiftRegister_PISO.h"
 
-//Using 16 Buttons for Programming
-//Using 1 Reset, 1 
-#define NUM_BUTTONS 16
+//Using 16 Buttons for Programming + 2 to indicating measure. 
+//Using 6 switches for indicating loop back time point
+//Reserving 8 for rotary switch (choosing instrument to program) + 1 for shifting (to get 16)
+#define NUM_INPUTS 16
 
-//Using 2 Shift Registers
-#define NUM_SHIFT_REGISTERS 2
+//Get required number of Shift Registers
+constexpr const uint8_t getNumRegisters ( void )
+{
+	return (NUM_INPUTS / 8) + (( NUM_INPUTS % 8 ) / 8 );
+}
+#define NUM_SHIFT_REGISTERS getNumRegisters()
 
 //Pinout for the SIPO shift registers
 #define INPUT_SERIAL_PIN 0
@@ -28,7 +33,7 @@
 //Serial output shift registers
 #define INPUT_PIN_PORT PORTB
 
-class ButtonInput : public ShiftRegister_PISO
+class DigitalInput : public ShiftRegister_PISO
 {
 	//variables
 	public:
@@ -44,15 +49,15 @@ class ButtonInput : public ShiftRegister_PISO
 	protected:
 	private:
 	
-		//Define pin objects for shift register
-		Pin * shiftPin;
-		Pin * latchPin;
-		Pin * serialPin;
+		//Reducing blocking by shifting bits 1 byte at a time
+		//This variable will keep track of which shift register
+		//is currently being shifted
+		uint8_t shiftRegister_index;
 
 	//functions
 	public:
-		ButtonInput();
-		~ButtonInput();
+		DigitalInput();
+		~DigitalInput();
 		
 		//Shifts bits into uC in align with a polling rate
 		void run( void );
@@ -63,9 +68,9 @@ class ButtonInput : public ShiftRegister_PISO
 		uint8_t readBit( uint8_t index );
 	protected:
 	private:
-		ButtonInput( const ButtonInput &c );
-		ButtonInput& operator=( const ButtonInput &c );
+		DigitalInput( const DigitalInput &c );
+		DigitalInput& operator=( const DigitalInput &c );
 
-}; //ButtonInput
+}; //DigitalInput
 
-#endif //__BUTTONINPUT_H__
+#endif //__DIGITALINPUT_H__

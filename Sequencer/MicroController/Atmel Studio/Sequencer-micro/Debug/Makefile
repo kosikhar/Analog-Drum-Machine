@@ -42,14 +42,19 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../interrupts.cpp \
 ../main.cpp \
-../memory.cpp \
+../helperFunctions.cpp \
+../Pins/AnalogPin.cpp \
 ../Pins/Pin.cpp \
 ../Shift_Register/ShiftRegister.cpp \
 ../Shift_Register/ShiftRegister_PISO.cpp \
 ../Shift_Register/ShiftRegister_SIPO.cpp \
+../Tasks/BPMInput.cpp \
 ../Tasks/Blinky.cpp \
+../Tasks/DigitalInput.cpp \
 ../Tasks/Counter.cpp \
+../Tasks/InputPoll.cpp \
 ../Tasks/Latch.cpp \
+../Tasks/PrintBPM.cpp \
 ../Tasks/SevenSeg.cpp \
 ../Tasks/TaskManager.cpp \
 ../Tasks/Trigger.cpp \
@@ -65,14 +70,19 @@ ASM_SRCS +=
 OBJS +=  \
 interrupts.o \
 main.o \
-memory.o \
+helperFunctions.o \
+Pins/AnalogPin.o \
 Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
+Tasks/BPMInput.o \
 Tasks/Blinky.o \
+Tasks/DigitalInput.o \
 Tasks/Counter.o \
+Tasks/InputPoll.o \
 Tasks/Latch.o \
+Tasks/PrintBPM.o \
 Tasks/SevenSeg.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
@@ -81,14 +91,19 @@ timer.o
 OBJS_AS_ARGS +=  \
 interrupts.o \
 main.o \
-memory.o \
+helperFunctions.o \
+Pins/AnalogPin.o \
 Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
+Tasks/BPMInput.o \
 Tasks/Blinky.o \
+Tasks/DigitalInput.o \
 Tasks/Counter.o \
+Tasks/InputPoll.o \
 Tasks/Latch.o \
+Tasks/PrintBPM.o \
 Tasks/SevenSeg.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
@@ -97,14 +112,19 @@ timer.o
 C_DEPS +=  \
 interrupts.d \
 main.d \
-memory.d \
+helperFunctions.d \
+Pins/AnalogPin.d \
 Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
+Tasks/BPMInput.d \
 Tasks/Blinky.d \
+Tasks/DigitalInput.d \
 Tasks/Counter.d \
+Tasks/InputPoll.d \
 Tasks/Latch.d \
+Tasks/PrintBPM.d \
 Tasks/SevenSeg.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
@@ -113,14 +133,19 @@ timer.d
 C_DEPS_AS_ARGS +=  \
 interrupts.d \
 main.d \
-memory.d \
+helperFunctions.d \
+Pins/AnalogPin.d \
 Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
+Tasks/BPMInput.d \
 Tasks/Blinky.d \
+Tasks/DigitalInput.d \
 Tasks/Counter.d \
+Tasks/InputPoll.d \
 Tasks/Latch.d \
+Tasks/PrintBPM.d \
 Tasks/SevenSeg.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
@@ -154,7 +179,14 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
-./memory.o: .././memory.cpp
+./helperFunctions.o: .././helperFunctions.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Pins/AnalogPin.o: ../Pins/AnalogPin.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -189,7 +221,21 @@ Shift_Register/ShiftRegister_SIPO.o: ../Shift_Register/ShiftRegister_SIPO.cpp
 	@echo Finished building: $<
 	
 
+Tasks/BPMInput.o: ../Tasks/BPMInput.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 Tasks/Blinky.o: ../Tasks/Blinky.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Tasks/DigitalInput.o: ../Tasks/DigitalInput.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -203,7 +249,21 @@ Tasks/Counter.o: ../Tasks/Counter.cpp
 	@echo Finished building: $<
 	
 
+Tasks/InputPoll.o: ../Tasks/InputPoll.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 Tasks/Latch.o: ../Tasks/Latch.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Tasks/PrintBPM.o: ../Tasks/PrintBPM.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

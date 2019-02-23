@@ -1,17 +1,25 @@
 Archive member included to satisfy reference by file (symbol)
 
+z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                              Tasks/SevenSeg.o (__udivmodhi4)
 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                              Tasks/SevenSeg.o (__divmodhi4)
+                              Tasks/TaskManager.o (__divmodhi4)
 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o (exit)
 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
                               Tasks/SevenSeg.o (__do_copy_data)
 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
                               main.o (__do_clear_bss)
-z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                              z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o) (__udivmodhi4)
+z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+                              main.o (__do_global_ctors)
+z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                              main.o (__do_global_dtors)
+z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                              Tasks/SevenSeg.o (__umulhisi3)
+z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                              z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o) (__tablejump2__)
 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                              memory.o (malloc)
+                              helperFunctions.o (malloc)
 
 Allocating common symbols
 Common symbol       size              file
@@ -35,12 +43,19 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text          0x00000000        0x0 memory.o
- .data          0x00000000        0x0 memory.o
- .bss           0x00000000        0x0 memory.o
- .text._ZdlPv   0x00000000        0x6 memory.o
- .text._Znaj    0x00000000        0x6 memory.o
- .text._ZdaPv   0x00000000        0x6 memory.o
+ .text._Z11counterTaskv
+                0x00000000        0x2 main.o
+ .text          0x00000000        0x0 helperFunctions.o
+ .data          0x00000000        0x0 helperFunctions.o
+ .bss           0x00000000        0x0 helperFunctions.o
+ .text._ZdlPv   0x00000000        0x6 helperFunctions.o
+ .text._Znaj    0x00000000        0x6 helperFunctions.o
+ .text._ZdaPv   0x00000000        0x6 helperFunctions.o
+ .text          0x00000000        0x0 Pins/AnalogPin.o
+ .data          0x00000000        0x0 Pins/AnalogPin.o
+ .bss           0x00000000        0x0 Pins/AnalogPin.o
+ .text._ZN9AnalogPin4readEv
+                0x00000000       0x24 Pins/AnalogPin.o
  .text          0x00000000        0x0 Pins/Pin.o
  .data          0x00000000        0x0 Pins/Pin.o
  .bss           0x00000000        0x0 Pins/Pin.o
@@ -55,8 +70,6 @@ Discarded input sections
  .bss           0x00000000        0x0 Shift_Register/ShiftRegister.o
  .text._ZN13ShiftRegisterC2EP3PinS1_S1_
                 0x00000000       0x10 Shift_Register/ShiftRegister.o
- .text._ZN13ShiftRegisterD2Ev
-                0x00000000        0x2 Shift_Register/ShiftRegister.o
  .text          0x00000000        0x0 Shift_Register/ShiftRegister_PISO.o
  .data          0x00000000        0x0 Shift_Register/ShiftRegister_PISO.o
  .bss           0x00000000        0x0 Shift_Register/ShiftRegister_PISO.o
@@ -85,34 +98,86 @@ Discarded input sections
  .bss           0x00000000        0x0 Shift_Register/ShiftRegister_SIPO.o
  .text._ZN18ShiftRegister_SIPOC2EP3PinS1_S1_
                 0x00000000       0x12 Shift_Register/ShiftRegister_SIPO.o
- .text._ZN18ShiftRegister_SIPOD2Ev
-                0x00000000        0x6 Shift_Register/ShiftRegister_SIPO.o
+ .text          0x00000000        0x0 Tasks/BPMInput.o
+ .data          0x00000000        0x0 Tasks/BPMInput.o
+ .bss           0x00000000        0x0 Tasks/BPMInput.o
  .text          0x00000000        0x0 Tasks/Blinky.o
  .data          0x00000000        0x0 Tasks/Blinky.o
  .bss           0x00000000        0x0 Tasks/Blinky.o
- .text._ZN6BlinkyD2Ev
-                0x00000000        0x2 Tasks/Blinky.o
+ .text          0x00000000        0x0 Tasks/DigitalInput.o
+ .data          0x00000000        0x0 Tasks/DigitalInput.o
+ .bss           0x00000000        0x0 Tasks/DigitalInput.o
+ .text._ZN12DigitalInputC2Ev
+                0x00000000       0x6a Tasks/DigitalInput.o
+ .text._ZN12DigitalInput3runEv
+                0x00000000       0x46 Tasks/DigitalInput.o
+ .text._ZN12DigitalInputD2Ev
+                0x00000000        0x6 Tasks/DigitalInput.o
+ .debug_info    0x00000000      0x8a3 Tasks/DigitalInput.o
+ .debug_abbrev  0x00000000      0x221 Tasks/DigitalInput.o
+ .debug_loc     0x00000000      0x124 Tasks/DigitalInput.o
+ .debug_aranges
+                0x00000000       0x30 Tasks/DigitalInput.o
+ .debug_ranges  0x00000000       0x20 Tasks/DigitalInput.o
+ .debug_line    0x00000000      0x1ce Tasks/DigitalInput.o
+ .debug_str     0x00000000      0x7e1 Tasks/DigitalInput.o
+ .comment       0x00000000       0x31 Tasks/DigitalInput.o
+ .debug_frame   0x00000000       0x6c Tasks/DigitalInput.o
  .text          0x00000000        0x0 Tasks/Counter.o
  .data          0x00000000        0x0 Tasks/Counter.o
  .bss           0x00000000        0x0 Tasks/Counter.o
+ .text._ZN7CounterC2ER5TimerR8SevenSeg
+                0x00000000       0x16 Tasks/Counter.o
+ .text._ZN7Counter3runEv
+                0x00000000       0x58 Tasks/Counter.o
  .text._ZN7CounterD2Ev
                 0x00000000        0x2 Tasks/Counter.o
+ .debug_info    0x00000000      0x8e4 Tasks/Counter.o
+ .debug_abbrev  0x00000000      0x1f0 Tasks/Counter.o
+ .debug_loc     0x00000000       0x65 Tasks/Counter.o
+ .debug_aranges
+                0x00000000       0x30 Tasks/Counter.o
+ .debug_ranges  0x00000000       0x20 Tasks/Counter.o
+ .debug_line    0x00000000      0x1a2 Tasks/Counter.o
+ .debug_str     0x00000000      0x8e8 Tasks/Counter.o
+ .comment       0x00000000       0x31 Tasks/Counter.o
+ .debug_frame   0x00000000       0x50 Tasks/Counter.o
+ .text          0x00000000        0x0 Tasks/InputPoll.o
+ .data          0x00000000        0x0 Tasks/InputPoll.o
+ .bss           0x00000000        0x0 Tasks/InputPoll.o
+ .text._ZN9InputPollC2ER5TimerR12DigitalInput
+                0x00000000       0x22 Tasks/InputPoll.o
+ .text._ZN9InputPoll3runEv
+                0x00000000       0x46 Tasks/InputPoll.o
+ .text._ZN9InputPollD2Ev
+                0x00000000        0x2 Tasks/InputPoll.o
+ .debug_info    0x00000000      0x8c2 Tasks/InputPoll.o
+ .debug_abbrev  0x00000000      0x1fa Tasks/InputPoll.o
+ .debug_loc     0x00000000      0x116 Tasks/InputPoll.o
+ .debug_aranges
+                0x00000000       0x30 Tasks/InputPoll.o
+ .debug_ranges  0x00000000       0x20 Tasks/InputPoll.o
+ .debug_line    0x00000000      0x1a4 Tasks/InputPoll.o
+ .debug_str     0x00000000      0x86d Tasks/InputPoll.o
+ .comment       0x00000000       0x31 Tasks/InputPoll.o
+ .debug_frame   0x00000000       0x5c Tasks/InputPoll.o
  .text          0x00000000        0x0 Tasks/Latch.o
  .data          0x00000000        0x0 Tasks/Latch.o
  .bss           0x00000000        0x0 Tasks/Latch.o
- .text._ZN5LatchD2Ev
-                0x00000000        0x2 Tasks/Latch.o
+ .text          0x00000000        0x0 Tasks/PrintBPM.o
+ .data          0x00000000        0x0 Tasks/PrintBPM.o
+ .bss           0x00000000        0x0 Tasks/PrintBPM.o
  .text          0x00000000        0x0 Tasks/SevenSeg.o
  .data          0x00000000        0x0 Tasks/SevenSeg.o
  .bss           0x00000000        0x0 Tasks/SevenSeg.o
+ .text._ZN8SevenSeg12shiftInBytesEPh
+                0x00000000       0x6c Tasks/SevenSeg.o
  .text._ZN8SevenSeg12printNumbersEPh
                 0x00000000       0x16 Tasks/SevenSeg.o
  .text._ZN8SevenSeg20printNumbers_NOLATCHEPh
                 0x00000000        0x6 Tasks/SevenSeg.o
  .text._ZN8SevenSeg12printNumbersEh
                 0x00000000       0x2c Tasks/SevenSeg.o
- .text._ZN8SevenSegD2Ev
-                0x00000000        0x6 Tasks/SevenSeg.o
  .text          0x00000000        0x0 Tasks/TaskManager.o
  .data          0x00000000        0x0 Tasks/TaskManager.o
  .bss           0x00000000        0x0 Tasks/TaskManager.o
@@ -121,8 +186,6 @@ Discarded input sections
  .text          0x00000000        0x0 Tasks/Trigger.o
  .data          0x00000000        0x0 Tasks/Trigger.o
  .bss           0x00000000        0x0 Tasks/Trigger.o
- .text._ZN7TriggerD2Ev
-                0x00000000        0x2 Tasks/Trigger.o
  .text          0x00000000        0x0 timer.o
  .data          0x00000000        0x0 timer.o
  .bss           0x00000000        0x0 timer.o
@@ -132,8 +195,20 @@ Discarded input sections
                 0x00000000       0x14 timer.o
  .text._ZN5Timer11resumeTimerEv
                 0x00000000       0x14 timer.o
- .text._ZN5TimerD2Ev
-                0x00000000        0x2 timer.o
+ .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
  .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
  .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
@@ -196,20 +271,67 @@ Discarded input sections
                 0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
                 0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
  .text.libgcc.mul
-                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text.libgcc   0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.div
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc   0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
  .text.libgcc.prologue
-                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
  .text.libgcc.builtins
-                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
  .text.libgcc.fmul
-                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
  .text.libgcc.fixed
-                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.mul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.div
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc   0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+ .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .data          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
  .text          0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
  .bss           0x00000000        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
 
@@ -231,14 +353,19 @@ Address of section .data set to 0x800100
 LOAD Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
 LOAD interrupts.o
 LOAD main.o
-LOAD memory.o
+LOAD helperFunctions.o
+LOAD Pins/AnalogPin.o
 LOAD Pins/Pin.o
 LOAD Shift_Register/ShiftRegister.o
 LOAD Shift_Register/ShiftRegister_PISO.o
 LOAD Shift_Register/ShiftRegister_SIPO.o
+LOAD Tasks/BPMInput.o
 LOAD Tasks/Blinky.o
+LOAD Tasks/DigitalInput.o
 LOAD Tasks/Counter.o
+LOAD Tasks/InputPoll.o
 LOAD Tasks/Latch.o
+LOAD Tasks/PrintBPM.o
 LOAD Tasks/SevenSeg.o
 LOAD Tasks/TaskManager.o
 LOAD Tasks/Trigger.o
@@ -352,7 +479,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xb88
+.text           0x00000000      0xd9a
  *(.vectors)
  .vectors       0x00000000       0x68 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
                 0x00000000                __vector_default
@@ -375,232 +502,306 @@ END GROUP
  *(.lowtext*)
                 0x00000068                __ctors_start = .
  *(.ctors)
-                0x00000068                __ctors_end = .
-                0x00000068                __dtors_start = .
+ .ctors         0x00000068        0x2 main.o
+                0x0000006a                __ctors_end = .
+                0x0000006a                __dtors_start = .
  *(.dtors)
-                0x00000068                __dtors_end = .
+ .dtors         0x0000006a        0x2 main.o
+                0x0000006c                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000068        0x0 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
-                0x00000068                __init
+ .init0         0x0000006c        0x0 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+                0x0000006c                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000068        0xc Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .init2         0x0000006c        0xc Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000074       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                0x00000074                __do_copy_data
- .init4         0x0000008a       0x10 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
-                0x0000008a                __do_clear_bss
+ .init4         0x00000078       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                0x00000078                __do_copy_data
+ .init4         0x0000008e       0x10 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                0x0000008e                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
  *(.init6)
+ .init6         0x0000009e       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+                0x0000009e                __do_global_ctors
  *(.init6)
  *(.init7)
  *(.init7)
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000009a        0x8 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .init9         0x000000b4        0x8 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
  *(.init9)
  *(.text)
- .text          0x000000a2        0x4 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
-                0x000000a2                __vector_22
-                0x000000a2                __vector_1
-                0x000000a2                __vector_24
-                0x000000a2                __bad_interrupt
-                0x000000a2                __vector_6
-                0x000000a2                __vector_3
-                0x000000a2                __vector_23
-                0x000000a2                __vector_25
-                0x000000a2                __vector_13
-                0x000000a2                __vector_17
-                0x000000a2                __vector_19
-                0x000000a2                __vector_7
-                0x000000a2                __vector_5
-                0x000000a2                __vector_4
-                0x000000a2                __vector_9
-                0x000000a2                __vector_2
-                0x000000a2                __vector_21
-                0x000000a2                __vector_15
-                0x000000a2                __vector_8
-                0x000000a2                __vector_10
-                0x000000a2                __vector_16
-                0x000000a2                __vector_18
-                0x000000a2                __vector_20
-                0x000000a6                . = ALIGN (0x2)
+ .text          0x000000bc        0x4 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+                0x000000bc                __vector_22
+                0x000000bc                __vector_1
+                0x000000bc                __vector_24
+                0x000000bc                __bad_interrupt
+                0x000000bc                __vector_6
+                0x000000bc                __vector_3
+                0x000000bc                __vector_23
+                0x000000bc                __vector_25
+                0x000000bc                __vector_13
+                0x000000bc                __vector_17
+                0x000000bc                __vector_19
+                0x000000bc                __vector_7
+                0x000000bc                __vector_5
+                0x000000bc                __vector_4
+                0x000000bc                __vector_9
+                0x000000bc                __vector_2
+                0x000000bc                __vector_21
+                0x000000bc                __vector_15
+                0x000000bc                __vector_8
+                0x000000bc                __vector_10
+                0x000000bc                __vector_16
+                0x000000bc                __vector_18
+                0x000000bc                __vector_20
+                0x000000c0                . = ALIGN (0x2)
  *(.text.*)
  .text.__vector_14
-                0x000000a6       0x50 interrupts.o
-                0x000000a6                __vector_14
+                0x000000c0       0x4c interrupts.o
+                0x000000c0                __vector_14
  .text.__vector_12
-                0x000000f6       0x16 interrupts.o
-                0x000000f6                __vector_12
+                0x0000010c       0x16 interrupts.o
+                0x0000010c                __vector_12
  .text._Z20setUpTimerInterruptsv
-                0x0000010c       0x52 interrupts.o
-                0x0000010c                _Z20setUpTimerInterruptsv
+                0x00000122       0x52 interrupts.o
+                0x00000122                _Z20setUpTimerInterruptsv
  .text._Z25disableTimerOneInterruptsv
-                0x0000015e        0xc interrupts.o
-                0x0000015e                _Z25disableTimerOneInterruptsv
+                0x00000174        0xc interrupts.o
+                0x00000174                _Z25disableTimerOneInterruptsv
  .text.__vector_11
-                0x0000016a       0x4a interrupts.o
-                0x0000016a                __vector_11
+                0x00000180       0x4a interrupts.o
+                0x00000180                __vector_11
  .text._Z9latchTaskv
-                0x000001b4        0xe main.o
-                0x000001b4                _Z9latchTaskv
+                0x000001ca        0xa main.o
+                0x000001ca                _Z9latchTaskv
  .text._Z23sevenSegmentDisplayTaskv
-                0x000001c2        0xe main.o
-                0x000001c2                _Z23sevenSegmentDisplayTaskv
+                0x000001d4        0xa main.o
+                0x000001d4                _Z23sevenSegmentDisplayTaskv
  .text._Z11triggerTaskv
-                0x000001d0        0xe main.o
-                0x000001d0                _Z11triggerTaskv
- .text._Z11counterTaskv
-                0x000001de        0xe main.o
-                0x000001de                _Z11counterTaskv
+                0x000001de        0xa main.o
+                0x000001de                _Z11triggerTaskv
  .text._Z10blinkyTaskv
-                0x000001ec        0xe main.o
-                0x000001ec                _Z10blinkyTaskv
- .text.main     0x000001fa      0x12e main.o
-                0x000001fa                main
- .text._Znwj    0x00000328        0x6 memory.o
-                0x00000328                _Znwj
+                0x000001e8        0xa main.o
+                0x000001e8                _Z10blinkyTaskv
+ .text._Z12BPMInputTaskv
+                0x000001f2        0xa main.o
+                0x000001f2                _Z12BPMInputTaskv
+ .text._Z12PrintBPMTaskv
+                0x000001fc        0xa main.o
+                0x000001fc                _Z12PrintBPMTaskv
+ .text.main     0x00000206       0x82 main.o
+                0x00000206                main
+ .text._GLOBAL__sub_I_timer
+                0x00000288       0x5c main.o
+ .text._GLOBAL__sub_D_timer
+                0x000002e4       0x3a main.o
+ .text._Znwj    0x0000031e        0x6 helperFunctions.o
+                0x0000031e                _Znwj
+ .text._Z5pow10h
+                0x00000324       0x3a helperFunctions.o
+                0x00000324                _Z5pow10h
+ .text._ZN9AnalogPinC2Eh
+                0x0000035e       0x38 Pins/AnalogPin.o
+                0x0000035e                _ZN9AnalogPinC2Eh
+                0x0000035e                _ZN9AnalogPinC1Eh
+ .text._ZN9AnalogPin10conv_beginEv
+                0x00000396       0x20 Pins/AnalogPin.o
+                0x00000396                _ZN9AnalogPin10conv_beginEv
+ .text._ZN9AnalogPin12if_done_convEv
+                0x000003b6       0x10 Pins/AnalogPin.o
+                0x000003b6                _ZN9AnalogPin12if_done_convEv
+ .text._ZN9AnalogPin10read_10BitEv
+                0x000003c6       0x28 Pins/AnalogPin.o
+                0x000003c6                _ZN9AnalogPin10read_10BitEv
  .text._ZN3Pin17setDirectionInputEv
-                0x0000032e       0x16 Pins/Pin.o
-                0x0000032e                _ZN3Pin17setDirectionInputEv
+                0x000003ee       0x16 Pins/Pin.o
+                0x000003ee                _ZN3Pin17setDirectionInputEv
  .text._ZN3Pin7setHighEv
-                0x00000344       0x16 Pins/Pin.o
-                0x00000344                _ZN3Pin7setHighEv
+                0x00000404       0x16 Pins/Pin.o
+                0x00000404                _ZN3Pin7setHighEv
  .text._ZN3Pin6setLowEv
-                0x0000035a       0x18 Pins/Pin.o
-                0x0000035a                _ZN3Pin6setLowEv
+                0x0000041a       0x18 Pins/Pin.o
+                0x0000041a                _ZN3Pin6setLowEv
  .text._ZN3Pin18setDirectionOutputEv
-                0x00000372       0x1c Pins/Pin.o
-                0x00000372                _ZN3Pin18setDirectionOutputEv
+                0x00000432       0x1c Pins/Pin.o
+                0x00000432                _ZN3Pin18setDirectionOutputEv
  .text._ZN3PinC2EhPVhh
-                0x0000038e       0x34 Pins/Pin.o
-                0x0000038e                _ZN3PinC2EhPVhh
-                0x0000038e                _ZN3PinC1EhPVhh
+                0x0000044e       0x34 Pins/Pin.o
+                0x0000044e                _ZN3PinC2EhPVhh
+                0x0000044e                _ZN3PinC1EhPVhh
  .text._ZN13ShiftRegisterC2Ev
-                0x000003c2        0x2 Shift_Register/ShiftRegister.o
-                0x000003c2                _ZN13ShiftRegisterC1Ev
-                0x000003c2                _ZN13ShiftRegisterC2Ev
+                0x00000482        0x2 Shift_Register/ShiftRegister.o
+                0x00000482                _ZN13ShiftRegisterC1Ev
+                0x00000482                _ZN13ShiftRegisterC2Ev
  .text._ZN13ShiftRegister11singleShiftEv
-                0x000003c4       0x2c Shift_Register/ShiftRegister.o
-                0x000003c4                _ZN13ShiftRegister11singleShiftEv
+                0x00000484       0x2c Shift_Register/ShiftRegister.o
+                0x00000484                _ZN13ShiftRegister11singleShiftEv
  .text._ZN13ShiftRegister5latchEv
-                0x000003f0       0x24 Shift_Register/ShiftRegister.o
-                0x000003f0                _ZN13ShiftRegister5latchEv
- .text._ZN13ShiftRegister17getTimerReferenceEP5Timer
-                0x00000414        0x8 Shift_Register/ShiftRegister.o
-                0x00000414                _ZN13ShiftRegister17getTimerReferenceEP5Timer
+                0x000004b0       0x24 Shift_Register/ShiftRegister.o
+                0x000004b0                _ZN13ShiftRegister5latchEv
+ .text._ZN13ShiftRegister17getTimerReferenceER5Timer
+                0x000004d4        0x8 Shift_Register/ShiftRegister.o
+                0x000004d4                _ZN13ShiftRegister17getTimerReferenceER5Timer
+ .text._ZN13ShiftRegisterD2Ev
+                0x000004dc        0x2 Shift_Register/ShiftRegister.o
+                0x000004dc                _ZN13ShiftRegisterD1Ev
+                0x000004dc                _ZN13ShiftRegisterD2Ev
  .text._ZN18ShiftRegister_SIPOC2Ev
-                0x0000041c       0x12 Shift_Register/ShiftRegister_SIPO.o
-                0x0000041c                _ZN18ShiftRegister_SIPOC1Ev
-                0x0000041c                _ZN18ShiftRegister_SIPOC2Ev
+                0x000004de       0x12 Shift_Register/ShiftRegister_SIPO.o
+                0x000004de                _ZN18ShiftRegister_SIPOC1Ev
+                0x000004de                _ZN18ShiftRegister_SIPOC2Ev
  .text._ZN18ShiftRegister_SIPO9shiftBitsEv
-                0x0000042e       0x76 Shift_Register/ShiftRegister_SIPO.o
-                0x0000042e                _ZN18ShiftRegister_SIPO9shiftBitsEv
+                0x000004f0       0x76 Shift_Register/ShiftRegister_SIPO.o
+                0x000004f0                _ZN18ShiftRegister_SIPO9shiftBitsEv
  .text._ZN18ShiftRegister_SIPO8loadByteEh
-                0x000004a4        0x6 Shift_Register/ShiftRegister_SIPO.o
-                0x000004a4                _ZN18ShiftRegister_SIPO8loadByteEh
- .text._ZN6BlinkyC2EP5Timer
-                0x000004aa       0x42 Tasks/Blinky.o
-                0x000004aa                _ZN6BlinkyC2EP5Timer
-                0x000004aa                _ZN6BlinkyC1EP5Timer
+                0x00000566        0x6 Shift_Register/ShiftRegister_SIPO.o
+                0x00000566                _ZN18ShiftRegister_SIPO8loadByteEh
+ .text._ZN18ShiftRegister_SIPOD2Ev
+                0x0000056c        0x6 Shift_Register/ShiftRegister_SIPO.o
+                0x0000056c                _ZN18ShiftRegister_SIPOD1Ev
+                0x0000056c                _ZN18ShiftRegister_SIPOD2Ev
+ .text._ZN8BPMInputC2ER5Timer
+                0x00000572       0x40 Tasks/BPMInput.o
+                0x00000572                _ZN8BPMInputC2ER5Timer
+                0x00000572                _ZN8BPMInputC1ER5Timer
+ .text._ZN8BPMInput3runEv
+                0x000005b2       0x9c Tasks/BPMInput.o
+                0x000005b2                _ZN8BPMInput3runEv
+ .text._ZN8BPMInputD2Ev
+                0x0000064e        0x2 Tasks/BPMInput.o
+                0x0000064e                _ZN8BPMInputD1Ev
+                0x0000064e                _ZN8BPMInputD2Ev
+ .text._ZN6BlinkyC2ER5Timer
+                0x00000650       0x42 Tasks/Blinky.o
+                0x00000650                _ZN6BlinkyC1ER5Timer
+                0x00000650                _ZN6BlinkyC2ER5Timer
  .text._ZN6Blinky3runEv
-                0x000004ec       0x54 Tasks/Blinky.o
-                0x000004ec                _ZN6Blinky3runEv
- .text._ZN7CounterC2EP5TimerP8SevenSeg
-                0x00000540       0x16 Tasks/Counter.o
-                0x00000540                _ZN7CounterC2EP5TimerP8SevenSeg
-                0x00000540                _ZN7CounterC1EP5TimerP8SevenSeg
- .text._ZN7Counter3runEv
-                0x00000556       0x54 Tasks/Counter.o
-                0x00000556                _ZN7Counter3runEv
- .text._ZN5LatchC2EP8SevenSeg
-                0x000005aa        0x8 Tasks/Latch.o
-                0x000005aa                _ZN5LatchC1EP8SevenSeg
-                0x000005aa                _ZN5LatchC2EP8SevenSeg
+                0x00000692       0x54 Tasks/Blinky.o
+                0x00000692                _ZN6Blinky3runEv
+ .text._ZN6BlinkyD2Ev
+                0x000006e6        0x2 Tasks/Blinky.o
+                0x000006e6                _ZN6BlinkyD2Ev
+                0x000006e6                _ZN6BlinkyD1Ev
+ .text._ZN5LatchC2ER8SevenSeg
+                0x000006e8        0x8 Tasks/Latch.o
+                0x000006e8                _ZN5LatchC1ER8SevenSeg
+                0x000006e8                _ZN5LatchC2ER8SevenSeg
  .text._ZN5Latch3runEv
-                0x000005b2       0x1a Tasks/Latch.o
-                0x000005b2                _ZN5Latch3runEv
- .text._ZN8SevenSegC2EhP5Timer
-                0x000005cc       0x94 Tasks/SevenSeg.o
-                0x000005cc                _ZN8SevenSegC2EhP5Timer
-                0x000005cc                _ZN8SevenSegC1EhP5Timer
- .text._ZN8SevenSeg12shiftInBytesEPh
-                0x00000660       0x6c Tasks/SevenSeg.o
-                0x00000660                _ZN8SevenSeg12shiftInBytesEPh
+                0x000006f0       0x1a Tasks/Latch.o
+                0x000006f0                _ZN5Latch3runEv
+ .text._ZN5LatchD2Ev
+                0x0000070a        0x2 Tasks/Latch.o
+                0x0000070a                _ZN5LatchD1Ev
+                0x0000070a                _ZN5LatchD2Ev
+ .text._ZN8PrintBPMC2ER5TimerR8BPMInputR8SevenSeg
+                0x0000070c       0x26 Tasks/PrintBPM.o
+                0x0000070c                _ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg
+                0x0000070c                _ZN8PrintBPMC2ER5TimerR8BPMInputR8SevenSeg
+ .text._ZN8PrintBPM3runEv
+                0x00000732       0x5e Tasks/PrintBPM.o
+                0x00000732                _ZN8PrintBPM3runEv
+ .text._ZN8PrintBPMD2Ev
+                0x00000790        0x2 Tasks/PrintBPM.o
+                0x00000790                _ZN8PrintBPMD2Ev
+                0x00000790                _ZN8PrintBPMD1Ev
+ .text._ZN8SevenSegC2EhR5Timer
+                0x00000792       0x9a Tasks/SevenSeg.o
+                0x00000792                _ZN8SevenSegC1EhR5Timer
+                0x00000792                _ZN8SevenSegC2EhR5Timer
  .text._ZN8SevenSeg3runEv
-                0x000006cc       0x52 Tasks/SevenSeg.o
-                0x000006cc                _ZN8SevenSeg3runEv
- .text._ZN11TaskManagerC2EP5Timer
-                0x0000071e        0xe Tasks/TaskManager.o
-                0x0000071e                _ZN11TaskManagerC2EP5Timer
-                0x0000071e                _ZN11TaskManagerC1EP5Timer
+                0x0000082c       0xbc Tasks/SevenSeg.o
+                0x0000082c                _ZN8SevenSeg3runEv
+ .text._ZN8SevenSegD2Ev
+                0x000008e8        0x6 Tasks/SevenSeg.o
+                0x000008e8                _ZN8SevenSegD2Ev
+                0x000008e8                _ZN8SevenSegD1Ev
+ .text._ZN11TaskManagerC2ER5Timer
+                0x000008ee        0xe Tasks/TaskManager.o
+                0x000008ee                _ZN11TaskManagerC2ER5Timer
+                0x000008ee                _ZN11TaskManagerC1ER5Timer
  .text._ZN11TaskManager7addTaskEPFvvEh
-                0x0000072c       0x28 Tasks/TaskManager.o
-                0x0000072c                _ZN11TaskManager7addTaskEPFvvEh
+                0x000008fc       0x26 Tasks/TaskManager.o
+                0x000008fc                _ZN11TaskManager7addTaskEPFvvEh
  .text._ZN11TaskManager20generateRandomNumberEv
-                0x00000754       0x1c Tasks/TaskManager.o
-                0x00000754                _ZN11TaskManager20generateRandomNumberEv
+                0x00000922       0x1c Tasks/TaskManager.o
+                0x00000922                _ZN11TaskManager20generateRandomNumberEv
  .text._ZN11TaskManager8runTasksEv
-                0x00000770       0x68 Tasks/TaskManager.o
-                0x00000770                _ZN11TaskManager8runTasksEv
- .text._ZN7TriggerC2EP5Timer
-                0x000007d8       0x28 Tasks/Trigger.o
-                0x000007d8                _ZN7TriggerC1EP5Timer
-                0x000007d8                _ZN7TriggerC2EP5Timer
+                0x0000093e       0x68 Tasks/TaskManager.o
+                0x0000093e                _ZN11TaskManager8runTasksEv
+ .text._ZN7TriggerC2ER5Timer
+                0x000009a6       0x28 Tasks/Trigger.o
+                0x000009a6                _ZN7TriggerC1ER5Timer
+                0x000009a6                _ZN7TriggerC2ER5Timer
  .text._ZN7Trigger9conditionEv
-                0x00000800       0x4a Tasks/Trigger.o
-                0x00000800                _ZN7Trigger9conditionEv
+                0x000009ce       0x4a Tasks/Trigger.o
+                0x000009ce                _ZN7Trigger9conditionEv
  .text._ZN7Trigger3runEv
-                0x0000084a       0x36 Tasks/Trigger.o
-                0x0000084a                _ZN7Trigger3runEv
+                0x00000a18       0x36 Tasks/Trigger.o
+                0x00000a18                _ZN7Trigger3runEv
+ .text._ZN7TriggerD2Ev
+                0x00000a4e        0x2 Tasks/Trigger.o
+                0x00000a4e                _ZN7TriggerD2Ev
+                0x00000a4e                _ZN7TriggerD1Ev
  .text._ZN5TimerC2Ev
-                0x00000880       0x14 timer.o
-                0x00000880                _ZN5TimerC2Ev
-                0x00000880                _ZN5TimerC1Ev
+                0x00000a50       0x14 timer.o
+                0x00000a50                _ZN5TimerC2Ev
+                0x00000a50                _ZN5TimerC1Ev
  .text._ZN5Timer14incrementTimerEv
-                0x00000894       0x1c timer.o
-                0x00000894                _ZN5Timer14incrementTimerEv
+                0x00000a64       0x1c timer.o
+                0x00000a64                _ZN5Timer14incrementTimerEv
  .text._ZN5Timer14elapsed_millisEm
-                0x000008b0       0x24 timer.o
-                0x000008b0                _ZN5Timer14elapsed_millisEm
+                0x00000a80       0x24 timer.o
+                0x00000a80                _ZN5Timer14elapsed_millisEm
  .text._ZN5Timer6millisEv
-                0x000008d4        0xc timer.o
-                0x000008d4                _ZN5Timer6millisEv
+                0x00000aa4        0xc timer.o
+                0x00000aa4                _ZN5Timer6millisEv
  .text._ZN5Timer8wait_1usEv
-                0x000008e0       0x12 timer.o
-                0x000008e0                _ZN5Timer8wait_1usEv
+                0x00000ab0       0x12 timer.o
+                0x00000ab0                _ZN5Timer8wait_1usEv
+ .text._ZN5TimerD2Ev
+                0x00000ac2        0x2 timer.o
+                0x00000ac2                _ZN5TimerD2Ev
+                0x00000ac2                _ZN5TimerD1Ev
  .text.libgcc.div
-                0x000008f2       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x000008f2                _div
-                0x000008f2                __divmodhi4
+                0x00000ac4       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000ac4                __udivmodhi4
  .text.libgcc.div
-                0x0000091a       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000091a                __udivmodhi4
+                0x00000aec       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00000aec                _div
+                0x00000aec                __divmodhi4
+ .text.libgcc.mul
+                0x00000b14       0x1e z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000b14                __umulhisi3
+ .text.libgcc   0x00000b32        0xc z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00000b32                __tablejump2__
  .text.avr-libc
-                0x00000942      0x242 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x00000942                malloc
-                0x00000a72                free
-                0x00000b84                . = ALIGN (0x2)
+                0x00000b3e      0x242 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00000b3e                malloc
+                0x00000c6e                free
+                0x00000d80                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000b84        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000b84                _exit
-                0x00000b84                exit
+ .fini9         0x00000d80        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000d80                _exit
+                0x00000d80                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
+ .fini6         0x00000d80       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                0x00000d80                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -613,11 +814,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000b84        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000d96        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000b88                _etext = .
+                0x00000d9a                _etext = .
 
-.data           0x00800100       0x12 load address 0x00000b88
+.data           0x00800100       0x12 load address 0x00000d9a
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x6 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -635,37 +836,39 @@ END GROUP
                 0x00800112                _edata = .
                 0x00800112                PROVIDE (__data_end, .)
 
-.bss            0x00800112       0x10
+.bss            0x00800112       0x57
                 0x00800112                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.latch     0x00800112        0x2 main.o
-                0x00800112                latch
- .bss.counter   0x00800114        0x2 main.o
-                0x00800114                counter
- .bss.trigger   0x00800116        0x2 main.o
-                0x00800116                trigger
- .bss.blinky    0x00800118        0x2 main.o
-                0x00800118                blinky
- .bss.timer     0x0080011a        0x2 main.o
-                0x0080011a                timer
+ .bss.printBPM  0x00800112        0xa main.o
+                0x00800112                printBPM
+ .bss.bpmInput  0x0080011c       0x11 main.o
+                0x0080011c                bpmInput
+ .bss.latch     0x0080012d        0x2 main.o
+                0x0080012d                latch
+ .bss.trigger   0x0080012f        0x7 main.o
+                0x0080012f                trigger
+ .bss.blinky    0x00800136        0x9 main.o
+                0x00800136                blinky
  .bss.sevenSegmentDisplay
-                0x0080011c        0x2 main.o
-                0x0080011c                sevenSegmentDisplay
+                0x0080013f       0x1e main.o
+                0x0080013f                sevenSegmentDisplay
+ .bss.timer     0x0080015d        0x8 main.o
+                0x0080015d                timer
  *(COMMON)
- COMMON         0x0080011e        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x0080011e                __brkval
-                0x00800120                __flp
-                0x00800122                PROVIDE (__bss_end, .)
-                0x00000b88                __data_load_start = LOADADDR (.data)
-                0x00000b9a                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800165        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800165                __brkval
+                0x00800167                __flp
+                0x00800169                PROVIDE (__bss_end, .)
+                0x00000d9a                __data_load_start = LOADADDR (.data)
+                0x00000dac                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800122        0x0
+.noinit         0x00800169        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800122                _end = .
-                0x00800122                PROVIDE (__heap_start, .)
+                0x00800169                _end = .
+                0x00800169                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -709,13 +912,15 @@ END GROUP
  .comment       0x00000000       0x30 interrupts.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 main.o
- .comment       0x00000030       0x31 memory.o
+ .comment       0x00000030       0x31 helperFunctions.o
+ .comment       0x00000030       0x31 Pins/AnalogPin.o
  .comment       0x00000030       0x31 Pins/Pin.o
  .comment       0x00000030       0x31 Shift_Register/ShiftRegister.o
  .comment       0x00000030       0x31 Shift_Register/ShiftRegister_SIPO.o
+ .comment       0x00000030       0x31 Tasks/BPMInput.o
  .comment       0x00000030       0x31 Tasks/Blinky.o
- .comment       0x00000030       0x31 Tasks/Counter.o
  .comment       0x00000030       0x31 Tasks/Latch.o
+ .comment       0x00000030       0x31 Tasks/PrintBPM.o
  .comment       0x00000030       0x31 Tasks/SevenSeg.o
  .comment       0x00000030       0x31 Tasks/TaskManager.o
  .comment       0x00000030       0x31 Tasks/Trigger.o
@@ -742,150 +947,168 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x370
+.debug_aranges  0x00000000      0x408
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x58 interrupts.o
  .debug_aranges
-                0x00000058       0x48 main.o
+                0x00000058       0x68 main.o
  .debug_aranges
-                0x000000a0       0x38 memory.o
+                0x000000c0       0x40 helperFunctions.o
  .debug_aranges
-                0x000000d8       0x58 Pins/Pin.o
+                0x00000100       0x40 Pins/AnalogPin.o
  .debug_aranges
-                0x00000130       0x48 Shift_Register/ShiftRegister.o
+                0x00000140       0x58 Pins/Pin.o
  .debug_aranges
-                0x00000178       0x40 Shift_Register/ShiftRegister_SIPO.o
+                0x00000198       0x48 Shift_Register/ShiftRegister.o
  .debug_aranges
-                0x000001b8       0x30 Tasks/Blinky.o
+                0x000001e0       0x40 Shift_Register/ShiftRegister_SIPO.o
  .debug_aranges
-                0x000001e8       0x30 Tasks/Counter.o
+                0x00000220       0x30 Tasks/BPMInput.o
  .debug_aranges
-                0x00000218       0x30 Tasks/Latch.o
+                0x00000250       0x30 Tasks/Blinky.o
  .debug_aranges
-                0x00000248       0x50 Tasks/SevenSeg.o
+                0x00000280       0x30 Tasks/Latch.o
  .debug_aranges
-                0x00000298       0x40 Tasks/TaskManager.o
+                0x000002b0       0x30 Tasks/PrintBPM.o
  .debug_aranges
-                0x000002d8       0x38 Tasks/Trigger.o
+                0x000002e0       0x50 Tasks/SevenSeg.o
  .debug_aranges
-                0x00000310       0x60 timer.o
+                0x00000330       0x40 Tasks/TaskManager.o
+ .debug_aranges
+                0x00000370       0x38 Tasks/Trigger.o
+ .debug_aranges
+                0x000003a8       0x60 timer.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x59fa
+.debug_info     0x00000000     0x67ef
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
  .debug_info    0x000005f4      0x301 interrupts.o
- .debug_info    0x000008f5      0xe57 main.o
- .debug_info    0x0000174c      0x17c memory.o
- .debug_info    0x000018c8      0x40b Pins/Pin.o
- .debug_info    0x00001cd3      0x675 Shift_Register/ShiftRegister.o
- .debug_info    0x00002348      0x7c2 Shift_Register/ShiftRegister_SIPO.o
- .debug_info    0x00002b0a      0x558 Tasks/Blinky.o
- .debug_info    0x00003062      0x8ba Tasks/Counter.o
- .debug_info    0x0000391c      0x869 Tasks/Latch.o
- .debug_info    0x00004185      0xb58 Tasks/SevenSeg.o
- .debug_info    0x00004cdd      0x4b7 Tasks/TaskManager.o
- .debug_info    0x00005194      0x418 Tasks/Trigger.o
- .debug_info    0x000055ac      0x44e timer.o
+ .debug_info    0x000008f5     0x1222 main.o
+ .debug_info    0x00001b17      0x20c helperFunctions.o
+ .debug_info    0x00001d23      0x25e Pins/AnalogPin.o
+ .debug_info    0x00001f81      0x40b Pins/Pin.o
+ .debug_info    0x0000238c      0x67a Shift_Register/ShiftRegister.o
+ .debug_info    0x00002a06      0x7c2 Shift_Register/ShiftRegister_SIPO.o
+ .debug_info    0x000031c8      0x526 Tasks/BPMInput.o
+ .debug_info    0x000036ee      0x55d Tasks/Blinky.o
+ .debug_info    0x00003c4b      0x88d Tasks/Latch.o
+ .debug_info    0x000044d8      0xa9e Tasks/PrintBPM.o
+ .debug_info    0x00004f76      0xb52 Tasks/SevenSeg.o
+ .debug_info    0x00005ac8      0x4bc Tasks/TaskManager.o
+ .debug_info    0x00005f84      0x41d Tasks/Trigger.o
+ .debug_info    0x000063a1      0x44e timer.o
 
-.debug_abbrev   0x00000000     0x1e02
+.debug_abbrev   0x00000000     0x229e
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
  .debug_abbrev  0x000005a2      0x159 interrupts.o
- .debug_abbrev  0x000006fb      0x21f main.o
- .debug_abbrev  0x0000091a       0xbf memory.o
- .debug_abbrev  0x000009d9      0x1b8 Pins/Pin.o
- .debug_abbrev  0x00000b91      0x200 Shift_Register/ShiftRegister.o
- .debug_abbrev  0x00000d91      0x24c Shift_Register/ShiftRegister_SIPO.o
- .debug_abbrev  0x00000fdd      0x1fb Tasks/Blinky.o
- .debug_abbrev  0x000011d8      0x1f0 Tasks/Counter.o
- .debug_abbrev  0x000013c8      0x1f0 Tasks/Latch.o
- .debug_abbrev  0x000015b8      0x271 Tasks/SevenSeg.o
- .debug_abbrev  0x00001829      0x210 Tasks/TaskManager.o
- .debug_abbrev  0x00001a39      0x1f3 Tasks/Trigger.o
- .debug_abbrev  0x00001c2c      0x1d6 timer.o
+ .debug_abbrev  0x000006fb      0x2a6 main.o
+ .debug_abbrev  0x000009a1       0xe6 helperFunctions.o
+ .debug_abbrev  0x00000a87      0x177 Pins/AnalogPin.o
+ .debug_abbrev  0x00000bfe      0x1b8 Pins/Pin.o
+ .debug_abbrev  0x00000db6      0x200 Shift_Register/ShiftRegister.o
+ .debug_abbrev  0x00000fb6      0x24c Shift_Register/ShiftRegister_SIPO.o
+ .debug_abbrev  0x00001202      0x216 Tasks/BPMInput.o
+ .debug_abbrev  0x00001418      0x1fb Tasks/Blinky.o
+ .debug_abbrev  0x00001613      0x1ff Tasks/Latch.o
+ .debug_abbrev  0x00001812      0x240 Tasks/PrintBPM.o
+ .debug_abbrev  0x00001a52      0x273 Tasks/SevenSeg.o
+ .debug_abbrev  0x00001cc5      0x210 Tasks/TaskManager.o
+ .debug_abbrev  0x00001ed5      0x1f3 Tasks/Trigger.o
+ .debug_abbrev  0x000020c8      0x1d6 timer.o
 
-.debug_line     0x00000000     0x1653
+.debug_line     0x00000000     0x1a86
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_line    0x00000133      0x19c interrupts.o
- .debug_line    0x000002cf      0x269 main.o
- .debug_line    0x00000538      0x13b memory.o
- .debug_line    0x00000673      0x172 Pins/Pin.o
- .debug_line    0x000007e5      0x199 Shift_Register/ShiftRegister.o
- .debug_line    0x0000097e      0x1d6 Shift_Register/ShiftRegister_SIPO.o
- .debug_line    0x00000b54      0x147 Tasks/Blinky.o
- .debug_line    0x00000c9b      0x1a2 Tasks/Counter.o
- .debug_line    0x00000e3d      0x17a Tasks/Latch.o
- .debug_line    0x00000fb7      0x288 Tasks/SevenSeg.o
- .debug_line    0x0000123f      0x14e Tasks/TaskManager.o
- .debug_line    0x0000138d      0x157 Tasks/Trigger.o
- .debug_line    0x000014e4      0x16f timer.o
+ .debug_line    0x00000133      0x18c interrupts.o
+ .debug_line    0x000002bf      0x320 main.o
+ .debug_line    0x000005df      0x196 helperFunctions.o
+ .debug_line    0x00000775      0x14c Pins/AnalogPin.o
+ .debug_line    0x000008c1      0x172 Pins/Pin.o
+ .debug_line    0x00000a33      0x199 Shift_Register/ShiftRegister.o
+ .debug_line    0x00000bcc      0x1d6 Shift_Register/ShiftRegister_SIPO.o
+ .debug_line    0x00000da2      0x16f Tasks/BPMInput.o
+ .debug_line    0x00000f11      0x147 Tasks/Blinky.o
+ .debug_line    0x00001058      0x17a Tasks/Latch.o
+ .debug_line    0x000011d2      0x1cc Tasks/PrintBPM.o
+ .debug_line    0x0000139e      0x2d4 Tasks/SevenSeg.o
+ .debug_line    0x00001672      0x14e Tasks/TaskManager.o
+ .debug_line    0x000017c0      0x157 Tasks/Trigger.o
+ .debug_line    0x00001917      0x16f timer.o
 
-.debug_frame    0x00000000      0x750
+.debug_frame    0x00000000      0x89c
  *(.debug_frame)
  .debug_frame   0x00000000      0x130 interrupts.o
- .debug_frame   0x00000130       0x84 main.o
- .debug_frame   0x000001b4       0x54 memory.o
- .debug_frame   0x00000208       0xa0 Pins/Pin.o
- .debug_frame   0x000002a8       0x8c Shift_Register/ShiftRegister.o
- .debug_frame   0x00000334       0x90 Shift_Register/ShiftRegister_SIPO.o
- .debug_frame   0x000003c4       0x64 Tasks/Blinky.o
- .debug_frame   0x00000428       0x50 Tasks/Counter.o
- .debug_frame   0x00000478       0x44 Tasks/Latch.o
- .debug_frame   0x000004bc       0xec Tasks/SevenSeg.o
- .debug_frame   0x000005a8       0x8c Tasks/TaskManager.o
- .debug_frame   0x00000634       0x6c Tasks/Trigger.o
- .debug_frame   0x000006a0       0xb0 timer.o
+ .debug_frame   0x00000130       0xc4 main.o
+ .debug_frame   0x000001f4       0x64 helperFunctions.o
+ .debug_frame   0x00000258       0x7c Pins/AnalogPin.o
+ .debug_frame   0x000002d4       0xa0 Pins/Pin.o
+ .debug_frame   0x00000374       0x8c Shift_Register/ShiftRegister.o
+ .debug_frame   0x00000400       0x90 Shift_Register/ShiftRegister_SIPO.o
+ .debug_frame   0x00000490       0x64 Tasks/BPMInput.o
+ .debug_frame   0x000004f4       0x64 Tasks/Blinky.o
+ .debug_frame   0x00000558       0x44 Tasks/Latch.o
+ .debug_frame   0x0000059c       0x5c Tasks/PrintBPM.o
+ .debug_frame   0x000005f8       0xfc Tasks/SevenSeg.o
+ .debug_frame   0x000006f4       0x8c Tasks/TaskManager.o
+ .debug_frame   0x00000780       0x6c Tasks/Trigger.o
+ .debug_frame   0x000007ec       0xb0 timer.o
 
-.debug_str      0x00000000     0x11e1
+.debug_str      0x00000000     0x145e
  *(.debug_str)
  .debug_str     0x00000000      0x208 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_str     0x00000208      0x40c interrupts.o
+ .debug_str     0x00000208      0x406 interrupts.o
                                 0x44d (size before relaxing)
- .debug_str     0x00000614      0x7fc main.o
-                                0xba3 (size before relaxing)
- .debug_str     0x00000e10       0x6a memory.o
-                                0x1f2 (size before relaxing)
- .debug_str     0x00000e7a       0x5d Pins/Pin.o
+ .debug_str     0x0000060e      0x9cd main.o
+                                0xd87 (size before relaxing)
+ .debug_str     0x00000fdb       0xa6 helperFunctions.o
+                                0x27d (size before relaxing)
+ .debug_str     0x00001081       0x2d Pins/AnalogPin.o
+                                0x2b8 (size before relaxing)
+ .debug_str     0x000010ae       0x58 Pins/Pin.o
                                 0x33b (size before relaxing)
- .debug_str     0x00000ed7       0x80 Shift_Register/ShiftRegister.o
+ .debug_str     0x00001106       0x80 Shift_Register/ShiftRegister.o
                                 0x5ec (size before relaxing)
- .debug_str     0x00000f57       0x92 Shift_Register/ShiftRegister_SIPO.o
+ .debug_str     0x00001186       0x92 Shift_Register/ShiftRegister_SIPO.o
                                 0x74a (size before relaxing)
- .debug_str     0x00000fe9       0x41 Tasks/Blinky.o
+ .debug_str     0x00001218       0x47 Tasks/BPMInput.o
+                                0x4b8 (size before relaxing)
+ .debug_str     0x0000125f       0x38 Tasks/Blinky.o
                                 0x502 (size before relaxing)
- .debug_str     0x0000102a       0x51 Tasks/Counter.o
-                                0x8d0 (size before relaxing)
- .debug_str     0x0000107b       0x38 Tasks/Latch.o
-                                0x89d (size before relaxing)
- .debug_str     0x000010b3       0x50 Tasks/SevenSeg.o
-                                0x87a (size before relaxing)
- .debug_str     0x00001103       0x57 Tasks/TaskManager.o
+ .debug_str     0x00001297       0x44 Tasks/Latch.o
+                                0x8b5 (size before relaxing)
+ .debug_str     0x000012db       0x5e Tasks/PrintBPM.o
+                                0xa2a (size before relaxing)
+ .debug_str     0x00001339       0x50 Tasks/SevenSeg.o
+                                0x8a2 (size before relaxing)
+ .debug_str     0x00001389       0x4e Tasks/TaskManager.o
                                 0x498 (size before relaxing)
- .debug_str     0x0000115a       0x3b Tasks/Trigger.o
+ .debug_str     0x000013d7       0x3b Tasks/Trigger.o
                                 0x3f8 (size before relaxing)
- .debug_str     0x00001195       0x4c timer.o
+ .debug_str     0x00001412       0x4c timer.o
                                 0x37a (size before relaxing)
 
-.debug_loc      0x00000000     0x1112
+.debug_loc      0x00000000     0x14e2
  *(.debug_loc)
  .debug_loc     0x00000000      0x1c5 interrupts.o
- .debug_loc     0x000001c5       0x47 main.o
- .debug_loc     0x0000020c       0x98 memory.o
- .debug_loc     0x000002a4      0x28f Pins/Pin.o
- .debug_loc     0x00000533       0xca Shift_Register/ShiftRegister.o
- .debug_loc     0x000005fd      0x205 Shift_Register/ShiftRegister_SIPO.o
- .debug_loc     0x00000802      0x10a Tasks/Blinky.o
- .debug_loc     0x0000090c       0x65 Tasks/Counter.o
- .debug_loc     0x00000971       0x36 Tasks/Latch.o
- .debug_loc     0x000009a7      0x43c Tasks/SevenSeg.o
- .debug_loc     0x00000de3      0x127 Tasks/TaskManager.o
- .debug_loc     0x00000f0a      0x144 Tasks/Trigger.o
- .debug_loc     0x0000104e       0xc4 timer.o
+ .debug_loc     0x000001c5       0x99 main.o
+ .debug_loc     0x0000025e      0x12a helperFunctions.o
+ .debug_loc     0x00000388      0x13e Pins/AnalogPin.o
+ .debug_loc     0x000004c6      0x28f Pins/Pin.o
+ .debug_loc     0x00000755       0xca Shift_Register/ShiftRegister.o
+ .debug_loc     0x0000081f      0x205 Shift_Register/ShiftRegister_SIPO.o
+ .debug_loc     0x00000a24      0x11a Tasks/BPMInput.o
+ .debug_loc     0x00000b3e      0x10a Tasks/Blinky.o
+ .debug_loc     0x00000c48       0x36 Tasks/Latch.o
+ .debug_loc     0x00000c7e      0x13c Tasks/PrintBPM.o
+ .debug_loc     0x00000dba      0x3f9 Tasks/SevenSeg.o
+ .debug_loc     0x000011b3      0x127 Tasks/TaskManager.o
+ .debug_loc     0x000012da      0x144 Tasks/Trigger.o
+ .debug_loc     0x0000141e       0xc4 timer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -905,21 +1128,23 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x2a0
+.debug_ranges   0x00000000      0x318
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x48 interrupts.o
- .debug_ranges  0x00000048       0x38 main.o
- .debug_ranges  0x00000080       0x28 memory.o
- .debug_ranges  0x000000a8       0x48 Pins/Pin.o
- .debug_ranges  0x000000f0       0x38 Shift_Register/ShiftRegister.o
- .debug_ranges  0x00000128       0x30 Shift_Register/ShiftRegister_SIPO.o
- .debug_ranges  0x00000158       0x20 Tasks/Blinky.o
- .debug_ranges  0x00000178       0x20 Tasks/Counter.o
- .debug_ranges  0x00000198       0x20 Tasks/Latch.o
- .debug_ranges  0x000001b8       0x40 Tasks/SevenSeg.o
- .debug_ranges  0x000001f8       0x30 Tasks/TaskManager.o
- .debug_ranges  0x00000228       0x28 Tasks/Trigger.o
- .debug_ranges  0x00000250       0x50 timer.o
+ .debug_ranges  0x00000048       0x58 main.o
+ .debug_ranges  0x000000a0       0x30 helperFunctions.o
+ .debug_ranges  0x000000d0       0x30 Pins/AnalogPin.o
+ .debug_ranges  0x00000100       0x48 Pins/Pin.o
+ .debug_ranges  0x00000148       0x38 Shift_Register/ShiftRegister.o
+ .debug_ranges  0x00000180       0x30 Shift_Register/ShiftRegister_SIPO.o
+ .debug_ranges  0x000001b0       0x20 Tasks/BPMInput.o
+ .debug_ranges  0x000001d0       0x20 Tasks/Blinky.o
+ .debug_ranges  0x000001f0       0x20 Tasks/Latch.o
+ .debug_ranges  0x00000210       0x20 Tasks/PrintBPM.o
+ .debug_ranges  0x00000230       0x40 Tasks/SevenSeg.o
+ .debug_ranges  0x00000270       0x30 Tasks/TaskManager.o
+ .debug_ranges  0x000002a0       0x28 Tasks/Trigger.o
+ .debug_ranges  0x000002c8       0x50 timer.o
 
 .debug_macro
  *(.debug_macro)

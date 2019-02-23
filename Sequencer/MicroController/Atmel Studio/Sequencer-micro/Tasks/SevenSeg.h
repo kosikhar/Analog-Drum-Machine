@@ -9,10 +9,11 @@
 #define __SEVENSEG_H__
 
 #include "../Shift_Register/ShiftRegister_SIPO.h"
+#include "../helperFunctions.h"
 #include <avr/pgmspace.h>
 
 //How many 7 seg displays are used.
-#define NUM_DISPLAYS 2
+#define NUM_DISPLAYS 3
 
 //Pinout for the SIPO shift registers
 #define SEVSEG_SERIAL_PIN 0
@@ -21,7 +22,7 @@
 
 //Port and Data Direction registers for the
 //Serial output shift registers
-#define SEVSEG_PIN_PORT PORTC
+#define SEVSEG_PIN_PORT PORTB
 
 class SevenSeg : public ShiftRegister_SIPO
 {
@@ -29,13 +30,13 @@ class SevenSeg : public ShiftRegister_SIPO
 	public:
 		
 		//Flag for indicating that display is ready to be latched (show)
-		uint8_t shiftComplete;
+		volatile uint8_t shiftComplete;
 
 		//Flag for indicating that there is content to print
 		uint8_t newContentToPrint;
 				
 		//Content to be printed. Must be a number. (for now)
-		uint8_t contentToPrint;
+		uint16_t contentToPrint;
 
 	private:
 		uint8_t size;
@@ -46,10 +47,13 @@ class SevenSeg : public ShiftRegister_SIPO
 		 
 		//Values to be printed to each seven seg display
 		uint8_t numbersToPrint [NUM_DISPLAYS];
+		
+		//Keep track of which seven seg is currently being written to
+		uint8_t sevenSeg_index;
 
 	//functions
 	public:
-		SevenSeg( uint8_t numberOfDisplays, Timer * timerPtr );
+		SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );

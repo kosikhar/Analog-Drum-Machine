@@ -22,7 +22,7 @@ class Latch
 		
 	//functions
 	public:
-		Latch( SevenSeg * sevenSegPtr  );
+		Latch( SevenSeg & sevenSegPtr  );
 	
 		//run the latching task. Non-blocking
 		void run( void );

@@ -31,7 +31,7 @@ class Trigger
 		
 	//functions
 	public:
-		Trigger( Timer * timerPtr );
+		Trigger( Timer & timerPtr );
 		
 		//runs the trigger task. Non-Blocking.
 		void run(void);

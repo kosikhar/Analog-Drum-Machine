@@ -11,7 +11,7 @@
 
 #include "../timer.h"
 
-#define TOTAL_TASK_COUNT 5
+#define TOTAL_TASK_COUNT 6
 
 //Should be a prime number uint8
 #define RANDOM_GEN_SEED 7
@@ -39,7 +39,7 @@ class TaskManager
 
 	//functions
 	public:
-		TaskManager(  Timer * timerPtr );
+		TaskManager(  Timer & timerPtr );
 		
 		//Add a task to the task list. Add in order of priority.
 		void addTask( void (*task) (void), uint8_t taskPriority );

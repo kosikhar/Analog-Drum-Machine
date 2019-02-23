@@ -33,7 +33,7 @@ class Blinky
 		
 	//functions
 	public:
-		Blinky( Timer * timerPtr  );
+		Blinky( Timer & timerPtr  );
 		
 		//Blinks led on and off. Non-Blocking.
 		void run( void );

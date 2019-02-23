@@ -8,10 +8,10 @@
 
 #include "Latch.h"
 
-Latch::Latch( SevenSeg * sevenSegPtr )
+Latch::Latch( SevenSeg & sevenSegPtr )
 {
 	//Reference to the seven segment display
-	sevenSegmentDisplay = sevenSegPtr;
+	sevenSegmentDisplay = &sevenSegPtr;
 } //Latch
 
 void Latch::run( void )

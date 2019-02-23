@@ -11,7 +11,7 @@
 
 //Object that helps control shifting.
 //Well be used for latching
-#include "ButtonInput.h"
+#include "DigitalInput.h"
 
 //Poll the input shift register every 100ms
 #define POLLING_TIME 1000 
@@ -25,7 +25,7 @@ class InputPoll
 	protected:
 	private:
 		//Reference to the buttonInput object
-		ButtonInput * buttonInput;
+		DigitalInput * buttonInput;
 		
 		//Reference to global timer
 		Timer * timer;
@@ -35,7 +35,7 @@ class InputPoll
 		
 	//functions
 	public:
-		InputPoll( Timer * timerPtr, ButtonInput * buttonInputPtr );
+		InputPoll( Timer & timerPtr, DigitalInput & buttonInputPtr );
 		
 		void run( void );
 		

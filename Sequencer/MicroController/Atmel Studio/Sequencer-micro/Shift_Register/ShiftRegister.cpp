@@ -43,9 +43,9 @@ void ShiftRegister::latch( void )
 
 }
 
-void ShiftRegister::getTimerReference( Timer * ptr )
+void ShiftRegister::getTimerReference( Timer & ptr )
 {
-	timer = ptr;
+	timer = &ptr;
 } //getTimerReference
 
 // default destructor

@@ -5,7 +5,7 @@
  *  Author: Koltin Kosik-Harvey
  */ 
 
- #include "memory.h"
+ #include "helperFunctions.h"
 
  void * operator new(size_t size)
  {
@@ -25,4 +25,16 @@
  void operator delete[](void * ptr)
  {
 	 free(ptr);
+ }
+ 
+ uint16_t pow10( uint8_t exponent )
+ {
+	 if (exponent == 0){
+		 return 1;
+	 }
+	 uint16_t output = 1;
+	 for(int i=0; i < exponent ; i++){
+		 output = output * 10;
+	 }
+	 return output;
  }

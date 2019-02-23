@@ -7,10 +7,13 @@
 #include "SevenSeg.h"
 
 // default constructor
-SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer * timerPtr ) : ShiftRegister_SIPO()
+SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr ) : ShiftRegister_SIPO()
 {
 	//Init content to print to 0
 	contentToPrint = 0;
+	
+	//Init seven seg index
+	sevenSeg_index = 0;
 
 	//Get reference to external timer
 	this->getTimerReference( timerPtr );
@@ -19,15 +22,15 @@ SevenSeg::SevenSeg( uint8_t numberOfDisplays, Timer * timerPtr ) : ShiftRegister
 	size = numberOfDisplays;
 		
 	//initialize shift complete flag
-	shiftComplete = false;
+	shiftComplete = true;
 
 	//initialize flag for indicating if there's content to print
-	newContentToPrint = false;
+	newContentToPrint = true;
 
 	//Initialize pins
-	shiftPin = new Pin(SEVSEG_SHIFT_PIN, &PORTC, OUTPUT );
-	latchPin = new Pin(SEVSEG_LATCH_PIN, &PORTC, OUTPUT );
-	serialPin = new Pin(SEVSEG_SERIAL_PIN, &PORTC, OUTPUT );
+	shiftPin = new Pin(SEVSEG_SHIFT_PIN, &SEVSEG_PIN_PORT, OUTPUT );
+	latchPin = new Pin(SEVSEG_LATCH_PIN, &SEVSEG_PIN_PORT, OUTPUT );
+	serialPin = new Pin(SEVSEG_SERIAL_PIN, &SEVSEG_PIN_PORT, OUTPUT );
 
 } //SevenSeg
 
@@ -36,20 +39,39 @@ void SevenSeg::run( void )
 	//check if the counter has updated
 	if (newContentToPrint == true){
 		
-		//Reset this flag
-		newContentToPrint = false;
-		
-		//numberToPrint[0] is the ones place. n mod 10 gives the ones
-		numbersToPrint[0] = contentToPrint % 10;
-		for( int i=1; i < NUM_DISPLAYS ; i++){
-			//numberToPrint[1++] gets the 10s, 100s, etc.
-			numbersToPrint[i] = contentToPrint / (10*i);
-		}
-		
+		//Indicate middle of shifting
+		shiftComplete = false;
+			
+		//numberToPrint[1++] gets the 10s, 100s, etc.
+		numbersToPrint[sevenSeg_index] = (contentToPrint / pow10(sevenSeg_index)) % 10;
+
 		//Prepare shift registers to hold bit map for seven segment display
-		this->printNumbers_NOLATCH( numbersToPrint );
+		//If input number is too large just make it 10 (a dot on the seven seg)
+		if ( numbersToPrint[sevenSeg_index] > 9 ){
+			numbersToPrint[sevenSeg_index] = 10;
+		}
+				
+		//Load in the Bytes
+		this->loadByte( sevenSegBitMap[ numbersToPrint[sevenSeg_index] ]);
 		
-		shiftComplete = true;
+		//Shift in the bits
+		this->shiftBits();
+		
+		//increment seven seg index
+		sevenSeg_index++;
+		
+		//See if we're done shifting to the displays.
+		if ( sevenSeg_index >= NUM_DISPLAYS ){
+			
+			//reset index
+			sevenSeg_index = 0;
+					
+			//Reset flag indicating new content to print
+			newContentToPrint = false;
+					
+			//Indicate shifting is complete
+			shiftComplete = true;
+		}
 	}
 }
 

@@ -21,9 +21,11 @@ main.d main.o: .././main.cpp .././Tasks/setupTasks.h \
  .././Tasks/../Shift_Register/../timer.h \
  .././Tasks/../Shift_Register/ShiftRegister.h \
  .././Tasks/../Shift_Register/../Pins/Pin.h \
+ .././Tasks/../helperFunctions.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  .././Tasks/Blinky.h .././Tasks/../Pins/Pin.h .././Tasks/Trigger.h \
- .././Tasks/Counter.h .././Tasks/Latch.h
+ .././Tasks/Counter.h .././Tasks/Latch.h .././Tasks/PrintBPM.h \
+ .././Tasks/BPMInput.h .././Tasks/../Pins/AnalogPin.h
 
 .././Tasks/setupTasks.h:
 
@@ -75,6 +77,8 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt
 
 .././Tasks/../Shift_Register/../Pins/Pin.h:
 
+.././Tasks/../helperFunctions.h:
+
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
 
 .././Tasks/Blinky.h:
@@ -86,3 +90,9 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.
 .././Tasks/Counter.h:
 
 .././Tasks/Latch.h:
+
+.././Tasks/PrintBPM.h:
+
+.././Tasks/BPMInput.h:
+
+.././Tasks/../Pins/AnalogPin.h:

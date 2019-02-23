@@ -33,7 +33,7 @@ class Counter
 		
 	//functions
 	public:
-		Counter(Timer * timerPtr, SevenSeg * sevenSegPtr );
+		Counter(Timer & timerPtr, SevenSeg & sevenSegPtr );
 		
 		//Runs the counter task. Non-Blocking		
 		void run( void );

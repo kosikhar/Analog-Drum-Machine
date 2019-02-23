@@ -9,7 +9,7 @@
 #include "Trigger.h"
 
 // default constructor
-Trigger::Trigger( Timer * timerPtr )
+Trigger::Trigger( Timer & timerPtr )
 {
 	//Initialize the output pin.
 	DDRD |= (1 << PORTD2);
@@ -18,7 +18,7 @@ Trigger::Trigger( Timer * timerPtr )
 	timeStamp = 0;
 
 	//Get reference to the timer
-	timer = timerPtr;
+	timer = &timerPtr;
 		
 	//Initialize the time stamp
 	//Timer->millis returns the number of 0.1ms since epoche

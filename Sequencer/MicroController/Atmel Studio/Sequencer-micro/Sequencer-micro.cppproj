@@ -179,10 +179,16 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="memory.cpp">
+    <Compile Include="helperFunctions.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="memory.h">
+    <Compile Include="helperFunctions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Pins\AnalogPin.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Pins\AnalogPin.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Pins\Pin.cpp">
@@ -209,16 +215,22 @@
     <Compile Include="Shift_Register\ShiftRegister_SIPO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\BPMInput.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\BPMInput.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\Blinky.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Blinky.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\ButtonInput.cpp">
+    <Compile Include="Tasks\DigitalInput.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\ButtonInput.h">
+    <Compile Include="Tasks\DigitalInput.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Counter.cpp">
@@ -237,6 +249,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Latch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\PrintBPM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\PrintBPM.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\setupTasks.h">

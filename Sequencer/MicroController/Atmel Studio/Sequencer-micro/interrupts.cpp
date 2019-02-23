@@ -7,11 +7,13 @@
 
 #include "interrupts.h"
 
+extern Timer timer;
+
 //Call every 100us, will be used for controlling timing
 ISR( TIMER0_COMPA_vect, ISR_BLOCK )
 {
 	//Increment timer every 1ms
-	timer->incrementTimer();
+	timer.incrementTimer();
 }
 //Well be used to update shift registers in a timely fashion
 ISR( TIMER1_COMPB_vect, ISR_NOBLOCK)

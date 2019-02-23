@@ -16,5 +16,7 @@
 #include "Trigger.h"
 #include "Counter.h"
 #include "Latch.h"
+#include "PrintBPM.h"
+#include "BPMInput.h"
 
 #endif /* SETUPTASKS_H_ */

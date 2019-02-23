@@ -19,7 +19,7 @@ Tasks/SevenSeg.d Tasks/SevenSeg.o: ../Tasks/SevenSeg.cpp \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  ../Tasks/../Shift_Register/../timer.h \
  ../Tasks/../Shift_Register/ShiftRegister.h \
- ../Tasks/../Shift_Register/../Pins/Pin.h \
+ ../Tasks/../Shift_Register/../Pins/Pin.h ../Tasks/../helperFunctions.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
 ../Tasks/SevenSeg.h:
@@ -65,5 +65,7 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt
 ../Tasks/../Shift_Register/ShiftRegister.h:
 
 ../Tasks/../Shift_Register/../Pins/Pin.h:
+
+../Tasks/../helperFunctions.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:

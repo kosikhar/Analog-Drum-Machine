@@ -41,7 +41,7 @@ class ShiftRegister
 		ShiftRegister( Pin * shift, Pin * latch, Pin * serial );
 
 		//Get a reference to the global timer object
-		void getTimerReference( Timer * timerPtr );
+		void getTimerReference( Timer & timerPtr );
 
 		//Sends pulse to the latch pin
 		void latch( void );

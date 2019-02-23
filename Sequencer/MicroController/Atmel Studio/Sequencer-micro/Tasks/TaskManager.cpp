@@ -9,10 +9,10 @@
 #include "TaskManager.h"
 
 // default constructor
-TaskManager::TaskManager( Timer * timerPtr )
+TaskManager::TaskManager( Timer & timerPtr )
 {
 	
-	timer = timerPtr;
+	timer = &timerPtr;
 	
 	//At initialization there should be zero loaded tasks. 
 	loadedTasks = 0;
