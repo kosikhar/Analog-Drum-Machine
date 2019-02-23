@@ -9,7 +9,7 @@
 #include "Blinky.h"
 
 //Initialize the pins. 
-Blinky::Blinky( Timer & timerPtr )
+Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
 {
 	//Set LED on port D data direction to output
 	DDRD |= (1 << PORTD0);
@@ -26,48 +26,48 @@ Blinky::Blinky( Timer & timerPtr )
 	//Get reference to the timer
 	timer = &timerPtr;
 	
+	//Get reference to the BPM input
+	bpmInput = &bpmInputRef;
+	
 	blinkyPin = new Pin(0, &PORTD, OUTPUT);
+	
+	//initialize pulse width
+	pulseWidth = 5000;
+	
+	//init flag
+	justSetHigh = false;
 	
 } //Blinky
 
-//Runs the Blinky task. Blinks led on an off. 
-// void Blinky::run()
-// {
-// 	if ( timer->elapsed_millis( timeStamp ) > LED_UPDATE ) {
-// 		
-// 		//Update time stamp
-// 		timeStamp = timer->millis();
-// 		
-// 		if( LEDValueNext == 1 ){
-// 			//Set Test LED to OFF
-// 			PORTD |= (1 << PORTD0);
-// 			LEDValueNext = 0;
-// 			
-// 		} else {
-// 			//Set Test LED to ON
-// 			PORTD &= ~(1 << PORTD0);
-// 			LEDValueNext = 1;
-// 		}
-// 	}
-// }
-
 void Blinky::run()
 {
-	if ( timer->elapsed_millis( timeStamp ) > LED_UPDATE ) {
+	if ( timer->elapsed_millis( timeStamp ) > pulseWidth ) {
 		
 		//Update time stamp
 		timeStamp = timer->millis();
 		
 		if( LEDValueNext == 1 ){
 			//Set Test LED to OFF
-			blinkyPin->setHigh();
+			blinkyPin->setHigh();	
 			LEDValueNext = 0;
 			
 			} else {
 			//Set Test LED to ON
 			blinkyPin->setLow();
+			
+			justSetHigh = true;
+			
 			LEDValueNext = 1;
 		}
+		
+		//Recalculate pulse rate. in units of 0.1ms 
+		//Timer counter to 600000 per 0.1ms so if we have 60 BPM
+		//The delay would be 600000/60 = 10000;
+		//Then we need to devide by two, to have the clock go up and down.
+		//Period would still be the 1/BPM.
+		pulseWidth = 600000 / bpmInput->value;
+		pulseWidth = pulseWidth >> 1;
+		
 	}
 }
 

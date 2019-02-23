@@ -18,8 +18,11 @@
 #define BPM_INPUT_PIN 3
 
 //How many samples for averaging (to the power of 2) ie 2^5 = 32 samples
-#define SAMPLES 32
-#define SAMPLES_LOG2 5
+#define SAMPLES 64
+#define SAMPLES_LOG2 6
+
+//Add this value to the recorded BPM
+#define BPM_OFFSET 30
 
 //How often to poll the analog input (5ms)
 #define BPM_PIN_POLLING_TIME 50

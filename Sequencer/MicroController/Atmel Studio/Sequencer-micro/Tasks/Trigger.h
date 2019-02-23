@@ -10,6 +10,7 @@
 #define __TRIGGER_H__
 
 #include "../timer.h"
+#include "Blinky.h"
 
 //Unit is 0.1ms 
 #define TRIGGER_LOW 10000 //How long trigger is low (1s)
@@ -20,8 +21,9 @@ class Trigger
 {
 	//variables
 	public:
-		//variable to remember if trigger is low or high
-		uint8_t triggerLow;
+		
+		//Flag to indicate trigger has been set high
+		uint8_t triggerSetHigh;
 		
 	private:
 		Timer * timer;
@@ -29,14 +31,15 @@ class Trigger
 		//A time stamp to find an elapsed time value
 		uint32_t timeStamp;
 		
+		//Reference to blinky
+		Blinky * blinky;
+		
 	//functions
 	public:
-		Trigger( Timer & timerPtr );
+		Trigger( Timer & timerPtr, Blinky & blinkyRef );
 		
 		//runs the trigger task. Non-Blocking.
 		void run(void);
-		
-		uint8_t condition(void);
 		
 		~Trigger();
 	private:

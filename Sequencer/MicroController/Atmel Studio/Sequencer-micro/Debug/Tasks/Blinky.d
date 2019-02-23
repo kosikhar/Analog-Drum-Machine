@@ -14,7 +14,7 @@ Tasks/Blinky.d Tasks/Blinky.o: ../Tasks/Blinky.cpp ../Tasks/Blinky.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../Tasks/../Pins/Pin.h
+ ../Tasks/../Pins/Pin.h ../Tasks/BPMInput.h ../Tasks/../Pins/AnalogPin.h
 
 ../Tasks/Blinky.h:
 
@@ -49,3 +49,7 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 ../Tasks/../Pins/Pin.h:
+
+../Tasks/BPMInput.h:
+
+../Tasks/../Pins/AnalogPin.h:

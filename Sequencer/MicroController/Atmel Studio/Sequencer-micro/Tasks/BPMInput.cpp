@@ -52,8 +52,11 @@ void BPMInput::run( void )
 				//Value is the average however this would leave with a value of 1024 as MAX
 				value = (sum >> SAMPLES_LOG2);
 				
-				//Convert value to a range between 0-512 essential devide by two
-				value = value >> 1;
+				//Convert value to a range between 0-256 essential devide by four
+				value = value >> 2;
+				
+				//Add the offset
+				value = value + BPM_OFFSET;
 	
 				//Reset sum
 				sum = 0;
