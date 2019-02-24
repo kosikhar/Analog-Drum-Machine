@@ -3,31 +3,31 @@ Sequencer-micro.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000012  00800100  00000e04  00000e98  2**0
+  0 .data         00000012  00800100  00000e0c  00000ea0  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000e04  00000000  00000000  00000094  2**1
+  1 .text         00000e0c  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000005e  00800112  00800112  00000eaa  2**0
+  2 .bss          0000005e  00800112  00800112  00000eb2  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000eaa  2**0
+  3 .comment      00000030  00000000  00000000  00000eb2  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000edc  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000ee4  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000400  00000000  00000000  00000f18  2**0
+  5 .debug_aranges 00000400  00000000  00000000  00000f20  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00006d9d  00000000  00000000  00001318  2**0
+  6 .debug_info   00006d9d  00000000  00000000  00001320  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000022e8  00000000  00000000  000080b5  2**0
+  7 .debug_abbrev 000022e8  00000000  00000000  000080bd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00001aed  00000000  00000000  0000a39d  2**0
+  8 .debug_line   00001aed  00000000  00000000  0000a3a5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000894  00000000  00000000  0000be8c  2**2
+  9 .debug_frame  00000894  00000000  00000000  0000be94  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00001491  00000000  00000000  0000c720  2**0
+ 10 .debug_str    00001491  00000000  00000000  0000c728  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000014f4  00000000  00000000  0000dbb1  2**0
+ 11 .debug_loc    000014f4  00000000  00000000  0000dbb9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000310  00000000  00000000  0000f0a5  2**0
+ 12 .debug_ranges 00000310  00000000  00000000  0000f0ad  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -78,7 +78,7 @@ Disassembly of section .text:
   78:	11 e0       	ldi	r17, 0x01	; 1
   7a:	a0 e0       	ldi	r26, 0x00	; 0
   7c:	b1 e0       	ldi	r27, 0x01	; 1
-  7e:	e4 e0       	ldi	r30, 0x04	; 4
+  7e:	ec e0       	ldi	r30, 0x0C	; 12
   80:	fe e0       	ldi	r31, 0x0E	; 14
   82:	02 c0       	rjmp	.+4      	; 0x88 <__do_copy_data+0x10>
   84:	05 90       	lpm	r0, Z+
@@ -108,12 +108,12 @@ Disassembly of section .text:
   a4:	04 c0       	rjmp	.+8      	; 0xae <__do_global_ctors+0x10>
   a6:	21 97       	sbiw	r28, 0x01	; 1
   a8:	fe 01       	movw	r30, r28
-  aa:	0e 94 ce 05 	call	0xb9c	; 0xb9c <__tablejump2__>
+  aa:	0e 94 d2 05 	call	0xba4	; 0xba4 <__tablejump2__>
   ae:	c4 33       	cpi	r28, 0x34	; 52
   b0:	d1 07       	cpc	r29, r17
   b2:	c9 f7       	brne	.-14     	; 0xa6 <__do_global_ctors+0x8>
   b4:	0e 94 03 01 	call	0x206	; 0x206 <main>
-  b8:	0c 94 f5 06 	jmp	0xdea	; 0xdea <__do_global_dtors>
+  b8:	0c 94 f9 06 	jmp	0xdf2	; 0xdf2 <__do_global_dtors>
 
 000000bc <__bad_interrupt>:
   bc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -144,7 +144,7 @@ void disableShifting( void )
   e0:	ff 93       	push	r31
   e2:	84 e6       	ldi	r24, 0x64	; 100
   e4:	91 e0       	ldi	r25, 0x01	; 1
-  e6:	0e 94 45 05 	call	0xa8a	; 0xa8a <_ZN5Timer14incrementTimerEv>
+  e6:	0e 94 49 05 	call	0xa92	; 0xa92 <_ZN5Timer14incrementTimerEv>
   ea:	ff 91       	pop	r31
   ec:	ef 91       	pop	r30
   ee:	bf 91       	pop	r27
@@ -279,25 +279,25 @@ void triggerTask( void ){
 void counterTask( void ){
  1ca:	84 e4       	ldi	r24, 0x44	; 68
  1cc:	91 e0       	ldi	r25, 0x01	; 1
- 1ce:	0e 94 9c 03 	call	0x738	; 0x738 <_ZN5Latch3runEv>
+ 1ce:	0e 94 a0 03 	call	0x740	; 0x740 <_ZN5Latch3runEv>
  1d2:	08 95       	ret
 
 000001d4 <_Z23sevenSegmentDisplayTaskv>:
  1d4:	86 e4       	ldi	r24, 0x46	; 70
  1d6:	91 e0       	ldi	r25, 0x01	; 1
- 1d8:	0e 94 3a 04 	call	0x874	; 0x874 <_ZN8SevenSeg3runEv>
+ 1d8:	0e 94 3e 04 	call	0x87c	; 0x87c <_ZN8SevenSeg3runEv>
  1dc:	08 95       	ret
 
 000001de <_Z11triggerTaskv>:
  1de:	82 e1       	ldi	r24, 0x12	; 18
  1e0:	91 e0       	ldi	r25, 0x01	; 1
- 1e2:	0e 94 0f 05 	call	0xa1e	; 0xa1e <_ZN7Trigger3runEv>
+ 1e2:	0e 94 13 05 	call	0xa26	; 0xa26 <_ZN7Trigger3runEv>
  1e6:	08 95       	ret
 
 000001e8 <_Z10blinkyTaskv>:
  1e8:	8b e1       	ldi	r24, 0x1B	; 27
  1ea:	91 e0       	ldi	r25, 0x01	; 1
- 1ec:	0e 94 53 03 	call	0x6a6	; 0x6a6 <_ZN6Blinky3runEv>
+ 1ec:	0e 94 57 03 	call	0x6ae	; 0x6ae <_ZN6Blinky3runEv>
  1f0:	08 95       	ret
 
 000001f2 <_Z12BPMInputTaskv>:
@@ -309,7 +309,7 @@ void counterTask( void ){
 000001fc <_Z12PrintBPMTaskv>:
  1fc:	89 e2       	ldi	r24, 0x29	; 41
  1fe:	91 e0       	ldi	r25, 0x01	; 1
- 200:	0e 94 bd 03 	call	0x77a	; 0x77a <_ZN8PrintBPM3runEv>
+ 200:	0e 94 c1 03 	call	0x782	; 0x782 <_ZN8PrintBPM3runEv>
  204:	08 95       	ret
 
 00000206 <main>:
@@ -340,7 +340,7 @@ int main(void)
  220:	71 e0       	ldi	r23, 0x01	; 1
  222:	ce 01       	movw	r24, r28
  224:	01 96       	adiw	r24, 0x01	; 1
- 226:	0e 94 9b 04 	call	0x936	; 0x936 <_ZN11TaskManagerC1ER5Timer>
+ 226:	0e 94 9f 04 	call	0x93e	; 0x93e <_ZN11TaskManagerC1ER5Timer>
 	
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
 	taskManager.addTask( latchTask , 64);
@@ -349,21 +349,21 @@ int main(void)
  22e:	70 e0       	ldi	r23, 0x00	; 0
  230:	ce 01       	movw	r24, r28
  232:	01 96       	adiw	r24, 0x01	; 1
- 234:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 234:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	taskManager.addTask( sevenSegmentDisplayTask, 128);
  238:	40 e8       	ldi	r20, 0x80	; 128
  23a:	6a ee       	ldi	r22, 0xEA	; 234
  23c:	70 e0       	ldi	r23, 0x00	; 0
  23e:	ce 01       	movw	r24, r28
  240:	01 96       	adiw	r24, 0x01	; 1
- 242:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 242:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	taskManager.addTask( triggerTask,  4);
  246:	44 e0       	ldi	r20, 0x04	; 4
  248:	6f ee       	ldi	r22, 0xEF	; 239
  24a:	70 e0       	ldi	r23, 0x00	; 0
  24c:	ce 01       	movw	r24, r28
  24e:	01 96       	adiw	r24, 0x01	; 1
- 250:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 250:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	//taskManager.addTask( counterTask, 128);
 	taskManager.addTask( BPMInputTask, 128 );
  254:	40 e8       	ldi	r20, 0x80	; 128
@@ -371,28 +371,28 @@ int main(void)
  258:	70 e0       	ldi	r23, 0x00	; 0
  25a:	ce 01       	movw	r24, r28
  25c:	01 96       	adiw	r24, 0x01	; 1
- 25e:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 25e:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	taskManager.addTask( PrintBPMTask, 128 );
  262:	40 e8       	ldi	r20, 0x80	; 128
  264:	6e ef       	ldi	r22, 0xFE	; 254
  266:	70 e0       	ldi	r23, 0x00	; 0
  268:	ce 01       	movw	r24, r28
  26a:	01 96       	adiw	r24, 0x01	; 1
- 26c:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 26c:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	taskManager.addTask( blinkyTask, 128);
  270:	40 e8       	ldi	r20, 0x80	; 128
  272:	64 ef       	ldi	r22, 0xF4	; 244
  274:	70 e0       	ldi	r23, 0x00	; 0
  276:	ce 01       	movw	r24, r28
  278:	01 96       	adiw	r24, 0x01	; 1
- 27a:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN11TaskManager7addTaskEPFvvEh>
+ 27a:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN11TaskManager7addTaskEPFvvEh>
 	
     while (1) 
     {
 		taskManager.runTasks();
  27e:	ce 01       	movw	r24, r28
  280:	01 96       	adiw	r24, 0x01	; 1
- 282:	0e 94 c3 04 	call	0x986	; 0x986 <_ZN11TaskManager8runTasksEv>
+ 282:	0e 94 c7 04 	call	0x98e	; 0x98e <_ZN11TaskManager8runTasksEv>
  286:	fb cf       	rjmp	.-10     	; 0x27e <main+0x78>
 
 00000288 <_GLOBAL__sub_I_timer>:
@@ -404,7 +404,7 @@ int main(void)
 Timer timer;
  288:	84 e6       	ldi	r24, 0x64	; 100
  28a:	91 e0       	ldi	r25, 0x01	; 1
- 28c:	0e 94 3b 05 	call	0xa76	; 0xa76 <_ZN5TimerC1Ev>
+ 28c:	0e 94 3f 05 	call	0xa7e	; 0xa7e <_ZN5TimerC1Ev>
 
 //Define a pointer to a seven segment display object.
 SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
@@ -413,7 +413,7 @@ SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
  294:	63 e0       	ldi	r22, 0x03	; 3
  296:	86 e4       	ldi	r24, 0x46	; 70
  298:	91 e0       	ldi	r25, 0x01	; 1
- 29a:	0e 94 ed 03 	call	0x7da	; 0x7da <_ZN8SevenSegC1EhR5Timer>
+ 29a:	0e 94 f1 03 	call	0x7e2	; 0x7e2 <_ZN8SevenSegC1EhR5Timer>
 //Pointer to the counter object
 //Task counts to 100 then resets.
 //Counter counter;
@@ -424,7 +424,7 @@ Latch latch( sevenSegmentDisplay );
  2a0:	71 e0       	ldi	r23, 0x01	; 1
  2a2:	84 e4       	ldi	r24, 0x44	; 68
  2a4:	91 e0       	ldi	r25, 0x01	; 1
- 2a6:	0e 94 98 03 	call	0x730	; 0x730 <_ZN5LatchC1ER8SevenSeg>
+ 2a6:	0e 94 9c 03 	call	0x738	; 0x738 <_ZN5LatchC1ER8SevenSeg>
 
 //Pointer to the BPMInput task. Polls the potentiometer and averages it
 BPMInput bpmInput( timer );
@@ -444,7 +444,7 @@ PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
  2c0:	71 e0       	ldi	r23, 0x01	; 1
  2c2:	89 e2       	ldi	r24, 0x29	; 41
  2c4:	91 e0       	ldi	r25, 0x01	; 1
- 2c6:	0e 94 aa 03 	call	0x754	; 0x754 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>
+ 2c6:	0e 94 ae 03 	call	0x75c	; 0x75c <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>
 
 //Pointer to the blinky task
 Blinky blinky( timer, bpmInput );
@@ -454,7 +454,7 @@ Blinky blinky( timer, bpmInput );
  2d0:	71 e0       	ldi	r23, 0x01	; 1
  2d2:	8b e1       	ldi	r24, 0x1B	; 27
  2d4:	91 e0       	ldi	r25, 0x01	; 1
- 2d6:	0e 94 2b 03 	call	0x656	; 0x656 <_ZN6BlinkyC1ER5TimerR8BPMInput>
+ 2d6:	0e 94 2f 03 	call	0x65e	; 0x65e <_ZN6BlinkyC1ER5TimerR8BPMInput>
 
 //Pointer to trigger task
 //Used for triggering the instruments in the sequencer
@@ -465,13 +465,13 @@ Trigger trigger( timer, blinky );
  2e0:	71 e0       	ldi	r23, 0x01	; 1
  2e2:	82 e1       	ldi	r24, 0x12	; 18
  2e4:	91 e0       	ldi	r25, 0x01	; 1
- 2e6:	0e 94 f7 04 	call	0x9ee	; 0x9ee <_ZN7TriggerC1ER5TimerR6Blinky>
+ 2e6:	0e 94 fb 04 	call	0x9f6	; 0x9f6 <_ZN7TriggerC1ER5TimerR6Blinky>
  2ea:	08 95       	ret
 
 000002ec <_GLOBAL__sub_D_timer>:
  2ec:	82 e1       	ldi	r24, 0x12	; 18
  2ee:	91 e0       	ldi	r25, 0x01	; 1
- 2f0:	0e 94 3a 05 	call	0xa74	; 0xa74 <_ZN7TriggerD1Ev>
+ 2f0:	0e 94 3e 05 	call	0xa7c	; 0xa7c <_ZN7TriggerD1Ev>
 
 //Pointer to the PrintBPM task. Prints value of the recorded BPM
 PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
@@ -480,7 +480,7 @@ PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
 Blinky blinky( timer, bpmInput );
  2f4:	8b e1       	ldi	r24, 0x1B	; 27
  2f6:	91 e0       	ldi	r25, 0x01	; 1
- 2f8:	0e 94 97 03 	call	0x72e	; 0x72e <_ZN6BlinkyD1Ev>
+ 2f8:	0e 94 9b 03 	call	0x736	; 0x736 <_ZN6BlinkyD1Ev>
 
 //Pointer to the BPMInput task. Polls the potentiometer and averages it
 BPMInput bpmInput( timer );
@@ -489,7 +489,7 @@ BPMInput bpmInput( timer );
 PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
  2fc:	89 e2       	ldi	r24, 0x29	; 41
  2fe:	91 e0       	ldi	r25, 0x01	; 1
- 300:	0e 94 ec 03 	call	0x7d8	; 0x7d8 <_ZN8PrintBPMD1Ev>
+ 300:	0e 94 f0 03 	call	0x7e0	; 0x7e0 <_ZN8PrintBPMD1Ev>
 
 //Pointer to latching task. Controls latching output on shift registers
 Latch latch( sevenSegmentDisplay );
@@ -498,7 +498,7 @@ Latch latch( sevenSegmentDisplay );
 BPMInput bpmInput( timer );
  304:	83 e3       	ldi	r24, 0x33	; 51
  306:	91 e0       	ldi	r25, 0x01	; 1
- 308:	0e 94 2a 03 	call	0x654	; 0x654 <_ZN8BPMInputD1Ev>
+ 308:	0e 94 2e 03 	call	0x65c	; 0x65c <_ZN8BPMInputD1Ev>
 //Pointer to the counter object
 //Task counts to 100 then resets.
 //Counter counter;
@@ -507,7 +507,7 @@ BPMInput bpmInput( timer );
 Latch latch( sevenSegmentDisplay );
  30c:	84 e4       	ldi	r24, 0x44	; 68
  30e:	91 e0       	ldi	r25, 0x01	; 1
- 310:	0e 94 a9 03 	call	0x752	; 0x752 <_ZN5LatchD1Ev>
+ 310:	0e 94 ad 03 	call	0x75a	; 0x75a <_ZN5LatchD1Ev>
 
 //Define a pointer to a timer object.
 Timer timer;
@@ -516,7 +516,7 @@ Timer timer;
 SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
  314:	86 e4       	ldi	r24, 0x46	; 70
  316:	91 e0       	ldi	r25, 0x01	; 1
- 318:	0e 94 98 04 	call	0x930	; 0x930 <_ZN8SevenSegD1Ev>
+ 318:	0e 94 9c 04 	call	0x938	; 0x938 <_ZN8SevenSegD1Ev>
  * Author : Koltin Kosik-Harvey
  */
 #include "Tasks/setupTasks.h"
@@ -525,7 +525,7 @@ SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
 Timer timer;
  31c:	84 e6       	ldi	r24, 0x64	; 100
  31e:	91 e0       	ldi	r25, 0x01	; 1
- 320:	0e 94 74 05 	call	0xae8	; 0xae8 <_ZN5TimerD1Ev>
+ 320:	0e 94 78 05 	call	0xaf0	; 0xaf0 <_ZN5TimerD1Ev>
  324:	08 95       	ret
 
 00000326 <_Znwj>:
@@ -535,7 +535,7 @@ Timer timer;
  void operator delete[](void * ptr)
  {
 	 free(ptr);
- 326:	0e 94 d4 05 	call	0xba8	; 0xba8 <malloc>
+ 326:	0e 94 d8 05 	call	0xbb0	; 0xbb0 <malloc>
  32a:	08 95       	ret
 
 0000032c <_Z5pow10h>:
@@ -845,7 +845,7 @@ void ShiftRegister::singleShift( void )
 	timer->wait_1us();
  49a:	8e 81       	ldd	r24, Y+6	; 0x06
  49c:	9f 81       	ldd	r25, Y+7	; 0x07
- 49e:	0e 94 6b 05 	call	0xad6	; 0xad6 <_ZN5Timer8wait_1usEv>
+ 49e:	0e 94 6f 05 	call	0xade	; 0xade <_ZN5Timer8wait_1usEv>
 	//Set shift high
 	shiftPin->setLow();
  4a2:	88 81       	ld	r24, Y
@@ -855,7 +855,7 @@ void ShiftRegister::singleShift( void )
 	timer->wait_1us();
  4aa:	8e 81       	ldd	r24, Y+6	; 0x06
  4ac:	9f 81       	ldd	r25, Y+7	; 0x07
- 4ae:	0e 94 6b 05 	call	0xad6	; 0xad6 <_ZN5Timer8wait_1usEv>
+ 4ae:	0e 94 6f 05 	call	0xade	; 0xade <_ZN5Timer8wait_1usEv>
 }
  4b2:	df 91       	pop	r29
  4b4:	cf 91       	pop	r28
@@ -877,7 +877,7 @@ void ShiftRegister::latch( void )
 	timer->wait_1us();
  4c6:	8e 81       	ldd	r24, Y+6	; 0x06
  4c8:	9f 81       	ldd	r25, Y+7	; 0x07
- 4ca:	0e 94 6b 05 	call	0xad6	; 0xad6 <_ZN5Timer8wait_1usEv>
+ 4ca:	0e 94 6f 05 	call	0xade	; 0xade <_ZN5Timer8wait_1usEv>
 	//Set latch high
 	latchPin->setLow();
  4ce:	8a 81       	ldd	r24, Y+2	; 0x02
@@ -950,7 +950,7 @@ void ShiftRegister_SIPO::shiftBits( void )
 	timer->wait_1us();
  51a:	8e 81       	ldd	r24, Y+6	; 0x06
  51c:	9f 81       	ldd	r25, Y+7	; 0x07
- 51e:	0e 94 6b 05 	call	0xad6	; 0xad6 <_ZN5Timer8wait_1usEv>
+ 51e:	0e 94 6f 05 	call	0xade	; 0xade <_ZN5Timer8wait_1usEv>
 		
 	for ( int i=0; i < 8; i++){
  522:	00 e0       	ldi	r16, 0x00	; 0
@@ -989,7 +989,7 @@ void ShiftRegister_SIPO::shiftBits( void )
 		timer->wait_1us();
  54c:	8e 81       	ldd	r24, Y+6	; 0x06
  54e:	9f 81       	ldd	r25, Y+7	; 0x07
- 550:	0e 94 6b 05 	call	0xad6	; 0xad6 <_ZN5Timer8wait_1usEv>
+ 550:	0e 94 6f 05 	call	0xade	; 0xade <_ZN5Timer8wait_1usEv>
 			
 		this->singleShift();
  554:	ce 01       	movw	r24, r28
@@ -1062,7 +1062,7 @@ BPMInput::BPMInput( Timer & timerPtr ) : AnalogPin ( BPM_INPUT_PIN )
 	//Initialize time stamp
 	timeStamp = timer->millis();
  592:	c8 01       	movw	r24, r16
- 594:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
+ 594:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
  598:	68 87       	std	Y+8, r22	; 0x08
  59a:	79 87       	std	Y+9, r23	; 0x09
  59c:	8a 87       	std	Y+10, r24	; 0x0a
@@ -1105,19 +1105,19 @@ void BPMInput::run( void )
  5c6:	7b 85       	ldd	r23, Y+11	; 0x0b
  5c8:	8e 81       	ldd	r24, Y+6	; 0x06
  5ca:	9f 81       	ldd	r25, Y+7	; 0x07
- 5cc:	0e 94 53 05 	call	0xaa6	; 0xaa6 <_ZN5Timer14elapsed_millisEm>
+ 5cc:	0e 94 57 05 	call	0xaae	; 0xaae <_ZN5Timer14elapsed_millisEm>
  5d0:	63 33       	cpi	r22, 0x33	; 51
  5d2:	71 05       	cpc	r23, r1
  5d4:	81 05       	cpc	r24, r1
  5d6:	91 05       	cpc	r25, r1
- 5d8:	d0 f1       	brcs	.+116    	; 0x64e <_ZN8BPMInput3runEv+0x94>
+ 5d8:	f0 f1       	brcs	.+124    	; 0x656 <_ZN8BPMInput3runEv+0x9c>
 		
 		//Check if previous ADC conversion is complete.
 		if ( this->if_done_conv()  ){
  5da:	ce 01       	movw	r24, r28
  5dc:	0e 94 df 01 	call	0x3be	; 0x3be <_ZN9AnalogPin12if_done_convEv>
  5e0:	88 23       	and	r24, r24
- 5e2:	a9 f1       	breq	.+106    	; 0x64e <_ZN8BPMInput3runEv+0x94>
+ 5e2:	c9 f1       	breq	.+114    	; 0x656 <_ZN8BPMInput3runEv+0x9c>
 			
 			//Read a sample of the ADC
 			sum += this->read_10Bit();
@@ -1149,8 +1149,8 @@ void BPMInput::run( void )
 			
 			//Check if we take the required amount of samples for averaging
 			if ( iteration >= SAMPLES ){
- 60e:	80 34       	cpi	r24, 0x40	; 64
- 610:	b0 f0       	brcs	.+44     	; 0x63e <_ZN8BPMInput3runEv+0x84>
+ 60e:	80 31       	cpi	r24, 0x10	; 16
+ 610:	d0 f0       	brcs	.+52     	; 0x646 <_ZN8BPMInput3runEv+0x8c>
 				
 				//Convert value to a range between 0-256 essential devide by four
 				value = value >> 2;
@@ -1161,1348 +1161,1352 @@ void BPMInput::run( void )
  614:	9d 85       	ldd	r25, Y+13	; 0x0d
  616:	ae 85       	ldd	r26, Y+14	; 0x0e
  618:	bf 85       	ldd	r27, Y+15	; 0x0f
- 61a:	89 2f       	mov	r24, r25
- 61c:	9a 2f       	mov	r25, r26
- 61e:	ab 2f       	mov	r26, r27
- 620:	bb 27       	eor	r27, r27
- 622:	4e 96       	adiw	r24, 0x1e	; 30
- 624:	a1 1d       	adc	r26, r1
- 626:	b1 1d       	adc	r27, r1
- 628:	8a 83       	std	Y+2, r24	; 0x02
- 62a:	9b 83       	std	Y+3, r25	; 0x03
- 62c:	ac 83       	std	Y+4, r26	; 0x04
- 62e:	bd 83       	std	Y+5, r27	; 0x05
+ 61a:	68 94       	set
+ 61c:	15 f8       	bld	r1, 5
+ 61e:	b6 95       	lsr	r27
+ 620:	a7 95       	ror	r26
+ 622:	97 95       	ror	r25
+ 624:	87 95       	ror	r24
+ 626:	16 94       	lsr	r1
+ 628:	d1 f7       	brne	.-12     	; 0x61e <_ZN8BPMInput3runEv+0x64>
+ 62a:	4e 96       	adiw	r24, 0x1e	; 30
+ 62c:	a1 1d       	adc	r26, r1
+ 62e:	b1 1d       	adc	r27, r1
+ 630:	8a 83       	std	Y+2, r24	; 0x02
+ 632:	9b 83       	std	Y+3, r25	; 0x03
+ 634:	ac 83       	std	Y+4, r26	; 0x04
+ 636:	bd 83       	std	Y+5, r27	; 0x05
 	
 				//Reset sum
 				sum = 0;
- 630:	1c 86       	std	Y+12, r1	; 0x0c
- 632:	1d 86       	std	Y+13, r1	; 0x0d
- 634:	1e 86       	std	Y+14, r1	; 0x0e
- 636:	1f 86       	std	Y+15, r1	; 0x0f
+ 638:	1c 86       	std	Y+12, r1	; 0x0c
+ 63a:	1d 86       	std	Y+13, r1	; 0x0d
+ 63c:	1e 86       	std	Y+14, r1	; 0x0e
+ 63e:	1f 86       	std	Y+15, r1	; 0x0f
 				
 				//Reset iteration count
 				iteration = 0;	
- 638:	18 8a       	std	Y+16, r1	; 0x10
+ 640:	18 8a       	std	Y+16, r1	; 0x10
 				
 				//Indicate the conversion is done
 				conversionFinished = true;
- 63a:	81 e0       	ldi	r24, 0x01	; 1
- 63c:	89 83       	std	Y+1, r24	; 0x01
+ 642:	81 e0       	ldi	r24, 0x01	; 1
+ 644:	89 83       	std	Y+1, r24	; 0x01
 			}
 			
 			//Reset the time stamp
 			timeStamp = timer->millis();
- 63e:	8e 81       	ldd	r24, Y+6	; 0x06
- 640:	9f 81       	ldd	r25, Y+7	; 0x07
- 642:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- 646:	68 87       	std	Y+8, r22	; 0x08
- 648:	79 87       	std	Y+9, r23	; 0x09
- 64a:	8a 87       	std	Y+10, r24	; 0x0a
- 64c:	9b 87       	std	Y+11, r25	; 0x0b
+ 646:	8e 81       	ldd	r24, Y+6	; 0x06
+ 648:	9f 81       	ldd	r25, Y+7	; 0x07
+ 64a:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ 64e:	68 87       	std	Y+8, r22	; 0x08
+ 650:	79 87       	std	Y+9, r23	; 0x09
+ 652:	8a 87       	std	Y+10, r24	; 0x0a
+ 654:	9b 87       	std	Y+11, r25	; 0x0b
 		}
 	}
 }
- 64e:	df 91       	pop	r29
- 650:	cf 91       	pop	r28
- 652:	08 95       	ret
+ 656:	df 91       	pop	r29
+ 658:	cf 91       	pop	r28
+ 65a:	08 95       	ret
 
-00000654 <_ZN8BPMInputD1Ev>:
+0000065c <_ZN8BPMInputD1Ev>:
 
 
 // default destructor
 BPMInput::~BPMInput()
- 654:	08 95       	ret
+ 65c:	08 95       	ret
 
-00000656 <_ZN6BlinkyC1ER5TimerR8BPMInput>:
+0000065e <_ZN6BlinkyC1ER5TimerR8BPMInput>:
 
 
 #include "Blinky.h"
 
 //Initialize the pins. 
 Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
- 656:	0f 93       	push	r16
- 658:	1f 93       	push	r17
- 65a:	cf 93       	push	r28
- 65c:	df 93       	push	r29
- 65e:	ec 01       	movw	r28, r24
+ 65e:	0f 93       	push	r16
+ 660:	1f 93       	push	r17
+ 662:	cf 93       	push	r28
+ 664:	df 93       	push	r29
+ 666:	ec 01       	movw	r28, r24
 {
 	//Set LED on port D data direction to output
 	DDRD |= (1 << PORTD0);
- 660:	50 9a       	sbi	0x0a, 0	; 10
+ 668:	50 9a       	sbi	0x0a, 0	; 10
 		
 	//Used for the "Status LED"
 	DDRD |= (1 << PORTD1);
- 662:	51 9a       	sbi	0x0a, 1	; 10
+ 66a:	51 9a       	sbi	0x0a, 1	; 10
 	
 	//Used for Task - "Blinky". Indicates next value of LED
 	LEDValueNext = 1;
- 664:	81 e0       	ldi	r24, 0x01	; 1
- 666:	8a 83       	std	Y+2, r24	; 0x02
+ 66c:	81 e0       	ldi	r24, 0x01	; 1
+ 66e:	8a 83       	std	Y+2, r24	; 0x02
 	
 	//initialize time stamp to zero
 	timeStamp = 0;
- 668:	18 86       	std	Y+8, r1	; 0x08
- 66a:	19 86       	std	Y+9, r1	; 0x09
- 66c:	1a 86       	std	Y+10, r1	; 0x0a
- 66e:	1b 86       	std	Y+11, r1	; 0x0b
+ 670:	18 86       	std	Y+8, r1	; 0x08
+ 672:	19 86       	std	Y+9, r1	; 0x09
+ 674:	1a 86       	std	Y+10, r1	; 0x0a
+ 676:	1b 86       	std	Y+11, r1	; 0x0b
 	
 	//Get reference to the timer
 	timer = &timerPtr;
- 670:	7d 83       	std	Y+5, r23	; 0x05
- 672:	6c 83       	std	Y+4, r22	; 0x04
+ 678:	7d 83       	std	Y+5, r23	; 0x05
+ 67a:	6c 83       	std	Y+4, r22	; 0x04
 	
 	//Get reference to the BPM input
 	bpmInput = &bpmInputRef;
- 674:	5f 83       	std	Y+7, r21	; 0x07
- 676:	4e 83       	std	Y+6, r20	; 0x06
+ 67c:	5f 83       	std	Y+7, r21	; 0x07
+ 67e:	4e 83       	std	Y+6, r20	; 0x06
 	
 	blinkyPin = new Pin(0, &PORTD, OUTPUT);
- 678:	87 e0       	ldi	r24, 0x07	; 7
- 67a:	90 e0       	ldi	r25, 0x00	; 0
- 67c:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 680:	8c 01       	movw	r16, r24
- 682:	21 e0       	ldi	r18, 0x01	; 1
- 684:	4b e2       	ldi	r20, 0x2B	; 43
- 686:	50 e0       	ldi	r21, 0x00	; 0
- 688:	60 e0       	ldi	r22, 0x00	; 0
- 68a:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
- 68e:	1d 87       	std	Y+13, r17	; 0x0d
- 690:	0c 87       	std	Y+12, r16	; 0x0c
+ 680:	87 e0       	ldi	r24, 0x07	; 7
+ 682:	90 e0       	ldi	r25, 0x00	; 0
+ 684:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
+ 688:	8c 01       	movw	r16, r24
+ 68a:	21 e0       	ldi	r18, 0x01	; 1
+ 68c:	4b e2       	ldi	r20, 0x2B	; 43
+ 68e:	50 e0       	ldi	r21, 0x00	; 0
+ 690:	60 e0       	ldi	r22, 0x00	; 0
+ 692:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
+ 696:	1d 87       	std	Y+13, r17	; 0x0d
+ 698:	0c 87       	std	Y+12, r16	; 0x0c
 	
 	//initialize pulse width
 	pulseWidth = 5000;
- 692:	88 e8       	ldi	r24, 0x88	; 136
- 694:	93 e1       	ldi	r25, 0x13	; 19
- 696:	99 83       	std	Y+1, r25	; 0x01
- 698:	88 83       	st	Y, r24
+ 69a:	88 e8       	ldi	r24, 0x88	; 136
+ 69c:	93 e1       	ldi	r25, 0x13	; 19
+ 69e:	99 83       	std	Y+1, r25	; 0x01
+ 6a0:	88 83       	st	Y, r24
 	
 	//init flag
 	justSetHigh = false;
- 69a:	1b 82       	std	Y+3, r1	; 0x03
+ 6a2:	1b 82       	std	Y+3, r1	; 0x03
 	
 } //Blinky
- 69c:	df 91       	pop	r29
- 69e:	cf 91       	pop	r28
- 6a0:	1f 91       	pop	r17
- 6a2:	0f 91       	pop	r16
- 6a4:	08 95       	ret
+ 6a4:	df 91       	pop	r29
+ 6a6:	cf 91       	pop	r28
+ 6a8:	1f 91       	pop	r17
+ 6aa:	0f 91       	pop	r16
+ 6ac:	08 95       	ret
 
-000006a6 <_ZN6Blinky3runEv>:
+000006ae <_ZN6Blinky3runEv>:
 
 void Blinky::run()
 {
- 6a6:	0f 93       	push	r16
- 6a8:	1f 93       	push	r17
- 6aa:	cf 93       	push	r28
- 6ac:	df 93       	push	r29
- 6ae:	ec 01       	movw	r28, r24
+ 6ae:	0f 93       	push	r16
+ 6b0:	1f 93       	push	r17
+ 6b2:	cf 93       	push	r28
+ 6b4:	df 93       	push	r29
+ 6b6:	ec 01       	movw	r28, r24
 	if ( timer->elapsed_millis( timeStamp ) > pulseWidth ) {
- 6b0:	48 85       	ldd	r20, Y+8	; 0x08
- 6b2:	59 85       	ldd	r21, Y+9	; 0x09
- 6b4:	6a 85       	ldd	r22, Y+10	; 0x0a
- 6b6:	7b 85       	ldd	r23, Y+11	; 0x0b
- 6b8:	8c 81       	ldd	r24, Y+4	; 0x04
- 6ba:	9d 81       	ldd	r25, Y+5	; 0x05
- 6bc:	0e 94 53 05 	call	0xaa6	; 0xaa6 <_ZN5Timer14elapsed_millisEm>
- 6c0:	28 81       	ld	r18, Y
- 6c2:	39 81       	ldd	r19, Y+1	; 0x01
- 6c4:	89 01       	movw	r16, r18
- 6c6:	20 e0       	ldi	r18, 0x00	; 0
- 6c8:	30 e0       	ldi	r19, 0x00	; 0
- 6ca:	06 17       	cp	r16, r22
- 6cc:	17 07       	cpc	r17, r23
- 6ce:	28 07       	cpc	r18, r24
- 6d0:	39 07       	cpc	r19, r25
- 6d2:	40 f5       	brcc	.+80     	; 0x724 <_ZN6Blinky3runEv+0x7e>
+ 6b8:	48 85       	ldd	r20, Y+8	; 0x08
+ 6ba:	59 85       	ldd	r21, Y+9	; 0x09
+ 6bc:	6a 85       	ldd	r22, Y+10	; 0x0a
+ 6be:	7b 85       	ldd	r23, Y+11	; 0x0b
+ 6c0:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6c2:	9d 81       	ldd	r25, Y+5	; 0x05
+ 6c4:	0e 94 57 05 	call	0xaae	; 0xaae <_ZN5Timer14elapsed_millisEm>
+ 6c8:	28 81       	ld	r18, Y
+ 6ca:	39 81       	ldd	r19, Y+1	; 0x01
+ 6cc:	89 01       	movw	r16, r18
+ 6ce:	20 e0       	ldi	r18, 0x00	; 0
+ 6d0:	30 e0       	ldi	r19, 0x00	; 0
+ 6d2:	06 17       	cp	r16, r22
+ 6d4:	17 07       	cpc	r17, r23
+ 6d6:	28 07       	cpc	r18, r24
+ 6d8:	39 07       	cpc	r19, r25
+ 6da:	40 f5       	brcc	.+80     	; 0x72c <_ZN6Blinky3runEv+0x7e>
 		
 		//Update time stamp
 		timeStamp = timer->millis();
- 6d4:	8c 81       	ldd	r24, Y+4	; 0x04
- 6d6:	9d 81       	ldd	r25, Y+5	; 0x05
- 6d8:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- 6dc:	68 87       	std	Y+8, r22	; 0x08
- 6de:	79 87       	std	Y+9, r23	; 0x09
- 6e0:	8a 87       	std	Y+10, r24	; 0x0a
- 6e2:	9b 87       	std	Y+11, r25	; 0x0b
+ 6dc:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6de:	9d 81       	ldd	r25, Y+5	; 0x05
+ 6e0:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ 6e4:	68 87       	std	Y+8, r22	; 0x08
+ 6e6:	79 87       	std	Y+9, r23	; 0x09
+ 6e8:	8a 87       	std	Y+10, r24	; 0x0a
+ 6ea:	9b 87       	std	Y+11, r25	; 0x0b
 		
 		if( LEDValueNext == 1 ){
- 6e4:	8a 81       	ldd	r24, Y+2	; 0x02
- 6e6:	81 30       	cpi	r24, 0x01	; 1
- 6e8:	31 f4       	brne	.+12     	; 0x6f6 <_ZN6Blinky3runEv+0x50>
+ 6ec:	8a 81       	ldd	r24, Y+2	; 0x02
+ 6ee:	81 30       	cpi	r24, 0x01	; 1
+ 6f0:	31 f4       	brne	.+12     	; 0x6fe <_ZN6Blinky3runEv+0x50>
 			//Set Test LED to OFF
 			blinkyPin->setHigh();	
- 6ea:	8c 85       	ldd	r24, Y+12	; 0x0c
- 6ec:	9d 85       	ldd	r25, Y+13	; 0x0d
- 6ee:	0e 94 06 02 	call	0x40c	; 0x40c <_ZN3Pin7setHighEv>
+ 6f2:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 6f4:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 6f6:	0e 94 06 02 	call	0x40c	; 0x40c <_ZN3Pin7setHighEv>
 			LEDValueNext = 0;
- 6f2:	1a 82       	std	Y+2, r1	; 0x02
- 6f4:	07 c0       	rjmp	.+14     	; 0x704 <_ZN6Blinky3runEv+0x5e>
+ 6fa:	1a 82       	std	Y+2, r1	; 0x02
+ 6fc:	07 c0       	rjmp	.+14     	; 0x70c <_ZN6Blinky3runEv+0x5e>
 			
 			} else {
 			//Set Test LED to ON
 			blinkyPin->setLow();
- 6f6:	8c 85       	ldd	r24, Y+12	; 0x0c
- 6f8:	9d 85       	ldd	r25, Y+13	; 0x0d
- 6fa:	0e 94 11 02 	call	0x422	; 0x422 <_ZN3Pin6setLowEv>
+ 6fe:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 700:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 702:	0e 94 11 02 	call	0x422	; 0x422 <_ZN3Pin6setLowEv>
 			
 			justSetHigh = true;
- 6fe:	81 e0       	ldi	r24, 0x01	; 1
- 700:	8b 83       	std	Y+3, r24	; 0x03
+ 706:	81 e0       	ldi	r24, 0x01	; 1
+ 708:	8b 83       	std	Y+3, r24	; 0x03
 			
 			LEDValueNext = 1;
- 702:	8a 83       	std	Y+2, r24	; 0x02
+ 70a:	8a 83       	std	Y+2, r24	; 0x02
 		//Recalculate pulse rate. in units of 0.1ms 
 		//Timer counter to 600000 per 0.1ms so if we have 60 BPM
 		//The delay would be 600000/60 = 10000;
 		//Then we need to devide by two, to have the clock go up and down.
 		//Period would still be the 1/BPM.
 		pulseWidth = 600000 / bpmInput->value;
- 704:	ee 81       	ldd	r30, Y+6	; 0x06
- 706:	ff 81       	ldd	r31, Y+7	; 0x07
+ 70c:	ee 81       	ldd	r30, Y+6	; 0x06
+ 70e:	ff 81       	ldd	r31, Y+7	; 0x07
 		pulseWidth = pulseWidth >> 1;
- 708:	22 81       	ldd	r18, Z+2	; 0x02
- 70a:	33 81       	ldd	r19, Z+3	; 0x03
- 70c:	44 81       	ldd	r20, Z+4	; 0x04
- 70e:	55 81       	ldd	r21, Z+5	; 0x05
- 710:	60 ec       	ldi	r22, 0xC0	; 192
- 712:	77 e2       	ldi	r23, 0x27	; 39
- 714:	89 e0       	ldi	r24, 0x09	; 9
- 716:	90 e0       	ldi	r25, 0x00	; 0
- 718:	0e 94 9d 05 	call	0xb3a	; 0xb3a <__udivmodsi4>
- 71c:	36 95       	lsr	r19
- 71e:	27 95       	ror	r18
- 720:	39 83       	std	Y+1, r19	; 0x01
- 722:	28 83       	st	Y, r18
+ 710:	22 81       	ldd	r18, Z+2	; 0x02
+ 712:	33 81       	ldd	r19, Z+3	; 0x03
+ 714:	44 81       	ldd	r20, Z+4	; 0x04
+ 716:	55 81       	ldd	r21, Z+5	; 0x05
+ 718:	60 ec       	ldi	r22, 0xC0	; 192
+ 71a:	77 e2       	ldi	r23, 0x27	; 39
+ 71c:	89 e0       	ldi	r24, 0x09	; 9
+ 71e:	90 e0       	ldi	r25, 0x00	; 0
+ 720:	0e 94 a1 05 	call	0xb42	; 0xb42 <__udivmodsi4>
+ 724:	36 95       	lsr	r19
+ 726:	27 95       	ror	r18
+ 728:	39 83       	std	Y+1, r19	; 0x01
+ 72a:	28 83       	st	Y, r18
 		
 	}
 }
- 724:	df 91       	pop	r29
- 726:	cf 91       	pop	r28
- 728:	1f 91       	pop	r17
- 72a:	0f 91       	pop	r16
- 72c:	08 95       	ret
+ 72c:	df 91       	pop	r29
+ 72e:	cf 91       	pop	r28
+ 730:	1f 91       	pop	r17
+ 732:	0f 91       	pop	r16
+ 734:	08 95       	ret
 
-0000072e <_ZN6BlinkyD1Ev>:
+00000736 <_ZN6BlinkyD1Ev>:
 
 // default destructor
 Blinky::~Blinky()
- 72e:	08 95       	ret
+ 736:	08 95       	ret
 
-00000730 <_ZN5LatchC1ER8SevenSeg>:
+00000738 <_ZN5LatchC1ER8SevenSeg>:
 #include "Latch.h"
 
 Latch::Latch( SevenSeg & sevenSegPtr )
 {
 	//Reference to the seven segment display
 	sevenSegmentDisplay = &sevenSegPtr;
- 730:	fc 01       	movw	r30, r24
- 732:	71 83       	std	Z+1, r23	; 0x01
- 734:	60 83       	st	Z, r22
- 736:	08 95       	ret
+ 738:	fc 01       	movw	r30, r24
+ 73a:	71 83       	std	Z+1, r23	; 0x01
+ 73c:	60 83       	st	Z, r22
+ 73e:	08 95       	ret
 
-00000738 <_ZN5Latch3runEv>:
+00000740 <_ZN5Latch3runEv>:
 } //Latch
 
 void Latch::run( void )
 {
 	if( sevenSegmentDisplay->shiftComplete == true){
- 738:	dc 01       	movw	r26, r24
- 73a:	ed 91       	ld	r30, X+
- 73c:	fc 91       	ld	r31, X
- 73e:	11 97       	sbiw	r26, 0x01	; 1
- 740:	22 85       	ldd	r18, Z+10	; 0x0a
- 742:	21 30       	cpi	r18, 0x01	; 1
- 744:	29 f4       	brne	.+10     	; 0x750 <_ZN5Latch3runEv+0x18>
+ 740:	dc 01       	movw	r26, r24
+ 742:	ed 91       	ld	r30, X+
+ 744:	fc 91       	ld	r31, X
+ 746:	11 97       	sbiw	r26, 0x01	; 1
+ 748:	22 85       	ldd	r18, Z+10	; 0x0a
+ 74a:	21 30       	cpi	r18, 0x01	; 1
+ 74c:	29 f4       	brne	.+10     	; 0x758 <_ZN5Latch3runEv+0x18>
 		
 		//Reset the shift complete flag
 		sevenSegmentDisplay->shiftComplete = false;
- 746:	12 86       	std	Z+10, r1	; 0x0a
+ 74e:	12 86       	std	Z+10, r1	; 0x0a
 		
 		//Latch shift registers. Output should show on seven segment display
 		sevenSegmentDisplay->latch();
- 748:	8d 91       	ld	r24, X+
- 74a:	9c 91       	ld	r25, X
- 74c:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_ZN13ShiftRegister5latchEv>
- 750:	08 95       	ret
+ 750:	8d 91       	ld	r24, X+
+ 752:	9c 91       	ld	r25, X
+ 754:	0e 94 5c 02 	call	0x4b8	; 0x4b8 <_ZN13ShiftRegister5latchEv>
+ 758:	08 95       	ret
 
-00000752 <_ZN5LatchD1Ev>:
+0000075a <_ZN5LatchD1Ev>:
 	}
 }
 
 // default destructor
 Latch::~Latch()
- 752:	08 95       	ret
+ 75a:	08 95       	ret
 
-00000754 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>:
+0000075c <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>:
 
 
 #include "PrintBPM.h"
 
 
 PrintBPM::PrintBPM( Timer & timerPtr, BPMInput & BPMInputPtr, SevenSeg & sevenSegPtr)
- 754:	cf 93       	push	r28
- 756:	df 93       	push	r29
- 758:	ec 01       	movw	r28, r24
- 75a:	cb 01       	movw	r24, r22
+ 75c:	cf 93       	push	r28
+ 75e:	df 93       	push	r29
+ 760:	ec 01       	movw	r28, r24
+ 762:	cb 01       	movw	r24, r22
 {	
 	//Get reference to timer object
 	timer = &timerPtr;
- 75c:	7b 83       	std	Y+3, r23	; 0x03
- 75e:	6a 83       	std	Y+2, r22	; 0x02
+ 764:	7b 83       	std	Y+3, r23	; 0x03
+ 766:	6a 83       	std	Y+2, r22	; 0x02
 	
 	//Get reference to the BPM input object
 	BPMInputRef = &BPMInputPtr;
- 760:	59 83       	std	Y+1, r21	; 0x01
- 762:	48 83       	st	Y, r20
+ 768:	59 83       	std	Y+1, r21	; 0x01
+ 76a:	48 83       	st	Y, r20
 	
 	//Get reference to the seven segment display
 	sevenSeg = &sevenSegPtr;
- 764:	3d 83       	std	Y+5, r19	; 0x05
- 766:	2c 83       	std	Y+4, r18	; 0x04
+ 76c:	3d 83       	std	Y+5, r19	; 0x05
+ 76e:	2c 83       	std	Y+4, r18	; 0x04
 	
 	//Initialize timeStamp
 	timeStamp = timer->millis();
- 768:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- 76c:	6e 83       	std	Y+6, r22	; 0x06
- 76e:	7f 83       	std	Y+7, r23	; 0x07
- 770:	88 87       	std	Y+8, r24	; 0x08
- 772:	99 87       	std	Y+9, r25	; 0x09
+ 770:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ 774:	6e 83       	std	Y+6, r22	; 0x06
+ 776:	7f 83       	std	Y+7, r23	; 0x07
+ 778:	88 87       	std	Y+8, r24	; 0x08
+ 77a:	99 87       	std	Y+9, r25	; 0x09
 	
 } //PrintBPM
- 774:	df 91       	pop	r29
- 776:	cf 91       	pop	r28
- 778:	08 95       	ret
+ 77c:	df 91       	pop	r29
+ 77e:	cf 91       	pop	r28
+ 780:	08 95       	ret
 
-0000077a <_ZN8PrintBPM3runEv>:
+00000782 <_ZN8PrintBPM3runEv>:
 
 void PrintBPM::run( void )
 {
- 77a:	cf 93       	push	r28
- 77c:	df 93       	push	r29
- 77e:	ec 01       	movw	r28, r24
+ 782:	cf 93       	push	r28
+ 784:	df 93       	push	r29
+ 786:	ec 01       	movw	r28, r24
 	if( timer->elapsed_millis(timeStamp) > BPM_MIN_UPDATE_TIME ){
- 780:	4e 81       	ldd	r20, Y+6	; 0x06
- 782:	5f 81       	ldd	r21, Y+7	; 0x07
- 784:	68 85       	ldd	r22, Y+8	; 0x08
- 786:	79 85       	ldd	r23, Y+9	; 0x09
- 788:	8a 81       	ldd	r24, Y+2	; 0x02
- 78a:	9b 81       	ldd	r25, Y+3	; 0x03
- 78c:	0e 94 53 05 	call	0xaa6	; 0xaa6 <_ZN5Timer14elapsed_millisEm>
- 790:	65 3c       	cpi	r22, 0xC5	; 197
- 792:	79 40       	sbci	r23, 0x09	; 9
- 794:	81 05       	cpc	r24, r1
- 796:	91 05       	cpc	r25, r1
- 798:	e0 f0       	brcs	.+56     	; 0x7d2 <_ZN8PrintBPM3runEv+0x58>
+ 788:	4e 81       	ldd	r20, Y+6	; 0x06
+ 78a:	5f 81       	ldd	r21, Y+7	; 0x07
+ 78c:	68 85       	ldd	r22, Y+8	; 0x08
+ 78e:	79 85       	ldd	r23, Y+9	; 0x09
+ 790:	8a 81       	ldd	r24, Y+2	; 0x02
+ 792:	9b 81       	ldd	r25, Y+3	; 0x03
+ 794:	0e 94 57 05 	call	0xaae	; 0xaae <_ZN5Timer14elapsed_millisEm>
+ 798:	69 3e       	cpi	r22, 0xE9	; 233
+ 79a:	73 40       	sbci	r23, 0x03	; 3
+ 79c:	81 05       	cpc	r24, r1
+ 79e:	91 05       	cpc	r25, r1
+ 7a0:	e0 f0       	brcs	.+56     	; 0x7da <_ZN8PrintBPM3runEv+0x58>
 		
 		//See if the ADC conversion to get the BPM has been completed
 		if ( BPMInputRef->conversionFinished == true ){
- 79a:	e8 81       	ld	r30, Y
- 79c:	f9 81       	ldd	r31, Y+1	; 0x01
- 79e:	81 81       	ldd	r24, Z+1	; 0x01
- 7a0:	81 30       	cpi	r24, 0x01	; 1
- 7a2:	b9 f4       	brne	.+46     	; 0x7d2 <_ZN8PrintBPM3runEv+0x58>
+ 7a2:	e8 81       	ld	r30, Y
+ 7a4:	f9 81       	ldd	r31, Y+1	; 0x01
+ 7a6:	81 81       	ldd	r24, Z+1	; 0x01
+ 7a8:	81 30       	cpi	r24, 0x01	; 1
+ 7aa:	b9 f4       	brne	.+46     	; 0x7da <_ZN8PrintBPM3runEv+0x58>
 				
 			//Set the content for the seven segment to print
 			sevenSeg->contentToPrint = BPMInputRef->value;
- 7a4:	ac 81       	ldd	r26, Y+4	; 0x04
- 7a6:	bd 81       	ldd	r27, Y+5	; 0x05
- 7a8:	82 81       	ldd	r24, Z+2	; 0x02
- 7aa:	93 81       	ldd	r25, Z+3	; 0x03
- 7ac:	1d 96       	adiw	r26, 0x0d	; 13
- 7ae:	9c 93       	st	X, r25
- 7b0:	8e 93       	st	-X, r24
- 7b2:	1c 97       	sbiw	r26, 0x0c	; 12
+ 7ac:	ac 81       	ldd	r26, Y+4	; 0x04
+ 7ae:	bd 81       	ldd	r27, Y+5	; 0x05
+ 7b0:	82 81       	ldd	r24, Z+2	; 0x02
+ 7b2:	93 81       	ldd	r25, Z+3	; 0x03
+ 7b4:	1d 96       	adiw	r26, 0x0d	; 13
+ 7b6:	9c 93       	st	X, r25
+ 7b8:	8e 93       	st	-X, r24
+ 7ba:	1c 97       	sbiw	r26, 0x0c	; 12
 				
 			//Tell seven seg object to print new content
 			sevenSeg->newContentToPrint = true;
- 7b4:	ec 81       	ldd	r30, Y+4	; 0x04
- 7b6:	fd 81       	ldd	r31, Y+5	; 0x05
- 7b8:	81 e0       	ldi	r24, 0x01	; 1
- 7ba:	83 87       	std	Z+11, r24	; 0x0b
+ 7bc:	ec 81       	ldd	r30, Y+4	; 0x04
+ 7be:	fd 81       	ldd	r31, Y+5	; 0x05
+ 7c0:	81 e0       	ldi	r24, 0x01	; 1
+ 7c2:	83 87       	std	Z+11, r24	; 0x0b
 				
 			//Reset the BPM input "conversion finished" flag
 			BPMInputRef->conversionFinished = false;
- 7bc:	e8 81       	ld	r30, Y
- 7be:	f9 81       	ldd	r31, Y+1	; 0x01
- 7c0:	11 82       	std	Z+1, r1	; 0x01
+ 7c4:	e8 81       	ld	r30, Y
+ 7c6:	f9 81       	ldd	r31, Y+1	; 0x01
+ 7c8:	11 82       	std	Z+1, r1	; 0x01
 				
 			//Get new time stamp
 			timeStamp = timer->millis();
- 7c2:	8a 81       	ldd	r24, Y+2	; 0x02
- 7c4:	9b 81       	ldd	r25, Y+3	; 0x03
- 7c6:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- 7ca:	6e 83       	std	Y+6, r22	; 0x06
- 7cc:	7f 83       	std	Y+7, r23	; 0x07
- 7ce:	88 87       	std	Y+8, r24	; 0x08
- 7d0:	99 87       	std	Y+9, r25	; 0x09
+ 7ca:	8a 81       	ldd	r24, Y+2	; 0x02
+ 7cc:	9b 81       	ldd	r25, Y+3	; 0x03
+ 7ce:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ 7d2:	6e 83       	std	Y+6, r22	; 0x06
+ 7d4:	7f 83       	std	Y+7, r23	; 0x07
+ 7d6:	88 87       	std	Y+8, r24	; 0x08
+ 7d8:	99 87       	std	Y+9, r25	; 0x09
 		}
 	}
 }
- 7d2:	df 91       	pop	r29
- 7d4:	cf 91       	pop	r28
- 7d6:	08 95       	ret
+ 7da:	df 91       	pop	r29
+ 7dc:	cf 91       	pop	r28
+ 7de:	08 95       	ret
 
-000007d8 <_ZN8PrintBPMD1Ev>:
+000007e0 <_ZN8PrintBPMD1Ev>:
 
 // default destructor
 PrintBPM::~PrintBPM()
- 7d8:	08 95       	ret
+ 7e0:	08 95       	ret
 
-000007da <_ZN8SevenSegC1EhR5Timer>:
+000007e2 <_ZN8SevenSegC1EhR5Timer>:
 	//Shift in the Byte
 	this->shiftBits();
 	
 	//latch output
 	this->latch();
 }
- 7da:	ef 92       	push	r14
- 7dc:	ff 92       	push	r15
- 7de:	0f 93       	push	r16
- 7e0:	1f 93       	push	r17
- 7e2:	cf 93       	push	r28
- 7e4:	df 93       	push	r29
- 7e6:	ec 01       	movw	r28, r24
- 7e8:	16 2f       	mov	r17, r22
- 7ea:	7a 01       	movw	r14, r20
- 7ec:	0e 94 73 02 	call	0x4e6	; 0x4e6 <_ZN18ShiftRegister_SIPOC1Ev>
- 7f0:	8b e0       	ldi	r24, 0x0B	; 11
- 7f2:	e6 e0       	ldi	r30, 0x06	; 6
- 7f4:	f1 e0       	ldi	r31, 0x01	; 1
- 7f6:	de 01       	movw	r26, r28
- 7f8:	1f 96       	adiw	r26, 0x0f	; 15
- 7fa:	01 90       	ld	r0, Z+
- 7fc:	0d 92       	st	X+, r0
- 7fe:	8a 95       	dec	r24
- 800:	e1 f7       	brne	.-8      	; 0x7fa <_ZN8SevenSegC1EhR5Timer+0x20>
- 802:	1d 86       	std	Y+13, r1	; 0x0d
- 804:	1c 86       	std	Y+12, r1	; 0x0c
- 806:	1d 8e       	std	Y+29, r1	; 0x1d
- 808:	b7 01       	movw	r22, r14
- 80a:	ce 01       	movw	r24, r28
- 80c:	0e 94 6e 02 	call	0x4dc	; 0x4dc <_ZN13ShiftRegister17getTimerReferenceER5Timer>
- 810:	1e 87       	std	Y+14, r17	; 0x0e
- 812:	81 e0       	ldi	r24, 0x01	; 1
- 814:	8a 87       	std	Y+10, r24	; 0x0a
- 816:	8b 87       	std	Y+11, r24	; 0x0b
- 818:	87 e0       	ldi	r24, 0x07	; 7
- 81a:	90 e0       	ldi	r25, 0x00	; 0
- 81c:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 820:	8c 01       	movw	r16, r24
- 822:	21 e0       	ldi	r18, 0x01	; 1
- 824:	45 e2       	ldi	r20, 0x25	; 37
- 826:	50 e0       	ldi	r21, 0x00	; 0
- 828:	62 e0       	ldi	r22, 0x02	; 2
- 82a:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
- 82e:	19 83       	std	Y+1, r17	; 0x01
- 830:	08 83       	st	Y, r16
- 832:	87 e0       	ldi	r24, 0x07	; 7
- 834:	90 e0       	ldi	r25, 0x00	; 0
- 836:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 83a:	8c 01       	movw	r16, r24
- 83c:	21 e0       	ldi	r18, 0x01	; 1
- 83e:	45 e2       	ldi	r20, 0x25	; 37
- 840:	50 e0       	ldi	r21, 0x00	; 0
- 842:	61 e0       	ldi	r22, 0x01	; 1
- 844:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
- 848:	1b 83       	std	Y+3, r17	; 0x03
- 84a:	0a 83       	std	Y+2, r16	; 0x02
- 84c:	87 e0       	ldi	r24, 0x07	; 7
- 84e:	90 e0       	ldi	r25, 0x00	; 0
- 850:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 854:	8c 01       	movw	r16, r24
- 856:	21 e0       	ldi	r18, 0x01	; 1
- 858:	45 e2       	ldi	r20, 0x25	; 37
- 85a:	50 e0       	ldi	r21, 0x00	; 0
- 85c:	60 e0       	ldi	r22, 0x00	; 0
- 85e:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
- 862:	1d 83       	std	Y+5, r17	; 0x05
- 864:	0c 83       	std	Y+4, r16	; 0x04
- 866:	df 91       	pop	r29
- 868:	cf 91       	pop	r28
- 86a:	1f 91       	pop	r17
- 86c:	0f 91       	pop	r16
- 86e:	ff 90       	pop	r15
- 870:	ef 90       	pop	r14
- 872:	08 95       	ret
+ 7e2:	ef 92       	push	r14
+ 7e4:	ff 92       	push	r15
+ 7e6:	0f 93       	push	r16
+ 7e8:	1f 93       	push	r17
+ 7ea:	cf 93       	push	r28
+ 7ec:	df 93       	push	r29
+ 7ee:	ec 01       	movw	r28, r24
+ 7f0:	16 2f       	mov	r17, r22
+ 7f2:	7a 01       	movw	r14, r20
+ 7f4:	0e 94 73 02 	call	0x4e6	; 0x4e6 <_ZN18ShiftRegister_SIPOC1Ev>
+ 7f8:	8b e0       	ldi	r24, 0x0B	; 11
+ 7fa:	e6 e0       	ldi	r30, 0x06	; 6
+ 7fc:	f1 e0       	ldi	r31, 0x01	; 1
+ 7fe:	de 01       	movw	r26, r28
+ 800:	1f 96       	adiw	r26, 0x0f	; 15
+ 802:	01 90       	ld	r0, Z+
+ 804:	0d 92       	st	X+, r0
+ 806:	8a 95       	dec	r24
+ 808:	e1 f7       	brne	.-8      	; 0x802 <_ZN8SevenSegC1EhR5Timer+0x20>
+ 80a:	1d 86       	std	Y+13, r1	; 0x0d
+ 80c:	1c 86       	std	Y+12, r1	; 0x0c
+ 80e:	1d 8e       	std	Y+29, r1	; 0x1d
+ 810:	b7 01       	movw	r22, r14
+ 812:	ce 01       	movw	r24, r28
+ 814:	0e 94 6e 02 	call	0x4dc	; 0x4dc <_ZN13ShiftRegister17getTimerReferenceER5Timer>
+ 818:	1e 87       	std	Y+14, r17	; 0x0e
+ 81a:	81 e0       	ldi	r24, 0x01	; 1
+ 81c:	8a 87       	std	Y+10, r24	; 0x0a
+ 81e:	8b 87       	std	Y+11, r24	; 0x0b
+ 820:	87 e0       	ldi	r24, 0x07	; 7
+ 822:	90 e0       	ldi	r25, 0x00	; 0
+ 824:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
+ 828:	8c 01       	movw	r16, r24
+ 82a:	21 e0       	ldi	r18, 0x01	; 1
+ 82c:	45 e2       	ldi	r20, 0x25	; 37
+ 82e:	50 e0       	ldi	r21, 0x00	; 0
+ 830:	62 e0       	ldi	r22, 0x02	; 2
+ 832:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
+ 836:	19 83       	std	Y+1, r17	; 0x01
+ 838:	08 83       	st	Y, r16
+ 83a:	87 e0       	ldi	r24, 0x07	; 7
+ 83c:	90 e0       	ldi	r25, 0x00	; 0
+ 83e:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
+ 842:	8c 01       	movw	r16, r24
+ 844:	21 e0       	ldi	r18, 0x01	; 1
+ 846:	45 e2       	ldi	r20, 0x25	; 37
+ 848:	50 e0       	ldi	r21, 0x00	; 0
+ 84a:	61 e0       	ldi	r22, 0x01	; 1
+ 84c:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
+ 850:	1b 83       	std	Y+3, r17	; 0x03
+ 852:	0a 83       	std	Y+2, r16	; 0x02
+ 854:	87 e0       	ldi	r24, 0x07	; 7
+ 856:	90 e0       	ldi	r25, 0x00	; 0
+ 858:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
+ 85c:	8c 01       	movw	r16, r24
+ 85e:	21 e0       	ldi	r18, 0x01	; 1
+ 860:	45 e2       	ldi	r20, 0x25	; 37
+ 862:	50 e0       	ldi	r21, 0x00	; 0
+ 864:	60 e0       	ldi	r22, 0x00	; 0
+ 866:	0e 94 2b 02 	call	0x456	; 0x456 <_ZN3PinC1EhPVhh>
+ 86a:	1d 83       	std	Y+5, r17	; 0x05
+ 86c:	0c 83       	std	Y+4, r16	; 0x04
+ 86e:	df 91       	pop	r29
+ 870:	cf 91       	pop	r28
+ 872:	1f 91       	pop	r17
+ 874:	0f 91       	pop	r16
+ 876:	ff 90       	pop	r15
+ 878:	ef 90       	pop	r14
+ 87a:	08 95       	ret
 
-00000874 <_ZN8SevenSeg3runEv>:
- 874:	ef 92       	push	r14
- 876:	ff 92       	push	r15
- 878:	1f 93       	push	r17
- 87a:	cf 93       	push	r28
- 87c:	df 93       	push	r29
- 87e:	fc 01       	movw	r30, r24
- 880:	23 85       	ldd	r18, Z+11	; 0x0b
- 882:	21 30       	cpi	r18, 0x01	; 1
- 884:	09 f0       	breq	.+2      	; 0x888 <_ZN8SevenSeg3runEv+0x14>
- 886:	4e c0       	rjmp	.+156    	; 0x924 <__stack+0x25>
- 888:	ec 01       	movw	r28, r24
- 88a:	12 86       	std	Z+10, r1	; 0x0a
- 88c:	15 8d       	ldd	r17, Z+29	; 0x1d
- 88e:	e4 84       	ldd	r14, Z+12	; 0x0c
- 890:	f5 84       	ldd	r15, Z+13	; 0x0d
- 892:	81 2f       	mov	r24, r17
- 894:	0e 94 96 01 	call	0x32c	; 0x32c <_Z5pow10h>
- 898:	bc 01       	movw	r22, r24
- 89a:	fe 01       	movw	r30, r28
- 89c:	e1 0f       	add	r30, r17
- 89e:	f1 1d       	adc	r31, r1
- 8a0:	c7 01       	movw	r24, r14
- 8a2:	0e 94 75 05 	call	0xaea	; 0xaea <__udivmodhi4>
- 8a6:	ab 01       	movw	r20, r22
- 8a8:	9b 01       	movw	r18, r22
- 8aa:	ad ec       	ldi	r26, 0xCD	; 205
- 8ac:	bc ec       	ldi	r27, 0xCC	; 204
- 8ae:	0e 94 bf 05 	call	0xb7e	; 0xb7e <__umulhisi3>
- 8b2:	96 95       	lsr	r25
- 8b4:	87 95       	ror	r24
- 8b6:	96 95       	lsr	r25
- 8b8:	87 95       	ror	r24
+0000087c <_ZN8SevenSeg3runEv>:
+ 87c:	ef 92       	push	r14
+ 87e:	ff 92       	push	r15
+ 880:	1f 93       	push	r17
+ 882:	cf 93       	push	r28
+ 884:	df 93       	push	r29
+ 886:	fc 01       	movw	r30, r24
+ 888:	23 85       	ldd	r18, Z+11	; 0x0b
+ 88a:	21 30       	cpi	r18, 0x01	; 1
+ 88c:	09 f0       	breq	.+2      	; 0x890 <_ZN8SevenSeg3runEv+0x14>
+ 88e:	4e c0       	rjmp	.+156    	; 0x92c <__stack+0x2d>
+ 890:	ec 01       	movw	r28, r24
+ 892:	12 86       	std	Z+10, r1	; 0x0a
+ 894:	15 8d       	ldd	r17, Z+29	; 0x1d
+ 896:	e4 84       	ldd	r14, Z+12	; 0x0c
+ 898:	f5 84       	ldd	r15, Z+13	; 0x0d
+ 89a:	81 2f       	mov	r24, r17
+ 89c:	0e 94 96 01 	call	0x32c	; 0x32c <_Z5pow10h>
+ 8a0:	bc 01       	movw	r22, r24
+ 8a2:	fe 01       	movw	r30, r28
+ 8a4:	e1 0f       	add	r30, r17
+ 8a6:	f1 1d       	adc	r31, r1
+ 8a8:	c7 01       	movw	r24, r14
+ 8aa:	0e 94 79 05 	call	0xaf2	; 0xaf2 <__udivmodhi4>
+ 8ae:	ab 01       	movw	r20, r22
+ 8b0:	9b 01       	movw	r18, r22
+ 8b2:	ad ec       	ldi	r26, 0xCD	; 205
+ 8b4:	bc ec       	ldi	r27, 0xCC	; 204
+ 8b6:	0e 94 c3 05 	call	0xb86	; 0xb86 <__umulhisi3>
  8ba:	96 95       	lsr	r25
  8bc:	87 95       	ror	r24
- 8be:	9c 01       	movw	r18, r24
- 8c0:	22 0f       	add	r18, r18
- 8c2:	33 1f       	adc	r19, r19
- 8c4:	88 0f       	add	r24, r24
- 8c6:	99 1f       	adc	r25, r25
- 8c8:	88 0f       	add	r24, r24
- 8ca:	99 1f       	adc	r25, r25
+ 8be:	96 95       	lsr	r25
+ 8c0:	87 95       	ror	r24
+ 8c2:	96 95       	lsr	r25
+ 8c4:	87 95       	ror	r24
+ 8c6:	9c 01       	movw	r18, r24
+ 8c8:	22 0f       	add	r18, r18
+ 8ca:	33 1f       	adc	r19, r19
  8cc:	88 0f       	add	r24, r24
  8ce:	99 1f       	adc	r25, r25
- 8d0:	82 0f       	add	r24, r18
- 8d2:	93 1f       	adc	r25, r19
- 8d4:	48 1b       	sub	r20, r24
- 8d6:	59 0b       	sbc	r21, r25
- 8d8:	42 8f       	std	Z+26, r20	; 0x1a
- 8da:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 8dc:	90 e0       	ldi	r25, 0x00	; 0
- 8de:	fe 01       	movw	r30, r28
- 8e0:	e8 0f       	add	r30, r24
- 8e2:	f9 1f       	adc	r31, r25
- 8e4:	22 8d       	ldd	r18, Z+26	; 0x1a
- 8e6:	2a 30       	cpi	r18, 0x0A	; 10
- 8e8:	28 f0       	brcs	.+10     	; 0x8f4 <_ZN8SevenSeg3runEv+0x80>
- 8ea:	2a e0       	ldi	r18, 0x0A	; 10
- 8ec:	fe 01       	movw	r30, r28
- 8ee:	e8 0f       	add	r30, r24
- 8f0:	f9 1f       	adc	r31, r25
- 8f2:	22 8f       	std	Z+26, r18	; 0x1a
+ 8d0:	88 0f       	add	r24, r24
+ 8d2:	99 1f       	adc	r25, r25
+ 8d4:	88 0f       	add	r24, r24
+ 8d6:	99 1f       	adc	r25, r25
+ 8d8:	82 0f       	add	r24, r18
+ 8da:	93 1f       	adc	r25, r19
+ 8dc:	48 1b       	sub	r20, r24
+ 8de:	59 0b       	sbc	r21, r25
+ 8e0:	42 8f       	std	Z+26, r20	; 0x1a
+ 8e2:	8d 8d       	ldd	r24, Y+29	; 0x1d
+ 8e4:	90 e0       	ldi	r25, 0x00	; 0
+ 8e6:	fe 01       	movw	r30, r28
+ 8e8:	e8 0f       	add	r30, r24
+ 8ea:	f9 1f       	adc	r31, r25
+ 8ec:	22 8d       	ldd	r18, Z+26	; 0x1a
+ 8ee:	2a 30       	cpi	r18, 0x0A	; 10
+ 8f0:	28 f0       	brcs	.+10     	; 0x8fc <_ZN8SevenSeg3runEv+0x80>
+ 8f2:	2a e0       	ldi	r18, 0x0A	; 10
  8f4:	fe 01       	movw	r30, r28
  8f6:	e8 0f       	add	r30, r24
  8f8:	f9 1f       	adc	r31, r25
- 8fa:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 8fa:	22 8f       	std	Z+26, r18	; 0x1a
  8fc:	fe 01       	movw	r30, r28
  8fe:	e8 0f       	add	r30, r24
- 900:	f1 1d       	adc	r31, r1
- 902:	67 85       	ldd	r22, Z+15	; 0x0f
- 904:	ce 01       	movw	r24, r28
- 906:	0e 94 b7 02 	call	0x56e	; 0x56e <_ZN18ShiftRegister_SIPO8loadByteEh>
- 90a:	ce 01       	movw	r24, r28
- 90c:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
- 910:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 912:	8f 5f       	subi	r24, 0xFF	; 255
- 914:	83 30       	cpi	r24, 0x03	; 3
- 916:	10 f4       	brcc	.+4      	; 0x91c <__stack+0x1d>
- 918:	8d 8f       	std	Y+29, r24	; 0x1d
- 91a:	04 c0       	rjmp	.+8      	; 0x924 <__stack+0x25>
- 91c:	1d 8e       	std	Y+29, r1	; 0x1d
- 91e:	1b 86       	std	Y+11, r1	; 0x0b
- 920:	81 e0       	ldi	r24, 0x01	; 1
- 922:	8a 87       	std	Y+10, r24	; 0x0a
- 924:	df 91       	pop	r29
- 926:	cf 91       	pop	r28
- 928:	1f 91       	pop	r17
- 92a:	ff 90       	pop	r15
- 92c:	ef 90       	pop	r14
- 92e:	08 95       	ret
+ 900:	f9 1f       	adc	r31, r25
+ 902:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 904:	fe 01       	movw	r30, r28
+ 906:	e8 0f       	add	r30, r24
+ 908:	f1 1d       	adc	r31, r1
+ 90a:	67 85       	ldd	r22, Z+15	; 0x0f
+ 90c:	ce 01       	movw	r24, r28
+ 90e:	0e 94 b7 02 	call	0x56e	; 0x56e <_ZN18ShiftRegister_SIPO8loadByteEh>
+ 912:	ce 01       	movw	r24, r28
+ 914:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
+ 918:	8d 8d       	ldd	r24, Y+29	; 0x1d
+ 91a:	8f 5f       	subi	r24, 0xFF	; 255
+ 91c:	83 30       	cpi	r24, 0x03	; 3
+ 91e:	10 f4       	brcc	.+4      	; 0x924 <__stack+0x25>
+ 920:	8d 8f       	std	Y+29, r24	; 0x1d
+ 922:	04 c0       	rjmp	.+8      	; 0x92c <__stack+0x2d>
+ 924:	1d 8e       	std	Y+29, r1	; 0x1d
+ 926:	1b 86       	std	Y+11, r1	; 0x0b
+ 928:	81 e0       	ldi	r24, 0x01	; 1
+ 92a:	8a 87       	std	Y+10, r24	; 0x0a
+ 92c:	df 91       	pop	r29
+ 92e:	cf 91       	pop	r28
+ 930:	1f 91       	pop	r17
+ 932:	ff 90       	pop	r15
+ 934:	ef 90       	pop	r14
+ 936:	08 95       	ret
 
-00000930 <_ZN8SevenSegD1Ev>:
+00000938 <_ZN8SevenSegD1Ev>:
 
 // default destructor
 SevenSeg::~SevenSeg()
- 930:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN18ShiftRegister_SIPOD1Ev>
- 934:	08 95       	ret
+ 938:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN18ShiftRegister_SIPOD1Ev>
+ 93c:	08 95       	ret
 
-00000936 <_ZN11TaskManagerC1ER5Timer>:
+0000093e <_ZN11TaskManagerC1ER5Timer>:
 
 
 #include "TaskManager.h"
 
 // default constructor
 TaskManager::TaskManager( Timer & timerPtr )
- 936:	fc 01       	movw	r30, r24
+ 93e:	fc 01       	movw	r30, r24
 {
 	
 	timer = &timerPtr;
- 938:	73 8b       	std	Z+19, r23	; 0x13
- 93a:	62 8b       	std	Z+18, r22	; 0x12
+ 940:	73 8b       	std	Z+19, r23	; 0x13
+ 942:	62 8b       	std	Z+18, r22	; 0x12
 	
 	//At initialization there should be zero loaded tasks. 
 	loadedTasks = 0;
- 93c:	14 8a       	std	Z+20, r1	; 0x14
+ 944:	14 8a       	std	Z+20, r1	; 0x14
 	
 	//Should be initialized to a prime number
 	randNum = RANDOM_GEN_SEED;
- 93e:	87 e0       	ldi	r24, 0x07	; 7
- 940:	85 8b       	std	Z+21, r24	; 0x15
- 942:	08 95       	ret
+ 946:	87 e0       	ldi	r24, 0x07	; 7
+ 948:	85 8b       	std	Z+21, r24	; 0x15
+ 94a:	08 95       	ret
 
-00000944 <_ZN11TaskManager7addTaskEPFvvEh>:
+0000094c <_ZN11TaskManager7addTaskEPFvvEh>:
 
 //Add a task to the task list.
 //Priority; Range between 0-250. Closer to 0, the more likely task will run. 0 is realtime
 void TaskManager::addTask( void (*task) (void), uint8_t priority ){
 	
 	tasks[ loadedTasks ] = task;
- 944:	fc 01       	movw	r30, r24
- 946:	24 89       	ldd	r18, Z+20	; 0x14
- 948:	a2 2f       	mov	r26, r18
- 94a:	b0 e0       	ldi	r27, 0x00	; 0
- 94c:	fd 01       	movw	r30, r26
- 94e:	33 96       	adiw	r30, 0x03	; 3
- 950:	ee 0f       	add	r30, r30
- 952:	ff 1f       	adc	r31, r31
- 954:	e8 0f       	add	r30, r24
- 956:	f9 1f       	adc	r31, r25
- 958:	71 83       	std	Z+1, r23	; 0x01
- 95a:	60 83       	st	Z, r22
+ 94c:	fc 01       	movw	r30, r24
+ 94e:	24 89       	ldd	r18, Z+20	; 0x14
+ 950:	a2 2f       	mov	r26, r18
+ 952:	b0 e0       	ldi	r27, 0x00	; 0
+ 954:	fd 01       	movw	r30, r26
+ 956:	33 96       	adiw	r30, 0x03	; 3
+ 958:	ee 0f       	add	r30, r30
+ 95a:	ff 1f       	adc	r31, r31
+ 95c:	e8 0f       	add	r30, r24
+ 95e:	f9 1f       	adc	r31, r25
+ 960:	71 83       	std	Z+1, r23	; 0x01
+ 962:	60 83       	st	Z, r22
 	
 	taskPriority[ loadedTasks ] = priority;
- 95c:	a8 0f       	add	r26, r24
- 95e:	b9 1f       	adc	r27, r25
- 960:	4c 93       	st	X, r20
+ 964:	a8 0f       	add	r26, r24
+ 966:	b9 1f       	adc	r27, r25
+ 968:	4c 93       	st	X, r20
 	
 	loadedTasks++;
- 962:	2f 5f       	subi	r18, 0xFF	; 255
- 964:	fc 01       	movw	r30, r24
- 966:	24 8b       	std	Z+20, r18	; 0x14
- 968:	08 95       	ret
+ 96a:	2f 5f       	subi	r18, 0xFF	; 255
+ 96c:	fc 01       	movw	r30, r24
+ 96e:	24 8b       	std	Z+20, r18	; 0x14
+ 970:	08 95       	ret
 
-0000096a <_ZN11TaskManager20generateRandomNumberEv>:
+00000972 <_ZN11TaskManager20generateRandomNumberEv>:
 	}
 	
 }
 
 void TaskManager::generateRandomNumber( void )
 {
- 96a:	fc 01       	movw	r30, r24
+ 972:	fc 01       	movw	r30, r24
 	randNum = (randNum*109+89)%251;
- 96c:	85 89       	ldd	r24, Z+21	; 0x15
- 96e:	2d e6       	ldi	r18, 0x6D	; 109
- 970:	82 9f       	mul	r24, r18
- 972:	c0 01       	movw	r24, r0
- 974:	11 24       	eor	r1, r1
- 976:	87 5a       	subi	r24, 0xA7	; 167
- 978:	9f 4f       	sbci	r25, 0xFF	; 255
- 97a:	6b ef       	ldi	r22, 0xFB	; 251
- 97c:	70 e0       	ldi	r23, 0x00	; 0
- 97e:	0e 94 89 05 	call	0xb12	; 0xb12 <__divmodhi4>
- 982:	85 8b       	std	Z+21, r24	; 0x15
- 984:	08 95       	ret
+ 974:	85 89       	ldd	r24, Z+21	; 0x15
+ 976:	2d e6       	ldi	r18, 0x6D	; 109
+ 978:	82 9f       	mul	r24, r18
+ 97a:	c0 01       	movw	r24, r0
+ 97c:	11 24       	eor	r1, r1
+ 97e:	87 5a       	subi	r24, 0xA7	; 167
+ 980:	9f 4f       	sbci	r25, 0xFF	; 255
+ 982:	6b ef       	ldi	r22, 0xFB	; 251
+ 984:	70 e0       	ldi	r23, 0x00	; 0
+ 986:	0e 94 8d 05 	call	0xb1a	; 0xb1a <__divmodhi4>
+ 98a:	85 8b       	std	Z+21, r24	; 0x15
+ 98c:	08 95       	ret
 
-00000986 <_ZN11TaskManager8runTasksEv>:
+0000098e <_ZN11TaskManager8runTasksEv>:
 	
 	loadedTasks++;
 }
 
 void TaskManager::runTasks( void )
 {
- 986:	cf 92       	push	r12
- 988:	df 92       	push	r13
- 98a:	ef 92       	push	r14
- 98c:	ff 92       	push	r15
- 98e:	0f 93       	push	r16
- 990:	1f 93       	push	r17
- 992:	cf 93       	push	r28
- 994:	df 93       	push	r29
+ 98e:	cf 92       	push	r12
+ 990:	df 92       	push	r13
+ 992:	ef 92       	push	r14
+ 994:	ff 92       	push	r15
+ 996:	0f 93       	push	r16
+ 998:	1f 93       	push	r17
+ 99a:	cf 93       	push	r28
+ 99c:	df 93       	push	r29
 	for( int i=0; i < loadedTasks ; i++){
- 996:	dc 01       	movw	r26, r24
- 998:	54 96       	adiw	r26, 0x14	; 20
- 99a:	2c 91       	ld	r18, X
- 99c:	22 23       	and	r18, r18
- 99e:	f1 f0       	breq	.+60     	; 0x9dc <_ZN11TaskManager8runTasksEv+0x56>
- 9a0:	ec 01       	movw	r28, r24
- 9a2:	6c 01       	movw	r12, r24
- 9a4:	7c 01       	movw	r14, r24
- 9a6:	00 e0       	ldi	r16, 0x00	; 0
- 9a8:	10 e0       	ldi	r17, 0x00	; 0
+ 99e:	dc 01       	movw	r26, r24
+ 9a0:	54 96       	adiw	r26, 0x14	; 20
+ 9a2:	2c 91       	ld	r18, X
+ 9a4:	22 23       	and	r18, r18
+ 9a6:	f1 f0       	breq	.+60     	; 0x9e4 <_ZN11TaskManager8runTasksEv+0x56>
+ 9a8:	ec 01       	movw	r28, r24
+ 9aa:	6c 01       	movw	r12, r24
+ 9ac:	7c 01       	movw	r14, r24
+ 9ae:	00 e0       	ldi	r16, 0x00	; 0
+ 9b0:	10 e0       	ldi	r17, 0x00	; 0
 		
 		//Generate random number for seeing if task should run
 		this->generateRandomNumber();
- 9aa:	ce 01       	movw	r24, r28
- 9ac:	0e 94 b5 04 	call	0x96a	; 0x96a <_ZN11TaskManager20generateRandomNumberEv>
+ 9b2:	ce 01       	movw	r24, r28
+ 9b4:	0e 94 b9 04 	call	0x972	; 0x972 <_ZN11TaskManager20generateRandomNumberEv>
 		if( taskPriority[i] <= randNum ){
- 9b0:	f6 01       	movw	r30, r12
- 9b2:	91 91       	ld	r25, Z+
- 9b4:	6f 01       	movw	r12, r30
- 9b6:	8d 89       	ldd	r24, Y+21	; 0x15
- 9b8:	89 17       	cp	r24, r25
- 9ba:	30 f0       	brcs	.+12     	; 0x9c8 <_ZN11TaskManager8runTasksEv+0x42>
+ 9b8:	f6 01       	movw	r30, r12
+ 9ba:	91 91       	ld	r25, Z+
+ 9bc:	6f 01       	movw	r12, r30
+ 9be:	8d 89       	ldd	r24, Y+21	; 0x15
+ 9c0:	89 17       	cp	r24, r25
+ 9c2:	30 f0       	brcs	.+12     	; 0x9d0 <_ZN11TaskManager8runTasksEv+0x42>
 			
 			//Run the task
 			(*tasks[i]) (); 
- 9bc:	d7 01       	movw	r26, r14
- 9be:	16 96       	adiw	r26, 0x06	; 6
- 9c0:	ed 91       	ld	r30, X+
- 9c2:	fc 91       	ld	r31, X
- 9c4:	17 97       	sbiw	r26, 0x07	; 7
- 9c6:	09 95       	icall
+ 9c4:	d7 01       	movw	r26, r14
+ 9c6:	16 96       	adiw	r26, 0x06	; 6
+ 9c8:	ed 91       	ld	r30, X+
+ 9ca:	fc 91       	ld	r31, X
+ 9cc:	17 97       	sbiw	r26, 0x07	; 7
+ 9ce:	09 95       	icall
 	loadedTasks++;
 }
 
 void TaskManager::runTasks( void )
 {
 	for( int i=0; i < loadedTasks ; i++){
- 9c8:	0f 5f       	subi	r16, 0xFF	; 255
- 9ca:	1f 4f       	sbci	r17, 0xFF	; 255
- 9cc:	b2 e0       	ldi	r27, 0x02	; 2
- 9ce:	eb 0e       	add	r14, r27
- 9d0:	f1 1c       	adc	r15, r1
- 9d2:	2c 89       	ldd	r18, Y+20	; 0x14
- 9d4:	30 e0       	ldi	r19, 0x00	; 0
- 9d6:	02 17       	cp	r16, r18
- 9d8:	13 07       	cpc	r17, r19
- 9da:	3c f3       	brlt	.-50     	; 0x9aa <_ZN11TaskManager8runTasksEv+0x24>
+ 9d0:	0f 5f       	subi	r16, 0xFF	; 255
+ 9d2:	1f 4f       	sbci	r17, 0xFF	; 255
+ 9d4:	b2 e0       	ldi	r27, 0x02	; 2
+ 9d6:	eb 0e       	add	r14, r27
+ 9d8:	f1 1c       	adc	r15, r1
+ 9da:	2c 89       	ldd	r18, Y+20	; 0x14
+ 9dc:	30 e0       	ldi	r19, 0x00	; 0
+ 9de:	02 17       	cp	r16, r18
+ 9e0:	13 07       	cpc	r17, r19
+ 9e2:	3c f3       	brlt	.-50     	; 0x9b2 <_ZN11TaskManager8runTasksEv+0x24>
 			(*tasks[i]) (); 
 		}
 		
 	}
 	
 }
- 9dc:	df 91       	pop	r29
- 9de:	cf 91       	pop	r28
- 9e0:	1f 91       	pop	r17
- 9e2:	0f 91       	pop	r16
- 9e4:	ff 90       	pop	r15
- 9e6:	ef 90       	pop	r14
- 9e8:	df 90       	pop	r13
- 9ea:	cf 90       	pop	r12
- 9ec:	08 95       	ret
+ 9e4:	df 91       	pop	r29
+ 9e6:	cf 91       	pop	r28
+ 9e8:	1f 91       	pop	r17
+ 9ea:	0f 91       	pop	r16
+ 9ec:	ff 90       	pop	r15
+ 9ee:	ef 90       	pop	r14
+ 9f0:	df 90       	pop	r13
+ 9f2:	cf 90       	pop	r12
+ 9f4:	08 95       	ret
 
-000009ee <_ZN7TriggerC1ER5TimerR6Blinky>:
+000009f6 <_ZN7TriggerC1ER5TimerR6Blinky>:
 
 
 #include "Trigger.h"
 
 // default constructor
 Trigger::Trigger( Timer & timerPtr, Blinky & blinkyRef )
- 9ee:	cf 93       	push	r28
- 9f0:	df 93       	push	r29
- 9f2:	ec 01       	movw	r28, r24
- 9f4:	cb 01       	movw	r24, r22
+ 9f6:	cf 93       	push	r28
+ 9f8:	df 93       	push	r29
+ 9fa:	ec 01       	movw	r28, r24
+ 9fc:	cb 01       	movw	r24, r22
 {
 	//Initialize the output pin.
 	DDRD |= (1 << PORTD2);
- 9f6:	52 9a       	sbi	0x0a, 2	; 10
+ 9fe:	52 9a       	sbi	0x0a, 2	; 10
 	
 	//Used for marking a point in time.
 	timeStamp = 0;
- 9f8:	1b 82       	std	Y+3, r1	; 0x03
- 9fa:	1c 82       	std	Y+4, r1	; 0x04
- 9fc:	1d 82       	std	Y+5, r1	; 0x05
- 9fe:	1e 82       	std	Y+6, r1	; 0x06
+ a00:	1b 82       	std	Y+3, r1	; 0x03
+ a02:	1c 82       	std	Y+4, r1	; 0x04
+ a04:	1d 82       	std	Y+5, r1	; 0x05
+ a06:	1e 82       	std	Y+6, r1	; 0x06
 
 	//Get reference to the timer
 	timer = &timerPtr;
- a00:	7a 83       	std	Y+2, r23	; 0x02
- a02:	69 83       	std	Y+1, r22	; 0x01
+ a08:	7a 83       	std	Y+2, r23	; 0x02
+ a0a:	69 83       	std	Y+1, r22	; 0x01
 	
 	//Reference to blinky
 	blinky = &blinkyRef;
- a04:	58 87       	std	Y+8, r21	; 0x08
- a06:	4f 83       	std	Y+7, r20	; 0x07
+ a0c:	58 87       	std	Y+8, r21	; 0x08
+ a0e:	4f 83       	std	Y+7, r20	; 0x07
 		
 	//Initialize the time stamp
 	//Timer->millis returns the number of 0.1ms since epoche
 	timeStamp = timer->millis();
- a08:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- a0c:	6b 83       	std	Y+3, r22	; 0x03
- a0e:	7c 83       	std	Y+4, r23	; 0x04
- a10:	8d 83       	std	Y+5, r24	; 0x05
- a12:	9e 83       	std	Y+6, r25	; 0x06
+ a10:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ a14:	6b 83       	std	Y+3, r22	; 0x03
+ a16:	7c 83       	std	Y+4, r23	; 0x04
+ a18:	8d 83       	std	Y+5, r24	; 0x05
+ a1a:	9e 83       	std	Y+6, r25	; 0x06
 	
 	//Intialize first run flag
 	triggerSetHigh = true;
- a14:	81 e0       	ldi	r24, 0x01	; 1
- a16:	88 83       	st	Y, r24
+ a1c:	81 e0       	ldi	r24, 0x01	; 1
+ a1e:	88 83       	st	Y, r24
 	
 } //Trigger
- a18:	df 91       	pop	r29
- a1a:	cf 91       	pop	r28
- a1c:	08 95       	ret
+ a20:	df 91       	pop	r29
+ a22:	cf 91       	pop	r28
+ a24:	08 95       	ret
 
-00000a1e <_ZN7Trigger3runEv>:
+00000a26 <_ZN7Trigger3runEv>:
 
 //Runs the trigger task.
 void Trigger::run(){
- a1e:	cf 93       	push	r28
- a20:	df 93       	push	r29
- a22:	ec 01       	movw	r28, r24
+ a26:	cf 93       	push	r28
+ a28:	df 93       	push	r29
+ a2a:	ec 01       	movw	r28, r24
 	
 	if( blinky->justSetHigh == true ){
- a24:	ef 81       	ldd	r30, Y+7	; 0x07
- a26:	f8 85       	ldd	r31, Y+8	; 0x08
- a28:	83 81       	ldd	r24, Z+3	; 0x03
- a2a:	81 30       	cpi	r24, 0x01	; 1
- a2c:	71 f4       	brne	.+28     	; 0xa4a <_ZN7Trigger3runEv+0x2c>
+ a2c:	ef 81       	ldd	r30, Y+7	; 0x07
+ a2e:	f8 85       	ldd	r31, Y+8	; 0x08
+ a30:	83 81       	ldd	r24, Z+3	; 0x03
+ a32:	81 30       	cpi	r24, 0x01	; 1
+ a34:	71 f4       	brne	.+28     	; 0xa52 <_ZN7Trigger3runEv+0x2c>
 
 		//Get time stamp
 		timeStamp = timer->millis();
- a2e:	89 81       	ldd	r24, Y+1	; 0x01
- a30:	9a 81       	ldd	r25, Y+2	; 0x02
- a32:	0e 94 65 05 	call	0xaca	; 0xaca <_ZN5Timer6millisEv>
- a36:	6b 83       	std	Y+3, r22	; 0x03
- a38:	7c 83       	std	Y+4, r23	; 0x04
- a3a:	8d 83       	std	Y+5, r24	; 0x05
- a3c:	9e 83       	std	Y+6, r25	; 0x06
+ a36:	89 81       	ldd	r24, Y+1	; 0x01
+ a38:	9a 81       	ldd	r25, Y+2	; 0x02
+ a3a:	0e 94 69 05 	call	0xad2	; 0xad2 <_ZN5Timer6millisEv>
+ a3e:	6b 83       	std	Y+3, r22	; 0x03
+ a40:	7c 83       	std	Y+4, r23	; 0x04
+ a42:	8d 83       	std	Y+5, r24	; 0x05
+ a44:	9e 83       	std	Y+6, r25	; 0x06
 		
 		//Set pin high
 		PORTD |= ( 1 << PORTD2 );
- a3e:	5a 9a       	sbi	0x0b, 2	; 11
+ a46:	5a 9a       	sbi	0x0b, 2	; 11
 		
 		triggerSetHigh = true;
- a40:	81 e0       	ldi	r24, 0x01	; 1
- a42:	88 83       	st	Y, r24
+ a48:	81 e0       	ldi	r24, 0x01	; 1
+ a4a:	88 83       	st	Y, r24
 		
 		blinky->justSetHigh = false;
- a44:	ef 81       	ldd	r30, Y+7	; 0x07
- a46:	f8 85       	ldd	r31, Y+8	; 0x08
- a48:	13 82       	std	Z+3, r1	; 0x03
+ a4c:	ef 81       	ldd	r30, Y+7	; 0x07
+ a4e:	f8 85       	ldd	r31, Y+8	; 0x08
+ a50:	13 82       	std	Z+3, r1	; 0x03
 	}
 	if ( triggerSetHigh == true ){
- a4a:	88 81       	ld	r24, Y
- a4c:	81 30       	cpi	r24, 0x01	; 1
- a4e:	79 f4       	brne	.+30     	; 0xa6e <_ZN7Trigger3runEv+0x50>
+ a52:	88 81       	ld	r24, Y
+ a54:	81 30       	cpi	r24, 0x01	; 1
+ a56:	79 f4       	brne	.+30     	; 0xa76 <_ZN7Trigger3runEv+0x50>
 		//Wait for 1ms or Trigger high duration
 		if( timer->elapsed_millis(timeStamp) >= TRIGGER_HIGH ){
- a50:	4b 81       	ldd	r20, Y+3	; 0x03
- a52:	5c 81       	ldd	r21, Y+4	; 0x04
- a54:	6d 81       	ldd	r22, Y+5	; 0x05
- a56:	7e 81       	ldd	r23, Y+6	; 0x06
- a58:	89 81       	ldd	r24, Y+1	; 0x01
- a5a:	9a 81       	ldd	r25, Y+2	; 0x02
- a5c:	0e 94 53 05 	call	0xaa6	; 0xaa6 <_ZN5Timer14elapsed_millisEm>
- a60:	6a 30       	cpi	r22, 0x0A	; 10
- a62:	71 05       	cpc	r23, r1
- a64:	81 05       	cpc	r24, r1
- a66:	91 05       	cpc	r25, r1
- a68:	10 f0       	brcs	.+4      	; 0xa6e <_ZN7Trigger3runEv+0x50>
+ a58:	4b 81       	ldd	r20, Y+3	; 0x03
+ a5a:	5c 81       	ldd	r21, Y+4	; 0x04
+ a5c:	6d 81       	ldd	r22, Y+5	; 0x05
+ a5e:	7e 81       	ldd	r23, Y+6	; 0x06
+ a60:	89 81       	ldd	r24, Y+1	; 0x01
+ a62:	9a 81       	ldd	r25, Y+2	; 0x02
+ a64:	0e 94 57 05 	call	0xaae	; 0xaae <_ZN5Timer14elapsed_millisEm>
+ a68:	6a 30       	cpi	r22, 0x0A	; 10
+ a6a:	71 05       	cpc	r23, r1
+ a6c:	81 05       	cpc	r24, r1
+ a6e:	91 05       	cpc	r25, r1
+ a70:	10 f0       	brcs	.+4      	; 0xa76 <_ZN7Trigger3runEv+0x50>
 			//Set pin low.
 			PORTD &= ~(1 << PORTD2);
- a6a:	5a 98       	cbi	0x0b, 2	; 11
+ a72:	5a 98       	cbi	0x0b, 2	; 11
 				
 			triggerSetHigh = false;
- a6c:	18 82       	st	Y, r1
+ a74:	18 82       	st	Y, r1
 		}
 	}
 }
- a6e:	df 91       	pop	r29
- a70:	cf 91       	pop	r28
- a72:	08 95       	ret
+ a76:	df 91       	pop	r29
+ a78:	cf 91       	pop	r28
+ a7a:	08 95       	ret
 
-00000a74 <_ZN7TriggerD1Ev>:
+00000a7c <_ZN7TriggerD1Ev>:
 
 // default destructor
 Trigger::~Trigger()
- a74:	08 95       	ret
+ a7c:	08 95       	ret
 
-00000a76 <_ZN5TimerC1Ev>:
+00000a7e <_ZN5TimerC1Ev>:
 	fixedTime = this->millis();
 }
 
 void Timer::resumeTimer( void )
 {
 	step = fixedTime;
- a76:	fc 01       	movw	r30, r24
- a78:	10 82       	st	Z, r1
- a7a:	11 82       	std	Z+1, r1	; 0x01
- a7c:	12 82       	std	Z+2, r1	; 0x02
- a7e:	13 82       	std	Z+3, r1	; 0x03
- a80:	14 82       	std	Z+4, r1	; 0x04
- a82:	15 82       	std	Z+5, r1	; 0x05
- a84:	16 82       	std	Z+6, r1	; 0x06
- a86:	17 82       	std	Z+7, r1	; 0x07
- a88:	08 95       	ret
+ a7e:	fc 01       	movw	r30, r24
+ a80:	10 82       	st	Z, r1
+ a82:	11 82       	std	Z+1, r1	; 0x01
+ a84:	12 82       	std	Z+2, r1	; 0x02
+ a86:	13 82       	std	Z+3, r1	; 0x03
+ a88:	14 82       	std	Z+4, r1	; 0x04
+ a8a:	15 82       	std	Z+5, r1	; 0x05
+ a8c:	16 82       	std	Z+6, r1	; 0x06
+ a8e:	17 82       	std	Z+7, r1	; 0x07
+ a90:	08 95       	ret
 
-00000a8a <_ZN5Timer14incrementTimerEv>:
- a8a:	fc 01       	movw	r30, r24
- a8c:	40 81       	ld	r20, Z
- a8e:	51 81       	ldd	r21, Z+1	; 0x01
- a90:	62 81       	ldd	r22, Z+2	; 0x02
- a92:	73 81       	ldd	r23, Z+3	; 0x03
- a94:	4f 5f       	subi	r20, 0xFF	; 255
- a96:	5f 4f       	sbci	r21, 0xFF	; 255
- a98:	6f 4f       	sbci	r22, 0xFF	; 255
- a9a:	7f 4f       	sbci	r23, 0xFF	; 255
- a9c:	40 83       	st	Z, r20
- a9e:	51 83       	std	Z+1, r21	; 0x01
- aa0:	62 83       	std	Z+2, r22	; 0x02
- aa2:	73 83       	std	Z+3, r23	; 0x03
- aa4:	08 95       	ret
+00000a92 <_ZN5Timer14incrementTimerEv>:
+ a92:	fc 01       	movw	r30, r24
+ a94:	40 81       	ld	r20, Z
+ a96:	51 81       	ldd	r21, Z+1	; 0x01
+ a98:	62 81       	ldd	r22, Z+2	; 0x02
+ a9a:	73 81       	ldd	r23, Z+3	; 0x03
+ a9c:	4f 5f       	subi	r20, 0xFF	; 255
+ a9e:	5f 4f       	sbci	r21, 0xFF	; 255
+ aa0:	6f 4f       	sbci	r22, 0xFF	; 255
+ aa2:	7f 4f       	sbci	r23, 0xFF	; 255
+ aa4:	40 83       	st	Z, r20
+ aa6:	51 83       	std	Z+1, r21	; 0x01
+ aa8:	62 83       	std	Z+2, r22	; 0x02
+ aaa:	73 83       	std	Z+3, r23	; 0x03
+ aac:	08 95       	ret
 
-00000aa6 <_ZN5Timer14elapsed_millisEm>:
+00000aae <_ZN5Timer14elapsed_millisEm>:
 }
 
 uint32_t Timer::elapsed_millis( uint32_t comparison )
 {	
- aa6:	0f 93       	push	r16
- aa8:	1f 93       	push	r17
+ aae:	0f 93       	push	r16
+ ab0:	1f 93       	push	r17
 	return (step - comparison);	
- aaa:	fc 01       	movw	r30, r24
- aac:	80 81       	ld	r24, Z
- aae:	91 81       	ldd	r25, Z+1	; 0x01
- ab0:	a2 81       	ldd	r26, Z+2	; 0x02
- ab2:	b3 81       	ldd	r27, Z+3	; 0x03
- ab4:	8c 01       	movw	r16, r24
- ab6:	9d 01       	movw	r18, r26
- ab8:	04 1b       	sub	r16, r20
- aba:	15 0b       	sbc	r17, r21
- abc:	26 0b       	sbc	r18, r22
- abe:	37 0b       	sbc	r19, r23
- ac0:	c9 01       	movw	r24, r18
- ac2:	b8 01       	movw	r22, r16
+ ab2:	fc 01       	movw	r30, r24
+ ab4:	80 81       	ld	r24, Z
+ ab6:	91 81       	ldd	r25, Z+1	; 0x01
+ ab8:	a2 81       	ldd	r26, Z+2	; 0x02
+ aba:	b3 81       	ldd	r27, Z+3	; 0x03
+ abc:	8c 01       	movw	r16, r24
+ abe:	9d 01       	movw	r18, r26
+ ac0:	04 1b       	sub	r16, r20
+ ac2:	15 0b       	sbc	r17, r21
+ ac4:	26 0b       	sbc	r18, r22
+ ac6:	37 0b       	sbc	r19, r23
+ ac8:	c9 01       	movw	r24, r18
+ aca:	b8 01       	movw	r22, r16
 }
- ac4:	1f 91       	pop	r17
- ac6:	0f 91       	pop	r16
- ac8:	08 95       	ret
+ acc:	1f 91       	pop	r17
+ ace:	0f 91       	pop	r16
+ ad0:	08 95       	ret
 
-00000aca <_ZN5Timer6millisEv>:
+00000ad2 <_ZN5Timer6millisEv>:
 
 uint32_t Timer::millis( void )
 {
 	return step;
- aca:	fc 01       	movw	r30, r24
- acc:	60 81       	ld	r22, Z
- ace:	71 81       	ldd	r23, Z+1	; 0x01
- ad0:	82 81       	ldd	r24, Z+2	; 0x02
- ad2:	93 81       	ldd	r25, Z+3	; 0x03
+ ad2:	fc 01       	movw	r30, r24
+ ad4:	60 81       	ld	r22, Z
+ ad6:	71 81       	ldd	r23, Z+1	; 0x01
+ ad8:	82 81       	ldd	r24, Z+2	; 0x02
+ ada:	93 81       	ldd	r25, Z+3	; 0x03
 }
- ad4:	08 95       	ret
+ adc:	08 95       	ret
 
-00000ad6 <_ZN5Timer8wait_1usEv>:
+00000ade <_ZN5Timer8wait_1usEv>:
 	//Variable to find the difference between a current value
 	//of a timer and a previous value
 	uint8_t difference = 0;
 		
 	//Read the value of the TCNT0 timer0
 	uint8_t timerValue = TCNT2;
- ad6:	90 91 b2 00 	lds	r25, 0x00B2	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7e00b2>
+ ade:	90 91 b2 00 	lds	r25, 0x00B2	; 0x8000b2 <__TEXT_REGION_LENGTH__+0x7e00b2>
 		
 	//Wait until difference is 16 == 1us
 	while( difference < 16 ){
 		difference = TCNT2 - timerValue;
- ada:	e2 eb       	ldi	r30, 0xB2	; 178
- adc:	f0 e0       	ldi	r31, 0x00	; 0
- ade:	80 81       	ld	r24, Z
+ ae2:	e2 eb       	ldi	r30, 0xB2	; 178
+ ae4:	f0 e0       	ldi	r31, 0x00	; 0
+ ae6:	80 81       	ld	r24, Z
 		
 	//Read the value of the TCNT0 timer0
 	uint8_t timerValue = TCNT2;
 		
 	//Wait until difference is 16 == 1us
 	while( difference < 16 ){
- ae0:	89 1b       	sub	r24, r25
- ae2:	80 31       	cpi	r24, 0x10	; 16
- ae4:	e0 f3       	brcs	.-8      	; 0xade <_ZN5Timer8wait_1usEv+0x8>
+ ae8:	89 1b       	sub	r24, r25
+ aea:	80 31       	cpi	r24, 0x10	; 16
+ aec:	e0 f3       	brcs	.-8      	; 0xae6 <_ZN5Timer8wait_1usEv+0x8>
 		difference = TCNT2 - timerValue;
 	}
 }
- ae6:	08 95       	ret
+ aee:	08 95       	ret
 
-00000ae8 <_ZN5TimerD1Ev>:
+00000af0 <_ZN5TimerD1Ev>:
 
 // default destructor
 Timer::~Timer()
- ae8:	08 95       	ret
+ af0:	08 95       	ret
 
-00000aea <__udivmodhi4>:
- aea:	aa 1b       	sub	r26, r26
- aec:	bb 1b       	sub	r27, r27
- aee:	51 e1       	ldi	r21, 0x11	; 17
- af0:	07 c0       	rjmp	.+14     	; 0xb00 <__udivmodhi4_ep>
+00000af2 <__udivmodhi4>:
+ af2:	aa 1b       	sub	r26, r26
+ af4:	bb 1b       	sub	r27, r27
+ af6:	51 e1       	ldi	r21, 0x11	; 17
+ af8:	07 c0       	rjmp	.+14     	; 0xb08 <__udivmodhi4_ep>
 
-00000af2 <__udivmodhi4_loop>:
- af2:	aa 1f       	adc	r26, r26
- af4:	bb 1f       	adc	r27, r27
- af6:	a6 17       	cp	r26, r22
- af8:	b7 07       	cpc	r27, r23
- afa:	10 f0       	brcs	.+4      	; 0xb00 <__udivmodhi4_ep>
- afc:	a6 1b       	sub	r26, r22
- afe:	b7 0b       	sbc	r27, r23
+00000afa <__udivmodhi4_loop>:
+ afa:	aa 1f       	adc	r26, r26
+ afc:	bb 1f       	adc	r27, r27
+ afe:	a6 17       	cp	r26, r22
+ b00:	b7 07       	cpc	r27, r23
+ b02:	10 f0       	brcs	.+4      	; 0xb08 <__udivmodhi4_ep>
+ b04:	a6 1b       	sub	r26, r22
+ b06:	b7 0b       	sbc	r27, r23
 
-00000b00 <__udivmodhi4_ep>:
- b00:	88 1f       	adc	r24, r24
- b02:	99 1f       	adc	r25, r25
- b04:	5a 95       	dec	r21
- b06:	a9 f7       	brne	.-22     	; 0xaf2 <__udivmodhi4_loop>
- b08:	80 95       	com	r24
- b0a:	90 95       	com	r25
- b0c:	bc 01       	movw	r22, r24
- b0e:	cd 01       	movw	r24, r26
- b10:	08 95       	ret
+00000b08 <__udivmodhi4_ep>:
+ b08:	88 1f       	adc	r24, r24
+ b0a:	99 1f       	adc	r25, r25
+ b0c:	5a 95       	dec	r21
+ b0e:	a9 f7       	brne	.-22     	; 0xafa <__udivmodhi4_loop>
+ b10:	80 95       	com	r24
+ b12:	90 95       	com	r25
+ b14:	bc 01       	movw	r22, r24
+ b16:	cd 01       	movw	r24, r26
+ b18:	08 95       	ret
 
-00000b12 <__divmodhi4>:
- b12:	97 fb       	bst	r25, 7
- b14:	07 2e       	mov	r0, r23
- b16:	16 f4       	brtc	.+4      	; 0xb1c <__divmodhi4+0xa>
- b18:	00 94       	com	r0
- b1a:	07 d0       	rcall	.+14     	; 0xb2a <__divmodhi4_neg1>
- b1c:	77 fd       	sbrc	r23, 7
- b1e:	09 d0       	rcall	.+18     	; 0xb32 <__divmodhi4_neg2>
- b20:	0e 94 75 05 	call	0xaea	; 0xaea <__udivmodhi4>
- b24:	07 fc       	sbrc	r0, 7
- b26:	05 d0       	rcall	.+10     	; 0xb32 <__divmodhi4_neg2>
- b28:	3e f4       	brtc	.+14     	; 0xb38 <__divmodhi4_exit>
+00000b1a <__divmodhi4>:
+ b1a:	97 fb       	bst	r25, 7
+ b1c:	07 2e       	mov	r0, r23
+ b1e:	16 f4       	brtc	.+4      	; 0xb24 <__divmodhi4+0xa>
+ b20:	00 94       	com	r0
+ b22:	07 d0       	rcall	.+14     	; 0xb32 <__divmodhi4_neg1>
+ b24:	77 fd       	sbrc	r23, 7
+ b26:	09 d0       	rcall	.+18     	; 0xb3a <__divmodhi4_neg2>
+ b28:	0e 94 79 05 	call	0xaf2	; 0xaf2 <__udivmodhi4>
+ b2c:	07 fc       	sbrc	r0, 7
+ b2e:	05 d0       	rcall	.+10     	; 0xb3a <__divmodhi4_neg2>
+ b30:	3e f4       	brtc	.+14     	; 0xb40 <__divmodhi4_exit>
 
-00000b2a <__divmodhi4_neg1>:
- b2a:	90 95       	com	r25
- b2c:	81 95       	neg	r24
- b2e:	9f 4f       	sbci	r25, 0xFF	; 255
- b30:	08 95       	ret
-
-00000b32 <__divmodhi4_neg2>:
- b32:	70 95       	com	r23
- b34:	61 95       	neg	r22
- b36:	7f 4f       	sbci	r23, 0xFF	; 255
-
-00000b38 <__divmodhi4_exit>:
+00000b32 <__divmodhi4_neg1>:
+ b32:	90 95       	com	r25
+ b34:	81 95       	neg	r24
+ b36:	9f 4f       	sbci	r25, 0xFF	; 255
  b38:	08 95       	ret
 
-00000b3a <__udivmodsi4>:
- b3a:	a1 e2       	ldi	r26, 0x21	; 33
- b3c:	1a 2e       	mov	r1, r26
- b3e:	aa 1b       	sub	r26, r26
- b40:	bb 1b       	sub	r27, r27
- b42:	fd 01       	movw	r30, r26
- b44:	0d c0       	rjmp	.+26     	; 0xb60 <__udivmodsi4_ep>
+00000b3a <__divmodhi4_neg2>:
+ b3a:	70 95       	com	r23
+ b3c:	61 95       	neg	r22
+ b3e:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00000b46 <__udivmodsi4_loop>:
- b46:	aa 1f       	adc	r26, r26
- b48:	bb 1f       	adc	r27, r27
- b4a:	ee 1f       	adc	r30, r30
- b4c:	ff 1f       	adc	r31, r31
- b4e:	a2 17       	cp	r26, r18
- b50:	b3 07       	cpc	r27, r19
- b52:	e4 07       	cpc	r30, r20
- b54:	f5 07       	cpc	r31, r21
- b56:	20 f0       	brcs	.+8      	; 0xb60 <__udivmodsi4_ep>
- b58:	a2 1b       	sub	r26, r18
- b5a:	b3 0b       	sbc	r27, r19
- b5c:	e4 0b       	sbc	r30, r20
- b5e:	f5 0b       	sbc	r31, r21
+00000b40 <__divmodhi4_exit>:
+ b40:	08 95       	ret
 
-00000b60 <__udivmodsi4_ep>:
- b60:	66 1f       	adc	r22, r22
- b62:	77 1f       	adc	r23, r23
- b64:	88 1f       	adc	r24, r24
- b66:	99 1f       	adc	r25, r25
- b68:	1a 94       	dec	r1
- b6a:	69 f7       	brne	.-38     	; 0xb46 <__udivmodsi4_loop>
- b6c:	60 95       	com	r22
- b6e:	70 95       	com	r23
- b70:	80 95       	com	r24
- b72:	90 95       	com	r25
- b74:	9b 01       	movw	r18, r22
- b76:	ac 01       	movw	r20, r24
- b78:	bd 01       	movw	r22, r26
- b7a:	cf 01       	movw	r24, r30
- b7c:	08 95       	ret
+00000b42 <__udivmodsi4>:
+ b42:	a1 e2       	ldi	r26, 0x21	; 33
+ b44:	1a 2e       	mov	r1, r26
+ b46:	aa 1b       	sub	r26, r26
+ b48:	bb 1b       	sub	r27, r27
+ b4a:	fd 01       	movw	r30, r26
+ b4c:	0d c0       	rjmp	.+26     	; 0xb68 <__udivmodsi4_ep>
 
-00000b7e <__umulhisi3>:
- b7e:	a2 9f       	mul	r26, r18
- b80:	b0 01       	movw	r22, r0
- b82:	b3 9f       	mul	r27, r19
- b84:	c0 01       	movw	r24, r0
- b86:	a3 9f       	mul	r26, r19
- b88:	70 0d       	add	r23, r0
- b8a:	81 1d       	adc	r24, r1
- b8c:	11 24       	eor	r1, r1
- b8e:	91 1d       	adc	r25, r1
- b90:	b2 9f       	mul	r27, r18
- b92:	70 0d       	add	r23, r0
- b94:	81 1d       	adc	r24, r1
- b96:	11 24       	eor	r1, r1
- b98:	91 1d       	adc	r25, r1
- b9a:	08 95       	ret
+00000b4e <__udivmodsi4_loop>:
+ b4e:	aa 1f       	adc	r26, r26
+ b50:	bb 1f       	adc	r27, r27
+ b52:	ee 1f       	adc	r30, r30
+ b54:	ff 1f       	adc	r31, r31
+ b56:	a2 17       	cp	r26, r18
+ b58:	b3 07       	cpc	r27, r19
+ b5a:	e4 07       	cpc	r30, r20
+ b5c:	f5 07       	cpc	r31, r21
+ b5e:	20 f0       	brcs	.+8      	; 0xb68 <__udivmodsi4_ep>
+ b60:	a2 1b       	sub	r26, r18
+ b62:	b3 0b       	sbc	r27, r19
+ b64:	e4 0b       	sbc	r30, r20
+ b66:	f5 0b       	sbc	r31, r21
 
-00000b9c <__tablejump2__>:
- b9c:	ee 0f       	add	r30, r30
- b9e:	ff 1f       	adc	r31, r31
- ba0:	05 90       	lpm	r0, Z+
- ba2:	f4 91       	lpm	r31, Z
- ba4:	e0 2d       	mov	r30, r0
- ba6:	09 94       	ijmp
+00000b68 <__udivmodsi4_ep>:
+ b68:	66 1f       	adc	r22, r22
+ b6a:	77 1f       	adc	r23, r23
+ b6c:	88 1f       	adc	r24, r24
+ b6e:	99 1f       	adc	r25, r25
+ b70:	1a 94       	dec	r1
+ b72:	69 f7       	brne	.-38     	; 0xb4e <__udivmodsi4_loop>
+ b74:	60 95       	com	r22
+ b76:	70 95       	com	r23
+ b78:	80 95       	com	r24
+ b7a:	90 95       	com	r25
+ b7c:	9b 01       	movw	r18, r22
+ b7e:	ac 01       	movw	r20, r24
+ b80:	bd 01       	movw	r22, r26
+ b82:	cf 01       	movw	r24, r30
+ b84:	08 95       	ret
 
-00000ba8 <malloc>:
- ba8:	0f 93       	push	r16
- baa:	1f 93       	push	r17
- bac:	cf 93       	push	r28
- bae:	df 93       	push	r29
- bb0:	82 30       	cpi	r24, 0x02	; 2
- bb2:	91 05       	cpc	r25, r1
- bb4:	10 f4       	brcc	.+4      	; 0xbba <malloc+0x12>
- bb6:	82 e0       	ldi	r24, 0x02	; 2
- bb8:	90 e0       	ldi	r25, 0x00	; 0
- bba:	e0 91 6e 01 	lds	r30, 0x016E	; 0x80016e <__flp>
- bbe:	f0 91 6f 01 	lds	r31, 0x016F	; 0x80016f <__flp+0x1>
- bc2:	20 e0       	ldi	r18, 0x00	; 0
- bc4:	30 e0       	ldi	r19, 0x00	; 0
- bc6:	a0 e0       	ldi	r26, 0x00	; 0
- bc8:	b0 e0       	ldi	r27, 0x00	; 0
- bca:	30 97       	sbiw	r30, 0x00	; 0
- bcc:	19 f1       	breq	.+70     	; 0xc14 <malloc+0x6c>
- bce:	40 81       	ld	r20, Z
- bd0:	51 81       	ldd	r21, Z+1	; 0x01
- bd2:	02 81       	ldd	r16, Z+2	; 0x02
- bd4:	13 81       	ldd	r17, Z+3	; 0x03
- bd6:	48 17       	cp	r20, r24
- bd8:	59 07       	cpc	r21, r25
- bda:	c8 f0       	brcs	.+50     	; 0xc0e <malloc+0x66>
- bdc:	84 17       	cp	r24, r20
- bde:	95 07       	cpc	r25, r21
- be0:	69 f4       	brne	.+26     	; 0xbfc <malloc+0x54>
- be2:	10 97       	sbiw	r26, 0x00	; 0
- be4:	31 f0       	breq	.+12     	; 0xbf2 <malloc+0x4a>
- be6:	12 96       	adiw	r26, 0x02	; 2
- be8:	0c 93       	st	X, r16
- bea:	12 97       	sbiw	r26, 0x02	; 2
- bec:	13 96       	adiw	r26, 0x03	; 3
- bee:	1c 93       	st	X, r17
- bf0:	27 c0       	rjmp	.+78     	; 0xc40 <malloc+0x98>
- bf2:	00 93 6e 01 	sts	0x016E, r16	; 0x80016e <__flp>
- bf6:	10 93 6f 01 	sts	0x016F, r17	; 0x80016f <__flp+0x1>
- bfa:	22 c0       	rjmp	.+68     	; 0xc40 <malloc+0x98>
- bfc:	21 15       	cp	r18, r1
- bfe:	31 05       	cpc	r19, r1
- c00:	19 f0       	breq	.+6      	; 0xc08 <malloc+0x60>
- c02:	42 17       	cp	r20, r18
- c04:	53 07       	cpc	r21, r19
- c06:	18 f4       	brcc	.+6      	; 0xc0e <malloc+0x66>
- c08:	9a 01       	movw	r18, r20
- c0a:	bd 01       	movw	r22, r26
- c0c:	ef 01       	movw	r28, r30
- c0e:	df 01       	movw	r26, r30
- c10:	f8 01       	movw	r30, r16
- c12:	db cf       	rjmp	.-74     	; 0xbca <malloc+0x22>
- c14:	21 15       	cp	r18, r1
- c16:	31 05       	cpc	r19, r1
- c18:	f9 f0       	breq	.+62     	; 0xc58 <malloc+0xb0>
- c1a:	28 1b       	sub	r18, r24
- c1c:	39 0b       	sbc	r19, r25
- c1e:	24 30       	cpi	r18, 0x04	; 4
- c20:	31 05       	cpc	r19, r1
- c22:	80 f4       	brcc	.+32     	; 0xc44 <malloc+0x9c>
- c24:	8a 81       	ldd	r24, Y+2	; 0x02
- c26:	9b 81       	ldd	r25, Y+3	; 0x03
- c28:	61 15       	cp	r22, r1
- c2a:	71 05       	cpc	r23, r1
- c2c:	21 f0       	breq	.+8      	; 0xc36 <malloc+0x8e>
- c2e:	fb 01       	movw	r30, r22
- c30:	93 83       	std	Z+3, r25	; 0x03
- c32:	82 83       	std	Z+2, r24	; 0x02
- c34:	04 c0       	rjmp	.+8      	; 0xc3e <malloc+0x96>
- c36:	90 93 6f 01 	sts	0x016F, r25	; 0x80016f <__flp+0x1>
- c3a:	80 93 6e 01 	sts	0x016E, r24	; 0x80016e <__flp>
- c3e:	fe 01       	movw	r30, r28
- c40:	32 96       	adiw	r30, 0x02	; 2
- c42:	44 c0       	rjmp	.+136    	; 0xccc <malloc+0x124>
- c44:	fe 01       	movw	r30, r28
- c46:	e2 0f       	add	r30, r18
- c48:	f3 1f       	adc	r31, r19
- c4a:	81 93       	st	Z+, r24
- c4c:	91 93       	st	Z+, r25
- c4e:	22 50       	subi	r18, 0x02	; 2
- c50:	31 09       	sbc	r19, r1
- c52:	39 83       	std	Y+1, r19	; 0x01
- c54:	28 83       	st	Y, r18
- c56:	3a c0       	rjmp	.+116    	; 0xccc <malloc+0x124>
- c58:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
- c5c:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
- c60:	23 2b       	or	r18, r19
- c62:	41 f4       	brne	.+16     	; 0xc74 <malloc+0xcc>
- c64:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__malloc_heap_start>
- c68:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__malloc_heap_start+0x1>
- c6c:	30 93 6d 01 	sts	0x016D, r19	; 0x80016d <__brkval+0x1>
- c70:	20 93 6c 01 	sts	0x016C, r18	; 0x80016c <__brkval>
- c74:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__data_start>
- c78:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__data_start+0x1>
- c7c:	21 15       	cp	r18, r1
- c7e:	31 05       	cpc	r19, r1
- c80:	41 f4       	brne	.+16     	; 0xc92 <malloc+0xea>
- c82:	2d b7       	in	r18, 0x3d	; 61
- c84:	3e b7       	in	r19, 0x3e	; 62
- c86:	40 91 04 01 	lds	r20, 0x0104	; 0x800104 <__malloc_margin>
- c8a:	50 91 05 01 	lds	r21, 0x0105	; 0x800105 <__malloc_margin+0x1>
- c8e:	24 1b       	sub	r18, r20
- c90:	35 0b       	sbc	r19, r21
- c92:	e0 91 6c 01 	lds	r30, 0x016C	; 0x80016c <__brkval>
- c96:	f0 91 6d 01 	lds	r31, 0x016D	; 0x80016d <__brkval+0x1>
- c9a:	e2 17       	cp	r30, r18
- c9c:	f3 07       	cpc	r31, r19
- c9e:	a0 f4       	brcc	.+40     	; 0xcc8 <malloc+0x120>
- ca0:	2e 1b       	sub	r18, r30
- ca2:	3f 0b       	sbc	r19, r31
- ca4:	28 17       	cp	r18, r24
- ca6:	39 07       	cpc	r19, r25
- ca8:	78 f0       	brcs	.+30     	; 0xcc8 <malloc+0x120>
- caa:	ac 01       	movw	r20, r24
- cac:	4e 5f       	subi	r20, 0xFE	; 254
- cae:	5f 4f       	sbci	r21, 0xFF	; 255
- cb0:	24 17       	cp	r18, r20
- cb2:	35 07       	cpc	r19, r21
- cb4:	48 f0       	brcs	.+18     	; 0xcc8 <malloc+0x120>
- cb6:	4e 0f       	add	r20, r30
- cb8:	5f 1f       	adc	r21, r31
- cba:	50 93 6d 01 	sts	0x016D, r21	; 0x80016d <__brkval+0x1>
- cbe:	40 93 6c 01 	sts	0x016C, r20	; 0x80016c <__brkval>
- cc2:	81 93       	st	Z+, r24
- cc4:	91 93       	st	Z+, r25
- cc6:	02 c0       	rjmp	.+4      	; 0xccc <malloc+0x124>
- cc8:	e0 e0       	ldi	r30, 0x00	; 0
- cca:	f0 e0       	ldi	r31, 0x00	; 0
- ccc:	cf 01       	movw	r24, r30
- cce:	df 91       	pop	r29
- cd0:	cf 91       	pop	r28
- cd2:	1f 91       	pop	r17
- cd4:	0f 91       	pop	r16
- cd6:	08 95       	ret
+00000b86 <__umulhisi3>:
+ b86:	a2 9f       	mul	r26, r18
+ b88:	b0 01       	movw	r22, r0
+ b8a:	b3 9f       	mul	r27, r19
+ b8c:	c0 01       	movw	r24, r0
+ b8e:	a3 9f       	mul	r26, r19
+ b90:	70 0d       	add	r23, r0
+ b92:	81 1d       	adc	r24, r1
+ b94:	11 24       	eor	r1, r1
+ b96:	91 1d       	adc	r25, r1
+ b98:	b2 9f       	mul	r27, r18
+ b9a:	70 0d       	add	r23, r0
+ b9c:	81 1d       	adc	r24, r1
+ b9e:	11 24       	eor	r1, r1
+ ba0:	91 1d       	adc	r25, r1
+ ba2:	08 95       	ret
 
-00000cd8 <free>:
- cd8:	cf 93       	push	r28
- cda:	df 93       	push	r29
- cdc:	00 97       	sbiw	r24, 0x00	; 0
- cde:	09 f4       	brne	.+2      	; 0xce2 <free+0xa>
- ce0:	81 c0       	rjmp	.+258    	; 0xde4 <free+0x10c>
- ce2:	fc 01       	movw	r30, r24
- ce4:	32 97       	sbiw	r30, 0x02	; 2
- ce6:	13 82       	std	Z+3, r1	; 0x03
- ce8:	12 82       	std	Z+2, r1	; 0x02
- cea:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <__flp>
- cee:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <__flp+0x1>
- cf2:	10 97       	sbiw	r26, 0x00	; 0
- cf4:	81 f4       	brne	.+32     	; 0xd16 <free+0x3e>
- cf6:	20 81       	ld	r18, Z
- cf8:	31 81       	ldd	r19, Z+1	; 0x01
- cfa:	82 0f       	add	r24, r18
- cfc:	93 1f       	adc	r25, r19
- cfe:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
- d02:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
- d06:	28 17       	cp	r18, r24
- d08:	39 07       	cpc	r19, r25
- d0a:	51 f5       	brne	.+84     	; 0xd60 <free+0x88>
- d0c:	f0 93 6d 01 	sts	0x016D, r31	; 0x80016d <__brkval+0x1>
- d10:	e0 93 6c 01 	sts	0x016C, r30	; 0x80016c <__brkval>
- d14:	67 c0       	rjmp	.+206    	; 0xde4 <free+0x10c>
- d16:	ed 01       	movw	r28, r26
- d18:	20 e0       	ldi	r18, 0x00	; 0
- d1a:	30 e0       	ldi	r19, 0x00	; 0
- d1c:	ce 17       	cp	r28, r30
- d1e:	df 07       	cpc	r29, r31
- d20:	40 f4       	brcc	.+16     	; 0xd32 <free+0x5a>
- d22:	4a 81       	ldd	r20, Y+2	; 0x02
- d24:	5b 81       	ldd	r21, Y+3	; 0x03
- d26:	9e 01       	movw	r18, r28
- d28:	41 15       	cp	r20, r1
- d2a:	51 05       	cpc	r21, r1
- d2c:	f1 f0       	breq	.+60     	; 0xd6a <free+0x92>
- d2e:	ea 01       	movw	r28, r20
- d30:	f5 cf       	rjmp	.-22     	; 0xd1c <free+0x44>
- d32:	d3 83       	std	Z+3, r29	; 0x03
- d34:	c2 83       	std	Z+2, r28	; 0x02
- d36:	40 81       	ld	r20, Z
- d38:	51 81       	ldd	r21, Z+1	; 0x01
- d3a:	84 0f       	add	r24, r20
- d3c:	95 1f       	adc	r25, r21
- d3e:	c8 17       	cp	r28, r24
- d40:	d9 07       	cpc	r29, r25
- d42:	59 f4       	brne	.+22     	; 0xd5a <free+0x82>
- d44:	88 81       	ld	r24, Y
- d46:	99 81       	ldd	r25, Y+1	; 0x01
- d48:	84 0f       	add	r24, r20
- d4a:	95 1f       	adc	r25, r21
- d4c:	02 96       	adiw	r24, 0x02	; 2
- d4e:	91 83       	std	Z+1, r25	; 0x01
- d50:	80 83       	st	Z, r24
- d52:	8a 81       	ldd	r24, Y+2	; 0x02
- d54:	9b 81       	ldd	r25, Y+3	; 0x03
- d56:	93 83       	std	Z+3, r25	; 0x03
- d58:	82 83       	std	Z+2, r24	; 0x02
- d5a:	21 15       	cp	r18, r1
- d5c:	31 05       	cpc	r19, r1
- d5e:	29 f4       	brne	.+10     	; 0xd6a <free+0x92>
- d60:	f0 93 6f 01 	sts	0x016F, r31	; 0x80016f <__flp+0x1>
- d64:	e0 93 6e 01 	sts	0x016E, r30	; 0x80016e <__flp>
- d68:	3d c0       	rjmp	.+122    	; 0xde4 <free+0x10c>
- d6a:	e9 01       	movw	r28, r18
- d6c:	fb 83       	std	Y+3, r31	; 0x03
- d6e:	ea 83       	std	Y+2, r30	; 0x02
- d70:	49 91       	ld	r20, Y+
- d72:	59 91       	ld	r21, Y+
- d74:	c4 0f       	add	r28, r20
- d76:	d5 1f       	adc	r29, r21
- d78:	ec 17       	cp	r30, r28
- d7a:	fd 07       	cpc	r31, r29
- d7c:	61 f4       	brne	.+24     	; 0xd96 <free+0xbe>
- d7e:	80 81       	ld	r24, Z
- d80:	91 81       	ldd	r25, Z+1	; 0x01
- d82:	84 0f       	add	r24, r20
- d84:	95 1f       	adc	r25, r21
- d86:	02 96       	adiw	r24, 0x02	; 2
- d88:	e9 01       	movw	r28, r18
- d8a:	99 83       	std	Y+1, r25	; 0x01
- d8c:	88 83       	st	Y, r24
- d8e:	82 81       	ldd	r24, Z+2	; 0x02
- d90:	93 81       	ldd	r25, Z+3	; 0x03
- d92:	9b 83       	std	Y+3, r25	; 0x03
- d94:	8a 83       	std	Y+2, r24	; 0x02
- d96:	e0 e0       	ldi	r30, 0x00	; 0
- d98:	f0 e0       	ldi	r31, 0x00	; 0
- d9a:	12 96       	adiw	r26, 0x02	; 2
- d9c:	8d 91       	ld	r24, X+
- d9e:	9c 91       	ld	r25, X
- da0:	13 97       	sbiw	r26, 0x03	; 3
- da2:	00 97       	sbiw	r24, 0x00	; 0
- da4:	19 f0       	breq	.+6      	; 0xdac <free+0xd4>
- da6:	fd 01       	movw	r30, r26
- da8:	dc 01       	movw	r26, r24
- daa:	f7 cf       	rjmp	.-18     	; 0xd9a <free+0xc2>
- dac:	8d 91       	ld	r24, X+
- dae:	9c 91       	ld	r25, X
- db0:	11 97       	sbiw	r26, 0x01	; 1
- db2:	9d 01       	movw	r18, r26
- db4:	2e 5f       	subi	r18, 0xFE	; 254
- db6:	3f 4f       	sbci	r19, 0xFF	; 255
- db8:	82 0f       	add	r24, r18
- dba:	93 1f       	adc	r25, r19
- dbc:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
- dc0:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
- dc4:	28 17       	cp	r18, r24
- dc6:	39 07       	cpc	r19, r25
- dc8:	69 f4       	brne	.+26     	; 0xde4 <free+0x10c>
- dca:	30 97       	sbiw	r30, 0x00	; 0
- dcc:	29 f4       	brne	.+10     	; 0xdd8 <free+0x100>
- dce:	10 92 6f 01 	sts	0x016F, r1	; 0x80016f <__flp+0x1>
- dd2:	10 92 6e 01 	sts	0x016E, r1	; 0x80016e <__flp>
- dd6:	02 c0       	rjmp	.+4      	; 0xddc <free+0x104>
- dd8:	13 82       	std	Z+3, r1	; 0x03
- dda:	12 82       	std	Z+2, r1	; 0x02
- ddc:	b0 93 6d 01 	sts	0x016D, r27	; 0x80016d <__brkval+0x1>
- de0:	a0 93 6c 01 	sts	0x016C, r26	; 0x80016c <__brkval>
- de4:	df 91       	pop	r29
- de6:	cf 91       	pop	r28
- de8:	08 95       	ret
+00000ba4 <__tablejump2__>:
+ ba4:	ee 0f       	add	r30, r30
+ ba6:	ff 1f       	adc	r31, r31
+ ba8:	05 90       	lpm	r0, Z+
+ baa:	f4 91       	lpm	r31, Z
+ bac:	e0 2d       	mov	r30, r0
+ bae:	09 94       	ijmp
 
-00000dea <__do_global_dtors>:
- dea:	10 e0       	ldi	r17, 0x00	; 0
- dec:	c5 e3       	ldi	r28, 0x35	; 53
- dee:	d0 e0       	ldi	r29, 0x00	; 0
- df0:	04 c0       	rjmp	.+8      	; 0xdfa <__do_global_dtors+0x10>
- df2:	fe 01       	movw	r30, r28
- df4:	0e 94 ce 05 	call	0xb9c	; 0xb9c <__tablejump2__>
- df8:	21 96       	adiw	r28, 0x01	; 1
- dfa:	c6 33       	cpi	r28, 0x36	; 54
- dfc:	d1 07       	cpc	r29, r17
- dfe:	c9 f7       	brne	.-14     	; 0xdf2 <__do_global_dtors+0x8>
- e00:	f8 94       	cli
+00000bb0 <malloc>:
+ bb0:	0f 93       	push	r16
+ bb2:	1f 93       	push	r17
+ bb4:	cf 93       	push	r28
+ bb6:	df 93       	push	r29
+ bb8:	82 30       	cpi	r24, 0x02	; 2
+ bba:	91 05       	cpc	r25, r1
+ bbc:	10 f4       	brcc	.+4      	; 0xbc2 <malloc+0x12>
+ bbe:	82 e0       	ldi	r24, 0x02	; 2
+ bc0:	90 e0       	ldi	r25, 0x00	; 0
+ bc2:	e0 91 6e 01 	lds	r30, 0x016E	; 0x80016e <__flp>
+ bc6:	f0 91 6f 01 	lds	r31, 0x016F	; 0x80016f <__flp+0x1>
+ bca:	20 e0       	ldi	r18, 0x00	; 0
+ bcc:	30 e0       	ldi	r19, 0x00	; 0
+ bce:	a0 e0       	ldi	r26, 0x00	; 0
+ bd0:	b0 e0       	ldi	r27, 0x00	; 0
+ bd2:	30 97       	sbiw	r30, 0x00	; 0
+ bd4:	19 f1       	breq	.+70     	; 0xc1c <malloc+0x6c>
+ bd6:	40 81       	ld	r20, Z
+ bd8:	51 81       	ldd	r21, Z+1	; 0x01
+ bda:	02 81       	ldd	r16, Z+2	; 0x02
+ bdc:	13 81       	ldd	r17, Z+3	; 0x03
+ bde:	48 17       	cp	r20, r24
+ be0:	59 07       	cpc	r21, r25
+ be2:	c8 f0       	brcs	.+50     	; 0xc16 <malloc+0x66>
+ be4:	84 17       	cp	r24, r20
+ be6:	95 07       	cpc	r25, r21
+ be8:	69 f4       	brne	.+26     	; 0xc04 <malloc+0x54>
+ bea:	10 97       	sbiw	r26, 0x00	; 0
+ bec:	31 f0       	breq	.+12     	; 0xbfa <malloc+0x4a>
+ bee:	12 96       	adiw	r26, 0x02	; 2
+ bf0:	0c 93       	st	X, r16
+ bf2:	12 97       	sbiw	r26, 0x02	; 2
+ bf4:	13 96       	adiw	r26, 0x03	; 3
+ bf6:	1c 93       	st	X, r17
+ bf8:	27 c0       	rjmp	.+78     	; 0xc48 <malloc+0x98>
+ bfa:	00 93 6e 01 	sts	0x016E, r16	; 0x80016e <__flp>
+ bfe:	10 93 6f 01 	sts	0x016F, r17	; 0x80016f <__flp+0x1>
+ c02:	22 c0       	rjmp	.+68     	; 0xc48 <malloc+0x98>
+ c04:	21 15       	cp	r18, r1
+ c06:	31 05       	cpc	r19, r1
+ c08:	19 f0       	breq	.+6      	; 0xc10 <malloc+0x60>
+ c0a:	42 17       	cp	r20, r18
+ c0c:	53 07       	cpc	r21, r19
+ c0e:	18 f4       	brcc	.+6      	; 0xc16 <malloc+0x66>
+ c10:	9a 01       	movw	r18, r20
+ c12:	bd 01       	movw	r22, r26
+ c14:	ef 01       	movw	r28, r30
+ c16:	df 01       	movw	r26, r30
+ c18:	f8 01       	movw	r30, r16
+ c1a:	db cf       	rjmp	.-74     	; 0xbd2 <malloc+0x22>
+ c1c:	21 15       	cp	r18, r1
+ c1e:	31 05       	cpc	r19, r1
+ c20:	f9 f0       	breq	.+62     	; 0xc60 <malloc+0xb0>
+ c22:	28 1b       	sub	r18, r24
+ c24:	39 0b       	sbc	r19, r25
+ c26:	24 30       	cpi	r18, 0x04	; 4
+ c28:	31 05       	cpc	r19, r1
+ c2a:	80 f4       	brcc	.+32     	; 0xc4c <malloc+0x9c>
+ c2c:	8a 81       	ldd	r24, Y+2	; 0x02
+ c2e:	9b 81       	ldd	r25, Y+3	; 0x03
+ c30:	61 15       	cp	r22, r1
+ c32:	71 05       	cpc	r23, r1
+ c34:	21 f0       	breq	.+8      	; 0xc3e <malloc+0x8e>
+ c36:	fb 01       	movw	r30, r22
+ c38:	93 83       	std	Z+3, r25	; 0x03
+ c3a:	82 83       	std	Z+2, r24	; 0x02
+ c3c:	04 c0       	rjmp	.+8      	; 0xc46 <malloc+0x96>
+ c3e:	90 93 6f 01 	sts	0x016F, r25	; 0x80016f <__flp+0x1>
+ c42:	80 93 6e 01 	sts	0x016E, r24	; 0x80016e <__flp>
+ c46:	fe 01       	movw	r30, r28
+ c48:	32 96       	adiw	r30, 0x02	; 2
+ c4a:	44 c0       	rjmp	.+136    	; 0xcd4 <malloc+0x124>
+ c4c:	fe 01       	movw	r30, r28
+ c4e:	e2 0f       	add	r30, r18
+ c50:	f3 1f       	adc	r31, r19
+ c52:	81 93       	st	Z+, r24
+ c54:	91 93       	st	Z+, r25
+ c56:	22 50       	subi	r18, 0x02	; 2
+ c58:	31 09       	sbc	r19, r1
+ c5a:	39 83       	std	Y+1, r19	; 0x01
+ c5c:	28 83       	st	Y, r18
+ c5e:	3a c0       	rjmp	.+116    	; 0xcd4 <malloc+0x124>
+ c60:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
+ c64:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
+ c68:	23 2b       	or	r18, r19
+ c6a:	41 f4       	brne	.+16     	; 0xc7c <malloc+0xcc>
+ c6c:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__malloc_heap_start>
+ c70:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__malloc_heap_start+0x1>
+ c74:	30 93 6d 01 	sts	0x016D, r19	; 0x80016d <__brkval+0x1>
+ c78:	20 93 6c 01 	sts	0x016C, r18	; 0x80016c <__brkval>
+ c7c:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__data_start>
+ c80:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__data_start+0x1>
+ c84:	21 15       	cp	r18, r1
+ c86:	31 05       	cpc	r19, r1
+ c88:	41 f4       	brne	.+16     	; 0xc9a <malloc+0xea>
+ c8a:	2d b7       	in	r18, 0x3d	; 61
+ c8c:	3e b7       	in	r19, 0x3e	; 62
+ c8e:	40 91 04 01 	lds	r20, 0x0104	; 0x800104 <__malloc_margin>
+ c92:	50 91 05 01 	lds	r21, 0x0105	; 0x800105 <__malloc_margin+0x1>
+ c96:	24 1b       	sub	r18, r20
+ c98:	35 0b       	sbc	r19, r21
+ c9a:	e0 91 6c 01 	lds	r30, 0x016C	; 0x80016c <__brkval>
+ c9e:	f0 91 6d 01 	lds	r31, 0x016D	; 0x80016d <__brkval+0x1>
+ ca2:	e2 17       	cp	r30, r18
+ ca4:	f3 07       	cpc	r31, r19
+ ca6:	a0 f4       	brcc	.+40     	; 0xcd0 <malloc+0x120>
+ ca8:	2e 1b       	sub	r18, r30
+ caa:	3f 0b       	sbc	r19, r31
+ cac:	28 17       	cp	r18, r24
+ cae:	39 07       	cpc	r19, r25
+ cb0:	78 f0       	brcs	.+30     	; 0xcd0 <malloc+0x120>
+ cb2:	ac 01       	movw	r20, r24
+ cb4:	4e 5f       	subi	r20, 0xFE	; 254
+ cb6:	5f 4f       	sbci	r21, 0xFF	; 255
+ cb8:	24 17       	cp	r18, r20
+ cba:	35 07       	cpc	r19, r21
+ cbc:	48 f0       	brcs	.+18     	; 0xcd0 <malloc+0x120>
+ cbe:	4e 0f       	add	r20, r30
+ cc0:	5f 1f       	adc	r21, r31
+ cc2:	50 93 6d 01 	sts	0x016D, r21	; 0x80016d <__brkval+0x1>
+ cc6:	40 93 6c 01 	sts	0x016C, r20	; 0x80016c <__brkval>
+ cca:	81 93       	st	Z+, r24
+ ccc:	91 93       	st	Z+, r25
+ cce:	02 c0       	rjmp	.+4      	; 0xcd4 <malloc+0x124>
+ cd0:	e0 e0       	ldi	r30, 0x00	; 0
+ cd2:	f0 e0       	ldi	r31, 0x00	; 0
+ cd4:	cf 01       	movw	r24, r30
+ cd6:	df 91       	pop	r29
+ cd8:	cf 91       	pop	r28
+ cda:	1f 91       	pop	r17
+ cdc:	0f 91       	pop	r16
+ cde:	08 95       	ret
 
-00000e02 <__stop_program>:
- e02:	ff cf       	rjmp	.-2      	; 0xe02 <__stop_program>
+00000ce0 <free>:
+ ce0:	cf 93       	push	r28
+ ce2:	df 93       	push	r29
+ ce4:	00 97       	sbiw	r24, 0x00	; 0
+ ce6:	09 f4       	brne	.+2      	; 0xcea <free+0xa>
+ ce8:	81 c0       	rjmp	.+258    	; 0xdec <free+0x10c>
+ cea:	fc 01       	movw	r30, r24
+ cec:	32 97       	sbiw	r30, 0x02	; 2
+ cee:	13 82       	std	Z+3, r1	; 0x03
+ cf0:	12 82       	std	Z+2, r1	; 0x02
+ cf2:	a0 91 6e 01 	lds	r26, 0x016E	; 0x80016e <__flp>
+ cf6:	b0 91 6f 01 	lds	r27, 0x016F	; 0x80016f <__flp+0x1>
+ cfa:	10 97       	sbiw	r26, 0x00	; 0
+ cfc:	81 f4       	brne	.+32     	; 0xd1e <free+0x3e>
+ cfe:	20 81       	ld	r18, Z
+ d00:	31 81       	ldd	r19, Z+1	; 0x01
+ d02:	82 0f       	add	r24, r18
+ d04:	93 1f       	adc	r25, r19
+ d06:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
+ d0a:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
+ d0e:	28 17       	cp	r18, r24
+ d10:	39 07       	cpc	r19, r25
+ d12:	51 f5       	brne	.+84     	; 0xd68 <free+0x88>
+ d14:	f0 93 6d 01 	sts	0x016D, r31	; 0x80016d <__brkval+0x1>
+ d18:	e0 93 6c 01 	sts	0x016C, r30	; 0x80016c <__brkval>
+ d1c:	67 c0       	rjmp	.+206    	; 0xdec <free+0x10c>
+ d1e:	ed 01       	movw	r28, r26
+ d20:	20 e0       	ldi	r18, 0x00	; 0
+ d22:	30 e0       	ldi	r19, 0x00	; 0
+ d24:	ce 17       	cp	r28, r30
+ d26:	df 07       	cpc	r29, r31
+ d28:	40 f4       	brcc	.+16     	; 0xd3a <free+0x5a>
+ d2a:	4a 81       	ldd	r20, Y+2	; 0x02
+ d2c:	5b 81       	ldd	r21, Y+3	; 0x03
+ d2e:	9e 01       	movw	r18, r28
+ d30:	41 15       	cp	r20, r1
+ d32:	51 05       	cpc	r21, r1
+ d34:	f1 f0       	breq	.+60     	; 0xd72 <free+0x92>
+ d36:	ea 01       	movw	r28, r20
+ d38:	f5 cf       	rjmp	.-22     	; 0xd24 <free+0x44>
+ d3a:	d3 83       	std	Z+3, r29	; 0x03
+ d3c:	c2 83       	std	Z+2, r28	; 0x02
+ d3e:	40 81       	ld	r20, Z
+ d40:	51 81       	ldd	r21, Z+1	; 0x01
+ d42:	84 0f       	add	r24, r20
+ d44:	95 1f       	adc	r25, r21
+ d46:	c8 17       	cp	r28, r24
+ d48:	d9 07       	cpc	r29, r25
+ d4a:	59 f4       	brne	.+22     	; 0xd62 <free+0x82>
+ d4c:	88 81       	ld	r24, Y
+ d4e:	99 81       	ldd	r25, Y+1	; 0x01
+ d50:	84 0f       	add	r24, r20
+ d52:	95 1f       	adc	r25, r21
+ d54:	02 96       	adiw	r24, 0x02	; 2
+ d56:	91 83       	std	Z+1, r25	; 0x01
+ d58:	80 83       	st	Z, r24
+ d5a:	8a 81       	ldd	r24, Y+2	; 0x02
+ d5c:	9b 81       	ldd	r25, Y+3	; 0x03
+ d5e:	93 83       	std	Z+3, r25	; 0x03
+ d60:	82 83       	std	Z+2, r24	; 0x02
+ d62:	21 15       	cp	r18, r1
+ d64:	31 05       	cpc	r19, r1
+ d66:	29 f4       	brne	.+10     	; 0xd72 <free+0x92>
+ d68:	f0 93 6f 01 	sts	0x016F, r31	; 0x80016f <__flp+0x1>
+ d6c:	e0 93 6e 01 	sts	0x016E, r30	; 0x80016e <__flp>
+ d70:	3d c0       	rjmp	.+122    	; 0xdec <free+0x10c>
+ d72:	e9 01       	movw	r28, r18
+ d74:	fb 83       	std	Y+3, r31	; 0x03
+ d76:	ea 83       	std	Y+2, r30	; 0x02
+ d78:	49 91       	ld	r20, Y+
+ d7a:	59 91       	ld	r21, Y+
+ d7c:	c4 0f       	add	r28, r20
+ d7e:	d5 1f       	adc	r29, r21
+ d80:	ec 17       	cp	r30, r28
+ d82:	fd 07       	cpc	r31, r29
+ d84:	61 f4       	brne	.+24     	; 0xd9e <free+0xbe>
+ d86:	80 81       	ld	r24, Z
+ d88:	91 81       	ldd	r25, Z+1	; 0x01
+ d8a:	84 0f       	add	r24, r20
+ d8c:	95 1f       	adc	r25, r21
+ d8e:	02 96       	adiw	r24, 0x02	; 2
+ d90:	e9 01       	movw	r28, r18
+ d92:	99 83       	std	Y+1, r25	; 0x01
+ d94:	88 83       	st	Y, r24
+ d96:	82 81       	ldd	r24, Z+2	; 0x02
+ d98:	93 81       	ldd	r25, Z+3	; 0x03
+ d9a:	9b 83       	std	Y+3, r25	; 0x03
+ d9c:	8a 83       	std	Y+2, r24	; 0x02
+ d9e:	e0 e0       	ldi	r30, 0x00	; 0
+ da0:	f0 e0       	ldi	r31, 0x00	; 0
+ da2:	12 96       	adiw	r26, 0x02	; 2
+ da4:	8d 91       	ld	r24, X+
+ da6:	9c 91       	ld	r25, X
+ da8:	13 97       	sbiw	r26, 0x03	; 3
+ daa:	00 97       	sbiw	r24, 0x00	; 0
+ dac:	19 f0       	breq	.+6      	; 0xdb4 <free+0xd4>
+ dae:	fd 01       	movw	r30, r26
+ db0:	dc 01       	movw	r26, r24
+ db2:	f7 cf       	rjmp	.-18     	; 0xda2 <free+0xc2>
+ db4:	8d 91       	ld	r24, X+
+ db6:	9c 91       	ld	r25, X
+ db8:	11 97       	sbiw	r26, 0x01	; 1
+ dba:	9d 01       	movw	r18, r26
+ dbc:	2e 5f       	subi	r18, 0xFE	; 254
+ dbe:	3f 4f       	sbci	r19, 0xFF	; 255
+ dc0:	82 0f       	add	r24, r18
+ dc2:	93 1f       	adc	r25, r19
+ dc4:	20 91 6c 01 	lds	r18, 0x016C	; 0x80016c <__brkval>
+ dc8:	30 91 6d 01 	lds	r19, 0x016D	; 0x80016d <__brkval+0x1>
+ dcc:	28 17       	cp	r18, r24
+ dce:	39 07       	cpc	r19, r25
+ dd0:	69 f4       	brne	.+26     	; 0xdec <free+0x10c>
+ dd2:	30 97       	sbiw	r30, 0x00	; 0
+ dd4:	29 f4       	brne	.+10     	; 0xde0 <free+0x100>
+ dd6:	10 92 6f 01 	sts	0x016F, r1	; 0x80016f <__flp+0x1>
+ dda:	10 92 6e 01 	sts	0x016E, r1	; 0x80016e <__flp>
+ dde:	02 c0       	rjmp	.+4      	; 0xde4 <free+0x104>
+ de0:	13 82       	std	Z+3, r1	; 0x03
+ de2:	12 82       	std	Z+2, r1	; 0x02
+ de4:	b0 93 6d 01 	sts	0x016D, r27	; 0x80016d <__brkval+0x1>
+ de8:	a0 93 6c 01 	sts	0x016C, r26	; 0x80016c <__brkval>
+ dec:	df 91       	pop	r29
+ dee:	cf 91       	pop	r28
+ df0:	08 95       	ret
+
+00000df2 <__do_global_dtors>:
+ df2:	10 e0       	ldi	r17, 0x00	; 0
+ df4:	c5 e3       	ldi	r28, 0x35	; 53
+ df6:	d0 e0       	ldi	r29, 0x00	; 0
+ df8:	04 c0       	rjmp	.+8      	; 0xe02 <__do_global_dtors+0x10>
+ dfa:	fe 01       	movw	r30, r28
+ dfc:	0e 94 d2 05 	call	0xba4	; 0xba4 <__tablejump2__>
+ e00:	21 96       	adiw	r28, 0x01	; 1
+ e02:	c6 33       	cpi	r28, 0x36	; 54
+ e04:	d1 07       	cpc	r29, r17
+ e06:	c9 f7       	brne	.-14     	; 0xdfa <__do_global_dtors+0x8>
+ e08:	f8 94       	cli
+
+00000e0a <__stop_program>:
+ e0a:	ff cf       	rjmp	.-2      	; 0xe0a <__stop_program>

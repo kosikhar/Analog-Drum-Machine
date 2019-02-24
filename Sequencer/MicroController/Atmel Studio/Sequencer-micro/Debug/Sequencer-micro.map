@@ -495,7 +495,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xe04
+.text           0x00000000      0xe0c
  *(.vectors)
  .vectors       0x00000000       0x68 Z:/Atmel Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
                 0x00000000                __vector_default
@@ -692,132 +692,132 @@ END GROUP
                 0x0000057a                _ZN8BPMInputC2ER5Timer
                 0x0000057a                _ZN8BPMInputC1ER5Timer
  .text._ZN8BPMInput3runEv
-                0x000005ba       0x9a Tasks/BPMInput.o
+                0x000005ba       0xa2 Tasks/BPMInput.o
                 0x000005ba                _ZN8BPMInput3runEv
  .text._ZN8BPMInputD2Ev
-                0x00000654        0x2 Tasks/BPMInput.o
-                0x00000654                _ZN8BPMInputD1Ev
-                0x00000654                _ZN8BPMInputD2Ev
+                0x0000065c        0x2 Tasks/BPMInput.o
+                0x0000065c                _ZN8BPMInputD1Ev
+                0x0000065c                _ZN8BPMInputD2Ev
  .text._ZN6BlinkyC2ER5TimerR8BPMInput
-                0x00000656       0x50 Tasks/Blinky.o
-                0x00000656                _ZN6BlinkyC1ER5TimerR8BPMInput
-                0x00000656                _ZN6BlinkyC2ER5TimerR8BPMInput
+                0x0000065e       0x50 Tasks/Blinky.o
+                0x0000065e                _ZN6BlinkyC1ER5TimerR8BPMInput
+                0x0000065e                _ZN6BlinkyC2ER5TimerR8BPMInput
  .text._ZN6Blinky3runEv
-                0x000006a6       0x88 Tasks/Blinky.o
-                0x000006a6                _ZN6Blinky3runEv
+                0x000006ae       0x88 Tasks/Blinky.o
+                0x000006ae                _ZN6Blinky3runEv
  .text._ZN6BlinkyD2Ev
-                0x0000072e        0x2 Tasks/Blinky.o
-                0x0000072e                _ZN6BlinkyD2Ev
-                0x0000072e                _ZN6BlinkyD1Ev
+                0x00000736        0x2 Tasks/Blinky.o
+                0x00000736                _ZN6BlinkyD2Ev
+                0x00000736                _ZN6BlinkyD1Ev
  .text._ZN5LatchC2ER8SevenSeg
-                0x00000730        0x8 Tasks/Latch.o
-                0x00000730                _ZN5LatchC1ER8SevenSeg
-                0x00000730                _ZN5LatchC2ER8SevenSeg
+                0x00000738        0x8 Tasks/Latch.o
+                0x00000738                _ZN5LatchC1ER8SevenSeg
+                0x00000738                _ZN5LatchC2ER8SevenSeg
  .text._ZN5Latch3runEv
-                0x00000738       0x1a Tasks/Latch.o
-                0x00000738                _ZN5Latch3runEv
+                0x00000740       0x1a Tasks/Latch.o
+                0x00000740                _ZN5Latch3runEv
  .text._ZN5LatchD2Ev
-                0x00000752        0x2 Tasks/Latch.o
-                0x00000752                _ZN5LatchD1Ev
-                0x00000752                _ZN5LatchD2Ev
+                0x0000075a        0x2 Tasks/Latch.o
+                0x0000075a                _ZN5LatchD1Ev
+                0x0000075a                _ZN5LatchD2Ev
  .text._ZN8PrintBPMC2ER5TimerR8BPMInputR8SevenSeg
-                0x00000754       0x26 Tasks/PrintBPM.o
-                0x00000754                _ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg
-                0x00000754                _ZN8PrintBPMC2ER5TimerR8BPMInputR8SevenSeg
+                0x0000075c       0x26 Tasks/PrintBPM.o
+                0x0000075c                _ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg
+                0x0000075c                _ZN8PrintBPMC2ER5TimerR8BPMInputR8SevenSeg
  .text._ZN8PrintBPM3runEv
-                0x0000077a       0x5e Tasks/PrintBPM.o
-                0x0000077a                _ZN8PrintBPM3runEv
+                0x00000782       0x5e Tasks/PrintBPM.o
+                0x00000782                _ZN8PrintBPM3runEv
  .text._ZN8PrintBPMD2Ev
-                0x000007d8        0x2 Tasks/PrintBPM.o
-                0x000007d8                _ZN8PrintBPMD2Ev
-                0x000007d8                _ZN8PrintBPMD1Ev
+                0x000007e0        0x2 Tasks/PrintBPM.o
+                0x000007e0                _ZN8PrintBPMD2Ev
+                0x000007e0                _ZN8PrintBPMD1Ev
  .text._ZN8SevenSegC2EhR5Timer
-                0x000007da       0x9a Tasks/SevenSeg.o
-                0x000007da                _ZN8SevenSegC1EhR5Timer
-                0x000007da                _ZN8SevenSegC2EhR5Timer
+                0x000007e2       0x9a Tasks/SevenSeg.o
+                0x000007e2                _ZN8SevenSegC1EhR5Timer
+                0x000007e2                _ZN8SevenSegC2EhR5Timer
  .text._ZN8SevenSeg3runEv
-                0x00000874       0xbc Tasks/SevenSeg.o
-                0x00000874                _ZN8SevenSeg3runEv
+                0x0000087c       0xbc Tasks/SevenSeg.o
+                0x0000087c                _ZN8SevenSeg3runEv
  .text._ZN8SevenSegD2Ev
-                0x00000930        0x6 Tasks/SevenSeg.o
-                0x00000930                _ZN8SevenSegD2Ev
-                0x00000930                _ZN8SevenSegD1Ev
+                0x00000938        0x6 Tasks/SevenSeg.o
+                0x00000938                _ZN8SevenSegD2Ev
+                0x00000938                _ZN8SevenSegD1Ev
  .text._ZN11TaskManagerC2ER5Timer
-                0x00000936        0xe Tasks/TaskManager.o
-                0x00000936                _ZN11TaskManagerC2ER5Timer
-                0x00000936                _ZN11TaskManagerC1ER5Timer
+                0x0000093e        0xe Tasks/TaskManager.o
+                0x0000093e                _ZN11TaskManagerC2ER5Timer
+                0x0000093e                _ZN11TaskManagerC1ER5Timer
  .text._ZN11TaskManager7addTaskEPFvvEh
-                0x00000944       0x26 Tasks/TaskManager.o
-                0x00000944                _ZN11TaskManager7addTaskEPFvvEh
+                0x0000094c       0x26 Tasks/TaskManager.o
+                0x0000094c                _ZN11TaskManager7addTaskEPFvvEh
  .text._ZN11TaskManager20generateRandomNumberEv
-                0x0000096a       0x1c Tasks/TaskManager.o
-                0x0000096a                _ZN11TaskManager20generateRandomNumberEv
+                0x00000972       0x1c Tasks/TaskManager.o
+                0x00000972                _ZN11TaskManager20generateRandomNumberEv
  .text._ZN11TaskManager8runTasksEv
-                0x00000986       0x68 Tasks/TaskManager.o
-                0x00000986                _ZN11TaskManager8runTasksEv
+                0x0000098e       0x68 Tasks/TaskManager.o
+                0x0000098e                _ZN11TaskManager8runTasksEv
  .text._ZN7TriggerC2ER5TimerR6Blinky
-                0x000009ee       0x30 Tasks/Trigger.o
-                0x000009ee                _ZN7TriggerC1ER5TimerR6Blinky
-                0x000009ee                _ZN7TriggerC2ER5TimerR6Blinky
+                0x000009f6       0x30 Tasks/Trigger.o
+                0x000009f6                _ZN7TriggerC1ER5TimerR6Blinky
+                0x000009f6                _ZN7TriggerC2ER5TimerR6Blinky
  .text._ZN7Trigger3runEv
-                0x00000a1e       0x56 Tasks/Trigger.o
-                0x00000a1e                _ZN7Trigger3runEv
+                0x00000a26       0x56 Tasks/Trigger.o
+                0x00000a26                _ZN7Trigger3runEv
  .text._ZN7TriggerD2Ev
-                0x00000a74        0x2 Tasks/Trigger.o
-                0x00000a74                _ZN7TriggerD2Ev
-                0x00000a74                _ZN7TriggerD1Ev
+                0x00000a7c        0x2 Tasks/Trigger.o
+                0x00000a7c                _ZN7TriggerD2Ev
+                0x00000a7c                _ZN7TriggerD1Ev
  .text._ZN5TimerC2Ev
-                0x00000a76       0x14 timer.o
-                0x00000a76                _ZN5TimerC2Ev
-                0x00000a76                _ZN5TimerC1Ev
+                0x00000a7e       0x14 timer.o
+                0x00000a7e                _ZN5TimerC2Ev
+                0x00000a7e                _ZN5TimerC1Ev
  .text._ZN5Timer14incrementTimerEv
-                0x00000a8a       0x1c timer.o
-                0x00000a8a                _ZN5Timer14incrementTimerEv
+                0x00000a92       0x1c timer.o
+                0x00000a92                _ZN5Timer14incrementTimerEv
  .text._ZN5Timer14elapsed_millisEm
-                0x00000aa6       0x24 timer.o
-                0x00000aa6                _ZN5Timer14elapsed_millisEm
+                0x00000aae       0x24 timer.o
+                0x00000aae                _ZN5Timer14elapsed_millisEm
  .text._ZN5Timer6millisEv
-                0x00000aca        0xc timer.o
-                0x00000aca                _ZN5Timer6millisEv
+                0x00000ad2        0xc timer.o
+                0x00000ad2                _ZN5Timer6millisEv
  .text._ZN5Timer8wait_1usEv
-                0x00000ad6       0x12 timer.o
-                0x00000ad6                _ZN5Timer8wait_1usEv
+                0x00000ade       0x12 timer.o
+                0x00000ade                _ZN5Timer8wait_1usEv
  .text._ZN5TimerD2Ev
-                0x00000ae8        0x2 timer.o
-                0x00000ae8                _ZN5TimerD2Ev
-                0x00000ae8                _ZN5TimerD1Ev
+                0x00000af0        0x2 timer.o
+                0x00000af0                _ZN5TimerD2Ev
+                0x00000af0                _ZN5TimerD1Ev
  .text.libgcc.div
-                0x00000aea       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x00000aea                __udivmodhi4
+                0x00000af2       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000af2                __udivmodhi4
  .text.libgcc.div
-                0x00000b12       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00000b12                _div
-                0x00000b12                __divmodhi4
+                0x00000b1a       0x28 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x00000b1a                _div
+                0x00000b1a                __divmodhi4
  .text.libgcc.div
-                0x00000b3a       0x44 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000b3a                __udivmodsi4
+                0x00000b42       0x44 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000b42                __udivmodsi4
  .text.libgcc.mul
-                0x00000b7e       0x1e z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x00000b7e                __umulhisi3
- .text.libgcc   0x00000b9c        0xc z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x00000b9c                __tablejump2__
+                0x00000b86       0x1e z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000b86                __umulhisi3
+ .text.libgcc   0x00000ba4        0xc z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00000ba4                __tablejump2__
  .text.avr-libc
-                0x00000ba8      0x242 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x00000ba8                malloc
-                0x00000cd8                free
-                0x00000dea                . = ALIGN (0x2)
+                0x00000bb0      0x242 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00000bb0                malloc
+                0x00000ce0                free
+                0x00000df2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000dea        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000dea                _exit
-                0x00000dea                exit
+ .fini9         0x00000df2        0x0 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000df2                _exit
+                0x00000df2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x00000dea       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
-                0x00000dea                __do_global_dtors
+ .fini6         0x00000df2       0x16 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                0x00000df2                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -830,11 +830,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000e00        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000e08        0x4 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000e04                _etext = .
+                0x00000e0c                _etext = .
 
-.data           0x00800100       0x12 load address 0x00000e04
+.data           0x00800100       0x12 load address 0x00000e0c
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x6 z:/atmel studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
@@ -876,8 +876,8 @@ END GROUP
                 0x0080016c                __brkval
                 0x0080016e                __flp
                 0x00800170                PROVIDE (__bss_end, .)
-                0x00000e04                __data_load_start = LOADADDR (.data)
-                0x00000e16                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000e0c                __data_load_start = LOADADDR (.data)
+                0x00000e1e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800170        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

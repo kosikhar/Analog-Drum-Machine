@@ -15,8 +15,8 @@
 //Using Seven Seg to print BPM
 #include "SevenSeg.h"
 
-//Display will only update every 250 ms
-#define BPM_MIN_UPDATE_TIME 2500
+//Display will only update every 100 ms
+#define BPM_MIN_UPDATE_TIME 1000
 
 class PrintBPM
 {

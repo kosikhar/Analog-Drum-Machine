@@ -18,8 +18,8 @@
 #define BPM_INPUT_PIN 3
 
 //How many samples for averaging (to the power of 2) ie 2^5 = 32 samples
-#define SAMPLES 64
-#define SAMPLES_LOG2 6
+#define SAMPLES 16
+#define SAMPLES_LOG2 4
 
 //Add this value to the recorded BPM
 #define BPM_OFFSET 30
