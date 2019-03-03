@@ -22,7 +22,7 @@ InputPoll::InputPoll( Timer & timerPtr, DigitalInput & buttonInputPtr )
 
 void InputPoll::run( void )
 {
-	//Latch input with th polling time.
+	//Latch input with the polling time.
 	if ( timer->elapsed_millis(timeStamp) > POLLING_TIME ){
 				
 		//Indicate there is a new input to process

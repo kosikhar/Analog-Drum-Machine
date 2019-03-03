@@ -25,10 +25,15 @@ DigitalInput::DigitalInput( void ) : ShiftRegister_PISO ()
 } //DigitalInput
 
 //Will run several times to prevent blocking
+//Reads 8 bits per run
 void DigitalInput::run( void )
 {
 	//Check to see if there is a new input to process
 	if (newInput == true){	
+		
+		//Indicate Shifting is not complete. Will take multiple rounds. 
+		//Each round we will load 8 bits.
+		shiftComplete = false;
 		
 		//Shifts in 8 bits
 		//Places result into 'input_byte'
@@ -43,6 +48,8 @@ void DigitalInput::run( void )
 		//If data has been collected by all the shift registers 
 		//reset newInput flag, and the index
 		if ( shiftRegister_index >= NUM_SHIFT_REGISTERS ){
+			
+			//Reset the index.
 			shiftRegister_index = 0;
 			
 			//Allow the input poll object to latch a new input.

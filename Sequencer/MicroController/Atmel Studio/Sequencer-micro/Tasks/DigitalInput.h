@@ -33,6 +33,7 @@ constexpr const uint8_t getNumRegisters ( void )
 //Serial output shift registers
 #define INPUT_PIN_PORT PORTB
 
+//Object for taking digital input from a PISO shift register.
 class DigitalInput : public ShiftRegister_PISO
 {
 	//variables
@@ -59,7 +60,7 @@ class DigitalInput : public ShiftRegister_PISO
 		DigitalInput();
 		~DigitalInput();
 		
-		//Shifts bits into uC in align with a polling rate
+		//Shifts bits into uC in alignment with a polling rate
 		void run( void );
 		
 		void read( void );
