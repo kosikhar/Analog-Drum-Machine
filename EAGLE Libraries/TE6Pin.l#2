@@ -185,9 +185,9 @@ by exp-lbrs.ulp</description>
 <wire x1="-3" y1="-7" x2="11" y2="-7" width="0.127" layer="21"/>
 <wire x1="11" y1="-7" x2="11" y2="3" width="0.127" layer="21"/>
 <wire x1="11" y1="3" x2="-3" y2="3" width="0.127" layer="21"/>
-<pad name="AGND1" x="8.28" y="-4.14" drill="1.4" shape="square"/>
-<pad name="AGND0" x="4.14" y="-4.14" drill="1.4" shape="square"/>
-<pad name="DGND" x="0" y="-4.14" drill="1.4" shape="square"/>
+<pad name="GND2" x="8.28" y="-4.14" drill="1.4" shape="square"/>
+<pad name="GND1" x="4.14" y="-4.14" drill="1.4" shape="square"/>
+<pad name="GND0" x="0" y="-4.14" drill="1.4" shape="square"/>
 <pad name="+12V" x="8.28" y="0" drill="1.4" shape="square"/>
 <pad name="-12V" x="4.14" y="0" drill="1.4" shape="square"/>
 <pad name="+5V" x="0" y="0" drill="1.4" shape="square"/>
@@ -201,18 +201,12 @@ by exp-lbrs.ulp</description>
 <wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
-<pin name="+5V" x="-5.08" y="7.62" visible="off" length="middle" rot="R270"/>
-<pin name="-12V" x="0" y="7.62" visible="off" length="middle" rot="R270"/>
-<pin name="+12V" x="5.08" y="7.62" visible="off" length="middle" rot="R270"/>
-<pin name="AGND1" x="5.08" y="-7.62" visible="off" length="middle" rot="R90"/>
-<pin name="AGND0" x="0" y="-7.62" visible="off" length="middle" rot="R90"/>
-<pin name="DGND" x="-5.08" y="-7.62" visible="off" length="middle" rot="R90"/>
-<text x="-5.08" y="-7.62" size="1.016" layer="94" rot="R90">DGND</text>
-<text x="0" y="-7.62" size="1.016" layer="94" rot="R90">AGND</text>
-<text x="5.08" y="-7.62" size="1.016" layer="94" rot="R90">AGND</text>
-<text x="-5.08" y="5.08" size="1.016" layer="94" rot="R90">+5V</text>
-<text x="0" y="4.572" size="1.016" layer="94" rot="R90">-12V</text>
-<text x="5.08" y="4.318" size="1.016" layer="94" rot="R90">+12V</text>
+<pin name="P$1" x="-5.08" y="7.62" visible="off" length="middle" rot="R270"/>
+<pin name="P$2" x="0" y="7.62" visible="off" length="middle" rot="R270"/>
+<pin name="P$3" x="5.08" y="7.62" visible="off" length="middle" rot="R270"/>
+<pin name="P$4" x="5.08" y="-7.62" visible="off" length="middle" rot="R90"/>
+<pin name="P$5" x="0" y="-7.62" visible="off" length="middle" rot="R90"/>
+<pin name="P$6" x="-5.08" y="-7.62" visible="off" length="middle" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
