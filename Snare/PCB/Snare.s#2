@@ -20063,10 +20063,15 @@ NS Package M08A</description>
 <plain>
 <text x="129.54" y="73.66" size="1.778" layer="94">Note: The third pin of POT2 should be grounded
 POT2B should be the middle pin</text>
-<text x="365.76" y="269.24" size="1.778" layer="94">Note: The third pin of POT1 should be grounded
-POT1B should be the middle pin</text>
-<text x="325.12" y="165.1" size="1.778" layer="94">Note: POT1B is the drum output</text>
-<text x="332.74" y="129.54" size="1.778" layer="94">Note: Switch turns the snare on/off</text>
+<text x="365.76" y="269.24" size="1.778" layer="94">Note: 
+1) POT1A is the drum output
+2) The third pin of POT1 should be grounded
+3) POT1B should be the middle pin of the POT</text>
+<text x="332.74" y="160.02" size="1.778" layer="94">Note: POT1B is the drum output</text>
+<text x="332.74" y="124.46" size="1.778" layer="94">Note: 
+1) Switch turns the snare on/off
+2) SW1 and SW2 normally connected
+3) SW3 should be left open on the pot board</text>
 </plain>
 <instances>
 <instance part="SV1" gate="1" x="83.82" y="398.78" smashed="yes" rot="R180">

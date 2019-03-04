@@ -19985,10 +19985,10 @@ NS Package M08A</description>
 <part name="C34" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="IC6" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="C35" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="100K" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="2k"/>
+<part name="R101" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100k"/>
 <part name="C36" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C37" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="47K" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="2k"/>
+<part name="R100" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
 <part name="IC7" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="C38" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="1nF"/>
 <part name="R43" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="2k"/>
@@ -20159,7 +20159,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="43.561" y="257.556" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="38.481" y="257.556" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="100K" gate="G$1" x="88.9" y="287.02" smashed="yes" rot="R180">
+<instance part="R101" gate="G$1" x="88.9" y="287.02" smashed="yes" rot="R180">
 <attribute name="NAME" x="90.17" y="285.5214" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="92.71" y="290.322" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -20171,7 +20171,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="91.821" y="275.336" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="86.741" y="275.336" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="47K" gate="G$1" x="55.88" y="259.08" smashed="yes" rot="R180">
+<instance part="R100" gate="G$1" x="55.88" y="259.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="57.15" y="257.5814" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="59.69" y="262.382" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -21098,17 +21098,17 @@ POT2B should be the middle pin</text>
 <segment>
 <pinref part="IC6" gate="A" pin="-IN"/>
 <wire x1="76.2" y1="259.08" x2="71.12" y2="259.08" width="0.1524" layer="91"/>
-<pinref part="100K" gate="G$1" pin="2"/>
+<pinref part="R101" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="259.08" x2="71.12" y2="287.02" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="287.02" x2="83.82" y2="287.02" width="0.1524" layer="91"/>
-<pinref part="47K" gate="G$1" pin="1"/>
+<pinref part="R100" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="259.08" x2="60.96" y2="259.08" width="0.1524" layer="91"/>
 <junction x="71.12" y="259.08"/>
 </segment>
 </net>
 <net name="WHITE_NOISE_AMP" class="0">
 <segment>
-<pinref part="100K" gate="G$1" pin="1"/>
+<pinref part="R101" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="287.02" x2="116.84" y2="287.02" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="287.02" x2="116.84" y2="261.62" width="0.1524" layer="91"/>
 <pinref part="IC6" gate="A" pin="OUT"/>
@@ -21131,7 +21131,7 @@ POT2B should be the middle pin</text>
 </net>
 <net name="N$28" class="0">
 <segment>
-<pinref part="47K" gate="G$1" pin="2"/>
+<pinref part="R100" gate="G$1" pin="2"/>
 <pinref part="C35" gate="G$1" pin="1"/>
 <wire x1="50.8" y1="259.08" x2="45.72" y2="259.08" width="0.1524" layer="91"/>
 </segment>
