@@ -20063,9 +20063,15 @@ NS Package M08A</description>
 <plain>
 <text x="129.54" y="73.66" size="1.778" layer="94">Note: The third pin of POT2 should be grounded
 POT2B should be the middle pin</text>
-<text x="365.76" y="269.24" size="1.778" layer="94">Note: The third pin of POT1 should be grounded
-POT1B should be the middle pin</text>
-<text x="325.12" y="165.1" size="1.778" layer="94">Note: POT1B is the drum output</text>
+<text x="365.76" y="269.24" size="1.778" layer="94">Note: 
+1) POT1A is the drum output
+2) The third pin of POT1 should be grounded
+3) POT1B should be the middle pin of the POT</text>
+<text x="332.74" y="160.02" size="1.778" layer="94">Note: POT1B is the drum output</text>
+<text x="332.74" y="124.46" size="1.778" layer="94">Note: 
+1) Switch turns the snare on/off
+2) SW1 and SW2 normally connected
+3) SW3 should be left open on the pot board</text>
 </plain>
 <instances>
 <instance part="SV1" gate="1" x="83.82" y="398.78" smashed="yes" rot="R180">
@@ -20676,12 +20682,27 @@ POT1B should be the middle pin</text>
 <wire x1="91.44" y1="388.62" x2="96.52" y2="388.62" width="0.1524" layer="91"/>
 <label x="96.52" y="388.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="365.76" y1="139.7" x2="360.68" y2="139.7" width="0.1524" layer="91"/>
+<label x="358.14" y="139.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SW1" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="18"/>
 <wire x1="91.44" y1="391.16" x2="96.52" y2="391.16" width="0.1524" layer="91"/>
 <label x="96.52" y="391.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC10" gate="A" pin="OUT"/>
+<label x="335.28" y="139.7" size="1.778" layer="95"/>
+<pinref part="R60" gate="G$1" pin="1"/>
+<wire x1="304.8" y1="139.7" x2="294.64" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="177.8" x2="304.8" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="177.8" x2="304.8" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="139.7" x2="337.82" y2="139.7" width="0.1524" layer="91"/>
+<junction x="304.8" y="139.7"/>
 </segment>
 </net>
 <net name="TRIGGER" class="0">
@@ -21331,20 +21352,6 @@ POT1B should be the middle pin</text>
 <junction x="236.22" y="76.2"/>
 <label x="261.62" y="73.66" size="1.778" layer="95" rot="MR0"/>
 <wire x1="261.62" y1="76.2" x2="236.22" y2="76.2" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="VCA_OUT" class="0">
-<segment>
-<pinref part="R9" gate="G$1" pin="2"/>
-<label x="340.106" y="140.716" size="1.778" layer="95"/>
-<pinref part="IC10" gate="A" pin="OUT"/>
-<label x="302.26" y="137.16" size="1.778" layer="95"/>
-<pinref part="R60" gate="G$1" pin="1"/>
-<wire x1="304.8" y1="139.7" x2="294.64" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="294.64" y1="177.8" x2="304.8" y2="177.8" width="0.1524" layer="91"/>
-<wire x1="304.8" y1="177.8" x2="304.8" y2="139.7" width="0.1524" layer="91"/>
-<junction x="304.8" y="139.7"/>
-<wire x1="304.8" y1="139.7" x2="365.76" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$45" class="0">
