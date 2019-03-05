@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="8.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -950,39 +950,21 @@
 <packages3d>
 <package3d name="2X12" urn="urn:adsk.eagle:package:22420/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X12"/>
-</packageinstances>
 </package3d>
 <package3d name="2X12/90" urn="urn:adsk.eagle:package:22422/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X12/90"/>
-</packageinstances>
 </package3d>
 <package3d name="2X20" urn="urn:adsk.eagle:package:22443/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X20"/>
-</packageinstances>
 </package3d>
 <package3d name="2X20/90" urn="urn:adsk.eagle:package:22440/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X20/90"/>
-</packageinstances>
 </package3d>
 <package3d name="2X03" urn="urn:adsk.eagle:package:22462/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X03"/>
-</packageinstances>
 </package3d>
 <package3d name="2X03/90" urn="urn:adsk.eagle:package:22464/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X03/90"/>
-</packageinstances>
 </package3d>
 </packages3d>
 <symbols>
@@ -1428,9 +1410,6 @@ W = angled&lt;p&gt;
 <packages3d>
 <package3d name="MA03-2" urn="urn:adsk.eagle:package:8334/1" type="box" library_version="1">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="MA03-2"/>
-</packageinstances>
 </package3d>
 </packages3d>
 <symbols>
@@ -1498,8 +1477,8 @@ W = angled&lt;p&gt;
 </classes>
 <parts>
 <part name="INSTRUMENT_1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
-<part name="INSTRUMENT_2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
 <part name="INSTRUMENT_3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
+<part name="INSTRUMENT_2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
 <part name="PATA_CABLE" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X20" device="" package3d_urn="urn:adsk.eagle:package:22443/2"/>
 <part name="1/4&quot;JACK" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X3" device="" package3d_urn="urn:adsk.eagle:package:22462/2"/>
 <part name="MIXER_OUTPUT" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X3" device="" package3d_urn="urn:adsk.eagle:package:22462/2"/>
@@ -1518,13 +1497,13 @@ W = angled&lt;p&gt;
 <attribute name="NAME" x="3.81" y="76.835" size="1.778" layer="95"/>
 <attribute name="VALUE" x="21.59" y="38.1" size="1.778" layer="96"/>
 </instance>
-<instance part="INSTRUMENT_2" gate="A" x="114.3" y="58.42" smashed="yes">
-<attribute name="NAME" x="90.17" y="76.835" size="1.778" layer="95"/>
-<attribute name="VALUE" x="107.95" y="38.1" size="1.778" layer="96"/>
+<instance part="INSTRUMENT_3" gate="A" x="208.28" y="58.42" smashed="yes">
+<attribute name="NAME" x="184.15" y="76.835" size="1.778" layer="95"/>
+<attribute name="VALUE" x="201.93" y="38.1" size="1.778" layer="96"/>
 </instance>
-<instance part="INSTRUMENT_3" gate="A" x="195.58" y="58.42" smashed="yes">
-<attribute name="NAME" x="171.45" y="76.835" size="1.778" layer="95"/>
-<attribute name="VALUE" x="189.23" y="38.1" size="1.778" layer="96"/>
+<instance part="INSTRUMENT_2" gate="A" x="124.46" y="58.42" smashed="yes">
+<attribute name="NAME" x="100.33" y="76.835" size="1.778" layer="95"/>
+<attribute name="VALUE" x="118.11" y="38.1" size="1.778" layer="96"/>
 </instance>
 <instance part="PATA_CABLE" gate="A" x="78.74" y="5.08" smashed="yes">
 <attribute name="NAME" x="57.15" y="33.655" size="1.778" layer="95"/>
@@ -1569,9 +1548,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_10A" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="13"/>
-<wire x1="111.76" y1="55.88" x2="106.68" y2="55.88" width="0.1524" layer="91"/>
-<label x="106.68" y="55.88" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="13"/>
+<wire x1="205.74" y1="55.88" x2="200.66" y2="55.88" width="0.1524" layer="91"/>
+<label x="200.66" y="55.88" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="2.54" x2="88.9" y2="2.54" width="0.1524" layer="91"/>
@@ -1581,9 +1560,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_11A" class="0">
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="5"/>
-<wire x1="193.04" y1="66.04" x2="187.96" y2="66.04" width="0.1524" layer="91"/>
-<label x="187.96" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="5"/>
+<wire x1="121.92" y1="66.04" x2="116.84" y2="66.04" width="0.1524" layer="91"/>
+<label x="116.84" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
@@ -1593,9 +1572,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_12A" class="0">
 <segment>
-<wire x1="193.04" y1="63.5" x2="172.72" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="7"/>
-<label x="172.72" y="63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="121.92" y1="63.5" x2="101.6" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="7"/>
+<label x="101.6" y="63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-7.62" x2="71.12" y2="-7.62" width="0.1524" layer="91"/>
@@ -1605,9 +1584,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_12B" class="0">
 <segment>
-<wire x1="200.66" y1="63.5" x2="220.98" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="8"/>
-<label x="220.98" y="63.5" size="1.778" layer="95" xref="yes"/>
+<wire x1="129.54" y1="63.5" x2="149.86" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="8"/>
+<label x="149.86" y="63.5" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="-7.62" x2="88.9" y2="-7.62" width="0.1524" layer="91"/>
@@ -1617,9 +1596,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_11B" class="0">
 <segment>
-<wire x1="205.74" y1="66.04" x2="200.66" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="6"/>
-<label x="205.74" y="66.04" size="1.778" layer="95" xref="yes"/>
+<wire x1="134.62" y1="66.04" x2="129.54" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="6"/>
+<label x="134.62" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="104.14" y1="-5.08" x2="83.82" y2="-5.08" width="0.1524" layer="91"/>
@@ -1634,14 +1613,14 @@ W = angled&lt;p&gt;
 <label x="38.1" y="71.12" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="71.12" x2="119.38" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="2"/>
-<label x="124.46" y="71.12" size="1.778" layer="95" xref="yes"/>
+<wire x1="218.44" y1="71.12" x2="213.36" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="2"/>
+<label x="218.44" y="71.12" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="205.74" y1="71.12" x2="200.66" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="2"/>
-<label x="205.74" y="71.12" size="1.778" layer="95" xref="yes"/>
+<wire x1="134.62" y1="71.12" x2="129.54" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="2"/>
+<label x="134.62" y="71.12" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="POWER_SUPPLY" gate="G$1" pin="+12V"/>
@@ -1666,14 +1645,14 @@ W = angled&lt;p&gt;
 <wire x1="33.02" y1="68.58" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="4"/>
-<wire x1="119.38" y1="68.58" x2="139.7" y2="68.58" width="0.1524" layer="91"/>
-<label x="139.7" y="68.58" size="1.778" layer="95" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="4"/>
+<wire x1="213.36" y1="68.58" x2="233.68" y2="68.58" width="0.1524" layer="91"/>
+<label x="233.68" y="68.58" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="4"/>
-<wire x1="200.66" y1="68.58" x2="218.44" y2="68.58" width="0.1524" layer="91"/>
-<label x="218.44" y="68.58" size="1.778" layer="95" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="4"/>
+<wire x1="129.54" y1="68.58" x2="147.32" y2="68.58" width="0.1524" layer="91"/>
+<label x="147.32" y="68.58" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="POWER_SUPPLY" gate="G$1" pin="-12V"/>
@@ -1703,24 +1682,24 @@ W = angled&lt;p&gt;
 <label x="53.34" y="45.72" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="50.8" x2="119.38" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="18"/>
-<label x="124.46" y="50.8" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="124.46" y1="45.72" x2="119.38" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="22"/>
-<label x="124.46" y="45.72" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<wire x1="205.74" y1="50.8" x2="200.66" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="50.8" x2="213.36" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="INSTRUMENT_3" gate="A" pin="18"/>
-<label x="205.74" y="50.8" size="1.778" layer="95" xref="yes"/>
+<label x="218.44" y="50.8" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="205.74" y1="45.72" x2="200.66" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="45.72" x2="213.36" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="INSTRUMENT_3" gate="A" pin="22"/>
-<label x="205.74" y="45.72" size="1.778" layer="95" xref="yes"/>
+<label x="218.44" y="45.72" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="134.62" y1="50.8" x2="129.54" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="18"/>
+<label x="134.62" y="50.8" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="134.62" y1="45.72" x2="129.54" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="22"/>
+<label x="134.62" y="45.72" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="1/4&quot;JACK" gate="A" pin="6"/>
@@ -1794,14 +1773,14 @@ W = angled&lt;p&gt;
 <label x="5.08" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="3"/>
-<wire x1="111.76" y1="68.58" x2="91.44" y2="68.58" width="0.1524" layer="91"/>
-<label x="91.44" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="3"/>
+<wire x1="205.74" y1="68.58" x2="185.42" y2="68.58" width="0.1524" layer="91"/>
+<label x="185.42" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="3"/>
-<wire x1="193.04" y1="68.58" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
-<label x="172.72" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="3"/>
+<wire x1="121.92" y1="68.58" x2="101.6" y2="68.58" width="0.1524" layer="91"/>
+<label x="101.6" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="POWER_SUPPLY" gate="G$1" pin="DGND"/>
@@ -1821,14 +1800,14 @@ W = angled&lt;p&gt;
 </net>
 <net name="+5V" class="0">
 <segment>
-<wire x1="106.68" y1="71.12" x2="111.76" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="1"/>
-<label x="106.68" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="200.66" y1="71.12" x2="205.74" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="1"/>
+<label x="200.66" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="1"/>
-<wire x1="193.04" y1="71.12" x2="187.96" y2="71.12" width="0.1524" layer="91"/>
-<label x="187.96" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="1"/>
+<wire x1="121.92" y1="71.12" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
+<label x="116.84" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="INSTRUMENT_1" gate="A" pin="1"/>
@@ -1853,9 +1832,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_7" class="0">
 <segment>
-<wire x1="200.66" y1="53.34" x2="220.98" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="16"/>
-<label x="220.98" y="53.34" size="1.778" layer="95" xref="yes"/>
+<wire x1="129.54" y1="53.34" x2="149.86" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="16"/>
+<label x="149.86" y="53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="-17.78" x2="88.9" y2="-17.78" width="0.1524" layer="91"/>
@@ -1865,9 +1844,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_9" class="0">
 <segment>
-<wire x1="193.04" y1="48.26" x2="172.72" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="19"/>
-<label x="172.72" y="48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="121.92" y1="48.26" x2="101.6" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="19"/>
+<label x="101.6" y="48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-20.32" x2="55.88" y2="-20.32" width="0.1524" layer="91"/>
@@ -1877,9 +1856,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_4" class="0">
 <segment>
-<wire x1="119.38" y1="53.34" x2="139.7" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="16"/>
-<label x="139.7" y="53.34" size="1.778" layer="95" xref="yes"/>
+<wire x1="213.36" y1="53.34" x2="233.68" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="16"/>
+<label x="233.68" y="53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-2.54" x2="71.12" y2="-2.54" width="0.1524" layer="91"/>
@@ -1889,9 +1868,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_8" class="0">
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="17"/>
-<wire x1="187.96" y1="50.8" x2="193.04" y2="50.8" width="0.1524" layer="91"/>
-<label x="187.96" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="17"/>
+<wire x1="116.84" y1="50.8" x2="121.92" y2="50.8" width="0.1524" layer="91"/>
+<label x="116.84" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="71.12" y1="-17.78" x2="76.2" y2="-17.78" width="0.1524" layer="91"/>
@@ -1961,9 +1940,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_6B" class="0">
 <segment>
-<wire x1="124.46" y1="66.04" x2="119.38" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="6"/>
-<label x="124.46" y="66.04" size="1.778" layer="95" xref="yes"/>
+<wire x1="218.44" y1="66.04" x2="213.36" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="6"/>
+<label x="218.44" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="55.88" y1="10.16" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
@@ -1973,9 +1952,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_7B" class="0">
 <segment>
-<wire x1="119.38" y1="63.5" x2="139.7" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="8"/>
-<label x="139.7" y="63.5" size="1.778" layer="95" xref="yes"/>
+<wire x1="213.36" y1="63.5" x2="233.68" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="8"/>
+<label x="233.68" y="63.5" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="7.62" x2="71.12" y2="7.62" width="0.1524" layer="91"/>
@@ -1985,9 +1964,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_8B" class="0">
 <segment>
-<wire x1="124.46" y1="60.96" x2="119.38" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="10"/>
-<label x="124.46" y="60.96" size="1.778" layer="95" xref="yes"/>
+<wire x1="218.44" y1="60.96" x2="213.36" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="10"/>
+<label x="218.44" y="60.96" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="55.88" y1="5.08" x2="76.2" y2="5.08" width="0.1524" layer="91"/>
@@ -1997,9 +1976,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_10B" class="0">
 <segment>
-<wire x1="124.46" y1="55.88" x2="119.38" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="14"/>
-<label x="124.46" y="55.88" size="1.778" layer="95" xref="yes"/>
+<wire x1="218.44" y1="55.88" x2="213.36" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="14"/>
+<label x="218.44" y="55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="55.88" y1="0" x2="76.2" y2="0" width="0.1524" layer="91"/>
@@ -2021,9 +2000,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_6A" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="5"/>
-<wire x1="111.76" y1="66.04" x2="106.68" y2="66.04" width="0.1524" layer="91"/>
-<label x="106.68" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="5"/>
+<wire x1="205.74" y1="66.04" x2="200.66" y2="66.04" width="0.1524" layer="91"/>
+<label x="200.66" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="12.7" x2="88.9" y2="12.7" width="0.1524" layer="91"/>
@@ -2033,9 +2012,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_7A" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="7"/>
-<wire x1="111.76" y1="63.5" x2="91.44" y2="63.5" width="0.1524" layer="91"/>
-<label x="91.44" y="63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="7"/>
+<wire x1="205.74" y1="63.5" x2="185.42" y2="63.5" width="0.1524" layer="91"/>
+<label x="185.42" y="63.5" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="10.16" x2="104.14" y2="10.16" width="0.1524" layer="91"/>
@@ -2045,9 +2024,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_8A" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="9"/>
-<wire x1="111.76" y1="60.96" x2="106.68" y2="60.96" width="0.1524" layer="91"/>
-<label x="106.68" y="60.96" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="9"/>
+<wire x1="205.74" y1="60.96" x2="200.66" y2="60.96" width="0.1524" layer="91"/>
+<label x="200.66" y="60.96" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="7.62" x2="88.9" y2="7.62" width="0.1524" layer="91"/>
@@ -2098,9 +2077,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_9A" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="11"/>
-<wire x1="111.76" y1="58.42" x2="91.44" y2="58.42" width="0.1524" layer="91"/>
-<label x="91.44" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="11"/>
+<wire x1="205.74" y1="58.42" x2="185.42" y2="58.42" width="0.1524" layer="91"/>
+<label x="185.42" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="5.08" x2="104.14" y2="5.08" width="0.1524" layer="91"/>
@@ -2110,9 +2089,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_9B" class="0">
 <segment>
-<wire x1="119.38" y1="58.42" x2="139.7" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="12"/>
-<label x="139.7" y="58.42" size="1.778" layer="95" xref="yes"/>
+<wire x1="213.36" y1="58.42" x2="233.68" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="12"/>
+<label x="233.68" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="2.54" x2="71.12" y2="2.54" width="0.1524" layer="91"/>
@@ -2170,9 +2149,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_5" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="17"/>
-<wire x1="111.76" y1="50.8" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
-<label x="106.68" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="17"/>
+<wire x1="205.74" y1="50.8" x2="200.66" y2="50.8" width="0.1524" layer="91"/>
+<label x="200.66" y="50.8" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="0" x2="104.14" y2="0" width="0.1524" layer="91"/>
@@ -2182,9 +2161,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="SW_6" class="0">
 <segment>
-<pinref part="INSTRUMENT_2" gate="A" pin="19"/>
-<wire x1="111.76" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
-<label x="91.44" y="48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="19"/>
+<wire x1="205.74" y1="48.26" x2="185.42" y2="48.26" width="0.1524" layer="91"/>
+<label x="185.42" y="48.26" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="-2.54" x2="88.9" y2="-2.54" width="0.1524" layer="91"/>
@@ -2194,9 +2173,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="OUT2" class="0">
 <segment>
-<wire x1="119.38" y1="48.26" x2="139.7" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="20"/>
-<label x="139.7" y="48.26" size="1.778" layer="95" xref="yes"/>
+<wire x1="213.36" y1="48.26" x2="233.68" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="20"/>
+<label x="233.68" y="48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="MIXER_OUTPUT" gate="A" pin="3"/>
@@ -2211,9 +2190,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_13A" class="0">
 <segment>
-<wire x1="193.04" y1="60.96" x2="187.96" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="9"/>
-<label x="187.96" y="60.96" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="121.92" y1="60.96" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="9"/>
+<label x="116.84" y="60.96" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-10.16" x2="55.88" y2="-10.16" width="0.1524" layer="91"/>
@@ -2223,9 +2202,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_13B" class="0">
 <segment>
-<wire x1="205.74" y1="60.96" x2="200.66" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="10"/>
-<label x="205.74" y="60.96" size="1.778" layer="95" xref="yes"/>
+<wire x1="134.62" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="10"/>
+<label x="134.62" y="60.96" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="104.14" y1="-10.16" x2="83.82" y2="-10.16" width="0.1524" layer="91"/>
@@ -2235,9 +2214,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_14A" class="0">
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="11"/>
-<wire x1="172.72" y1="58.42" x2="193.04" y2="58.42" width="0.1524" layer="91"/>
-<label x="172.72" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="11"/>
+<wire x1="101.6" y1="58.42" x2="121.92" y2="58.42" width="0.1524" layer="91"/>
+<label x="101.6" y="58.42" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="71.12" y1="-12.7" x2="76.2" y2="-12.7" width="0.1524" layer="91"/>
@@ -2247,9 +2226,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_14B" class="0">
 <segment>
-<wire x1="200.66" y1="58.42" x2="220.98" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="12"/>
-<label x="220.98" y="58.42" size="1.778" layer="95" xref="yes"/>
+<wire x1="129.54" y1="58.42" x2="149.86" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="12"/>
+<label x="149.86" y="58.42" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="83.82" y1="-12.7" x2="88.9" y2="-12.7" width="0.1524" layer="91"/>
@@ -2259,9 +2238,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_15A" class="0">
 <segment>
-<pinref part="INSTRUMENT_3" gate="A" pin="13"/>
-<wire x1="193.04" y1="55.88" x2="187.96" y2="55.88" width="0.1524" layer="91"/>
-<label x="187.96" y="55.88" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="13"/>
+<wire x1="121.92" y1="55.88" x2="116.84" y2="55.88" width="0.1524" layer="91"/>
+<label x="116.84" y="55.88" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="76.2" y1="-15.24" x2="55.88" y2="-15.24" width="0.1524" layer="91"/>
@@ -2271,9 +2250,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="POT_15B" class="0">
 <segment>
-<wire x1="205.74" y1="55.88" x2="200.66" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="14"/>
-<label x="205.74" y="55.88" size="1.778" layer="95" xref="yes"/>
+<wire x1="134.62" y1="55.88" x2="129.54" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="14"/>
+<label x="134.62" y="55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="104.14" y1="-15.24" x2="83.82" y2="-15.24" width="0.1524" layer="91"/>
@@ -2283,9 +2262,9 @@ W = angled&lt;p&gt;
 </net>
 <net name="OUT3" class="0">
 <segment>
-<wire x1="200.66" y1="48.26" x2="220.98" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="20"/>
-<label x="220.98" y="48.26" size="1.778" layer="95" xref="yes"/>
+<wire x1="129.54" y1="48.26" x2="149.86" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="20"/>
+<label x="149.86" y="48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="MIXER_OUTPUT" gate="A" pin="5"/>
@@ -2327,9 +2306,9 @@ W = angled&lt;p&gt;
 <label x="213.36" y="-5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="111.76" y1="53.34" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_2" gate="A" pin="15"/>
-<label x="91.44" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="205.74" y1="53.34" x2="185.42" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_3" gate="A" pin="15"/>
+<label x="185.42" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="TRIG3" class="0">
@@ -2344,9 +2323,9 @@ W = angled&lt;p&gt;
 <label x="213.36" y="-7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="193.04" y1="53.34" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="INSTRUMENT_3" gate="A" pin="15"/>
-<label x="172.72" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="121.92" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="INSTRUMENT_2" gate="A" pin="15"/>
+<label x="101.6" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="8.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -592,21 +592,12 @@
 <packages3d>
 <package3d name="2X03" urn="urn:adsk.eagle:package:22462/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X03"/>
-</packageinstances>
 </package3d>
 <package3d name="2X12" urn="urn:adsk.eagle:package:22420/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X12"/>
-</packageinstances>
 </package3d>
 <package3d name="2X20" urn="urn:adsk.eagle:package:22443/2" type="model" library_version="3">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X20"/>
-</packageinstances>
 </package3d>
 </packages3d>
 </library>
@@ -688,9 +679,6 @@ W = angled&lt;p&gt;
 <packages3d>
 <package3d name="MA03-2" urn="urn:adsk.eagle:package:8334/1" type="box" library_version="1">
 <description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="MA03-2"/>
-</packageinstances>
 </package3d>
 </packages3d>
 </library>
@@ -786,9 +774,6 @@ design rules under a new name.</description>
 <param name="checkRestrict" value="0"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
-<param name="checkNames" value="1"/>
-<param name="checkWireStubs" value="1"/>
-<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -897,11 +882,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="34.76" y="83.175" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="34.76" y="75.555" size="1.27" layer="27"/>
 </element>
-<element name="INSTRUMENT_2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X12" package3d_urn="urn:adsk.eagle:package:22420/2" value="" x="50" y="40" smashed="yes">
+<element name="INSTRUMENT_3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X12" package3d_urn="urn:adsk.eagle:package:22420/2" value="" x="50" y="40" smashed="yes">
 <attribute name="NAME" x="34.76" y="43.175" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="34.76" y="35.555" size="1.27" layer="27"/>
 </element>
-<element name="INSTRUMENT_3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X12" package3d_urn="urn:adsk.eagle:package:22420/2" value="" x="50.5" y="59.5" smashed="yes">
+<element name="INSTRUMENT_2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X12" package3d_urn="urn:adsk.eagle:package:22420/2" value="" x="50.5" y="59.5" smashed="yes">
 <attribute name="NAME" x="35.26" y="62.675" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="35.26" y="55.055" size="1.27" layer="27"/>
 </element>
@@ -939,7 +924,7 @@ design rules under a new name.</description>
 <wire x1="27.25" y1="11.28" x2="27.25" y2="69.5" width="0.254" layer="1"/>
 </signal>
 <signal name="POT_10A">
-<contactref element="INSTRUMENT_2" pad="13"/>
+<contactref element="INSTRUMENT_3" pad="13"/>
 <contactref element="PATA_CABLE" pad="22"/>
 <wire x1="51.25" y1="38.71" x2="51.27" y2="38.73" width="0.254" layer="1" curve="-90"/>
 <wire x1="52.64" y1="8.73" x2="52.52" y2="8.73" width="0.254" layer="1"/>
@@ -947,7 +932,7 @@ design rules under a new name.</description>
 <wire x1="51.25" y1="10" x2="51.25" y2="38.71" width="0.254" layer="1"/>
 </signal>
 <signal name="POT_11A">
-<contactref element="INSTRUMENT_3" pad="5"/>
+<contactref element="INSTRUMENT_2" pad="5"/>
 <contactref element="PATA_CABLE" pad="27"/>
 <wire x1="60.26" y1="11.27" x2="60.26" y2="11.76" width="0.254" layer="1"/>
 <wire x1="60.26" y1="11.76" x2="65.25" y2="16.75" width="0.254" layer="1" curve="-90"/>
@@ -959,7 +944,7 @@ design rules under a new name.</description>
 <wire x1="48.09" y1="51.75" x2="41.61" y2="58.23" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_12A">
-<contactref element="INSTRUMENT_3" pad="7"/>
+<contactref element="INSTRUMENT_2" pad="7"/>
 <contactref element="PATA_CABLE" pad="29"/>
 <wire x1="62.8" y1="11.27" x2="62.8" y2="11.3" width="0.254" layer="1"/>
 <wire x1="62.8" y1="11.3" x2="67.5" y2="16" width="0.254" layer="1" curve="-90"/>
@@ -971,7 +956,7 @@ design rules under a new name.</description>
 <wire x1="61.5" y1="52.5" x2="49.88" y2="52.5" width="0.254" layer="1"/>
 </signal>
 <signal name="POT_12B">
-<contactref element="INSTRUMENT_3" pad="8"/>
+<contactref element="INSTRUMENT_2" pad="8"/>
 <contactref element="PATA_CABLE" pad="30"/>
 <wire x1="62.8" y1="8.73" x2="62.8" y2="8.7" width="0.254" layer="1"/>
 <wire x1="62.8" y1="8.7" x2="67.5" y2="4" width="0.254" layer="1" curve="90"/>
@@ -983,7 +968,7 @@ design rules under a new name.</description>
 <wire x1="48.88" y1="65.5" x2="44.15" y2="60.77" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_11B">
-<contactref element="INSTRUMENT_3" pad="6"/>
+<contactref element="INSTRUMENT_2" pad="6"/>
 <contactref element="PATA_CABLE" pad="28"/>
 <wire x1="60.26" y1="8.73" x2="60.26" y2="8.49" width="0.254" layer="1"/>
 <wire x1="60.26" y1="8.49" x2="65.5" y2="3.25" width="0.254" layer="1" curve="90"/>
@@ -996,8 +981,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="+12V">
 <contactref element="INSTRUMENT_1" pad="2"/>
-<contactref element="INSTRUMENT_2" pad="2"/>
 <contactref element="INSTRUMENT_3" pad="2"/>
+<contactref element="INSTRUMENT_2" pad="2"/>
 <contactref element="POWER_SUPPLY" pad="+12V"/>
 <contactref element="POWER_SUPPLY_PINOUT_1" pad="1"/>
 <contactref element="POWER_SUPPLY_PINOUT_2" pad="1"/>
@@ -1025,8 +1010,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="-12V">
 <contactref element="INSTRUMENT_1" pad="4"/>
-<contactref element="INSTRUMENT_2" pad="4"/>
 <contactref element="INSTRUMENT_3" pad="4"/>
+<contactref element="INSTRUMENT_2" pad="4"/>
 <contactref element="POWER_SUPPLY" pad="-12V"/>
 <contactref element="POWER_SUPPLY_PINOUT_1" pad="3"/>
 <contactref element="POWER_SUPPLY_PINOUT_2" pad="3"/>
@@ -1061,10 +1046,10 @@ design rules under a new name.</description>
 <signal name="AGND">
 <contactref element="INSTRUMENT_1" pad="18"/>
 <contactref element="INSTRUMENT_1" pad="22"/>
-<contactref element="INSTRUMENT_2" pad="18"/>
-<contactref element="INSTRUMENT_2" pad="22"/>
 <contactref element="INSTRUMENT_3" pad="18"/>
 <contactref element="INSTRUMENT_3" pad="22"/>
+<contactref element="INSTRUMENT_2" pad="18"/>
+<contactref element="INSTRUMENT_2" pad="22"/>
 <contactref element="1/4&quot;JACK" pad="6"/>
 <contactref element="1/4&quot;JACK" pad="4"/>
 <contactref element="1/4&quot;JACK" pad="2"/>
@@ -1093,8 +1078,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="DGND">
 <contactref element="INSTRUMENT_1" pad="3"/>
-<contactref element="INSTRUMENT_2" pad="3"/>
 <contactref element="INSTRUMENT_3" pad="3"/>
+<contactref element="INSTRUMENT_2" pad="3"/>
 <contactref element="POWER_SUPPLY" pad="DGND"/>
 <contactref element="POWER_SUPPLY_PINOUT_1" pad="6"/>
 <contactref element="POWER_SUPPLY_PINOUT_2" pad="6"/>
@@ -1135,8 +1120,8 @@ design rules under a new name.</description>
 <wire x1="17.54" y1="28.79" x2="17.54" y2="33.54" width="2.54" layer="16"/>
 </signal>
 <signal name="+5V">
-<contactref element="INSTRUMENT_2" pad="1"/>
 <contactref element="INSTRUMENT_3" pad="1"/>
+<contactref element="INSTRUMENT_2" pad="1"/>
 <contactref element="INSTRUMENT_1" pad="1"/>
 <contactref element="POWER_SUPPLY" pad="+5V"/>
 <contactref element="POWER_SUPPLY" pad="NULL"/>
@@ -1185,7 +1170,7 @@ design rules under a new name.</description>
 <wire x1="3.27" y1="10.5" x2="11.52" y2="17.5" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="SW_7">
-<contactref element="INSTRUMENT_3" pad="16"/>
+<contactref element="INSTRUMENT_2" pad="16"/>
 <contactref element="PATA_CABLE" pad="38"/>
 <wire x1="72.96" y1="8.73" x2="72.96" y2="8.54" width="0.254" layer="1"/>
 <wire x1="72.96" y1="8.54" x2="74.5" y2="7" width="0.254" layer="1" curve="90"/>
@@ -1197,7 +1182,7 @@ design rules under a new name.</description>
 <wire x1="56.04" y1="62.5" x2="54.31" y2="60.77" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="SW_9">
-<contactref element="INSTRUMENT_3" pad="19"/>
+<contactref element="INSTRUMENT_2" pad="19"/>
 <contactref element="PATA_CABLE" pad="39"/>
 <wire x1="75.5" y1="11.27" x2="75.5" y2="43.5" width="0.254" layer="1"/>
 <wire x1="75.5" y1="43.5" x2="62.75" y2="56.25" width="0.254" layer="1" curve="90"/>
@@ -1205,7 +1190,7 @@ design rules under a new name.</description>
 <wire x1="61.37" y1="56.25" x2="59.39" y2="58.23" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="SW_4">
-<contactref element="INSTRUMENT_2" pad="16"/>
+<contactref element="INSTRUMENT_3" pad="16"/>
 <contactref element="PATA_CABLE" pad="25"/>
 <wire x1="55" y1="40.08" x2="53.81" y2="41.27" width="0.254" layer="16"/>
 <wire x1="55" y1="34.5" x2="55" y2="40.08" width="0.254" layer="16"/>
@@ -1214,7 +1199,7 @@ design rules under a new name.</description>
 <wire x1="56.25" y1="33.25" x2="57.72" y2="31.78" width="0.254" layer="16" curve="-90"/>
 </signal>
 <signal name="SW_8">
-<contactref element="INSTRUMENT_3" pad="17"/>
+<contactref element="INSTRUMENT_2" pad="17"/>
 <contactref element="PATA_CABLE" pad="37"/>
 <wire x1="72.96" y1="11.27" x2="72.96" y2="12.21" width="0.254" layer="1"/>
 <wire x1="72.96" y1="12.21" x2="73.75" y2="13" width="0.254" layer="1" curve="-90"/>
@@ -1283,7 +1268,7 @@ design rules under a new name.</description>
 <wire x1="46.54" y1="86" x2="51.27" y2="81.27" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_6B">
-<contactref element="INSTRUMENT_2" pad="6"/>
+<contactref element="INSTRUMENT_3" pad="6"/>
 <contactref element="PATA_CABLE" pad="15"/>
 <wire x1="45.02" y1="11.27" x2="45.02" y2="24.73" width="0.254" layer="16"/>
 <wire x1="42.5" y1="39.88" x2="41.11" y2="41.27" width="0.254" layer="16"/>
@@ -1292,7 +1277,7 @@ design rules under a new name.</description>
 <wire x1="43.5" y1="26.25" x2="45.02" y2="24.73" width="0.254" layer="16" curve="-90"/>
 </signal>
 <signal name="POT_7B">
-<contactref element="INSTRUMENT_2" pad="8"/>
+<contactref element="INSTRUMENT_3" pad="8"/>
 <contactref element="PATA_CABLE" pad="17"/>
 <wire x1="45" y1="39.92" x2="43.65" y2="41.27" width="0.254" layer="16"/>
 <wire x1="47.56" y1="26.44" x2="46.25" y2="27.75" width="0.254" layer="16" curve="90"/>
@@ -1301,7 +1286,7 @@ design rules under a new name.</description>
 <wire x1="45" y1="29" x2="45" y2="39.92" width="0.254" layer="16"/>
 </signal>
 <signal name="POT_8B">
-<contactref element="INSTRUMENT_2" pad="10"/>
+<contactref element="INSTRUMENT_3" pad="10"/>
 <contactref element="PATA_CABLE" pad="19"/>
 <wire x1="50.1" y1="11.27" x2="50.1" y2="27.65" width="0.254" layer="16"/>
 <wire x1="47.5" y1="39.96" x2="46.19" y2="41.27" width="0.254" layer="16"/>
@@ -1310,7 +1295,7 @@ design rules under a new name.</description>
 <wire x1="47.5" y1="30.25" x2="47.5" y2="39.96" width="0.254" layer="16"/>
 </signal>
 <signal name="POT_10B">
-<contactref element="INSTRUMENT_2" pad="14"/>
+<contactref element="INSTRUMENT_3" pad="14"/>
 <contactref element="PATA_CABLE" pad="23"/>
 <wire x1="55.18" y1="11.27" x2="55.18" y2="30.57" width="0.254" layer="16"/>
 <wire x1="55.18" y1="30.57" x2="55.18" y2="30.64" width="0.254" layer="16"/>
@@ -1332,7 +1317,7 @@ design rules under a new name.</description>
 <wire x1="46.54" y1="74" x2="51.27" y2="78.73" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_6A">
-<contactref element="INSTRUMENT_2" pad="5"/>
+<contactref element="INSTRUMENT_3" pad="5"/>
 <contactref element="PATA_CABLE" pad="14"/>
 <wire x1="42.48" y1="8.73" x2="42.27" y2="8.73" width="0.254" layer="16"/>
 <wire x1="42.27" y1="8.73" x2="41.25" y2="9.75" width="0.254" layer="16" curve="-90"/>
@@ -1340,7 +1325,7 @@ design rules under a new name.</description>
 <wire x1="41.25" y1="38.59" x2="41.11" y2="38.73" width="0.254" layer="16" curve="90"/>
 </signal>
 <signal name="POT_7A">
-<contactref element="INSTRUMENT_2" pad="7"/>
+<contactref element="INSTRUMENT_3" pad="7"/>
 <contactref element="PATA_CABLE" pad="16"/>
 <wire x1="45.02" y1="8.73" x2="44.77" y2="8.73" width="0.254" layer="1"/>
 <wire x1="44.77" y1="8.73" x2="43.75" y2="9.75" width="0.254" layer="1" curve="-90"/>
@@ -1348,7 +1333,7 @@ design rules under a new name.</description>
 <wire x1="43.75" y1="38.63" x2="43.65" y2="38.73" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_8A">
-<contactref element="INSTRUMENT_2" pad="9"/>
+<contactref element="INSTRUMENT_3" pad="9"/>
 <contactref element="PATA_CABLE" pad="18"/>
 <wire x1="47.56" y1="8.73" x2="47.52" y2="8.73" width="0.254" layer="1"/>
 <wire x1="47.52" y1="8.73" x2="46.25" y2="10" width="0.254" layer="1" curve="-90"/>
@@ -1402,7 +1387,7 @@ design rules under a new name.</description>
 <wire x1="44.75" y1="85.25" x2="48.73" y2="81.27" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_9A">
-<contactref element="INSTRUMENT_2" pad="11"/>
+<contactref element="INSTRUMENT_3" pad="11"/>
 <contactref element="PATA_CABLE" pad="20"/>
 <wire x1="50.1" y1="8.73" x2="50.02" y2="8.73" width="0.254" layer="1"/>
 <wire x1="50.02" y1="8.73" x2="48.75" y2="10" width="0.254" layer="1" curve="-90"/>
@@ -1410,7 +1395,7 @@ design rules under a new name.</description>
 <wire x1="48.75" y1="38.71" x2="48.73" y2="38.73" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_9B">
-<contactref element="INSTRUMENT_2" pad="12"/>
+<contactref element="INSTRUMENT_3" pad="12"/>
 <contactref element="PATA_CABLE" pad="21"/>
 <wire x1="50" y1="31.75" x2="50" y2="40" width="0.254" layer="16"/>
 <wire x1="50" y1="40" x2="48.73" y2="41.27" width="0.254" layer="16"/>
@@ -1467,7 +1452,7 @@ design rules under a new name.</description>
 <wire x1="52.66" y1="72.5" x2="58.89" y2="78.73" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="SW_5">
-<contactref element="INSTRUMENT_2" pad="17"/>
+<contactref element="INSTRUMENT_3" pad="17"/>
 <contactref element="PATA_CABLE" pad="24"/>
 <wire x1="55.18" y1="8.73" x2="55.23" y2="8.73" width="0.254" layer="1"/>
 <wire x1="55.23" y1="8.73" x2="56.5" y2="10" width="0.254" layer="1" curve="90"/>
@@ -1475,7 +1460,7 @@ design rules under a new name.</description>
 <wire x1="56.5" y1="38.58" x2="56.35" y2="38.73" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="SW_6">
-<contactref element="INSTRUMENT_2" pad="19"/>
+<contactref element="INSTRUMENT_3" pad="19"/>
 <contactref element="PATA_CABLE" pad="26"/>
 <wire x1="59" y1="38.62" x2="58.89" y2="38.73" width="0.254" layer="1" curve="90"/>
 <wire x1="57.72" y1="8.73" x2="57.73" y2="8.73" width="0.254" layer="1"/>
@@ -1483,7 +1468,7 @@ design rules under a new name.</description>
 <wire x1="59" y1="10" x2="59" y2="38.62" width="0.254" layer="1"/>
 </signal>
 <signal name="OUT2">
-<contactref element="INSTRUMENT_2" pad="20"/>
+<contactref element="INSTRUMENT_3" pad="20"/>
 <contactref element="MIXER_OUTPUT" pad="3"/>
 <contactref element="1/4&quot;JACK" pad="3"/>
 <wire x1="58.89" y1="41.27" x2="58.89" y2="41.11" width="0.254" layer="16"/>
@@ -1499,7 +1484,7 @@ design rules under a new name.</description>
 <wire x1="87" y1="15.56" x2="87" y2="9.99" width="0.254" layer="1"/>
 </signal>
 <signal name="POT_13A">
-<contactref element="INSTRUMENT_3" pad="9"/>
+<contactref element="INSTRUMENT_2" pad="9"/>
 <contactref element="PATA_CABLE" pad="31"/>
 <wire x1="65.34" y1="11.27" x2="65.34" y2="11.34" width="0.254" layer="1"/>
 <wire x1="65.34" y1="11.34" x2="69.25" y2="15.25" width="0.254" layer="1" curve="-90"/>
@@ -1511,7 +1496,7 @@ design rules under a new name.</description>
 <wire x1="51.67" y1="53.25" x2="46.69" y2="58.23" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_13B">
-<contactref element="INSTRUMENT_3" pad="10"/>
+<contactref element="INSTRUMENT_2" pad="10"/>
 <contactref element="PATA_CABLE" pad="32"/>
 <wire x1="65.34" y1="8.73" x2="65.34" y2="8.66" width="0.254" layer="1"/>
 <wire x1="65.34" y1="8.66" x2="69.25" y2="4.75" width="0.254" layer="1" curve="90"/>
@@ -1523,7 +1508,7 @@ design rules under a new name.</description>
 <wire x1="50.67" y1="64.75" x2="46.69" y2="60.77" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_14A">
-<contactref element="INSTRUMENT_3" pad="11"/>
+<contactref element="INSTRUMENT_2" pad="11"/>
 <contactref element="PATA_CABLE" pad="33"/>
 <wire x1="67.88" y1="11.27" x2="67.88" y2="11.38" width="0.254" layer="1"/>
 <wire x1="67.88" y1="11.38" x2="71" y2="14.5" width="0.254" layer="1" curve="-90"/>
@@ -1535,7 +1520,7 @@ design rules under a new name.</description>
 <wire x1="53.46" y1="54" x2="49.23" y2="58.23" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_14B">
-<contactref element="INSTRUMENT_3" pad="12"/>
+<contactref element="INSTRUMENT_2" pad="12"/>
 <contactref element="PATA_CABLE" pad="34"/>
 <wire x1="67.88" y1="8.73" x2="67.88" y2="8.62" width="0.254" layer="1"/>
 <wire x1="67.88" y1="8.62" x2="71" y2="5.5" width="0.254" layer="1" curve="90"/>
@@ -1547,7 +1532,7 @@ design rules under a new name.</description>
 <wire x1="52.46" y1="64" x2="49.23" y2="60.77" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="POT_15A">
-<contactref element="INSTRUMENT_3" pad="13"/>
+<contactref element="INSTRUMENT_2" pad="13"/>
 <contactref element="PATA_CABLE" pad="35"/>
 <wire x1="70.42" y1="11.27" x2="70.42" y2="11.67" width="0.254" layer="1"/>
 <wire x1="70.42" y1="11.67" x2="72.5" y2="13.75" width="0.254" layer="1" curve="-90"/>
@@ -1559,7 +1544,7 @@ design rules under a new name.</description>
 <wire x1="55.25" y1="54.75" x2="51.77" y2="58.23" width="0.254" layer="1" curve="-90"/>
 </signal>
 <signal name="POT_15B">
-<contactref element="INSTRUMENT_3" pad="14"/>
+<contactref element="INSTRUMENT_2" pad="14"/>
 <contactref element="PATA_CABLE" pad="36"/>
 <wire x1="70.42" y1="8.73" x2="70.42" y2="8.33" width="0.254" layer="1"/>
 <wire x1="70.42" y1="8.33" x2="72.5" y2="6.25" width="0.254" layer="1" curve="90"/>
@@ -1571,7 +1556,7 @@ design rules under a new name.</description>
 <wire x1="54.25" y1="63.25" x2="51.77" y2="60.77" width="0.254" layer="1" curve="90"/>
 </signal>
 <signal name="OUT3">
-<contactref element="INSTRUMENT_3" pad="20"/>
+<contactref element="INSTRUMENT_2" pad="20"/>
 <contactref element="MIXER_OUTPUT" pad="5"/>
 <contactref element="1/4&quot;JACK" pad="5"/>
 <wire x1="88" y1="8.25" x2="88.26" y2="8.71" width="0.1524" layer="16"/>
@@ -1608,7 +1593,7 @@ design rules under a new name.</description>
 <signal name="TRIG2">
 <contactref element="TRIG_IN" pad="4"/>
 <contactref element="TRIG_IN" pad="3"/>
-<contactref element="INSTRUMENT_2" pad="15"/>
+<contactref element="INSTRUMENT_3" pad="15"/>
 <wire x1="85.75" y1="28.27" x2="85.75" y2="25.73" width="0.4064" layer="1"/>
 <wire x1="53.81" y1="38.73" x2="55.08" y2="40" width="0.4064" layer="1"/>
 <wire x1="55.08" y1="40" x2="69.75" y2="40" width="0.4064" layer="1"/>
@@ -1620,7 +1605,7 @@ design rules under a new name.</description>
 <signal name="TRIG3">
 <contactref element="TRIG_IN" pad="2"/>
 <contactref element="TRIG_IN" pad="1"/>
-<contactref element="INSTRUMENT_3" pad="15"/>
+<contactref element="INSTRUMENT_2" pad="15"/>
 <wire x1="83.21" y1="28.27" x2="83.21" y2="25.73" width="0.4064" layer="1"/>
 <wire x1="83.21" y1="28.27" x2="83.21" y2="36.79" width="0.4064" layer="16"/>
 <wire x1="81.75" y1="38.25" x2="69.75" y2="38.25" width="0.4064" layer="16"/>
@@ -1636,17 +1621,8 @@ design rules under a new name.</description>
 <wire x1="59.25" y1="50" x2="58" y2="50" width="0.4064" layer="1"/>
 </signal>
 </signals>
-<mfgpreviewcolors>
-<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
-<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
-<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
-<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
-<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
-</mfgpreviewcolors>
 <errors>
-<approved hash="23,16,45bd8fc38c01467f"/>
 <approved hash="21,19,527e2d7e2f7c2f7c"/>
-<approved hash="23,16,1057a847ace214f2"/>
 </errors>
 </board>
 </drawing>
