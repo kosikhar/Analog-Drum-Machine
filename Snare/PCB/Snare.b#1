@@ -164,7 +164,7 @@
 <wire x1="0" y1="50" x2="0" y2="0" width="0" layer="20"/>
 <text x="64" y="20" size="1.016" layer="26" rot="MR270">+12V</text>
 <text x="61.5" y="20" size="1.016" layer="26" rot="MR270">-12V</text>
-<text x="48" y="2" size="1.6764" layer="21">Snare Drum
+<text x="43" y="2" size="1.6764" layer="21">Snare Drum
 March 4, 2019</text>
 </plain>
 <libraries>
