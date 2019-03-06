@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="9.3.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -19915,6 +19915,7 @@ R2 3 2 {val-val*var/100}
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
 <part name="C26" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="100n"/>
+<part name="R38" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100"/>
 </parts>
 <sheets>
 <sheet>
@@ -20069,9 +20070,9 @@ R2 3 2 {val-val*var/100}
 <instance part="P+5" gate="1" x="53.34" y="172.72" smashed="yes">
 <attribute name="VALUE" x="50.8" y="167.64" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C7" gate="G$1" x="63.5" y="139.7" smashed="yes" rot="R180">
-<attribute name="NAME" x="61.976" y="139.319" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="61.976" y="144.399" size="1.778" layer="96" rot="R180"/>
+<instance part="C7" gate="G$1" x="60.96" y="139.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="59.436" y="139.319" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="59.436" y="144.399" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="Q2" gate="G$1" x="73.66" y="152.4" smashed="yes">
 <attribute name="NAME" x="76.2" y="152.4" size="1.778" layer="95"/>
@@ -20356,6 +20357,10 @@ R2 3 2 {val-val*var/100}
 <attribute name="NAME" x="67.056" y="63.119" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="67.056" y="68.199" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R38" gate="G$1" x="66.04" y="152.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.31" y="150.9014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="69.85" y="155.702" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -20420,8 +20425,8 @@ R2 3 2 {val-val*var/100}
 <wire x1="53.34" y1="127" x2="53.34" y2="139.7" width="0.1524" layer="91"/>
 <junction x="43.18" y="127"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="63.5" y1="137.16" x2="63.5" y2="127" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="127" x2="53.34" y2="127" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="137.16" x2="60.96" y2="127" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="127" x2="53.34" y2="127" width="0.1524" layer="91"/>
 <junction x="53.34" y="127"/>
 </segment>
 <segment>
@@ -20994,13 +20999,12 @@ R2 3 2 {val-val*var/100}
 <pinref part="T3" gate="G1" pin="C"/>
 <wire x1="53.34" y1="154.94" x2="53.34" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="152.4" x2="53.34" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="152.4" x2="63.5" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="152.4" x2="60.96" y2="152.4" width="0.1524" layer="91"/>
 <junction x="53.34" y="152.4"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="63.5" y1="152.4" x2="63.5" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="B"/>
-<wire x1="63.5" y1="152.4" x2="71.12" y2="152.4" width="0.1524" layer="91"/>
-<junction x="63.5" y="152.4"/>
+<wire x1="60.96" y1="152.4" x2="60.96" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="R38" gate="G$1" pin="2"/>
+<junction x="60.96" y="152.4"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -21269,6 +21273,12 @@ R2 3 2 {val-val*var/100}
 <pinref part="R30" gate="G$1" pin="1"/>
 <wire x1="233.68" y1="111.76" x2="236.22" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="236.22" y1="111.76" x2="236.22" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="Q2" gate="G$1" pin="B"/>
+<pinref part="R38" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
