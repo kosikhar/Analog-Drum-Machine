@@ -228,7 +228,7 @@ by exp-lbrs.ulp</description>
 <connect gate="G$1" pin="-12V" pad="-12V"/>
 <connect gate="G$1" pin="AGND0" pad="AGND0"/>
 <connect gate="G$1" pin="AGND1" pad="AGND1"/>
-<connect gate="G$1" pin="DGND" pad="DGND"/>
+<connect gate="G$1" pin="DGND" pad="DGND NULL"/>
 </connects>
 <technologies>
 <technology name=""/>

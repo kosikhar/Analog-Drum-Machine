@@ -81,6 +81,27 @@
 <hole x="3" y="3" drill="3.6"/>
 <hole x="57" y="4" drill="3.6"/>
 <hole x="57" y="97" drill="3.6"/>
+<wire x1="30" y1="30" x2="30" y2="24" width="0.1524" layer="21"/>
+<wire x1="30" y1="21" x2="30" y2="17" width="0.1524" layer="21"/>
+<wire x1="30" y1="14" x2="30" y2="10" width="0.1524" layer="21"/>
+<wire x1="30" y1="7" x2="30" y2="3" width="0.1524" layer="21"/>
+<wire x1="10" y1="3" x2="10" y2="7" width="0.1524" layer="21"/>
+<wire x1="10" y1="10" x2="10" y2="14" width="0.1524" layer="21"/>
+<wire x1="10" y1="21" x2="10" y2="17" width="0.1524" layer="21"/>
+<wire x1="51" y1="21" x2="51" y2="17" width="0.1524" layer="21"/>
+<wire x1="51" y1="14" x2="51" y2="10" width="0.1524" layer="21"/>
+<wire x1="51" y1="7" x2="51" y2="3" width="0.1524" layer="21"/>
+<wire x1="10" y1="28" x2="10" y2="24" width="0.1524" layer="21"/>
+<text x="10" y="28" size="1.778" layer="21">A</text>
+<text x="30.5" y="28" size="1.778" layer="21">A</text>
+<text x="27.7" y="28" size="1.778" layer="21">H</text>
+<text x="48" y="28" size="1.778" layer="21">H</text>
+<text x="6.45" y="79" size="1.778" layer="21">1</text>
+<text x="3" y="30" size="1.778" layer="21">PATA Sequencer
+Breakout
+TOP</text>
+<text x="36" y="32" size="1.778" layer="21">Koltin Kosik-Harvey
+March 7 / 2019</text>
 </plain>
 <libraries>
 <library name="con-lstb" urn="urn:adsk.eagle:library:162">
@@ -3595,6 +3616,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
