@@ -8,28 +8,32 @@
 
 #include "InputPoll.h"
 
-InputPoll::InputPoll( Timer & timerPtr, DigitalInput & buttonInputPtr )
+InputPoll::InputPoll( Timer & timerPtr, DigitalInput & DigitalInputRef, uint16_t PollingRate )
 {
+	//Save polling rate
+	pollingRate = PollingRate;
+		
 	//Get reference to the Button 
-	buttonInput = &buttonInputPtr;
+	digitalInput = &DigitalInputRef;
 	
 	//Timer reference
 	timer = &timerPtr;
 	
 	//Initialize the time stamp
 	timeStamp = timer->millis();
+	
 } //InputPoll
 
 void InputPoll::run( void )
 {
 	//Latch input with the polling time.
-	if ( timer->elapsed_millis(timeStamp) > POLLING_TIME ){
+	if ( timer->elapsed_millis(timeStamp) > pollingRate ){
 				
 		//Indicate there is a new input to process
-		buttonInput->newInput = true;
+		digitalInput->newInput = true;
 				
 		//Latch shift registers. Input now can be shifted into uC
-		buttonInput->latch();
+		digitalInput->latch();
 			
 		//Update time stamp
 		timeStamp = timer->millis();
