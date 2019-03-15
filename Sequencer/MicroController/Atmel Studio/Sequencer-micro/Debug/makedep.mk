@@ -32,6 +32,8 @@ Tasks\Latch.cpp
 
 Tasks\PrintBPM.cpp
 
+Tasks\RotarySwitch.cpp
+
 Tasks\SevenSeg.cpp
 
 Tasks\TaskManager.cpp

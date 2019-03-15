@@ -14,7 +14,7 @@
 //Check encoder every 10ms
 #define CHK_ENCODER_DELAY 100 
 
-//Number of encoders to read.
+//Number of encoders to read. (no more than 4)
 #define NUM_ENCODERS 1
 
 #define INCREASE 1
@@ -33,6 +33,7 @@ class RotarySwitch
 		
 		//Indicates to external task if there's a new value to process.
 		uint8_t newValue;
+
 	protected:
 	private:
 		//States of the encoder pins.
@@ -48,9 +49,19 @@ class RotarySwitch
 		//Reference to the Digital Input shift registers
 		DigitalInput * digitalInput;
 
+		//Time stamp for timing the task
+		uint32_t timeStamp;
+
+		//Incoming byte
+		uint8_t incomingByte;
+
 	//functions
 	public:
-		RotarySwitch();
+		RotarySwitch(Timer & TimerRef, DigitalInput & DigitalInputRef);
+
+		//Runs the main task
+		void run( void );
+
 		~RotarySwitch();
 	protected:
 	private:

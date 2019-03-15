@@ -22,7 +22,7 @@ ShiftRegister_PISO::ShiftRegister_PISO( Pin * shift, Pin * latch, Pin * serial )
 }
 
 //Shifts a bytes out of the shift register
-void ShiftRegister_PISO::shiftBits( void )
+void ShiftRegister_PISO::shiftBits( uint8_t numBits )
 {
 	//Start shifting with shift/serial/latch at 0
 	shiftPin->setLow();
@@ -32,7 +32,7 @@ void ShiftRegister_PISO::shiftBits( void )
 	timer->wait_1us();
 
 	//Shift 8 bits
-	for( int i=0; i < 8 ; i++){
+	for( int i=0; i < numBits ; i++){
 		
 		//Read incoming bit on the serial 
 		if( serialPin->read() > 0 ){
@@ -47,6 +47,11 @@ void ShiftRegister_PISO::shiftBits( void )
 
 		this->singleShift();
 	}
+}
+
+//Shift 8 bits
+void ShiftRegister_PISO::shiftBits( void ){
+	this->shiftBits( 8 );
 }
 
 uint8_t ShiftRegister_PISO::readByte( void )

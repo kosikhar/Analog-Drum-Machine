@@ -32,6 +32,7 @@ class ShiftRegister_PISO : public ShiftRegister
 		//Shift bits into the input_byte variable. Must latch the shift register
 		//with this->latch()
 		void shiftBits( void );
+		void shiftBits( uint8_t numBits );
 
 		//Reads the byte that was shifted in
 		uint8_t readByte( void );
