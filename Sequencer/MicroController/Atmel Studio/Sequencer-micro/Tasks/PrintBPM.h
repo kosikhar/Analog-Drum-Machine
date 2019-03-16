@@ -13,7 +13,7 @@
 #include "BPMInput.h"
 
 //Using Seven Seg to print BPM
-#include "SevenSeg.h"
+#include "../Interface/SevenSeg.h"
 
 //Display will only update every 100 ms
 #define BPM_MIN_UPDATE_TIME 1000

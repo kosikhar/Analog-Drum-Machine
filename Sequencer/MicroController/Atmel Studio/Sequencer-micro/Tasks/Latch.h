@@ -9,7 +9,7 @@
 #ifndef __LATCH_H__
 #define __LATCH_H__
 
-#include "SevenSeg.h"
+#include "../Interface/SevenSeg.h"
 
 class Latch
 {

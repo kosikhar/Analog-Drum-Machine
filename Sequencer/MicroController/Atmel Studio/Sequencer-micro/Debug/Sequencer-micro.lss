@@ -19,15 +19,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 0000244c  00000000  00000000  00007f13  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00001cc1  00000000  00000000  0000a35f  2**0
+  8 .debug_line   00001d81  00000000  00000000  0000a35f  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000894  00000000  00000000  0000c020  2**2
+  9 .debug_frame  00000894  00000000  00000000  0000c0e0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00001257  00000000  00000000  0000c8b4  2**0
+ 10 .debug_str    0000125b  00000000  00000000  0000c974  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000014a2  00000000  00000000  0000db0b  2**0
+ 11 .debug_loc    000014a2  00000000  00000000  0000dbcf  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000310  00000000  00000000  0000efad  2**0
+ 12 .debug_ranges 00000310  00000000  00000000  0000f071  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -44,10 +44,10 @@ Disassembly of section .text:
   20:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   24:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   28:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
-  2c:	0c 94 c0 00 	jmp	0x180	; 0x180 <__vector_11>
-  30:	0c 94 86 00 	jmp	0x10c	; 0x10c <__vector_12>
+  2c:	0c 94 6e 01 	jmp	0x2dc	; 0x2dc <__vector_11>
+  30:	0c 94 34 01 	jmp	0x268	; 0x268 <__vector_12>
   34:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
-  38:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__vector_14>
+  38:	0c 94 0e 01 	jmp	0x21c	; 0x21c <__vector_14>
   3c:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   40:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
   44:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
@@ -61,10 +61,10 @@ Disassembly of section .text:
   64:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__bad_interrupt>
 
 00000068 <__ctors_start>:
-  68:	44 01       	movw	r8, r8
+  68:	f2 01       	movw	r30, r4
 
 0000006a <__ctors_end>:
-  6a:	76 01       	movw	r14, r12
+  6a:	24 02       	muls	r18, r20
 
 0000006c <__dtors_end>:
   6c:	11 24       	eor	r1, r1
@@ -112,1630 +112,1630 @@ Disassembly of section .text:
   ae:	c4 33       	cpi	r28, 0x34	; 52
   b0:	d1 07       	cpc	r29, r17
   b2:	c9 f7       	brne	.-14     	; 0xa6 <__do_global_ctors+0x8>
-  b4:	0e 94 03 01 	call	0x206	; 0x206 <main>
+  b4:	0e 94 b1 01 	call	0x362	; 0x362 <main>
   b8:	0c 94 0c 07 	jmp	0xe18	; 0xe18 <__do_global_dtors>
 
 000000bc <__bad_interrupt>:
   bc:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000c0 <__vector_14>:
-
-void disableShifting( void )
-{
-	//TIMSK2 is the TC2 Interrupt Mask Register
-	//We will disable interrupt on compare match with OCR2A
-	TIMSK2 &= ~(1 << OCIE2A);
-  c0:	1f 92       	push	r1
-  c2:	0f 92       	push	r0
-  c4:	0f b6       	in	r0, 0x3f	; 63
-  c6:	0f 92       	push	r0
-  c8:	11 24       	eor	r1, r1
-  ca:	2f 93       	push	r18
-  cc:	3f 93       	push	r19
-  ce:	4f 93       	push	r20
-  d0:	5f 93       	push	r21
-  d2:	6f 93       	push	r22
-  d4:	7f 93       	push	r23
-  d6:	8f 93       	push	r24
-  d8:	9f 93       	push	r25
-  da:	af 93       	push	r26
-  dc:	bf 93       	push	r27
-  de:	ef 93       	push	r30
-  e0:	ff 93       	push	r31
-  e2:	84 e6       	ldi	r24, 0x64	; 100
-  e4:	91 e0       	ldi	r25, 0x01	; 1
-  e6:	0e 94 50 05 	call	0xaa0	; 0xaa0 <_ZN5Timer14incrementTimerEv>
-  ea:	ff 91       	pop	r31
-  ec:	ef 91       	pop	r30
-  ee:	bf 91       	pop	r27
-  f0:	af 91       	pop	r26
-  f2:	9f 91       	pop	r25
-  f4:	8f 91       	pop	r24
-  f6:	7f 91       	pop	r23
-  f8:	6f 91       	pop	r22
-  fa:	5f 91       	pop	r21
-  fc:	4f 91       	pop	r20
-  fe:	3f 91       	pop	r19
- 100:	2f 91       	pop	r18
- 102:	0f 90       	pop	r0
- 104:	0f be       	out	0x3f, r0	; 63
- 106:	0f 90       	pop	r0
- 108:	1f 90       	pop	r1
- 10a:	18 95       	reti
-
-0000010c <__vector_12>:
- 10c:	78 94       	sei
- 10e:	1f 92       	push	r1
- 110:	0f 92       	push	r0
- 112:	0f b6       	in	r0, 0x3f	; 63
- 114:	0f 92       	push	r0
- 116:	11 24       	eor	r1, r1
- 118:	0f 90       	pop	r0
- 11a:	0f be       	out	0x3f, r0	; 63
- 11c:	0f 90       	pop	r0
- 11e:	1f 90       	pop	r1
- 120:	18 95       	reti
-
-00000122 <_Z20setUpTimerInterruptsv>:
- 122:	ee e6       	ldi	r30, 0x6E	; 110
- 124:	f0 e0       	ldi	r31, 0x00	; 0
- 126:	80 81       	ld	r24, Z
- 128:	82 60       	ori	r24, 0x02	; 2
- 12a:	80 83       	st	Z, r24
- 12c:	89 e1       	ldi	r24, 0x19	; 25
- 12e:	87 bd       	out	0x27, r24	; 39
- 130:	92 e0       	ldi	r25, 0x02	; 2
- 132:	94 bd       	out	0x24, r25	; 36
- 134:	83 e0       	ldi	r24, 0x03	; 3
- 136:	85 bd       	out	0x25, r24	; 37
- 138:	ef e6       	ldi	r30, 0x6F	; 111
- 13a:	f0 e0       	ldi	r31, 0x00	; 0
- 13c:	80 81       	ld	r24, Z
- 13e:	86 60       	ori	r24, 0x06	; 6
- 140:	80 83       	st	Z, r24
- 142:	20 e4       	ldi	r18, 0x40	; 64
- 144:	36 e0       	ldi	r19, 0x06	; 6
- 146:	30 93 89 00 	sts	0x0089, r19	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
- 14a:	20 93 88 00 	sts	0x0088, r18	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
- 14e:	21 e0       	ldi	r18, 0x01	; 1
- 150:	30 e0       	ldi	r19, 0x00	; 0
- 152:	30 93 8b 00 	sts	0x008B, r19	; 0x80008b <__TEXT_REGION_LENGTH__+0x7e008b>
- 156:	20 93 8a 00 	sts	0x008A, r18	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
- 15a:	89 e0       	ldi	r24, 0x09	; 9
- 15c:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
- 160:	8f ef       	ldi	r24, 0xFF	; 255
- 162:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7e00b3>
- 166:	90 93 b0 00 	sts	0x00B0, r25	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7e00b0>
- 16a:	81 e0       	ldi	r24, 0x01	; 1
- 16c:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7e00b1>
- 170:	78 94       	sei
- 172:	08 95       	ret
-
-00000174 <_Z25disableTimerOneInterruptsv>:
-}
-
-void disableTimerOneInterrupts( void )
-{
-	TIMSK1 &= ~((1 << OCIE1A) | (1 << OCIE2B));
- 174:	ef e6       	ldi	r30, 0x6F	; 111
- 176:	f0 e0       	ldi	r31, 0x00	; 0
- 178:	80 81       	ld	r24, Z
- 17a:	89 7f       	andi	r24, 0xF9	; 249
- 17c:	80 83       	st	Z, r24
- 17e:	08 95       	ret
-
-00000180 <__vector_11>:
-ISR( TIMER1_COMPB_vect, ISR_NOBLOCK)
-{
-}
-
-ISR( TIMER1_COMPA_vect, ISR_NOBLOCK )
-{
- 180:	78 94       	sei
- 182:	1f 92       	push	r1
- 184:	0f 92       	push	r0
- 186:	0f b6       	in	r0, 0x3f	; 63
- 188:	0f 92       	push	r0
- 18a:	11 24       	eor	r1, r1
- 18c:	2f 93       	push	r18
- 18e:	3f 93       	push	r19
- 190:	4f 93       	push	r20
- 192:	5f 93       	push	r21
- 194:	6f 93       	push	r22
- 196:	7f 93       	push	r23
- 198:	8f 93       	push	r24
- 19a:	9f 93       	push	r25
- 19c:	af 93       	push	r26
- 19e:	bf 93       	push	r27
- 1a0:	ef 93       	push	r30
- 1a2:	ff 93       	push	r31
-	disableTimerOneInterrupts();
- 1a4:	0e 94 ba 00 	call	0x174	; 0x174 <_Z25disableTimerOneInterruptsv>
-}
- 1a8:	ff 91       	pop	r31
- 1aa:	ef 91       	pop	r30
- 1ac:	bf 91       	pop	r27
- 1ae:	af 91       	pop	r26
- 1b0:	9f 91       	pop	r25
- 1b2:	8f 91       	pop	r24
- 1b4:	7f 91       	pop	r23
- 1b6:	6f 91       	pop	r22
- 1b8:	5f 91       	pop	r21
- 1ba:	4f 91       	pop	r20
- 1bc:	3f 91       	pop	r19
- 1be:	2f 91       	pop	r18
- 1c0:	0f 90       	pop	r0
- 1c2:	0f be       	out	0x3f, r0	; 63
- 1c4:	0f 90       	pop	r0
- 1c6:	1f 90       	pop	r1
- 1c8:	18 95       	reti
-
-000001ca <_Z9latchTaskv>:
-//Task for triggering
-void triggerTask( void ){
-	trigger.run();
-}
-//Task for counting
-void counterTask( void ){
- 1ca:	84 e4       	ldi	r24, 0x44	; 68
- 1cc:	91 e0       	ldi	r25, 0x01	; 1
- 1ce:	0e 94 a6 03 	call	0x74c	; 0x74c <_ZN5Latch3runEv>
- 1d2:	08 95       	ret
-
-000001d4 <_Z23sevenSegmentDisplayTaskv>:
- 1d4:	86 e4       	ldi	r24, 0x46	; 70
- 1d6:	91 e0       	ldi	r25, 0x01	; 1
- 1d8:	0e 94 44 04 	call	0x888	; 0x888 <_ZN8SevenSeg3runEv>
- 1dc:	08 95       	ret
-
-000001de <_Z11triggerTaskv>:
- 1de:	82 e1       	ldi	r24, 0x12	; 18
- 1e0:	91 e0       	ldi	r25, 0x01	; 1
- 1e2:	0e 94 1a 05 	call	0xa34	; 0xa34 <_ZN7Trigger3runEv>
- 1e6:	08 95       	ret
-
-000001e8 <_Z10blinkyTaskv>:
- 1e8:	8b e1       	ldi	r24, 0x1B	; 27
- 1ea:	91 e0       	ldi	r25, 0x01	; 1
- 1ec:	0e 94 5d 03 	call	0x6ba	; 0x6ba <_ZN6Blinky3runEv>
- 1f0:	08 95       	ret
-
-000001f2 <_Z12BPMInputTaskv>:
- 1f2:	83 e3       	ldi	r24, 0x33	; 51
- 1f4:	91 e0       	ldi	r25, 0x01	; 1
- 1f6:	0e 94 e3 02 	call	0x5c6	; 0x5c6 <_ZN8BPMInput3runEv>
- 1fa:	08 95       	ret
-
-000001fc <_Z12PrintBPMTaskv>:
- 1fc:	89 e2       	ldi	r24, 0x29	; 41
- 1fe:	91 e0       	ldi	r25, 0x01	; 1
- 200:	0e 94 c7 03 	call	0x78e	; 0x78e <_ZN8PrintBPM3runEv>
- 204:	08 95       	ret
-
-00000206 <main>:
-void PrintBPMTask( void ){
-	printBPM.run();
-}
-
-int main(void)
-{	
- 206:	cf 93       	push	r28
- 208:	df 93       	push	r29
- 20a:	cd b7       	in	r28, 0x3d	; 61
- 20c:	de b7       	in	r29, 0x3e	; 62
- 20e:	66 97       	sbiw	r28, 0x16	; 22
- 210:	0f b6       	in	r0, 0x3f	; 63
- 212:	f8 94       	cli
- 214:	de bf       	out	0x3e, r29	; 62
- 216:	0f be       	out	0x3f, r0	; 63
- 218:	cd bf       	out	0x3d, r28	; 61
-
-	//Setup interrupts to get the timer to work
-	setUpTimerInterrupts();
- 21a:	0e 94 91 00 	call	0x122	; 0x122 <_Z20setUpTimerInterruptsv>
-	
-	//Initialize task manager
-	TaskManager taskManager( timer );
- 21e:	64 e6       	ldi	r22, 0x64	; 100
- 220:	71 e0       	ldi	r23, 0x01	; 1
- 222:	ce 01       	movw	r24, r28
- 224:	01 96       	adiw	r24, 0x01	; 1
- 226:	0e 94 a5 04 	call	0x94a	; 0x94a <_ZN11TaskManagerC1ER5Timer>
-	
-	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
-	taskManager.addTask( latchTask , 64);
- 22a:	40 e4       	ldi	r20, 0x40	; 64
- 22c:	65 ee       	ldi	r22, 0xE5	; 229
- 22e:	70 e0       	ldi	r23, 0x00	; 0
- 230:	ce 01       	movw	r24, r28
- 232:	01 96       	adiw	r24, 0x01	; 1
- 234:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	taskManager.addTask( sevenSegmentDisplayTask, 128);
- 238:	40 e8       	ldi	r20, 0x80	; 128
- 23a:	6a ee       	ldi	r22, 0xEA	; 234
- 23c:	70 e0       	ldi	r23, 0x00	; 0
- 23e:	ce 01       	movw	r24, r28
- 240:	01 96       	adiw	r24, 0x01	; 1
- 242:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	taskManager.addTask( triggerTask,  4);
- 246:	44 e0       	ldi	r20, 0x04	; 4
- 248:	6f ee       	ldi	r22, 0xEF	; 239
- 24a:	70 e0       	ldi	r23, 0x00	; 0
- 24c:	ce 01       	movw	r24, r28
- 24e:	01 96       	adiw	r24, 0x01	; 1
- 250:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	//taskManager.addTask( counterTask, 128);
-	taskManager.addTask( BPMInputTask, 128 );
- 254:	40 e8       	ldi	r20, 0x80	; 128
- 256:	69 ef       	ldi	r22, 0xF9	; 249
- 258:	70 e0       	ldi	r23, 0x00	; 0
- 25a:	ce 01       	movw	r24, r28
- 25c:	01 96       	adiw	r24, 0x01	; 1
- 25e:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	taskManager.addTask( PrintBPMTask, 128 );
- 262:	40 e8       	ldi	r20, 0x80	; 128
- 264:	6e ef       	ldi	r22, 0xFE	; 254
- 266:	70 e0       	ldi	r23, 0x00	; 0
- 268:	ce 01       	movw	r24, r28
- 26a:	01 96       	adiw	r24, 0x01	; 1
- 26c:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	taskManager.addTask( blinkyTask, 128);
- 270:	40 e8       	ldi	r20, 0x80	; 128
- 272:	64 ef       	ldi	r22, 0xF4	; 244
- 274:	70 e0       	ldi	r23, 0x00	; 0
- 276:	ce 01       	movw	r24, r28
- 278:	01 96       	adiw	r24, 0x01	; 1
- 27a:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
-	
-    while (1) 
-    {
-		taskManager.runTasks();
- 27e:	ce 01       	movw	r24, r28
- 280:	01 96       	adiw	r24, 0x01	; 1
- 282:	0e 94 ce 04 	call	0x99c	; 0x99c <_ZN11TaskManager8runTasksEv>
- 286:	fb cf       	rjmp	.-10     	; 0x27e <main+0x78>
-
-00000288 <_GLOBAL__sub_I_timer>:
- * Author : Koltin Kosik-Harvey
- */
-#include "Tasks/setupTasks.h"
-
-//Define a pointer to a timer object.
-Timer timer;
- 288:	84 e6       	ldi	r24, 0x64	; 100
- 28a:	91 e0       	ldi	r25, 0x01	; 1
- 28c:	0e 94 46 05 	call	0xa8c	; 0xa8c <_ZN5TimerC1Ev>
-
-//Define a pointer to a seven segment display object.
-SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
- 290:	44 e6       	ldi	r20, 0x64	; 100
- 292:	51 e0       	ldi	r21, 0x01	; 1
- 294:	63 e0       	ldi	r22, 0x03	; 3
- 296:	86 e4       	ldi	r24, 0x46	; 70
- 298:	91 e0       	ldi	r25, 0x01	; 1
- 29a:	0e 94 f7 03 	call	0x7ee	; 0x7ee <_ZN8SevenSegC1EhR5Timer>
-//Pointer to the counter object
-//Task counts to 100 then resets.
-//Counter counter;
-
-//Pointer to latching task. Controls latching output on shift registers
-Latch latch( sevenSegmentDisplay );
- 29e:	66 e4       	ldi	r22, 0x46	; 70
- 2a0:	71 e0       	ldi	r23, 0x01	; 1
- 2a2:	84 e4       	ldi	r24, 0x44	; 68
- 2a4:	91 e0       	ldi	r25, 0x01	; 1
- 2a6:	0e 94 a2 03 	call	0x744	; 0x744 <_ZN5LatchC1ER8SevenSeg>
-
-//Pointer to the BPMInput task. Polls the potentiometer and averages it
-BPMInput bpmInput( timer );
- 2aa:	64 e6       	ldi	r22, 0x64	; 100
- 2ac:	71 e0       	ldi	r23, 0x01	; 1
- 2ae:	83 e3       	ldi	r24, 0x33	; 51
- 2b0:	91 e0       	ldi	r25, 0x01	; 1
- 2b2:	0e 94 c3 02 	call	0x586	; 0x586 <_ZN8BPMInputC1ER5Timer>
-
-//Pointer to the PrintBPM task. Prints value of the recorded BPM
-PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
- 2b6:	26 e4       	ldi	r18, 0x46	; 70
- 2b8:	31 e0       	ldi	r19, 0x01	; 1
- 2ba:	43 e3       	ldi	r20, 0x33	; 51
- 2bc:	51 e0       	ldi	r21, 0x01	; 1
- 2be:	64 e6       	ldi	r22, 0x64	; 100
- 2c0:	71 e0       	ldi	r23, 0x01	; 1
- 2c2:	89 e2       	ldi	r24, 0x29	; 41
- 2c4:	91 e0       	ldi	r25, 0x01	; 1
- 2c6:	0e 94 b4 03 	call	0x768	; 0x768 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>
-
-//Pointer to the blinky task
-Blinky blinky( timer, bpmInput );
- 2ca:	43 e3       	ldi	r20, 0x33	; 51
- 2cc:	51 e0       	ldi	r21, 0x01	; 1
- 2ce:	64 e6       	ldi	r22, 0x64	; 100
- 2d0:	71 e0       	ldi	r23, 0x01	; 1
- 2d2:	8b e1       	ldi	r24, 0x1B	; 27
- 2d4:	91 e0       	ldi	r25, 0x01	; 1
- 2d6:	0e 94 35 03 	call	0x66a	; 0x66a <_ZN6BlinkyC1ER5TimerR8BPMInput>
-
-//Pointer to trigger task
-//Used for triggering the instruments in the sequencer
-Trigger trigger( timer, blinky );
- 2da:	4b e1       	ldi	r20, 0x1B	; 27
- 2dc:	51 e0       	ldi	r21, 0x01	; 1
- 2de:	64 e6       	ldi	r22, 0x64	; 100
- 2e0:	71 e0       	ldi	r23, 0x01	; 1
- 2e2:	82 e1       	ldi	r24, 0x12	; 18
- 2e4:	91 e0       	ldi	r25, 0x01	; 1
- 2e6:	0e 94 02 05 	call	0xa04	; 0xa04 <_ZN7TriggerC1ER5TimerR6Blinky>
- 2ea:	08 95       	ret
-
-000002ec <_GLOBAL__sub_D_timer>:
- 2ec:	82 e1       	ldi	r24, 0x12	; 18
- 2ee:	91 e0       	ldi	r25, 0x01	; 1
- 2f0:	0e 94 45 05 	call	0xa8a	; 0xa8a <_ZN7TriggerD1Ev>
-
-//Pointer to the PrintBPM task. Prints value of the recorded BPM
-PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
-
-//Pointer to the blinky task
-Blinky blinky( timer, bpmInput );
- 2f4:	8b e1       	ldi	r24, 0x1B	; 27
- 2f6:	91 e0       	ldi	r25, 0x01	; 1
- 2f8:	0e 94 a1 03 	call	0x742	; 0x742 <_ZN6BlinkyD1Ev>
-
-//Pointer to the BPMInput task. Polls the potentiometer and averages it
-BPMInput bpmInput( timer );
-
-//Pointer to the PrintBPM task. Prints value of the recorded BPM
-PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
- 2fc:	89 e2       	ldi	r24, 0x29	; 41
- 2fe:	91 e0       	ldi	r25, 0x01	; 1
- 300:	0e 94 f6 03 	call	0x7ec	; 0x7ec <_ZN8PrintBPMD1Ev>
-
-//Pointer to latching task. Controls latching output on shift registers
-Latch latch( sevenSegmentDisplay );
-
-//Pointer to the BPMInput task. Polls the potentiometer and averages it
-BPMInput bpmInput( timer );
- 304:	83 e3       	ldi	r24, 0x33	; 51
- 306:	91 e0       	ldi	r25, 0x01	; 1
- 308:	0e 94 34 03 	call	0x668	; 0x668 <_ZN8BPMInputD1Ev>
-//Pointer to the counter object
-//Task counts to 100 then resets.
-//Counter counter;
-
-//Pointer to latching task. Controls latching output on shift registers
-Latch latch( sevenSegmentDisplay );
- 30c:	84 e4       	ldi	r24, 0x44	; 68
- 30e:	91 e0       	ldi	r25, 0x01	; 1
- 310:	0e 94 b3 03 	call	0x766	; 0x766 <_ZN5LatchD1Ev>
-
-//Define a pointer to a timer object.
-Timer timer;
-
-//Define a pointer to a seven segment display object.
-SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
- 314:	86 e4       	ldi	r24, 0x46	; 70
- 316:	91 e0       	ldi	r25, 0x01	; 1
- 318:	0e 94 a2 04 	call	0x944	; 0x944 <_ZN8SevenSegD1Ev>
- * Author : Koltin Kosik-Harvey
- */
-#include "Tasks/setupTasks.h"
-
-//Define a pointer to a timer object.
-Timer timer;
- 31c:	84 e6       	ldi	r24, 0x64	; 100
- 31e:	91 e0       	ldi	r25, 0x01	; 1
- 320:	0e 94 7f 05 	call	0xafe	; 0xafe <_ZN5TimerD1Ev>
- 324:	08 95       	ret
-
-00000326 <_Znwj>:
-	 return malloc(size);
- }
-
- void operator delete[](void * ptr)
- {
-	 free(ptr);
- 326:	0e 94 df 05 	call	0xbbe	; 0xbbe <malloc>
- 32a:	08 95       	ret
-
-0000032c <_Z5pow10h>:
- }
- 
- uint16_t pow10( uint8_t exponent )
- {
-	 if (exponent == 0){
- 32c:	88 23       	and	r24, r24
- 32e:	f1 f0       	breq	.+60     	; 0x36c <_Z5pow10h+0x40>
-		 return 1;
-	 }
-	 uint16_t output = 1;
-	 for(int i=0; i < exponent ; i++){
- 330:	90 e0       	ldi	r25, 0x00	; 0
- 332:	18 16       	cp	r1, r24
- 334:	19 06       	cpc	r1, r25
- 336:	ac f4       	brge	.+42     	; 0x362 <_Z5pow10h+0x36>
- 338:	40 e0       	ldi	r20, 0x00	; 0
- 33a:	50 e0       	ldi	r21, 0x00	; 0
- 33c:	21 e0       	ldi	r18, 0x01	; 1
- 33e:	30 e0       	ldi	r19, 0x00	; 0
-		 output = output * 10;
- 340:	b9 01       	movw	r22, r18
- 342:	66 0f       	add	r22, r22
- 344:	77 1f       	adc	r23, r23
- 346:	22 0f       	add	r18, r18
- 348:	33 1f       	adc	r19, r19
- 34a:	22 0f       	add	r18, r18
- 34c:	33 1f       	adc	r19, r19
- 34e:	22 0f       	add	r18, r18
- 350:	33 1f       	adc	r19, r19
- 352:	26 0f       	add	r18, r22
- 354:	37 1f       	adc	r19, r23
- {
-	 if (exponent == 0){
-		 return 1;
-	 }
-	 uint16_t output = 1;
-	 for(int i=0; i < exponent ; i++){
- 356:	4f 5f       	subi	r20, 0xFF	; 255
- 358:	5f 4f       	sbci	r21, 0xFF	; 255
- 35a:	48 17       	cp	r20, r24
- 35c:	59 07       	cpc	r21, r25
- 35e:	81 f7       	brne	.-32     	; 0x340 <_Z5pow10h+0x14>
- 360:	02 c0       	rjmp	.+4      	; 0x366 <_Z5pow10h+0x3a>
- 362:	21 e0       	ldi	r18, 0x01	; 1
- 364:	30 e0       	ldi	r19, 0x00	; 0
-		 output = output * 10;
-	 }
-	 return output;
- 366:	82 2f       	mov	r24, r18
- 368:	93 2f       	mov	r25, r19
- 36a:	08 95       	ret
- }
- 
- uint16_t pow10( uint8_t exponent )
- {
-	 if (exponent == 0){
-		 return 1;
- 36c:	81 e0       	ldi	r24, 0x01	; 1
- 36e:	90 e0       	ldi	r25, 0x00	; 0
-	 uint16_t output = 1;
-	 for(int i=0; i < exponent ; i++){
-		 output = output * 10;
-	 }
-	 return output;
- 370:	08 95       	ret
-
-00000372 <_ZN9AnalogPinC1Eh>:
-{
-	//Ensure ADSC is low.
-	while ( this->if_done_conv() == false ){};
-	ADCSRA |= (1 << ADIF); // Clear ADC Interrupt Flag	
-	return ADCH;
-}
- 372:	fc 01       	movw	r30, r24
- 374:	60 83       	st	Z, r22
- 376:	ee e7       	ldi	r30, 0x7E	; 126
- 378:	f0 e0       	ldi	r31, 0x00	; 0
- 37a:	20 81       	ld	r18, Z
- 37c:	81 e0       	ldi	r24, 0x01	; 1
- 37e:	90 e0       	ldi	r25, 0x00	; 0
- 380:	02 c0       	rjmp	.+4      	; 0x386 <_ZN9AnalogPinC1Eh+0x14>
- 382:	88 0f       	add	r24, r24
- 384:	99 1f       	adc	r25, r25
- 386:	6a 95       	dec	r22
- 388:	e2 f7       	brpl	.-8      	; 0x382 <_ZN9AnalogPinC1Eh+0x10>
- 38a:	82 2b       	or	r24, r18
- 38c:	80 83       	st	Z, r24
- 38e:	ec e7       	ldi	r30, 0x7C	; 124
- 390:	f0 e0       	ldi	r31, 0x00	; 0
- 392:	80 81       	ld	r24, Z
- 394:	80 64       	ori	r24, 0x40	; 64
- 396:	80 83       	st	Z, r24
- 398:	ea e7       	ldi	r30, 0x7A	; 122
- 39a:	f0 e0       	ldi	r31, 0x00	; 0
- 39c:	80 81       	ld	r24, Z
- 39e:	80 68       	ori	r24, 0x80	; 128
- 3a0:	80 83       	st	Z, r24
- 3a2:	80 81       	ld	r24, Z
- 3a4:	87 60       	ori	r24, 0x07	; 7
- 3a6:	80 83       	st	Z, r24
- 3a8:	08 95       	ret
-
-000003aa <_ZN9AnalogPin10conv_beginEv>:
- 3aa:	dc 01       	movw	r26, r24
- 3ac:	ec e7       	ldi	r30, 0x7C	; 124
- 3ae:	f0 e0       	ldi	r31, 0x00	; 0
- 3b0:	90 81       	ld	r25, Z
- 3b2:	90 7f       	andi	r25, 0xF0	; 240
- 3b4:	90 83       	st	Z, r25
- 3b6:	90 81       	ld	r25, Z
- 3b8:	8c 91       	ld	r24, X
- 3ba:	89 2b       	or	r24, r25
- 3bc:	80 83       	st	Z, r24
- 3be:	ea e7       	ldi	r30, 0x7A	; 122
- 3c0:	f0 e0       	ldi	r31, 0x00	; 0
- 3c2:	80 81       	ld	r24, Z
- 3c4:	80 64       	ori	r24, 0x40	; 64
- 3c6:	80 83       	st	Z, r24
- 3c8:	08 95       	ret
-
-000003ca <_ZN9AnalogPin12if_done_convEv>:
- 3ca:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7e007a>
- 3ce:	86 fb       	bst	r24, 6
- 3d0:	88 27       	eor	r24, r24
- 3d2:	80 f9       	bld	r24, 0
- 3d4:	91 e0       	ldi	r25, 0x01	; 1
- 3d6:	89 27       	eor	r24, r25
- 3d8:	08 95       	ret
-
-000003da <_ZN9AnalogPin10read_10BitEv>:
-
-//Reads ADC with 10 bit precision (slower)
-uint16_t AnalogPin::read_10Bit( void )
-{
- 3da:	cf 93       	push	r28
- 3dc:	df 93       	push	r29
- 3de:	ec 01       	movw	r28, r24
-	//Ensure ADSC is low.
-	while ( this->if_done_conv() == false ){};	
- 3e0:	ce 01       	movw	r24, r28
- 3e2:	0e 94 e5 01 	call	0x3ca	; 0x3ca <_ZN9AnalogPin12if_done_convEv>
- 3e6:	88 23       	and	r24, r24
- 3e8:	d9 f3       	breq	.-10     	; 0x3e0 <_ZN9AnalogPin10read_10BitEv+0x6>
-	ADCSRA |= (1 << ADIF); // Clear ADC Interrupt Flag
- 3ea:	ea e7       	ldi	r30, 0x7A	; 122
- 3ec:	f0 e0       	ldi	r31, 0x00	; 0
- 3ee:	80 81       	ld	r24, Z
- 3f0:	80 61       	ori	r24, 0x10	; 16
- 3f2:	80 83       	st	Z, r24
-	return ADC;
- 3f4:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7e0078>
- 3f8:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7e0079>
- 3fc:	df 91       	pop	r29
- 3fe:	cf 91       	pop	r28
- 400:	08 95       	ret
-
-00000402 <_ZN3Pin17setDirectionInputEv>:
-//ANDs the pinNumber mask with the input pin register
-//ie 00010000 & 11110000 = 00010000
-uint8_t Pin::read( void )
-{
-	return ( pinNumber & *pin_register );
-}
- 402:	dc 01       	movw	r26, r24
- 404:	ed 91       	ld	r30, X+
- 406:	fc 91       	ld	r31, X
- 408:	11 97       	sbiw	r26, 0x01	; 1
- 40a:	90 81       	ld	r25, Z
- 40c:	16 96       	adiw	r26, 0x06	; 6
- 40e:	8c 91       	ld	r24, X
- 410:	80 95       	com	r24
- 412:	89 23       	and	r24, r25
- 414:	80 83       	st	Z, r24
- 416:	08 95       	ret
-
-00000418 <_ZN3Pin7setHighEv>:
-	}
-}
-
-//Sets the pin high
-void Pin::setHigh( void )
-{
- 418:	dc 01       	movw	r26, r24
-	//set the pin high
-	*port_register |= pinNumber;
- 41a:	12 96       	adiw	r26, 0x02	; 2
- 41c:	ed 91       	ld	r30, X+
- 41e:	fc 91       	ld	r31, X
- 420:	13 97       	sbiw	r26, 0x03	; 3
- 422:	90 81       	ld	r25, Z
- 424:	16 96       	adiw	r26, 0x06	; 6
- 426:	8c 91       	ld	r24, X
- 428:	89 2b       	or	r24, r25
- 42a:	80 83       	st	Z, r24
- 42c:	08 95       	ret
-
-0000042e <_ZN3Pin6setLowEv>:
-}
-
-//Sets the pin low
-void Pin::setLow( void )
-{
- 42e:	dc 01       	movw	r26, r24
-	*port_register &= ~pinNumber;
- 430:	12 96       	adiw	r26, 0x02	; 2
- 432:	ed 91       	ld	r30, X+
- 434:	fc 91       	ld	r31, X
- 436:	13 97       	sbiw	r26, 0x03	; 3
- 438:	90 81       	ld	r25, Z
- 43a:	16 96       	adiw	r26, 0x06	; 6
- 43c:	8c 91       	ld	r24, X
- 43e:	80 95       	com	r24
- 440:	89 23       	and	r24, r25
- 442:	80 83       	st	Z, r24
- 444:	08 95       	ret
-
-00000446 <_ZN3Pin18setDirectionOutputEv>:
-{	
-	*data_direction_reg &= ~pinNumber;
-}
-
-void Pin::setDirectionOutput( void )
-{
- 446:	cf 93       	push	r28
- 448:	df 93       	push	r29
- 44a:	ec 01       	movw	r28, r24
-	//Set the pin to low
-	this->setLow();
- 44c:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-
-	//Set data direction to output for the pin
-	*data_direction_reg |= pinNumber;
- 450:	e8 81       	ld	r30, Y
- 452:	f9 81       	ldd	r31, Y+1	; 0x01
- 454:	90 81       	ld	r25, Z
- 456:	8e 81       	ldd	r24, Y+6	; 0x06
- 458:	89 2b       	or	r24, r25
- 45a:	80 83       	st	Z, r24
-}
- 45c:	df 91       	pop	r29
- 45e:	cf 91       	pop	r28
- 460:	08 95       	ret
-
-00000462 <_ZN3PinC1EhPVhh>:
-*/
-
-#include "Pin.h"
-
-// default constructor
-Pin::Pin(uint8_t PIN_NUMBER, volatile uint8_t * PortRegister, uint8_t DIRECTION)
- 462:	fc 01       	movw	r30, r24
-{
-	pin_register = PortRegister - 2;
- 464:	ca 01       	movw	r24, r20
- 466:	02 97       	sbiw	r24, 0x02	; 2
- 468:	95 83       	std	Z+5, r25	; 0x05
- 46a:	84 83       	std	Z+4, r24	; 0x04
-	data_direction_reg = PortRegister - 1;
- 46c:	01 96       	adiw	r24, 0x01	; 1
- 46e:	91 83       	std	Z+1, r25	; 0x01
- 470:	80 83       	st	Z, r24
-	port_register = PortRegister;
- 472:	53 83       	std	Z+3, r21	; 0x03
- 474:	42 83       	std	Z+2, r20	; 0x02
-	
-	//Stores pin number as a mask. Makes it easier for operations like setting the pin value
-	pinNumber = (1 << PIN_NUMBER);
- 476:	81 e0       	ldi	r24, 0x01	; 1
- 478:	01 c0       	rjmp	.+2      	; 0x47c <_ZN3PinC1EhPVhh+0x1a>
- 47a:	88 0f       	add	r24, r24
- 47c:	6a 95       	dec	r22
- 47e:	ea f7       	brpl	.-6      	; 0x47a <_ZN3PinC1EhPVhh+0x18>
- 480:	86 83       	std	Z+6, r24	; 0x06
-
-	if ( DIRECTION == OUTPUT )
- 482:	21 30       	cpi	r18, 0x01	; 1
- 484:	21 f4       	brne	.+8      	; 0x48e <_ZN3PinC1EhPVhh+0x2c>
-	{
-		this->setDirectionOutput();
- 486:	cf 01       	movw	r24, r30
- 488:	0e 94 23 02 	call	0x446	; 0x446 <_ZN3Pin18setDirectionOutputEv>
- 48c:	08 95       	ret
-	} else {
-		this->setDirectionInput();
- 48e:	cf 01       	movw	r24, r30
- 490:	0e 94 01 02 	call	0x402	; 0x402 <_ZN3Pin17setDirectionInputEv>
- 494:	08 95       	ret
-
-00000496 <_ZN13ShiftRegisterC1Ev>:
-
-ShiftRegister::ShiftRegister( Pin * shift, Pin * latch, Pin * serial )
-{
-	shiftPin = shift;
-	latchPin = latch;
-	serialPin = serial;
- 496:	08 95       	ret
-
-00000498 <_ZN13ShiftRegister11singleShiftEv>:
-}
-
-void ShiftRegister::singleShift( void )
-{
- 498:	cf 93       	push	r28
- 49a:	df 93       	push	r29
- 49c:	ec 01       	movw	r28, r24
-	//Shift single bit in.
-	shiftPin->setHigh();
- 49e:	88 81       	ld	r24, Y
- 4a0:	99 81       	ldd	r25, Y+1	; 0x01
- 4a2:	0e 94 0c 02 	call	0x418	; 0x418 <_ZN3Pin7setHighEv>
-	//wait
-	timer->wait_1us();
- 4a6:	8e 81       	ldd	r24, Y+6	; 0x06
- 4a8:	9f 81       	ldd	r25, Y+7	; 0x07
- 4aa:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
-	//Set shift high
-	shiftPin->setLow();
- 4ae:	88 81       	ld	r24, Y
- 4b0:	99 81       	ldd	r25, Y+1	; 0x01
- 4b2:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-	//wait
-	timer->wait_1us();
- 4b6:	8e 81       	ldd	r24, Y+6	; 0x06
- 4b8:	9f 81       	ldd	r25, Y+7	; 0x07
- 4ba:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
-}
- 4be:	df 91       	pop	r29
- 4c0:	cf 91       	pop	r28
- 4c2:	08 95       	ret
-
-000004c4 <_ZN13ShiftRegister5latchEv>:
-
-void ShiftRegister::latch( void )
-{
- 4c4:	cf 93       	push	r28
- 4c6:	df 93       	push	r29
- 4c8:	ec 01       	movw	r28, r24
-	//Latch output
-	latchPin->setHigh();
- 4ca:	8a 81       	ldd	r24, Y+2	; 0x02
- 4cc:	9b 81       	ldd	r25, Y+3	; 0x03
- 4ce:	0e 94 0c 02 	call	0x418	; 0x418 <_ZN3Pin7setHighEv>
-	//wait
-	timer->wait_1us();
- 4d2:	8e 81       	ldd	r24, Y+6	; 0x06
- 4d4:	9f 81       	ldd	r25, Y+7	; 0x07
- 4d6:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
-	//Set latch high
-	latchPin->setLow();
- 4da:	8a 81       	ldd	r24, Y+2	; 0x02
- 4dc:	9b 81       	ldd	r25, Y+3	; 0x03
- 4de:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-
-}
- 4e2:	df 91       	pop	r29
- 4e4:	cf 91       	pop	r28
- 4e6:	08 95       	ret
-
-000004e8 <_ZN13ShiftRegister17getTimerReferenceER5Timer>:
-
-void ShiftRegister::getTimerReference( Timer & ptr )
-{
-	timer = &ptr;
- 4e8:	fc 01       	movw	r30, r24
- 4ea:	77 83       	std	Z+7, r23	; 0x07
- 4ec:	66 83       	std	Z+6, r22	; 0x06
- 4ee:	08 95       	ret
-
-000004f0 <_ZN13ShiftRegisterD1Ev>:
-} //getTimerReference
-
-// default destructor
-ShiftRegister::~ShiftRegister()
- 4f0:	08 95       	ret
-
-000004f2 <_ZN18ShiftRegister_SIPOC1Ev>:
-//Constructs object with pinout
-ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )
-{
-	//Start off with output byte 0
-	output_byte = 0;
-}
- 4f2:	cf 93       	push	r28
- 4f4:	df 93       	push	r29
- 4f6:	ec 01       	movw	r28, r24
- 4f8:	0e 94 4b 02 	call	0x496	; 0x496 <_ZN13ShiftRegisterC1Ev>
- 4fc:	19 86       	std	Y+9, r1	; 0x09
- 4fe:	df 91       	pop	r29
- 500:	cf 91       	pop	r28
- 502:	08 95       	ret
-
-00000504 <_ZN18ShiftRegister_SIPO9shiftBitsEv>:
-
-//Shifts in a bit into the shift register.
-void ShiftRegister_SIPO::shiftBits( void )
-{		
- 504:	0f 93       	push	r16
- 506:	1f 93       	push	r17
- 508:	cf 93       	push	r28
- 50a:	df 93       	push	r29
- 50c:	ec 01       	movw	r28, r24
-	//Starting shifting with shift/serial/latch at 0
-	latchPin->setLow();
- 50e:	8a 81       	ldd	r24, Y+2	; 0x02
- 510:	9b 81       	ldd	r25, Y+3	; 0x03
- 512:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-	shiftPin->setLow();
- 516:	88 81       	ld	r24, Y
- 518:	99 81       	ldd	r25, Y+1	; 0x01
- 51a:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-	serialPin->setLow();
- 51e:	8c 81       	ldd	r24, Y+4	; 0x04
- 520:	9d 81       	ldd	r25, Y+5	; 0x05
- 522:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-
-	//Wait 1us
-	timer->wait_1us();
- 526:	8e 81       	ldd	r24, Y+6	; 0x06
- 528:	9f 81       	ldd	r25, Y+7	; 0x07
- 52a:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
-		
-	for ( int i=0; i < 8; i++){
- 52e:	00 e0       	ldi	r16, 0x00	; 0
- 530:	10 e0       	ldi	r17, 0x00	; 0
-			
-		//Load serial pin with bit
-			
-		//If the bit needs to be set to 1...
-		if( output_byte & (1 << i) ){
- 532:	29 85       	ldd	r18, Y+9	; 0x09
- 534:	30 e0       	ldi	r19, 0x00	; 0
- 536:	00 2e       	mov	r0, r16
- 538:	02 c0       	rjmp	.+4      	; 0x53e <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x3a>
- 53a:	35 95       	asr	r19
- 53c:	27 95       	ror	r18
- 53e:	0a 94       	dec	r0
- 540:	e2 f7       	brpl	.-8      	; 0x53a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x36>
- 542:	20 ff       	sbrs	r18, 0
- 544:	05 c0       	rjmp	.+10     	; 0x550 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x4c>
-
-			serialPin->setHigh();
- 546:	8c 81       	ldd	r24, Y+4	; 0x04
- 548:	9d 81       	ldd	r25, Y+5	; 0x05
- 54a:	0e 94 0c 02 	call	0x418	; 0x418 <_ZN3Pin7setHighEv>
- 54e:	04 c0       	rjmp	.+8      	; 0x558 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x54>
-				
-		//Else set to 0
-		} else {
-			
-			serialPin->setLow();
- 550:	8c 81       	ldd	r24, Y+4	; 0x04
- 552:	9d 81       	ldd	r25, Y+5	; 0x05
- 554:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-		}
-			
-		timer->wait_1us();
- 558:	8e 81       	ldd	r24, Y+6	; 0x06
- 55a:	9f 81       	ldd	r25, Y+7	; 0x07
- 55c:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
-			
-		this->singleShift();
- 560:	ce 01       	movw	r24, r28
- 562:	0e 94 4c 02 	call	0x498	; 0x498 <_ZN13ShiftRegister11singleShiftEv>
-	serialPin->setLow();
-
-	//Wait 1us
-	timer->wait_1us();
-		
-	for ( int i=0; i < 8; i++){
- 566:	0f 5f       	subi	r16, 0xFF	; 255
- 568:	1f 4f       	sbci	r17, 0xFF	; 255
- 56a:	08 30       	cpi	r16, 0x08	; 8
- 56c:	11 05       	cpc	r17, r1
- 56e:	09 f7       	brne	.-62     	; 0x532 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x2e>
-		timer->wait_1us();
-			
-		this->singleShift();
-	}
-	
-} //ShiftBits
- 570:	df 91       	pop	r29
- 572:	cf 91       	pop	r28
- 574:	1f 91       	pop	r17
- 576:	0f 91       	pop	r16
- 578:	08 95       	ret
-
-0000057a <_ZN18ShiftRegister_SIPO8loadByteEh>:
-
-void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
-{
-	output_byte = byteToLoad;
- 57a:	fc 01       	movw	r30, r24
- 57c:	61 87       	std	Z+9, r22	; 0x09
- 57e:	08 95       	ret
-
-00000580 <_ZN18ShiftRegister_SIPOD1Ev>:
-}
-
-// default destructor
-ShiftRegister_SIPO::~ShiftRegister_SIPO()
- 580:	0e 94 78 02 	call	0x4f0	; 0x4f0 <_ZN13ShiftRegisterD1Ev>
- 584:	08 95       	ret
-
-00000586 <_ZN8BPMInputC1ER5Timer>:
-*/
-
-
-#include "BPMInput.h"
-
-BPMInput::BPMInput( Timer & timerPtr ) : AnalogPin ( BPM_INPUT_PIN )
- 586:	0f 93       	push	r16
- 588:	1f 93       	push	r17
- 58a:	cf 93       	push	r28
- 58c:	df 93       	push	r29
- 58e:	ec 01       	movw	r28, r24
- 590:	8b 01       	movw	r16, r22
- 592:	63 e0       	ldi	r22, 0x03	; 3
- 594:	0e 94 b9 01 	call	0x372	; 0x372 <_ZN9AnalogPinC1Eh>
-{
-	//Store reference to timer pointer
-	timer = &timerPtr;
- 598:	1f 83       	std	Y+7, r17	; 0x07
- 59a:	0e 83       	std	Y+6, r16	; 0x06
-	
-	//Initialize Conversion Started flag
-	conversionFinished = false;
- 59c:	19 82       	std	Y+1, r1	; 0x01
-	
-	//Initialize time stamp
-	timeStamp = timer->millis();
- 59e:	c8 01       	movw	r24, r16
- 5a0:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
- 5a4:	68 87       	std	Y+8, r22	; 0x08
- 5a6:	79 87       	std	Y+9, r23	; 0x09
- 5a8:	8a 87       	std	Y+10, r24	; 0x0a
- 5aa:	9b 87       	std	Y+11, r25	; 0x0b
-	
-	//Initialize iteration counter
-	iteration = 0;
- 5ac:	18 8a       	std	Y+16, r1	; 0x10
-	
-	//Initialize sum for averaging 
-	sum = 0;
- 5ae:	1c 86       	std	Y+12, r1	; 0x0c
- 5b0:	1d 86       	std	Y+13, r1	; 0x0d
- 5b2:	1e 86       	std	Y+14, r1	; 0x0e
- 5b4:	1f 86       	std	Y+15, r1	; 0x0f
-	
-	//Begin first conversion
-	this->conv_begin();
- 5b6:	ce 01       	movw	r24, r28
- 5b8:	0e 94 d5 01 	call	0x3aa	; 0x3aa <_ZN9AnalogPin10conv_beginEv>
-	
-} //BPMInput
- 5bc:	df 91       	pop	r29
- 5be:	cf 91       	pop	r28
- 5c0:	1f 91       	pop	r17
- 5c2:	0f 91       	pop	r16
- 5c4:	08 95       	ret
-
-000005c6 <_ZN8BPMInput3runEv>:
-
-void BPMInput::run( void )
-{
- 5c6:	cf 93       	push	r28
- 5c8:	df 93       	push	r29
- 5ca:	ec 01       	movw	r28, r24
-	if ( timer->elapsed_millis(timeStamp) > BPM_PIN_POLLING_TIME ){
- 5cc:	48 85       	ldd	r20, Y+8	; 0x08
- 5ce:	59 85       	ldd	r21, Y+9	; 0x09
- 5d0:	6a 85       	ldd	r22, Y+10	; 0x0a
- 5d2:	7b 85       	ldd	r23, Y+11	; 0x0b
- 5d4:	8e 81       	ldd	r24, Y+6	; 0x06
- 5d6:	9f 81       	ldd	r25, Y+7	; 0x07
- 5d8:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
- 5dc:	63 33       	cpi	r22, 0x33	; 51
- 5de:	71 05       	cpc	r23, r1
- 5e0:	81 05       	cpc	r24, r1
- 5e2:	91 05       	cpc	r25, r1
- 5e4:	f0 f1       	brcs	.+124    	; 0x662 <_ZN8BPMInput3runEv+0x9c>
-		
-		//Check if previous ADC conversion is complete.
-		if ( this->if_done_conv()  ){
- 5e6:	ce 01       	movw	r24, r28
- 5e8:	0e 94 e5 01 	call	0x3ca	; 0x3ca <_ZN9AnalogPin12if_done_convEv>
- 5ec:	88 23       	and	r24, r24
- 5ee:	c9 f1       	breq	.+114    	; 0x662 <_ZN8BPMInput3runEv+0x9c>
-			
-			//Read a sample of the ADC
-			sum += this->read_10Bit();
- 5f0:	ce 01       	movw	r24, r28
- 5f2:	0e 94 ed 01 	call	0x3da	; 0x3da <_ZN9AnalogPin10read_10BitEv>
- 5f6:	4c 85       	ldd	r20, Y+12	; 0x0c
- 5f8:	5d 85       	ldd	r21, Y+13	; 0x0d
- 5fa:	6e 85       	ldd	r22, Y+14	; 0x0e
- 5fc:	7f 85       	ldd	r23, Y+15	; 0x0f
- 5fe:	48 0f       	add	r20, r24
- 600:	59 1f       	adc	r21, r25
- 602:	61 1d       	adc	r22, r1
- 604:	71 1d       	adc	r23, r1
- 606:	4c 87       	std	Y+12, r20	; 0x0c
- 608:	5d 87       	std	Y+13, r21	; 0x0d
- 60a:	6e 87       	std	Y+14, r22	; 0x0e
- 60c:	7f 87       	std	Y+15, r23	; 0x0f
-			
-			//Begin conversion for next iteration
-			this->conv_begin();
- 60e:	ce 01       	movw	r24, r28
- 610:	0e 94 d5 01 	call	0x3aa	; 0x3aa <_ZN9AnalogPin10conv_beginEv>
-			
-			//Increment the iteration count
-			iteration++;
- 614:	88 89       	ldd	r24, Y+16	; 0x10
- 616:	8f 5f       	subi	r24, 0xFF	; 255
- 618:	88 8b       	std	Y+16, r24	; 0x10
-			
-			//Check if we take the required amount of samples for averaging
-			if ( iteration >= SAMPLES ){
- 61a:	80 31       	cpi	r24, 0x10	; 16
- 61c:	d0 f0       	brcs	.+52     	; 0x652 <_ZN8BPMInput3runEv+0x8c>
-				
-				//Value is the average however this would leave with a value of 1024 as MAX
-				value = (sum >> SAMPLES_LOG2);
- 61e:	8c 85       	ldd	r24, Y+12	; 0x0c
- 620:	9d 85       	ldd	r25, Y+13	; 0x0d
- 622:	ae 85       	ldd	r26, Y+14	; 0x0e
- 624:	bf 85       	ldd	r27, Y+15	; 0x0f
-				
-				//Convert value to a range between 0-256 essential devide by four
-				value = value >> 2;
- 626:	68 94       	set
- 628:	15 f8       	bld	r1, 5
- 62a:	b6 95       	lsr	r27
- 62c:	a7 95       	ror	r26
- 62e:	97 95       	ror	r25
- 630:	87 95       	ror	r24
- 632:	16 94       	lsr	r1
- 634:	d1 f7       	brne	.-12     	; 0x62a <_ZN8BPMInput3runEv+0x64>
-				
-				//Add the offset
-				value = value + BPM_OFFSET;
- 636:	4e 96       	adiw	r24, 0x1e	; 30
- 638:	a1 1d       	adc	r26, r1
- 63a:	b1 1d       	adc	r27, r1
- 63c:	8a 83       	std	Y+2, r24	; 0x02
- 63e:	9b 83       	std	Y+3, r25	; 0x03
- 640:	ac 83       	std	Y+4, r26	; 0x04
- 642:	bd 83       	std	Y+5, r27	; 0x05
-	
-				//Reset sum
-				sum = 0;
- 644:	1c 86       	std	Y+12, r1	; 0x0c
- 646:	1d 86       	std	Y+13, r1	; 0x0d
- 648:	1e 86       	std	Y+14, r1	; 0x0e
- 64a:	1f 86       	std	Y+15, r1	; 0x0f
-				
-				//Reset iteration count
-				iteration = 0;	
- 64c:	18 8a       	std	Y+16, r1	; 0x10
-				
-				//Indicate the conversion is done
-				conversionFinished = true;
- 64e:	81 e0       	ldi	r24, 0x01	; 1
- 650:	89 83       	std	Y+1, r24	; 0x01
-			}
-			
-			//Reset the time stamp
-			timeStamp = timer->millis();
- 652:	8e 81       	ldd	r24, Y+6	; 0x06
- 654:	9f 81       	ldd	r25, Y+7	; 0x07
- 656:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
- 65a:	68 87       	std	Y+8, r22	; 0x08
- 65c:	79 87       	std	Y+9, r23	; 0x09
- 65e:	8a 87       	std	Y+10, r24	; 0x0a
- 660:	9b 87       	std	Y+11, r25	; 0x0b
-		}
-	}
-}
- 662:	df 91       	pop	r29
- 664:	cf 91       	pop	r28
- 666:	08 95       	ret
-
-00000668 <_ZN8BPMInputD1Ev>:
-
-
-// default destructor
-BPMInput::~BPMInput()
- 668:	08 95       	ret
-
-0000066a <_ZN6BlinkyC1ER5TimerR8BPMInput>:
-
-
-#include "Blinky.h"
-
-//Initialize the pins. 
-Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
- 66a:	0f 93       	push	r16
- 66c:	1f 93       	push	r17
- 66e:	cf 93       	push	r28
- 670:	df 93       	push	r29
- 672:	ec 01       	movw	r28, r24
-{
-	//Set LED on port D data direction to output
-	DDRD |= (1 << PORTD0);
- 674:	50 9a       	sbi	0x0a, 0	; 10
-		
-	//Used for the "Status LED"
-	DDRD |= (1 << PORTD1);
- 676:	51 9a       	sbi	0x0a, 1	; 10
-	
-	//Used for Task - "Blinky". Indicates next value of LED
-	LEDValueNext = 1;
- 678:	81 e0       	ldi	r24, 0x01	; 1
- 67a:	8a 83       	std	Y+2, r24	; 0x02
-	
-	//initialize time stamp to zero
-	timeStamp = 0;
- 67c:	18 86       	std	Y+8, r1	; 0x08
- 67e:	19 86       	std	Y+9, r1	; 0x09
- 680:	1a 86       	std	Y+10, r1	; 0x0a
- 682:	1b 86       	std	Y+11, r1	; 0x0b
-	
-	//Get reference to the timer
-	timer = &timerPtr;
- 684:	7d 83       	std	Y+5, r23	; 0x05
- 686:	6c 83       	std	Y+4, r22	; 0x04
-	
-	//Get reference to the BPM input
-	bpmInput = &bpmInputRef;
- 688:	5f 83       	std	Y+7, r21	; 0x07
- 68a:	4e 83       	std	Y+6, r20	; 0x06
-	
-	blinkyPin = new Pin(0, &PORTD, OUTPUT);
- 68c:	87 e0       	ldi	r24, 0x07	; 7
- 68e:	90 e0       	ldi	r25, 0x00	; 0
- 690:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 694:	8c 01       	movw	r16, r24
- 696:	21 e0       	ldi	r18, 0x01	; 1
- 698:	4b e2       	ldi	r20, 0x2B	; 43
- 69a:	50 e0       	ldi	r21, 0x00	; 0
- 69c:	60 e0       	ldi	r22, 0x00	; 0
- 69e:	0e 94 31 02 	call	0x462	; 0x462 <_ZN3PinC1EhPVhh>
- 6a2:	1d 87       	std	Y+13, r17	; 0x0d
- 6a4:	0c 87       	std	Y+12, r16	; 0x0c
-	
-	//initialize pulse width
-	pulseWidth = 5000;
- 6a6:	88 e8       	ldi	r24, 0x88	; 136
- 6a8:	93 e1       	ldi	r25, 0x13	; 19
- 6aa:	99 83       	std	Y+1, r25	; 0x01
- 6ac:	88 83       	st	Y, r24
-	
-	//init flag
-	justSetHigh = false;
- 6ae:	1b 82       	std	Y+3, r1	; 0x03
-	
-} //Blinky
- 6b0:	df 91       	pop	r29
- 6b2:	cf 91       	pop	r28
- 6b4:	1f 91       	pop	r17
- 6b6:	0f 91       	pop	r16
- 6b8:	08 95       	ret
-
-000006ba <_ZN6Blinky3runEv>:
-
-void Blinky::run()
-{
- 6ba:	0f 93       	push	r16
- 6bc:	1f 93       	push	r17
- 6be:	cf 93       	push	r28
- 6c0:	df 93       	push	r29
- 6c2:	ec 01       	movw	r28, r24
-	if ( timer->elapsed_millis( timeStamp ) > pulseWidth ) {
- 6c4:	48 85       	ldd	r20, Y+8	; 0x08
- 6c6:	59 85       	ldd	r21, Y+9	; 0x09
- 6c8:	6a 85       	ldd	r22, Y+10	; 0x0a
- 6ca:	7b 85       	ldd	r23, Y+11	; 0x0b
- 6cc:	8c 81       	ldd	r24, Y+4	; 0x04
- 6ce:	9d 81       	ldd	r25, Y+5	; 0x05
- 6d0:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
- 6d4:	28 81       	ld	r18, Y
- 6d6:	39 81       	ldd	r19, Y+1	; 0x01
- 6d8:	89 01       	movw	r16, r18
- 6da:	20 e0       	ldi	r18, 0x00	; 0
- 6dc:	30 e0       	ldi	r19, 0x00	; 0
- 6de:	06 17       	cp	r16, r22
- 6e0:	17 07       	cpc	r17, r23
- 6e2:	28 07       	cpc	r18, r24
- 6e4:	39 07       	cpc	r19, r25
- 6e6:	40 f5       	brcc	.+80     	; 0x738 <_ZN6Blinky3runEv+0x7e>
-		
-		//Update time stamp
-		timeStamp = timer->millis();
- 6e8:	8c 81       	ldd	r24, Y+4	; 0x04
- 6ea:	9d 81       	ldd	r25, Y+5	; 0x05
- 6ec:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
- 6f0:	68 87       	std	Y+8, r22	; 0x08
- 6f2:	79 87       	std	Y+9, r23	; 0x09
- 6f4:	8a 87       	std	Y+10, r24	; 0x0a
- 6f6:	9b 87       	std	Y+11, r25	; 0x0b
-		
-		if( LEDValueNext == 1 ){
- 6f8:	8a 81       	ldd	r24, Y+2	; 0x02
- 6fa:	81 30       	cpi	r24, 0x01	; 1
- 6fc:	31 f4       	brne	.+12     	; 0x70a <_ZN6Blinky3runEv+0x50>
-			//Set Test LED to OFF
-			blinkyPin->setHigh();	
- 6fe:	8c 85       	ldd	r24, Y+12	; 0x0c
- 700:	9d 85       	ldd	r25, Y+13	; 0x0d
- 702:	0e 94 0c 02 	call	0x418	; 0x418 <_ZN3Pin7setHighEv>
-			LEDValueNext = 0;
- 706:	1a 82       	std	Y+2, r1	; 0x02
- 708:	07 c0       	rjmp	.+14     	; 0x718 <_ZN6Blinky3runEv+0x5e>
-			
-			} else {
-			//Set Test LED to ON
-			blinkyPin->setLow();
- 70a:	8c 85       	ldd	r24, Y+12	; 0x0c
- 70c:	9d 85       	ldd	r25, Y+13	; 0x0d
- 70e:	0e 94 17 02 	call	0x42e	; 0x42e <_ZN3Pin6setLowEv>
-			
-			justSetHigh = true;
- 712:	81 e0       	ldi	r24, 0x01	; 1
- 714:	8b 83       	std	Y+3, r24	; 0x03
-			
-			LEDValueNext = 1;
- 716:	8a 83       	std	Y+2, r24	; 0x02
-		//Recalculate pulse rate. in units of 0.1ms 
-		//Timer counter to 600000 per 0.1ms so if we have 60 BPM
-		//The delay would be 600000/60 = 10000;
-		//Then we need to devide by two, to have the clock go up and down.
-		//Period would still be the 1/BPM.
-		pulseWidth = 600000 / bpmInput->value;
- 718:	ee 81       	ldd	r30, Y+6	; 0x06
- 71a:	ff 81       	ldd	r31, Y+7	; 0x07
- 71c:	22 81       	ldd	r18, Z+2	; 0x02
- 71e:	33 81       	ldd	r19, Z+3	; 0x03
- 720:	44 81       	ldd	r20, Z+4	; 0x04
- 722:	55 81       	ldd	r21, Z+5	; 0x05
- 724:	60 ec       	ldi	r22, 0xC0	; 192
- 726:	77 e2       	ldi	r23, 0x27	; 39
- 728:	89 e0       	ldi	r24, 0x09	; 9
- 72a:	90 e0       	ldi	r25, 0x00	; 0
- 72c:	0e 94 a8 05 	call	0xb50	; 0xb50 <__udivmodsi4>
-		pulseWidth = pulseWidth >> 1;
- 730:	36 95       	lsr	r19
- 732:	27 95       	ror	r18
- 734:	39 83       	std	Y+1, r19	; 0x01
- 736:	28 83       	st	Y, r18
-		
-	}
-}
- 738:	df 91       	pop	r29
- 73a:	cf 91       	pop	r28
- 73c:	1f 91       	pop	r17
- 73e:	0f 91       	pop	r16
- 740:	08 95       	ret
-
-00000742 <_ZN6BlinkyD1Ev>:
-
-// default destructor
-Blinky::~Blinky()
- 742:	08 95       	ret
-
-00000744 <_ZN5LatchC1ER8SevenSeg>:
-#include "Latch.h"
-
-Latch::Latch( SevenSeg & sevenSegPtr )
-{
-	//Reference to the seven segment display
-	sevenSegmentDisplay = &sevenSegPtr;
- 744:	fc 01       	movw	r30, r24
- 746:	71 83       	std	Z+1, r23	; 0x01
- 748:	60 83       	st	Z, r22
- 74a:	08 95       	ret
-
-0000074c <_ZN5Latch3runEv>:
-} //Latch
-
-void Latch::run( void )
-{
-	if( sevenSegmentDisplay->shiftComplete == true){
- 74c:	dc 01       	movw	r26, r24
- 74e:	ed 91       	ld	r30, X+
- 750:	fc 91       	ld	r31, X
- 752:	11 97       	sbiw	r26, 0x01	; 1
- 754:	22 85       	ldd	r18, Z+10	; 0x0a
- 756:	21 30       	cpi	r18, 0x01	; 1
- 758:	29 f4       	brne	.+10     	; 0x764 <_ZN5Latch3runEv+0x18>
-		
-		//Reset the shift complete flag
-		sevenSegmentDisplay->shiftComplete = false;
- 75a:	12 86       	std	Z+10, r1	; 0x0a
-		
-		//Latch shift registers. Output should show on seven segment display
-		sevenSegmentDisplay->latch();
- 75c:	8d 91       	ld	r24, X+
- 75e:	9c 91       	ld	r25, X
- 760:	0e 94 62 02 	call	0x4c4	; 0x4c4 <_ZN13ShiftRegister5latchEv>
- 764:	08 95       	ret
-
-00000766 <_ZN5LatchD1Ev>:
-	}
-}
-
-// default destructor
-Latch::~Latch()
- 766:	08 95       	ret
-
-00000768 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>:
-
-
-#include "PrintBPM.h"
-
-
-PrintBPM::PrintBPM( Timer & timerPtr, BPMInput & BPMInputPtr, SevenSeg & sevenSegPtr)
- 768:	cf 93       	push	r28
- 76a:	df 93       	push	r29
- 76c:	ec 01       	movw	r28, r24
- 76e:	cb 01       	movw	r24, r22
-{	
-	//Get reference to timer object
-	timer = &timerPtr;
- 770:	7b 83       	std	Y+3, r23	; 0x03
- 772:	6a 83       	std	Y+2, r22	; 0x02
-	
-	//Get reference to the BPM input object
-	BPMInputRef = &BPMInputPtr;
- 774:	59 83       	std	Y+1, r21	; 0x01
- 776:	48 83       	st	Y, r20
-	
-	//Get reference to the seven segment display
-	sevenSeg = &sevenSegPtr;
- 778:	3d 83       	std	Y+5, r19	; 0x05
- 77a:	2c 83       	std	Y+4, r18	; 0x04
-	
-	//Initialize timeStamp
-	timeStamp = timer->millis();
- 77c:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
- 780:	6e 83       	std	Y+6, r22	; 0x06
- 782:	7f 83       	std	Y+7, r23	; 0x07
- 784:	88 87       	std	Y+8, r24	; 0x08
- 786:	99 87       	std	Y+9, r25	; 0x09
-	
-} //PrintBPM
- 788:	df 91       	pop	r29
- 78a:	cf 91       	pop	r28
- 78c:	08 95       	ret
-
-0000078e <_ZN8PrintBPM3runEv>:
-
-void PrintBPM::run( void )
-{
- 78e:	cf 93       	push	r28
- 790:	df 93       	push	r29
- 792:	ec 01       	movw	r28, r24
-	if( timer->elapsed_millis(timeStamp) > BPM_MIN_UPDATE_TIME ){
- 794:	4e 81       	ldd	r20, Y+6	; 0x06
- 796:	5f 81       	ldd	r21, Y+7	; 0x07
- 798:	68 85       	ldd	r22, Y+8	; 0x08
- 79a:	79 85       	ldd	r23, Y+9	; 0x09
- 79c:	8a 81       	ldd	r24, Y+2	; 0x02
- 79e:	9b 81       	ldd	r25, Y+3	; 0x03
- 7a0:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
- 7a4:	69 3e       	cpi	r22, 0xE9	; 233
- 7a6:	73 40       	sbci	r23, 0x03	; 3
- 7a8:	81 05       	cpc	r24, r1
- 7aa:	91 05       	cpc	r25, r1
- 7ac:	e0 f0       	brcs	.+56     	; 0x7e6 <_ZN8PrintBPM3runEv+0x58>
-		
-		//See if the ADC conversion to get the BPM has been completed
-		if ( BPMInputRef->conversionFinished == true ){
- 7ae:	e8 81       	ld	r30, Y
- 7b0:	f9 81       	ldd	r31, Y+1	; 0x01
- 7b2:	81 81       	ldd	r24, Z+1	; 0x01
- 7b4:	81 30       	cpi	r24, 0x01	; 1
- 7b6:	b9 f4       	brne	.+46     	; 0x7e6 <_ZN8PrintBPM3runEv+0x58>
-				
-			//Set the content for the seven segment to print
-			sevenSeg->contentToPrint = BPMInputRef->value;
- 7b8:	ac 81       	ldd	r26, Y+4	; 0x04
- 7ba:	bd 81       	ldd	r27, Y+5	; 0x05
- 7bc:	82 81       	ldd	r24, Z+2	; 0x02
- 7be:	93 81       	ldd	r25, Z+3	; 0x03
- 7c0:	1d 96       	adiw	r26, 0x0d	; 13
- 7c2:	9c 93       	st	X, r25
- 7c4:	8e 93       	st	-X, r24
- 7c6:	1c 97       	sbiw	r26, 0x0c	; 12
-				
-			//Tell seven seg object to print new content
-			sevenSeg->newContentToPrint = true;
- 7c8:	ec 81       	ldd	r30, Y+4	; 0x04
- 7ca:	fd 81       	ldd	r31, Y+5	; 0x05
- 7cc:	81 e0       	ldi	r24, 0x01	; 1
- 7ce:	83 87       	std	Z+11, r24	; 0x0b
-				
-			//Reset the BPM input "conversion finished" flag
-			BPMInputRef->conversionFinished = false;
- 7d0:	e8 81       	ld	r30, Y
- 7d2:	f9 81       	ldd	r31, Y+1	; 0x01
- 7d4:	11 82       	std	Z+1, r1	; 0x01
-				
-			//Get new time stamp
-			timeStamp = timer->millis();
- 7d6:	8a 81       	ldd	r24, Y+2	; 0x02
- 7d8:	9b 81       	ldd	r25, Y+3	; 0x03
- 7da:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
- 7de:	6e 83       	std	Y+6, r22	; 0x06
- 7e0:	7f 83       	std	Y+7, r23	; 0x07
- 7e2:	88 87       	std	Y+8, r24	; 0x08
- 7e4:	99 87       	std	Y+9, r25	; 0x09
-		}
-	}
-}
- 7e6:	df 91       	pop	r29
- 7e8:	cf 91       	pop	r28
- 7ea:	08 95       	ret
-
-000007ec <_ZN8PrintBPMD1Ev>:
-
-// default destructor
-PrintBPM::~PrintBPM()
- 7ec:	08 95       	ret
-
-000007ee <_ZN8SevenSegC1EhR5Timer>:
+000000c0 <_ZN8SevenSegC1EhR5Timer>:
 	//Shift in the Byte
 	this->shiftBits();
 	
 	//latch output
 	this->latch();
 }
- 7ee:	ef 92       	push	r14
- 7f0:	ff 92       	push	r15
- 7f2:	0f 93       	push	r16
- 7f4:	1f 93       	push	r17
- 7f6:	cf 93       	push	r28
- 7f8:	df 93       	push	r29
- 7fa:	ec 01       	movw	r28, r24
- 7fc:	16 2f       	mov	r17, r22
- 7fe:	7a 01       	movw	r14, r20
- 800:	0e 94 79 02 	call	0x4f2	; 0x4f2 <_ZN18ShiftRegister_SIPOC1Ev>
- 804:	8b e0       	ldi	r24, 0x0B	; 11
- 806:	e6 e0       	ldi	r30, 0x06	; 6
- 808:	f1 e0       	ldi	r31, 0x01	; 1
- 80a:	de 01       	movw	r26, r28
- 80c:	1f 96       	adiw	r26, 0x0f	; 15
- 80e:	01 90       	ld	r0, Z+
- 810:	0d 92       	st	X+, r0
- 812:	8a 95       	dec	r24
- 814:	e1 f7       	brne	.-8      	; 0x80e <_ZN8SevenSegC1EhR5Timer+0x20>
- 816:	1d 86       	std	Y+13, r1	; 0x0d
- 818:	1c 86       	std	Y+12, r1	; 0x0c
- 81a:	1d 8e       	std	Y+29, r1	; 0x1d
- 81c:	b7 01       	movw	r22, r14
- 81e:	ce 01       	movw	r24, r28
- 820:	0e 94 74 02 	call	0x4e8	; 0x4e8 <_ZN13ShiftRegister17getTimerReferenceER5Timer>
- 824:	1e 87       	std	Y+14, r17	; 0x0e
- 826:	81 e0       	ldi	r24, 0x01	; 1
- 828:	8a 87       	std	Y+10, r24	; 0x0a
- 82a:	8b 87       	std	Y+11, r24	; 0x0b
- 82c:	87 e0       	ldi	r24, 0x07	; 7
- 82e:	90 e0       	ldi	r25, 0x00	; 0
- 830:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 834:	8c 01       	movw	r16, r24
- 836:	21 e0       	ldi	r18, 0x01	; 1
- 838:	45 e2       	ldi	r20, 0x25	; 37
- 83a:	50 e0       	ldi	r21, 0x00	; 0
- 83c:	62 e0       	ldi	r22, 0x02	; 2
- 83e:	0e 94 31 02 	call	0x462	; 0x462 <_ZN3PinC1EhPVhh>
- 842:	19 83       	std	Y+1, r17	; 0x01
- 844:	08 83       	st	Y, r16
- 846:	87 e0       	ldi	r24, 0x07	; 7
- 848:	90 e0       	ldi	r25, 0x00	; 0
- 84a:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 84e:	8c 01       	movw	r16, r24
- 850:	21 e0       	ldi	r18, 0x01	; 1
- 852:	45 e2       	ldi	r20, 0x25	; 37
- 854:	50 e0       	ldi	r21, 0x00	; 0
- 856:	61 e0       	ldi	r22, 0x01	; 1
- 858:	0e 94 31 02 	call	0x462	; 0x462 <_ZN3PinC1EhPVhh>
- 85c:	1b 83       	std	Y+3, r17	; 0x03
- 85e:	0a 83       	std	Y+2, r16	; 0x02
- 860:	87 e0       	ldi	r24, 0x07	; 7
- 862:	90 e0       	ldi	r25, 0x00	; 0
- 864:	0e 94 93 01 	call	0x326	; 0x326 <_Znwj>
- 868:	8c 01       	movw	r16, r24
- 86a:	21 e0       	ldi	r18, 0x01	; 1
- 86c:	45 e2       	ldi	r20, 0x25	; 37
- 86e:	50 e0       	ldi	r21, 0x00	; 0
- 870:	60 e0       	ldi	r22, 0x00	; 0
- 872:	0e 94 31 02 	call	0x462	; 0x462 <_ZN3PinC1EhPVhh>
- 876:	1d 83       	std	Y+5, r17	; 0x05
- 878:	0c 83       	std	Y+4, r16	; 0x04
- 87a:	df 91       	pop	r29
- 87c:	cf 91       	pop	r28
- 87e:	1f 91       	pop	r17
- 880:	0f 91       	pop	r16
- 882:	ff 90       	pop	r15
- 884:	ef 90       	pop	r14
- 886:	08 95       	ret
+  c0:	ef 92       	push	r14
+  c2:	ff 92       	push	r15
+  c4:	0f 93       	push	r16
+  c6:	1f 93       	push	r17
+  c8:	cf 93       	push	r28
+  ca:	df 93       	push	r29
+  cc:	ec 01       	movw	r28, r24
+  ce:	16 2f       	mov	r17, r22
+  d0:	7a 01       	movw	r14, r20
+  d2:	0e 94 27 03 	call	0x64e	; 0x64e <_ZN18ShiftRegister_SIPOC1Ev>
+  d6:	8b e0       	ldi	r24, 0x0B	; 11
+  d8:	e6 e0       	ldi	r30, 0x06	; 6
+  da:	f1 e0       	ldi	r31, 0x01	; 1
+  dc:	de 01       	movw	r26, r28
+  de:	1f 96       	adiw	r26, 0x0f	; 15
+  e0:	01 90       	ld	r0, Z+
+  e2:	0d 92       	st	X+, r0
+  e4:	8a 95       	dec	r24
+  e6:	e1 f7       	brne	.-8      	; 0xe0 <_ZN8SevenSegC1EhR5Timer+0x20>
+  e8:	1d 86       	std	Y+13, r1	; 0x0d
+  ea:	1c 86       	std	Y+12, r1	; 0x0c
+  ec:	1d 8e       	std	Y+29, r1	; 0x1d
+  ee:	b7 01       	movw	r22, r14
+  f0:	ce 01       	movw	r24, r28
+  f2:	0e 94 22 03 	call	0x644	; 0x644 <_ZN13ShiftRegister17getTimerReferenceER5Timer>
+  f6:	1e 87       	std	Y+14, r17	; 0x0e
+  f8:	81 e0       	ldi	r24, 0x01	; 1
+  fa:	8a 87       	std	Y+10, r24	; 0x0a
+  fc:	8b 87       	std	Y+11, r24	; 0x0b
+  fe:	87 e0       	ldi	r24, 0x07	; 7
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	0e 94 41 02 	call	0x482	; 0x482 <_Znwj>
+ 106:	8c 01       	movw	r16, r24
+ 108:	21 e0       	ldi	r18, 0x01	; 1
+ 10a:	45 e2       	ldi	r20, 0x25	; 37
+ 10c:	50 e0       	ldi	r21, 0x00	; 0
+ 10e:	62 e0       	ldi	r22, 0x02	; 2
+ 110:	0e 94 df 02 	call	0x5be	; 0x5be <_ZN3PinC1EhPVhh>
+ 114:	19 83       	std	Y+1, r17	; 0x01
+ 116:	08 83       	st	Y, r16
+ 118:	87 e0       	ldi	r24, 0x07	; 7
+ 11a:	90 e0       	ldi	r25, 0x00	; 0
+ 11c:	0e 94 41 02 	call	0x482	; 0x482 <_Znwj>
+ 120:	8c 01       	movw	r16, r24
+ 122:	21 e0       	ldi	r18, 0x01	; 1
+ 124:	45 e2       	ldi	r20, 0x25	; 37
+ 126:	50 e0       	ldi	r21, 0x00	; 0
+ 128:	61 e0       	ldi	r22, 0x01	; 1
+ 12a:	0e 94 df 02 	call	0x5be	; 0x5be <_ZN3PinC1EhPVhh>
+ 12e:	1b 83       	std	Y+3, r17	; 0x03
+ 130:	0a 83       	std	Y+2, r16	; 0x02
+ 132:	87 e0       	ldi	r24, 0x07	; 7
+ 134:	90 e0       	ldi	r25, 0x00	; 0
+ 136:	0e 94 41 02 	call	0x482	; 0x482 <_Znwj>
+ 13a:	8c 01       	movw	r16, r24
+ 13c:	21 e0       	ldi	r18, 0x01	; 1
+ 13e:	45 e2       	ldi	r20, 0x25	; 37
+ 140:	50 e0       	ldi	r21, 0x00	; 0
+ 142:	60 e0       	ldi	r22, 0x00	; 0
+ 144:	0e 94 df 02 	call	0x5be	; 0x5be <_ZN3PinC1EhPVhh>
+ 148:	1d 83       	std	Y+5, r17	; 0x05
+ 14a:	0c 83       	std	Y+4, r16	; 0x04
+ 14c:	df 91       	pop	r29
+ 14e:	cf 91       	pop	r28
+ 150:	1f 91       	pop	r17
+ 152:	0f 91       	pop	r16
+ 154:	ff 90       	pop	r15
+ 156:	ef 90       	pop	r14
+ 158:	08 95       	ret
 
-00000888 <_ZN8SevenSeg3runEv>:
- 888:	ef 92       	push	r14
- 88a:	ff 92       	push	r15
- 88c:	1f 93       	push	r17
- 88e:	cf 93       	push	r28
- 890:	df 93       	push	r29
- 892:	fc 01       	movw	r30, r24
- 894:	23 85       	ldd	r18, Z+11	; 0x0b
- 896:	21 30       	cpi	r18, 0x01	; 1
- 898:	09 f0       	breq	.+2      	; 0x89c <_ZN8SevenSeg3runEv+0x14>
- 89a:	4e c0       	rjmp	.+156    	; 0x938 <__stack+0x39>
- 89c:	ec 01       	movw	r28, r24
- 89e:	12 86       	std	Z+10, r1	; 0x0a
- 8a0:	15 8d       	ldd	r17, Z+29	; 0x1d
- 8a2:	e4 84       	ldd	r14, Z+12	; 0x0c
- 8a4:	f5 84       	ldd	r15, Z+13	; 0x0d
- 8a6:	81 2f       	mov	r24, r17
- 8a8:	0e 94 96 01 	call	0x32c	; 0x32c <_Z5pow10h>
- 8ac:	bc 01       	movw	r22, r24
- 8ae:	fe 01       	movw	r30, r28
- 8b0:	e1 0f       	add	r30, r17
- 8b2:	f1 1d       	adc	r31, r1
- 8b4:	c7 01       	movw	r24, r14
- 8b6:	0e 94 80 05 	call	0xb00	; 0xb00 <__udivmodhi4>
- 8ba:	ab 01       	movw	r20, r22
- 8bc:	9b 01       	movw	r18, r22
- 8be:	ad ec       	ldi	r26, 0xCD	; 205
- 8c0:	bc ec       	ldi	r27, 0xCC	; 204
- 8c2:	0e 94 ca 05 	call	0xb94	; 0xb94 <__umulhisi3>
- 8c6:	96 95       	lsr	r25
- 8c8:	87 95       	ror	r24
- 8ca:	96 95       	lsr	r25
- 8cc:	87 95       	ror	r24
- 8ce:	96 95       	lsr	r25
- 8d0:	87 95       	ror	r24
- 8d2:	9c 01       	movw	r18, r24
- 8d4:	22 0f       	add	r18, r18
- 8d6:	33 1f       	adc	r19, r19
- 8d8:	88 0f       	add	r24, r24
- 8da:	99 1f       	adc	r25, r25
- 8dc:	88 0f       	add	r24, r24
- 8de:	99 1f       	adc	r25, r25
- 8e0:	88 0f       	add	r24, r24
- 8e2:	99 1f       	adc	r25, r25
- 8e4:	82 0f       	add	r24, r18
- 8e6:	93 1f       	adc	r25, r19
- 8e8:	48 1b       	sub	r20, r24
- 8ea:	59 0b       	sbc	r21, r25
- 8ec:	42 8f       	std	Z+26, r20	; 0x1a
- 8ee:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 8f0:	90 e0       	ldi	r25, 0x00	; 0
- 8f2:	fe 01       	movw	r30, r28
- 8f4:	e8 0f       	add	r30, r24
- 8f6:	f9 1f       	adc	r31, r25
- 8f8:	22 8d       	ldd	r18, Z+26	; 0x1a
- 8fa:	2a 30       	cpi	r18, 0x0A	; 10
- 8fc:	28 f0       	brcs	.+10     	; 0x908 <__stack+0x9>
- 8fe:	2a e0       	ldi	r18, 0x0A	; 10
- 900:	fe 01       	movw	r30, r28
- 902:	e8 0f       	add	r30, r24
- 904:	f9 1f       	adc	r31, r25
- 906:	22 8f       	std	Z+26, r18	; 0x1a
- 908:	fe 01       	movw	r30, r28
- 90a:	e8 0f       	add	r30, r24
- 90c:	f9 1f       	adc	r31, r25
- 90e:	82 8d       	ldd	r24, Z+26	; 0x1a
- 910:	fe 01       	movw	r30, r28
- 912:	e8 0f       	add	r30, r24
- 914:	f1 1d       	adc	r31, r1
- 916:	67 85       	ldd	r22, Z+15	; 0x0f
- 918:	ce 01       	movw	r24, r28
- 91a:	0e 94 bd 02 	call	0x57a	; 0x57a <_ZN18ShiftRegister_SIPO8loadByteEh>
- 91e:	ce 01       	movw	r24, r28
- 920:	0e 94 82 02 	call	0x504	; 0x504 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
- 924:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 926:	8f 5f       	subi	r24, 0xFF	; 255
- 928:	83 30       	cpi	r24, 0x03	; 3
- 92a:	10 f4       	brcc	.+4      	; 0x930 <__stack+0x31>
- 92c:	8d 8f       	std	Y+29, r24	; 0x1d
- 92e:	04 c0       	rjmp	.+8      	; 0x938 <__stack+0x39>
- 930:	1d 8e       	std	Y+29, r1	; 0x1d
- 932:	1b 86       	std	Y+11, r1	; 0x0b
- 934:	81 e0       	ldi	r24, 0x01	; 1
- 936:	8a 87       	std	Y+10, r24	; 0x0a
- 938:	df 91       	pop	r29
- 93a:	cf 91       	pop	r28
- 93c:	1f 91       	pop	r17
- 93e:	ff 90       	pop	r15
- 940:	ef 90       	pop	r14
- 942:	08 95       	ret
+0000015a <_ZN8SevenSeg3runEv>:
+ 15a:	ef 92       	push	r14
+ 15c:	ff 92       	push	r15
+ 15e:	1f 93       	push	r17
+ 160:	cf 93       	push	r28
+ 162:	df 93       	push	r29
+ 164:	fc 01       	movw	r30, r24
+ 166:	23 85       	ldd	r18, Z+11	; 0x0b
+ 168:	21 30       	cpi	r18, 0x01	; 1
+ 16a:	09 f0       	breq	.+2      	; 0x16e <_ZN8SevenSeg3runEv+0x14>
+ 16c:	4e c0       	rjmp	.+156    	; 0x20a <_ZN8SevenSeg3runEv+0xb0>
+ 16e:	ec 01       	movw	r28, r24
+ 170:	12 86       	std	Z+10, r1	; 0x0a
+ 172:	15 8d       	ldd	r17, Z+29	; 0x1d
+ 174:	e4 84       	ldd	r14, Z+12	; 0x0c
+ 176:	f5 84       	ldd	r15, Z+13	; 0x0d
+ 178:	81 2f       	mov	r24, r17
+ 17a:	0e 94 44 02 	call	0x488	; 0x488 <_Z5pow10h>
+ 17e:	bc 01       	movw	r22, r24
+ 180:	fe 01       	movw	r30, r28
+ 182:	e1 0f       	add	r30, r17
+ 184:	f1 1d       	adc	r31, r1
+ 186:	c7 01       	movw	r24, r14
+ 188:	0e 94 80 05 	call	0xb00	; 0xb00 <__udivmodhi4>
+ 18c:	ab 01       	movw	r20, r22
+ 18e:	9b 01       	movw	r18, r22
+ 190:	ad ec       	ldi	r26, 0xCD	; 205
+ 192:	bc ec       	ldi	r27, 0xCC	; 204
+ 194:	0e 94 ca 05 	call	0xb94	; 0xb94 <__umulhisi3>
+ 198:	96 95       	lsr	r25
+ 19a:	87 95       	ror	r24
+ 19c:	96 95       	lsr	r25
+ 19e:	87 95       	ror	r24
+ 1a0:	96 95       	lsr	r25
+ 1a2:	87 95       	ror	r24
+ 1a4:	9c 01       	movw	r18, r24
+ 1a6:	22 0f       	add	r18, r18
+ 1a8:	33 1f       	adc	r19, r19
+ 1aa:	88 0f       	add	r24, r24
+ 1ac:	99 1f       	adc	r25, r25
+ 1ae:	88 0f       	add	r24, r24
+ 1b0:	99 1f       	adc	r25, r25
+ 1b2:	88 0f       	add	r24, r24
+ 1b4:	99 1f       	adc	r25, r25
+ 1b6:	82 0f       	add	r24, r18
+ 1b8:	93 1f       	adc	r25, r19
+ 1ba:	48 1b       	sub	r20, r24
+ 1bc:	59 0b       	sbc	r21, r25
+ 1be:	42 8f       	std	Z+26, r20	; 0x1a
+ 1c0:	8d 8d       	ldd	r24, Y+29	; 0x1d
+ 1c2:	90 e0       	ldi	r25, 0x00	; 0
+ 1c4:	fe 01       	movw	r30, r28
+ 1c6:	e8 0f       	add	r30, r24
+ 1c8:	f9 1f       	adc	r31, r25
+ 1ca:	22 8d       	ldd	r18, Z+26	; 0x1a
+ 1cc:	2a 30       	cpi	r18, 0x0A	; 10
+ 1ce:	28 f0       	brcs	.+10     	; 0x1da <_ZN8SevenSeg3runEv+0x80>
+ 1d0:	2a e0       	ldi	r18, 0x0A	; 10
+ 1d2:	fe 01       	movw	r30, r28
+ 1d4:	e8 0f       	add	r30, r24
+ 1d6:	f9 1f       	adc	r31, r25
+ 1d8:	22 8f       	std	Z+26, r18	; 0x1a
+ 1da:	fe 01       	movw	r30, r28
+ 1dc:	e8 0f       	add	r30, r24
+ 1de:	f9 1f       	adc	r31, r25
+ 1e0:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 1e2:	fe 01       	movw	r30, r28
+ 1e4:	e8 0f       	add	r30, r24
+ 1e6:	f1 1d       	adc	r31, r1
+ 1e8:	67 85       	ldd	r22, Z+15	; 0x0f
+ 1ea:	ce 01       	movw	r24, r28
+ 1ec:	0e 94 6b 03 	call	0x6d6	; 0x6d6 <_ZN18ShiftRegister_SIPO8loadByteEh>
+ 1f0:	ce 01       	movw	r24, r28
+ 1f2:	0e 94 30 03 	call	0x660	; 0x660 <_ZN18ShiftRegister_SIPO9shiftBitsEv>
+ 1f6:	8d 8d       	ldd	r24, Y+29	; 0x1d
+ 1f8:	8f 5f       	subi	r24, 0xFF	; 255
+ 1fa:	83 30       	cpi	r24, 0x03	; 3
+ 1fc:	10 f4       	brcc	.+4      	; 0x202 <_ZN8SevenSeg3runEv+0xa8>
+ 1fe:	8d 8f       	std	Y+29, r24	; 0x1d
+ 200:	04 c0       	rjmp	.+8      	; 0x20a <_ZN8SevenSeg3runEv+0xb0>
+ 202:	1d 8e       	std	Y+29, r1	; 0x1d
+ 204:	1b 86       	std	Y+11, r1	; 0x0b
+ 206:	81 e0       	ldi	r24, 0x01	; 1
+ 208:	8a 87       	std	Y+10, r24	; 0x0a
+ 20a:	df 91       	pop	r29
+ 20c:	cf 91       	pop	r28
+ 20e:	1f 91       	pop	r17
+ 210:	ff 90       	pop	r15
+ 212:	ef 90       	pop	r14
+ 214:	08 95       	ret
 
-00000944 <_ZN8SevenSegD1Ev>:
+00000216 <_ZN8SevenSegD1Ev>:
 
 // default destructor
 SevenSeg::~SevenSeg()
- 944:	0e 94 c0 02 	call	0x580	; 0x580 <_ZN18ShiftRegister_SIPOD1Ev>
+ 216:	0e 94 6e 03 	call	0x6dc	; 0x6dc <_ZN18ShiftRegister_SIPOD1Ev>
+ 21a:	08 95       	ret
+
+0000021c <__vector_14>:
+
+void disableShifting( void )
+{
+	//TIMSK2 is the TC2 Interrupt Mask Register
+	//We will disable interrupt on compare match with OCR2A
+	TIMSK2 &= ~(1 << OCIE2A);
+ 21c:	1f 92       	push	r1
+ 21e:	0f 92       	push	r0
+ 220:	0f b6       	in	r0, 0x3f	; 63
+ 222:	0f 92       	push	r0
+ 224:	11 24       	eor	r1, r1
+ 226:	2f 93       	push	r18
+ 228:	3f 93       	push	r19
+ 22a:	4f 93       	push	r20
+ 22c:	5f 93       	push	r21
+ 22e:	6f 93       	push	r22
+ 230:	7f 93       	push	r23
+ 232:	8f 93       	push	r24
+ 234:	9f 93       	push	r25
+ 236:	af 93       	push	r26
+ 238:	bf 93       	push	r27
+ 23a:	ef 93       	push	r30
+ 23c:	ff 93       	push	r31
+ 23e:	84 e6       	ldi	r24, 0x64	; 100
+ 240:	91 e0       	ldi	r25, 0x01	; 1
+ 242:	0e 94 50 05 	call	0xaa0	; 0xaa0 <_ZN5Timer14incrementTimerEv>
+ 246:	ff 91       	pop	r31
+ 248:	ef 91       	pop	r30
+ 24a:	bf 91       	pop	r27
+ 24c:	af 91       	pop	r26
+ 24e:	9f 91       	pop	r25
+ 250:	8f 91       	pop	r24
+ 252:	7f 91       	pop	r23
+ 254:	6f 91       	pop	r22
+ 256:	5f 91       	pop	r21
+ 258:	4f 91       	pop	r20
+ 25a:	3f 91       	pop	r19
+ 25c:	2f 91       	pop	r18
+ 25e:	0f 90       	pop	r0
+ 260:	0f be       	out	0x3f, r0	; 63
+ 262:	0f 90       	pop	r0
+ 264:	1f 90       	pop	r1
+ 266:	18 95       	reti
+
+00000268 <__vector_12>:
+ 268:	78 94       	sei
+ 26a:	1f 92       	push	r1
+ 26c:	0f 92       	push	r0
+ 26e:	0f b6       	in	r0, 0x3f	; 63
+ 270:	0f 92       	push	r0
+ 272:	11 24       	eor	r1, r1
+ 274:	0f 90       	pop	r0
+ 276:	0f be       	out	0x3f, r0	; 63
+ 278:	0f 90       	pop	r0
+ 27a:	1f 90       	pop	r1
+ 27c:	18 95       	reti
+
+0000027e <_Z20setUpTimerInterruptsv>:
+ 27e:	ee e6       	ldi	r30, 0x6E	; 110
+ 280:	f0 e0       	ldi	r31, 0x00	; 0
+ 282:	80 81       	ld	r24, Z
+ 284:	82 60       	ori	r24, 0x02	; 2
+ 286:	80 83       	st	Z, r24
+ 288:	89 e1       	ldi	r24, 0x19	; 25
+ 28a:	87 bd       	out	0x27, r24	; 39
+ 28c:	92 e0       	ldi	r25, 0x02	; 2
+ 28e:	94 bd       	out	0x24, r25	; 36
+ 290:	83 e0       	ldi	r24, 0x03	; 3
+ 292:	85 bd       	out	0x25, r24	; 37
+ 294:	ef e6       	ldi	r30, 0x6F	; 111
+ 296:	f0 e0       	ldi	r31, 0x00	; 0
+ 298:	80 81       	ld	r24, Z
+ 29a:	86 60       	ori	r24, 0x06	; 6
+ 29c:	80 83       	st	Z, r24
+ 29e:	20 e4       	ldi	r18, 0x40	; 64
+ 2a0:	36 e0       	ldi	r19, 0x06	; 6
+ 2a2:	30 93 89 00 	sts	0x0089, r19	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
+ 2a6:	20 93 88 00 	sts	0x0088, r18	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
+ 2aa:	21 e0       	ldi	r18, 0x01	; 1
+ 2ac:	30 e0       	ldi	r19, 0x00	; 0
+ 2ae:	30 93 8b 00 	sts	0x008B, r19	; 0x80008b <__TEXT_REGION_LENGTH__+0x7e008b>
+ 2b2:	20 93 8a 00 	sts	0x008A, r18	; 0x80008a <__TEXT_REGION_LENGTH__+0x7e008a>
+ 2b6:	89 e0       	ldi	r24, 0x09	; 9
+ 2b8:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7e0081>
+ 2bc:	8f ef       	ldi	r24, 0xFF	; 255
+ 2be:	80 93 b3 00 	sts	0x00B3, r24	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7e00b3>
+ 2c2:	90 93 b0 00 	sts	0x00B0, r25	; 0x8000b0 <__TEXT_REGION_LENGTH__+0x7e00b0>
+ 2c6:	81 e0       	ldi	r24, 0x01	; 1
+ 2c8:	80 93 b1 00 	sts	0x00B1, r24	; 0x8000b1 <__TEXT_REGION_LENGTH__+0x7e00b1>
+ 2cc:	78 94       	sei
+ 2ce:	08 95       	ret
+
+000002d0 <_Z25disableTimerOneInterruptsv>:
+}
+
+void disableTimerOneInterrupts( void )
+{
+	TIMSK1 &= ~((1 << OCIE1A) | (1 << OCIE2B));
+ 2d0:	ef e6       	ldi	r30, 0x6F	; 111
+ 2d2:	f0 e0       	ldi	r31, 0x00	; 0
+ 2d4:	80 81       	ld	r24, Z
+ 2d6:	89 7f       	andi	r24, 0xF9	; 249
+ 2d8:	80 83       	st	Z, r24
+ 2da:	08 95       	ret
+
+000002dc <__vector_11>:
+ISR( TIMER1_COMPB_vect, ISR_NOBLOCK)
+{
+}
+
+ISR( TIMER1_COMPA_vect, ISR_NOBLOCK )
+{
+ 2dc:	78 94       	sei
+ 2de:	1f 92       	push	r1
+ 2e0:	0f 92       	push	r0
+ 2e2:	0f b6       	in	r0, 0x3f	; 63
+ 2e4:	0f 92       	push	r0
+ 2e6:	11 24       	eor	r1, r1
+ 2e8:	2f 93       	push	r18
+ 2ea:	3f 93       	push	r19
+ 2ec:	4f 93       	push	r20
+ 2ee:	5f 93       	push	r21
+ 2f0:	6f 93       	push	r22
+ 2f2:	7f 93       	push	r23
+ 2f4:	8f 93       	push	r24
+ 2f6:	9f 93       	push	r25
+ 2f8:	af 93       	push	r26
+ 2fa:	bf 93       	push	r27
+ 2fc:	ef 93       	push	r30
+ 2fe:	ff 93       	push	r31
+	disableTimerOneInterrupts();
+ 300:	0e 94 68 01 	call	0x2d0	; 0x2d0 <_Z25disableTimerOneInterruptsv>
+}
+ 304:	ff 91       	pop	r31
+ 306:	ef 91       	pop	r30
+ 308:	bf 91       	pop	r27
+ 30a:	af 91       	pop	r26
+ 30c:	9f 91       	pop	r25
+ 30e:	8f 91       	pop	r24
+ 310:	7f 91       	pop	r23
+ 312:	6f 91       	pop	r22
+ 314:	5f 91       	pop	r21
+ 316:	4f 91       	pop	r20
+ 318:	3f 91       	pop	r19
+ 31a:	2f 91       	pop	r18
+ 31c:	0f 90       	pop	r0
+ 31e:	0f be       	out	0x3f, r0	; 63
+ 320:	0f 90       	pop	r0
+ 322:	1f 90       	pop	r1
+ 324:	18 95       	reti
+
+00000326 <_Z9latchTaskv>:
+//Task for triggering
+void triggerTask( void ){
+	trigger.run();
+}
+//Task for counting
+void counterTask( void ){
+ 326:	84 e4       	ldi	r24, 0x44	; 68
+ 328:	91 e0       	ldi	r25, 0x01	; 1
+ 32a:	0e 94 54 04 	call	0x8a8	; 0x8a8 <_ZN5Latch3runEv>
+ 32e:	08 95       	ret
+
+00000330 <_Z23sevenSegmentDisplayTaskv>:
+ 330:	86 e4       	ldi	r24, 0x46	; 70
+ 332:	91 e0       	ldi	r25, 0x01	; 1
+ 334:	0e 94 ad 00 	call	0x15a	; 0x15a <_ZN8SevenSeg3runEv>
+ 338:	08 95       	ret
+
+0000033a <_Z11triggerTaskv>:
+ 33a:	82 e1       	ldi	r24, 0x12	; 18
+ 33c:	91 e0       	ldi	r25, 0x01	; 1
+ 33e:	0e 94 1a 05 	call	0xa34	; 0xa34 <_ZN7Trigger3runEv>
+ 342:	08 95       	ret
+
+00000344 <_Z10blinkyTaskv>:
+ 344:	8b e1       	ldi	r24, 0x1B	; 27
+ 346:	91 e0       	ldi	r25, 0x01	; 1
+ 348:	0e 94 0b 04 	call	0x816	; 0x816 <_ZN6Blinky3runEv>
+ 34c:	08 95       	ret
+
+0000034e <_Z12BPMInputTaskv>:
+ 34e:	83 e3       	ldi	r24, 0x33	; 51
+ 350:	91 e0       	ldi	r25, 0x01	; 1
+ 352:	0e 94 91 03 	call	0x722	; 0x722 <_ZN8BPMInput3runEv>
+ 356:	08 95       	ret
+
+00000358 <_Z12PrintBPMTaskv>:
+ 358:	89 e2       	ldi	r24, 0x29	; 41
+ 35a:	91 e0       	ldi	r25, 0x01	; 1
+ 35c:	0e 94 75 04 	call	0x8ea	; 0x8ea <_ZN8PrintBPM3runEv>
+ 360:	08 95       	ret
+
+00000362 <main>:
+void PrintBPMTask( void ){
+	printBPM.run();
+}
+
+int main(void)
+{	
+ 362:	cf 93       	push	r28
+ 364:	df 93       	push	r29
+ 366:	cd b7       	in	r28, 0x3d	; 61
+ 368:	de b7       	in	r29, 0x3e	; 62
+ 36a:	66 97       	sbiw	r28, 0x16	; 22
+ 36c:	0f b6       	in	r0, 0x3f	; 63
+ 36e:	f8 94       	cli
+ 370:	de bf       	out	0x3e, r29	; 62
+ 372:	0f be       	out	0x3f, r0	; 63
+ 374:	cd bf       	out	0x3d, r28	; 61
+
+	//Setup interrupts to get the timer to work
+	setUpTimerInterrupts();
+ 376:	0e 94 3f 01 	call	0x27e	; 0x27e <_Z20setUpTimerInterruptsv>
+	
+	//Initialize task manager
+	TaskManager taskManager( timer );
+ 37a:	64 e6       	ldi	r22, 0x64	; 100
+ 37c:	71 e0       	ldi	r23, 0x01	; 1
+ 37e:	ce 01       	movw	r24, r28
+ 380:	01 96       	adiw	r24, 0x01	; 1
+ 382:	0e 94 a5 04 	call	0x94a	; 0x94a <_ZN11TaskManagerC1ER5Timer>
+	
+	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
+	taskManager.addTask( latchTask , 64);
+ 386:	40 e4       	ldi	r20, 0x40	; 64
+ 388:	63 e9       	ldi	r22, 0x93	; 147
+ 38a:	71 e0       	ldi	r23, 0x01	; 1
+ 38c:	ce 01       	movw	r24, r28
+ 38e:	01 96       	adiw	r24, 0x01	; 1
+ 390:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	taskManager.addTask( sevenSegmentDisplayTask, 128);
+ 394:	40 e8       	ldi	r20, 0x80	; 128
+ 396:	68 e9       	ldi	r22, 0x98	; 152
+ 398:	71 e0       	ldi	r23, 0x01	; 1
+ 39a:	ce 01       	movw	r24, r28
+ 39c:	01 96       	adiw	r24, 0x01	; 1
+ 39e:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	taskManager.addTask( triggerTask,  4);
+ 3a2:	44 e0       	ldi	r20, 0x04	; 4
+ 3a4:	6d e9       	ldi	r22, 0x9D	; 157
+ 3a6:	71 e0       	ldi	r23, 0x01	; 1
+ 3a8:	ce 01       	movw	r24, r28
+ 3aa:	01 96       	adiw	r24, 0x01	; 1
+ 3ac:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	//taskManager.addTask( counterTask, 128);
+	taskManager.addTask( BPMInputTask, 128 );
+ 3b0:	40 e8       	ldi	r20, 0x80	; 128
+ 3b2:	67 ea       	ldi	r22, 0xA7	; 167
+ 3b4:	71 e0       	ldi	r23, 0x01	; 1
+ 3b6:	ce 01       	movw	r24, r28
+ 3b8:	01 96       	adiw	r24, 0x01	; 1
+ 3ba:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	taskManager.addTask( PrintBPMTask, 128 );
+ 3be:	40 e8       	ldi	r20, 0x80	; 128
+ 3c0:	6c ea       	ldi	r22, 0xAC	; 172
+ 3c2:	71 e0       	ldi	r23, 0x01	; 1
+ 3c4:	ce 01       	movw	r24, r28
+ 3c6:	01 96       	adiw	r24, 0x01	; 1
+ 3c8:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	taskManager.addTask( blinkyTask, 128);
+ 3cc:	40 e8       	ldi	r20, 0x80	; 128
+ 3ce:	62 ea       	ldi	r22, 0xA2	; 162
+ 3d0:	71 e0       	ldi	r23, 0x01	; 1
+ 3d2:	ce 01       	movw	r24, r28
+ 3d4:	01 96       	adiw	r24, 0x01	; 1
+ 3d6:	0e 94 ac 04 	call	0x958	; 0x958 <_ZN11TaskManager7addTaskEPFvvEh>
+	
+    while (1) 
+    {
+		taskManager.runTasks();
+ 3da:	ce 01       	movw	r24, r28
+ 3dc:	01 96       	adiw	r24, 0x01	; 1
+ 3de:	0e 94 ce 04 	call	0x99c	; 0x99c <_ZN11TaskManager8runTasksEv>
+ 3e2:	fb cf       	rjmp	.-10     	; 0x3da <main+0x78>
+
+000003e4 <_GLOBAL__sub_I_timer>:
+ * Author : Koltin Kosik-Harvey
+ */
+#include "Tasks/setupTasks.h"
+
+//Define a pointer to a timer object.
+Timer timer;
+ 3e4:	84 e6       	ldi	r24, 0x64	; 100
+ 3e6:	91 e0       	ldi	r25, 0x01	; 1
+ 3e8:	0e 94 46 05 	call	0xa8c	; 0xa8c <_ZN5TimerC1Ev>
+
+//Define a pointer to a seven segment display object.
+SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
+ 3ec:	44 e6       	ldi	r20, 0x64	; 100
+ 3ee:	51 e0       	ldi	r21, 0x01	; 1
+ 3f0:	63 e0       	ldi	r22, 0x03	; 3
+ 3f2:	86 e4       	ldi	r24, 0x46	; 70
+ 3f4:	91 e0       	ldi	r25, 0x01	; 1
+ 3f6:	0e 94 60 00 	call	0xc0	; 0xc0 <_ZN8SevenSegC1EhR5Timer>
+//Pointer to the counter object
+//Task counts to 100 then resets.
+//Counter counter;
+
+//Pointer to latching task. Controls latching output on shift registers
+Latch latch( sevenSegmentDisplay );
+ 3fa:	66 e4       	ldi	r22, 0x46	; 70
+ 3fc:	71 e0       	ldi	r23, 0x01	; 1
+ 3fe:	84 e4       	ldi	r24, 0x44	; 68
+ 400:	91 e0       	ldi	r25, 0x01	; 1
+ 402:	0e 94 50 04 	call	0x8a0	; 0x8a0 <_ZN5LatchC1ER8SevenSeg>
+
+//Pointer to the BPMInput task. Polls the potentiometer and averages it
+BPMInput bpmInput( timer );
+ 406:	64 e6       	ldi	r22, 0x64	; 100
+ 408:	71 e0       	ldi	r23, 0x01	; 1
+ 40a:	83 e3       	ldi	r24, 0x33	; 51
+ 40c:	91 e0       	ldi	r25, 0x01	; 1
+ 40e:	0e 94 71 03 	call	0x6e2	; 0x6e2 <_ZN8BPMInputC1ER5Timer>
+
+//Pointer to the PrintBPM task. Prints value of the recorded BPM
+PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
+ 412:	26 e4       	ldi	r18, 0x46	; 70
+ 414:	31 e0       	ldi	r19, 0x01	; 1
+ 416:	43 e3       	ldi	r20, 0x33	; 51
+ 418:	51 e0       	ldi	r21, 0x01	; 1
+ 41a:	64 e6       	ldi	r22, 0x64	; 100
+ 41c:	71 e0       	ldi	r23, 0x01	; 1
+ 41e:	89 e2       	ldi	r24, 0x29	; 41
+ 420:	91 e0       	ldi	r25, 0x01	; 1
+ 422:	0e 94 62 04 	call	0x8c4	; 0x8c4 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>
+
+//Pointer to the blinky task
+Blinky blinky( timer, bpmInput );
+ 426:	43 e3       	ldi	r20, 0x33	; 51
+ 428:	51 e0       	ldi	r21, 0x01	; 1
+ 42a:	64 e6       	ldi	r22, 0x64	; 100
+ 42c:	71 e0       	ldi	r23, 0x01	; 1
+ 42e:	8b e1       	ldi	r24, 0x1B	; 27
+ 430:	91 e0       	ldi	r25, 0x01	; 1
+ 432:	0e 94 e3 03 	call	0x7c6	; 0x7c6 <_ZN6BlinkyC1ER5TimerR8BPMInput>
+
+//Pointer to trigger task
+//Used for triggering the instruments in the sequencer
+Trigger trigger( timer, blinky );
+ 436:	4b e1       	ldi	r20, 0x1B	; 27
+ 438:	51 e0       	ldi	r21, 0x01	; 1
+ 43a:	64 e6       	ldi	r22, 0x64	; 100
+ 43c:	71 e0       	ldi	r23, 0x01	; 1
+ 43e:	82 e1       	ldi	r24, 0x12	; 18
+ 440:	91 e0       	ldi	r25, 0x01	; 1
+ 442:	0e 94 02 05 	call	0xa04	; 0xa04 <_ZN7TriggerC1ER5TimerR6Blinky>
+ 446:	08 95       	ret
+
+00000448 <_GLOBAL__sub_D_timer>:
+ 448:	82 e1       	ldi	r24, 0x12	; 18
+ 44a:	91 e0       	ldi	r25, 0x01	; 1
+ 44c:	0e 94 45 05 	call	0xa8a	; 0xa8a <_ZN7TriggerD1Ev>
+
+//Pointer to the PrintBPM task. Prints value of the recorded BPM
+PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
+
+//Pointer to the blinky task
+Blinky blinky( timer, bpmInput );
+ 450:	8b e1       	ldi	r24, 0x1B	; 27
+ 452:	91 e0       	ldi	r25, 0x01	; 1
+ 454:	0e 94 4f 04 	call	0x89e	; 0x89e <_ZN6BlinkyD1Ev>
+
+//Pointer to the BPMInput task. Polls the potentiometer and averages it
+BPMInput bpmInput( timer );
+
+//Pointer to the PrintBPM task. Prints value of the recorded BPM
+PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
+ 458:	89 e2       	ldi	r24, 0x29	; 41
+ 45a:	91 e0       	ldi	r25, 0x01	; 1
+ 45c:	0e 94 a4 04 	call	0x948	; 0x948 <_ZN8PrintBPMD1Ev>
+
+//Pointer to latching task. Controls latching output on shift registers
+Latch latch( sevenSegmentDisplay );
+
+//Pointer to the BPMInput task. Polls the potentiometer and averages it
+BPMInput bpmInput( timer );
+ 460:	83 e3       	ldi	r24, 0x33	; 51
+ 462:	91 e0       	ldi	r25, 0x01	; 1
+ 464:	0e 94 e2 03 	call	0x7c4	; 0x7c4 <_ZN8BPMInputD1Ev>
+//Pointer to the counter object
+//Task counts to 100 then resets.
+//Counter counter;
+
+//Pointer to latching task. Controls latching output on shift registers
+Latch latch( sevenSegmentDisplay );
+ 468:	84 e4       	ldi	r24, 0x44	; 68
+ 46a:	91 e0       	ldi	r25, 0x01	; 1
+ 46c:	0e 94 61 04 	call	0x8c2	; 0x8c2 <_ZN5LatchD1Ev>
+
+//Define a pointer to a timer object.
+Timer timer;
+
+//Define a pointer to a seven segment display object.
+SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
+ 470:	86 e4       	ldi	r24, 0x46	; 70
+ 472:	91 e0       	ldi	r25, 0x01	; 1
+ 474:	0e 94 0b 01 	call	0x216	; 0x216 <_ZN8SevenSegD1Ev>
+ * Author : Koltin Kosik-Harvey
+ */
+#include "Tasks/setupTasks.h"
+
+//Define a pointer to a timer object.
+Timer timer;
+ 478:	84 e6       	ldi	r24, 0x64	; 100
+ 47a:	91 e0       	ldi	r25, 0x01	; 1
+ 47c:	0e 94 7f 05 	call	0xafe	; 0xafe <_ZN5TimerD1Ev>
+ 480:	08 95       	ret
+
+00000482 <_Znwj>:
+	 return malloc(size);
+ }
+
+ void operator delete[](void * ptr)
+ {
+	 free(ptr);
+ 482:	0e 94 df 05 	call	0xbbe	; 0xbbe <malloc>
+ 486:	08 95       	ret
+
+00000488 <_Z5pow10h>:
+ }
+ 
+ uint16_t pow10( uint8_t exponent )
+ {
+	 if (exponent == 0){
+ 488:	88 23       	and	r24, r24
+ 48a:	f1 f0       	breq	.+60     	; 0x4c8 <_Z5pow10h+0x40>
+		 return 1;
+	 }
+	 uint16_t output = 1;
+	 for(int i=0; i < exponent ; i++){
+ 48c:	90 e0       	ldi	r25, 0x00	; 0
+ 48e:	18 16       	cp	r1, r24
+ 490:	19 06       	cpc	r1, r25
+ 492:	ac f4       	brge	.+42     	; 0x4be <_Z5pow10h+0x36>
+ 494:	40 e0       	ldi	r20, 0x00	; 0
+ 496:	50 e0       	ldi	r21, 0x00	; 0
+ 498:	21 e0       	ldi	r18, 0x01	; 1
+ 49a:	30 e0       	ldi	r19, 0x00	; 0
+		 output = output * 10;
+ 49c:	b9 01       	movw	r22, r18
+ 49e:	66 0f       	add	r22, r22
+ 4a0:	77 1f       	adc	r23, r23
+ 4a2:	22 0f       	add	r18, r18
+ 4a4:	33 1f       	adc	r19, r19
+ 4a6:	22 0f       	add	r18, r18
+ 4a8:	33 1f       	adc	r19, r19
+ 4aa:	22 0f       	add	r18, r18
+ 4ac:	33 1f       	adc	r19, r19
+ 4ae:	26 0f       	add	r18, r22
+ 4b0:	37 1f       	adc	r19, r23
+ {
+	 if (exponent == 0){
+		 return 1;
+	 }
+	 uint16_t output = 1;
+	 for(int i=0; i < exponent ; i++){
+ 4b2:	4f 5f       	subi	r20, 0xFF	; 255
+ 4b4:	5f 4f       	sbci	r21, 0xFF	; 255
+ 4b6:	48 17       	cp	r20, r24
+ 4b8:	59 07       	cpc	r21, r25
+ 4ba:	81 f7       	brne	.-32     	; 0x49c <_Z5pow10h+0x14>
+ 4bc:	02 c0       	rjmp	.+4      	; 0x4c2 <_Z5pow10h+0x3a>
+ 4be:	21 e0       	ldi	r18, 0x01	; 1
+ 4c0:	30 e0       	ldi	r19, 0x00	; 0
+		 output = output * 10;
+	 }
+	 return output;
+ 4c2:	82 2f       	mov	r24, r18
+ 4c4:	93 2f       	mov	r25, r19
+ 4c6:	08 95       	ret
+ }
+ 
+ uint16_t pow10( uint8_t exponent )
+ {
+	 if (exponent == 0){
+		 return 1;
+ 4c8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ca:	90 e0       	ldi	r25, 0x00	; 0
+	 uint16_t output = 1;
+	 for(int i=0; i < exponent ; i++){
+		 output = output * 10;
+	 }
+	 return output;
+ 4cc:	08 95       	ret
+
+000004ce <_ZN9AnalogPinC1Eh>:
+{
+	//Ensure ADSC is low.
+	while ( this->if_done_conv() == false ){};
+	ADCSRA |= (1 << ADIF); // Clear ADC Interrupt Flag	
+	return ADCH;
+}
+ 4ce:	fc 01       	movw	r30, r24
+ 4d0:	60 83       	st	Z, r22
+ 4d2:	ee e7       	ldi	r30, 0x7E	; 126
+ 4d4:	f0 e0       	ldi	r31, 0x00	; 0
+ 4d6:	20 81       	ld	r18, Z
+ 4d8:	81 e0       	ldi	r24, 0x01	; 1
+ 4da:	90 e0       	ldi	r25, 0x00	; 0
+ 4dc:	02 c0       	rjmp	.+4      	; 0x4e2 <_ZN9AnalogPinC1Eh+0x14>
+ 4de:	88 0f       	add	r24, r24
+ 4e0:	99 1f       	adc	r25, r25
+ 4e2:	6a 95       	dec	r22
+ 4e4:	e2 f7       	brpl	.-8      	; 0x4de <_ZN9AnalogPinC1Eh+0x10>
+ 4e6:	82 2b       	or	r24, r18
+ 4e8:	80 83       	st	Z, r24
+ 4ea:	ec e7       	ldi	r30, 0x7C	; 124
+ 4ec:	f0 e0       	ldi	r31, 0x00	; 0
+ 4ee:	80 81       	ld	r24, Z
+ 4f0:	80 64       	ori	r24, 0x40	; 64
+ 4f2:	80 83       	st	Z, r24
+ 4f4:	ea e7       	ldi	r30, 0x7A	; 122
+ 4f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 4f8:	80 81       	ld	r24, Z
+ 4fa:	80 68       	ori	r24, 0x80	; 128
+ 4fc:	80 83       	st	Z, r24
+ 4fe:	80 81       	ld	r24, Z
+ 500:	87 60       	ori	r24, 0x07	; 7
+ 502:	80 83       	st	Z, r24
+ 504:	08 95       	ret
+
+00000506 <_ZN9AnalogPin10conv_beginEv>:
+ 506:	dc 01       	movw	r26, r24
+ 508:	ec e7       	ldi	r30, 0x7C	; 124
+ 50a:	f0 e0       	ldi	r31, 0x00	; 0
+ 50c:	90 81       	ld	r25, Z
+ 50e:	90 7f       	andi	r25, 0xF0	; 240
+ 510:	90 83       	st	Z, r25
+ 512:	90 81       	ld	r25, Z
+ 514:	8c 91       	ld	r24, X
+ 516:	89 2b       	or	r24, r25
+ 518:	80 83       	st	Z, r24
+ 51a:	ea e7       	ldi	r30, 0x7A	; 122
+ 51c:	f0 e0       	ldi	r31, 0x00	; 0
+ 51e:	80 81       	ld	r24, Z
+ 520:	80 64       	ori	r24, 0x40	; 64
+ 522:	80 83       	st	Z, r24
+ 524:	08 95       	ret
+
+00000526 <_ZN9AnalogPin12if_done_convEv>:
+ 526:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7e007a>
+ 52a:	86 fb       	bst	r24, 6
+ 52c:	88 27       	eor	r24, r24
+ 52e:	80 f9       	bld	r24, 0
+ 530:	91 e0       	ldi	r25, 0x01	; 1
+ 532:	89 27       	eor	r24, r25
+ 534:	08 95       	ret
+
+00000536 <_ZN9AnalogPin10read_10BitEv>:
+
+//Reads ADC with 10 bit precision (slower)
+uint16_t AnalogPin::read_10Bit( void )
+{
+ 536:	cf 93       	push	r28
+ 538:	df 93       	push	r29
+ 53a:	ec 01       	movw	r28, r24
+	//Ensure ADSC is low.
+	while ( this->if_done_conv() == false ){};	
+ 53c:	ce 01       	movw	r24, r28
+ 53e:	0e 94 93 02 	call	0x526	; 0x526 <_ZN9AnalogPin12if_done_convEv>
+ 542:	88 23       	and	r24, r24
+ 544:	d9 f3       	breq	.-10     	; 0x53c <_ZN9AnalogPin10read_10BitEv+0x6>
+	ADCSRA |= (1 << ADIF); // Clear ADC Interrupt Flag
+ 546:	ea e7       	ldi	r30, 0x7A	; 122
+ 548:	f0 e0       	ldi	r31, 0x00	; 0
+ 54a:	80 81       	ld	r24, Z
+ 54c:	80 61       	ori	r24, 0x10	; 16
+ 54e:	80 83       	st	Z, r24
+	return ADC;
+ 550:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7e0078>
+ 554:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7e0079>
+ 558:	df 91       	pop	r29
+ 55a:	cf 91       	pop	r28
+ 55c:	08 95       	ret
+
+0000055e <_ZN3Pin17setDirectionInputEv>:
+//ANDs the pinNumber mask with the input pin register
+//ie 00010000 & 11110000 = 00010000
+uint8_t Pin::read( void )
+{
+	return ( pinNumber & *pin_register );
+}
+ 55e:	dc 01       	movw	r26, r24
+ 560:	ed 91       	ld	r30, X+
+ 562:	fc 91       	ld	r31, X
+ 564:	11 97       	sbiw	r26, 0x01	; 1
+ 566:	90 81       	ld	r25, Z
+ 568:	16 96       	adiw	r26, 0x06	; 6
+ 56a:	8c 91       	ld	r24, X
+ 56c:	80 95       	com	r24
+ 56e:	89 23       	and	r24, r25
+ 570:	80 83       	st	Z, r24
+ 572:	08 95       	ret
+
+00000574 <_ZN3Pin7setHighEv>:
+	}
+}
+
+//Sets the pin high
+void Pin::setHigh( void )
+{
+ 574:	dc 01       	movw	r26, r24
+	//set the pin high
+	*port_register |= pinNumber;
+ 576:	12 96       	adiw	r26, 0x02	; 2
+ 578:	ed 91       	ld	r30, X+
+ 57a:	fc 91       	ld	r31, X
+ 57c:	13 97       	sbiw	r26, 0x03	; 3
+ 57e:	90 81       	ld	r25, Z
+ 580:	16 96       	adiw	r26, 0x06	; 6
+ 582:	8c 91       	ld	r24, X
+ 584:	89 2b       	or	r24, r25
+ 586:	80 83       	st	Z, r24
+ 588:	08 95       	ret
+
+0000058a <_ZN3Pin6setLowEv>:
+}
+
+//Sets the pin low
+void Pin::setLow( void )
+{
+ 58a:	dc 01       	movw	r26, r24
+	*port_register &= ~pinNumber;
+ 58c:	12 96       	adiw	r26, 0x02	; 2
+ 58e:	ed 91       	ld	r30, X+
+ 590:	fc 91       	ld	r31, X
+ 592:	13 97       	sbiw	r26, 0x03	; 3
+ 594:	90 81       	ld	r25, Z
+ 596:	16 96       	adiw	r26, 0x06	; 6
+ 598:	8c 91       	ld	r24, X
+ 59a:	80 95       	com	r24
+ 59c:	89 23       	and	r24, r25
+ 59e:	80 83       	st	Z, r24
+ 5a0:	08 95       	ret
+
+000005a2 <_ZN3Pin18setDirectionOutputEv>:
+{	
+	*data_direction_reg &= ~pinNumber;
+}
+
+void Pin::setDirectionOutput( void )
+{
+ 5a2:	cf 93       	push	r28
+ 5a4:	df 93       	push	r29
+ 5a6:	ec 01       	movw	r28, r24
+	//Set the pin to low
+	this->setLow();
+ 5a8:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+
+	//Set data direction to output for the pin
+	*data_direction_reg |= pinNumber;
+ 5ac:	e8 81       	ld	r30, Y
+ 5ae:	f9 81       	ldd	r31, Y+1	; 0x01
+ 5b0:	90 81       	ld	r25, Z
+ 5b2:	8e 81       	ldd	r24, Y+6	; 0x06
+ 5b4:	89 2b       	or	r24, r25
+ 5b6:	80 83       	st	Z, r24
+}
+ 5b8:	df 91       	pop	r29
+ 5ba:	cf 91       	pop	r28
+ 5bc:	08 95       	ret
+
+000005be <_ZN3PinC1EhPVhh>:
+*/
+
+#include "Pin.h"
+
+// default constructor
+Pin::Pin(uint8_t PIN_NUMBER, volatile uint8_t * PortRegister, uint8_t DIRECTION)
+ 5be:	fc 01       	movw	r30, r24
+{
+	pin_register = PortRegister - 2;
+ 5c0:	ca 01       	movw	r24, r20
+ 5c2:	02 97       	sbiw	r24, 0x02	; 2
+ 5c4:	95 83       	std	Z+5, r25	; 0x05
+ 5c6:	84 83       	std	Z+4, r24	; 0x04
+	data_direction_reg = PortRegister - 1;
+ 5c8:	01 96       	adiw	r24, 0x01	; 1
+ 5ca:	91 83       	std	Z+1, r25	; 0x01
+ 5cc:	80 83       	st	Z, r24
+	port_register = PortRegister;
+ 5ce:	53 83       	std	Z+3, r21	; 0x03
+ 5d0:	42 83       	std	Z+2, r20	; 0x02
+	
+	//Stores pin number as a mask. Makes it easier for operations like setting the pin value
+	pinNumber = (1 << PIN_NUMBER);
+ 5d2:	81 e0       	ldi	r24, 0x01	; 1
+ 5d4:	01 c0       	rjmp	.+2      	; 0x5d8 <_ZN3PinC1EhPVhh+0x1a>
+ 5d6:	88 0f       	add	r24, r24
+ 5d8:	6a 95       	dec	r22
+ 5da:	ea f7       	brpl	.-6      	; 0x5d6 <_ZN3PinC1EhPVhh+0x18>
+ 5dc:	86 83       	std	Z+6, r24	; 0x06
+
+	if ( DIRECTION == OUTPUT )
+ 5de:	21 30       	cpi	r18, 0x01	; 1
+ 5e0:	21 f4       	brne	.+8      	; 0x5ea <_ZN3PinC1EhPVhh+0x2c>
+	{
+		this->setDirectionOutput();
+ 5e2:	cf 01       	movw	r24, r30
+ 5e4:	0e 94 d1 02 	call	0x5a2	; 0x5a2 <_ZN3Pin18setDirectionOutputEv>
+ 5e8:	08 95       	ret
+	} else {
+		this->setDirectionInput();
+ 5ea:	cf 01       	movw	r24, r30
+ 5ec:	0e 94 af 02 	call	0x55e	; 0x55e <_ZN3Pin17setDirectionInputEv>
+ 5f0:	08 95       	ret
+
+000005f2 <_ZN13ShiftRegisterC1Ev>:
+
+ShiftRegister::ShiftRegister( Pin * shift, Pin * latch, Pin * serial )
+{
+	shiftPin = shift;
+	latchPin = latch;
+	serialPin = serial;
+ 5f2:	08 95       	ret
+
+000005f4 <_ZN13ShiftRegister11singleShiftEv>:
+}
+
+void ShiftRegister::singleShift( void )
+{
+ 5f4:	cf 93       	push	r28
+ 5f6:	df 93       	push	r29
+ 5f8:	ec 01       	movw	r28, r24
+	//Shift single bit in.
+	shiftPin->setHigh();
+ 5fa:	88 81       	ld	r24, Y
+ 5fc:	99 81       	ldd	r25, Y+1	; 0x01
+ 5fe:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN3Pin7setHighEv>
+	//wait
+	timer->wait_1us();
+ 602:	8e 81       	ldd	r24, Y+6	; 0x06
+ 604:	9f 81       	ldd	r25, Y+7	; 0x07
+ 606:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
+	//Set shift high
+	shiftPin->setLow();
+ 60a:	88 81       	ld	r24, Y
+ 60c:	99 81       	ldd	r25, Y+1	; 0x01
+ 60e:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+	//wait
+	timer->wait_1us();
+ 612:	8e 81       	ldd	r24, Y+6	; 0x06
+ 614:	9f 81       	ldd	r25, Y+7	; 0x07
+ 616:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
+}
+ 61a:	df 91       	pop	r29
+ 61c:	cf 91       	pop	r28
+ 61e:	08 95       	ret
+
+00000620 <_ZN13ShiftRegister5latchEv>:
+
+void ShiftRegister::latch( void )
+{
+ 620:	cf 93       	push	r28
+ 622:	df 93       	push	r29
+ 624:	ec 01       	movw	r28, r24
+	//Latch output
+	latchPin->setHigh();
+ 626:	8a 81       	ldd	r24, Y+2	; 0x02
+ 628:	9b 81       	ldd	r25, Y+3	; 0x03
+ 62a:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN3Pin7setHighEv>
+	//wait
+	timer->wait_1us();
+ 62e:	8e 81       	ldd	r24, Y+6	; 0x06
+ 630:	9f 81       	ldd	r25, Y+7	; 0x07
+ 632:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
+	//Set latch high
+	latchPin->setLow();
+ 636:	8a 81       	ldd	r24, Y+2	; 0x02
+ 638:	9b 81       	ldd	r25, Y+3	; 0x03
+ 63a:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+
+}
+ 63e:	df 91       	pop	r29
+ 640:	cf 91       	pop	r28
+ 642:	08 95       	ret
+
+00000644 <_ZN13ShiftRegister17getTimerReferenceER5Timer>:
+
+void ShiftRegister::getTimerReference( Timer & ptr )
+{
+	timer = &ptr;
+ 644:	fc 01       	movw	r30, r24
+ 646:	77 83       	std	Z+7, r23	; 0x07
+ 648:	66 83       	std	Z+6, r22	; 0x06
+ 64a:	08 95       	ret
+
+0000064c <_ZN13ShiftRegisterD1Ev>:
+} //getTimerReference
+
+// default destructor
+ShiftRegister::~ShiftRegister()
+ 64c:	08 95       	ret
+
+0000064e <_ZN18ShiftRegister_SIPOC1Ev>:
+//Constructs object with pinout
+ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )
+{
+	//Start off with output byte 0
+	output_byte = 0;
+}
+ 64e:	cf 93       	push	r28
+ 650:	df 93       	push	r29
+ 652:	ec 01       	movw	r28, r24
+ 654:	0e 94 f9 02 	call	0x5f2	; 0x5f2 <_ZN13ShiftRegisterC1Ev>
+ 658:	19 86       	std	Y+9, r1	; 0x09
+ 65a:	df 91       	pop	r29
+ 65c:	cf 91       	pop	r28
+ 65e:	08 95       	ret
+
+00000660 <_ZN18ShiftRegister_SIPO9shiftBitsEv>:
+
+//Shifts in a bit into the shift register.
+void ShiftRegister_SIPO::shiftBits( void )
+{		
+ 660:	0f 93       	push	r16
+ 662:	1f 93       	push	r17
+ 664:	cf 93       	push	r28
+ 666:	df 93       	push	r29
+ 668:	ec 01       	movw	r28, r24
+	//Starting shifting with shift/serial/latch at 0
+	latchPin->setLow();
+ 66a:	8a 81       	ldd	r24, Y+2	; 0x02
+ 66c:	9b 81       	ldd	r25, Y+3	; 0x03
+ 66e:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+	shiftPin->setLow();
+ 672:	88 81       	ld	r24, Y
+ 674:	99 81       	ldd	r25, Y+1	; 0x01
+ 676:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+	serialPin->setLow();
+ 67a:	8c 81       	ldd	r24, Y+4	; 0x04
+ 67c:	9d 81       	ldd	r25, Y+5	; 0x05
+ 67e:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+
+	//Wait 1us
+	timer->wait_1us();
+ 682:	8e 81       	ldd	r24, Y+6	; 0x06
+ 684:	9f 81       	ldd	r25, Y+7	; 0x07
+ 686:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
+		
+	for ( int i=0; i < 8; i++){
+ 68a:	00 e0       	ldi	r16, 0x00	; 0
+ 68c:	10 e0       	ldi	r17, 0x00	; 0
+			
+		//Load serial pin with bit
+			
+		//If the bit needs to be set to 1...
+		if( output_byte & (1 << i) ){
+ 68e:	29 85       	ldd	r18, Y+9	; 0x09
+ 690:	30 e0       	ldi	r19, 0x00	; 0
+ 692:	00 2e       	mov	r0, r16
+ 694:	02 c0       	rjmp	.+4      	; 0x69a <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x3a>
+ 696:	35 95       	asr	r19
+ 698:	27 95       	ror	r18
+ 69a:	0a 94       	dec	r0
+ 69c:	e2 f7       	brpl	.-8      	; 0x696 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x36>
+ 69e:	20 ff       	sbrs	r18, 0
+ 6a0:	05 c0       	rjmp	.+10     	; 0x6ac <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x4c>
+
+			serialPin->setHigh();
+ 6a2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6a4:	9d 81       	ldd	r25, Y+5	; 0x05
+ 6a6:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN3Pin7setHighEv>
+ 6aa:	04 c0       	rjmp	.+8      	; 0x6b4 <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x54>
+				
+		//Else set to 0
+		} else {
+			
+			serialPin->setLow();
+ 6ac:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6ae:	9d 81       	ldd	r25, Y+5	; 0x05
+ 6b0:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+		}
+			
+		timer->wait_1us();
+ 6b4:	8e 81       	ldd	r24, Y+6	; 0x06
+ 6b6:	9f 81       	ldd	r25, Y+7	; 0x07
+ 6b8:	0e 94 76 05 	call	0xaec	; 0xaec <_ZN5Timer8wait_1usEv>
+			
+		this->singleShift();
+ 6bc:	ce 01       	movw	r24, r28
+ 6be:	0e 94 fa 02 	call	0x5f4	; 0x5f4 <_ZN13ShiftRegister11singleShiftEv>
+	serialPin->setLow();
+
+	//Wait 1us
+	timer->wait_1us();
+		
+	for ( int i=0; i < 8; i++){
+ 6c2:	0f 5f       	subi	r16, 0xFF	; 255
+ 6c4:	1f 4f       	sbci	r17, 0xFF	; 255
+ 6c6:	08 30       	cpi	r16, 0x08	; 8
+ 6c8:	11 05       	cpc	r17, r1
+ 6ca:	09 f7       	brne	.-62     	; 0x68e <_ZN18ShiftRegister_SIPO9shiftBitsEv+0x2e>
+		timer->wait_1us();
+			
+		this->singleShift();
+	}
+	
+} //ShiftBits
+ 6cc:	df 91       	pop	r29
+ 6ce:	cf 91       	pop	r28
+ 6d0:	1f 91       	pop	r17
+ 6d2:	0f 91       	pop	r16
+ 6d4:	08 95       	ret
+
+000006d6 <_ZN18ShiftRegister_SIPO8loadByteEh>:
+
+void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
+{
+	output_byte = byteToLoad;
+ 6d6:	fc 01       	movw	r30, r24
+ 6d8:	61 87       	std	Z+9, r22	; 0x09
+ 6da:	08 95       	ret
+
+000006dc <_ZN18ShiftRegister_SIPOD1Ev>:
+}
+
+// default destructor
+ShiftRegister_SIPO::~ShiftRegister_SIPO()
+ 6dc:	0e 94 26 03 	call	0x64c	; 0x64c <_ZN13ShiftRegisterD1Ev>
+ 6e0:	08 95       	ret
+
+000006e2 <_ZN8BPMInputC1ER5Timer>:
+*/
+
+
+#include "BPMInput.h"
+
+BPMInput::BPMInput( Timer & timerPtr ) : AnalogPin ( BPM_INPUT_PIN )
+ 6e2:	0f 93       	push	r16
+ 6e4:	1f 93       	push	r17
+ 6e6:	cf 93       	push	r28
+ 6e8:	df 93       	push	r29
+ 6ea:	ec 01       	movw	r28, r24
+ 6ec:	8b 01       	movw	r16, r22
+ 6ee:	63 e0       	ldi	r22, 0x03	; 3
+ 6f0:	0e 94 67 02 	call	0x4ce	; 0x4ce <_ZN9AnalogPinC1Eh>
+{
+	//Store reference to timer pointer
+	timer = &timerPtr;
+ 6f4:	1f 83       	std	Y+7, r17	; 0x07
+ 6f6:	0e 83       	std	Y+6, r16	; 0x06
+	
+	//Initialize Conversion Started flag
+	conversionFinished = false;
+ 6f8:	19 82       	std	Y+1, r1	; 0x01
+	
+	//Initialize time stamp
+	timeStamp = timer->millis();
+ 6fa:	c8 01       	movw	r24, r16
+ 6fc:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
+ 700:	68 87       	std	Y+8, r22	; 0x08
+ 702:	79 87       	std	Y+9, r23	; 0x09
+ 704:	8a 87       	std	Y+10, r24	; 0x0a
+ 706:	9b 87       	std	Y+11, r25	; 0x0b
+	
+	//Initialize iteration counter
+	iteration = 0;
+ 708:	18 8a       	std	Y+16, r1	; 0x10
+	
+	//Initialize sum for averaging 
+	sum = 0;
+ 70a:	1c 86       	std	Y+12, r1	; 0x0c
+ 70c:	1d 86       	std	Y+13, r1	; 0x0d
+ 70e:	1e 86       	std	Y+14, r1	; 0x0e
+ 710:	1f 86       	std	Y+15, r1	; 0x0f
+	
+	//Begin first conversion
+	this->conv_begin();
+ 712:	ce 01       	movw	r24, r28
+ 714:	0e 94 83 02 	call	0x506	; 0x506 <_ZN9AnalogPin10conv_beginEv>
+	
+} //BPMInput
+ 718:	df 91       	pop	r29
+ 71a:	cf 91       	pop	r28
+ 71c:	1f 91       	pop	r17
+ 71e:	0f 91       	pop	r16
+ 720:	08 95       	ret
+
+00000722 <_ZN8BPMInput3runEv>:
+
+void BPMInput::run( void )
+{
+ 722:	cf 93       	push	r28
+ 724:	df 93       	push	r29
+ 726:	ec 01       	movw	r28, r24
+	if ( timer->elapsed_millis(timeStamp) > BPM_PIN_POLLING_TIME ){
+ 728:	48 85       	ldd	r20, Y+8	; 0x08
+ 72a:	59 85       	ldd	r21, Y+9	; 0x09
+ 72c:	6a 85       	ldd	r22, Y+10	; 0x0a
+ 72e:	7b 85       	ldd	r23, Y+11	; 0x0b
+ 730:	8e 81       	ldd	r24, Y+6	; 0x06
+ 732:	9f 81       	ldd	r25, Y+7	; 0x07
+ 734:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
+ 738:	63 33       	cpi	r22, 0x33	; 51
+ 73a:	71 05       	cpc	r23, r1
+ 73c:	81 05       	cpc	r24, r1
+ 73e:	91 05       	cpc	r25, r1
+ 740:	f0 f1       	brcs	.+124    	; 0x7be <_ZN8BPMInput3runEv+0x9c>
+		
+		//Check if previous ADC conversion is complete.
+		if ( this->if_done_conv()  ){
+ 742:	ce 01       	movw	r24, r28
+ 744:	0e 94 93 02 	call	0x526	; 0x526 <_ZN9AnalogPin12if_done_convEv>
+ 748:	88 23       	and	r24, r24
+ 74a:	c9 f1       	breq	.+114    	; 0x7be <_ZN8BPMInput3runEv+0x9c>
+			
+			//Read a sample of the ADC
+			sum += this->read_10Bit();
+ 74c:	ce 01       	movw	r24, r28
+ 74e:	0e 94 9b 02 	call	0x536	; 0x536 <_ZN9AnalogPin10read_10BitEv>
+ 752:	4c 85       	ldd	r20, Y+12	; 0x0c
+ 754:	5d 85       	ldd	r21, Y+13	; 0x0d
+ 756:	6e 85       	ldd	r22, Y+14	; 0x0e
+ 758:	7f 85       	ldd	r23, Y+15	; 0x0f
+ 75a:	48 0f       	add	r20, r24
+ 75c:	59 1f       	adc	r21, r25
+ 75e:	61 1d       	adc	r22, r1
+ 760:	71 1d       	adc	r23, r1
+ 762:	4c 87       	std	Y+12, r20	; 0x0c
+ 764:	5d 87       	std	Y+13, r21	; 0x0d
+ 766:	6e 87       	std	Y+14, r22	; 0x0e
+ 768:	7f 87       	std	Y+15, r23	; 0x0f
+			
+			//Begin conversion for next iteration
+			this->conv_begin();
+ 76a:	ce 01       	movw	r24, r28
+ 76c:	0e 94 83 02 	call	0x506	; 0x506 <_ZN9AnalogPin10conv_beginEv>
+			
+			//Increment the iteration count
+			iteration++;
+ 770:	88 89       	ldd	r24, Y+16	; 0x10
+ 772:	8f 5f       	subi	r24, 0xFF	; 255
+ 774:	88 8b       	std	Y+16, r24	; 0x10
+			
+			//Check if we take the required amount of samples for averaging
+			if ( iteration >= SAMPLES ){
+ 776:	80 31       	cpi	r24, 0x10	; 16
+ 778:	d0 f0       	brcs	.+52     	; 0x7ae <_ZN8BPMInput3runEv+0x8c>
+				
+				//Value is the average however this would leave with a value of 1024 as MAX
+				value = (sum >> SAMPLES_LOG2);
+ 77a:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 77c:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 77e:	ae 85       	ldd	r26, Y+14	; 0x0e
+ 780:	bf 85       	ldd	r27, Y+15	; 0x0f
+				
+				//Convert value to a range between 0-256 essential devide by four
+				value = value >> 2;
+ 782:	68 94       	set
+ 784:	15 f8       	bld	r1, 5
+ 786:	b6 95       	lsr	r27
+ 788:	a7 95       	ror	r26
+ 78a:	97 95       	ror	r25
+ 78c:	87 95       	ror	r24
+ 78e:	16 94       	lsr	r1
+ 790:	d1 f7       	brne	.-12     	; 0x786 <_ZN8BPMInput3runEv+0x64>
+				
+				//Add the offset
+				value = value + BPM_OFFSET;
+ 792:	4e 96       	adiw	r24, 0x1e	; 30
+ 794:	a1 1d       	adc	r26, r1
+ 796:	b1 1d       	adc	r27, r1
+ 798:	8a 83       	std	Y+2, r24	; 0x02
+ 79a:	9b 83       	std	Y+3, r25	; 0x03
+ 79c:	ac 83       	std	Y+4, r26	; 0x04
+ 79e:	bd 83       	std	Y+5, r27	; 0x05
+	
+				//Reset sum
+				sum = 0;
+ 7a0:	1c 86       	std	Y+12, r1	; 0x0c
+ 7a2:	1d 86       	std	Y+13, r1	; 0x0d
+ 7a4:	1e 86       	std	Y+14, r1	; 0x0e
+ 7a6:	1f 86       	std	Y+15, r1	; 0x0f
+				
+				//Reset iteration count
+				iteration = 0;	
+ 7a8:	18 8a       	std	Y+16, r1	; 0x10
+				
+				//Indicate the conversion is done
+				conversionFinished = true;
+ 7aa:	81 e0       	ldi	r24, 0x01	; 1
+ 7ac:	89 83       	std	Y+1, r24	; 0x01
+			}
+			
+			//Reset the time stamp
+			timeStamp = timer->millis();
+ 7ae:	8e 81       	ldd	r24, Y+6	; 0x06
+ 7b0:	9f 81       	ldd	r25, Y+7	; 0x07
+ 7b2:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
+ 7b6:	68 87       	std	Y+8, r22	; 0x08
+ 7b8:	79 87       	std	Y+9, r23	; 0x09
+ 7ba:	8a 87       	std	Y+10, r24	; 0x0a
+ 7bc:	9b 87       	std	Y+11, r25	; 0x0b
+		}
+	}
+}
+ 7be:	df 91       	pop	r29
+ 7c0:	cf 91       	pop	r28
+ 7c2:	08 95       	ret
+
+000007c4 <_ZN8BPMInputD1Ev>:
+
+
+// default destructor
+BPMInput::~BPMInput()
+ 7c4:	08 95       	ret
+
+000007c6 <_ZN6BlinkyC1ER5TimerR8BPMInput>:
+
+
+#include "Blinky.h"
+
+//Initialize the pins. 
+Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
+ 7c6:	0f 93       	push	r16
+ 7c8:	1f 93       	push	r17
+ 7ca:	cf 93       	push	r28
+ 7cc:	df 93       	push	r29
+ 7ce:	ec 01       	movw	r28, r24
+{
+	//Set LED on port D data direction to output
+	DDRD |= (1 << PORTD0);
+ 7d0:	50 9a       	sbi	0x0a, 0	; 10
+		
+	//Used for the "Status LED"
+	DDRD |= (1 << PORTD1);
+ 7d2:	51 9a       	sbi	0x0a, 1	; 10
+	
+	//Used for Task - "Blinky". Indicates next value of LED
+	LEDValueNext = 1;
+ 7d4:	81 e0       	ldi	r24, 0x01	; 1
+ 7d6:	8a 83       	std	Y+2, r24	; 0x02
+	
+	//initialize time stamp to zero
+	timeStamp = 0;
+ 7d8:	18 86       	std	Y+8, r1	; 0x08
+ 7da:	19 86       	std	Y+9, r1	; 0x09
+ 7dc:	1a 86       	std	Y+10, r1	; 0x0a
+ 7de:	1b 86       	std	Y+11, r1	; 0x0b
+	
+	//Get reference to the timer
+	timer = &timerPtr;
+ 7e0:	7d 83       	std	Y+5, r23	; 0x05
+ 7e2:	6c 83       	std	Y+4, r22	; 0x04
+	
+	//Get reference to the BPM input
+	bpmInput = &bpmInputRef;
+ 7e4:	5f 83       	std	Y+7, r21	; 0x07
+ 7e6:	4e 83       	std	Y+6, r20	; 0x06
+	
+	blinkyPin = new Pin(0, &PORTD, OUTPUT);
+ 7e8:	87 e0       	ldi	r24, 0x07	; 7
+ 7ea:	90 e0       	ldi	r25, 0x00	; 0
+ 7ec:	0e 94 41 02 	call	0x482	; 0x482 <_Znwj>
+ 7f0:	8c 01       	movw	r16, r24
+ 7f2:	21 e0       	ldi	r18, 0x01	; 1
+ 7f4:	4b e2       	ldi	r20, 0x2B	; 43
+ 7f6:	50 e0       	ldi	r21, 0x00	; 0
+ 7f8:	60 e0       	ldi	r22, 0x00	; 0
+ 7fa:	0e 94 df 02 	call	0x5be	; 0x5be <_ZN3PinC1EhPVhh>
+ 7fe:	1d 87       	std	Y+13, r17	; 0x0d
+ 800:	0c 87       	std	Y+12, r16	; 0x0c
+	
+	//initialize pulse width
+	pulseWidth = 5000;
+ 802:	88 e8       	ldi	r24, 0x88	; 136
+ 804:	93 e1       	ldi	r25, 0x13	; 19
+ 806:	99 83       	std	Y+1, r25	; 0x01
+ 808:	88 83       	st	Y, r24
+	
+	//init flag
+	justSetHigh = false;
+ 80a:	1b 82       	std	Y+3, r1	; 0x03
+	
+} //Blinky
+ 80c:	df 91       	pop	r29
+ 80e:	cf 91       	pop	r28
+ 810:	1f 91       	pop	r17
+ 812:	0f 91       	pop	r16
+ 814:	08 95       	ret
+
+00000816 <_ZN6Blinky3runEv>:
+
+void Blinky::run()
+{
+ 816:	0f 93       	push	r16
+ 818:	1f 93       	push	r17
+ 81a:	cf 93       	push	r28
+ 81c:	df 93       	push	r29
+ 81e:	ec 01       	movw	r28, r24
+	if ( timer->elapsed_millis( timeStamp ) > pulseWidth ) {
+ 820:	48 85       	ldd	r20, Y+8	; 0x08
+ 822:	59 85       	ldd	r21, Y+9	; 0x09
+ 824:	6a 85       	ldd	r22, Y+10	; 0x0a
+ 826:	7b 85       	ldd	r23, Y+11	; 0x0b
+ 828:	8c 81       	ldd	r24, Y+4	; 0x04
+ 82a:	9d 81       	ldd	r25, Y+5	; 0x05
+ 82c:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
+ 830:	28 81       	ld	r18, Y
+ 832:	39 81       	ldd	r19, Y+1	; 0x01
+ 834:	89 01       	movw	r16, r18
+ 836:	20 e0       	ldi	r18, 0x00	; 0
+ 838:	30 e0       	ldi	r19, 0x00	; 0
+ 83a:	06 17       	cp	r16, r22
+ 83c:	17 07       	cpc	r17, r23
+ 83e:	28 07       	cpc	r18, r24
+ 840:	39 07       	cpc	r19, r25
+ 842:	40 f5       	brcc	.+80     	; 0x894 <_ZN6Blinky3runEv+0x7e>
+		
+		//Update time stamp
+		timeStamp = timer->millis();
+ 844:	8c 81       	ldd	r24, Y+4	; 0x04
+ 846:	9d 81       	ldd	r25, Y+5	; 0x05
+ 848:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
+ 84c:	68 87       	std	Y+8, r22	; 0x08
+ 84e:	79 87       	std	Y+9, r23	; 0x09
+ 850:	8a 87       	std	Y+10, r24	; 0x0a
+ 852:	9b 87       	std	Y+11, r25	; 0x0b
+		
+		if( LEDValueNext == 1 ){
+ 854:	8a 81       	ldd	r24, Y+2	; 0x02
+ 856:	81 30       	cpi	r24, 0x01	; 1
+ 858:	31 f4       	brne	.+12     	; 0x866 <_ZN6Blinky3runEv+0x50>
+			//Set Test LED to OFF
+			blinkyPin->setHigh();	
+ 85a:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 85c:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 85e:	0e 94 ba 02 	call	0x574	; 0x574 <_ZN3Pin7setHighEv>
+			LEDValueNext = 0;
+ 862:	1a 82       	std	Y+2, r1	; 0x02
+ 864:	07 c0       	rjmp	.+14     	; 0x874 <_ZN6Blinky3runEv+0x5e>
+			
+			} else {
+			//Set Test LED to ON
+			blinkyPin->setLow();
+ 866:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 868:	9d 85       	ldd	r25, Y+13	; 0x0d
+ 86a:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3Pin6setLowEv>
+			
+			justSetHigh = true;
+ 86e:	81 e0       	ldi	r24, 0x01	; 1
+ 870:	8b 83       	std	Y+3, r24	; 0x03
+			
+			LEDValueNext = 1;
+ 872:	8a 83       	std	Y+2, r24	; 0x02
+		//Recalculate pulse rate. in units of 0.1ms 
+		//Timer counter to 600000 per 0.1ms so if we have 60 BPM
+		//The delay would be 600000/60 = 10000;
+		//Then we need to devide by two, to have the clock go up and down.
+		//Period would still be the 1/BPM.
+		pulseWidth = 600000 / bpmInput->value;
+ 874:	ee 81       	ldd	r30, Y+6	; 0x06
+ 876:	ff 81       	ldd	r31, Y+7	; 0x07
+ 878:	22 81       	ldd	r18, Z+2	; 0x02
+ 87a:	33 81       	ldd	r19, Z+3	; 0x03
+ 87c:	44 81       	ldd	r20, Z+4	; 0x04
+ 87e:	55 81       	ldd	r21, Z+5	; 0x05
+ 880:	60 ec       	ldi	r22, 0xC0	; 192
+ 882:	77 e2       	ldi	r23, 0x27	; 39
+ 884:	89 e0       	ldi	r24, 0x09	; 9
+ 886:	90 e0       	ldi	r25, 0x00	; 0
+ 888:	0e 94 a8 05 	call	0xb50	; 0xb50 <__udivmodsi4>
+		pulseWidth = pulseWidth >> 1;
+ 88c:	36 95       	lsr	r19
+ 88e:	27 95       	ror	r18
+ 890:	39 83       	std	Y+1, r19	; 0x01
+ 892:	28 83       	st	Y, r18
+		
+	}
+}
+ 894:	df 91       	pop	r29
+ 896:	cf 91       	pop	r28
+ 898:	1f 91       	pop	r17
+ 89a:	0f 91       	pop	r16
+ 89c:	08 95       	ret
+
+0000089e <_ZN6BlinkyD1Ev>:
+
+// default destructor
+Blinky::~Blinky()
+ 89e:	08 95       	ret
+
+000008a0 <_ZN5LatchC1ER8SevenSeg>:
+#include "Latch.h"
+
+Latch::Latch( SevenSeg & sevenSegPtr )
+{
+	//Reference to the seven segment display
+	sevenSegmentDisplay = &sevenSegPtr;
+ 8a0:	fc 01       	movw	r30, r24
+ 8a2:	71 83       	std	Z+1, r23	; 0x01
+ 8a4:	60 83       	st	Z, r22
+ 8a6:	08 95       	ret
+
+000008a8 <_ZN5Latch3runEv>:
+} //Latch
+
+void Latch::run( void )
+{
+	if( sevenSegmentDisplay->shiftComplete == true){
+ 8a8:	dc 01       	movw	r26, r24
+ 8aa:	ed 91       	ld	r30, X+
+ 8ac:	fc 91       	ld	r31, X
+ 8ae:	11 97       	sbiw	r26, 0x01	; 1
+ 8b0:	22 85       	ldd	r18, Z+10	; 0x0a
+ 8b2:	21 30       	cpi	r18, 0x01	; 1
+ 8b4:	29 f4       	brne	.+10     	; 0x8c0 <_ZN5Latch3runEv+0x18>
+		
+		//Reset the shift complete flag
+		sevenSegmentDisplay->shiftComplete = false;
+ 8b6:	12 86       	std	Z+10, r1	; 0x0a
+		
+		//Latch shift registers. Output should show on seven segment display
+		sevenSegmentDisplay->latch();
+ 8b8:	8d 91       	ld	r24, X+
+ 8ba:	9c 91       	ld	r25, X
+ 8bc:	0e 94 10 03 	call	0x620	; 0x620 <_ZN13ShiftRegister5latchEv>
+ 8c0:	08 95       	ret
+
+000008c2 <_ZN5LatchD1Ev>:
+	}
+}
+
+// default destructor
+Latch::~Latch()
+ 8c2:	08 95       	ret
+
+000008c4 <_ZN8PrintBPMC1ER5TimerR8BPMInputR8SevenSeg>:
+
+
+#include "PrintBPM.h"
+
+
+PrintBPM::PrintBPM( Timer & timerPtr, BPMInput & BPMInputPtr, SevenSeg & sevenSegPtr)
+ 8c4:	cf 93       	push	r28
+ 8c6:	df 93       	push	r29
+ 8c8:	ec 01       	movw	r28, r24
+ 8ca:	cb 01       	movw	r24, r22
+{	
+	//Get reference to timer object
+	timer = &timerPtr;
+ 8cc:	7b 83       	std	Y+3, r23	; 0x03
+ 8ce:	6a 83       	std	Y+2, r22	; 0x02
+	
+	//Get reference to the BPM input object
+	BPMInputRef = &BPMInputPtr;
+ 8d0:	59 83       	std	Y+1, r21	; 0x01
+ 8d2:	48 83       	st	Y, r20
+	
+	//Get reference to the seven segment display
+	sevenSeg = &sevenSegPtr;
+ 8d4:	3d 83       	std	Y+5, r19	; 0x05
+ 8d6:	2c 83       	std	Y+4, r18	; 0x04
+	
+	//Initialize timeStamp
+	timeStamp = timer->millis();
+ 8d8:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
+ 8dc:	6e 83       	std	Y+6, r22	; 0x06
+ 8de:	7f 83       	std	Y+7, r23	; 0x07
+ 8e0:	88 87       	std	Y+8, r24	; 0x08
+ 8e2:	99 87       	std	Y+9, r25	; 0x09
+	
+} //PrintBPM
+ 8e4:	df 91       	pop	r29
+ 8e6:	cf 91       	pop	r28
+ 8e8:	08 95       	ret
+
+000008ea <_ZN8PrintBPM3runEv>:
+
+void PrintBPM::run( void )
+{
+ 8ea:	cf 93       	push	r28
+ 8ec:	df 93       	push	r29
+ 8ee:	ec 01       	movw	r28, r24
+	if( timer->elapsed_millis(timeStamp) > BPM_MIN_UPDATE_TIME ){
+ 8f0:	4e 81       	ldd	r20, Y+6	; 0x06
+ 8f2:	5f 81       	ldd	r21, Y+7	; 0x07
+ 8f4:	68 85       	ldd	r22, Y+8	; 0x08
+ 8f6:	79 85       	ldd	r23, Y+9	; 0x09
+ 8f8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 8fa:	9b 81       	ldd	r25, Y+3	; 0x03
+ 8fc:	0e 94 5e 05 	call	0xabc	; 0xabc <_ZN5Timer14elapsed_millisEm>
+ 900:	69 3e       	cpi	r22, 0xE9	; 233
+ 902:	73 40       	sbci	r23, 0x03	; 3
+ 904:	81 05       	cpc	r24, r1
+ 906:	91 05       	cpc	r25, r1
+ 908:	e0 f0       	brcs	.+56     	; 0x942 <__stack+0x43>
+		
+		//See if the ADC conversion to get the BPM has been completed
+		if ( BPMInputRef->conversionFinished == true ){
+ 90a:	e8 81       	ld	r30, Y
+ 90c:	f9 81       	ldd	r31, Y+1	; 0x01
+ 90e:	81 81       	ldd	r24, Z+1	; 0x01
+ 910:	81 30       	cpi	r24, 0x01	; 1
+ 912:	b9 f4       	brne	.+46     	; 0x942 <__stack+0x43>
+				
+			//Set the content for the seven segment to print
+			sevenSeg->contentToPrint = BPMInputRef->value;
+ 914:	ac 81       	ldd	r26, Y+4	; 0x04
+ 916:	bd 81       	ldd	r27, Y+5	; 0x05
+ 918:	82 81       	ldd	r24, Z+2	; 0x02
+ 91a:	93 81       	ldd	r25, Z+3	; 0x03
+ 91c:	1d 96       	adiw	r26, 0x0d	; 13
+ 91e:	9c 93       	st	X, r25
+ 920:	8e 93       	st	-X, r24
+ 922:	1c 97       	sbiw	r26, 0x0c	; 12
+				
+			//Tell seven seg object to print new content
+			sevenSeg->newContentToPrint = true;
+ 924:	ec 81       	ldd	r30, Y+4	; 0x04
+ 926:	fd 81       	ldd	r31, Y+5	; 0x05
+ 928:	81 e0       	ldi	r24, 0x01	; 1
+ 92a:	83 87       	std	Z+11, r24	; 0x0b
+				
+			//Reset the BPM input "conversion finished" flag
+			BPMInputRef->conversionFinished = false;
+ 92c:	e8 81       	ld	r30, Y
+ 92e:	f9 81       	ldd	r31, Y+1	; 0x01
+ 930:	11 82       	std	Z+1, r1	; 0x01
+				
+			//Get new time stamp
+			timeStamp = timer->millis();
+ 932:	8a 81       	ldd	r24, Y+2	; 0x02
+ 934:	9b 81       	ldd	r25, Y+3	; 0x03
+ 936:	0e 94 70 05 	call	0xae0	; 0xae0 <_ZN5Timer6millisEv>
+ 93a:	6e 83       	std	Y+6, r22	; 0x06
+ 93c:	7f 83       	std	Y+7, r23	; 0x07
+ 93e:	88 87       	std	Y+8, r24	; 0x08
+ 940:	99 87       	std	Y+9, r25	; 0x09
+		}
+	}
+}
+ 942:	df 91       	pop	r29
+ 944:	cf 91       	pop	r28
+ 946:	08 95       	ret
+
+00000948 <_ZN8PrintBPMD1Ev>:
+
+// default destructor
+PrintBPM::~PrintBPM()
  948:	08 95       	ret
 
 0000094a <_ZN11TaskManagerC1ER5Timer>:

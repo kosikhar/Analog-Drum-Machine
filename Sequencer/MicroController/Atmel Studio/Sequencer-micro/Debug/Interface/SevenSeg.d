@@ -1,5 +1,6 @@
-Tasks/SevenSeg.d Tasks/SevenSeg.o: ../Tasks/SevenSeg.cpp \
- ../Tasks/SevenSeg.h ../Tasks/../Shift_Register/ShiftRegister_SIPO.h \
+Interface/SevenSeg.d Interface/SevenSeg.o: ../Interface/SevenSeg.cpp \
+ ../Interface/SevenSeg.h \
+ ../Interface/../Shift_Register/ShiftRegister_SIPO.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -12,19 +13,20 @@ Tasks/SevenSeg.d Tasks/SevenSeg.o: ../Tasks/SevenSeg.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../Tasks/../Shift_Register/../timer.h \
+ ../Interface/../Shift_Register/../timer.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
- ../Tasks/../Shift_Register/../interrupts.h \
+ ../Interface/../Shift_Register/../interrupts.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../Tasks/../Shift_Register/../timer.h \
- ../Tasks/../Shift_Register/ShiftRegister.h \
- ../Tasks/../Shift_Register/../Pins/Pin.h ../Tasks/../helperFunctions.h \
+ ../Interface/../Shift_Register/../timer.h \
+ ../Interface/../Shift_Register/ShiftRegister.h \
+ ../Interface/../Shift_Register/../Pins/Pin.h \
+ ../Interface/../helperFunctions.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
-../Tasks/SevenSeg.h:
+../Interface/SevenSeg.h:
 
-../Tasks/../Shift_Register/ShiftRegister_SIPO.h:
+../Interface/../Shift_Register/ShiftRegister_SIPO.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -50,22 +52,22 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-../Tasks/../Shift_Register/../timer.h:
+../Interface/../Shift_Register/../timer.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h:
 
-../Tasks/../Shift_Register/../interrupts.h:
+../Interface/../Shift_Register/../interrupts.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-../Tasks/../Shift_Register/../timer.h:
+../Interface/../Shift_Register/../timer.h:
 
-../Tasks/../Shift_Register/ShiftRegister.h:
+../Interface/../Shift_Register/ShiftRegister.h:
 
-../Tasks/../Shift_Register/../Pins/Pin.h:
+../Interface/../Shift_Register/../Pins/Pin.h:
 
-../Tasks/../helperFunctions.h:
+../Interface/../helperFunctions.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:

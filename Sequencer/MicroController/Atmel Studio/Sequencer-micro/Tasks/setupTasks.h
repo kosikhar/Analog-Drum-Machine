@@ -11,7 +11,7 @@
 
 #include "TaskManager.h"
 #include "../timer.h"
-#include "SevenSeg.h"
+#include "BPMDisplay.h"
 #include "Blinky.h"
 #include "Trigger.h"
 #include "Counter.h"

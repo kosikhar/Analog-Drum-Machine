@@ -10,7 +10,7 @@
 #define __COUNTER_H__
 
 #include "../timer.h"
-#include "SevenSeg.h"
+#include "../Interface/SevenSeg.h"
 
 #define COUNTER_UPDATE 100 //Update counter every 10ms
 

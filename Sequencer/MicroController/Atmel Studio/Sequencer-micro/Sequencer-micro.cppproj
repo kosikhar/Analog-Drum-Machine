@@ -30,15 +30,15 @@
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.28.1" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.28.1" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
     <avrtoolserialnumber>J41800071280</avrtoolserialnumber>
@@ -170,6 +170,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interface\SevenSeg.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Interface\SevenSeg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="interrupts.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -215,6 +221,12 @@
     <Compile Include="Shift_Register\ShiftRegister_SIPO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\BPM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\BPM.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\BPMInput.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -251,6 +263,18 @@
     <Compile Include="Tasks\Latch.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\LEDs.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\LEDs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\LoopBack.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\LoopBack.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\PrintBPM.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -263,13 +287,16 @@
     <Compile Include="Tasks\RotarySwitch.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\Sequencer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\Sequencer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\setupTasks.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\SevenSeg.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\SevenSeg.h">
+    <Compile Include="Tasks\ShiftOutput.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\TaskManager.cpp">
@@ -292,6 +319,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interface" />
     <Folder Include="Pins" />
     <Folder Include="Shift_Register" />
     <Folder Include="Tasks" />

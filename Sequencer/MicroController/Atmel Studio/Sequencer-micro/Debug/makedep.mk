@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+Interface\SevenSeg.cpp
+
 interrupts.cpp
 
 main.cpp
@@ -18,6 +20,8 @@ Shift_Register\ShiftRegister_PISO.cpp
 
 Shift_Register\ShiftRegister_SIPO.cpp
 
+Tasks\BPMDisplay.cpp
+
 Tasks\BPMInput.cpp
 
 Tasks\Blinky.cpp
@@ -33,8 +37,6 @@ Tasks\Latch.cpp
 Tasks\PrintBPM.cpp
 
 Tasks\RotarySwitch.cpp
-
-Tasks\SevenSeg.cpp
 
 Tasks\TaskManager.cpp
 

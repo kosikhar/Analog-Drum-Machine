@@ -27,6 +27,7 @@
 //How often to poll the analog input (5ms)
 #define BPM_PIN_POLLING_TIME 50
 
+//Uses Analog Knob to select BPM
 class BPMInput : AnalogPin
 {
 	//variables

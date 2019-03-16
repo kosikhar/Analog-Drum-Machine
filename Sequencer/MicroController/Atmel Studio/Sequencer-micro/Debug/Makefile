@@ -33,6 +33,7 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../Interface \
 ../Pins \
 ../Shift_Register \
 ../Tasks
@@ -40,6 +41,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../Interface/SevenSeg.cpp \
 ../interrupts.cpp \
 ../main.cpp \
 ../helperFunctions.cpp \
@@ -48,6 +50,7 @@ C_SRCS +=  \
 ../Shift_Register/ShiftRegister.cpp \
 ../Shift_Register/ShiftRegister_PISO.cpp \
 ../Shift_Register/ShiftRegister_SIPO.cpp \
+../Tasks/BPMDisplay.cpp \
 ../Tasks/BPMInput.cpp \
 ../Tasks/Blinky.cpp \
 ../Tasks/DigitalInput.cpp \
@@ -56,7 +59,6 @@ C_SRCS +=  \
 ../Tasks/Latch.cpp \
 ../Tasks/PrintBPM.cpp \
 ../Tasks/RotarySwitch.cpp \
-../Tasks/SevenSeg.cpp \
 ../Tasks/TaskManager.cpp \
 ../Tasks/Trigger.cpp \
 ../timer.cpp
@@ -69,6 +71,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+Interface/SevenSeg.o \
 interrupts.o \
 main.o \
 helperFunctions.o \
@@ -77,6 +80,7 @@ Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
+Tasks/BPMDisplay.o \
 Tasks/BPMInput.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
@@ -85,12 +89,12 @@ Tasks/InputPoll.o \
 Tasks/Latch.o \
 Tasks/PrintBPM.o \
 Tasks/RotarySwitch.o \
-Tasks/SevenSeg.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
 timer.o
 
 OBJS_AS_ARGS +=  \
+Interface/SevenSeg.o \
 interrupts.o \
 main.o \
 helperFunctions.o \
@@ -99,6 +103,7 @@ Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
+Tasks/BPMDisplay.o \
 Tasks/BPMInput.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
@@ -107,12 +112,12 @@ Tasks/InputPoll.o \
 Tasks/Latch.o \
 Tasks/PrintBPM.o \
 Tasks/RotarySwitch.o \
-Tasks/SevenSeg.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
 timer.o
 
 C_DEPS +=  \
+Interface/SevenSeg.d \
 interrupts.d \
 main.d \
 helperFunctions.d \
@@ -121,6 +126,7 @@ Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
+Tasks/BPMDisplay.d \
 Tasks/BPMInput.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
@@ -129,12 +135,12 @@ Tasks/InputPoll.d \
 Tasks/Latch.d \
 Tasks/PrintBPM.d \
 Tasks/RotarySwitch.d \
-Tasks/SevenSeg.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
 timer.d
 
 C_DEPS_AS_ARGS +=  \
+Interface/SevenSeg.d \
 interrupts.d \
 main.d \
 helperFunctions.d \
@@ -143,6 +149,7 @@ Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
+Tasks/BPMDisplay.d \
 Tasks/BPMInput.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
@@ -151,7 +158,6 @@ Tasks/InputPoll.d \
 Tasks/Latch.d \
 Tasks/PrintBPM.d \
 Tasks/RotarySwitch.d \
-Tasks/SevenSeg.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
 timer.d
@@ -210,6 +216,15 @@ LINKER_SCRIPT_DEP+=
 
 
 
+
+
+
+Interface/%.o: ../Interface/%.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 4.9.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
 
 ./%.o: .././%.cpp
 	@echo Building file: $<
