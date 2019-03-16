@@ -21934,11 +21934,8 @@ NS Package M08A</description>
 <part name="C5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="R9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="1 MEG"/>
 <part name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
-<part name="R14" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100k"/>
 <part name="C34" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="Q7" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
 <part name="Q8" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
@@ -21963,39 +21960,22 @@ NS Package M08A</description>
 <part name="IC7" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="C45" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C46" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="R56" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="560"/>
 <part name="C47" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="3.3nF"/>
 <part name="C48" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="3.3nF"/>
-<part name="R57" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="82k"/>
-<part name="R58" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="220k"/>
-<part name="R59" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="220k"/>
-<part name="R60" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="220k"/>
-<part name="R61" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="220k"/>
-<part name="R62" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
-<part name="R63" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="C49" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="1nF"/>
-<part name="R64" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
-<part name="R65" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="22k"/>
 <part name="D3" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="-1N4148" value="200mA/100V/1V"/>
 <part name="R66" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="470k"/>
 <part name="C50" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.47uF"/>
 <part name="Q15" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
 <part name="R67" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
-<part name="R68" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="IC8" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
-<part name="R69" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="C51" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C52" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="TRIM11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
 <part name="Q16" library="Capstone" deviceset="J176" device=""/>
-<part name="R70" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
-<part name="R71" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="TRIM12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="20 OHM"/>
-<part name="R72" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100"/>
 <part name="C53" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="22nF"/>
 <part name="R73" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
-<part name="R74" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="18k"/>
-<part name="R75" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="C54" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="2.2u"/>
 <part name="R76" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R77" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
@@ -22037,6 +22017,26 @@ NS Package M08A</description>
 <part name="R23" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
 <part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="20k"/>
 <part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="20k"/>
+<part name="R26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="47k"/>
+<part name="R27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="1 MEG"/>
+<part name="R28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="100k"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="220k"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="220k"/>
+<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="220k"/>
+<part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="220k"/>
+<part name="R30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="47k"/>
+<part name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="22k"/>
+<part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="82k"/>
+<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="560"/>
+<part name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="18k"/>
+<part name="R37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="100"/>
+<part name="R41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
+<part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -22109,10 +22109,6 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="51.181" y="244.856" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="46.101" y="244.856" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R9" gate="G$1" x="96.52" y="274.32" smashed="yes" rot="R180">
-<attribute name="NAME" x="97.79" y="272.8214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="100.33" y="277.622" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="C8" gate="G$1" x="99.06" y="231.14" smashed="yes" rot="R270">
 <attribute name="NAME" x="99.441" y="229.616" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="94.361" y="229.616" size="1.778" layer="96" rot="R270"/>
@@ -22120,14 +22116,6 @@ Trimpot should be around 2.19k</text>
 <instance part="C7" gate="G$1" x="99.06" y="264.16" smashed="yes" rot="R270">
 <attribute name="NAME" x="99.441" y="262.636" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="94.361" y="262.636" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R2" gate="G$1" x="63.5" y="246.38" smashed="yes" rot="R180">
-<attribute name="NAME" x="64.77" y="244.8814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="67.31" y="249.682" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="R14" gate="G$1" x="142.24" y="241.3" smashed="yes" rot="R270">
-<attribute name="NAME" x="143.7386" y="242.57" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="138.938" y="245.11" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="C34" gate="G$1" x="124.46" y="248.92" smashed="yes" rot="R270">
 <attribute name="NAME" x="124.841" y="247.396" size="1.778" layer="95" rot="R270"/>
@@ -22225,10 +22213,6 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="300.101" y="277.876" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="295.021" y="277.876" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R56" gate="G$1" x="299.72" y="302.26" smashed="yes" rot="R270">
-<attribute name="NAME" x="301.2186" y="303.53" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="296.418" y="306.07" size="1.778" layer="96" rot="R270"/>
-</instance>
 <instance part="C47" gate="G$1" x="292.1" y="312.42" smashed="yes" rot="R270">
 <attribute name="NAME" x="292.481" y="310.896" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="287.401" y="310.896" size="1.778" layer="96" rot="R270"/>
@@ -22237,45 +22221,9 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="310.261" y="310.896" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="305.181" y="310.896" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R57" gate="G$1" x="299.72" y="327.66" smashed="yes">
-<attribute name="NAME" x="298.45" y="329.1586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="295.91" y="324.358" size="1.778" layer="96"/>
-</instance>
-<instance part="R58" gate="G$1" x="193.04" y="309.88" smashed="yes">
-<attribute name="NAME" x="191.77" y="311.3786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="189.23" y="306.578" size="1.778" layer="96"/>
-</instance>
-<instance part="R59" gate="G$1" x="193.04" y="297.18" smashed="yes">
-<attribute name="NAME" x="191.77" y="298.6786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="189.23" y="293.878" size="1.778" layer="96"/>
-</instance>
-<instance part="R60" gate="G$1" x="193.04" y="284.48" smashed="yes">
-<attribute name="NAME" x="191.77" y="285.9786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="189.23" y="281.178" size="1.778" layer="96"/>
-</instance>
-<instance part="R61" gate="G$1" x="193.04" y="271.78" smashed="yes">
-<attribute name="NAME" x="191.77" y="273.2786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="189.23" y="268.478" size="1.778" layer="96"/>
-</instance>
-<instance part="R62" gate="G$1" x="215.9" y="297.18" smashed="yes">
-<attribute name="NAME" x="214.63" y="298.6786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="212.09" y="293.878" size="1.778" layer="96"/>
-</instance>
-<instance part="R63" gate="G$1" x="226.06" y="289.56" smashed="yes" rot="R90">
-<attribute name="NAME" x="224.5614" y="288.29" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="229.362" y="285.75" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="C49" gate="G$1" x="238.76" y="297.18" smashed="yes" rot="R270">
 <attribute name="NAME" x="239.141" y="295.656" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="234.061" y="295.656" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R64" gate="G$1" x="269.24" y="256.54" smashed="yes" rot="R270">
-<attribute name="NAME" x="270.7386" y="257.81" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="265.938" y="260.35" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R65" gate="G$1" x="259.08" y="266.7" smashed="yes">
-<attribute name="NAME" x="257.81" y="268.1986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="255.27" y="263.398" size="1.778" layer="96"/>
 </instance>
 <instance part="D3" gate="G$1" x="86.36" y="-33.02" smashed="yes" rot="MR180">
 <attribute name="NAME" x="88.9" y="-33.5026" size="1.778" layer="95" rot="MR180"/>
@@ -22297,17 +22245,9 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="115.7986" y="-41.91" size="1.778" layer="95" rot="MR90"/>
 <attribute name="VALUE" x="110.998" y="-44.45" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="R68" gate="G$1" x="127" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="125.5014" y="72.39" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="130.302" y="69.85" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="IC8" gate="A" x="162.56" y="88.9" smashed="yes">
 <attribute name="NAME" x="165.1" y="94.615" size="1.778" layer="95"/>
 <attribute name="VALUE" x="165.1" y="83.82" size="1.778" layer="96"/>
-</instance>
-<instance part="R69" gate="G$1" x="165.1" y="127" smashed="yes" rot="R180">
-<attribute name="NAME" x="166.37" y="125.5014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="168.91" y="130.302" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C51" gate="G$1" x="170.18" y="71.12" smashed="yes" rot="R270">
 <attribute name="NAME" x="170.561" y="69.596" size="1.778" layer="95" rot="R270"/>
@@ -22325,21 +22265,9 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="134.62" y="72.517" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="134.62" y="74.93" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="R70" gate="G$1" x="93.98" y="99.06" smashed="yes" rot="R180">
-<attribute name="NAME" x="95.25" y="97.5614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="102.362" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="R71" gate="G$1" x="93.98" y="91.44" smashed="yes" rot="R180">
-<attribute name="NAME" x="95.25" y="89.9414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="97.79" y="94.742" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="TRIM12" gate="G$1" x="111.76" y="81.28" smashed="yes" rot="R180">
 <attribute name="NAME" x="107.569" y="87.63" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="115.57" y="85.09" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R72" gate="G$1" x="104.14" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="102.6414" y="72.39" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="107.442" y="69.85" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C53" gate="G$1" x="330.2" y="264.16" smashed="yes" rot="R270">
 <attribute name="NAME" x="330.581" y="262.636" size="1.778" layer="95" rot="R270"/>
@@ -22348,14 +22276,6 @@ Trimpot should be around 2.19k</text>
 <instance part="R73" gate="G$1" x="114.3" y="-55.88" smashed="yes" rot="MR90">
 <attribute name="NAME" x="115.7986" y="-57.15" size="1.778" layer="95" rot="MR90"/>
 <attribute name="VALUE" x="110.998" y="-59.69" size="1.778" layer="96" rot="MR90"/>
-</instance>
-<instance part="R74" gate="G$1" x="58.42" y="99.06" smashed="yes">
-<attribute name="NAME" x="57.15" y="100.5586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="54.61" y="95.758" size="1.778" layer="96"/>
-</instance>
-<instance part="R75" gate="G$1" x="58.42" y="91.44" smashed="yes">
-<attribute name="NAME" x="57.15" y="92.9386" size="1.778" layer="95"/>
-<attribute name="VALUE" x="54.61" y="88.138" size="1.778" layer="96"/>
 </instance>
 <instance part="C54" gate="G$1" x="464.82" y="167.64" smashed="yes" rot="R270">
 <attribute name="NAME" x="465.201" y="166.116" size="1.778" layer="95" rot="R270"/>
@@ -22522,6 +22442,86 @@ Trimpot should be around 2.19k</text>
 <instance part="R25" gate="G$1" x="464.82" y="373.38" smashed="yes" rot="R90">
 <attribute name="NAME" x="463.3214" y="369.57" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="468.122" y="369.57" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R26" gate="G$1" x="63.5" y="246.38" smashed="yes" rot="R180">
+<attribute name="NAME" x="67.31" y="244.8814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="67.31" y="249.682" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R27" gate="G$1" x="96.52" y="274.32" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="272.8214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="100.33" y="277.622" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R28" gate="G$1" x="142.24" y="241.3" smashed="yes" rot="R270">
+<attribute name="NAME" x="143.7386" y="245.11" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="138.938" y="245.11" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R2" gate="G$1" x="193.04" y="309.88" smashed="yes">
+<attribute name="NAME" x="189.23" y="311.3786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="189.23" y="306.578" size="1.778" layer="96"/>
+</instance>
+<instance part="R9" gate="G$1" x="193.04" y="297.18" smashed="yes">
+<attribute name="NAME" x="189.23" y="298.6786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="189.23" y="293.878" size="1.778" layer="96"/>
+</instance>
+<instance part="R14" gate="G$1" x="193.04" y="284.48" smashed="yes">
+<attribute name="NAME" x="189.23" y="285.9786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="189.23" y="281.178" size="1.778" layer="96"/>
+</instance>
+<instance part="R29" gate="G$1" x="193.04" y="271.78" smashed="yes">
+<attribute name="NAME" x="189.23" y="273.2786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="189.23" y="268.478" size="1.778" layer="96"/>
+</instance>
+<instance part="R30" gate="G$1" x="215.9" y="297.18" smashed="yes">
+<attribute name="NAME" x="212.09" y="298.6786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="212.09" y="293.878" size="1.778" layer="96"/>
+</instance>
+<instance part="R31" gate="G$1" x="226.06" y="289.56" smashed="yes" rot="R90">
+<attribute name="NAME" x="224.5614" y="285.75" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="229.362" y="285.75" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R32" gate="G$1" x="259.08" y="266.7" smashed="yes">
+<attribute name="NAME" x="255.27" y="268.1986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="255.27" y="263.398" size="1.778" layer="96"/>
+</instance>
+<instance part="R33" gate="G$1" x="269.24" y="256.54" smashed="yes" rot="R90">
+<attribute name="NAME" x="267.7414" y="252.73" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="272.542" y="252.73" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R34" gate="G$1" x="299.72" y="327.66" smashed="yes">
+<attribute name="NAME" x="295.91" y="329.1586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="295.91" y="324.358" size="1.778" layer="96"/>
+</instance>
+<instance part="R35" gate="G$1" x="299.72" y="302.26" smashed="yes" rot="R90">
+<attribute name="NAME" x="298.2214" y="298.45" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="303.022" y="298.45" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R36" gate="G$1" x="58.42" y="99.06" smashed="yes">
+<attribute name="NAME" x="54.61" y="100.5586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="54.61" y="95.758" size="1.778" layer="96"/>
+</instance>
+<instance part="R37" gate="G$1" x="58.42" y="91.44" smashed="yes">
+<attribute name="NAME" x="54.61" y="92.9386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="54.61" y="88.138" size="1.778" layer="96"/>
+</instance>
+<instance part="R38" gate="G$1" x="93.98" y="99.06" smashed="yes">
+<attribute name="NAME" x="90.17" y="100.5586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="90.17" y="95.758" size="1.778" layer="96"/>
+</instance>
+<instance part="R39" gate="G$1" x="93.98" y="91.44" smashed="yes">
+<attribute name="NAME" x="90.17" y="92.9386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="90.17" y="88.138" size="1.778" layer="96"/>
+</instance>
+<instance part="R40" gate="G$1" x="104.14" y="73.66" smashed="yes" rot="R90">
+<attribute name="NAME" x="102.6414" y="69.85" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="107.442" y="69.85" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R41" gate="G$1" x="127" y="73.66" smashed="yes" rot="R90">
+<attribute name="NAME" x="125.5014" y="69.85" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="130.302" y="69.85" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R42" gate="G$1" x="165.1" y="127" smashed="yes">
+<attribute name="NAME" x="161.29" y="128.4986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="161.29" y="123.698" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -22767,7 +22767,6 @@ Trimpot should be around 2.19k</text>
 </segment>
 <segment>
 <pinref part="IC8" gate="A" pin="OUT"/>
-<pinref part="R69" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="88.9" x2="170.18" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="127" x2="180.34" y2="127" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="127" x2="180.34" y2="88.9" width="0.1524" layer="91"/>
@@ -22778,6 +22777,7 @@ Trimpot should be around 2.19k</text>
 <wire x1="226.06" y1="88.9" x2="233.68" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="81.28" x2="226.06" y2="88.9" width="0.1524" layer="91"/>
 <junction x="226.06" y="88.9"/>
+<pinref part="R42" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="TRIGGER" class="0">
@@ -22889,9 +22889,9 @@ Trimpot should be around 2.19k</text>
 <label x="68.58" y="251.46" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="236.22" x2="142.24" y2="233.68" width="0.1524" layer="91"/>
 <label x="139.7" y="231.14" size="1.778" layer="95"/>
+<pinref part="R28" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="Q8" gate="G$1" pin="E"/>
@@ -22936,19 +22936,19 @@ Trimpot should be around 2.19k</text>
 <label x="304.8" y="246.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R56" gate="G$1" pin="2"/>
 <wire x1="299.72" y1="297.18" x2="299.72" y2="292.1" width="0.1524" layer="91"/>
 <label x="297.18" y="289.56" size="1.778" layer="95"/>
+<pinref part="R35" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R63" gate="G$1" pin="1"/>
 <wire x1="226.06" y1="284.48" x2="226.06" y2="281.94" width="0.1524" layer="91"/>
 <label x="223.52" y="279.4" size="1.778" layer="95"/>
+<pinref part="R31" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R64" gate="G$1" pin="2"/>
 <wire x1="269.24" y1="251.46" x2="269.24" y2="246.38" width="0.1524" layer="91"/>
 <label x="266.7" y="243.84" size="1.778" layer="95"/>
+<pinref part="R33" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R66" gate="G$1" pin="1"/>
@@ -22968,9 +22968,9 @@ Trimpot should be around 2.19k</text>
 <label x="175.26" y="71.12" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R68" gate="G$1" pin="1"/>
 <wire x1="127" y1="68.58" x2="127" y2="66.04" width="0.1524" layer="91"/>
 <label x="124.46" y="63.5" size="1.778" layer="95"/>
+<pinref part="R41" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="C52" gate="G$1" pin="1"/>
@@ -22978,9 +22978,9 @@ Trimpot should be around 2.19k</text>
 <label x="121.92" y="111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R72" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="68.58" x2="104.14" y2="66.04" width="0.1524" layer="91"/>
 <label x="101.6" y="63.5" size="1.778" layer="95"/>
+<pinref part="R40" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="Q16" gate="G$1" pin="S"/>
@@ -23125,33 +23125,33 @@ Trimpot should be around 2.19k</text>
 <segment>
 <pinref part="IC1" gate="A" pin="-IN"/>
 <wire x1="83.82" y1="246.38" x2="78.74" y2="246.38" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="78.74" y1="246.38" x2="78.74" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="274.32" x2="91.44" y2="274.32" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="78.74" y1="246.38" x2="68.58" y2="246.38" width="0.1524" layer="91"/>
 <junction x="78.74" y="246.38"/>
+<pinref part="R26" gate="G$1" pin="1"/>
+<pinref part="R27" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="WHITE_NOISE_AMP" class="0">
 <segment>
 <pinref part="C34" gate="G$1" pin="1"/>
 <wire x1="127" y1="248.92" x2="142.24" y2="248.92" width="0.1524" layer="91"/>
-<pinref part="R14" gate="G$1" pin="1"/>
 <wire x1="142.24" y1="248.92" x2="142.24" y2="246.38" width="0.1524" layer="91"/>
 <label x="131.572" y="249.682" size="1.778" layer="95"/>
+<pinref part="R28" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R74" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="99.06" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
 <label x="25.4" y="99.06" size="1.778" layer="95"/>
+<pinref part="R36" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$28" class="0">
 <segment>
-<pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="246.38" x2="53.34" y2="246.38" width="0.1524" layer="91"/>
+<pinref part="R26" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VCA_TRIGGER" class="0">
@@ -23190,27 +23190,26 @@ Trimpot should be around 2.19k</text>
 </net>
 <net name="VCA_INPUT" class="0">
 <segment>
-<pinref part="R70" gate="G$1" pin="2"/>
 <wire x1="88.9" y1="99.06" x2="86.36" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="99.06" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="R71" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="93.98" x2="86.36" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="91.44" x2="88.9" y2="91.44" width="0.1524" layer="91"/>
 <label x="71.12" y="93.98" size="1.778" layer="95"/>
 <wire x1="66.04" y1="93.98" x2="86.36" y2="93.98" width="0.1524" layer="91"/>
 <junction x="86.36" y="93.98"/>
-<pinref part="R75" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="91.44" x2="66.04" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="91.44" x2="66.04" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="R74" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="93.98" x2="66.04" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="99.06" x2="63.5" y2="99.06" width="0.1524" layer="91"/>
 <junction x="66.04" y="93.98"/>
+<pinref part="R36" gate="G$1" pin="2"/>
+<pinref part="R37" gate="G$1" pin="2"/>
+<pinref part="R38" gate="G$1" pin="1"/>
+<pinref part="R39" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="274.32" x2="116.84" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="274.32" x2="116.84" y2="248.92" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="A" pin="OUT"/>
@@ -23218,6 +23217,7 @@ Trimpot should be around 2.19k</text>
 <pinref part="C34" gate="G$1" pin="2"/>
 <wire x1="116.84" y1="248.92" x2="119.38" y2="248.92" width="0.1524" layer="91"/>
 <junction x="116.84" y="248.92"/>
+<pinref part="R27" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -23270,9 +23270,9 @@ Trimpot should be around 2.19k</text>
 <pinref part="R10" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R58" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="309.88" x2="185.42" y2="309.88" width="0.1524" layer="91"/>
 <label x="180.34" y="309.88" size="1.778" layer="95"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -23339,9 +23339,9 @@ Trimpot should be around 2.19k</text>
 <pinref part="R13" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R59" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="297.18" x2="185.42" y2="297.18" width="0.1524" layer="91"/>
 <label x="180.34" y="297.18" size="1.778" layer="95"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -23408,9 +23408,9 @@ Trimpot should be around 2.19k</text>
 <pinref part="R19" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R60" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="284.48" x2="185.42" y2="284.48" width="0.1524" layer="91"/>
 <label x="180.34" y="284.48" size="1.778" layer="95"/>
+<pinref part="R14" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$54" class="0">
@@ -23477,9 +23477,9 @@ Trimpot should be around 2.19k</text>
 <pinref part="R23" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R61" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="271.78" x2="185.42" y2="271.78" width="0.1524" layer="91"/>
 <label x="180.34" y="271.78" size="1.778" layer="95"/>
+<pinref part="R29" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$59" class="0">
@@ -23503,10 +23503,10 @@ Trimpot should be around 2.19k</text>
 <wire x1="279.4" y1="261.62" x2="279.4" y2="312.42" width="0.1524" layer="91"/>
 <pinref part="C47" gate="G$1" pin="2"/>
 <wire x1="287.02" y1="312.42" x2="279.4" y2="312.42" width="0.1524" layer="91"/>
-<pinref part="R57" gate="G$1" pin="1"/>
 <wire x1="294.64" y1="327.66" x2="279.4" y2="327.66" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="327.66" x2="279.4" y2="312.42" width="0.1524" layer="91"/>
 <junction x="279.4" y="312.42"/>
+<pinref part="R34" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$47" class="0">
@@ -23514,60 +23514,60 @@ Trimpot should be around 2.19k</text>
 <pinref part="C47" gate="G$1" pin="1"/>
 <pinref part="C48" gate="G$1" pin="2"/>
 <wire x1="294.64" y1="312.42" x2="299.72" y2="312.42" width="0.1524" layer="91"/>
-<pinref part="R56" gate="G$1" pin="1"/>
 <wire x1="299.72" y1="312.42" x2="304.8" y2="312.42" width="0.1524" layer="91"/>
 <wire x1="299.72" y1="307.34" x2="299.72" y2="312.42" width="0.1524" layer="91"/>
 <junction x="299.72" y="312.42"/>
+<pinref part="R35" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$22" class="0">
 <segment>
-<pinref part="R58" gate="G$1" pin="2"/>
 <wire x1="198.12" y1="309.88" x2="200.66" y2="309.88" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="309.88" x2="200.66" y2="297.18" width="0.1524" layer="91"/>
-<pinref part="R61" gate="G$1" pin="2"/>
 <wire x1="200.66" y1="297.18" x2="200.66" y2="284.48" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="284.48" x2="200.66" y2="271.78" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="271.78" x2="198.12" y2="271.78" width="0.1524" layer="91"/>
-<pinref part="R60" gate="G$1" pin="2"/>
 <wire x1="198.12" y1="284.48" x2="200.66" y2="284.48" width="0.1524" layer="91"/>
 <junction x="200.66" y="284.48"/>
-<pinref part="R59" gate="G$1" pin="2"/>
 <wire x1="198.12" y1="297.18" x2="200.66" y2="297.18" width="0.1524" layer="91"/>
 <junction x="200.66" y="297.18"/>
-<pinref part="R62" gate="G$1" pin="1"/>
 <wire x1="210.82" y1="297.18" x2="200.66" y2="297.18" width="0.1524" layer="91"/>
+<pinref part="R30" gate="G$1" pin="1"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R14" gate="G$1" pin="2"/>
+<pinref part="R29" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$58" class="0">
 <segment>
-<pinref part="R62" gate="G$1" pin="2"/>
 <wire x1="220.98" y1="297.18" x2="226.06" y2="297.18" width="0.1524" layer="91"/>
-<pinref part="R63" gate="G$1" pin="2"/>
 <wire x1="226.06" y1="297.18" x2="226.06" y2="294.64" width="0.1524" layer="91"/>
 <pinref part="C49" gate="G$1" pin="2"/>
 <wire x1="226.06" y1="297.18" x2="233.68" y2="297.18" width="0.1524" layer="91"/>
 <junction x="226.06" y="297.18"/>
+<pinref part="R30" gate="G$1" pin="2"/>
+<pinref part="R31" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$61" class="0">
 <segment>
 <pinref part="IC7" gate="A" pin="+IN"/>
 <wire x1="284.48" y1="266.7" x2="269.24" y2="266.7" width="0.1524" layer="91"/>
-<pinref part="R64" gate="G$1" pin="1"/>
 <wire x1="269.24" y1="266.7" x2="269.24" y2="261.62" width="0.1524" layer="91"/>
-<pinref part="R65" gate="G$1" pin="2"/>
 <wire x1="264.16" y1="266.7" x2="269.24" y2="266.7" width="0.1524" layer="91"/>
 <junction x="269.24" y="266.7"/>
+<pinref part="R32" gate="G$1" pin="2"/>
+<pinref part="R33" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$62" class="0">
 <segment>
-<pinref part="R65" gate="G$1" pin="1"/>
 <pinref part="C49" gate="G$1" pin="1"/>
 <wire x1="243.84" y1="266.7" x2="254" y2="266.7" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="297.18" x2="243.84" y2="297.18" width="0.1524" layer="91"/>
 <wire x1="243.84" y1="297.18" x2="243.84" y2="266.7" width="0.1524" layer="91"/>
+<pinref part="R32" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$64" class="0">
@@ -23583,7 +23583,6 @@ Trimpot should be around 2.19k</text>
 </net>
 <net name="N$65" class="0">
 <segment>
-<pinref part="R68" gate="G$1" pin="2"/>
 <wire x1="127" y1="91.44" x2="127" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="IC8" gate="A" pin="+IN"/>
 <wire x1="127" y1="91.44" x2="154.94" y2="91.44" width="0.1524" layer="91"/>
@@ -23591,9 +23590,10 @@ Trimpot should be around 2.19k</text>
 <junction x="127" y="91.44"/>
 <pinref part="TRIM12" gate="G$1" pin="A"/>
 <wire x1="111.76" y1="91.44" x2="111.76" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="R71" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="91.44" x2="111.76" y2="91.44" width="0.1524" layer="91"/>
 <junction x="111.76" y="91.44"/>
+<pinref part="R39" gate="G$1" pin="2"/>
+<pinref part="R41" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$66" class="0">
@@ -23601,16 +23601,16 @@ Trimpot should be around 2.19k</text>
 <pinref part="IC8" gate="A" pin="-IN"/>
 <wire x1="154.94" y1="86.36" x2="152.4" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="86.36" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="R69" gate="G$1" pin="2"/>
 <wire x1="152.4" y1="99.06" x2="152.4" y2="127" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="127" x2="160.02" y2="127" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="86.36" x2="152.4" y2="73.66" width="0.1524" layer="91"/>
 <junction x="152.4" y="86.36"/>
 <pinref part="Q16" gate="G$1" pin="D"/>
 <wire x1="152.4" y1="73.66" x2="149.86" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="R70" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="99.06" x2="152.4" y2="99.06" width="0.1524" layer="91"/>
 <junction x="152.4" y="99.06"/>
+<pinref part="R38" gate="G$1" pin="2"/>
+<pinref part="R42" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$67" class="0">
@@ -23634,15 +23634,14 @@ Trimpot should be around 2.19k</text>
 <segment>
 <pinref part="TRIM12" gate="G$1" pin="S"/>
 <wire x1="106.68" y1="81.28" x2="104.14" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="R72" gate="G$1" pin="2"/>
 <wire x1="104.14" y1="81.28" x2="104.14" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R40" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$60" class="0">
 <segment>
 <pinref part="C48" gate="G$1" pin="1"/>
 <wire x1="312.42" y1="312.42" x2="320.04" y2="312.42" width="0.1524" layer="91"/>
-<pinref part="R57" gate="G$1" pin="2"/>
 <wire x1="320.04" y1="312.42" x2="320.04" y2="327.66" width="0.1524" layer="91"/>
 <wire x1="320.04" y1="327.66" x2="304.8" y2="327.66" width="0.1524" layer="91"/>
 <pinref part="IC7" gate="A" pin="OUT"/>
@@ -23652,6 +23651,7 @@ Trimpot should be around 2.19k</text>
 <pinref part="C53" gate="G$1" pin="2"/>
 <wire x1="320.04" y1="264.16" x2="325.12" y2="264.16" width="0.1524" layer="91"/>
 <junction x="320.04" y="264.16"/>
+<pinref part="R34" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="BRIDGED_T_OUT" class="0">
@@ -23661,9 +23661,9 @@ Trimpot should be around 2.19k</text>
 <label x="337.82" y="264.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R75" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="91.44" x2="48.26" y2="91.44" width="0.1524" layer="91"/>
 <label x="27.94" y="91.44" size="1.778" layer="95"/>
+<pinref part="R37" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$70" class="0">
