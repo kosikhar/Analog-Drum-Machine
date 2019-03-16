@@ -6,10 +6,10 @@
 */
 
 
-#include "RotarySwitch.h"
+#include "RotaryEncoder.h"
 
 // default constructor
-RotarySwitch::RotarySwitch(Timer & TimerRef, DigitalInput & DigitalInputRef)
+RotaryEncoder::RotaryEncoder(Timer & TimerRef, DigitalInput & DigitalInputRef)
 {
 	//Store reference to timer
 	timer = &TimerRef;
@@ -32,7 +32,7 @@ RotarySwitch::RotarySwitch(Timer & TimerRef, DigitalInput & DigitalInputRef)
 	 	
 } //RotarySwitch
 
-void RotarySwitch::run( void )
+void RotaryEncoder::run( void )
 {
 	//If there was an increment, wait until it's applied
 	//If the main input polling object latched, wait until that input is received.
@@ -81,7 +81,7 @@ void RotarySwitch::run( void )
 }
 
 // default destructor
-RotarySwitch::~RotarySwitch()
+RotaryEncoder::~RotaryEncoder()
 {
 	
 } //~RotarySwitch

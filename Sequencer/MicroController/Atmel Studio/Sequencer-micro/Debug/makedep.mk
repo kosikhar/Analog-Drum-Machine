@@ -20,7 +20,7 @@ Shift_Register\ShiftRegister_PISO.cpp
 
 Shift_Register\ShiftRegister_SIPO.cpp
 
-Tasks\BPMDisplay.cpp
+Tasks\BPM.cpp
 
 Tasks\BPMInput.cpp
 
@@ -34,9 +34,19 @@ Tasks\InputPoll.cpp
 
 Tasks\Latch.cpp
 
+Tasks\LEDs.cpp
+
+Tasks\LoopBack.cpp
+
+Tasks\MeasureSelect.cpp
+
 Tasks\PrintBPM.cpp
 
-Tasks\RotarySwitch.cpp
+Tasks\PrintOutput.cpp
+
+Tasks\RotaryEncoder.cpp
+
+Tasks\Sequencer.cpp
 
 Tasks\TaskManager.cpp
 

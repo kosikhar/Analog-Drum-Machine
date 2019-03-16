@@ -14,6 +14,8 @@
 
 #define COUNTER_UPDATE 100 //Update counter every 10ms
 
+#define NUM_COUNTER_DIGITS 2 //Number of counter digits
+
 class Counter
 {
 	//variables

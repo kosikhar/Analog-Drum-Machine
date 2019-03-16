@@ -43,7 +43,7 @@ void SevenSeg::run( void )
 		shiftComplete = false;
 			
 		//numberToPrint[1++] gets the 10s, 100s, etc.
-		numbersToPrint[sevenSeg_index] = (contentToPrint / pow10(sevenSeg_index)) % 10;
+		numbersToPrint[sevenSeg_index] = (contentToPrint / pow10[sevenSeg_index]) % 10;
 
 		//Prepare shift registers to hold bit map for seven segment display
 		//If input number is too large just make it 10 (a dot on the seven seg)

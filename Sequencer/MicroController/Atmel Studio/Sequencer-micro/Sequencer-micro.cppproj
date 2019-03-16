@@ -275,16 +275,28 @@
     <Compile Include="Tasks\LoopBack.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\MeasureSelect.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\MeasureSelect.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\PrintBPM.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\PrintBPM.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\RotarySwitch.cpp">
+    <Compile Include="Tasks\PrintOutput.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\RotarySwitch.h">
+    <Compile Include="Tasks\PrintOutput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\RotaryEncoder.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\RotaryEncoder.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Sequencer.cpp">
@@ -294,9 +306,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\setupTasks.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\ShiftOutput.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\TaskManager.cpp">

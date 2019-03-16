@@ -61,7 +61,7 @@ class DigitalInput : public ShiftRegister_PISO
 		~DigitalInput();
 		
 		//Shifts bits into uC in alignment with a polling rate
-		void run( void );
+		virtual void run( void );
 		
 		void read( void );
 		

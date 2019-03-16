@@ -21,9 +21,9 @@
 #define DECREASE 2 
 #define NO_CHANGE 0
 
-//The outputs of the rotary switch should be on the first PISO shift register
+//The outputs of the rotary encoder should be on the first PISO shift register
 //This will quickly read those bits.
-class RotarySwitch
+class RotaryEncoder
 {
 	//variables
 	public:
@@ -57,16 +57,14 @@ class RotarySwitch
 
 	//functions
 	public:
-		RotarySwitch(Timer & TimerRef, DigitalInput & DigitalInputRef);
+		RotaryEncoder(Timer & TimerRef, DigitalInput & DigitalInputRef);
 
 		//Runs the main task
 		void run( void );
 
-		~RotarySwitch();
+		~RotaryEncoder();
 	protected:
 	private:
-		RotarySwitch( const RotarySwitch &c );
-		RotarySwitch& operator=( const RotarySwitch &c );
 
 }; //RotarySwitch
 

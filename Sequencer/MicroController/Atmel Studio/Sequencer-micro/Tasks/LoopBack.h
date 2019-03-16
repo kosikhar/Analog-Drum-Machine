@@ -10,7 +10,14 @@
 #define __LOOPBACK_H__
 
 //The value of loopback is stimulated by a rotary encoder
-#include "RotarySwitch.h"
+#include "RotaryEncoder.h"
+
+//Loopback will need to see the value of the counter to see if there should be a
+//Loopback
+#include "Counter.h"
+
+//Max value to loopback (16*6 = 96)
+#define MAX_LOOP_BACK_VALUE 96
 
 //Task object controls when the sequencer needs to "loop back"
 //to time = 0
@@ -18,6 +25,7 @@ class LoopBack
 {
 	//variables
 	public:
+		uint8_t loopBackValue;
 	protected:
 	private:
 

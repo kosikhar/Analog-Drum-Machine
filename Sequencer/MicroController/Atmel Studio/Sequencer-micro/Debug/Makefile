@@ -50,15 +50,20 @@ C_SRCS +=  \
 ../Shift_Register/ShiftRegister.cpp \
 ../Shift_Register/ShiftRegister_PISO.cpp \
 ../Shift_Register/ShiftRegister_SIPO.cpp \
-../Tasks/BPMDisplay.cpp \
+../Tasks/BPM.cpp \
 ../Tasks/BPMInput.cpp \
 ../Tasks/Blinky.cpp \
 ../Tasks/DigitalInput.cpp \
 ../Tasks/Counter.cpp \
 ../Tasks/InputPoll.cpp \
 ../Tasks/Latch.cpp \
+../Tasks/LEDs.cpp \
+../Tasks/LoopBack.cpp \
+../Tasks/MeasureSelect.cpp \
 ../Tasks/PrintBPM.cpp \
-../Tasks/RotarySwitch.cpp \
+../Tasks/PrintOutput.cpp \
+../Tasks/RotaryEncoder.cpp \
+../Tasks/Sequencer.cpp \
 ../Tasks/TaskManager.cpp \
 ../Tasks/Trigger.cpp \
 ../timer.cpp
@@ -80,15 +85,20 @@ Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
-Tasks/BPMDisplay.o \
+Tasks/BPM.o \
 Tasks/BPMInput.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/Counter.o \
 Tasks/InputPoll.o \
 Tasks/Latch.o \
+Tasks/LEDs.o \
+Tasks/LoopBack.o \
+Tasks/MeasureSelect.o \
 Tasks/PrintBPM.o \
-Tasks/RotarySwitch.o \
+Tasks/PrintOutput.o \
+Tasks/RotaryEncoder.o \
+Tasks/Sequencer.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
 timer.o
@@ -103,15 +113,20 @@ Pins/Pin.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
-Tasks/BPMDisplay.o \
+Tasks/BPM.o \
 Tasks/BPMInput.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/Counter.o \
 Tasks/InputPoll.o \
 Tasks/Latch.o \
+Tasks/LEDs.o \
+Tasks/LoopBack.o \
+Tasks/MeasureSelect.o \
 Tasks/PrintBPM.o \
-Tasks/RotarySwitch.o \
+Tasks/PrintOutput.o \
+Tasks/RotaryEncoder.o \
+Tasks/Sequencer.o \
 Tasks/TaskManager.o \
 Tasks/Trigger.o \
 timer.o
@@ -126,15 +141,20 @@ Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
-Tasks/BPMDisplay.d \
+Tasks/BPM.d \
 Tasks/BPMInput.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/Counter.d \
 Tasks/InputPoll.d \
 Tasks/Latch.d \
+Tasks/LEDs.d \
+Tasks/LoopBack.d \
+Tasks/MeasureSelect.d \
 Tasks/PrintBPM.d \
-Tasks/RotarySwitch.d \
+Tasks/PrintOutput.d \
+Tasks/RotaryEncoder.d \
+Tasks/Sequencer.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
 timer.d
@@ -149,15 +169,20 @@ Pins/Pin.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
-Tasks/BPMDisplay.d \
+Tasks/BPM.d \
 Tasks/BPMInput.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/Counter.d \
 Tasks/InputPoll.d \
 Tasks/Latch.d \
+Tasks/LEDs.d \
+Tasks/LoopBack.d \
+Tasks/MeasureSelect.d \
 Tasks/PrintBPM.d \
-Tasks/RotarySwitch.d \
+Tasks/PrintOutput.d \
+Tasks/RotaryEncoder.d \
+Tasks/Sequencer.d \
 Tasks/TaskManager.d \
 Tasks/Trigger.d \
 timer.d
@@ -176,6 +201,16 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
+
+
+
+
 
 
 

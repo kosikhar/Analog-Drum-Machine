@@ -40,10 +40,16 @@ class SevenSeg : public ShiftRegister_SIPO
 
 	private:
 		uint8_t size;
-	
-	 	uint8_t sevenSegBitMap [11]	= {
+		
+		//Bitmap for seven segment displays. stored in program memory.
+	 	static constexpr uint8_t sevenSegBitMap [11] PROGMEM = {
 		 	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
 	 	};
+
+		//Precomputed array of powers of ten.
+		static constexpr uint32_t pow10[4] PROGMEM = {
+			1, 10, 100, 1000
+		};
 		 
 		//Values to be printed to each seven seg display
 		uint8_t numbersToPrint [NUM_DISPLAYS];
@@ -53,7 +59,7 @@ class SevenSeg : public ShiftRegister_SIPO
 
 	//functions
 	public:
-		SevenSeg( uint8_t numberOfDisplays, Timer & timerPtr );
+		SevenSeg( uint8_t numberOfDisplays );
 		
 		//runs seven segment display task. non-blocking
 		void run( void );

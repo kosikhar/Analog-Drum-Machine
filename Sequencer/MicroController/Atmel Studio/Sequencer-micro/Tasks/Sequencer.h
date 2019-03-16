@@ -12,19 +12,19 @@
 
 class Sequencer
 {
-//variables
-public:
-protected:
-private:
+	//variables
+	public:
+	protected:
+	private:
 
-//functions
-public:
-	Sequencer();
-	~Sequencer();
-protected:
-private:
-	Sequencer( const Sequencer &c );
-	Sequencer& operator=( const Sequencer &c );
+	//functions
+	public:
+		Sequencer();
+		~Sequencer();
+	protected:
+	private:
+		Sequencer( const Sequencer &c );
+		Sequencer& operator=( const Sequencer &c );
 
 }; //Sequencer
 
