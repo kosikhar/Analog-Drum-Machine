@@ -30,15 +30,15 @@
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.28.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
     <avrtoolserialnumber>J41800071280</avrtoolserialnumber>
@@ -170,6 +170,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interface\LEDs.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Interface\LEDs.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Interface\SevenSeg.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -261,12 +267,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Latch.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\LEDs.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\LEDs.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\LoopBack.cpp">

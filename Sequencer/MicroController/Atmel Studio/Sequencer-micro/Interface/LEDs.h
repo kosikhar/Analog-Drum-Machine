@@ -9,22 +9,24 @@
 #ifndef __LEDS_H__
 #define __LEDS_H__
 
-//Object Task for controlling 16 LEDs on the Top Panel
+
+
+//Object for easily configuring the LEDs on the top mount. 
 class LEDs
 {
 	//variables
 	public:
+		
 	protected:
 	private:
-
+		//Reference to the Sequencer
+		
 	//functions
 	public:
 		LEDs();
 		~LEDs();
 	protected:
 	private:
-		LEDs( const LEDs &c );
-		LEDs& operator=( const LEDs &c );
 
 }; //LEDs
 

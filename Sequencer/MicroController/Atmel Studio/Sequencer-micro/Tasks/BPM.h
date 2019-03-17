@@ -19,6 +19,8 @@ class BPM
 {
 	//variables
 	public:
+		//The BPM of the sequencer
+		uint16_t value;
 	protected:
 	private:
 

@@ -8,8 +8,6 @@
 #ifndef __SEVENSEG_H__
 #define __SEVENSEG_H__
 
-#include "../Shift_Register/ShiftRegister_SIPO.h"
-#include "../helperFunctions.h"
 #include <avr/pgmspace.h>
 
 //How many 7 seg displays are used.
@@ -24,20 +22,16 @@
 //Serial output shift registers
 #define SEVSEG_PIN_PORT PORTB
 
-class SevenSeg : public ShiftRegister_SIPO
+class SevenSeg
 {
 	//variables
 	public:
-		
-		//Flag for indicating that display is ready to be latched (show)
-		volatile uint8_t shiftComplete;
-
-		//Flag for indicating that there is content to print
-		uint8_t newContentToPrint;
-				
-		//Content to be printed. Must be a number. (for now)
-		uint16_t contentToPrint;
-
+		//Values to be printed to each seven seg display
+		uint8_t * numbersToPrint;
+			
+		//The array above converted to its respective bit map
+		uint8_t * bitMaps;
+	
 	private:
 		uint8_t size;
 		
@@ -47,31 +41,18 @@ class SevenSeg : public ShiftRegister_SIPO
 	 	};
 
 		//Precomputed array of powers of ten.
-		static constexpr uint32_t pow10[4] PROGMEM = {
+		static constexpr uint16_t pow10[4] PROGMEM = {
 			1, 10, 100, 1000
 		};
-		 
-		//Values to be printed to each seven seg display
-		uint8_t numbersToPrint [NUM_DISPLAYS];
-		
-		//Keep track of which seven seg is currently being written to
-		uint8_t sevenSeg_index;
 
 	//functions
 	public:
 		SevenSeg( uint8_t numberOfDisplays );
 		
-		//runs seven segment display task. non-blocking
-		void run( void );
-				
-		//If you only have one, display you can only print 1 number obviously
-		void printNumbers( uint8_t * Bytes );
-		
-		//Shifts in numbers without latching. Allows for a quick latch call to be made
-		void printNumbers_NOLATCH( uint8_t * Bytes);
-				
-		//If you only printing one number, no need to make an array!
-		void printNumbers( uint8_t Byte );
+		//Loads a value into the object
+		//Splits the value into individual digits
+		//retrieves a bitMap array for the seven segment.
+		void loadValue( uint16_t value );		
 			
 		~SevenSeg();
 	private:

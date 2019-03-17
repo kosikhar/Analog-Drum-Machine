@@ -1,5 +1,7 @@
-interrupts.d interrupts.o: .././interrupts.cpp .././interrupts.h \
- z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+Tasks/BPM.d Tasks/BPM.o: ../Tasks/BPM.cpp ../Tasks/BPM.h \
+ ../Tasks/RotaryEncoder.h ../Tasks/InputPoll.h ../Tasks/DigitalInput.h \
+ ../Tasks/../Shift_Register/ShiftRegister_PISO.h \
+ ../Tasks/../Shift_Register/ShiftRegister.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -12,13 +14,25 @@ interrupts.d interrupts.o: .././interrupts.cpp .././interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- .././timer.h \
+ ../Tasks/../Shift_Register/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../Tasks/../Shift_Register/../interrupts.h \
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+ ../Tasks/../Shift_Register/../timer.h \
+ ../Tasks/../Shift_Register/../Pins/Pin.h
 
-.././interrupts.h:
+../Tasks/BPM.h:
 
-z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+../Tasks/RotaryEncoder.h:
+
+../Tasks/InputPoll.h:
+
+../Tasks/DigitalInput.h:
+
+../Tasks/../Shift_Register/ShiftRegister_PISO.h:
+
+../Tasks/../Shift_Register/ShiftRegister.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -44,8 +58,16 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-.././timer.h:
+../Tasks/../Shift_Register/../timer.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../Tasks/../Shift_Register/../interrupts.h:
+
+z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+
+../Tasks/../Shift_Register/../timer.h:
+
+../Tasks/../Shift_Register/../Pins/Pin.h:
