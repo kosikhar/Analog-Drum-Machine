@@ -12,17 +12,24 @@
 //object for dealing with PISO shift registers
 #include "../Shift_Register/ShiftRegister_PISO.h"
 
-//Using 16 Buttons for Programming + 2 to indicating measure. 
-//Using 6 switches for indicating loop back time point
-//Reserving 8 for rotary switch (choosing instrument to program) + 1 for shifting (to get 16)
-#define NUM_INPUTS 16
+//object for dealing with button input
+#include "../Interface/Buttons.h"
 
-//Get required number of Shift Registers
-constexpr const uint8_t getNumRegisters ( void )
-{
-	return (NUM_INPUTS / 8) + (( NUM_INPUTS % 8 ) / 8 );
-}
-#define NUM_SHIFT_REGISTERS getNumRegisters()
+//Using 16 buttons --> 2 shift registers
+//2 Rotary encoders --> 4/8 Shift Registers
+//12 Position Rotary Switch --> 1 4/8 Shift Registers
+//6 Position Rotary Switch -- 6/8 Shift Registers
+//Reset Button, Start/Stop Button --> 2/8 Shift Registers
+//Total --> 5 Shift Registers
+// [encoderA1, encoderB1, encoderA2, encoderB2, RSA12   , RSA11   , RSA10   ,   RSA9    ]
+// [RSA8     ,          ,          ,          ,         ,         ,         ,   RSA1    ]
+// [Reset    ,Start/Stop, RSB6     ,          ,         ,         ,         ,   RSB1    ]      
+// [BTN16    ,          ,          ,          ,         ,         ,         ,   BTN9    ]
+// [BTN8     ,          ,          ,          ,         ,         ,         ,   BTN1    ]
+#define NUM_INPUT_SHIFT_REGISTERS 5
+
+#define BUTTONS_INPUT_HIGH_BYTE 3
+#define BUTTONS_INPUT_LOW_BYTE 4
 
 //Pinout for the SIPO shift registers
 #define INPUT_SERIAL_PIN 0
@@ -45,7 +52,10 @@ class DigitalInput : public ShiftRegister_PISO
 		uint8_t shiftComplete;
 		
 		//Incoming bytes from the shift registers
-		uint8_t inputBytes [NUM_SHIFT_REGISTERS];
+		uint8_t inputBytes [NUM_INPUT_SHIFT_REGISTERS];
+		
+		//Object for holding the button interface
+		Buttons * buttons;
 		
 	protected:
 	private:
@@ -54,19 +64,18 @@ class DigitalInput : public ShiftRegister_PISO
 		//This variable will keep track of which shift register
 		//is currently being shifted
 		uint8_t shiftRegister_index;
-
+		
+		//Once shifting is a complete, a flag to indicate to sort the new data
+		uint8_t sortData;
+		
 	//functions
 	public:
 		DigitalInput();
 		~DigitalInput();
 		
 		//Shifts bits into uC in alignment with a polling rate
-		virtual void run( void );
+		void run( void );
 		
-		void read( void );
-		
-		//Reads value of a button in the array.
-		uint8_t readBit( uint8_t index );
 	protected:
 	private:
 		DigitalInput( const DigitalInput &c );

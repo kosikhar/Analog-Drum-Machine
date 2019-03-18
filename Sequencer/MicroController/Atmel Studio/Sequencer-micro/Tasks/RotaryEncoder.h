@@ -17,6 +17,10 @@
 //Number of encoders to read. (no more than 4)
 #define NUM_ENCODERS 1
 
+//Encoder Label
+#define BPM_ENCODER 0
+#define LOOPBACK_ENCODER 1
+
 #define INCREASE 1
 #define DECREASE 2 
 #define NO_CHANGE 0
@@ -29,7 +33,7 @@ class RotaryEncoder
 	public:
 		//Variable indicates if the rotary encoder is indicating
 		//increase (1) or decrease (2) or no change (0).
-		uint8_t increment;
+		uint8_t increment[NUM_ENCODERS];
 		
 		//Indicates to external task if there's a new value to process.
 		uint8_t newValue;

@@ -10,8 +10,10 @@
 
 DigitalInput::DigitalInput( void ) : ShiftRegister_PISO ()
 {
-	//Initialize new input flag
-	newInput = false;	
+	//Initialize flags
+	newInput = false;
+	shiftComplete = true;
+	sortData = false;	
 	
 	//Initialize current shift register index to 0
 	shiftRegister_index = 0;
@@ -21,6 +23,8 @@ DigitalInput::DigitalInput( void ) : ShiftRegister_PISO ()
 	latchPin = new Pin( INPUT_LATCH_PIN, &INPUT_PIN_PORT, OUTPUT );
 	shiftPin = new Pin( INPUT_SHIFT_PIN, &INPUT_PIN_PORT, OUTPUT );
 	
+	//Initialize interface to the top mount buttons
+	buttons = new Buttons();
 	
 } //DigitalInput
 
@@ -47,7 +51,7 @@ void DigitalInput::run( void )
 		
 		//If data has been collected by all the shift registers 
 		//reset newInput flag, and the index
-		if ( shiftRegister_index >= NUM_SHIFT_REGISTERS ){
+		if ( shiftRegister_index >= NUM_INPUT_SHIFT_REGISTERS ){
 			
 			//Reset the index.
 			shiftRegister_index = 0;
@@ -57,8 +61,26 @@ void DigitalInput::run( void )
 			
 			//Indicate that shifting is completed for external objects to know.
 			shiftComplete = true;
+			
+			//For the next pass, sort the data.
+			sortData = true;
+			return;
 		}
 	}
+	
+	//Sort the input data
+	if ((sortData == true) && (shiftComplete == true)){
+		
+		//Combine the high and low bytes taken from the shift register
+		//then load them into the button interface. 	
+		buttons->loadRawInput( (inputBytes[BUTTONS_INPUT_HIGH_BYTE] << 8) + 
+							   (inputBytes[BUTTONS_INPUT_LOW_BYTE]) );
+	
+		
+	
+		//Finished sorting the input data
+		sortData = false;
+	} 
 }
 
 // default destructor

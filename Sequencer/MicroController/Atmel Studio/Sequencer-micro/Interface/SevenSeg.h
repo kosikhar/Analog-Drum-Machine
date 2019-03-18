@@ -22,6 +22,7 @@
 //Serial output shift registers
 #define SEVSEG_PIN_PORT PORTB
 
+//An Interface to a Seven Segment Display
 class SevenSeg
 {
 	//variables
@@ -41,6 +42,7 @@ class SevenSeg
 	 	};
 
 		//Precomputed array of powers of ten.
+		//Used to convert a number like 123 into [1,2,3]
 		static constexpr uint16_t pow10[4] PROGMEM = {
 			1, 10, 100, 1000
 		};

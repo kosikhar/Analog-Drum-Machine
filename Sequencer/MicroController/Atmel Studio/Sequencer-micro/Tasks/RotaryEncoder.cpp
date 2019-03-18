@@ -23,11 +23,12 @@ RotaryEncoder::RotaryEncoder(Timer & TimerRef, DigitalInput & DigitalInputRef)
 		pinB[i] = 0;
 		pinA_previous[i] = 0;
 		pinB_previous[i] = 0;
+		
+		increment[i] = NO_CHANGE;
 	}
 
 	//Initialize other variables
 	timeStamp = timer->millis();
-	increment = NO_CHANGE;
 	newValue = false;
 	 	
 } //RotarySwitch
@@ -36,7 +37,8 @@ void RotaryEncoder::run( void )
 {
 	//If there was an increment, wait until it's applied
 	//If the main input polling object latched, wait until that input is received.
-	if( (increment == NO_CHANGE) && (digitalInput->newInput == false) ){
+	if( (increment[BPM_ENCODER] == NO_CHANGE) && (increment[LOOPBACK_ENCODER] == NO_CHANGE) && 
+		(digitalInput->newInput == false) ){
 		
 		if (timer->elapsed_millis(timeStamp) >= CHK_ENCODER_DELAY) {
 			//Reset timeStamp
@@ -51,7 +53,7 @@ void RotaryEncoder::run( void )
 			//Read incoming byte
 			incomingByte = digitalInput->readByte();
 		
-			for( uint8_t i; i < NUM_ENCODERS ; i++){
+			for(uint8_t i = 0; i < NUM_ENCODERS ; i++){
 				//Save previous states
 				pinA_previous[i] = pinA[i];
 				pinB_previous[i] = pinB[i];
@@ -64,7 +66,7 @@ void RotaryEncoder::run( void )
 				if ( (pinA[i] == true) && (pinA_previous[i] == false)){
 					if (pinB[i] == false){
 						//Set increment flag to increase
-						increment = INCREASE;
+						increment[i] = INCREASE;
 					}
 				}
 
@@ -72,7 +74,7 @@ void RotaryEncoder::run( void )
 				if ( (pinB[i] == true) && (pinB_previous[i] == false)){
 					if (pinA[i] == false){
 						//Set increment flag to decrease
-						increment = DECREASE;
+						increment[i] = DECREASE;
 					}
 				}
 			}

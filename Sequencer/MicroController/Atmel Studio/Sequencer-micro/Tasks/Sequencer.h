@@ -9,7 +9,8 @@
 #ifndef __SEQUENCER_H__
 #define __SEQUENCER_H__
 
-#include ""
+#include "DigitalInput.h"
+#include "RotaryEncoder.h" //Digital Input doesn't handle the encoder input
 
 #define NUM_INSTRUMENTS 12
 #define NUM_MEASURES 6
@@ -28,11 +29,12 @@ class Sequencer
 	protected:
 	private:
 		//Object references
-		
+		DigitalInput * digitalInput;
+		RotaryEncoder * rotaryEncoder; //Contains encoder info for BPM and Loopback
 
 	//functions
 	public:
-		Sequencer();
+		Sequencer( DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoder );
 		
 		//Looks for button presses
 		//Looks for change in instrument
