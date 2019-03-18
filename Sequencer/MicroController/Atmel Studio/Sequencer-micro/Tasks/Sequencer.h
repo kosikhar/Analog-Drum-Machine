@@ -9,8 +9,11 @@
 #ifndef __SEQUENCER_H__
 #define __SEQUENCER_H__
 
-#include "DigitalInput.h"
-#include "RotaryEncoder.h" //Digital Input doesn't handle the encoder input
+//Handles button inputs, 
+#include "DigitalInput.h" 
+
+//Digital Input doesn't handle the encoder input
+#include "RotaryEncoder.h" 
 
 #define NUM_INSTRUMENTS 12
 #define NUM_MEASURES 6
