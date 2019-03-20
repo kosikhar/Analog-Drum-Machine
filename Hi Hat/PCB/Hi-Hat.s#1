@@ -20389,7 +20389,7 @@ part number 2062-2P from STA</description>
 <part name="J1" library="SparkFun-Connectors" deviceset="CONN_03X2" device="NO_SILK"/>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
-<part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -20397,6 +20397,8 @@ part number 2062-2P from STA</description>
 <text x="1336.04" y="347.98" size="1.778" layer="94">Note: Short Jumper for open hi-hat
 Third pin of POT1 should be grounded</text>
 <text x="43.18" y="406.4" size="1.778" layer="94">Note: POT2B is grounded to AGND</text>
+<text x="1620.52" y="388.62" size="1.778" layer="94">Note: Resistor at the collector should be a jumper.
+The resistor is only there so biasing can be changed if needed.</text>
 </plain>
 <instances>
 <instance part="SV1" gate="1" x="91.44" y="386.08" smashed="yes" rot="R180">
@@ -20569,13 +20571,13 @@ Third pin of POT1 should be grounded</text>
 <attribute name="NAME" x="1657.1214" y="334.01" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="1661.922" y="334.01" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R6" gate="G$1" x="706.12" y="358.14" smashed="yes" rot="R90">
-<attribute name="NAME" x="704.6214" y="354.33" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="709.422" y="354.33" size="1.778" layer="96" rot="R90"/>
+<instance part="R6" gate="G$1" x="693.42" y="358.14" smashed="yes" rot="R90">
+<attribute name="NAME" x="691.9214" y="354.33" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="696.722" y="354.33" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R7" gate="G$1" x="706.12" y="342.9" smashed="yes" rot="R90">
-<attribute name="NAME" x="704.6214" y="339.09" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="709.422" y="339.09" size="1.778" layer="96" rot="R90"/>
+<instance part="R7" gate="G$1" x="693.42" y="342.9" smashed="yes" rot="R90">
+<attribute name="NAME" x="691.9214" y="339.09" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="696.722" y="339.09" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R5" gate="G$1" x="640.08" y="347.98" smashed="yes" rot="R90">
 <attribute name="NAME" x="638.5814" y="344.17" size="1.778" layer="95" rot="R90"/>
@@ -20765,9 +20767,9 @@ Third pin of POT1 should be grounded</text>
 <attribute name="NAME" x="680.593" y="351.282" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="675.767" y="347.98" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="C13" gate="G$1" x="690.88" y="350.52" smashed="yes">
-<attribute name="NAME" x="693.293" y="351.282" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="688.467" y="347.98" size="1.778" layer="96" rot="R270"/>
+<instance part="R12" gate="G$1" x="1658.62" y="375.92" smashed="yes" rot="R270">
+<attribute name="NAME" x="1660.1186" y="379.73" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="1655.318" y="379.73" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -20824,11 +20826,6 @@ Third pin of POT1 should be grounded</text>
 <pinref part="R32" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="Q6" gate="G1" pin="C"/>
-<wire x1="1658.62" y1="368.3" x2="1658.62" y2="373.38" width="0.1524" layer="91"/>
-<label x="1656.08" y="373.38" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C14" gate="G$1" pin="2"/>
 <label x="887.222" y="378.714" size="1.778" layer="95"/>
 <wire x1="883.92" y1="378.46" x2="904.24" y2="378.46" width="0.1524" layer="91"/>
@@ -20862,6 +20859,11 @@ Third pin of POT1 should be grounded</text>
 <wire x1="1727.2" y1="373.38" x2="1722.12" y2="373.38" width="0.1524" layer="91"/>
 <pinref part="IC7" gate="A" pin="V+"/>
 <wire x1="1722.12" y1="373.38" x2="1722.12" y2="365.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="1658.62" y1="381" x2="1658.62" y2="383.54" width="0.1524" layer="91"/>
+<label x="1656.08" y="383.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="-12V" class="0">
@@ -21059,19 +21061,15 @@ Third pin of POT1 should be grounded</text>
 <wire x1="652.78" y1="365.76" x2="662.94" y2="365.76" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="662.94" y1="365.76" x2="678.18" y2="365.76" width="0.1524" layer="91"/>
-<wire x1="678.18" y1="365.76" x2="690.88" y2="365.76" width="0.1524" layer="91"/>
-<wire x1="690.88" y1="365.76" x2="706.12" y2="365.76" width="0.1524" layer="91"/>
-<wire x1="706.12" y1="365.76" x2="706.12" y2="363.22" width="0.1524" layer="91"/>
+<wire x1="678.18" y1="365.76" x2="693.42" y2="365.76" width="0.1524" layer="91"/>
+<wire x1="693.42" y1="365.76" x2="693.42" y2="363.22" width="0.1524" layer="91"/>
 <pinref part="C11" gate="G$1" pin="2"/>
 <wire x1="662.94" y1="353.06" x2="662.94" y2="365.76" width="0.1524" layer="91"/>
 <junction x="662.94" y="365.76"/>
 <pinref part="C12" gate="G$1" pin="+"/>
 <wire x1="678.18" y1="353.06" x2="678.18" y2="365.76" width="0.1524" layer="91"/>
 <junction x="678.18" y="365.76"/>
-<label x="693.42" y="365.76" size="1.778" layer="95"/>
-<pinref part="C13" gate="G$1" pin="+"/>
-<wire x1="690.88" y1="353.06" x2="690.88" y2="365.76" width="0.1524" layer="91"/>
-<junction x="690.88" y="365.76"/>
+<label x="685.8" y="365.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="POT3B" class="0">
@@ -21146,19 +21144,15 @@ Third pin of POT1 should be grounded</text>
 <pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="662.94" y1="332.74" x2="662.94" y2="345.44" width="0.1524" layer="91"/>
 <label x="657.86" y="330.2" size="1.778" layer="95" rot="MR0"/>
-<wire x1="706.12" y1="337.82" x2="706.12" y2="332.74" width="0.1524" layer="91"/>
-<wire x1="706.12" y1="332.74" x2="690.88" y2="332.74" width="0.1524" layer="91"/>
+<wire x1="693.42" y1="337.82" x2="693.42" y2="332.74" width="0.1524" layer="91"/>
+<wire x1="693.42" y1="332.74" x2="678.18" y2="332.74" width="0.1524" layer="91"/>
 <junction x="662.94" y="332.74"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="C12" gate="G$1" pin="-"/>
-<wire x1="690.88" y1="332.74" x2="678.18" y2="332.74" width="0.1524" layer="91"/>
 <wire x1="678.18" y1="332.74" x2="662.94" y2="332.74" width="0.1524" layer="91"/>
 <wire x1="678.18" y1="345.44" x2="678.18" y2="332.74" width="0.1524" layer="91"/>
 <junction x="678.18" y="332.74"/>
-<pinref part="C13" gate="G$1" pin="-"/>
-<wire x1="690.88" y1="345.44" x2="690.88" y2="332.74" width="0.1524" layer="91"/>
-<junction x="690.88" y="332.74"/>
 </segment>
 <segment>
 <pinref part="C20" gate="G$1" pin="1"/>
@@ -21321,13 +21315,13 @@ Third pin of POT1 should be grounded</text>
 <label x="1153.16" y="322.58" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="706.12" y1="353.06" x2="706.12" y2="350.52" width="0.1524" layer="91"/>
+<wire x1="693.42" y1="353.06" x2="693.42" y2="350.52" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="706.12" y1="350.52" x2="706.12" y2="347.98" width="0.1524" layer="91"/>
-<wire x1="706.12" y1="350.52" x2="713.74" y2="350.52" width="0.1524" layer="91"/>
-<junction x="706.12" y="350.52"/>
-<label x="713.74" y="350.52" size="1.778" layer="95"/>
+<wire x1="693.42" y1="350.52" x2="693.42" y2="347.98" width="0.1524" layer="91"/>
+<wire x1="693.42" y1="350.52" x2="701.04" y2="350.52" width="0.1524" layer="91"/>
+<junction x="693.42" y="350.52"/>
+<label x="701.04" y="350.52" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="Q3" gate="G$1" pin="G"/>
@@ -21851,7 +21845,19 @@ Third pin of POT1 should be grounded</text>
 <segment>
 <pinref part="IC2" gate="A" pin="OUT"/>
 <pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="914.4" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="914.4" y1="355.6" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="922.02" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="914.4" y1="393.7" x2="922.02" y2="393.7" width="0.1524" layer="91"/>
+<wire x1="922.02" y1="393.7" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<junction x="922.02" y="355.6"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="Q6" gate="G1" pin="C"/>
+<wire x1="1658.62" y1="370.84" x2="1658.62" y2="368.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
