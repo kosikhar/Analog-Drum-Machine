@@ -20389,6 +20389,7 @@ part number 2062-2P from STA</description>
 <part name="J1" library="SparkFun-Connectors" deviceset="CONN_03X2" device="NO_SILK"/>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
+<part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -20764,6 +20765,10 @@ Third pin of POT1 should be grounded</text>
 <attribute name="NAME" x="716.153" y="193.802" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="711.327" y="190.5" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="C6" gate="G$1" x="726.44" y="193.04" smashed="yes">
+<attribute name="NAME" x="728.853" y="193.802" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="724.027" y="190.5" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -21054,7 +21059,8 @@ Third pin of POT1 should be grounded</text>
 <wire x1="688.34" y1="208.28" x2="698.5" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="R31" gate="G$1" pin="2"/>
 <wire x1="698.5" y1="208.28" x2="713.74" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="713.74" y1="208.28" x2="741.68" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="713.74" y1="208.28" x2="726.44" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="726.44" y1="208.28" x2="741.68" y2="208.28" width="0.1524" layer="91"/>
 <wire x1="741.68" y1="208.28" x2="741.68" y2="205.74" width="0.1524" layer="91"/>
 <pinref part="C22" gate="G$1" pin="2"/>
 <wire x1="698.5" y1="195.58" x2="698.5" y2="208.28" width="0.1524" layer="91"/>
@@ -21062,7 +21068,10 @@ Third pin of POT1 should be grounded</text>
 <pinref part="C5" gate="G$1" pin="+"/>
 <wire x1="713.74" y1="195.58" x2="713.74" y2="208.28" width="0.1524" layer="91"/>
 <junction x="713.74" y="208.28"/>
-<label x="721.36" y="208.28" size="1.778" layer="95"/>
+<label x="728.98" y="208.28" size="1.778" layer="95"/>
+<pinref part="C6" gate="G$1" pin="+"/>
+<wire x1="726.44" y1="195.58" x2="726.44" y2="208.28" width="0.1524" layer="91"/>
+<junction x="726.44" y="208.28"/>
 </segment>
 </net>
 <net name="POT3B" class="0">
@@ -21138,14 +21147,18 @@ Third pin of POT1 should be grounded</text>
 <wire x1="698.5" y1="175.26" x2="698.5" y2="187.96" width="0.1524" layer="91"/>
 <label x="693.42" y="172.72" size="1.778" layer="95" rot="MR0"/>
 <wire x1="741.68" y1="180.34" x2="741.68" y2="175.26" width="0.1524" layer="91"/>
-<wire x1="741.68" y1="175.26" x2="713.74" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="741.68" y1="175.26" x2="726.44" y2="175.26" width="0.1524" layer="91"/>
 <junction x="698.5" y="175.26"/>
 <pinref part="R32" gate="G$1" pin="1"/>
 <pinref part="R30" gate="G$1" pin="1"/>
 <pinref part="C5" gate="G$1" pin="-"/>
+<wire x1="726.44" y1="175.26" x2="713.74" y2="175.26" width="0.1524" layer="91"/>
 <wire x1="713.74" y1="175.26" x2="698.5" y2="175.26" width="0.1524" layer="91"/>
 <wire x1="713.74" y1="187.96" x2="713.74" y2="175.26" width="0.1524" layer="91"/>
 <junction x="713.74" y="175.26"/>
+<pinref part="C6" gate="G$1" pin="-"/>
+<wire x1="726.44" y1="187.96" x2="726.44" y2="175.26" width="0.1524" layer="91"/>
+<junction x="726.44" y="175.26"/>
 </segment>
 <segment>
 <pinref part="C30" gate="G$1" pin="1"/>

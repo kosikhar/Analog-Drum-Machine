@@ -21589,18 +21589,6 @@ Third pin of POT1 should be grounded</text>
 <wire x1="1673.86" y1="355.6" x2="1696.72" y2="355.6" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="SW4" class="0">
-<segment>
-<pinref part="IC2" gate="A" pin="OUT"/>
-<wire x1="924.56" y1="355.6" x2="914.4" y2="355.6" width="0.1524" layer="91"/>
-<wire x1="914.4" y1="393.7" x2="924.56" y2="393.7" width="0.1524" layer="91"/>
-<wire x1="924.56" y1="393.7" x2="924.56" y2="355.6" width="0.1524" layer="91"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-<pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="924.56" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
-<junction x="924.56" y="355.6"/>
-</segment>
-</net>
 <net name="N$2" class="0">
 <segment>
 <wire x1="871.22" y1="358.14" x2="871.22" y2="345.44" width="0.1524" layer="91"/>
@@ -21857,6 +21845,18 @@ Third pin of POT1 should be grounded</text>
 <pinref part="R16" gate="G$1" pin="1"/>
 <wire x1="1109.98" y1="355.6" x2="1112.52" y2="355.6" width="0.1524" layer="91"/>
 <label x="1089.66" y="358.14" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="IC2" gate="A" pin="OUT"/>
+<pinref part="C16" gate="G$1" pin="2"/>
+<wire x1="914.4" y1="355.6" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="922.02" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="914.4" y1="393.7" x2="922.02" y2="393.7" width="0.1524" layer="91"/>
+<wire x1="922.02" y1="393.7" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<junction x="922.02" y="355.6"/>
 </segment>
 </net>
 </nets>
