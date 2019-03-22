@@ -21851,7 +21851,12 @@ Third pin of POT1 should be grounded</text>
 <segment>
 <pinref part="IC2" gate="A" pin="OUT"/>
 <pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="914.4" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="914.4" y1="355.6" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="922.02" y1="355.6" x2="949.96" y2="355.6" width="0.1524" layer="91"/>
+<wire x1="914.4" y1="393.7" x2="922.02" y2="393.7" width="0.1524" layer="91"/>
+<wire x1="922.02" y1="393.7" x2="922.02" y2="355.6" width="0.1524" layer="91"/>
+<junction x="922.02" y="355.6"/>
 </segment>
 </net>
 </nets>

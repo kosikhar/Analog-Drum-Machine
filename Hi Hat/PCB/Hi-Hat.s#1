@@ -18636,8 +18636,8 @@ part number 2062-2P from STA</description>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
 <part name="R27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0207/7" package3d_urn="urn:adsk.eagle:package:23493/1" value="0"/>
-<part name="TRIM3" library="Capstone" deviceset="10K_TRIMMER" device="" value="10k"/>
 <part name="TRIM1" library="Capstone" deviceset="10K_TRIMMER" device="" value="10k"/>
+<part name="TRIM2" library="Capstone" deviceset="10K_TRIMMER" device="" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -19011,11 +19011,11 @@ The resistor is only there so biasing can be changed if needed.</text>
 <attribute name="NAME" x="1660.1186" y="379.73" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="1655.318" y="379.73" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="TRIM3" gate="G$1" x="939.8" y="365.76" smashed="yes">
+<instance part="TRIM1" gate="G$1" x="939.8" y="365.76" smashed="yes">
 <attribute name="NAME" x="933.831" y="361.95" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="935.99" y="361.95" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="TRIM1" gate="G$1" x="1219.2" y="363.22" smashed="yes">
+<instance part="TRIM2" gate="G$1" x="1219.2" y="363.22" smashed="yes">
 <attribute name="NAME" x="1213.231" y="359.41" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="1215.39" y="359.41" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -19145,7 +19145,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <segment>
 <wire x1="1224.28" y1="363.22" x2="1226.82" y2="363.22" width="0.1524" layer="91"/>
 <label x="1226.82" y="363.22" size="1.778" layer="95"/>
-<pinref part="TRIM1" gate="G$1" pin="S"/>
+<pinref part="TRIM2" gate="G$1" pin="S"/>
 </segment>
 <segment>
 <wire x1="1813.56" y1="337.82" x2="1813.56" y2="335.28" width="0.1524" layer="91"/>
@@ -19172,7 +19172,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <segment>
 <wire x1="944.88" y1="365.76" x2="947.42" y2="365.76" width="0.1524" layer="91"/>
 <label x="947.42" y="365.76" size="1.778" layer="95"/>
-<pinref part="TRIM3" gate="G$1" pin="S"/>
+<pinref part="TRIM1" gate="G$1" pin="S"/>
 </segment>
 <segment>
 <pinref part="C17" gate="G$1" pin="2"/>
@@ -19702,7 +19702,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <pinref part="IC4" gate="A" pin="ON2"/>
 <wire x1="1193.8" y1="355.6" x2="1219.2" y2="355.6" width="0.1524" layer="91"/>
 <wire x1="1219.2" y1="355.6" x2="1219.2" y2="358.14" width="0.1524" layer="91"/>
-<pinref part="TRIM1" gate="G$1" pin="A"/>
+<pinref part="TRIM2" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$68" class="0">
@@ -19711,7 +19711,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <wire x1="1186.18" y1="360.68" x2="1186.18" y2="370.84" width="0.1524" layer="91"/>
 <wire x1="1186.18" y1="370.84" x2="1219.2" y2="370.84" width="0.1524" layer="91"/>
 <wire x1="1219.2" y1="370.84" x2="1219.2" y2="368.3" width="0.1524" layer="91"/>
-<pinref part="TRIM1" gate="G$1" pin="E"/>
+<pinref part="TRIM2" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="N$60" class="0">
@@ -19868,7 +19868,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <pinref part="IC2" gate="A" pin="ON2"/>
 <wire x1="914.4" y1="358.14" x2="939.8" y2="358.14" width="0.1524" layer="91"/>
 <wire x1="939.8" y1="358.14" x2="939.8" y2="360.68" width="0.1524" layer="91"/>
-<pinref part="TRIM3" gate="G$1" pin="A"/>
+<pinref part="TRIM1" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -19877,7 +19877,7 @@ The resistor is only there so biasing can be changed if needed.</text>
 <wire x1="906.78" y1="363.22" x2="906.78" y2="373.38" width="0.1524" layer="91"/>
 <wire x1="906.78" y1="373.38" x2="939.8" y2="373.38" width="0.1524" layer="91"/>
 <wire x1="939.8" y1="373.38" x2="939.8" y2="370.84" width="0.1524" layer="91"/>
-<pinref part="TRIM3" gate="G$1" pin="E"/>
+<pinref part="TRIM1" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="N$8" class="0">
