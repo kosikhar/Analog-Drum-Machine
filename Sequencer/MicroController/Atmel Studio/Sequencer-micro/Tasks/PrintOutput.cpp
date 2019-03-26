@@ -9,14 +9,13 @@
 #include "PrintOutput.h"
 
 // default constructor
-PrintOutput::PrintOutput(Timer & timerRef, Sequencer & sequencerRef, BPM & bpmRef, LoopBack loopBackRef ) 
+PrintOutput::PrintOutput(Timer & timerRef, Sequencer & sequencerRef, BPM & bpmRef ) 
             :ShiftRegister_SIPO()
 {
 	//Store references
 	timer = &timerRef; //timer is defined in the ShiftRegister Class.
 	sequencer = &sequencerRef;
 	bpm = &bpmRef;
-	loopBack = &loopBackRef;
 
 	//Initialize display objects
 	bpmDisplay = new SevenSeg(NUM_BPM_DIGITS);

@@ -12,7 +12,7 @@
 //object for dealing with PISO shift registers
 #include "../Shift_Register/ShiftRegister_PISO.h"
 
-//object for dealing with button input
+//object for Interfacing with button input
 #include "../Interface/Buttons.h"
 
 //Using 16 buttons --> 2 shift registers
