@@ -9,12 +9,6 @@
 // default constructor
 SevenSeg::SevenSeg( uint8_t numberOfDisplays )
 {
-	//Init content to print to 0
-	contentToPrint = 0;
-	
-	//Init seven seg index
-	sevenSeg_index = 0;
-		
 	//Store this variable for later.
 	size = numberOfDisplays;
 	
@@ -30,19 +24,19 @@ SevenSeg::SevenSeg( uint8_t numberOfDisplays )
 
 void SevenSeg::loadValue( uint16_t value )
 {
-	for(uint8_t i; i < size, i++)
+	for(uint8_t i = 0; i < size ; i++)
 	{
 		//numberToPrint[1++] gets the 10s, 100s, etc.
 		numbersToPrint[i] = (value / pow10[i]) % 10;
 		
 		//Prepare shift registers to hold bit map for seven segment display
 		//If input number is too large just make it 10 (a dot on the seven seg)
-		if ( numbersToPrint[sevenSeg_index] > 9 ){
-			numbersToPrint[sevenSeg_index] = 10;
+		if ( numbersToPrint[i] > 9 ){
+			numbersToPrint[i] = 10;
 		}
 		
 		//Get bitmaps
-		bitMaps[i] = sevenSegBitMap[ numbersToPrint[sevenSeg_index] ];
+		bitMaps[i] = sevenSegBitMap[ numbersToPrint[i] ];
 	}
 }
 

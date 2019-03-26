@@ -10,7 +10,7 @@
 Timer timer;
 
 //Define a pointer to a seven segment display object.
-SevenSeg sevenSegmentDisplay(NUM_DISPLAYS, timer);
+SevenSeg sevenSegmentDisplay(NUM_DISPLAYS);
 
 //Pointer to the counter object
 //Task counts to 100 then resets.
@@ -40,17 +40,10 @@ Trigger trigger( timer, blinky );
 void latchTask( void ){
 	latch.run();
 }
-//Task for Seven Segment display
-void sevenSegmentDisplayTask( void ){
-	sevenSegmentDisplay.run();
-}
+
 //Task for triggering
 void triggerTask( void ){
 	trigger.run();
-}
-//Task for counting
-void counterTask( void ){
-	//counter.run();
 }
 //Task for blinky
 void blinkyTask( void ){
@@ -76,7 +69,6 @@ int main(void)
 	
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
 	taskManager.addTask( latchTask , 64);
-	taskManager.addTask( sevenSegmentDisplayTask, 128);
 	taskManager.addTask( triggerTask,  4);
 	//taskManager.addTask( counterTask, 128);
 	taskManager.addTask( BPMInputTask, 128 );

@@ -9,6 +9,8 @@
 #ifndef __ROTARYSWITCH_H__
 #define __ROTARYSWITCH_H__
 
+#include "avr/io.h"
+
 //Will Interface the rotary switch input. 
 class RotarySwitch
 {

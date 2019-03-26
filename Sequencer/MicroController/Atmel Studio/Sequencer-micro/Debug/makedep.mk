@@ -2,6 +2,12 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+Interface\Buttons.cpp
+
+Interface\LEDs.cpp
+
+Interface\RotarySwitch.cpp
+
 Interface\SevenSeg.cpp
 
 interrupts.cpp
@@ -33,8 +39,6 @@ Tasks\Counter.cpp
 Tasks\InputPoll.cpp
 
 Tasks\Latch.cpp
-
-Tasks\LEDs.cpp
 
 Tasks\LoopBack.cpp
 

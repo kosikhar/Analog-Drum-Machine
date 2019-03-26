@@ -9,6 +9,7 @@
 #ifndef __BUTTONS_H__
 #define __BUTTONS_H__
 
+#include "avr/io.h"
 
 #define NUM_BUTTONS 16
 

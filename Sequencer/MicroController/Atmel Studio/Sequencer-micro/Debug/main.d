@@ -1,7 +1,5 @@
-Tasks/BPM.d Tasks/BPM.o: ../Tasks/BPM.cpp ../Tasks/BPM.h \
- ../Tasks/RotaryEncoder.h ../Tasks/InputPoll.h ../Tasks/DigitalInput.h \
- ../Tasks/../Shift_Register/ShiftRegister_PISO.h \
- ../Tasks/../Shift_Register/ShiftRegister.h \
+main.d main.o: .././main.cpp .././Tasks/setupTasks.h \
+ .././Tasks/TaskManager.h .././Tasks/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -14,25 +12,29 @@ Tasks/BPM.d Tasks/BPM.o: ../Tasks/BPM.cpp ../Tasks/BPM.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../Tasks/../Shift_Register/../timer.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../Tasks/../Shift_Register/../interrupts.h \
+ .././Tasks/BPM.h .././Tasks/RotaryEncoder.h .././Tasks/InputPoll.h \
+ .././Tasks/DigitalInput.h \
+ .././Tasks/../Shift_Register/ShiftRegister_PISO.h \
+ .././Tasks/../Shift_Register/ShiftRegister.h \
+ .././Tasks/../Shift_Register/../timer.h \
+ .././Tasks/../Shift_Register/../interrupts.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../Tasks/../Shift_Register/../timer.h \
- ../Tasks/../Shift_Register/../Pins/Pin.h ../Tasks/../Interface/Buttons.h
+ .././Tasks/../Shift_Register/../timer.h \
+ .././Tasks/../Shift_Register/../Pins/Pin.h \
+ .././Tasks/../Interface/Buttons.h .././Tasks/Blinky.h \
+ .././Tasks/../Pins/Pin.h .././Tasks/BPMInput.h \
+ .././Tasks/../Pins/AnalogPin.h .././Tasks/Trigger.h .././Tasks/Counter.h \
+ .././Tasks/../Interface/SevenSeg.h \
+ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
+ .././Tasks/Latch.h .././Tasks/PrintBPM.h
 
-../Tasks/BPM.h:
+.././Tasks/setupTasks.h:
 
-../Tasks/RotaryEncoder.h:
+.././Tasks/TaskManager.h:
 
-../Tasks/InputPoll.h:
-
-../Tasks/DigitalInput.h:
-
-../Tasks/../Shift_Register/ShiftRegister_PISO.h:
-
-../Tasks/../Shift_Register/ShiftRegister.h:
+.././Tasks/../timer.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -58,18 +60,50 @@ z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-../Tasks/../Shift_Register/../timer.h:
-
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
-../Tasks/../Shift_Register/../interrupts.h:
+.././Tasks/BPM.h:
+
+.././Tasks/RotaryEncoder.h:
+
+.././Tasks/InputPoll.h:
+
+.././Tasks/DigitalInput.h:
+
+.././Tasks/../Shift_Register/ShiftRegister_PISO.h:
+
+.././Tasks/../Shift_Register/ShiftRegister.h:
+
+.././Tasks/../Shift_Register/../timer.h:
+
+.././Tasks/../Shift_Register/../interrupts.h:
 
 z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-../Tasks/../Shift_Register/../timer.h:
+.././Tasks/../Shift_Register/../timer.h:
 
-../Tasks/../Shift_Register/../Pins/Pin.h:
+.././Tasks/../Shift_Register/../Pins/Pin.h:
 
-../Tasks/../Interface/Buttons.h:
+.././Tasks/../Interface/Buttons.h:
+
+.././Tasks/Blinky.h:
+
+.././Tasks/../Pins/Pin.h:
+
+.././Tasks/BPMInput.h:
+
+.././Tasks/../Pins/AnalogPin.h:
+
+.././Tasks/Trigger.h:
+
+.././Tasks/Counter.h:
+
+.././Tasks/../Interface/SevenSeg.h:
+
+z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
+
+.././Tasks/Latch.h:
+
+.././Tasks/PrintBPM.h:

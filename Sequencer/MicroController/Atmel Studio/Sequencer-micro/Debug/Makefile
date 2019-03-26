@@ -41,6 +41,9 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../Interface/Buttons.cpp \
+../Interface/LEDs.cpp \
+../Interface/RotarySwitch.cpp \
 ../Interface/SevenSeg.cpp \
 ../interrupts.cpp \
 ../main.cpp \
@@ -57,7 +60,6 @@ C_SRCS +=  \
 ../Tasks/Counter.cpp \
 ../Tasks/InputPoll.cpp \
 ../Tasks/Latch.cpp \
-../Tasks/LEDs.cpp \
 ../Tasks/LoopBack.cpp \
 ../Tasks/MeasureSelect.cpp \
 ../Tasks/PrintBPM.cpp \
@@ -76,6 +78,9 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+Interface/Buttons.o \
+Interface/LEDs.o \
+Interface/RotarySwitch.o \
 Interface/SevenSeg.o \
 interrupts.o \
 main.o \
@@ -92,7 +97,6 @@ Tasks/DigitalInput.o \
 Tasks/Counter.o \
 Tasks/InputPoll.o \
 Tasks/Latch.o \
-Tasks/LEDs.o \
 Tasks/LoopBack.o \
 Tasks/MeasureSelect.o \
 Tasks/PrintBPM.o \
@@ -104,6 +108,9 @@ Tasks/Trigger.o \
 timer.o
 
 OBJS_AS_ARGS +=  \
+Interface/Buttons.o \
+Interface/LEDs.o \
+Interface/RotarySwitch.o \
 Interface/SevenSeg.o \
 interrupts.o \
 main.o \
@@ -120,7 +127,6 @@ Tasks/DigitalInput.o \
 Tasks/Counter.o \
 Tasks/InputPoll.o \
 Tasks/Latch.o \
-Tasks/LEDs.o \
 Tasks/LoopBack.o \
 Tasks/MeasureSelect.o \
 Tasks/PrintBPM.o \
@@ -132,6 +138,9 @@ Tasks/Trigger.o \
 timer.o
 
 C_DEPS +=  \
+Interface/Buttons.d \
+Interface/LEDs.d \
+Interface/RotarySwitch.d \
 Interface/SevenSeg.d \
 interrupts.d \
 main.d \
@@ -148,7 +157,6 @@ Tasks/DigitalInput.d \
 Tasks/Counter.d \
 Tasks/InputPoll.d \
 Tasks/Latch.d \
-Tasks/LEDs.d \
 Tasks/LoopBack.d \
 Tasks/MeasureSelect.d \
 Tasks/PrintBPM.d \
@@ -160,6 +168,9 @@ Tasks/Trigger.d \
 timer.d
 
 C_DEPS_AS_ARGS +=  \
+Interface/Buttons.d \
+Interface/LEDs.d \
+Interface/RotarySwitch.d \
 Interface/SevenSeg.d \
 interrupts.d \
 main.d \
@@ -176,7 +187,6 @@ Tasks/DigitalInput.d \
 Tasks/Counter.d \
 Tasks/InputPoll.d \
 Tasks/Latch.d \
-Tasks/LEDs.d \
 Tasks/LoopBack.d \
 Tasks/MeasureSelect.d \
 Tasks/PrintBPM.d \
@@ -201,6 +211,27 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+Interface/Buttons.o: ../Interface/Buttons.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Interface/LEDs.o: ../Interface/LEDs.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Interface/RotarySwitch.o: ../Interface/RotarySwitch.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 Interface/SevenSeg.o: ../Interface/SevenSeg.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
@@ -307,13 +338,6 @@ Tasks/InputPoll.o: ../Tasks/InputPoll.cpp
 	
 
 Tasks/Latch.o: ../Tasks/Latch.cpp
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Tasks/LEDs.o: ../Tasks/LEDs.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)Z:\Atmel Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "Z:\Atmel Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=c++11 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

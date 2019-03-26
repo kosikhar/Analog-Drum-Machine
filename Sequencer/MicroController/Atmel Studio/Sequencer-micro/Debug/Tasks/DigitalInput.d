@@ -1,6 +1,5 @@
-Tasks/BPM.d Tasks/BPM.o: ../Tasks/BPM.cpp ../Tasks/BPM.h \
- ../Tasks/RotaryEncoder.h ../Tasks/InputPoll.h ../Tasks/DigitalInput.h \
- ../Tasks/../Shift_Register/ShiftRegister_PISO.h \
+Tasks/DigitalInput.d Tasks/DigitalInput.o: ../Tasks/DigitalInput.cpp \
+ ../Tasks/DigitalInput.h ../Tasks/../Shift_Register/ShiftRegister_PISO.h \
  ../Tasks/../Shift_Register/ShiftRegister.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -21,12 +20,6 @@ Tasks/BPM.d Tasks/BPM.o: ../Tasks/BPM.cpp ../Tasks/BPM.h \
  z:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  ../Tasks/../Shift_Register/../timer.h \
  ../Tasks/../Shift_Register/../Pins/Pin.h ../Tasks/../Interface/Buttons.h
-
-../Tasks/BPM.h:
-
-../Tasks/RotaryEncoder.h:
-
-../Tasks/InputPoll.h:
 
 ../Tasks/DigitalInput.h:
 
