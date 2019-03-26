@@ -245,12 +245,6 @@
     <Compile Include="Tasks\BPM.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\BPMInput.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\BPMInput.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Tasks\Blinky.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -273,30 +267,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\InputPoll.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\Latch.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\Latch.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\LoopBack.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\LoopBack.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\MeasureSelect.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\MeasureSelect.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\PrintBPM.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\PrintBPM.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\PrintOutput.cpp">

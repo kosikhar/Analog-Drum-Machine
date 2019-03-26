@@ -33,7 +33,6 @@ void Sequencer::run( void )
 	//that has a 1 in a location that a button has been pressed 
 	if( digitalInput->buttons->toggledValues != 0 ){
 		
-		
 	}
 }
 
