@@ -14,9 +14,9 @@
 #include "BPM.h"
 #include "Blinky.h"
 #include "Trigger.h"
-#include "Counter.h"
-#include "Latch.h"
-#include "PrintBPM.h"
-#include "BPMInput.h"
+#include "InputPoll.h"
+#include "DigitalInput.h"
+#include "PrintOutput.h"
+#include "RotaryEncoder.h"
 
 #endif /* SETUPTASKS_H_ */

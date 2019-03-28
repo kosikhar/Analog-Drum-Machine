@@ -32,8 +32,29 @@ void Sequencer::run( void )
 	//The toggleValues is a 16-bit number representing 16 buttons
 	//that has a 1 in a location that a button has been pressed 
 	if( digitalInput->buttons->toggledValues != 0 ){
+
+		//Boolean to indicate if bit should should be toggled
+		uint16_t toggleBit = 0;
 		
+		//Go through all the button inputs and figure which values to toggle
+		for(uint8_t i=0; i < SIZE_OF_MEASURE ; i++){
+			//Shift toggled value array and pull out the left most bit.
+			toggleBit = ((0x0001) & (digitalInput->buttons->toggledValues >> i));
+			
+			//Toggle the programmed value
+			programedValues[measure][i] ^= (0x0000) | (toggleBit << i);
+		}
+
+		//Set toggled values to 0
+		digitalInput->buttons->toggledValues = 0;
+
+		//Do the rest in the next pass.
+		return;
 	}
+
+	//Check for change in instrument.
+	
+
 }
 
 // default destructor

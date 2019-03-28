@@ -15,6 +15,9 @@
 //object for Interfacing with button input
 #include "../Interface/Buttons.h"
 
+//Interface to using rotary switch input
+#include "../Interface/RotarySwitch.h"
+
 //Using 16 buttons --> 2 shift registers
 //2 Rotary encoders --> 4/8 Shift Registers
 //12 Position Rotary Switch --> 1 4/8 Shift Registers
@@ -56,6 +59,12 @@ class DigitalInput : public ShiftRegister_PISO
 		
 		//Object for holding the button interface
 		Buttons * buttons;
+
+		//Object that interfaces with the instrument select knob
+		RotarySwitch * instrumentSelect;
+
+		//Object that interfaces with the measure select knob
+		RotarySwitch * measureSelect;
 		
 	protected:
 	private:
@@ -78,8 +87,6 @@ class DigitalInput : public ShiftRegister_PISO
 		
 	protected:
 	private:
-		DigitalInput( const DigitalInput &c );
-		DigitalInput& operator=( const DigitalInput &c );
 
 }; //DigitalInput
 

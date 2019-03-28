@@ -9,7 +9,7 @@
 #include "Blinky.h"
 
 //Initialize the pins. 
-Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
+Blinky::Blinky( Timer & timerRef, Sequencer & sequencerRef )
 {
 	//Set LED on port D data direction to output
 	DDRD |= (1 << PORTD0);
@@ -24,10 +24,10 @@ Blinky::Blinky( Timer & timerPtr, BPMInput & bpmInputRef )
 	timeStamp = 0;
 	
 	//Get reference to the timer
-	timer = &timerPtr;
+	timer = &timerRef;
 	
 	//Get reference to the BPM input
-	bpmInput = &bpmInputRef;
+	sequencer = &sequencerRef;
 	
 	blinkyPin = new Pin(0, &PORTD, OUTPUT);
 	
@@ -51,7 +51,7 @@ void Blinky::run()
 			blinkyPin->setHigh();	
 			LEDValueNext = 0;
 			
-			} else {
+		} else {
 			//Set Test LED to ON
 			blinkyPin->setLow();
 			
@@ -63,9 +63,9 @@ void Blinky::run()
 		//Recalculate pulse rate. in units of 0.1ms 
 		//Timer counter to 600000 per 0.1ms so if we have 60 BPM
 		//The delay would be 600000/60 = 10000;
-		//Then we need to devide by two, to have the clock go up and down.
+		//Then we need to divide by two, to have the clock go up and down.
 		//Period would still be the 1/BPM.
-		pulseWidth = 600000 / bpmInput->value;
+		pulseWidth = 600000 / sequencer->bpm->value;
 		pulseWidth = pulseWidth >> 1;
 		
 	}

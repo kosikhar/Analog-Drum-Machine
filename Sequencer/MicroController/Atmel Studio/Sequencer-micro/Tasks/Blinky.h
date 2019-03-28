@@ -11,7 +11,7 @@
 
 #include "../timer.h"
 #include "../Pins/Pin.h"
-#include "BPMInput.h"
+#include "Sequencer.h"
 
 #define LED_UPDATE 5000 //Update LED every 500ms
 
@@ -35,8 +35,8 @@ class Blinky
 		//A timer for keeping track of time
 		Timer * timer;
 		
-		//A pointer to the BPM input object
-		BPMInput * bpmInput;
+		//A pointer to the sequencer object
+		Sequencer * sequencer;
 		
 		//Stores a time stamp
 		uint32_t timeStamp;
@@ -46,7 +46,7 @@ class Blinky
 		
 	//functions
 	public:
-		Blinky( Timer & timerPtr, BPMInput & bpmInputRef  );
+		Blinky( Timer & timerRef, Sequencer & sequencerRef);
 		
 		//Blinks led on and off. Non-Blocking.
 		void run( void );

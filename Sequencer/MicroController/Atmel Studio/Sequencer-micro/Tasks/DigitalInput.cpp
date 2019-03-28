@@ -23,8 +23,10 @@ DigitalInput::DigitalInput( void ) : ShiftRegister_PISO ()
 	latchPin = new Pin( INPUT_LATCH_PIN, &INPUT_PIN_PORT, OUTPUT );
 	shiftPin = new Pin( INPUT_SHIFT_PIN, &INPUT_PIN_PORT, OUTPUT );
 	
-	//Initialize interface to the top mount buttons
+	//Initialize interfaces
 	buttons = new Buttons();
+	instrumentSelect = new RotarySwitch();
+	measureSelect = new RotarySwitch();
 	
 } //DigitalInput
 
@@ -75,8 +77,6 @@ void DigitalInput::run( void )
 		//then load them into the button interface. 	
 		buttons->loadRawInput( (inputBytes[BUTTONS_INPUT_HIGH_BYTE] << 8) + 
 							   (inputBytes[BUTTONS_INPUT_LOW_BYTE]) );
-	
-		
 	
 		//Finished sorting the input data
 		sortData = false;

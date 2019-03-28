@@ -33,12 +33,9 @@ class InputPoll
 		//Time stamp for timer
 		uint32_t timeStamp;
 		
-		//Polling Rate
-		uint16_t pollingRate;
-		
 	//functions
 	public:	
-		InputPoll( Timer & timerPtr, DigitalInput & DigitalInputRef, uint16_t PollingRate );
+		InputPoll( Timer & timerRef, DigitalInput & DigitalInputRef );
 		
 		void run( void );
 		

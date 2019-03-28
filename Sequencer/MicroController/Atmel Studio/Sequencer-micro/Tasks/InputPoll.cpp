@@ -8,16 +8,13 @@
 
 #include "InputPoll.h"
 
-InputPoll::InputPoll( Timer & timerPtr, DigitalInput & DigitalInputRef, uint16_t PollingRate )
-{
-	//Save polling rate
-	pollingRate = PollingRate;
-		
+InputPoll::InputPoll( Timer & timerRef, DigitalInput & DigitalInputRef )
+{	
 	//Get reference to the Button 
 	digitalInput = &DigitalInputRef;
 	
 	//Timer reference
-	timer = &timerPtr;
+	timer = &timerRef;
 	
 	//Initialize the time stamp
 	timeStamp = timer->millis();
@@ -27,7 +24,7 @@ InputPoll::InputPoll( Timer & timerPtr, DigitalInput & DigitalInputRef, uint16_t
 void InputPoll::run( void )
 {
 	//Latch input with the polling time.
-	if ( timer->elapsed_millis(timeStamp) > pollingRate ){
+	if ( timer->elapsed_millis(timeStamp) > POLLING_TIME ){
 				
 		//Indicate there is a new input to process
 		digitalInput->newInput = true;

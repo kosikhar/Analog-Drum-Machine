@@ -9,24 +9,20 @@
 //Define a pointer to a timer object.
 Timer timer;
 
-//Define a pointer to a seven segment display object.
-SevenSeg sevenSegmentDisplay(NUM_DISPLAYS);
+//Digital input task object. Shifts in input and sorts it.
+DigitalInput digitalInput;
 
-//Pointer to the counter object
-//Task counts to 100 then resets.
-//Counter counter;
+//Acts the same as above, but operates at higher frequency for the encoders
+RotaryEncoder rotaryEncoders( timer, digitalInput );
 
-//Pointer to latching task. Controls latching output on shift registers
-Latch latch( sevenSegmentDisplay );
+//Task object that deals with the sequencer. 
+Sequencer sequencer( digitalInput, rotaryEncoders );
 
-//Pointer to the BPMInput task. Polls the potentiometer and averages it
-BPMInput bpmInput( timer );
-
-//Pointer to the PrintBPM task. Prints value of the recorded BPM
-PrintBPM printBPM( timer, bpmInput, sevenSegmentDisplay );
+//Input poll task object latches in the input at regular intervals.
+InputPoll inputPoll( timer, digitalInput );
 
 //Pointer to the blinky task
-Blinky blinky( timer, bpmInput );
+Blinky blinky( timer, sequencer );
 
 //Pointer to trigger task
 //Used for triggering the instruments in the sequencer
@@ -36,11 +32,6 @@ Trigger trigger( timer, blinky );
 //TASKS
 ///////////////////////////////////////////
 
-//Task for latching
-void latchTask( void ){
-	latch.run();
-}
-
 //Task for triggering
 void triggerTask( void ){
 	trigger.run();
@@ -48,14 +39,6 @@ void triggerTask( void ){
 //Task for blinky
 void blinkyTask( void ){
 	blinky.run();
-}
-//Task for BPM Input
-void BPMInputTask( void ){
-	bpmInput.run();
-}
-//Task for printing the BPM
-void PrintBPMTask( void ){
-	printBPM.run();
 }
 
 int main(void)
@@ -68,11 +51,8 @@ int main(void)
 	TaskManager taskManager( timer );
 	
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
-	taskManager.addTask( latchTask , 64);
 	taskManager.addTask( triggerTask,  4);
 	//taskManager.addTask( counterTask, 128);
-	taskManager.addTask( BPMInputTask, 128 );
-	taskManager.addTask( PrintBPMTask, 128 );
 	taskManager.addTask( blinkyTask, 128);
 	
     while (1) 

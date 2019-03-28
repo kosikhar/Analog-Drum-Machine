@@ -10,19 +10,13 @@
 #define __PRINTOUTPUT_H__
 
 //Global timer used to keep timing consistent
-#include "timer.h"
+#include "../timer.h"
 
 //Object holds the state of the sequencer
 #include "Sequencer.h"
 
 //Used to display the "Beats per Minute" timing
 #include "BPM.h"
-
-//Used for displaying current position in time
-#include "Counter.h"
-
-//Used for displaying when the counter "Loops Back"
-//#include "LoopBack.h"
 
 //Task takes input from rotary encoders.
 //This includes the BPM input and the Loop-Back Input
@@ -71,7 +65,6 @@ class PrintOutput : public ShiftRegister_SIPO
 		//Object references
 		Sequencer * sequencer;
 		BPM * bpm;
-		LoopBack * loopBack;
 
 		//Display Objects
 		SevenSeg * bpmDisplay;

@@ -20,6 +20,8 @@ Pins\AnalogPin.cpp
 
 Pins\Pin.cpp
 
+RotarySwitch.cpp
+
 Shift_Register\ShiftRegister.cpp
 
 Shift_Register\ShiftRegister_PISO.cpp
@@ -28,23 +30,11 @@ Shift_Register\ShiftRegister_SIPO.cpp
 
 Tasks\BPM.cpp
 
-Tasks\BPMInput.cpp
-
 Tasks\Blinky.cpp
 
 Tasks\DigitalInput.cpp
 
-Tasks\Counter.cpp
-
 Tasks\InputPoll.cpp
-
-Tasks\Latch.cpp
-
-Tasks\LoopBack.cpp
-
-Tasks\MeasureSelect.cpp
-
-Tasks\PrintBPM.cpp
 
 Tasks\PrintOutput.cpp
 

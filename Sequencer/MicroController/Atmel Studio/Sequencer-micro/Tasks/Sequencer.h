@@ -15,6 +15,9 @@
 //Digital Input doesn't handle the encoder input
 #include "RotaryEncoder.h" 
 
+//Interface to using rotary switch input
+#include "../Interface/RotarySwitch.h"
+
 #define NUM_INSTRUMENTS 12
 #define NUM_MEASURES 6
 #define SIZE_OF_MEASURE 16
@@ -44,6 +47,8 @@ class Sequencer
 		//Object references
 		DigitalInput * digitalInput;
 		RotaryEncoder * rotaryEncoder; //Contains encoder info for BPM and Loopback
+		RotarySwitch * instrumentSelect; //interface to instrument select switch
+		RotarySwitch * measureSelect; //interface to measure select switch.
 
 	//functions
 	public:
