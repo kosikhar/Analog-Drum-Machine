@@ -424,9 +424,9 @@ int main(void)
  27a:	fb cf       	rjmp	.-10     	; 0x272 <main+0x40>
 
 0000027c <_GLOBAL__sub_I_timer>:
+#include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
 #include "Tasks/RotaryEncoder.h"
-class RotaryEncoder;
 
 //Define a pointer to a timer object.
 Timer timer;
@@ -560,9 +560,9 @@ DigitalInput digitalInput;
  31e:	87 e2       	ldi	r24, 0x27	; 39
  320:	92 e0       	ldi	r25, 0x02	; 2
  322:	0e 94 ce 02 	call	0x59c	; 0x59c <_ZN12DigitalInputD1Ev>
+#include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
 #include "Tasks/RotaryEncoder.h"
-class RotaryEncoder;
 
 //Define a pointer to a timer object.
 Timer timer;

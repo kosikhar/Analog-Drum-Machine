@@ -13,7 +13,6 @@
 #include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
 #include "Tasks/RotaryEncoder.h"
-class RotaryEncoder;
 
 //Define a pointer to a timer object.
 Timer timer;
