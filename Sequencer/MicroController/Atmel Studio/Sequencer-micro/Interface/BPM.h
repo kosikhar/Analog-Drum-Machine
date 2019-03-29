@@ -10,7 +10,7 @@
 #define __BPM_H__
 
 //Task is stimulated by an input from a Rotary Switch
-#include "RotaryEncoder.h"
+#include "../Tasks/RotaryEncoder.h"
 
 #define NUM_BPM_DIGITS 3
 
@@ -20,18 +20,19 @@ class BPM
 	//variables
 	public:
 		//The BPM of the sequencer
-		uint16_t value;
+		uint16_t bpmValue;
 	protected:
 	private:
 
 	//functions
 	public:
 		BPM();
+		
+		void processBPMInput( uint8_t input );
+
 		~BPM();
 	protected:
 	private:
-		BPM( const BPM &c );
-		BPM& operator=( const BPM &c );
 
 }; //BPM
 

@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+Interface\BPM.cpp
+
 Interface\Buttons.cpp
 
 Interface\LEDs.cpp
@@ -20,15 +22,11 @@ Pins\AnalogPin.cpp
 
 Pins\Pin.cpp
 
-RotarySwitch.cpp
-
 Shift_Register\ShiftRegister.cpp
 
 Shift_Register\ShiftRegister_PISO.cpp
 
 Shift_Register\ShiftRegister_SIPO.cpp
-
-Tasks\BPM.cpp
 
 Tasks\Blinky.cpp
 

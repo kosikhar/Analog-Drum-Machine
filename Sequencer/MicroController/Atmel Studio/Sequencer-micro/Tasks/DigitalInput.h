@@ -17,6 +17,7 @@
 
 //Interface to using rotary switch input
 #include "../Interface/RotarySwitch.h"
+class RotarySwitch; //Forward Declaring RotarySwitch class
 
 //Using 16 buttons --> 2 shift registers
 //2 Rotary encoders --> 4/8 Shift Registers

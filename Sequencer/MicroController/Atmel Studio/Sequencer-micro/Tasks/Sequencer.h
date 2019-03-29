@@ -9,14 +9,15 @@
 #ifndef __SEQUENCER_H__
 #define __SEQUENCER_H__
 
+//Digital Input doesn't handle the encoder input
+#include "RotaryEncoder.h"
+
 //Handles button inputs, 
 #include "DigitalInput.h" 
 
-//Digital Input doesn't handle the encoder input
-#include "RotaryEncoder.h" 
-
 //Interface to using rotary switch input
 #include "../Interface/RotarySwitch.h"
+class RotarySwitch;
 
 #define NUM_INSTRUMENTS 12
 #define NUM_MEASURES 6
@@ -42,8 +43,6 @@ class Sequencer
 		//Indicates current position in time
 		uint8_t positionInTime;
 	
-	protected:
-	private:
 		//Object references
 		DigitalInput * digitalInput;
 		RotaryEncoder * rotaryEncoder; //Contains encoder info for BPM and Loopback

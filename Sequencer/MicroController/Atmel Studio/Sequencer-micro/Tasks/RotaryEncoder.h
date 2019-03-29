@@ -11,6 +11,9 @@
 
 #include "InputPoll.h"
 
+#include "../Interface/BPM.h"
+class BPM;
+
 //Check encoder every 10ms
 #define CHK_ENCODER_DELAY 100 
 
@@ -37,6 +40,9 @@ class RotaryEncoder
 		
 		//Indicates to external task if there's a new value to process.
 		uint8_t newValue;
+
+		//Reference to BPM interface
+		BPM * bpm;
 
 	protected:
 	private:

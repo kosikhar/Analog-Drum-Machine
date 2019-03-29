@@ -13,7 +13,7 @@ RotarySwitch::RotarySwitch()
 {
 } //RotarySwitch
 
-void loadRawInput( uint16_t input )
+void RotarySwitch::loadRawInput( uint16_t input )
 {
 
 }

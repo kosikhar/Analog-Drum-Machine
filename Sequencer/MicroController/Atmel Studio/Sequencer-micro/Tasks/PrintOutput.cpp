@@ -8,14 +8,15 @@
 
 #include "PrintOutput.h"
 
+#define NUM_COUNTER_DIGITS 3
+
 // default constructor
-PrintOutput::PrintOutput(Timer & timerRef, Sequencer & sequencerRef, BPM & bpmRef ) 
+PrintOutput::PrintOutput(Timer & timerRef, Sequencer & sequencerRef ) 
             :ShiftRegister_SIPO()
 {
 	//Store references
 	timer = &timerRef; //timer is defined in the ShiftRegister Class.
 	sequencer = &sequencerRef;
-	bpm = &bpmRef;
 
 	//Initialize display objects
 	bpmDisplay = new SevenSeg(NUM_BPM_DIGITS);
@@ -85,7 +86,7 @@ void PrintOutput::buildOutputBuffer( void )
 	shiftRegisterIndex = 0;
 	
 	//Load BPM value
-	bpmDisplay->loadValue( bpm->value );
+	bpmDisplay->loadValue( sequencer->rotaryEncoder->bpm->bpmValue );
 	//Load BPM seven segment bitmap into output buffer
 	for(uint8_t i = 0; i < bpmDisplay->size ; i++){
 		

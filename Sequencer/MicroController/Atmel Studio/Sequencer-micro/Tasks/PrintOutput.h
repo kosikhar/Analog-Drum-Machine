@@ -15,12 +15,12 @@
 //Object holds the state of the sequencer
 #include "Sequencer.h"
 
-//Used to display the "Beats per Minute" timing
-#include "BPM.h"
-
 //Task takes input from rotary encoders.
 //This includes the BPM input and the Loop-Back Input
 #include "RotaryEncoder.h"
+
+//Interface for "Beats per Minute" timing
+#include "../Interface/BPM.h"
 
 //Used to indicate in the current measure/instrument selection
 //which time points that individual instrument will play.
@@ -83,7 +83,7 @@ class PrintOutput : public ShiftRegister_SIPO
 		
 	//functions
 	public:
-		PrintOutput( Timer & timerRef, Sequencer & sequencerRef, BPM & bpmRef );
+		PrintOutput( Timer & timerRef, Sequencer & sequencerRef );
 		
 		//The main task for printing the outputs
 		void run( void );

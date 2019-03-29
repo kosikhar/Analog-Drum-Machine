@@ -41,6 +41,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../Interface/BPM.cpp \
 ../Interface/Buttons.cpp \
 ../Interface/LEDs.cpp \
 ../Interface/RotarySwitch.cpp \
@@ -50,11 +51,9 @@ C_SRCS +=  \
 ../helperFunctions.cpp \
 ../Pins/AnalogPin.cpp \
 ../Pins/Pin.cpp \
-../RotarySwitch.cpp \
 ../Shift_Register/ShiftRegister.cpp \
 ../Shift_Register/ShiftRegister_PISO.cpp \
 ../Shift_Register/ShiftRegister_SIPO.cpp \
-../Tasks/BPM.cpp \
 ../Tasks/Blinky.cpp \
 ../Tasks/DigitalInput.cpp \
 ../Tasks/InputPoll.cpp \
@@ -73,6 +72,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+Interface/BPM.o \
 Interface/Buttons.o \
 Interface/LEDs.o \
 Interface/RotarySwitch.o \
@@ -82,11 +82,9 @@ main.o \
 helperFunctions.o \
 Pins/AnalogPin.o \
 Pins/Pin.o \
-RotarySwitch.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
-Tasks/BPM.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/InputPoll.o \
@@ -98,6 +96,7 @@ Tasks/Trigger.o \
 timer.o
 
 OBJS_AS_ARGS +=  \
+Interface/BPM.o \
 Interface/Buttons.o \
 Interface/LEDs.o \
 Interface/RotarySwitch.o \
@@ -107,11 +106,9 @@ main.o \
 helperFunctions.o \
 Pins/AnalogPin.o \
 Pins/Pin.o \
-RotarySwitch.o \
 Shift_Register/ShiftRegister.o \
 Shift_Register/ShiftRegister_PISO.o \
 Shift_Register/ShiftRegister_SIPO.o \
-Tasks/BPM.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/InputPoll.o \
@@ -123,6 +120,7 @@ Tasks/Trigger.o \
 timer.o
 
 C_DEPS +=  \
+Interface/BPM.d \
 Interface/Buttons.d \
 Interface/LEDs.d \
 Interface/RotarySwitch.d \
@@ -132,11 +130,9 @@ main.d \
 helperFunctions.d \
 Pins/AnalogPin.d \
 Pins/Pin.d \
-RotarySwitch.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
-Tasks/BPM.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/InputPoll.d \
@@ -148,6 +144,7 @@ Tasks/Trigger.d \
 timer.d
 
 C_DEPS_AS_ARGS +=  \
+Interface/BPM.d \
 Interface/Buttons.d \
 Interface/LEDs.d \
 Interface/RotarySwitch.d \
@@ -157,11 +154,9 @@ main.d \
 helperFunctions.d \
 Pins/AnalogPin.d \
 Pins/Pin.d \
-RotarySwitch.d \
 Shift_Register/ShiftRegister.d \
 Shift_Register/ShiftRegister_PISO.d \
 Shift_Register/ShiftRegister_SIPO.d \
-Tasks/BPM.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/InputPoll.d \
@@ -186,8 +181,6 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-
-
 
 
 

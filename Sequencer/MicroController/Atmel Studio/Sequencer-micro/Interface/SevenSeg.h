@@ -32,9 +32,9 @@ class SevenSeg
 			
 		//The array above converted to its respective bit map
 		uint8_t * bitMaps;
-	
-	private:
+		
 		uint8_t size;
+	private:
 		
 		//Bitmap for seven segment displays. stored in program memory.
 	 	static constexpr uint8_t sevenSegBitMap [11] PROGMEM = {

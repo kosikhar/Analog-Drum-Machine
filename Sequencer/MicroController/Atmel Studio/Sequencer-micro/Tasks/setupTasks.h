@@ -11,7 +11,6 @@
 
 #include "TaskManager.h"
 #include "../timer.h"
-#include "BPM.h"
 #include "Blinky.h"
 #include "Trigger.h"
 #include "InputPoll.h"

@@ -4,7 +4,16 @@
  * Created: 2018-12-09 11:42:26 AM
  * Author : Koltin Kosik-Harvey
  */
-#include "Tasks/setupTasks.h"
+//#include "Tasks/setupTasks.h"
+#include "timer.h"
+#include "Tasks/TaskManager.h"
+#include "Tasks/Blinky.h"
+#include "Tasks/Trigger.h"
+#include "Tasks/InputPoll.h"
+#include "Tasks/DigitalInput.h"
+#include "Tasks/PrintOutput.h"
+#include "Tasks/RotaryEncoder.h"
+class RotaryEncoder;
 
 //Define a pointer to a timer object.
 Timer timer;
@@ -12,14 +21,17 @@ Timer timer;
 //Digital input task object. Shifts in input and sorts it.
 DigitalInput digitalInput;
 
+//Input poll task object latches in the input at regular intervals.
+InputPoll inputPoll( timer, digitalInput );
+
 //Acts the same as above, but operates at higher frequency for the encoders
 RotaryEncoder rotaryEncoders( timer, digitalInput );
 
 //Task object that deals with the sequencer. 
 Sequencer sequencer( digitalInput, rotaryEncoders );
 
-//Input poll task object latches in the input at regular intervals.
-InputPoll inputPoll( timer, digitalInput );
+//Task object for printing to output
+PrintOutput printOutput( timer, sequencer );
 
 //Pointer to the blinky task
 Blinky blinky( timer, sequencer );

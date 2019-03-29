@@ -170,6 +170,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interface\BPM.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Interface\BPM.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Interface\Buttons.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -221,12 +227,6 @@
     <Compile Include="Pins\Pin.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="RotarySwitch.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="RotarySwitch.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Shift_Register\ShiftRegister.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -243,12 +243,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Shift_Register\ShiftRegister_SIPO.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\BPM.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\BPM.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\Blinky.cpp">

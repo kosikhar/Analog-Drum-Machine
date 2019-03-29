@@ -65,7 +65,7 @@ void Blinky::run()
 		//The delay would be 600000/60 = 10000;
 		//Then we need to divide by two, to have the clock go up and down.
 		//Period would still be the 1/BPM.
-		pulseWidth = 600000 / sequencer->bpm->value;
+		pulseWidth = 600000 / sequencer->rotaryEncoder->bpm->bpmValue;
 		pulseWidth = pulseWidth >> 1;
 		
 	}
