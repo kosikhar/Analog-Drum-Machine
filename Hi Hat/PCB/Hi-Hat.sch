@@ -18648,6 +18648,8 @@ Third pin of POT1 should be grounded</text>
 <text x="43.18" y="406.4" size="1.778" layer="94">Note: POT2B is grounded to AGND</text>
 <text x="1620.52" y="388.62" size="1.778" layer="94">Note: Resistor at the collector should be a jumper.
 The resistor is only there so biasing can be changed if needed.</text>
+<text x="1280.16" y="388.62" size="1.778" layer="91">Note: used 330k</text>
+<text x="1605.28" y="350.52" size="1.778" layer="91">used 2.2k</text>
 </plain>
 <instances>
 <instance part="SV1" gate="1" x="91.44" y="386.08" smashed="yes" rot="R180">
