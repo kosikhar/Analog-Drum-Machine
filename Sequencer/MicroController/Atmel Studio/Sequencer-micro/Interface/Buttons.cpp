@@ -36,6 +36,7 @@ void Buttons::loadRawInput( uint16_t input )
 	toggledValues = toggledValues & currentState;
 }
 
+
 // default destructor
 Buttons::~Buttons()
 {

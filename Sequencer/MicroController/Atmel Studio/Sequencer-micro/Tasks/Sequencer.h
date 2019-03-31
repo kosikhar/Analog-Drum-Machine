@@ -49,6 +49,9 @@ class Sequencer
 		RotarySwitch * instrumentSelect; //interface to instrument select switch
 		RotarySwitch * measureSelect; //interface to measure select switch.
 
+		//Object references to lower level objects
+		Buttons * buttons;
+
 	//functions
 	public:
 		Sequencer( DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoderRef );

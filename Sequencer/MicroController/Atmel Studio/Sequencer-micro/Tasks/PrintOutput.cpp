@@ -8,15 +8,14 @@
 
 #include "PrintOutput.h"
 
-#define NUM_COUNTER_DIGITS 3
-
 // default constructor
 PrintOutput::PrintOutput(Timer & timerRef, Sequencer & sequencerRef ) 
-            :ShiftRegister_SIPO()
+            :ShiftRegister_SIPO(NUM_OUTPUT_SHIFT_REGISTERS)
 {
 	//Store references
 	timer = &timerRef; //timer is defined in the ShiftRegister Class.
 	sequencer = &sequencerRef;
+	bpm = sequencer->rotaryEncoder->bpm;
 
 	//Initialize display objects
 	bpmDisplay = new SevenSeg(NUM_BPM_DIGITS);
@@ -39,10 +38,7 @@ void PrintOutput::run( void )
 {
 	//check if the counter has updated
 	if (newContentToPrint == true){
-		
-		//Indicate middle of shifting
-		shiftComplete = false;
-		
+
 		//If this is the first pass we need to build the output buffer
 		if ( firstPass == true ){
 			this->buildOutputBuffer();
@@ -52,32 +48,9 @@ void PrintOutput::run( void )
 			firstPass = false;
 			return;
 		}
-		
-		//Load in one byte
-		this->ShiftRegister_SIPO::loadByte( outputBuffer[shiftRegisterIndex] );
-		
-		//Shift in the bits
-		this->ShiftRegister_SIPO::shiftBits();
-		
-		//increment shift register index
-		shiftRegisterIndex++;
-		
-		//See if we're done shifting to the displays.
-		if ( shiftRegisterIndex >= NUM_OUTPUT_SHIFT_REGISTERS ){
-			
-			//reset index
-			shiftRegisterIndex = 0;
-			
-			//Reset flag indicating new content to print
-			newContentToPrint = false;
-			
-			//Indicate shifting is complete
-			shiftComplete = true;
-			
-			//The next time this runs it would the first pass
-			firstPass = true;
-		}
-	}	
+
+		this->ShiftRegister_SIPO::shiftByte();
+	}
 }
 
 void PrintOutput::buildOutputBuffer( void )
@@ -85,18 +58,16 @@ void PrintOutput::buildOutputBuffer( void )
 	//Set shift register index to zero.
 	shiftRegisterIndex = 0;
 	
-	//Load BPM value
-	bpmDisplay->loadValue( sequencer->rotaryEncoder->bpm->bpmValue );
-	//Load BPM seven segment bitmap into output buffer
+	//Load BPM value into the bpmDisplay interface
+	bpmDisplay->loadValue( bpm->bpmValue );
+	//Load BPM seven segment bitmap (from bpmDisplay interface) into output buffer
 	for(uint8_t i = 0; i < bpmDisplay->size ; i++){
 		
 		outputBuffer[i + shiftRegisterIndex] = bpmDisplay->bitMaps[i];
 	}
 	shiftRegisterIndex += bpmDisplay->size;
-	
-	
-	
-	//Reset shift register index back to zero.
+
+	//add other stuff
 }
 
 // default destructor

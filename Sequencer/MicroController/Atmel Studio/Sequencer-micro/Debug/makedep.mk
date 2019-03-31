@@ -34,6 +34,8 @@ Tasks\DigitalInput.cpp
 
 Tasks\InputPoll.cpp
 
+Tasks\InstrumentTrigger.cpp
+
 Tasks\PrintOutput.cpp
 
 Tasks\RotaryEncoder.cpp
@@ -41,8 +43,6 @@ Tasks\RotaryEncoder.cpp
 Tasks\Sequencer.cpp
 
 Tasks\TaskManager.cpp
-
-Tasks\Trigger.cpp
 
 timer.cpp
 

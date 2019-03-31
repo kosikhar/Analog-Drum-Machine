@@ -8,7 +8,7 @@
 #include "timer.h"
 #include "Tasks/TaskManager.h"
 #include "Tasks/Blinky.h"
-#include "Tasks/Trigger.h"
+//#include "Tasks/Trigger.h"
 #include "Tasks/InputPoll.h"
 #include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
@@ -37,7 +37,7 @@ Blinky blinky( timer, sequencer );
 
 //Pointer to trigger task
 //Used for triggering the instruments in the sequencer
-Trigger trigger( timer, blinky );
+//Trigger trigger( timer, blinky );
 
 ///////////////////////////////////////////
 //TASKS
@@ -45,7 +45,7 @@ Trigger trigger( timer, blinky );
 
 //Task for triggering
 void triggerTask( void ){
-	trigger.run();
+//	trigger.run();
 }
 //Task for blinky
 void blinkyTask( void ){

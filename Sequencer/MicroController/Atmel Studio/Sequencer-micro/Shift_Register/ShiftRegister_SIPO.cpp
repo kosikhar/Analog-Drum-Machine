@@ -8,18 +8,14 @@
 #include "ShiftRegister_SIPO.h"
 
 //Constructs object with pinout
-ShiftRegister_SIPO::ShiftRegister_SIPO( void ) : ShiftRegister()
+ShiftRegister_SIPO::ShiftRegister_SIPO( uint8_t NumShiftRegisters ) : ShiftRegister()
 {
 	//Start off with output byte 0
 	output_byte = 0;
-}
 
-
-//Constructs object with pinout
-ShiftRegister_SIPO::ShiftRegister_SIPO( Pin * shift, Pin * latch, Pin * serial ) : ShiftRegister( shift, latch, serial )
-{
-	//Start off with output byte 0
-	output_byte = 0;
+	//Set number of shift registers for building a buffer.
+	outputBuffer = new uint8_t[NumShiftRegisters];
+	numShiftRegisters = NumShiftRegisters;
 }
 
 //Shifts in a bit into the shift register.
@@ -54,6 +50,40 @@ void ShiftRegister_SIPO::shiftBits( void )
 	}
 	
 } //ShiftBits
+
+void ShiftRegister_SIPO::shiftByte( void )
+{
+
+		
+	//Indicate middle of shifting
+	shiftComplete = false;
+		
+	//Load in one byte
+	this->loadByte( outputBuffer[shiftRegisterIndex] );
+		
+	//Shift in the bits
+	this->shiftBits();
+		
+	//increment shift register index
+	shiftRegisterIndex++;
+		
+	//See if we're done shifting to the displays.
+	if ( shiftRegisterIndex >= numShiftRegisters ){
+			
+		//reset index
+		shiftRegisterIndex = 0;
+			
+		//Reset flag indicating new content to print
+		newContentToPrint = false;
+			
+		//Indicate shifting is complete
+		shiftComplete = true;
+			
+		//The next time this runs it would the first pass
+		firstPass = true;
+	}
+
+}
 
 void ShiftRegister_SIPO::loadByte( uint8_t byteToLoad )
 {

@@ -263,6 +263,12 @@
     <Compile Include="Tasks\InputPoll.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Tasks\InstrumentTrigger.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Tasks\InstrumentTrigger.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Tasks\PrintOutput.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -288,12 +294,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\TaskManager.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\Trigger.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Tasks\Trigger.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="timer.cpp">

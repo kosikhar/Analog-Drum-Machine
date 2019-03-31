@@ -57,11 +57,11 @@ C_SRCS +=  \
 ../Tasks/Blinky.cpp \
 ../Tasks/DigitalInput.cpp \
 ../Tasks/InputPoll.cpp \
+../Tasks/InstrumentTrigger.cpp \
 ../Tasks/PrintOutput.cpp \
 ../Tasks/RotaryEncoder.cpp \
 ../Tasks/Sequencer.cpp \
 ../Tasks/TaskManager.cpp \
-../Tasks/Trigger.cpp \
 ../timer.cpp
 
 
@@ -88,11 +88,11 @@ Shift_Register/ShiftRegister_SIPO.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/InputPoll.o \
+Tasks/InstrumentTrigger.o \
 Tasks/PrintOutput.o \
 Tasks/RotaryEncoder.o \
 Tasks/Sequencer.o \
 Tasks/TaskManager.o \
-Tasks/Trigger.o \
 timer.o
 
 OBJS_AS_ARGS +=  \
@@ -112,11 +112,11 @@ Shift_Register/ShiftRegister_SIPO.o \
 Tasks/Blinky.o \
 Tasks/DigitalInput.o \
 Tasks/InputPoll.o \
+Tasks/InstrumentTrigger.o \
 Tasks/PrintOutput.o \
 Tasks/RotaryEncoder.o \
 Tasks/Sequencer.o \
 Tasks/TaskManager.o \
-Tasks/Trigger.o \
 timer.o
 
 C_DEPS +=  \
@@ -136,11 +136,11 @@ Shift_Register/ShiftRegister_SIPO.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/InputPoll.d \
+Tasks/InstrumentTrigger.d \
 Tasks/PrintOutput.d \
 Tasks/RotaryEncoder.d \
 Tasks/Sequencer.d \
 Tasks/TaskManager.d \
-Tasks/Trigger.d \
 timer.d
 
 C_DEPS_AS_ARGS +=  \
@@ -160,11 +160,11 @@ Shift_Register/ShiftRegister_SIPO.d \
 Tasks/Blinky.d \
 Tasks/DigitalInput.d \
 Tasks/InputPoll.d \
+Tasks/InstrumentTrigger.d \
 Tasks/PrintOutput.d \
 Tasks/RotaryEncoder.d \
 Tasks/Sequencer.d \
 Tasks/TaskManager.d \
-Tasks/Trigger.d \
 timer.d
 
 OUTPUT_FILE_PATH +=Sequencer-micro.elf

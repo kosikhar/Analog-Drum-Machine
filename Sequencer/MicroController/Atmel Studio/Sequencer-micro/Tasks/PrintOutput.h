@@ -47,16 +47,14 @@
 //Number of shift registers to be used for output
 #define NUM_OUTPUT_SHIFT_REGISTERS 8
 
+//How many digits will be allocated for counting.
+#define NUM_COUNTER_DIGITS 3
+
 //Prints output for peripherals connected to output SIPO shift registers.
 class PrintOutput : public ShiftRegister_SIPO
 {
 	//variables
 	public:
-		//Flags
-		uint8_t shiftComplete;      //Indicates shifting is complete...ready to latch
-		uint8_t newContentToPrint;  //Indicates there's new content to print
-		uint8_t firstPass;			//Indicates first pass, build output buffer
-		
 	protected:
 	private:
 		//TimeStamp for controlling timing
@@ -73,13 +71,6 @@ class PrintOutput : public ShiftRegister_SIPO
 		
 		//LED object
 		LEDs * leds;
-		
-		//Output buffer
-		uint8_t outputBuffer[NUM_OUTPUT_SHIFT_REGISTERS];
-		
-		//Shift register index. Allows shifting to occur over several runs.
-		//this is to prevent blocking.
-		uint8_t shiftRegisterIndex;
 		
 	//functions
 	public:

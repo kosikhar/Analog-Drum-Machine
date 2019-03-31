@@ -26,10 +26,9 @@ main.d main.o: .././main.cpp .././timer.h \
  .././Tasks/../Shift_Register/../Pins/Pin.h \
  .././Tasks/../Interface/Buttons.h .././Tasks/../Interface/RotarySwitch.h \
  .././Tasks/../Interface/BPM.h \
- .././Tasks/../Interface/../Tasks/RotaryEncoder.h .././Tasks/Trigger.h \
- .././Tasks/Blinky.h .././Tasks/InputPoll.h .././Tasks/DigitalInput.h \
- .././Tasks/PrintOutput.h .././Tasks/../Interface/LEDs.h \
- .././Tasks/../Interface/SevenSeg.h \
+ .././Tasks/../Interface/../Tasks/RotaryEncoder.h .././Tasks/InputPoll.h \
+ .././Tasks/DigitalInput.h .././Tasks/PrintOutput.h \
+ .././Tasks/../Interface/LEDs.h .././Tasks/../Interface/SevenSeg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  .././Tasks/../Shift_Register/ShiftRegister_SIPO.h \
  .././Tasks/RotaryEncoder.h
@@ -101,10 +100,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././Tasks/../Interface/BPM.h:
 
 .././Tasks/../Interface/../Tasks/RotaryEncoder.h:
-
-.././Tasks/Trigger.h:
-
-.././Tasks/Blinky.h:
 
 .././Tasks/InputPoll.h:
 
