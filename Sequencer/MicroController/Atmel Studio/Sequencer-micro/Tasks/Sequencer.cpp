@@ -9,12 +9,13 @@
 #include "Sequencer.h"
 
 // default constructor
-Sequencer::Sequencer( DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoderRef )
+Sequencer::Sequencer( Timer & timerRef, DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoderRef )
 {
 	//Store references 
 	digitalInput = &digitalInputRef;
 	rotaryEncoder = &rotaryEncoderRef;
 	buttons = digitalInput->buttons;
+	timer = &timerRef;
 	
 	//Initialize all the programmed values to zero.
 	//TODO: LOAD FROM EEPROM
@@ -23,6 +24,14 @@ Sequencer::Sequencer( DigitalInput & digitalInputRef, RotaryEncoder & rotaryEnco
 			programedValues[i][j] = 0;
 		}
 	}
+
+	//Initialize variables
+	instrumentBeingProgrammed = 0;
+	measure = 0;
+	positionInTime = 0;
+	loopBackLength = 15;
+	triggerInstruments = false;
+	timeStamp = 0;
 	
 } //Sequencer
 
@@ -56,6 +65,41 @@ void Sequencer::run( void )
 	//Check for change in instrument.
 	
 
+}
+
+void Sequencer::runDebug( void )
+{
+
+	if( timer->elapsed_millis( timeStamp ) >= PULSE_PERIOD_DBG )
+	{
+		//Refresh time stamp.
+		timeStamp = timer->millis();
+
+		//increment position in time
+		positionInTime++;
+
+		//if it's higher than loopback then reset.
+		if ( positionInTime > loopBackLength ){
+			positionInTime = 0;
+		}
+
+		triggerInstruments = true;
+	}
+
+}
+
+void Sequencer::loadSequence(uint16_t * sequence, uint8_t size )
+{
+	for( uint8_t i=0; i < size ; i++ ){
+		uint8_t effectiveMeasure = (i >> 4);
+
+		programedValues[effectiveMeasure][i] = sequence[i];
+	}
+}
+
+void Sequencer::loadInstrumentTriggerReference( InstrumentTrigger & instrumentTriggerRef )
+{
+	instrumentTrigger = &instrumentTriggerRef;
 }
 
 // default destructor

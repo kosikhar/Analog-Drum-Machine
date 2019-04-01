@@ -11,10 +11,10 @@
 
 #include "../timer.h"
 
-#define TOTAL_TASK_COUNT 6
+#define TOTAL_TASK_COUNT 10
 
 //Should be a prime number uint8
-#define RANDOM_GEN_SEED 7
+#define RANDOM_GEN_SEED 11
 
 class TaskManager
 {

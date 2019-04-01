@@ -15,6 +15,10 @@
 //Handles button inputs, 
 #include "DigitalInput.h" 
 
+//Handles instrument triggering
+#include "InstrumentTrigger.h"
+class InstrumentTrigger;
+
 //Interface to using rotary switch input
 #include "../Interface/RotarySwitch.h"
 class RotarySwitch;
@@ -23,6 +27,9 @@ class RotarySwitch;
 #define NUM_MEASURES 6
 #define SIZE_OF_MEASURE 16
 #define NUM_TIME_POINTS (SIZE_OF_MEASURE*NUM_MEASURES)
+
+//For debugging
+#define PULSE_PERIOD_DBG 5000 //pulse is every 500ms.
 
 //Task object controls the programming of the sequencer
 class Sequencer
@@ -42,29 +49,44 @@ class Sequencer
 		
 		//Indicates current position in time
 		uint8_t positionInTime;
+
+		//Loop back length
+		uint8_t loopBackLength;
+
+		//Time Stamp for debug
+		uint32_t timeStamp;
+
+		//Flag to indicate to the trigger to trigger instruments
+		uint8_t triggerInstruments;
 	
 		//Object references
 		DigitalInput * digitalInput;
 		RotaryEncoder * rotaryEncoder; //Contains encoder info for BPM and Loopback
+		InstrumentTrigger * instrumentTrigger;
 		RotarySwitch * instrumentSelect; //interface to instrument select switch
 		RotarySwitch * measureSelect; //interface to measure select switch.
 
 		//Object references to lower level objects
 		Buttons * buttons;
+		Timer * timer;
 
 	//functions
 	public:
-		Sequencer( DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoderRef );
+		Sequencer( Timer & timerRef, DigitalInput & digitalInputRef, RotaryEncoder & rotaryEncoderRef );
 		
 		//Looks for button presses
 		//Looks for change in instrument
 		//Looks for change in measure
 		//Updates corresponding values.
 		void run( void );
+
+		void runDebug( void );
+
+		void loadSequence(uint16_t * sequence, uint8_t size);
+
+		void loadInstrumentTriggerReference( InstrumentTrigger & instrumentTriggerRef );
 		
 		~Sequencer();
-	protected:
-	private:
 
 }; //Sequencer
 

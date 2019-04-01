@@ -17,8 +17,16 @@
 
 //Reference to the sequencer task
 #include "Sequencer.h"
+class Sequencer;
 
 #define NUM_TRIGGER_SHIFT_REGISTERS 2
+
+#define TRIGGER_HIGH_DURATION 10 //trigger is high for 10ms
+
+#define TRIGGER_PORT PORTD 
+#define TRIGGER_SHIFT_PIN 4
+#define TRIGGER_LATCH_PIN 3
+#define TRIGGER_SERIAL_PIN 2
 
 class InstrumentTrigger : public ShiftRegister_SIPO
 {
@@ -30,12 +38,23 @@ class InstrumentTrigger : public ShiftRegister_SIPO
 		//Object references.
 		Sequencer * sequencer;
 		Timer * timer;
+
+		//timeStamp
+		uint32_t timeStamp;
+
+		//flag for setting high
+		uint8_t triggerSetHigh;
+		//flag for indicating timer has started.
+		uint8_t timeHasBeenStamped;
 	//functions
 	public:
 		InstrumentTrigger(Timer & timerRef, Sequencer & sequencerRef);
 
 		//Triggers instruments on a beat.
 		void run( void );
+
+		void setHigh(void);
+		void setLow(void);
 
 		//Builds output shift register.
 		void buildOutputBuffer( void );

@@ -13,6 +13,7 @@
 #include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
 #include "Tasks/RotaryEncoder.h"
+#include "Tasks/InstrumentTrigger.h"
 
 //Define a pointer to a timer object.
 Timer timer;
@@ -27,13 +28,15 @@ InputPoll inputPoll( timer, digitalInput );
 RotaryEncoder rotaryEncoders( timer, digitalInput );
 
 //Task object that deals with the sequencer. 
-Sequencer sequencer( digitalInput, rotaryEncoders );
+Sequencer sequencer(timer, digitalInput, rotaryEncoders );
 
 //Task object for printing to output
 PrintOutput printOutput( timer, sequencer );
 
-//Pointer to the blinky task
-Blinky blinky( timer, sequencer );
+//Task object for instrument trigger
+InstrumentTrigger instumentTrigger( timer, sequencer );
+
+//Pointer to
 
 //Pointer to trigger task
 //Used for triggering the instruments in the sequencer
@@ -45,11 +48,16 @@ Blinky blinky( timer, sequencer );
 
 //Task for triggering
 void triggerTask( void ){
-//	trigger.run();
+	instumentTrigger.run();
 }
-//Task for blinky
-void blinkyTask( void ){
-	blinky.run();
+void triggerSetHigh( void ){
+	instumentTrigger.setHigh();
+}
+void triggerSetLow( void ){
+	instumentTrigger.setLow();
+}
+void sequencerTask( void ){
+	sequencer.runDebug();
 }
 
 int main(void)
@@ -60,11 +68,23 @@ int main(void)
 	
 	//Initialize task manager
 	TaskManager taskManager( timer );
+
+	sequencer.loadInstrumentTriggerReference( instumentTrigger );
+
+	uint16_t testSequence [16] = {
+		0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555, 
+		0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555
+	};
+	sequencer.loadSequence(testSequence, 16);
 	
+	timer.reset();
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
-	taskManager.addTask( triggerTask,  4);
+	//taskManager.addTask( triggerTask,  4);
 	//taskManager.addTask( counterTask, 128);
-	taskManager.addTask( blinkyTask, 128);
+	taskManager.addTask( triggerTask, 4 );
+	taskManager.addTask( triggerSetLow, 0 );
+	taskManager.addTask( triggerSetHigh, 4);
+	taskManager.addTask( sequencerTask, 32);
 	
     while (1) 
     {
