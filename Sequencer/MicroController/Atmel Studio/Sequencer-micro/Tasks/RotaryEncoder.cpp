@@ -28,7 +28,7 @@ RotaryEncoder::RotaryEncoder(Timer & TimerRef, DigitalInput & DigitalInputRef)
 	}
 
 	//Initialize other variables
-	timeStamp = timer->millis();
+	timeStamp = 0;
 	newValue = false;
 	 	
 } //RotarySwitch

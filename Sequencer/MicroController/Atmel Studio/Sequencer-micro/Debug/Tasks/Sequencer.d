@@ -23,7 +23,8 @@ Tasks/Sequencer.d Tasks/Sequencer.o: ../Tasks/Sequencer.cpp \
  ../Tasks/../Interface/RotarySwitch.h ../Tasks/../Interface/BPM.h \
  ../Tasks/../Interface/../Tasks/RotaryEncoder.h \
  ../Tasks/InstrumentTrigger.h ../Tasks/../timer.h \
- ../Tasks/../Shift_Register/ShiftRegister_SIPO.h
+ ../Tasks/../Shift_Register/ShiftRegister_SIPO.h \
+ ../Tasks/../Interface/LEDs.h
 
 ../Tasks/Sequencer.h:
 
@@ -86,3 +87,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Tasks/../timer.h:
 
 ../Tasks/../Shift_Register/ShiftRegister_SIPO.h:
+
+../Tasks/../Interface/LEDs.h:

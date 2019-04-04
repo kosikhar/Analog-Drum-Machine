@@ -14,6 +14,7 @@
 
 //Interface to a SIPO shift register.
 #include "../Shift_Register/ShiftRegister_SIPO.h"
+class ShiftRegister;
 
 //Reference to the sequencer task
 #include "Sequencer.h"
@@ -46,6 +47,11 @@ class InstrumentTrigger : public ShiftRegister_SIPO
 		uint8_t triggerSetHigh;
 		//flag for indicating timer has started.
 		uint8_t timeHasBeenStamped;
+
+		//Used for filling output buffer
+		uint8_t positionInTime_MOD16;
+		uint8_t effectiveMeasure;
+
 	//functions
 	public:
 		InstrumentTrigger(Timer & timerRef, Sequencer & sequencerRef);

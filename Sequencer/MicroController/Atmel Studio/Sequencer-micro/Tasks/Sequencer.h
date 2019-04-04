@@ -23,13 +23,19 @@ class InstrumentTrigger;
 #include "../Interface/RotarySwitch.h"
 class RotarySwitch;
 
+//Interface to the LEDs
+#include "../Interface/LEDs.h"
+
 #define NUM_INSTRUMENTS 12
 #define NUM_MEASURES 6
 #define SIZE_OF_MEASURE 16
 #define NUM_TIME_POINTS (SIZE_OF_MEASURE*NUM_MEASURES)
 
+//Period for updating LEDS
+#define UPDATE_LEDS_PERIOD 1500 //Update every 150ms
+
 //For debugging
-#define PULSE_PERIOD_DBG 5000 //pulse is every 500ms.
+#define PULSE_PERIOD_DBG 5000 //pulse is every 500ms
 
 //Task object controls the programming of the sequencer
 class Sequencer
@@ -46,20 +52,20 @@ class Sequencer
 		
 		//Indicates measure being programmed
 		uint8_t measure;
-		
-		//Indicates current position in time
-		uint8_t positionInTime;
 
 		//Loop back length
 		uint8_t loopBackLength;
 
 		//Time Stamp for debug
-		uint32_t timeStamp;
+		uint32_t timeStamp_Timer;
+		//Timer Stamp for LED update
+		uint32_t timeStamp_updateLEDs;
 
 		//Flag to indicate to the trigger to trigger instruments
 		uint8_t triggerInstruments;
 	
 		//Object references
+		Timer * timer;
 		DigitalInput * digitalInput;
 		RotaryEncoder * rotaryEncoder; //Contains encoder info for BPM and Loopback
 		InstrumentTrigger * instrumentTrigger;
@@ -68,7 +74,11 @@ class Sequencer
 
 		//Object references to lower level objects
 		Buttons * buttons;
-		Timer * timer;
+		LEDs * leds;
+
+	private:		
+		//Indicates current position in time
+		uint8_t positionInTime;
 
 	//functions
 	public:
@@ -77,15 +87,19 @@ class Sequencer
 		//Looks for button presses
 		//Looks for change in instrument
 		//Looks for change in measure
+		//Updates LEDs
 		//Updates corresponding values.
-		void run( void );
-
-		void runDebug( void );
+		void checkButtons( void );
+		void checkInstrumentSelect( void );
+		void checkMeasureSelect( void );
+		void updateLEDs( void );
+		void runTimer( void );
 
 		void loadSequence(uint16_t * sequence, uint8_t size);
-
 		void loadInstrumentTriggerReference( InstrumentTrigger & instrumentTriggerRef );
 		
+		uint8_t getPositionInTime(void);
+
 		~Sequencer();
 
 }; //Sequencer

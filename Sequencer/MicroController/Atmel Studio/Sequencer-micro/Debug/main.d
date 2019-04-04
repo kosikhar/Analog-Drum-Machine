@@ -27,9 +27,10 @@ main.d main.o: .././main.cpp .././timer.h \
  .././Tasks/../Interface/BPM.h \
  .././Tasks/../Interface/../Tasks/RotaryEncoder.h \
  .././Tasks/InstrumentTrigger.h \
- .././Tasks/../Shift_Register/ShiftRegister_SIPO.h .././Tasks/InputPoll.h \
+ .././Tasks/../Shift_Register/ShiftRegister_SIPO.h \
+ .././Tasks/../Interface/LEDs.h .././Tasks/InputPoll.h \
  .././Tasks/DigitalInput.h .././Tasks/PrintOutput.h \
- .././Tasks/../Interface/LEDs.h .././Tasks/../Interface/SevenSeg.h \
+ .././Tasks/../Interface/SevenSeg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  .././Tasks/RotaryEncoder.h .././Tasks/InstrumentTrigger.h
 
@@ -103,13 +104,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 .././Tasks/../Shift_Register/ShiftRegister_SIPO.h:
 
+.././Tasks/../Interface/LEDs.h:
+
 .././Tasks/InputPoll.h:
 
 .././Tasks/DigitalInput.h:
 
 .././Tasks/PrintOutput.h:
-
-.././Tasks/../Interface/LEDs.h:
 
 .././Tasks/../Interface/SevenSeg.h:
 

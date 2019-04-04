@@ -25,7 +25,8 @@ Tasks/InstrumentTrigger.d Tasks/InstrumentTrigger.o: \
  ../Tasks/../Shift_Register/ShiftRegister_PISO.h \
  ../Tasks/../Interface/Buttons.h ../Tasks/../Interface/RotarySwitch.h \
  ../Tasks/../Interface/BPM.h \
- ../Tasks/../Interface/../Tasks/RotaryEncoder.h
+ ../Tasks/../Interface/../Tasks/RotaryEncoder.h \
+ ../Tasks/../Interface/LEDs.h
 
 ../Tasks/InstrumentTrigger.h:
 
@@ -88,3 +89,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Tasks/../Interface/BPM.h:
 
 ../Tasks/../Interface/../Tasks/RotaryEncoder.h:
+
+../Tasks/../Interface/LEDs.h:

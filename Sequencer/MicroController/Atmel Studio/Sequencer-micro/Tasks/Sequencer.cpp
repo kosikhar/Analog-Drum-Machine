@@ -31,11 +31,13 @@ Sequencer::Sequencer( Timer & timerRef, DigitalInput & digitalInputRef, RotaryEn
 	positionInTime = 0;
 	loopBackLength = 15;
 	triggerInstruments = false;
-	timeStamp = 0;
+
+	timeStamp_Timer = 0;
+	timeStamp_updateLEDs = 0;
 	
 } //Sequencer
 
-void Sequencer::run( void )
+void Sequencer::checkButtons( void )
 {
 	//Check if there is button press.
 	//If there is any toggled values that would mean button has pressed.
@@ -60,27 +62,45 @@ void Sequencer::run( void )
 
 		//Do the rest in the next pass.
 		return;
-	}
+	}	
+}
 
-	//Check for change in instrument.
+void Sequencer::checkInstrumentSelect( void )
+{
 	
+}
+
+void Sequencer::checkMeasureSelect( void )
+{
 
 }
 
-void Sequencer::runDebug( void )
+void Sequencer::updateLEDs( void )
+{
+	if( timer->elapsed_millis(timeStamp_updateLEDs) >= UPDATE_LEDS_PERIOD ){
+		
+		timeStamp_updateLEDs = timer->millis();
+		
+		leds->loadMeasure( (uint16_t **) programedValues , measure, SIZE_OF_MEASURE );
+		leds->setInstrument( instrumentBeingProgrammed );
+		leds->generateBitMap();
+	}
+}
+
+void Sequencer::runTimer( void )
 {
 
-	if( timer->elapsed_millis( timeStamp ) >= PULSE_PERIOD_DBG )
+	if( timer->elapsed_millis( timeStamp_Timer ) >= PULSE_PERIOD_DBG )
 	{
 		//Refresh time stamp.
-		timeStamp = timer->millis();
+		timeStamp_Timer = timer->millis();
 
 		//increment position in time
-		positionInTime++;
+		this->positionInTime = this->positionInTime + 1;
 
 		//if it's higher than loopback then reset.
-		if ( positionInTime > loopBackLength ){
-			positionInTime = 0;
+		if ( this->positionInTime > loopBackLength ){
+			this->positionInTime = 0;
 		}
 
 		triggerInstruments = true;
@@ -100,6 +120,11 @@ void Sequencer::loadSequence(uint16_t * sequence, uint8_t size )
 void Sequencer::loadInstrumentTriggerReference( InstrumentTrigger & instrumentTriggerRef )
 {
 	instrumentTrigger = &instrumentTriggerRef;
+}
+
+uint8_t Sequencer::getPositionInTime( void )
+{
+	return positionInTime;
 }
 
 // default destructor

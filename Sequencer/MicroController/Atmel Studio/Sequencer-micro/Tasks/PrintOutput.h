@@ -50,6 +50,8 @@
 //How many digits will be allocated for counting.
 #define NUM_COUNTER_DIGITS 3
 
+#define PRINT_OUTPUT_RATE 1000 //print every 100ms
+
 //Prints output for peripherals connected to output SIPO shift registers.
 class PrintOutput : public ShiftRegister_SIPO
 {
@@ -78,6 +80,8 @@ class PrintOutput : public ShiftRegister_SIPO
 		
 		//The main task for printing the outputs
 		void run( void );
+
+		void print(void);
 		
 		~PrintOutput();
 	protected:

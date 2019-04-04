@@ -22,6 +22,17 @@
 //Serial output shift registers
 #define SEVSEG_PIN_PORT PORTB
 
+//Bitmap for seven segment displays. stored in program memory.
+const uint8_t sevenSegBitMap [11] PROGMEM = {
+	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
+};
+
+//Precomputed array of powers of ten.
+//Used to convert a number like 123 into [1,2,3]
+const uint16_t pow10[4] PROGMEM = {
+	1, 10, 100, 1000
+};
+
 //An Interface to a Seven Segment Display
 class SevenSeg
 {
@@ -35,17 +46,6 @@ class SevenSeg
 		
 		uint8_t size;
 	private:
-		
-		//Bitmap for seven segment displays. stored in program memory.
-	 	static constexpr uint8_t sevenSegBitMap [11] PROGMEM = {
-		 	0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xE6, 0x01
-	 	};
-
-		//Precomputed array of powers of ten.
-		//Used to convert a number like 123 into [1,2,3]
-		static constexpr uint16_t pow10[4] PROGMEM = {
-			1, 10, 100, 1000
-		};
 
 	//functions
 	public:

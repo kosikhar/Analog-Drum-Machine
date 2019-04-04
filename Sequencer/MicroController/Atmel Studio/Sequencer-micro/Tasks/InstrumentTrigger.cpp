@@ -20,18 +20,22 @@ InstrumentTrigger::InstrumentTrigger(Timer & timerRef, Sequencer & sequencerRef)
 	bytesToPrint = new uint8_t[NUM_TRIGGER_SHIFT_REGISTERS];
 
 	//initialize timeStamp
-	timeStamp = timer->millis();
+	timeStamp = 0;
 
 	//initialize flag for setting trigger high
 	triggerSetHigh = false;
 
 	//Initialize pins
-	shiftPin = new Pin(TRIGGER_SHIFT_PIN, &TRIGGER_PORT, OUTPUT);
-	latchPin = new Pin(TRIGGER_LATCH_PIN, &TRIGGER_PORT, OUTPUT);
-	serialPin = new Pin(TRIGGER_SERIAL_PIN, &TRIGGER_PORT, OUTPUT);
+	ShiftRegister::shiftPin = new Pin(TRIGGER_SHIFT_PIN, &TRIGGER_PORT, OUTPUT);
+	ShiftRegister::latchPin = new Pin(TRIGGER_LATCH_PIN, &TRIGGER_PORT, OUTPUT);
+	ShiftRegister::serialPin = new Pin(TRIGGER_SERIAL_PIN, &TRIGGER_PORT, OUTPUT);
 		
 	//Flags
 	triggerSetHigh = false;
+
+	//Initialize other things
+	effectiveMeasure = 0;
+	positionInTime_MOD16 = 0;
 
 } //InstrumentTrigger
 
@@ -51,10 +55,18 @@ void InstrumentTrigger::run( void )
 void InstrumentTrigger::setHigh(void)
 {
 	if(sequencer->triggerInstruments == true){
-		//Set shift register index to zero.
-		//shiftRegisterIndex = 0;
-		uint8_t effectiveMeasure = sequencer->positionInTime >> 4;
-		uint8_t positionInTime_MOD16 = sequencer->positionInTime % 16;
+		
+		//Load position in time
+		effectiveMeasure = sequencer->getPositionInTime();
+		positionInTime_MOD16 = effectiveMeasure;
+
+		//Get the measure
+		effectiveMeasure = effectiveMeasure >> 4;
+
+		//Get location within measure
+		positionInTime_MOD16 = positionInTime_MOD16 % 16;
+
+		//Fill output buffer
 		outputBuffer[0] = (uint8_t) (sequencer->programedValues[effectiveMeasure][positionInTime_MOD16] >> 8);
 		outputBuffer[1] = (uint8_t) sequencer->programedValues[effectiveMeasure][positionInTime_MOD16];
 		

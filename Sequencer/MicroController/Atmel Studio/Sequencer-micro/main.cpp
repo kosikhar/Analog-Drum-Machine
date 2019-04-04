@@ -8,7 +8,6 @@
 #include "timer.h"
 #include "Tasks/TaskManager.h"
 #include "Tasks/Blinky.h"
-//#include "Tasks/Trigger.h"
 #include "Tasks/InputPoll.h"
 #include "Tasks/DigitalInput.h"
 #include "Tasks/PrintOutput.h"
@@ -56,8 +55,14 @@ void triggerSetHigh( void ){
 void triggerSetLow( void ){
 	instumentTrigger.setLow();
 }
-void sequencerTask( void ){
-	sequencer.runDebug();
+void sequencerTimerTask( void ){
+	sequencer.runTimer();
+}
+void updateLEDs(void){
+	sequencer.updateLEDs();
+}
+void printOutputTask(void){
+	printOutput.run();
 }
 
 int main(void)
@@ -65,6 +70,7 @@ int main(void)
 
 	//Setup interrupts to get the timer to work
 	setUpTimerInterrupts();
+	timer.reset();
 	
 	//Initialize task manager
 	TaskManager taskManager( timer );
@@ -72,19 +78,18 @@ int main(void)
 	sequencer.loadInstrumentTriggerReference( instumentTrigger );
 
 	uint16_t testSequence [16] = {
-		0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555, 
-		0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555,0x5555
+		0xFFFF,0x0000,0xFFFF,0x0000,0xFFFF,0x0000,0xFFFF,0x0000,
+		0xFFFF,0x0000,0xFFFF,0x0000,0xFFFF,0x0000,0xFFFF,0x0000
 	};
 	sequencer.loadSequence(testSequence, 16);
-	
-	timer.reset();
+
 	//Add tasks with priority 0-250. 0 is real time. 251 never runs.
-	//taskManager.addTask( triggerTask,  4);
-	//taskManager.addTask( counterTask, 128);
-	taskManager.addTask( triggerTask, 4 );
+	taskManager.addTask( triggerTask, 128);
 	taskManager.addTask( triggerSetLow, 0 );
 	taskManager.addTask( triggerSetHigh, 4);
-	taskManager.addTask( sequencerTask, 32);
+	taskManager.addTask( sequencerTimerTask, 32);
+	taskManager.addTask( updateLEDs, 250);
+	taskManager.addTask( printOutputTask, 250);
 	
     while (1) 
     {
