@@ -4,8 +4,9 @@
  * Created: 2018-12-09 11:42:26 AM
  * Author : Koltin Kosik-Harvey
  */
-//#include "Tasks/setupTasks.h"
+
 #include "timer.h"
+
 #include "Tasks/TaskManager.h"
 #include "Tasks/Blinky.h"
 #include "Tasks/InputPoll.h"
@@ -62,6 +63,9 @@ void updateLEDs(void){
 	sequencer.updateLEDs();
 }
 void printOutputTask(void){
+	printOutput.print();
+}
+void printOutputCheck(void){
 	printOutput.run();
 }
 
@@ -87,9 +91,10 @@ int main(void)
 	taskManager.addTask( triggerTask, 128);
 	taskManager.addTask( triggerSetLow, 0 );
 	taskManager.addTask( triggerSetHigh, 4);
-	taskManager.addTask( sequencerTimerTask, 32);
+	taskManager.addTask( sequencerTimerTask, 128);
 	taskManager.addTask( updateLEDs, 250);
 	taskManager.addTask( printOutputTask, 250);
+	taskManager.addTask( printOutputCheck, 250);
 	
     while (1) 
     {

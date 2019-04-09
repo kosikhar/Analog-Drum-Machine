@@ -15,6 +15,10 @@ ShiftRegister_SIPO::ShiftRegister_SIPO( uint8_t NumShiftRegisters ) : ShiftRegis
 
 	//Set number of shift registers for building a buffer.
 	outputBuffer = new uint8_t[NumShiftRegisters];
+	for(uint8_t i=0; i<=NumShiftRegisters ; i++){
+		outputBuffer[i] = (uint8_t) 1;
+	}
+
 	numShiftRegisters = NumShiftRegisters;
 
 	//Initialize flags

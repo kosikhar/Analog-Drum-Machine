@@ -53,6 +53,10 @@ void PrintOutput::print( void )
 		}
 
 		this->ShiftRegister_SIPO::shiftByte();
+
+		if( ShiftRegister_SIPO::shiftComplete == true){
+			this->ShiftRegister::latch();
+		}
 	}
 }
 
@@ -60,6 +64,7 @@ void PrintOutput::run( void )
 {
 	if( timer->elapsed_millis(timeStamp) >= PRINT_OUTPUT_RATE){
 		this->ShiftRegister_SIPO::newContentToPrint = true;
+		timeStamp = timer->millis();
 	}
 }
 
