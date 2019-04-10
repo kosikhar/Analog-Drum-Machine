@@ -10,11 +10,11 @@
 #define TRIGGER_H_
 
 #include "defines-config.h"
+#include "helperFunctions.h"
+
+#define DELAY_DEBUG 500 //in milliseconds
 
 typedef struct Trigger{
-
-	//Get a reference to the SequencerIO object;
-	SequencerIO * seqIO;
 	
 	//The instruments that will play next
 	uint16_t playNext;
@@ -23,21 +23,21 @@ typedef struct Trigger{
 	uint32_t timeStamp;
 	
 	//Methods
-	void (*getSeqIORef) (Trigger * self, SequencerIO * seqIOPtr);
+	void (*Trigger_init) (Trigger * self);
 	void (*genPlayNext) (Trigger * self);
 	void (*checkTimer) (Trigger * self);
 	void (*triggerInstruments) (Trigger * self);
 
 } Trigger;
 
-//Get reference the sequencer IO object
-void getSeqIORef(Trigger * self, SequencerIO * seqIOPtr);
+//initalize Trigger
+void Trigger_init( Trigger * self );
 
 //generate the play next register
 void genPlayNext(Trigger * self);
 
 //Check timer to see if instrument should trigger
-void triggerInstruments(Trigger * self);
+void checkTimer(Trigger * self);
 
 //triggers instruments
 //Blocks

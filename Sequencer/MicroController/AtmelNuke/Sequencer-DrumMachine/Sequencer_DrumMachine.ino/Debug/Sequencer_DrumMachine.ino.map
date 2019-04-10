@@ -9,7 +9,7 @@ C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\A
 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
                               C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o) (_ZN5Print5writeEPKhj)
 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                              C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o) (init)
+                              trigger.o (millis)
 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
                               Sequencer.o (pinMode)
 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
@@ -115,6 +115,29 @@ Discarded input sections
                 0x00000000       0x2c ShiftRegister/ShiftRegister74HC595.o
  .text._ZN20ShiftRegister74HC5959setAllLowEv
                 0x00000000       0x2a ShiftRegister/ShiftRegister74HC595.o
+ .text          0x00000000        0x0 trigger.o
+ .data          0x00000000        0x0 trigger.o
+ .bss           0x00000000        0x0 trigger.o
+ .text._Z14elapsed_millisRm
+                0x00000000       0x28 trigger.o
+ .text._Z12Trigger_initP7Trigger
+                0x00000000       0x10 trigger.o
+ .text._Z11genPlayNextP7Trigger
+                0x00000000       0x1a trigger.o
+ .text._Z10checkTimerP7Trigger
+                0x00000000       0x34 trigger.o
+ .text._Z18triggerInstrumentsP7Trigger
+                0x00000000       0x4c trigger.o
+ .debug_info    0x00000000      0x703 trigger.o
+ .debug_abbrev  0x00000000      0x25c trigger.o
+ .debug_loc     0x00000000      0x190 trigger.o
+ .debug_aranges
+                0x00000000       0x40 trigger.o
+ .debug_ranges  0x00000000       0x30 trigger.o
+ .debug_line    0x00000000      0x22f trigger.o
+ .debug_str     0x00000000      0x6a4 trigger.o
+ .comment       0x00000000       0x31 trigger.o
+ .debug_frame   0x00000000       0x94 trigger.o
  .group         0x00000000        0x8 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
  .text          0x00000000        0x0 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
  .data          0x00000000        0x0 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
@@ -522,6 +545,7 @@ Address of section .data set to 0x800100
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328p/avr5/crtatmega328p.o
 LOAD Sequencer.o
 LOAD ShiftRegister/ShiftRegister74HC595.o
+LOAD trigger.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libm.a
 LOAD C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a
@@ -885,44 +909,43 @@ END GROUP
                 0x00800118                _edata = .
                 0x00800118                PROVIDE (__data_end, .)
 
-.bss            0x00800118       0xd4
+.bss            0x00800118      0x10b
                 0x00800118                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.outputBuffer
-                0x00800118        0x8 Sequencer.o
-                0x00800118                outputBuffer
- .bss.InputSR   0x00800120        0xe Sequencer.o
-                0x00800120                InputSR
+ .bss.seqIO     0x00800118       0x3f Sequencer.o
+                0x00800118                seqIO
+ .bss.InputSR   0x00800157        0xe Sequencer.o
+                0x00800157                InputSR
  .bss.InstrumentTrigger
-                0x0080012e        0xa Sequencer.o
-                0x0080012e                InstrumentTrigger
- .bss.OutputSR  0x00800138        0xa Sequencer.o
-                0x00800138                OutputSR
- .bss.Serial    0x00800142       0x9d C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
-                0x00800142                Serial
+                0x00800165        0xa Sequencer.o
+                0x00800165                InstrumentTrigger
+ .bss.OutputSR  0x0080016f        0xa Sequencer.o
+                0x0080016f                OutputSR
+ .bss.Serial    0x00800179       0x9d C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+                0x00800179                Serial
  .bss.timer0_fract
-                0x008001df        0x1 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00800216        0x1 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
  .bss.timer0_millis
-                0x008001e0        0x4 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x008001e0                timer0_millis
+                0x00800217        0x4 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00800217                timer0_millis
  .bss.timer0_overflow_count
-                0x008001e4        0x4 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
-                0x008001e4                timer0_overflow_count
+                0x0080021b        0x4 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x0080021b                timer0_overflow_count
  *(COMMON)
- COMMON         0x008001e8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x008001e8                __brkval
-                0x008001ea                __flp
-                0x008001ec                PROVIDE (__bss_end, .)
+ COMMON         0x0080021f        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0080021f                __brkval
+                0x00800221                __flp
+                0x00800223                PROVIDE (__bss_end, .)
                 0x00000c92                __data_load_start = LOADADDR (.data)
                 0x00000caa                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008001ec        0x0
+.noinit         0x00800223        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008001ec                _end = .
-                0x008001ec                PROVIDE (__heap_start, .)
+                0x00800223                _end = .
+                0x00800223                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1019,44 +1042,44 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x8b70
+.debug_info     0x00000000     0x8cb7
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0xaac Sequencer.o
- .debug_info    0x000010a0      0x97c ShiftRegister/ShiftRegister74HC595.o
- .debug_info    0x00001a1c     0x1e35 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_info    0x00003851     0x1ac7 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_info    0x00005318      0x231 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
- .debug_info    0x00005549     0x2a7c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_info    0x00007fc5      0x2c8 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_info    0x0000828d      0x5f9 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_info    0x00008886      0x2ea C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .debug_info    0x000005f4      0xbf3 Sequencer.o
+ .debug_info    0x000011e7      0x97c ShiftRegister/ShiftRegister74HC595.o
+ .debug_info    0x00001b63     0x1e35 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_info    0x00003998     0x1ac7 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_info    0x0000545f      0x231 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_info    0x00005690     0x2a7c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_info    0x0000810c      0x2c8 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_info    0x000083d4      0x5f9 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_info    0x000089cd      0x2ea C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
 
-.debug_abbrev   0x00000000     0x1d32
+.debug_abbrev   0x00000000     0x1d5f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_abbrev  0x000005a2      0x30c Sequencer.o
- .debug_abbrev  0x000008ae      0x2af ShiftRegister/ShiftRegister74HC595.o
- .debug_abbrev  0x00000b5d      0x478 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_abbrev  0x00000fd5      0x3dd C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_abbrev  0x000013b2      0x109 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
- .debug_abbrev  0x000014bb      0x498 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_abbrev  0x00001953      0x145 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_abbrev  0x00001a98      0x15b C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_abbrev  0x00001bf3      0x13f C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .debug_abbrev  0x000005a2      0x339 Sequencer.o
+ .debug_abbrev  0x000008db      0x2af ShiftRegister/ShiftRegister74HC595.o
+ .debug_abbrev  0x00000b8a      0x478 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_abbrev  0x00001002      0x3dd C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_abbrev  0x000013df      0x109 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_abbrev  0x000014e8      0x498 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_abbrev  0x00001980      0x145 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_abbrev  0x00001ac5      0x15b C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_abbrev  0x00001c20      0x13f C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
 
-.debug_line     0x00000000     0x1d30
+.debug_line     0x00000000     0x1d2c
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x133 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_line    0x00000133      0x2ae Sequencer.o
- .debug_line    0x000003e1      0x430 ShiftRegister/ShiftRegister74HC595.o
- .debug_line    0x00000811      0x426 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
- .debug_line    0x00000c37      0x28c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
- .debug_line    0x00000ec3      0x175 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
- .debug_line    0x00001038      0x69b C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
- .debug_line    0x000016d3      0x299 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
- .debug_line    0x0000196c      0x252 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
- .debug_line    0x00001bbe      0x172 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .debug_line    0x00000133      0x2aa Sequencer.o
+ .debug_line    0x000003dd      0x430 ShiftRegister/ShiftRegister74HC595.o
+ .debug_line    0x0000080d      0x426 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_line    0x00000c33      0x28c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_line    0x00000ebf      0x175 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_line    0x00001034      0x69b C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_line    0x000016cf      0x299 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_line    0x00001968      0x252 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_line    0x00001bba      0x172 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
 
 .debug_frame    0x00000000      0x95c
  *(.debug_frame)
@@ -1070,26 +1093,26 @@ END GROUP
  .debug_frame   0x00000854       0x7c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
  .debug_frame   0x000008d0       0x8c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
 
-.debug_str      0x00000000     0x2287
+.debug_str      0x00000000     0x2335
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x863 Sequencer.o
-                                0x8e4 (size before relaxing)
- .debug_str     0x00000a6b       0xc7 ShiftRegister/ShiftRegister74HC595.o
+ .debug_str     0x00000208      0x911 Sequencer.o
+                                0x992 (size before relaxing)
+ .debug_str     0x00000b19       0xc7 ShiftRegister/ShiftRegister74HC595.o
                                 0x5ca (size before relaxing)
- .debug_str     0x00000b32     0x1085 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
+ .debug_str     0x00000be0     0x1085 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial.o)
                                0x1379 (size before relaxing)
- .debug_str     0x00001bb7       0x78 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
+ .debug_str     0x00001c65       0x78 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(HardwareSerial0.o)
                                0x11bc (size before relaxing)
- .debug_str     0x00001c2f       0x43 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_str     0x00001cdd       0x43 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
                                 0x2f7 (size before relaxing)
- .debug_str     0x00001c72      0x3c2 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
+ .debug_str     0x00001d20      0x3c2 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(Print.o)
                                0x1031 (size before relaxing)
- .debug_str     0x00002034      0x160 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_str     0x000020e2      0x160 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
                                 0x281 (size before relaxing)
- .debug_str     0x00002194       0xc7 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_str     0x00002242       0xc7 C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
                                 0x2e6 (size before relaxing)
- .debug_str     0x0000225b       0x2c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .debug_str     0x00002309       0x2c C:\Users\KOLTIN~2\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~1\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
                                 0x255 (size before relaxing)
 
 .debug_loc      0x00000000     0x37fe

@@ -23,10 +23,8 @@
 #define TRIGGER_SR_LATCH_PIN 3
 #define TRIGGER_SR_CLOCK_PIN 4
 
-ShiftRegister74HC595 OutputSR(NUM_SHIFT_REGISTERS_OUTPUT, OUTPUT_SR_SERIAL_PIN,
-OUTPUT_SR_CLOCK_PIN, OUTPUT_SR_LATCH_PIN);
-ShiftRegister74HC595 InstrumentTrigger(NUM_SHIFT_REGISTERS_TRIGGER,
-TRIGGER_SR_SERIAL_PIN, TRIGGER_SR_CLOCK_PIN, TRIGGER_SR_LATCH_PIN);
+extern ShiftRegister74HC595 OutputSR;
+extern ShiftRegister74HC595 InstrumentTrigger;
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +38,7 @@ TRIGGER_SR_SERIAL_PIN, TRIGGER_SR_CLOCK_PIN, TRIGGER_SR_LATCH_PIN);
 #define INPUT_SR_LATCH_PIN 6
 #define INPUT_SR_CLOCK_PIN 7
 
-ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be initialized in constructor
+extern ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be initialized in constructor
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -58,7 +56,6 @@ struct OutputBytes{
 	//Array for output bytes
 	uint8_t outputBuffer [NUM_SHIFT_REGISTERS_OUTPUT];
 };
-OutputBytes outputBytes;
 ///////////////////////////////////////////////////////////////////////////////////
 
 
@@ -103,6 +100,7 @@ struct SequencerIO{
 	uint16_t programmedValues[NUM_TIME_POINTS];
 	uint8_t counter; //keeps track of time
 };
+extern SequencerIO seqIO;
 ///////////////////////////////////////////////////////////////////////////////////
 
 

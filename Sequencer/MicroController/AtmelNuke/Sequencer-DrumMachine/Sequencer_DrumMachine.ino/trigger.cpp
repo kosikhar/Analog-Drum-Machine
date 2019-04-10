@@ -7,30 +7,46 @@
 
  #include "trigger.h"
 
- #define self->seqIO->inputBytes inputBytes
- #define self->seqIO->outputBytes outputBytes
-
-//Get reference the sequencer IO object
-void getSeqIORef(Trigger * self, SequencerIO * seqIOPtr)
-{
-	self->seqIO = seqIO;
-}
+ //initialize
+ void Trigger_init(Trigger * self)
+ {
+	self->playNext = 0;
+	self->timeStamp = 0;
+ }
 
 //generate the play next register
 void genPlayNext(Trigger * self)
 {
-	self->seqIO->programmedValues[ self->seqIO->
+	//Play next will just be the programmed values at whatever the counter is
+	//at
+	self->playNext = seqIO.programmedValues[ seqIO.counter ];
 }
 
 //Check timer to see if instrument should trigger
-void triggerInstruments(Trigger * self)
+void checkTimer(Trigger * self)
 {
+	if( elapsed_millis(self->timeStamp) >= DELAY_DEBUG ){
+		self->timeStamp = millis();
 
+		self->triggerInstruments(self);
+	}
 }
 
 //triggers instruments
 //Blocks
 void triggerInstruments(Trigger * self)
 {
+	uint8_t outputBuff[2] = {0};
 
+	outputBuff[1] |= self->playNext >> 8;
+	outputBuff[0] |= self->playNext;
+
+	InstrumentTrigger.setAll(outputBuff);
+	InstrumentTrigger.updateRegisters();
+
+	//Delay 1ms
+	delayMicroseconds(1000);
+
+	InstrumentTrigger.setAllLow();
+	InstrumentTrigger.updateRegisters();
 }
