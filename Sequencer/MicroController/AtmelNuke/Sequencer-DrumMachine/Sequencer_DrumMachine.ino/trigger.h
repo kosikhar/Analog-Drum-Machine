@@ -23,17 +23,21 @@ typedef struct Trigger{
 	uint32_t timeStamp;
 	
 	//Methods
-	void (*getSeqIORef) (Trigger * self);
+	void (*getSeqIORef) (Trigger * self, SequencerIO * seqIOPtr);
 	void (*genPlayNext) (Trigger * self);
+	void (*checkTimer) (Trigger * self);
 	void (*triggerInstruments) (Trigger * self);
 
 } Trigger;
 
 //Get reference the sequencer IO object
-void getSeqIORef(Trigger * self);
+void getSeqIORef(Trigger * self, SequencerIO * seqIOPtr);
 
 //generate the play next register
 void genPlayNext(Trigger * self);
+
+//Check timer to see if instrument should trigger
+void triggerInstruments(Trigger * self);
 
 //triggers instruments
 //Blocks

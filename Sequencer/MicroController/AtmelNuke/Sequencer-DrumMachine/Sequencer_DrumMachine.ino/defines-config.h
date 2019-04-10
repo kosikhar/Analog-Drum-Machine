@@ -54,9 +54,15 @@ struct OutputBytes{
 	uint8_t leds[2];
 
 	uint8_t bpm[3];
+
+	//Array for output bytes
+	uint8_t outputBuffer [NUM_SHIFT_REGISTERS_OUTPUT];
 };
 OutputBytes outputBytes;
+///////////////////////////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////////////////////////////
 //Structure that will contain input bytes
 //In order of shift register use
 //Using 16 buttons --> 2 shift registers
@@ -81,15 +87,23 @@ struct InputBytes{
 	uint8_t startStop;
 
 	uint8_t buttons[2];
-};
 
+	//Array for output bytes
+	uint8_t inputBuffer [NUM_SHIFT_REGISTERS_INPUT];
+};
+///////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////
+//Structure will carry all important data between methods/functions
 #define NUM_TIME_POINTS 16
 struct SequencerIO{
 	InputBytes inputBytes;
 	OutputBytes outputBytes;
 
 	uint16_t programmedValues[NUM_TIME_POINTS];
+	uint8_t counter; //keeps track of time
 };
+///////////////////////////////////////////////////////////////////////////////////
 
 
 #endif /* DEFINES-CONFIG_H_ */

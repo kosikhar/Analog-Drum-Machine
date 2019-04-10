@@ -237,6 +237,12 @@
     <Compile Include="ShiftRegister\ShiftRegister74HC595.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="trigger.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="trigger.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Content Include="readme.html">
     </Content>
   </ItemGroup>

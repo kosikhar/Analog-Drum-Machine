@@ -6,3 +6,5 @@ Sequencer.cpp
 
 ShiftRegister\ShiftRegister74HC595.cpp
 
+trigger.cpp
+

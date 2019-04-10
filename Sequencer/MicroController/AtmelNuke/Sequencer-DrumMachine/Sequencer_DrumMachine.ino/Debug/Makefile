@@ -39,7 +39,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../Sequencer.cpp \
-../ShiftRegister/ShiftRegister74HC595.cpp
+../ShiftRegister/ShiftRegister74HC595.cpp \
+../trigger.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -50,19 +51,23 @@ ASM_SRCS +=
 
 OBJS +=  \
 Sequencer.o \
-ShiftRegister/ShiftRegister74HC595.o
+ShiftRegister/ShiftRegister74HC595.o \
+trigger.o
 
 OBJS_AS_ARGS +=  \
 Sequencer.o \
-ShiftRegister/ShiftRegister74HC595.o
+ShiftRegister/ShiftRegister74HC595.o \
+trigger.o
 
 C_DEPS +=  \
 Sequencer.d \
-ShiftRegister/ShiftRegister74HC595.d
+ShiftRegister/ShiftRegister74HC595.d \
+trigger.d
 
 C_DEPS_AS_ARGS +=  \
 Sequencer.d \
-ShiftRegister/ShiftRegister74HC595.d
+ShiftRegister/ShiftRegister74HC595.d \
+trigger.d
 
 OUTPUT_FILE_PATH +=Sequencer_DrumMachine.ino.elf
 
@@ -79,6 +84,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
