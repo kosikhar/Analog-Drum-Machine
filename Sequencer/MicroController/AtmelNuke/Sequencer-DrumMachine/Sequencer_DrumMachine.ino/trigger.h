@@ -10,7 +10,6 @@
 #define TRIGGER_H_
 
 #include "defines-config.h"
-#include "helperFunctions.h"
 
 #define DELAY_DEBUG 500 //in milliseconds
 

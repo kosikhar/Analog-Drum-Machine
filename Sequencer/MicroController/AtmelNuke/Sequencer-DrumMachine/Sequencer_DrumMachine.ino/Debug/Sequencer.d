@@ -1,4 +1,4 @@
-Sequencer.d Sequencer.o: .././Sequencer.cpp \
+Sequencer.d Sequencer.o: .././Sequencer.cpp .././defines-config.h \
  ..\\..\ArduinoCore\include\core/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
@@ -34,8 +34,11 @@ Sequencer.d Sequencer.o: .././Sequencer.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ..\\..\ArduinoCore\include\core/Arduino.h \
  ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h \
- .././defines-config.h .././ShiftRegister/ShiftRegister74HC595.h \
- .././ShiftRegister/ShiftRegister74HC165.h
+ .././ShiftRegister/ShiftRegister74HC595.h \
+ .././ShiftRegister/ShiftRegister74HC165.h .././helperFunctions.h \
+ .././trigger.h
+
+.././defines-config.h:
 
 ..\\..\ArduinoCore\include\core/Arduino.h:
 
@@ -107,8 +110,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h:
 
-.././defines-config.h:
-
 .././ShiftRegister/ShiftRegister74HC595.h:
 
 .././ShiftRegister/ShiftRegister74HC165.h:
+
+.././helperFunctions.h:
+
+.././trigger.h:

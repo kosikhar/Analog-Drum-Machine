@@ -8,6 +8,9 @@
 
 #ifndef DEFINES-CONFIG_H_
 #define DEFINES-CONFIG_H_
+
+#include <Arduino.h>
+
 ///////////////////////////////////////////////////////////////////////////////////
 //Library to use 74HC595 a SIPO shift register
 #include "ShiftRegister/ShiftRegister74HC595.h"
@@ -103,5 +106,6 @@ struct SequencerIO{
 extern SequencerIO seqIO;
 ///////////////////////////////////////////////////////////////////////////////////
 
+#include "helperFunctions.h"
 
 #endif /* DEFINES-CONFIG_H_ */

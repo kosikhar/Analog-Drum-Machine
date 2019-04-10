@@ -38,6 +38,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../helperFunctions.cpp \
 ../Sequencer.cpp \
 ../ShiftRegister/ShiftRegister74HC595.cpp \
 ../trigger.cpp
@@ -50,21 +51,25 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+helperFunctions.o \
 Sequencer.o \
 ShiftRegister/ShiftRegister74HC595.o \
 trigger.o
 
 OBJS_AS_ARGS +=  \
+helperFunctions.o \
 Sequencer.o \
 ShiftRegister/ShiftRegister74HC595.o \
 trigger.o
 
 C_DEPS +=  \
+helperFunctions.d \
 Sequencer.d \
 ShiftRegister/ShiftRegister74HC595.d \
 trigger.d
 
 C_DEPS_AS_ARGS +=  \
+helperFunctions.d \
 Sequencer.d \
 ShiftRegister/ShiftRegister74HC595.d \
 trigger.d
@@ -84,6 +89,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

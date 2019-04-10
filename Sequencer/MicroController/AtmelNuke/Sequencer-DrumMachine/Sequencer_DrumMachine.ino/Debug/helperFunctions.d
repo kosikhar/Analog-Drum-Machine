@@ -1,5 +1,5 @@
-trigger.d trigger.o: .././trigger.cpp .././trigger.h \
- .././defines-config.h ..\\..\ArduinoCore\include\core/Arduino.h \
+helperFunctions.d helperFunctions.o: .././helperFunctions.cpp \
+ .././helperFunctions.h ..\\..\ArduinoCore\include\core/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -33,13 +33,9 @@ trigger.d trigger.o: .././trigger.cpp .././trigger.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  ..\\..\ArduinoCore\include\core/Arduino.h \
- ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h \
- .././ShiftRegister/ShiftRegister74HC595.h \
- .././ShiftRegister/ShiftRegister74HC165.h .././helperFunctions.h
+ ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h
 
-.././trigger.h:
-
-.././defines-config.h:
+.././helperFunctions.h:
 
 ..\\..\ArduinoCore\include\core/Arduino.h:
 
@@ -110,9 +106,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ..\\..\ArduinoCore\include\core/Arduino.h:
 
 ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h:
-
-.././ShiftRegister/ShiftRegister74HC595.h:
-
-.././ShiftRegister/ShiftRegister74HC165.h:
-
-.././helperFunctions.h:

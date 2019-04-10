@@ -225,6 +225,9 @@
     <Compile Include="defines-config.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="helperFunctions.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="helperFunctions.h">
       <SubType>compile</SubType>
     </Compile>
