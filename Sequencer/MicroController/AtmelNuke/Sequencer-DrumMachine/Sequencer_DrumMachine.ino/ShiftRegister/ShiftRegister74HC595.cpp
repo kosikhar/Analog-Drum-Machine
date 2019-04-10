@@ -93,8 +93,8 @@ void ShiftRegister74HC595::updateRegisters()
         shiftOut(_serialDataPin, _clockPin, MSBFIRST, _digitalValues[i]);
     }
     
-    digitalWrite(_latchPin, HIGH); 
-    digitalWrite(_latchPin, LOW); 
+    digitalWrite(_latchPin, HIGH);
+    digitalWrite(_latchPin, LOW);
 }
 
 

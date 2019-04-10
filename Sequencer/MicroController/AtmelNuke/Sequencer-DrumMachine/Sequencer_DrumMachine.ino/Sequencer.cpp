@@ -34,18 +34,29 @@ ShiftRegister74HC595 InstrumentTrigger(NUM_SHIFT_REGISTERS_TRIGGER,
 
 ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be intialized in constructor
 
-void setup() {
+//Array for output bytes
+uint8_t outputBuffer [NUM_SHIFT_REGISTERS_OUTPUT];
 
+void setup() {
+	Serial.begin(9600);
     //Initialize input shift register
 	InputSR.begin(INPUT_SR_LATCH_PIN, INPUT_SR_SERIAL_PIN, INPUT_SR_CLOCK_PIN);
 
+	for(uint8_t i=0; i <= NUM_SHIFT_REGISTERS_OUTPUT ; i++){
+		outputBuffer[i] = B10101010;
+	}
+}
+
+void func(uint8_t * outputBufferRef){
+	for(uint8_t i=0; i <= NUM_SHIFT_REGISTERS_OUTPUT ; i++){
+		outputBuffer[i] = B11110000;
+	}
 }
 
 void loop() {
 
-	InstrumentTrigger.setAllHigh();
-    delay(1);
-	InstrumentTrigger.setAllLow();
-	delay(999);
-	
+	func(outputBuffer);
+
+	OutputSR.setAll(outputBuffer);
+	OutputSR.updateRegisters();
 }
