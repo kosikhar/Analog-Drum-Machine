@@ -4,9 +4,6 @@
 
 #include "defines-config.h"
 
-//Array for output bytes
-uint8_t outputBuffer [NUM_SHIFT_REGISTERS_OUTPUT];
-
 void setup() {
 	Serial.begin(9600);
     //Initialize input shift register
