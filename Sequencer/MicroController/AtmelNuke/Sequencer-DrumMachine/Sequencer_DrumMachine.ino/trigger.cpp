@@ -7,45 +7,55 @@
 
  #include "trigger.h"
 
+ Trigger trigger;
+
  //initialize
- void Trigger_init(Trigger * self)
+ void Trigger_init(void)
  {
-	self->playNext = 0;
-	self->timeStamp = 0;
+	trigger.playNext = 0;
+	trigger.timeStamp = 0;
  }
 
 //generate the play next register
-void genPlayNext(Trigger * self)
+void genPlayNext(void)
 {
 	//Play next will just be the programmed values at whatever the counter is
 	//at
-	self->playNext = seqIO.programmedValues[ seqIO.counter ];
+	trigger.playNext = seqIO.programmedValues[ seqIO.counter ];
 }
 
 //Check timer to see if instrument should trigger
-void checkTimer(Trigger * self)
+void checkTimer_Trigger(void)
 {
-	if( elapsed_millis(self->timeStamp) >= DELAY_DEBUG ){
-		self->timeStamp = millis();
+	if( elapsed_millis(trigger.timeStamp) >= seqIO.bpmDelay ){
+		trigger.timeStamp = millis();
+		
+		//Increment counter
+		seqIO.counter++;
+		if(seqIO.counter >= seqIO.loopBack){
+			seqIO.counter = 0;	
+		}
 
-		self->triggerInstruments(self);
+		triggerInstruments();
 	}
 }
 
 //triggers instruments
 //Blocks
-void triggerInstruments(Trigger * self)
+void triggerInstruments(void)
 {
 	uint8_t outputBuff[2] = {0};
 
-	outputBuff[1] |= self->playNext >> 8;
-	outputBuff[0] |= self->playNext;
+	genPlayNext();
+
+	outputBuff[1] |= trigger.playNext >> 8;
+	outputBuff[0] |= trigger.playNext;
 
 	InstrumentTrigger.setAll(outputBuff);
 	InstrumentTrigger.updateRegisters();
 
 	//Delay 1ms
-	delayMicroseconds(1000);
+	delayMicroseconds(1000 + TRIGGER_OFFSET);
 
 	InstrumentTrigger.setAllLow();
 	InstrumentTrigger.updateRegisters();

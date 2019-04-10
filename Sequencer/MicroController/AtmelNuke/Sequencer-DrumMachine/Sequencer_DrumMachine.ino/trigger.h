@@ -11,9 +11,9 @@
 
 #include "defines-config.h"
 
-#define DELAY_DEBUG 500 //in milliseconds
+#define DELAY_DEBUG 10 //in milliseconds
 
-typedef struct Trigger{
+struct Trigger{
 	
 	//The instruments that will play next
 	uint16_t playNext;
@@ -21,25 +21,22 @@ typedef struct Trigger{
 	//Used to keep time
 	uint32_t timeStamp;
 	
-	//Methods
-	void (*Trigger_init) (Trigger * self);
-	void (*genPlayNext) (Trigger * self);
-	void (*checkTimer) (Trigger * self);
-	void (*triggerInstruments) (Trigger * self);
+	//initializer
+	void (*Trigger_init) (void);
+};
+extern Trigger trigger;
 
-} Trigger;
-
-//initalize Trigger
-void Trigger_init( Trigger * self );
+//initialize Trigger
+void Trigger_init(void);
 
 //generate the play next register
-void genPlayNext(Trigger * self);
+void genPlayNext(void);
 
 //Check timer to see if instrument should trigger
-void checkTimer(Trigger * self);
+void checkTimer_Trigger(void);
 
 //triggers instruments
 //Blocks
-void triggerInstruments(Trigger * self); 
+void triggerInstruments(void); 
 
 #endif /* TRIGGER_H_ */

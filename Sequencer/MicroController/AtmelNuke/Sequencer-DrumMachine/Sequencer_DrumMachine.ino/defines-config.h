@@ -10,6 +10,14 @@
 #define DEFINES-CONFIG_H_
 
 #include <Arduino.h>
+///////////////////////////////////////////////////////////////////////////////////
+#define MAX_TIME_POINTS 16
+#define MAX_TIME_POINTS_DEFAULT 16
+
+#define BPM_DEFAULT 120 //500ms period
+
+#define TRIGGER_OFFSET -600
+///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
 //Library to use 74HC595 a SIPO shift register
@@ -49,12 +57,12 @@ extern ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be initialized in cons
 //In order of shift register use
 struct OutputBytes{
 	//These bytes use the same two displays
-	uint8_t counter[2];
-	uint8_t loopBack[2];
+	uint8_t counterDisplay[2];
+	uint8_t loopBackDisplay[2];
 
 	uint8_t leds[2];
 
-	uint8_t bpm[3];
+	uint8_t bpmDisplay[3];
 
 	//Array for output bytes
 	uint8_t outputBuffer [NUM_SHIFT_REGISTERS_OUTPUT];
@@ -102,6 +110,10 @@ struct SequencerIO{
 
 	uint16_t programmedValues[NUM_TIME_POINTS];
 	uint8_t counter; //keeps track of time
+	uint8_t loopBack; //keeps track of max value of time
+
+	uint16_t bpm; //keeps track of BPM
+	uint16_t bpmDelay; //Conversion of BPM to a delay in ms.
 };
 extern SequencerIO seqIO;
 ///////////////////////////////////////////////////////////////////////////////////
