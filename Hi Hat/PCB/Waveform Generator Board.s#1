@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -20087,33 +20087,33 @@ Trimpot should be around 2.19k</text>
 <attribute name="NAME" x="286.004" y="196.088" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="286.258" y="184.658" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
-<instance part="J2" gate="J$1" x="238.76" y="127" smashed="yes">
-<attribute name="VALUE" x="236.22" y="119.634" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="236.22" y="132.588" size="1.778" layer="95" font="vector"/>
+<instance part="J2" gate="J$1" x="238.76" y="129.54" smashed="yes">
+<attribute name="VALUE" x="236.22" y="122.174" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="236.22" y="135.128" size="1.778" layer="95" font="vector"/>
 </instance>
 <instance part="J3" gate="J$1" x="256.54" y="129.54" smashed="yes">
 <attribute name="VALUE" x="254" y="122.174" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="254" y="135.128" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J4" gate="J$1" x="256.54" y="111.76" smashed="yes">
+<instance part="J4" gate="J$1" x="238.76" y="111.76" smashed="yes">
+<attribute name="VALUE" x="236.22" y="104.394" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="236.22" y="117.348" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="J5" gate="J$1" x="256.54" y="111.76" smashed="yes">
 <attribute name="VALUE" x="254" y="104.394" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="254" y="117.348" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J5" gate="J$1" x="256.54" y="93.98" smashed="yes">
-<attribute name="VALUE" x="254" y="86.614" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="254" y="99.568" size="1.778" layer="95" font="vector"/>
+<instance part="J6" gate="J$1" x="238.76" y="93.98" smashed="yes">
+<attribute name="VALUE" x="236.22" y="86.614" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="236.22" y="99.568" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J6" gate="J$1" x="256.54" y="76.2" smashed="yes">
-<attribute name="VALUE" x="254" y="68.834" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="254" y="81.788" size="1.778" layer="95" font="vector"/>
+<instance part="J7" gate="G$1" x="259.08" y="93.98" smashed="yes">
+<attribute name="VALUE" x="256.54" y="89.154" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="256.54" y="99.568" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="J7" gate="G$1" x="320.04" y="129.54" smashed="yes">
-<attribute name="VALUE" x="317.5" y="124.714" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="317.5" y="135.128" size="1.778" layer="95" font="vector"/>
-</instance>
-<instance part="J8" gate="G$1" x="320.04" y="109.22" smashed="yes">
-<attribute name="VALUE" x="317.5" y="104.394" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="317.5" y="114.808" size="1.778" layer="95" font="vector"/>
+<instance part="J8" gate="G$1" x="281.94" y="93.98" smashed="yes">
+<attribute name="VALUE" x="279.4" y="89.154" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="279.4" y="99.568" size="1.778" layer="95" font="vector"/>
 </instance>
 <instance part="TRIM1" gate="G$1" x="101.6" y="279.4" smashed="yes">
 <attribute name="NAME" x="95.631" y="275.59" size="1.778" layer="95" rot="R90"/>

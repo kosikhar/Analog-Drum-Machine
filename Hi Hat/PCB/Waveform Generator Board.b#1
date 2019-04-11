@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -175,8 +175,8 @@
 <wire x1="100" y1="0" x2="100" y2="50" width="0" layer="20"/>
 <wire x1="100" y1="50" x2="0" y2="50" width="0" layer="20"/>
 <wire x1="0" y1="50" x2="0" y2="0" width="0" layer="20"/>
-<text x="64" y="20" size="1.016" layer="26" rot="MR270">+12V</text>
-<text x="61.5" y="20" size="1.016" layer="26" rot="MR270">-12V</text>
+<text x="63" y="20" size="1.016" layer="25" rot="R270">+12V</text>
+<text x="60.5" y="20" size="1.016" layer="25" rot="R270">-12V</text>
 <text x="38" y="2" size="1.6764" layer="21">Cymbal Waveform PCB
 March 16, 2019</text>
 <text x="4.2" y="49" size="0.8128" layer="21">SQ</text>
