@@ -1,5 +1,5 @@
-trigger.d trigger.o: .././trigger.cpp .././trigger.h \
- .././defines-config.h ..\\..\ArduinoCore\include\core/Arduino.h \
+output.d output.o: .././output.cpp .././output.h .././defines-config.h \
+ ..\\..\ArduinoCore\include\core/Arduino.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdbool.h \
@@ -38,7 +38,7 @@ trigger.d trigger.o: .././trigger.cpp .././trigger.h \
  .././ShiftRegister/ShiftRegister74HC595.h \
  .././ShiftRegister/ShiftRegister74HC165.h .././helperFunctions.h
 
-.././trigger.h:
+.././output.h:
 
 .././defines-config.h:
 

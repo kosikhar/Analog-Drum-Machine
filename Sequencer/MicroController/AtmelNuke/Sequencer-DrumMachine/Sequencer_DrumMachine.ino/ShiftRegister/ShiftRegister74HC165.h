@@ -45,7 +45,7 @@ private:
 	ShiftType lastState;
 	ShiftType currentState;
 public:
-	_ShiftIn() : dataWidth(chipCount * 8), pulseWidth(5), lastState(0), currentState(0) {}
+	_ShiftIn() : dataWidth(chipCount * 8), pulseWidth(25), lastState(0), currentState(0) {}
 	
 	// setup all pins
 	void begin(int pload, int data, int clock) {
@@ -80,11 +80,9 @@ public:
 		lastState = currentState;
 		ShiftType result = 0;
 
-		//digitalWrite(clockEnablePin, HIGH);
 		digitalWrite(ploadPin, LOW);
 		delayMicroseconds(pulseWidth);
 		digitalWrite(ploadPin, HIGH);
-		//digitalWrite(clockEnablePin, LOW);
 
 		for(int i = 0; i < dataWidth; i++) {
 			ShiftType value = digitalRead(dataPin);
@@ -119,8 +117,5 @@ class ShiftIn<3> : public _ShiftIn<3, uint32_t> {};
 // four shift registers (32 bit state)
 template<>
 class ShiftIn<4> : public _ShiftIn<4, uint32_t> {};
-template<>
-//five shift registers
-class ShiftIn<5> : public _ShiftIn<5, uint32_t> {};
 
 #endif

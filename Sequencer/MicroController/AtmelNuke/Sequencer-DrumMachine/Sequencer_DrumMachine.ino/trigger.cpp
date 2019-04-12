@@ -10,10 +10,12 @@
  Trigger trigger;
 
  //initialize
- void Trigger_init(void)
+ void Trigger_init(volatile SequencerIO & seqIORef)
  {
 	trigger.playNext = 0;
 	trigger.timeStamp = 0;
+
+	trigger.seqIOPtr = &seqIORef;
  }
 
 //generate the play next register
@@ -21,19 +23,19 @@ void genPlayNext(void)
 {
 	//Play next will just be the programmed values at whatever the counter is
 	//at
-	trigger.playNext = seqIO.programmedValues[ seqIO.counter ];
+	trigger.playNext = trigger.seqIOPtr->programmedValues[ trigger.seqIOPtr->counter ];
 }
 
 //Check timer to see if instrument should trigger
 void checkTimer_Trigger(void)
 {
-	if( elapsed_millis(trigger.timeStamp) >= seqIO.bpmDelay ){
+	if( elapsed_millis(trigger.timeStamp) >= trigger.seqIOPtr->bpmDelay ){
 		trigger.timeStamp = millis();
 		
 		//Increment counter
-		seqIO.counter++;
-		if(seqIO.counter >= seqIO.loopBack){
-			seqIO.counter = 0;	
+		trigger.seqIOPtr->counter++;
+		if(trigger.seqIOPtr->counter >= trigger.seqIOPtr->loopBack){
+			trigger.seqIOPtr->counter = 0;	
 		}
 
 		triggerInstruments();
@@ -48,8 +50,8 @@ void triggerInstruments(void)
 
 	genPlayNext();
 
-	outputBuff[1] |= trigger.playNext >> 8;
-	outputBuff[0] |= trigger.playNext;
+	outputBuff[1] = trigger.playNext >> 8;
+	outputBuff[0] = trigger.playNext;
 
 	InstrumentTrigger.setAll(outputBuff);
 	InstrumentTrigger.updateRegisters();

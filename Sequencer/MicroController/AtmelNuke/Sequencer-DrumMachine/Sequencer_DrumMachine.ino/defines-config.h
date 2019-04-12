@@ -10,13 +10,18 @@
 #define DEFINES-CONFIG_H_
 
 #include <Arduino.h>
-///////////////////////////////////////////////////////////////////////////////////
-#define MAX_TIME_POINTS 16
-#define MAX_TIME_POINTS_DEFAULT 16
+////MAIN CONFIG////////////////////////////////////////////////////////////////////
+#define MAX_TIME_POINTS 64
+#define MAX_TIME_POINTS_DEFAULT 64
+#define SIZE_OF_MEASURE 16
 
-#define BPM_DEFAULT 120 //500ms period
+#define BPM_DEFAULT 360 //500ms period
 
-#define TRIGGER_OFFSET -600
+#define TRIGGER_OFFSET -600 //microseconds
+
+#define INPUT_POLL_RATE 250//in milliseconds
+#define OUTPUT_PRINT_RATE 100//in milliseconds
+#define ENCODER_POLL_RATE 25//in milliseconds
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -45,9 +50,9 @@ extern ShiftRegister74HC595 InstrumentTrigger;
 //Declare objects for input shift registers
 #define NUM_SHIFT_REGISTERS_INPUT 5
 
-#define INPUT_SR_SERIAL_PIN 5
+#define INPUT_SR_SERIAL_PIN 7
 #define INPUT_SR_LATCH_PIN 6
-#define INPUT_SR_CLOCK_PIN 7
+#define INPUT_SR_CLOCK_PIN 5
 
 extern ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be initialized in constructor
 ///////////////////////////////////////////////////////////////////////////////////
@@ -55,12 +60,21 @@ extern ShiftIn<NUM_SHIFT_REGISTERS_INPUT> InputSR; //Well be initialized in cons
 ///////////////////////////////////////////////////////////////////////////////////
 //Structure that will contain output bytes
 //In order of shift register use
+#define BPM_LSB 6
+#define BPM_MIDDLE_BYTE 5
+#define BPM_MSB 4
+#define LEDS_HIGH_BYTE_OFFSET 3
+#define LEDS_LOW_BYTE_OFFSET 2
+#define COUNTER_LOOPBACK_LSB 1
+#define COUNTER_LOOPBACK_MSB 0
+
 struct OutputBytes{
 	//These bytes use the same two displays
 	uint8_t counterDisplay[2];
 	uint8_t loopBackDisplay[2];
 
 	uint8_t leds[2];
+	uint16_t leds_16Bit;
 
 	uint8_t bpmDisplay[3];
 
@@ -84,11 +98,17 @@ struct OutputBytes{
 // [Reset    ,Start/Stop, RSB6     ,          ,         ,         ,         ,   RSB1    ]
 // [BTN16    ,          ,          ,          ,         ,         ,         ,   BTN9    ]
 // [BTN8     ,          ,          ,          ,         ,         ,         ,   BTN1    ]
+#define BUTTON_HIGH_BYTE_OFFSET 4
+#define BUTTON_LOW_BYTE_OFFSET 5
+#define INSTRUMENT_SELECT_HIGH_BYTE 1
+#define INSTRUMENT_SELECT_LOW_BYTE 2
+
 struct InputBytes{
 	uint8_t encoder1;
 	uint8_t encoder2;
 
 	uint8_t instrumentSelect[2]; //12 bit
+	uint16_t instrumentSelect_16Bit;
 
 	uint8_t reset;
 
@@ -103,20 +123,30 @@ struct InputBytes{
 
 ///////////////////////////////////////////////////////////////////////////////////
 //Structure will carry all important data between methods/functions
-#define NUM_TIME_POINTS 16
 struct SequencerIO{
 	InputBytes inputBytes;
 	OutputBytes outputBytes;
 
-	uint16_t programmedValues[NUM_TIME_POINTS];
+	uint16_t programmedValues[MAX_TIME_POINTS];
 	uint8_t counter; //keeps track of time
 	uint8_t loopBack; //keeps track of max value of time
 
 	uint16_t bpm; //keeps track of BPM
 	uint16_t bpmDelay; //Conversion of BPM to a delay in ms.
 };
-extern SequencerIO seqIO;
+volatile extern SequencerIO seqIO;
 ///////////////////////////////////////////////////////////////////////////////////
+
+
+//DRUM POSITIONS//
+#define HIHAT_OPEN (15-0)
+#define HIHAT_CLOSED (15-1)
+#define COWBELL (15-3)
+#define RIDE (15-4)
+#define HI_TOM (15-6)
+#define MID_LOW_TOM (15-7)
+#define KICK (15-9)
+#define SNARE (15-10)
 
 #include "helperFunctions.h"
 

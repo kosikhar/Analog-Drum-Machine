@@ -20,14 +20,17 @@ struct Trigger{
 
 	//Used to keep time
 	uint32_t timeStamp;
+
+	//Reference to SeqIO
+	volatile SequencerIO * seqIOPtr;
 	
 	//initializer
-	void (*Trigger_init) (void);
+	void (*Trigger_init) (volatile SequencerIO & seqIORef);
 };
 extern Trigger trigger;
 
 //initialize Trigger
-void Trigger_init(void);
+void Trigger_init(volatile SequencerIO & seqIORef);
 
 //generate the play next register
 void genPlayNext(void);

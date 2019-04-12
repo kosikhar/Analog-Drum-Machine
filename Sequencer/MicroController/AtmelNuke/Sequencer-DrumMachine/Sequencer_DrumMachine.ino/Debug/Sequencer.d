@@ -11,6 +11,7 @@ Sequencer.d Sequencer.o: .././Sequencer.cpp .././defines-config.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
+ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include/avr/iom328.h \
  C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include/avr/iom328p.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\portpins.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\common.h \
@@ -36,7 +37,7 @@ Sequencer.d Sequencer.o: .././Sequencer.cpp .././defines-config.h \
  ..\\..\ArduinoCore\include\variants\standard/pins_arduino.h \
  .././ShiftRegister/ShiftRegister74HC595.h \
  .././ShiftRegister/ShiftRegister74HC165.h .././helperFunctions.h \
- .././trigger.h
+ .././trigger.h .././input.h .././output.h
 
 .././defines-config.h:
 
@@ -63,6 +64,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h:
+
+C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include/avr/iom328.h:
 
 C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include/avr/iom328p.h:
 
@@ -117,3 +120,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././helperFunctions.h:
 
 .././trigger.h:
+
+.././input.h:
+
+.././output.h:
