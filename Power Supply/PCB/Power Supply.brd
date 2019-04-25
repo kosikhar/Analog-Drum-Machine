@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.2">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -531,6 +531,9 @@ design rules under a new name.</description>
 <param name="checkRestrict" value="0"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -673,40 +676,40 @@ design rules under a new name.</description>
 <element name="33V" library="Capstone" package="3_PIN_TE" value="" x="45" y="149.19" smashed="yes" rot="R180">
 <attribute name="NAME" x="49.4" y="133.09" size="1.778" layer="25" rot="R180"/>
 </element>
-<element name="F1" library="Capstone" package="FUSEHOLDER" value="" x="2" y="128.1" smashed="yes" rot="R270">
+<element name="F1" library="Capstone" package="FUSEHOLDER" value="500mA Slow Blow" x="2" y="128.1" smashed="yes" rot="R270">
 <attribute name="NAME" x="11.865" y="127.827" size="1.778" layer="25" rot="R270"/>
 <attribute name="VALUE" x="12.5" y="114.3" size="1.778" layer="27" rot="R270"/>
 </element>
-<element name="F2" library="Capstone" package="FUSEHOLDER" value="" x="14.6" y="128.1" smashed="yes" rot="R270">
+<element name="F2" library="Capstone" package="FUSEHOLDER" value="500mA Slow Blow" x="14.6" y="128.1" smashed="yes" rot="R270">
 <attribute name="NAME" x="24.465" y="127.954" size="1.778" layer="25" rot="R270"/>
 <attribute name="VALUE" x="25.1" y="114.3" size="1.778" layer="27" rot="R270"/>
 </element>
-<element name="F3" library="Capstone" package="FUSEHOLDER" value="" x="27.2" y="128.1" smashed="yes" rot="R270">
+<element name="F3" library="Capstone" package="FUSEHOLDER" value="750mA Slow Blow" x="27.2" y="128.1" smashed="yes" rot="R270">
 <attribute name="NAME" x="37.192" y="127.827" size="1.778" layer="25" rot="R270"/>
 <attribute name="VALUE" x="37.7" y="114.3" size="1.778" layer="27" rot="R270"/>
 </element>
-<element name="D1" library="Capstone" package="DIODE-1N4001" value="" x="18" y="94" smashed="yes" rot="R270">
+<element name="D1" library="Capstone" package="DIODE-1N4001" value="1N4005" x="18" y="94" smashed="yes" rot="R270">
 <attribute name="NAME" x="15.714" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 </element>
-<element name="D2" library="Capstone" package="DIODE-1N4001" value="" x="13" y="94" smashed="yes" rot="R90">
+<element name="D2" library="Capstone" package="DIODE-1N4001" value="1N4005" x="13" y="94" smashed="yes" rot="R90">
 <attribute name="NAME" x="11.349" y="94.011" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 </element>
-<element name="D3" library="Capstone" package="DIODE-1N4001" value="" x="8" y="94" smashed="yes" rot="R270">
+<element name="D3" library="Capstone" package="DIODE-1N4001" value="1N4005" x="8" y="94" smashed="yes" rot="R270">
 <attribute name="NAME" x="5.841" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 </element>
-<element name="D4" library="Capstone" package="DIODE-1N4001" value="" x="3" y="94" smashed="yes" rot="R90">
+<element name="D4" library="Capstone" package="DIODE-1N4001" value="1N4005" x="3" y="94" smashed="yes" rot="R90">
 <attribute name="NAME" x="1.476" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 </element>
-<element name="D5" library="Capstone" package="DIODE-1N4001" value="" x="38" y="94" smashed="yes" rot="R270">
+<element name="D5" library="Capstone" package="DIODE-1N4001" value="1N4005" x="38" y="94" smashed="yes" rot="R270">
 <attribute name="NAME" x="35.841" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 </element>
-<element name="D6" library="Capstone" package="DIODE-1N4001" value="" x="33" y="94" smashed="yes" rot="R90">
+<element name="D6" library="Capstone" package="DIODE-1N4001" value="1N4005" x="33" y="94" smashed="yes" rot="R90">
 <attribute name="NAME" x="31.476" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 </element>
-<element name="D7" library="Capstone" package="DIODE-1N4001" value="" x="28" y="94" smashed="yes" rot="R270">
+<element name="D7" library="Capstone" package="DIODE-1N4001" value="1N4005" x="28" y="94" smashed="yes" rot="R270">
 <attribute name="NAME" x="25.714" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 </element>
-<element name="D8" library="Capstone" package="DIODE-1N4001" value="" x="23" y="94" smashed="yes" rot="R90">
+<element name="D8" library="Capstone" package="DIODE-1N4001" value="1N4005" x="23" y="94" smashed="yes" rot="R90">
 <attribute name="NAME" x="21.476" y="94" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center"/>
 </element>
 <element name="C1" library="Capstone" package="CERAMIC_CAPACITOR" value="0.1uF/50V" x="20.575" y="56.819" smashed="yes" rot="MR90">
@@ -715,7 +718,7 @@ design rules under a new name.</description>
 <element name="C2" library="Capstone" package="CERAMIC_CAPACITOR" value="0.1uF/50V" x="67.248" y="78.99" smashed="yes">
 <attribute name="NAME" x="64.748" y="80.69" size="1.016" layer="25"/>
 </element>
-<element name="D10" library="Capstone" package="DIODE-1N4001" value="" x="53.704" y="61.8" smashed="yes">
+<element name="D10" library="Capstone" package="DIODE-1N4001" value="1N4005" x="53.704" y="61.8" smashed="yes">
 <attribute name="NAME" x="53.704" y="63.324" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 </element>
 <element name="C8" library="Capstone" package="220UF_CAP" value="220uF/50V" x="52.6" y="70.8" smashed="yes" rot="R180">
@@ -727,10 +730,10 @@ design rules under a new name.</description>
 <element name="R5" library="Capstone" package="0.5W_RES" value="1K/0.5W" x="54.6" y="57.6" smashed="yes">
 <attribute name="NAME" x="53.224" y="58.738" size="0.6096" layer="25"/>
 </element>
-<element name="Q1" library="Capstone" package="TO-92" value="" x="57.5648" y="39.5" smashed="yes">
+<element name="Q1" library="Capstone" package="TO-92" value="2N4401" x="57.5648" y="39.5" smashed="yes">
 <attribute name="NAME" x="57.5648" y="42.548" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
 </element>
-<element name="Q2" library="Capstone" package="TO-92" value="" x="41" y="27.9" smashed="yes" rot="R270">
+<element name="Q2" library="Capstone" package="TO-92" value="2N4401" x="41" y="27.9" smashed="yes" rot="R270">
 <attribute name="NAME" x="44.048" y="27.9" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 </element>
 <element name="TRIM1" library="Capstone" package="10K_TRIM" value="10k" x="79.5" y="28.5" smashed="yes" rot="R180">
@@ -775,7 +778,7 @@ design rules under a new name.</description>
 <element name="R8" library="Capstone" package="0.25W_RES" value="10k" x="82.5" y="56.9" smashed="yes" rot="R180">
 <attribute name="NAME" x="83.876" y="55.762" size="0.6096" layer="25" rot="R180"/>
 </element>
-<element name="D12" library="Capstone" package="DIODE-1N4001" value="" x="69.7" y="84" smashed="yes" rot="R180">
+<element name="D12" library="Capstone" package="DIODE-1N4001" value="1N4005" x="69.7" y="84" smashed="yes" rot="R180">
 <attribute name="NAME" x="69.7" y="82.476" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 </element>
 <element name="C13" library="Capstone" package="220UF_CAP" value="220uF/50V" x="69.773" y="93" smashed="yes">
@@ -787,10 +790,10 @@ design rules under a new name.</description>
 <element name="R10" library="Capstone" package="0.5W_RES" value="1K/0.5W" x="83" y="99.3" smashed="yes">
 <attribute name="NAME" x="81.624" y="100.438" size="0.6096" layer="25"/>
 </element>
-<element name="Q4" library="Capstone" package="TO-92" value="" x="83.2" y="84" smashed="yes" rot="R180">
+<element name="Q4" library="Capstone" package="TO-92" value="2N4403" x="83.2" y="84" smashed="yes" rot="R180">
 <attribute name="NAME" x="83.2" y="80.952" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 </element>
-<element name="Q5" library="Capstone" package="TO-92" value="" x="77.703" y="38.049" smashed="yes" rot="R180">
+<element name="Q5" library="Capstone" package="TO-92" value="2N4403" x="77.703" y="38.049" smashed="yes" rot="R180">
 <attribute name="NAME" x="77.703" y="35.001" size="0.6096" layer="25" font="vector" ratio="20" rot="R180" align="bottom-center"/>
 </element>
 <element name="TRIM2" library="Capstone" package="10K_TRIM" value="10k" x="93.117" y="28.5" smashed="yes" rot="R180">
@@ -811,10 +814,10 @@ design rules under a new name.</description>
 <element name="TRIM3" library="Capstone" package="10K_TRIM" value="" x="87.2" y="116" smashed="yes" rot="R180">
 <attribute name="NAME" x="84.914" y="111.555" size="1.016" layer="25" rot="R180"/>
 </element>
-<element name="R13" library="Capstone" package="0.25W_RES" value="10k" x="81.57813125" y="124.5" smashed="yes" rot="R270">
+<element name="R13" library="Capstone" package="0.25W_RES" value="100" x="81.57813125" y="124.5" smashed="yes" rot="R270">
 <attribute name="NAME" x="82.71613125" y="125.876" size="0.6096" layer="25" rot="R270"/>
 </element>
-<element name="D13" library="Capstone" package="1W_ZENER" value="5.1V" x="91.19999375" y="124.5" smashed="yes" rot="R90">
+<element name="D13" library="Capstone" package="1W_ZENER" value="3.3V" x="91.19999375" y="124.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="90.05699375" y="122.468" size="0.8128" layer="25" rot="R90"/>
 </element>
 <element name="C17" library="Capstone" package="CERAMIC_CAPACITOR" value="1uF/50V" x="86.2562625" y="124.5" smashed="yes" rot="R270">
@@ -1749,6 +1752,13 @@ design rules under a new name.</description>
 <wire x1="40.08" y1="99.08" x2="38" y2="99.08" width="1.27" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>

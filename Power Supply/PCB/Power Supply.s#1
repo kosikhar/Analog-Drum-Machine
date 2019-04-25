@@ -1208,25 +1208,25 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R14" library="Capstone" deviceset="5W_RES" device="" value="1 OHM/5W"/>
 <part name="6.3V" library="Capstone" deviceset="TE-2PIN" device=""/>
 <part name="33V" library="Capstone" deviceset="TE-3PIN" device=""/>
-<part name="F1" library="Capstone" deviceset="FUSE" device=""/>
-<part name="F2" library="Capstone" deviceset="FUSE" device=""/>
-<part name="F3" library="Capstone" deviceset="FUSE" device=""/>
-<part name="D1" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D2" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D3" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D4" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D5" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D6" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D7" library="Capstone" deviceset="1N4005" device=""/>
-<part name="D8" library="Capstone" deviceset="1N4005" device=""/>
+<part name="F1" library="Capstone" deviceset="FUSE" device="" value="500mA Slow Blow"/>
+<part name="F2" library="Capstone" deviceset="FUSE" device="" value="500mA Slow Blow"/>
+<part name="F3" library="Capstone" deviceset="FUSE" device="" value="750mA Slow Blow"/>
+<part name="D1" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D2" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D3" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D4" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D5" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D6" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D7" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
+<part name="D8" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
 <part name="C1" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="0.1uF/50V"/>
 <part name="C2" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="0.1uF/50V"/>
-<part name="D10" library="Capstone" deviceset="1N4005" device=""/>
+<part name="D10" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
 <part name="C8" library="Capstone" deviceset="220UF" device="" value="220uF/50V"/>
 <part name="C9" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
 <part name="R5" library="Capstone" deviceset="0.5W_RES" device="" value="1K/0.5W"/>
-<part name="Q1" library="Capstone" deviceset="2N4401" device=""/>
-<part name="Q2" library="Capstone" deviceset="2N4401" device=""/>
+<part name="Q1" library="Capstone" deviceset="2N4401" device="" value="2N4401"/>
+<part name="Q2" library="Capstone" deviceset="2N4401" device="" value="2N4401"/>
 <part name="TRIM1" library="Capstone" deviceset="10K_TRIMMER" device="" value="10k"/>
 <part name="R6" library="Capstone" deviceset="0.25W_RES" device="" value="5k"/>
 <part name="C10" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
@@ -1241,12 +1241,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R9" library="Capstone" deviceset="0.5W_RES" device="" value="500 OHM/0.5W"/>
 <part name="R7" library="Capstone" deviceset="0.25W_RES" device="" value="10k"/>
 <part name="R8" library="Capstone" deviceset="0.25W_RES" device="" value="10k"/>
-<part name="D12" library="Capstone" deviceset="1N4005" device=""/>
+<part name="D12" library="Capstone" deviceset="1N4005" device="" value="1N4005"/>
 <part name="C13" library="Capstone" deviceset="220UF" device="" value="220uF/50V"/>
 <part name="C14" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
 <part name="R10" library="Capstone" deviceset="0.5W_RES" device="" value="1K/0.5W"/>
-<part name="Q4" library="Capstone" deviceset="2N4403" device=""/>
-<part name="Q5" library="Capstone" deviceset="2N4403" device=""/>
+<part name="Q4" library="Capstone" deviceset="2N4403" device="" value="2N4403"/>
+<part name="Q5" library="Capstone" deviceset="2N4403" device="" value="2N4403"/>
 <part name="TRIM2" library="Capstone" deviceset="10K_TRIMMER" device="" value="10k"/>
 <part name="R12" library="Capstone" deviceset="0.25W_RES" device="" value="5k"/>
 <part name="C15" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
@@ -1254,7 +1254,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C5" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="0.1uF/50V"/>
 <part name="TRIM3" library="Capstone" deviceset="10K_TRIMMER" device=""/>
 <part name="R13" library="Capstone" deviceset="0.25W_RES" device="" value="10k"/>
-<part name="D13" library="Capstone" deviceset="1W_ZENER" device="" value="5.1V"/>
+<part name="D13" library="Capstone" deviceset="1W_ZENER" device="" value="3.3V"/>
 <part name="C17" library="Capstone" deviceset="CERAMIC_CAPACITOR" device="" value="1uF/50V"/>
 <part name="Q7" library="Capstone" deviceset="2N4401" device="" value="2N4401"/>
 <part name="C18" library="Capstone" deviceset="100UF" device="" value="100uF/50V"/>
@@ -1282,6 +1282,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <sheets>
 <sheet>
 <plain>
+<text x="78.74" y="20.32" size="2.1844" layer="94">NOTE: Pin 3 is digital ground, pin 1 &amp; 2 are analog ground 
+(they are separated in the board layout)</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -1299,8 +1301,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="248.666" y="116.84" size="1.778" layer="96" font="vector" rot="R90"/>
 </instance>
 <instance part="Q6" gate="G$1" x="322.58" y="172.72" smashed="yes" rot="R270">
-<attribute name="NAME" x="322.58" y="170.18" size="1.778" layer="95" font="vector" rot="R270"/>
-<attribute name="VALUE" x="322.326" y="170.18" size="1.778" layer="96" font="vector" rot="R270" align="top-left"/>
+<attribute name="NAME" x="322.58" y="167.64" size="1.778" layer="95" font="vector" rot="R270"/>
+<attribute name="VALUE" x="320.294" y="167.64" size="1.778" layer="96" font="vector" rot="MR270" align="top-left"/>
 </instance>
 <instance part="Q3" gate="G$1" x="322.58" y="251.46" smashed="yes" rot="R90">
 <attribute name="NAME" x="322.58" y="254" size="1.778" layer="95" font="vector" rot="R90"/>
@@ -1348,47 +1350,47 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </instance>
 <instance part="F1" gate="G$1" x="40.64" y="251.46" smashed="yes">
 <attribute name="NAME" x="35.56" y="254" size="1.778" layer="95"/>
-<attribute name="VALUE" x="35.56" y="247.65" size="1.778" layer="96"/>
+<attribute name="VALUE" x="30.48" y="247.65" size="1.778" layer="96"/>
 </instance>
 <instance part="F2" gate="G$1" x="40.64" y="233.68" smashed="yes">
 <attribute name="NAME" x="35.56" y="236.22" size="1.778" layer="95"/>
-<attribute name="VALUE" x="35.56" y="229.87" size="1.778" layer="96"/>
+<attribute name="VALUE" x="30.48" y="229.87" size="1.778" layer="96"/>
 </instance>
 <instance part="F3" gate="G$1" x="38.1" y="114.3" smashed="yes">
 <attribute name="NAME" x="33.02" y="116.84" size="1.778" layer="95"/>
-<attribute name="VALUE" x="33.02" y="110.49" size="1.778" layer="96"/>
+<attribute name="VALUE" x="30.48" y="110.49" size="1.778" layer="96"/>
 </instance>
 <instance part="D1" gate="G$1" x="60.96" y="254" smashed="yes">
 <attribute name="NAME" x="58.42" y="256.032" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="58.42" y="251.968" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="VALUE" x="62.484" y="257.81" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="D2" gate="G$1" x="60.96" y="246.38" smashed="yes" rot="R180">
-<attribute name="NAME" x="63.5" y="244.348" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="63.5" y="248.412" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="NAME" x="60.96" y="244.348" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="71.628" y="242.57" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="D3" gate="G$1" x="60.96" y="236.22" smashed="yes">
 <attribute name="NAME" x="58.42" y="238.252" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="58.42" y="234.188" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="VALUE" x="62.738" y="240.03" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="D4" gate="G$1" x="60.96" y="228.6" smashed="yes" rot="R180">
-<attribute name="NAME" x="63.5" y="226.568" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="63.5" y="230.632" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="NAME" x="61.722" y="226.314" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="71.882" y="224.536" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="D5" gate="G$1" x="63.5" y="116.84" smashed="yes">
 <attribute name="NAME" x="60.96" y="118.872" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="60.96" y="114.808" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="VALUE" x="65.532" y="120.65" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="D6" gate="G$1" x="63.5" y="106.68" smashed="yes" rot="R180">
-<attribute name="NAME" x="66.04" y="104.648" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="66.04" y="108.712" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="NAME" x="63.754" y="110.744" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="74.422" y="108.966" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="D7" gate="G$1" x="63.5" y="96.52" smashed="yes">
-<attribute name="NAME" x="60.96" y="98.552" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="60.96" y="94.488" size="1.778" layer="96" font="vector" align="top-left"/>
+<attribute name="NAME" x="61.468" y="98.552" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="65.532" y="100.33" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
 <instance part="D8" gate="G$1" x="63.5" y="86.36" smashed="yes" rot="R180">
-<attribute name="NAME" x="66.04" y="84.328" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="66.04" y="88.392" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="NAME" x="64.516" y="84.328" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="74.93" y="82.55" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="C1" gate="G$1" x="99.06" y="246.38" smashed="yes">
 <attribute name="NAME" x="100.584" y="249.301" size="1.778" layer="95" font="vector"/>
@@ -1531,8 +1533,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="151.384" y="106.68" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
 </instance>
 <instance part="D13" gate="G$1" x="149.86" y="93.98" smashed="yes" rot="R90">
-<attribute name="NAME" x="149.3774" y="96.52" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="152.1714" y="96.52" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="144.2974" y="91.44" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="147.0914" y="91.44" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C17" gate="G$1" x="157.48" y="91.44" smashed="yes">
 <attribute name="NAME" x="159.004" y="94.361" size="1.778" layer="95" font="vector"/>
@@ -1974,9 +1976,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$11" class="0">
 <segment>
 <wire x1="281.94" y1="238.76" x2="281.94" y2="243.84" width="0.1524" layer="91"/>
-<wire x1="281.94" y1="243.84" x2="246.38" y2="243.84" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="243.84" x2="246.38" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="223.52" x2="238.76" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="243.84" x2="248.92" y2="243.84" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="243.84" x2="248.92" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="223.52" x2="238.76" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
 <pinref part="IC1" gate="G$1" pin="V+"/>
 </segment>
@@ -2511,6 +2513,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

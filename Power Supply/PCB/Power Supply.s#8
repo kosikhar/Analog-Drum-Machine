@@ -1099,6 +1099,90 @@ Allows current flow when high potential at base.</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Hardware">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+This library contains board components that are not electrical in nature, such as stand-offs, magnets, and Actobotics. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="STAND-OFF">
+<description>&lt;h3&gt;Standoff (#4 Screw)&lt;/h3&gt;
+&lt;p&gt;This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components.&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;STAND-OFF&lt;/li&gt;&lt;/ul&gt;</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.302"/>
+<text x="0" y="2.032" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+<package name="STAND-OFF-TIGHT">
+<description>&lt;h3&gt;Standoff (#4 Screw) - Tight fit around screw body&lt;/h3&gt;
+&lt;p&gt;This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components.&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;STAND-OFF&lt;/li&gt;&lt;/ul&gt;</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.048"/>
+<text x="0" y="1.651" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.651" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="STAND-OFF">
+<description>&lt;h3&gt;Stand-Off Drill Hole&lt;/h3&gt;</description>
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="STAND-OFF" prefix="H">
+<description>&lt;h3&gt;Stand Off&lt;/h3&gt;
+&lt;p&gt;Drill holes for mechanically mounting via screws, standoffs, etc.&lt;/p&gt;
+&lt;p&gt;Note: Use the keepout ring to avoid running the screw head into surrounding components.
+&lt;h4&gt;Variant Overviews&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;STAND-OFF&lt;/b&gt; - Mechanical footprint for a &lt;b&gt;#4 phillips button head&lt;/b&gt; screw.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;STAND-OFF-TIGHT&lt;/b&gt; - Mechanical footprint for a &lt;b&gt;#4 phillips button head&lt;/b&gt; screw, &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Example SparkFun Products&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10453"&gt;Screw - Phillips Head (1/4", 4-40, 10 pack)&lt;/a&gt; (PRT-10453)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10452"&gt;Screw - Phillips Head (1/2", 4-40, 10 pack)&lt;/a&gt; (PRT-10452)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10451"&gt;Screw - Phillips Head (3/4", 4-40, 10 pack)&lt;/a&gt; (PRT-10451)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sparkfun.com/products/10450"&gt;Screw - Phillips Head (1", 4-40, 10 pack)&lt;/a&gt; (PRT-10450)&lt;/li&gt;</description>
+<gates>
+<gate name="G$1" symbol="STAND-OFF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="STAND-OFF">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TIGHT" package="STAND-OFF-TIGHT">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1122,8 +1206,8 @@ Allows current flow when high potential at base.</description>
 <part name="R4" library="Capstone" deviceset="5W_RES" device="" value="10 OHM/5W"/>
 <part name="R11" library="Capstone" deviceset="5W_RES" device="" value="10 OHM/5W"/>
 <part name="R14" library="Capstone" deviceset="5W_RES" device="" value="1 OHM/5W"/>
-<part name="U$12" library="Capstone" deviceset="TE-2PIN" device=""/>
-<part name="U$13" library="Capstone" deviceset="TE-3PIN" device=""/>
+<part name="6.3V" library="Capstone" deviceset="TE-2PIN" device=""/>
+<part name="33V" library="Capstone" deviceset="TE-3PIN" device=""/>
 <part name="F1" library="Capstone" deviceset="FUSE" device=""/>
 <part name="F2" library="Capstone" deviceset="FUSE" device=""/>
 <part name="F3" library="Capstone" deviceset="FUSE" device=""/>
@@ -1182,11 +1266,19 @@ Allows current flow when high potential at base.</description>
 <part name="IC1" library="Capstone" deviceset="LM741" device=""/>
 <part name="IC2" library="Capstone" deviceset="LM741" device=""/>
 <part name="IC3" library="Capstone" deviceset="LM741" device=""/>
-<part name="U$1" library="EcoCar Temp" deviceset="M3_SCREW_TERMINAL" device=""/>
-<part name="U$2" library="Capstone" deviceset="TE-6PIN" device=""/>
-<part name="U$3" library="Capstone" deviceset="TE-6PIN" device=""/>
-<part name="U$4" library="Capstone" deviceset="TE-6PIN" device=""/>
-<part name="U$5" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="GND" library="EcoCar Temp" deviceset="M3_SCREW_TERMINAL" device=""/>
+<part name="POWER_1" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_2" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_3" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_5" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_6" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_7" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_4" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="POWER_8" library="Capstone" deviceset="TE-6PIN" device=""/>
+<part name="H1" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
+<part name="H2" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
+<part name="H3" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
+<part name="H4" library="SparkFun-Hardware" deviceset="STAND-OFF" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1247,11 +1339,11 @@ Allows current flow when high potential at base.</description>
 <attribute name="NAME" x="185.42" y="118.364" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="185.42" y="115.316" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
-<instance part="U$12" gate="G$1" x="12.7" y="111.76" smashed="yes">
+<instance part="6.3V" gate="G$1" x="12.7" y="111.76" smashed="yes">
 <attribute name="VALUE" x="10.16" y="106.934" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="10.16" y="117.348" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="U$13" gate="G$1" x="10.16" y="243.84" smashed="yes">
+<instance part="33V" gate="G$1" x="10.16" y="243.84" smashed="yes">
 <attribute name="VALUE" x="7.62" y="236.474" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="7.62" y="249.428" size="1.778" layer="95" font="vector"/>
 </instance>
@@ -1487,26 +1579,46 @@ Allows current flow when high potential at base.</description>
 <attribute name="NAME" x="205.74" y="104.775" size="1.778" layer="95"/>
 <attribute name="VALUE" x="205.74" y="96.52" size="1.778" layer="96"/>
 </instance>
-<instance part="U$1" gate="G$1" x="30.48" y="177.8" smashed="yes">
+<instance part="GND" gate="G$1" x="30.48" y="177.8" smashed="yes">
 <attribute name="VALUE" x="25.4" y="170.434" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="25.4" y="185.928" size="1.778" layer="95" font="vector"/>
 </instance>
-<instance part="U$2" gate="G$1" x="91.44" y="60.96" smashed="yes">
+<instance part="POWER_1" gate="G$1" x="91.44" y="60.96" smashed="yes">
 <attribute name="NAME" x="87.884" y="66.548" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="88.138" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
-<instance part="U$3" gate="G$1" x="177.8" y="38.1" smashed="yes">
-<attribute name="NAME" x="174.244" y="43.688" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="174.498" y="32.258" size="1.778" layer="96" font="vector" align="top-left"/>
+<instance part="POWER_2" gate="G$1" x="132.08" y="60.96" smashed="yes">
+<attribute name="NAME" x="128.524" y="66.548" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="128.778" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
-<instance part="U$4" gate="G$1" x="203.2" y="60.96" smashed="yes">
-<attribute name="NAME" x="199.644" y="66.548" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="199.898" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
+<instance part="POWER_3" gate="G$1" x="172.72" y="60.96" smashed="yes">
+<attribute name="NAME" x="169.164" y="66.548" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="169.418" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
-<instance part="U$5" gate="G$1" x="162.56" y="60.96" smashed="yes">
-<attribute name="NAME" x="159.004" y="66.548" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="159.258" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
+<instance part="POWER_5" gate="G$1" x="91.44" y="38.1" smashed="yes">
+<attribute name="NAME" x="87.884" y="43.688" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="88.138" y="32.258" size="1.778" layer="96" font="vector" align="top-left"/>
 </instance>
+<instance part="POWER_6" gate="G$1" x="132.08" y="38.1" smashed="yes">
+<attribute name="NAME" x="128.524" y="43.688" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="128.778" y="32.258" size="1.778" layer="96" font="vector" align="top-left"/>
+</instance>
+<instance part="POWER_7" gate="G$1" x="172.72" y="38.1" smashed="yes">
+<attribute name="NAME" x="169.164" y="43.688" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="169.418" y="32.258" size="1.778" layer="96" font="vector" align="top-left"/>
+</instance>
+<instance part="POWER_4" gate="G$1" x="208.28" y="60.96" smashed="yes">
+<attribute name="NAME" x="204.724" y="66.548" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="204.978" y="55.118" size="1.778" layer="96" font="vector" align="top-left"/>
+</instance>
+<instance part="POWER_8" gate="G$1" x="208.28" y="38.1" smashed="yes">
+<attribute name="NAME" x="204.724" y="43.688" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="204.978" y="32.258" size="1.778" layer="96" font="vector" align="top-left"/>
+</instance>
+<instance part="H1" gate="G$1" x="238.76" y="35.56" smashed="yes"/>
+<instance part="H2" gate="G$1" x="243.84" y="35.56" smashed="yes"/>
+<instance part="H3" gate="G$1" x="243.84" y="40.64" smashed="yes"/>
+<instance part="H4" gate="G$1" x="238.76" y="40.64" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -1539,7 +1651,7 @@ Allows current flow when high potential at base.</description>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U$13" gate="G$1" pin="2"/>
+<pinref part="33V" gate="G$1" pin="2"/>
 <wire x1="17.78" y1="243.84" x2="27.94" y2="243.84" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="243.84" x2="27.94" y2="241.3" width="0.1524" layer="91"/>
 <label x="25.4" y="238.76" size="1.778" layer="95"/>
@@ -1666,32 +1778,116 @@ Allows current flow when high potential at base.</description>
 <junction x="342.9" y="86.36"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="4"/>
+<pinref part="GND" gate="G$1" pin="4"/>
 <wire x1="35.56" y1="182.88" x2="38.1" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="182.88" x2="38.1" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="3"/>
+<pinref part="GND" gate="G$1" pin="3"/>
 <wire x1="38.1" y1="180.34" x2="35.56" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="180.34" x2="38.1" y2="177.8" width="0.1524" layer="91"/>
 <junction x="38.1" y="180.34"/>
-<pinref part="U$1" gate="G$1" pin="2"/>
+<pinref part="GND" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="177.8" x2="35.56" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="177.8" x2="38.1" y2="175.26" width="0.1524" layer="91"/>
 <junction x="38.1" y="177.8"/>
-<pinref part="U$1" gate="G$1" pin="1"/>
+<pinref part="GND" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="175.26" x2="35.56" y2="175.26" width="0.1524" layer="91"/>
 <label x="40.64" y="180.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="1"/>
+<pinref part="POWER_1" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="63.5" x2="81.28" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="63.5" x2="81.28" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="3"/>
+<pinref part="POWER_1" gate="G$1" pin="3"/>
 <wire x1="81.28" y1="60.96" x2="83.82" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="60.96" x2="81.28" y2="58.42" width="0.1524" layer="91"/>
 <junction x="81.28" y="60.96"/>
-<pinref part="U$2" gate="G$1" pin="5"/>
+<pinref part="POWER_1" gate="G$1" pin="5"/>
 <wire x1="81.28" y1="58.42" x2="83.82" y2="58.42" width="0.1524" layer="91"/>
 <label x="73.66" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_2" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="63.5" x2="121.92" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="63.5" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="POWER_2" gate="G$1" pin="3"/>
+<wire x1="121.92" y1="60.96" x2="124.46" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="60.96" x2="121.92" y2="58.42" width="0.1524" layer="91"/>
+<junction x="121.92" y="60.96"/>
+<pinref part="POWER_2" gate="G$1" pin="5"/>
+<wire x1="121.92" y1="58.42" x2="124.46" y2="58.42" width="0.1524" layer="91"/>
+<label x="114.3" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_3" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="63.5" x2="162.56" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="63.5" x2="162.56" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="POWER_3" gate="G$1" pin="3"/>
+<wire x1="162.56" y1="60.96" x2="165.1" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="60.96" x2="162.56" y2="58.42" width="0.1524" layer="91"/>
+<junction x="162.56" y="60.96"/>
+<pinref part="POWER_3" gate="G$1" pin="5"/>
+<wire x1="162.56" y1="58.42" x2="165.1" y2="58.42" width="0.1524" layer="91"/>
+<label x="154.94" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_5" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="40.64" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="40.64" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="POWER_5" gate="G$1" pin="3"/>
+<wire x1="81.28" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="38.1" x2="81.28" y2="35.56" width="0.1524" layer="91"/>
+<junction x="81.28" y="38.1"/>
+<pinref part="POWER_5" gate="G$1" pin="5"/>
+<wire x1="81.28" y1="35.56" x2="83.82" y2="35.56" width="0.1524" layer="91"/>
+<label x="73.66" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_6" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="40.64" x2="121.92" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="40.64" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="POWER_6" gate="G$1" pin="3"/>
+<wire x1="121.92" y1="38.1" x2="124.46" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="38.1" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
+<junction x="121.92" y="38.1"/>
+<pinref part="POWER_6" gate="G$1" pin="5"/>
+<wire x1="121.92" y1="35.56" x2="124.46" y2="35.56" width="0.1524" layer="91"/>
+<label x="114.3" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_7" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="40.64" x2="162.56" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="40.64" x2="162.56" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="POWER_7" gate="G$1" pin="3"/>
+<wire x1="162.56" y1="38.1" x2="165.1" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="38.1" x2="162.56" y2="35.56" width="0.1524" layer="91"/>
+<junction x="162.56" y="38.1"/>
+<pinref part="POWER_7" gate="G$1" pin="5"/>
+<wire x1="162.56" y1="35.56" x2="165.1" y2="35.56" width="0.1524" layer="91"/>
+<label x="154.94" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_4" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="63.5" x2="198.12" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="63.5" x2="198.12" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="POWER_4" gate="G$1" pin="3"/>
+<wire x1="198.12" y1="60.96" x2="200.66" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="60.96" x2="198.12" y2="58.42" width="0.1524" layer="91"/>
+<junction x="198.12" y="60.96"/>
+<pinref part="POWER_4" gate="G$1" pin="5"/>
+<wire x1="198.12" y1="58.42" x2="200.66" y2="58.42" width="0.1524" layer="91"/>
+<label x="190.5" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_8" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="40.64" x2="198.12" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="40.64" x2="198.12" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="POWER_8" gate="G$1" pin="3"/>
+<wire x1="198.12" y1="38.1" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="38.1" x2="198.12" y2="35.56" width="0.1524" layer="91"/>
+<junction x="198.12" y="38.1"/>
+<pinref part="POWER_8" gate="G$1" pin="5"/>
+<wire x1="198.12" y1="35.56" x2="200.66" y2="35.56" width="0.1524" layer="91"/>
+<label x="190.5" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -1868,9 +2064,44 @@ Allows current flow when high potential at base.</description>
 <pinref part="IC3" gate="G$1" pin="V+"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="2"/>
+<pinref part="POWER_1" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="63.5" x2="101.6" y2="63.5" width="0.1524" layer="91"/>
 <label x="101.6" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_2" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="63.5" x2="142.24" y2="63.5" width="0.1524" layer="91"/>
+<label x="142.24" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_3" gate="G$1" pin="2"/>
+<wire x1="180.34" y1="63.5" x2="182.88" y2="63.5" width="0.1524" layer="91"/>
+<label x="182.88" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_5" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="40.64" x2="101.6" y2="40.64" width="0.1524" layer="91"/>
+<label x="101.6" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_6" gate="G$1" pin="2"/>
+<wire x1="139.7" y1="40.64" x2="142.24" y2="40.64" width="0.1524" layer="91"/>
+<label x="142.24" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_7" gate="G$1" pin="2"/>
+<wire x1="180.34" y1="40.64" x2="182.88" y2="40.64" width="0.1524" layer="91"/>
+<label x="182.88" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_4" gate="G$1" pin="2"/>
+<wire x1="215.9" y1="63.5" x2="218.44" y2="63.5" width="0.1524" layer="91"/>
+<label x="218.44" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_8" gate="G$1" pin="2"/>
+<wire x1="215.9" y1="40.64" x2="218.44" y2="40.64" width="0.1524" layer="91"/>
+<label x="218.44" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -1905,7 +2136,7 @@ Allows current flow when high potential at base.</description>
 <net name="N$5" class="0">
 <segment>
 <wire x1="20.32" y1="246.38" x2="20.32" y2="251.46" width="0.1524" layer="91"/>
-<pinref part="U$13" gate="G$1" pin="3"/>
+<pinref part="33V" gate="G$1" pin="3"/>
 <wire x1="17.78" y1="246.38" x2="20.32" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="F1" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="251.46" x2="33.02" y2="251.46" width="0.1524" layer="91"/>
@@ -1913,7 +2144,7 @@ Allows current flow when high potential at base.</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$13" gate="G$1" pin="1"/>
+<pinref part="33V" gate="G$1" pin="1"/>
 <wire x1="17.78" y1="241.3" x2="20.32" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="241.3" x2="20.32" y2="233.68" width="0.1524" layer="91"/>
 <pinref part="F2" gate="G$1" pin="1"/>
@@ -2057,14 +2288,49 @@ Allows current flow when high potential at base.</description>
 <pinref part="IC3" gate="G$1" pin="V-"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="4"/>
+<pinref part="POWER_1" gate="G$1" pin="4"/>
 <wire x1="99.06" y1="60.96" x2="101.6" y2="60.96" width="0.1524" layer="91"/>
 <label x="101.6" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_2" gate="G$1" pin="4"/>
+<wire x1="139.7" y1="60.96" x2="142.24" y2="60.96" width="0.1524" layer="91"/>
+<label x="142.24" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_3" gate="G$1" pin="4"/>
+<wire x1="180.34" y1="60.96" x2="182.88" y2="60.96" width="0.1524" layer="91"/>
+<label x="182.88" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_5" gate="G$1" pin="4"/>
+<wire x1="99.06" y1="38.1" x2="101.6" y2="38.1" width="0.1524" layer="91"/>
+<label x="101.6" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_6" gate="G$1" pin="4"/>
+<wire x1="139.7" y1="38.1" x2="142.24" y2="38.1" width="0.1524" layer="91"/>
+<label x="142.24" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_7" gate="G$1" pin="4"/>
+<wire x1="180.34" y1="38.1" x2="182.88" y2="38.1" width="0.1524" layer="91"/>
+<label x="182.88" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_4" gate="G$1" pin="4"/>
+<wire x1="215.9" y1="60.96" x2="218.44" y2="60.96" width="0.1524" layer="91"/>
+<label x="218.44" y="60.96" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_8" gate="G$1" pin="4"/>
+<wire x1="215.9" y1="38.1" x2="218.44" y2="38.1" width="0.1524" layer="91"/>
+<label x="218.44" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="U$12" gate="G$1" pin="2"/>
+<pinref part="6.3V" gate="G$1" pin="2"/>
 <pinref part="F3" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="114.3" x2="30.48" y2="114.3" width="0.1524" layer="91"/>
 </segment>
@@ -2077,7 +2343,7 @@ Allows current flow when high potential at base.</description>
 <pinref part="D8" gate="G$1" pin="C"/>
 <wire x1="55.88" y1="93.98" x2="55.88" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="86.36" x2="60.96" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="U$12" gate="G$1" pin="1"/>
+<pinref part="6.3V" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="111.76" x2="25.4" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="93.98" x2="25.4" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="93.98" x2="25.4" y2="111.76" width="0.1524" layer="91"/>
@@ -2182,9 +2448,44 @@ Allows current flow when high potential at base.</description>
 <label x="363.22" y="119.38" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="6"/>
+<pinref part="POWER_1" gate="G$1" pin="6"/>
 <wire x1="99.06" y1="58.42" x2="101.6" y2="58.42" width="0.1524" layer="91"/>
 <label x="101.6" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_2" gate="G$1" pin="6"/>
+<wire x1="139.7" y1="58.42" x2="142.24" y2="58.42" width="0.1524" layer="91"/>
+<label x="142.24" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_3" gate="G$1" pin="6"/>
+<wire x1="180.34" y1="58.42" x2="182.88" y2="58.42" width="0.1524" layer="91"/>
+<label x="182.88" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_5" gate="G$1" pin="6"/>
+<wire x1="99.06" y1="35.56" x2="101.6" y2="35.56" width="0.1524" layer="91"/>
+<label x="101.6" y="35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_6" gate="G$1" pin="6"/>
+<wire x1="139.7" y1="35.56" x2="142.24" y2="35.56" width="0.1524" layer="91"/>
+<label x="142.24" y="35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_7" gate="G$1" pin="6"/>
+<wire x1="180.34" y1="35.56" x2="182.88" y2="35.56" width="0.1524" layer="91"/>
+<label x="182.88" y="35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_4" gate="G$1" pin="6"/>
+<wire x1="215.9" y1="58.42" x2="218.44" y2="58.42" width="0.1524" layer="91"/>
+<label x="218.44" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POWER_8" gate="G$1" pin="6"/>
+<wire x1="215.9" y1="35.56" x2="218.44" y2="35.56" width="0.1524" layer="91"/>
+<label x="218.44" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+5V_FEEDBACK" class="0">
