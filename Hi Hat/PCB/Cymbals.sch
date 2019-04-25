@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -18792,13 +18792,15 @@ In this library the device names are the same as the pin names of the symbols, t
 <sheets>
 <sheet>
 <plain>
-<text x="297.18" y="165.1" size="1.778" layer="94">Note: Short Jumper for open hi-hat
-Third pin of POT1 should be grounded</text>
+<text x="297.18" y="162.56" size="1.778" layer="94">Note: 
+1) Short Jumper for open hi-hat
+2) Third pin of POT1 should be grounded</text>
 <text x="53.34" y="363.22" size="1.778" layer="94" rot="R180">Note: POT2B is grounded to AGND</text>
 <text x="149.86" y="76.2" size="1.778" layer="94">Note: R27 should be a jumper.
 The resistor is only there so biasing can be changed if needed.</text>
-<text x="241.3" y="205.74" size="1.778" layer="91">Note: used 330k</text>
-<text x="134.62" y="38.1" size="1.778" layer="91">used 2.2k</text>
+<text x="241.3" y="205.74" size="1.778" layer="94">Note: used 330k</text>
+<text x="119.38" y="27.94" size="1.778" layer="94">Note: used 2.2k since 2.7k 
+was not available</text>
 <text x="7.62" y="411.48" size="6.4516" layer="94">24 Pin Header</text>
 <text x="73.66" y="411.48" size="6.4516" layer="94">Waveform Generator Input</text>
 <text x="60.96" y="337.82" size="5.08" layer="94">Bridged-T Oscillator</text>
@@ -20423,19 +20425,16 @@ The resistor is only there so biasing can be changed if needed.</text>
 </net>
 <net name="SQ_BUFFERED" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="4"/>
-<wire x1="124.46" y1="388.62" x2="127" y2="388.62" width="0.1524" layer="91"/>
-<label x="127" y="388.62" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="J1" gate="G$1" pin="2"/>
 <wire x1="124.46" y1="391.16" x2="127" y2="391.16" width="0.1524" layer="91"/>
-<label x="127" y="391.16" size="1.778" layer="95"/>
-</segment>
-<segment>
+<label x="128.016" y="387.858" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="4"/>
+<wire x1="124.46" y1="388.62" x2="127" y2="388.62" width="0.1524" layer="91"/>
+<wire x1="127" y1="391.16" x2="127" y2="388.62" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="6"/>
 <wire x1="124.46" y1="386.08" x2="127" y2="386.08" width="0.1524" layer="91"/>
-<label x="127" y="386.08" size="1.778" layer="95"/>
+<wire x1="127" y1="388.62" x2="127" y2="386.08" width="0.1524" layer="91"/>
+<junction x="127" y="388.62"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
@@ -20447,17 +20446,14 @@ The resistor is only there so biasing can be changed if needed.</text>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="391.16" x2="106.68" y2="391.16" width="0.1524" layer="91"/>
-<label x="88.9" y="391.16" size="1.778" layer="95"/>
-</segment>
-<segment>
+<label x="86.614" y="387.604" size="1.778" layer="95"/>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="109.22" y1="388.62" x2="106.68" y2="388.62" width="0.1524" layer="91"/>
-<label x="88.9" y="388.62" size="1.778" layer="95"/>
-</segment>
-<segment>
+<wire x1="106.68" y1="391.16" x2="106.68" y2="388.62" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="5"/>
 <wire x1="109.22" y1="386.08" x2="106.68" y2="386.08" width="0.1524" layer="91"/>
-<label x="88.9" y="386.08" size="1.778" layer="95"/>
+<wire x1="106.68" y1="388.62" x2="106.68" y2="386.08" width="0.1524" layer="91"/>
+<junction x="106.68" y="388.62"/>
 </segment>
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
