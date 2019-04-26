@@ -21371,6 +21371,9 @@ part number 2062-2P from STA</description>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_03X2" device="NO_SILK"/>
 <part name="J3" library="SparkFun-Connectors" deviceset="CONN_02" device="1X02_NO_SILK"/>
 <part name="J4" library="SparkFun-Connectors" deviceset="CONN_02" device="1X02_NO_SILK"/>
+<part name="C34" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
+<part name="C35" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
+<part name="C36" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -21712,21 +21715,21 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="80.2386" y="143.51" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="75.438" y="146.05" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R14" gate="G$1" x="116.84" y="254" smashed="yes" rot="R270">
-<attribute name="NAME" x="118.3386" y="255.27" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="113.538" y="257.81" size="1.778" layer="96" rot="R270"/>
+<instance part="R14" gate="G$1" x="134.62" y="254" smashed="yes" rot="R270">
+<attribute name="NAME" x="136.1186" y="255.27" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="131.318" y="257.81" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R15" gate="G$1" x="124.46" y="152.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="125.73" y="150.9014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="128.27" y="155.702" size="1.778" layer="96" rot="R180"/>
+<instance part="R15" gate="G$1" x="132.08" y="137.16" smashed="yes" rot="R90">
+<attribute name="NAME" x="130.5814" y="135.89" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="135.382" y="133.35" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R18" gate="G$1" x="144.78" y="127" smashed="yes" rot="R180">
 <attribute name="NAME" x="146.05" y="125.5014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="148.59" y="130.302" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R17" gate="G$1" x="132.08" y="93.98" smashed="yes" rot="R270">
-<attribute name="NAME" x="133.5786" y="95.25" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="128.778" y="97.79" size="1.778" layer="96" rot="R270"/>
+<instance part="R17" gate="G$1" x="132.08" y="116.84" smashed="yes" rot="R270">
+<attribute name="NAME" x="133.5786" y="118.11" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="128.778" y="120.65" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="IC6" gate="A" x="406.4" y="149.86" smashed="yes">
 <attribute name="NAME" x="408.94" y="155.575" size="1.778" layer="95"/>
@@ -21789,6 +21792,18 @@ POT2B should be the middle pin</text>
 <instance part="J4" gate="G$1" x="373.38" y="63.5" smashed="yes">
 <attribute name="VALUE" x="370.84" y="58.674" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="370.84" y="69.088" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="C34" gate="G$1" x="116.84" y="261.62" smashed="yes" rot="R270">
+<attribute name="NAME" x="117.221" y="260.096" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="112.141" y="260.096" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C35" gate="G$1" x="124.46" y="152.4" smashed="yes" rot="R270">
+<attribute name="NAME" x="124.841" y="150.876" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="119.761" y="150.876" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C36" gate="G$1" x="121.92" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="122.301" y="82.296" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="117.221" y="82.296" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -22092,12 +22107,9 @@ POT2B should be the middle pin</text>
 <label x="96.52" y="403.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R11" gate="G$1" pin="1"/>
-<wire x1="101.6" y1="109.22" x2="114.3" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="109.22" x2="114.3" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="A" pin="OUT"/>
-<wire x1="114.3" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
-<label x="106.68" y="81.28" size="1.778" layer="95"/>
+<pinref part="C36" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="83.82" x2="132.08" y2="83.82" width="0.1524" layer="91"/>
+<label x="128.27" y="84.836" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="POT2B" class="0">
@@ -22108,8 +22120,8 @@ POT2B should be the middle pin</text>
 </segment>
 <segment>
 <pinref part="R17" gate="G$1" pin="2"/>
-<wire x1="132.08" y1="88.9" x2="132.08" y2="83.82" width="0.1524" layer="91"/>
-<label x="129.54" y="81.28" size="1.778" layer="95"/>
+<wire x1="132.08" y1="111.76" x2="132.08" y2="101.6" width="0.1524" layer="91"/>
+<label x="129.54" y="99.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="POT3B" class="0">
@@ -22288,8 +22300,8 @@ POT2B should be the middle pin</text>
 </segment>
 <segment>
 <pinref part="R14" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="248.92" x2="116.84" y2="246.38" width="0.1524" layer="91"/>
-<label x="114.3" y="243.84" size="1.778" layer="95"/>
+<wire x1="134.62" y1="248.92" x2="134.62" y2="246.38" width="0.1524" layer="91"/>
+<label x="132.08" y="243.84" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C28" gate="G$1" pin="1"/>
@@ -22445,17 +22457,6 @@ POT2B should be the middle pin</text>
 </net>
 <net name="WHITE_NOISE_AMP" class="0">
 <segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="287.02" x2="116.84" y2="287.02" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="287.02" x2="116.84" y2="261.62" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="A" pin="OUT"/>
-<wire x1="116.84" y1="261.62" x2="91.44" y2="261.62" width="0.1524" layer="91"/>
-<label x="119.38" y="261.62" size="1.778" layer="95"/>
-<pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="116.84" y1="261.62" x2="116.84" y2="259.08" width="0.1524" layer="91"/>
-<junction x="116.84" y="261.62"/>
-</segment>
-<segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="50.8" y1="86.36" x2="48.26" y2="86.36" width="0.1524" layer="91"/>
 <label x="27.94" y="86.36" size="1.778" layer="95"/>
@@ -22464,6 +22465,13 @@ POT2B should be the middle pin</text>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="154.94" x2="45.72" y2="154.94" width="0.1524" layer="91"/>
 <label x="20.32" y="154.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C34" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="261.62" x2="134.62" y2="261.62" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="134.62" y1="261.62" x2="134.62" y2="259.08" width="0.1524" layer="91"/>
+<label x="123.952" y="262.382" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -22527,8 +22535,8 @@ POT2B should be the middle pin</text>
 <pinref part="IC2" gate="A" pin="OUT"/>
 <wire x1="114.3" y1="152.4" x2="99.06" y2="152.4" width="0.1524" layer="91"/>
 <label x="101.6" y="149.86" size="1.778" layer="95"/>
-<pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="114.3" y1="152.4" x2="119.38" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="C35" gate="G$1" pin="2"/>
+<wire x1="119.38" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
 <junction x="114.3" y="152.4"/>
 </segment>
 </net>
@@ -22736,14 +22744,13 @@ POT2B should be the middle pin</text>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="R15" gate="G$1" pin="1"/>
-<wire x1="129.54" y1="152.4" x2="132.08" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="152.4" x2="132.08" y2="127" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="132.08" y1="127" x2="139.7" y2="127" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="127" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
-<junction x="132.08" y="127"/>
+<wire x1="132.08" y1="127" x2="132.08" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="R17" gate="G$1" pin="1"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="132.08" x2="132.08" y2="127" width="0.1524" layer="91"/>
+<junction x="132.08" y="127"/>
 </segment>
 </net>
 <net name="POT1A" class="0">
@@ -22869,6 +22876,39 @@ POT2B should be the middle pin</text>
 <pinref part="C27" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="307.34" x2="322.58" y2="307.34" width="0.1524" layer="91"/>
 <junction x="317.5" y="307.34"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="287.02" x2="109.22" y2="287.02" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="287.02" x2="109.22" y2="261.62" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="A" pin="OUT"/>
+<wire x1="109.22" y1="261.62" x2="91.44" y2="261.62" width="0.1524" layer="91"/>
+<pinref part="C34" gate="G$1" pin="2"/>
+<wire x1="109.22" y1="261.62" x2="111.76" y2="261.62" width="0.1524" layer="91"/>
+<junction x="109.22" y="261.62"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="C35" gate="G$1" pin="1"/>
+<wire x1="127" y1="152.4" x2="132.08" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="152.4" x2="132.08" y2="142.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="HIGH_FREQ_WN" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="101.6" y1="109.22" x2="111.76" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="109.22" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="C36" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="83.82" x2="116.84" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="A" pin="OUT"/>
+<wire x1="111.76" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+<junction x="111.76" y="83.82"/>
+<label x="96.52" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

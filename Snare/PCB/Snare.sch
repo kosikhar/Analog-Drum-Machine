@@ -21340,7 +21340,7 @@ part number 2062-2P from STA</description>
 <part name="C24" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C21" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="TRIM2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
-<part name="Q5" library="Capstone" deviceset="J176" device=""/>
+<part name="Q5" library="Capstone" deviceset="J176" device="" value="J176"/>
 <part name="R21" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R22" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="TRIM1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="20 OHM"/>
@@ -21668,8 +21668,8 @@ POT2B should be the middle pin</text>
 <attribute name="VALUE" x="316.23" y="146.05" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="Q5" gate="G$1" x="269.24" y="121.92" smashed="yes" rot="MR180">
-<attribute name="NAME" x="259.08" y="123.317" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="259.08" y="125.73" size="1.778" layer="96" rot="MR180"/>
+<attribute name="NAME" x="261.62" y="125.857" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="261.62" y="123.19" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="R21" gate="G$1" x="218.44" y="149.86" smashed="yes" rot="R180">
 <attribute name="NAME" x="219.71" y="148.3614" size="1.778" layer="95" rot="R180"/>

@@ -21281,8 +21281,8 @@ part number 2062-2P from STA</description>
 <part name="C18" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="1u"/>
 <part name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="680k"/>
-<part name="T1" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
-<part name="T2" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
+<part name="Q1" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
+<part name="Q2" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
 <part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
 <part name="R13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="1k"/>
 <part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
@@ -21313,7 +21313,7 @@ part number 2062-2P from STA</description>
 <part name="C30" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="2.2u"/>
 <part name="R41" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R42" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
-<part name="T3" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
+<part name="Q6" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N3904" device="" package3d_urn="urn:adsk.eagle:package:29893/2"/>
 <part name="R44" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R43" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="220"/>
 <part name="C31" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="1u"/>
@@ -21322,7 +21322,7 @@ part number 2062-2P from STA</description>
 <part name="C33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10uF"/>
 <part name="R20" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="470k"/>
 <part name="C20" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.33uF"/>
-<part name="Q2" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
+<part name="Q4" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
 <part name="R27" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100k"/>
 <part name="C22" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="R29" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="1k"/>
@@ -21333,22 +21333,22 @@ part number 2062-2P from STA</description>
 <part name="C25" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="33nF"/>
 <part name="C27" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="33nF"/>
 <part name="R32" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="1k"/>
-<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
+<part name="TRIM5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
 <part name="R28" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="IC4" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*741" device="P" package3d_urn="urn:adsk.eagle:package:16409/2" technology="LM"/>
 <part name="R30" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="C24" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="C21" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
-<part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
-<part name="Q3" library="Capstone" deviceset="J176" device=""/>
+<part name="TRIM2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
+<part name="Q5" library="Capstone" deviceset="J176" device=""/>
 <part name="R21" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R22" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
-<part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="20 OHM"/>
+<part name="TRIM1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="20 OHM"/>
 <part name="R23" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="100"/>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="-1N4148" value="200mA/100V/1V"/>
 <part name="R19" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="470k"/>
 <part name="C19" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.33uF"/>
-<part name="Q1" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
+<part name="Q3" library="SparkFun-DiscreteSemi" deviceset="TRANS_NPN" device="-P2N2222A" value="2N2222A"/>
 <part name="R25" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="51k"/>
 <part name="R26" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="47k"/>
 <part name="R6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="2k"/>
@@ -21362,11 +21362,11 @@ part number 2062-2P from STA</description>
 <part name="C28" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="050-024X044" package3d_urn="urn:adsk.eagle:package:26162/1" value="0.1uF"/>
 <part name="R35" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
 <part name="R36" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="10k"/>
-<part name="R39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
-<part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
+<part name="TRIM3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
+<part name="TRIM4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_C_L" device=""/>
 <part name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0207/10" package3d_urn="urn:adsk.eagle:package:25939/1" value="4.7k"/>
-<part name="R37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
+<part name="TRIM6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-TRIMM" device="64W" package3d_urn="urn:adsk.eagle:package:23748/1" value="10k"/>
 <part name="J1" library="SparkFun-Connectors" deviceset="CONN_03X2" device="NO_SILK"/>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_03X2" device="NO_SILK"/>
 <part name="J3" library="SparkFun-Connectors" deviceset="CONN_02" device="1X02_NO_SILK"/>
@@ -21393,6 +21393,7 @@ POT2B should be the middle pin</text>
 <text x="294.64" y="335.28" size="6.4516" layer="94">Drum Hit</text>
 <text x="228.6" y="185.42" size="6.4516" layer="94">Voltage-Controlled Amplifier</text>
 <text x="368.3" y="187.96" size="6.4516" layer="94">Summing Amp and Common Collector</text>
+<text x="312.42" y="91.44" size="3.81" layer="94">Extra Pins (In case I screwed something up)</text>
 </plain>
 <instances>
 <instance part="SV1" gate="1" x="83.82" y="398.78" smashed="yes" rot="R180">
@@ -21427,11 +21428,11 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="87.8586" y="354.33" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="83.058" y="356.87" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="T1" gate="G1" x="88.9" y="337.82" smashed="yes" rot="R180">
+<instance part="Q1" gate="G1" x="88.9" y="337.82" smashed="yes" rot="R180">
 <attribute name="NAME" x="96.52" y="332.74" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="96.52" y="335.28" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="T2" gate="G1" x="101.6" y="337.82" smashed="yes">
+<instance part="Q2" gate="G1" x="101.6" y="337.82" smashed="yes">
 <attribute name="NAME" x="93.98" y="342.9" size="1.778" layer="95"/>
 <attribute name="VALUE" x="93.98" y="340.36" size="1.778" layer="96"/>
 </instance>
@@ -21555,7 +21556,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="493.8014" y="133.35" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="498.602" y="130.81" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="T3" gate="G1" x="505.46" y="149.86" smashed="yes">
+<instance part="Q6" gate="G1" x="505.46" y="149.86" smashed="yes">
 <attribute name="NAME" x="497.84" y="154.94" size="1.778" layer="95"/>
 <attribute name="VALUE" x="497.84" y="152.4" size="1.778" layer="96"/>
 </instance>
@@ -21591,7 +21592,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="232.664" y="256.159" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="232.664" y="261.239" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="Q2" gate="G$1" x="205.74" y="274.32" smashed="yes">
+<instance part="Q4" gate="G$1" x="205.74" y="274.32" smashed="yes">
 <attribute name="NAME" x="208.28" y="274.32" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="208.28" y="272.034" size="1.778" layer="96" font="vector"/>
 </instance>
@@ -21635,7 +21636,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="316.0014" y="298.45" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="320.802" y="295.91" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R34" gate="G$1" x="347.98" y="281.94" smashed="yes">
+<instance part="TRIM5" gate="G$1" x="347.98" y="281.94" smashed="yes">
 <attribute name="NAME" x="352.171" y="275.59" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="344.17" y="278.13" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -21659,11 +21660,11 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="258.699" y="164.084" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="263.779" y="164.084" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R33" gate="G$1" x="320.04" y="149.86" smashed="yes">
+<instance part="TRIM2" gate="G$1" x="320.04" y="149.86" smashed="yes">
 <attribute name="NAME" x="324.231" y="143.51" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="316.23" y="146.05" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="Q3" gate="G$1" x="269.24" y="121.92" smashed="yes" rot="MR180">
+<instance part="Q5" gate="G$1" x="269.24" y="121.92" smashed="yes" rot="MR180">
 <attribute name="NAME" x="259.08" y="123.317" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="259.08" y="125.73" size="1.778" layer="96" rot="MR180"/>
 </instance>
@@ -21675,7 +21676,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="219.71" y="140.7414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="222.25" y="145.542" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R24" gate="G$1" x="236.22" y="132.08" smashed="yes" rot="R180">
+<instance part="TRIM1" gate="G$1" x="236.22" y="132.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="232.029" y="138.43" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="240.03" y="135.89" size="1.778" layer="96" rot="R270"/>
 </instance>
@@ -21695,7 +21696,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="219.964" y="75.819" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="219.964" y="80.899" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="Q1" gate="G$1" x="193.04" y="99.06" smashed="yes">
+<instance part="Q3" gate="G$1" x="193.04" y="99.06" smashed="yes">
 <attribute name="NAME" x="195.58" y="99.06" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="195.58" y="96.774" size="1.778" layer="96" font="vector"/>
 </instance>
@@ -21751,11 +21752,11 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="372.11" y="138.2014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="374.65" y="143.002" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R39" gate="G$1" x="439.42" y="175.26" smashed="yes" rot="R270">
+<instance part="TRIM3" gate="G$1" x="439.42" y="175.26" smashed="yes" rot="R270">
 <attribute name="NAME" x="433.07" y="171.069" size="1.778" layer="95"/>
 <attribute name="VALUE" x="435.61" y="179.07" size="1.778" layer="96"/>
 </instance>
-<instance part="R40" gate="G$1" x="452.12" y="160.02" smashed="yes">
+<instance part="TRIM4" gate="G$1" x="452.12" y="160.02" smashed="yes">
 <attribute name="NAME" x="456.311" y="153.67" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="448.31" y="156.21" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -21769,7 +21770,7 @@ POT2B should be the middle pin</text>
 <attribute name="NAME" x="80.2386" y="74.93" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="75.438" y="77.47" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R37" gate="G$1" x="373.38" y="256.54" smashed="yes">
+<instance part="TRIM6" gate="G$1" x="373.38" y="256.54" smashed="yes">
 <attribute name="NAME" x="377.571" y="250.19" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="369.57" y="252.73" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -21851,7 +21852,7 @@ POT2B should be the middle pin</text>
 <label x="505.46" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="Q2" gate="G$1" pin="C"/>
+<pinref part="Q4" gate="G$1" pin="C"/>
 <wire x1="208.28" y1="279.4" x2="208.28" y2="281.94" width="0.1524" layer="91"/>
 <label x="208.28" y="281.94" size="1.778" layer="95" rot="MR0"/>
 </segment>
@@ -21870,7 +21871,7 @@ POT2B should be the middle pin</text>
 <wire x1="284.48" y1="162.56" x2="284.48" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="Q1" gate="G$1" pin="C"/>
+<pinref part="Q3" gate="G$1" pin="C"/>
 <wire x1="195.58" y1="104.14" x2="195.58" y2="106.68" width="0.1524" layer="91"/>
 <label x="195.58" y="106.68" size="1.778" layer="95" rot="MR0"/>
 </segment>
@@ -21947,12 +21948,12 @@ POT2B should be the middle pin</text>
 <label x="281.94" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R33" gate="G$1" pin="S"/>
+<pinref part="TRIM2" gate="G$1" pin="S"/>
 <wire x1="325.12" y1="149.86" x2="327.66" y2="149.86" width="0.1524" layer="91"/>
 <label x="327.66" y="149.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R34" gate="G$1" pin="S"/>
+<pinref part="TRIM5" gate="G$1" pin="S"/>
 <wire x1="355.6" y1="281.94" x2="353.06" y2="281.94" width="0.1524" layer="91"/>
 <label x="355.6" y="281.94" size="1.778" layer="95"/>
 </segment>
@@ -21964,7 +21965,7 @@ POT2B should be the middle pin</text>
 <label x="401.32" y="129.54" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R40" gate="G$1" pin="S"/>
+<pinref part="TRIM4" gate="G$1" pin="S"/>
 <wire x1="457.2" y1="160.02" x2="462.28" y2="160.02" width="0.1524" layer="91"/>
 <label x="462.28" y="160.02" size="1.778" layer="95"/>
 </segment>
@@ -22054,12 +22055,12 @@ POT2B should be the middle pin</text>
 </segment>
 <segment>
 <wire x1="203.2" y1="274.32" x2="200.66" y2="274.32" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="B"/>
+<pinref part="Q4" gate="G$1" pin="B"/>
 <label x="200.66" y="274.32" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
 <wire x1="190.5" y1="99.06" x2="187.96" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="B"/>
+<pinref part="Q3" gate="G$1" pin="B"/>
 <label x="187.96" y="99.06" size="1.778" layer="95" rot="MR0"/>
 </segment>
 </net>
@@ -22258,7 +22259,7 @@ POT2B should be the middle pin</text>
 <label x="226.06" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="Q3" gate="G$1" pin="S"/>
+<pinref part="Q5" gate="G$1" pin="S"/>
 <wire x1="274.32" y1="119.38" x2="276.86" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="276.86" y1="119.38" x2="276.86" y2="111.76" width="0.1524" layer="91"/>
 <label x="274.32" y="109.22" size="1.778" layer="95"/>
@@ -22316,14 +22317,14 @@ POT2B should be the middle pin</text>
 <label x="76.2" y="63.5" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R37" gate="G$1" pin="A"/>
+<pinref part="TRIM6" gate="G$1" pin="A"/>
 <wire x1="373.38" y1="251.46" x2="373.38" y2="246.38" width="0.1524" layer="91"/>
 <label x="370.84" y="243.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="T2" gate="G1" pin="E"/>
+<pinref part="Q2" gate="G1" pin="E"/>
 <wire x1="104.14" y1="332.74" x2="104.14" y2="330.2" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="330.2" x2="116.84" y2="330.2" width="0.1524" layer="91"/>
 <pinref part="C14" gate="G$1" pin="+"/>
@@ -22335,14 +22336,14 @@ POT2B should be the middle pin</text>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="T1" gate="G1" pin="B"/>
-<pinref part="T2" gate="G1" pin="B"/>
+<pinref part="Q1" gate="G1" pin="B"/>
+<pinref part="Q2" gate="G1" pin="B"/>
 <wire x1="91.44" y1="337.82" x2="99.06" y2="337.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="T1" gate="G1" pin="E"/>
+<pinref part="Q1" gate="G1" pin="E"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="342.9" x2="86.36" y2="345.44" width="0.1524" layer="91"/>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -22368,7 +22369,7 @@ POT2B should be the middle pin</text>
 </net>
 <net name="N$30" class="0">
 <segment>
-<pinref part="T2" gate="G1" pin="C"/>
+<pinref part="Q2" gate="G1" pin="C"/>
 <wire x1="104.14" y1="342.9" x2="104.14" y2="345.44" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="C13" gate="G$1" pin="+"/>
@@ -22540,14 +22541,14 @@ POT2B should be the middle pin</text>
 <pinref part="R42" gate="G$1" pin="2"/>
 <wire x1="495.3" y1="149.86" x2="495.3" y2="139.7" width="0.1524" layer="91"/>
 <junction x="495.3" y="149.86"/>
-<pinref part="T3" gate="G1" pin="B"/>
+<pinref part="Q6" gate="G1" pin="B"/>
 <wire x1="502.92" y1="149.86" x2="495.3" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$38" class="0">
 <segment>
 <pinref part="R44" gate="G$1" pin="2"/>
-<pinref part="T3" gate="G1" pin="E"/>
+<pinref part="Q6" gate="G1" pin="E"/>
 <wire x1="508" y1="139.7" x2="508" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="C32" gate="G$1" pin="1"/>
 <wire x1="508" y1="142.24" x2="508" y2="144.78" width="0.1524" layer="91"/>
@@ -22558,7 +22559,7 @@ POT2B should be the middle pin</text>
 <net name="N$39" class="0">
 <segment>
 <pinref part="R43" gate="G$1" pin="1"/>
-<pinref part="T3" gate="G1" pin="C"/>
+<pinref part="Q6" gate="G1" pin="C"/>
 <wire x1="508" y1="160.02" x2="508" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="C31" gate="G$1" pin="1"/>
 <wire x1="508" y1="157.48" x2="508" y2="154.94" width="0.1524" layer="91"/>
@@ -22592,7 +22593,7 @@ POT2B should be the middle pin</text>
 <wire x1="215.9" y1="266.7" x2="208.28" y2="266.7" width="0.1524" layer="91"/>
 <pinref part="R20" gate="G$1" pin="2"/>
 <wire x1="208.28" y1="266.7" x2="208.28" y2="264.16" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="E"/>
+<pinref part="Q4" gate="G$1" pin="E"/>
 <wire x1="208.28" y1="269.24" x2="208.28" y2="266.7" width="0.1524" layer="91"/>
 <junction x="208.28" y="266.7"/>
 </segment>
@@ -22629,7 +22630,7 @@ POT2B should be the middle pin</text>
 <wire x1="251.46" y1="142.24" x2="279.4" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="142.24" x2="236.22" y2="142.24" width="0.1524" layer="91"/>
 <junction x="251.46" y="142.24"/>
-<pinref part="R24" gate="G$1" pin="A"/>
+<pinref part="TRIM1" gate="G$1" pin="A"/>
 <wire x1="236.22" y1="142.24" x2="236.22" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="R22" gate="G$1" pin="1"/>
 <wire x1="223.52" y1="142.24" x2="236.22" y2="142.24" width="0.1524" layer="91"/>
@@ -22646,7 +22647,7 @@ POT2B should be the middle pin</text>
 <wire x1="276.86" y1="177.8" x2="284.48" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="276.86" y1="137.16" x2="276.86" y2="124.46" width="0.1524" layer="91"/>
 <junction x="276.86" y="137.16"/>
-<pinref part="Q3" gate="G$1" pin="D"/>
+<pinref part="Q5" gate="G$1" pin="D"/>
 <wire x1="276.86" y1="124.46" x2="274.32" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="R21" gate="G$1" pin="1"/>
 <wire x1="223.52" y1="149.86" x2="276.86" y2="149.86" width="0.1524" layer="91"/>
@@ -22656,7 +22657,7 @@ POT2B should be the middle pin</text>
 <net name="N$52" class="0">
 <segment>
 <pinref part="IC4" gate="A" pin="ON2"/>
-<pinref part="R33" gate="G$1" pin="A"/>
+<pinref part="TRIM2" gate="G$1" pin="A"/>
 <wire x1="294.64" y1="142.24" x2="320.04" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="320.04" y1="142.24" x2="320.04" y2="144.78" width="0.1524" layer="91"/>
 </segment>
@@ -22666,13 +22667,13 @@ POT2B should be the middle pin</text>
 <pinref part="IC4" gate="A" pin="ON1"/>
 <wire x1="287.02" y1="147.32" x2="287.02" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="157.48" x2="320.04" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="R33" gate="G$1" pin="E"/>
+<pinref part="TRIM2" gate="G$1" pin="E"/>
 <wire x1="320.04" y1="157.48" x2="320.04" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$42" class="0">
 <segment>
-<pinref part="R24" gate="G$1" pin="S"/>
+<pinref part="TRIM1" gate="G$1" pin="S"/>
 <wire x1="231.14" y1="132.08" x2="228.6" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="228.6" y1="132.08" x2="228.6" y2="129.54" width="0.1524" layer="91"/>
@@ -22680,7 +22681,7 @@ POT2B should be the middle pin</text>
 </net>
 <net name="VCA_TRIGGER" class="0">
 <segment>
-<pinref part="Q3" gate="G$1" pin="G"/>
+<pinref part="Q5" gate="G$1" pin="G"/>
 <wire x1="264.16" y1="119.38" x2="261.62" y2="119.38" width="0.1524" layer="91"/>
 <label x="254" y="109.22" size="1.778" layer="95"/>
 <wire x1="261.62" y1="119.38" x2="261.62" y2="76.2" width="0.1524" layer="91"/>
@@ -22697,7 +22698,7 @@ POT2B should be the middle pin</text>
 <segment>
 <pinref part="IC5" gate="A" pin="ON1"/>
 <wire x1="312.42" y1="271.78" x2="312.42" y2="289.56" width="0.1524" layer="91"/>
-<pinref part="R34" gate="G$1" pin="E"/>
+<pinref part="TRIM5" gate="G$1" pin="E"/>
 <wire x1="312.42" y1="289.56" x2="347.98" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="347.98" y1="289.56" x2="347.98" y2="287.02" width="0.1524" layer="91"/>
 </segment>
@@ -22705,7 +22706,7 @@ POT2B should be the middle pin</text>
 <net name="N$46" class="0">
 <segment>
 <pinref part="IC5" gate="A" pin="ON2"/>
-<pinref part="R34" gate="G$1" pin="A"/>
+<pinref part="TRIM5" gate="G$1" pin="A"/>
 <wire x1="320.04" y1="266.7" x2="347.98" y2="266.7" width="0.1524" layer="91"/>
 <wire x1="347.98" y1="266.7" x2="347.98" y2="276.86" width="0.1524" layer="91"/>
 </segment>
@@ -22728,7 +22729,7 @@ POT2B should be the middle pin</text>
 <wire x1="203.2" y1="91.44" x2="195.58" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R19" gate="G$1" pin="2"/>
 <wire x1="195.58" y1="91.44" x2="195.58" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="E"/>
+<pinref part="Q3" gate="G$1" pin="E"/>
 <wire x1="195.58" y1="93.98" x2="195.58" y2="91.44" width="0.1524" layer="91"/>
 <junction x="195.58" y="91.44"/>
 </segment>
@@ -22752,7 +22753,7 @@ POT2B should be the middle pin</text>
 <label x="96.52" y="406.4" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R37" gate="G$1" pin="S"/>
+<pinref part="TRIM6" gate="G$1" pin="S"/>
 <wire x1="378.46" y1="256.54" x2="383.54" y2="256.54" width="0.1524" layer="91"/>
 <label x="383.54" y="256.54" size="1.778" layer="95"/>
 </segment>
@@ -22791,7 +22792,7 @@ POT2B should be the middle pin</text>
 <pinref part="IC6" gate="A" pin="OUT"/>
 <wire x1="439.42" y1="149.86" x2="414.02" y2="149.86" width="0.1524" layer="91"/>
 <label x="431.8" y="147.32" size="1.778" layer="95"/>
-<pinref part="R39" gate="G$1" pin="S"/>
+<pinref part="TRIM3" gate="G$1" pin="S"/>
 <wire x1="439.42" y1="170.18" x2="439.42" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="439.42" y1="149.86" x2="482.6" y2="149.86" width="0.1524" layer="91"/>
 <junction x="439.42" y="149.86"/>
@@ -22819,14 +22820,14 @@ POT2B should be the middle pin</text>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R39" gate="G$1" pin="A"/>
+<pinref part="TRIM3" gate="G$1" pin="A"/>
 <pinref part="R38" gate="G$1" pin="1"/>
 <wire x1="434.34" y1="175.26" x2="416.56" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="R40" gate="G$1" pin="A"/>
+<pinref part="TRIM4" gate="G$1" pin="A"/>
 <wire x1="452.12" y1="154.94" x2="452.12" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="IC6" gate="A" pin="ON2"/>
 <wire x1="452.12" y1="152.4" x2="414.02" y2="152.4" width="0.1524" layer="91"/>
@@ -22836,7 +22837,7 @@ POT2B should be the middle pin</text>
 <segment>
 <pinref part="IC6" gate="A" pin="ON1"/>
 <wire x1="406.4" y1="157.48" x2="406.4" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="R40" gate="G$1" pin="E"/>
+<pinref part="TRIM4" gate="G$1" pin="E"/>
 <wire x1="406.4" y1="167.64" x2="452.12" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="452.12" y1="167.64" x2="452.12" y2="165.1" width="0.1524" layer="91"/>
 </segment>
@@ -22852,7 +22853,7 @@ POT2B should be the middle pin</text>
 <label x="327.66" y="261.62" size="1.778" layer="95"/>
 <wire x1="335.28" y1="264.16" x2="373.38" y2="264.16" width="0.1524" layer="91"/>
 <junction x="335.28" y="264.16"/>
-<pinref part="R37" gate="G$1" pin="E"/>
+<pinref part="TRIM6" gate="G$1" pin="E"/>
 <wire x1="373.38" y1="261.62" x2="373.38" y2="264.16" width="0.1524" layer="91"/>
 <pinref part="C27" gate="G$1" pin="1"/>
 <wire x1="330.2" y1="307.34" x2="335.28" y2="307.34" width="0.1524" layer="91"/>
