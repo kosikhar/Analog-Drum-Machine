@@ -1,0 +1,1023 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o (main)
+C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                              encoderInput.o (millis)
+C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                              Sequencer.o (pinMode)
+C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+                              ShiftRegister/ShiftRegister74HC595.o (shiftOut)
+C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+                              C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o) (yield)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                              output.o (__udivmodhi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                              ShiftRegister/ShiftRegister74HC595.o (__divmodhi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+                              Sequencer.o (__divmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o) (__negsi2)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                              output.o (__do_copy_data)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                              encoderInput.o (__do_clear_bss)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+                              Sequencer.o (__do_global_ctors)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                              Sequencer.o (__do_global_dtors)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+                              input.o (__ashldi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+                              input.o (__lshrdi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o) (__udivmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o) (__tablejump2__)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                              ShiftRegister/ShiftRegister74HC595.o (malloc)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy_P.o)
+                              ShiftRegister/ShiftRegister74HC595.o (memcpy_P)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                              ShiftRegister/ShiftRegister74HC595.o (memcpy)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memset.o)
+                              ShiftRegister/ShiftRegister74HC595.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+__brkval            0x2               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+__flp               0x2               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+
+Discarded input sections
+
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .text          0x00000000        0x0 encoderInput.o
+ .data          0x00000000        0x0 encoderInput.o
+ .bss           0x00000000        0x0 encoderInput.o
+ .text._Z17EnocderInput_InitR11SequencerIO
+                0x00000000       0x12 encoderInput.o
+ .text._Z15getEncoderInputv
+                0x00000000       0x8e encoderInput.o
+ .text._Z17checkEncoderInputv
+                0x00000000        0x2 encoderInput.o
+ .bss.encoderInput
+                0x00000000        0xa encoderInput.o
+ .debug_info    0x00000000      0x58a encoderInput.o
+ .debug_abbrev  0x00000000      0x205 encoderInput.o
+ .debug_loc     0x00000000       0xbb encoderInput.o
+ .debug_aranges
+                0x00000000       0x30 encoderInput.o
+ .debug_ranges  0x00000000       0x20 encoderInput.o
+ .debug_line    0x00000000      0x1ec encoderInput.o
+ .debug_str     0x00000000      0x525 encoderInput.o
+ .comment       0x00000000       0x31 encoderInput.o
+ .debug_frame   0x00000000       0x54 encoderInput.o
+ .text          0x00000000        0x0 helperFunctions.o
+ .data          0x00000000        0x0 helperFunctions.o
+ .bss           0x00000000        0x0 helperFunctions.o
+ .text          0x00000000        0x0 input.o
+ .data          0x00000000        0x0 input.o
+ .bss           0x00000000        0x0 input.o
+ .text._Z13programInputsv
+                0x00000000      0x10a input.o
+ .text._Z9pollInputv
+                0x00000000      0x1fc input.o
+ .bss._ZZ13programInputsvE14buttonInputBuf
+                0x00000000        0x2 input.o
+ .text          0x00000000        0x0 output.o
+ .data          0x00000000        0x0 output.o
+ .bss           0x00000000        0x0 output.o
+ .text          0x00000000        0x0 Sequencer.o
+ .data          0x00000000        0x0 Sequencer.o
+ .bss           0x00000000        0x0 Sequencer.o
+ .bss.outputBuffer
+                0x00000000        0x8 Sequencer.o
+ .text          0x00000000        0x0 ShiftRegister/ShiftRegister74HC595.o
+ .data          0x00000000        0x0 ShiftRegister/ShiftRegister74HC595.o
+ .bss           0x00000000        0x0 ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC5956getAllEv
+                0x00000000        0x8 ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC5958setAll_PEPKh
+                0x00000000       0x1c ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC59511setNoUpdateEih
+                0x00000000       0x7c ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC5953setEih
+                0x00000000       0x14 ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC5953getEi
+                0x00000000       0x42 ShiftRegister/ShiftRegister74HC595.o
+ .text._ZN20ShiftRegister74HC59510setAllHighEv
+                0x00000000       0x2c ShiftRegister/ShiftRegister74HC595.o
+ .text          0x00000000        0x0 trigger.o
+ .data          0x00000000        0x0 trigger.o
+ .bss           0x00000000        0x0 trigger.o
+ .text          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .data          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .bss           0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .text.atexit   0x00000000        0x6 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .text._Z8setupUSBv
+                0x00000000        0x2 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .text          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .data          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .bss           0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .text.micros   0x00000000       0x4a C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .text.delay    0x00000000       0x78 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .text          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .data          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .bss           0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.digitalRead
+                0x00000000       0x52 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .progmem.data.port_to_input_PGM
+                0x00000000        0xa C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .text          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .data          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .bss           0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .text.shiftIn  0x00000000       0x76 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .text          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .data          0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .bss           0x00000000        0x0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .text.__empty  0x00000000        0x2 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_info    0x00000000       0x3e C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_abbrev  0x00000000       0x2a C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_aranges
+                0x00000000       0x20 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_ranges  0x00000000       0x10 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_line    0x00000000       0x41 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_str     0x00000000      0x176 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .comment       0x00000000       0x31 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .debug_frame   0x00000000       0x24 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(hooks.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.div
+                0x00000000       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.builtins
+                0x00000000       0x32 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashldi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.builtins
+                0x00000000       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ashrdi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy_P.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy_P.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy_P.o)
+ .text.avr-libc
+                0x00000000       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy_P.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000003         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+LOAD encoderInput.o
+LOAD helperFunctions.o
+LOAD input.o
+LOAD output.o
+LOAD Sequencer.o
+LOAD ShiftRegister/ShiftRegister74HC595.o
+LOAD trigger.o
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
+LOAD C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a
+END GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5\libatmega328.a
+END GROUP
+                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0xc10
+ *(.vectors)
+ .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+ *(.progmem*)
+ .progmem.data.digital_pin_to_timer_PGM
+                0x00000068       0x14 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000068                digital_pin_to_timer_PGM
+ .progmem.data.digital_pin_to_bit_mask_PGM
+                0x0000007c       0x14 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x0000007c                digital_pin_to_bit_mask_PGM
+ .progmem.data.digital_pin_to_port_PGM
+                0x00000090       0x14 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000090                digital_pin_to_port_PGM
+ .progmem.data.port_to_output_PGM
+                0x000000a4        0xa C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000000a4                port_to_output_PGM
+ .progmem.data.port_to_mode_PGM
+                0x000000ae        0xa C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000000ae                port_to_mode_PGM
+                0x000000b8                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000b8                __ctors_start = .
+ *(.ctors)
+ .ctors         0x000000b8        0x2 Sequencer.o
+                0x000000ba                __ctors_end = .
+                0x000000ba                __dtors_start = .
+ *(.dtors)
+ .dtors         0x000000ba        0x2 Sequencer.o
+                0x000000bc                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000bc        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+                0x000000bc                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000bc        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000c8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                0x000000c8                __do_copy_data
+ .init4         0x000000de       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                0x000000de                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ .init6         0x000000ee       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_ctors.o)
+                0x000000ee                __do_global_ctors
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000104        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ *(.init9)
+ *(.text)
+ .text          0x0000010c        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+                0x0000010c                __vector_22
+                0x0000010c                __vector_1
+                0x0000010c                __vector_24
+                0x0000010c                __vector_12
+                0x0000010c                __bad_interrupt
+                0x0000010c                __vector_6
+                0x0000010c                __vector_3
+                0x0000010c                __vector_23
+                0x0000010c                __vector_25
+                0x0000010c                __vector_11
+                0x0000010c                __vector_13
+                0x0000010c                __vector_17
+                0x0000010c                __vector_19
+                0x0000010c                __vector_7
+                0x0000010c                __vector_5
+                0x0000010c                __vector_4
+                0x0000010c                __vector_9
+                0x0000010c                __vector_2
+                0x0000010c                __vector_21
+                0x0000010c                __vector_15
+                0x0000010c                __vector_8
+                0x0000010c                __vector_14
+                0x0000010c                __vector_10
+                0x0000010c                __vector_18
+                0x0000010c                __vector_20
+                0x00000110                . = ALIGN (0x2)
+ *(.text.*)
+ .text._Z14elapsed_millisRm
+                0x00000110       0x28 helperFunctions.o
+                0x00000110                _Z14elapsed_millisRm
+ .text._Z14takeInput_InitRV11SequencerIO
+                0x00000138       0x26 input.o
+                0x00000138                _Z14takeInput_InitRV11SequencerIO
+ .text._Z11output_InitRV11SequencerIOR20ShiftRegister74HC595
+                0x0000015e       0x16 output.o
+                0x0000015e                _Z11output_InitRV11SequencerIOR20ShiftRegister74HC595
+ .text._Z12sevenSegConvjh
+                0x00000174       0x28 output.o
+                0x00000174                _Z12sevenSegConvjh
+ .text._Z12updateBufferv
+                0x0000019c       0x72 output.o
+                0x0000019c                _Z12updateBufferv
+ .text._Z12printOutputsv
+                0x0000020e       0x50 output.o
+                0x0000020e                _Z12printOutputsv
+ .text.setup    0x0000025e       0xe2 Sequencer.o
+                0x0000025e                setup
+ .text.loop     0x00000340        0x8 Sequencer.o
+                0x00000340                loop
+ .text.startup._GLOBAL__sub_I_OutputSR
+                0x00000348       0x6a Sequencer.o
+ .text.exit._GLOBAL__sub_D_OutputSR
+                0x000003b2       0x10 Sequencer.o
+ .text._ZN20ShiftRegister74HC595D2Ev
+                0x000003c2        0xa ShiftRegister/ShiftRegister74HC595.o
+                0x000003c2                _ZN20ShiftRegister74HC595D1Ev
+                0x000003c2                _ZN20ShiftRegister74HC595D2Ev
+ .text._ZN20ShiftRegister74HC59515updateRegistersEv
+                0x000003cc       0x44 ShiftRegister/ShiftRegister74HC595.o
+                0x000003cc                _ZN20ShiftRegister74HC59515updateRegistersEv
+ .text._ZN20ShiftRegister74HC595C2Eiiii
+                0x00000410       0x82 ShiftRegister/ShiftRegister74HC595.o
+                0x00000410                _ZN20ShiftRegister74HC595C1Eiiii
+                0x00000410                _ZN20ShiftRegister74HC595C2Eiiii
+ .text._ZN20ShiftRegister74HC5956setAllEPKh
+                0x00000492       0x1c ShiftRegister/ShiftRegister74HC595.o
+                0x00000492                _ZN20ShiftRegister74HC5956setAllEPKh
+ .text._ZN20ShiftRegister74HC5959setAllLowEv
+                0x000004ae       0x2a ShiftRegister/ShiftRegister74HC595.o
+                0x000004ae                _ZN20ShiftRegister74HC5959setAllLowEv
+ .text._Z12Trigger_initRV11SequencerIO
+                0x000004d8       0x16 trigger.o
+                0x000004d8                _Z12Trigger_initRV11SequencerIO
+ .text._Z11genPlayNextv
+                0x000004ee       0x26 trigger.o
+                0x000004ee                _Z11genPlayNextv
+ .text._Z18triggerInstrumentsv
+                0x00000514       0x56 trigger.o
+                0x00000514                _Z18triggerInstrumentsv
+ .text._Z18checkTimer_Triggerv
+                0x0000056a       0x72 trigger.o
+                0x0000056a                _Z18checkTimer_Triggerv
+ .text.initVariant
+                0x000005dc        0x2 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+                0x000005dc                initVariant
+ .text.startup.main
+                0x000005de       0x1e C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+                0x000005de                main
+ .text.__vector_16
+                0x000005fc       0x94 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000005fc                __vector_16
+ .text.millis   0x00000690       0x18 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00000690                millis
+ .text.delayMicroseconds
+                0x000006a8       0x16 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000006a8                delayMicroseconds
+ .text.init     0x000006be       0x76 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x000006be                init
+ .text.turnOffPWM
+                0x00000734       0x52 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .text.pinMode  0x00000786       0x78 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x00000786                pinMode
+ .text.digitalWrite
+                0x000007fe       0x5e C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                0x000007fe                digitalWrite
+ .text.shiftOut
+                0x0000085c       0x82 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+                0x0000085c                shiftOut
+ .text.libgcc.div
+                0x000008de       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x000008de                __udivmodhi4
+ .text.libgcc.div
+                0x00000906       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+                0x00000906                __divmodsi4
+ .text.libgcc.div
+                0x00000934       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+                0x00000934                __negsi2
+ .text.libgcc.div
+                0x00000944       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000944                __udivmodsi4
+ .text.libgcc   0x00000988        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x00000988                __tablejump2__
+ .text.avr-libc
+                0x00000994      0x242 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00000994                malloc
+                0x00000ac4                free
+ .text.avr-libc
+                0x00000bd6       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x00000bd6                memcpy
+ .text.avr-libc
+                0x00000be8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x00000be8                memset
+                0x00000bf6                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000bf6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000bf6                _exit
+                0x00000bf6                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ .fini6         0x00000bf6       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_dtors.o)
+                0x00000bf6                __do_global_dtors
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000c0c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000c10                _etext = .
+
+.data           0x00800100       0x1a load address 0x00000c10
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800100                __malloc_heap_end
+                0x00800102                __malloc_heap_start
+                0x00800104                __malloc_margin
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ .rodata._ZL5pow10
+                0x00800106        0x8 output.o
+ .rodata._ZL14sevenSegBitMap
+                0x0080010e        0xb output.o
+ *(.gnu.linkonce.d*)
+                0x0080011a                . = ALIGN (0x2)
+ *fill*         0x00800119        0x1 
+                0x0080011a                _edata = .
+                0x0080011a                PROVIDE (__data_end, .)
+
+.bss            0x0080011a      0x105
+                0x0080011a                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.takeInput
+                0x0080011a       0x12 input.o
+                0x0080011a                takeInput
+ .bss.output    0x0080012c        0xa output.o
+                0x0080012c                output
+ .bss.seqIO     0x00800136       0xa8 Sequencer.o
+                0x00800136                seqIO
+ .bss.InputSR   0x008001de       0x16 Sequencer.o
+                0x008001de                InputSR
+ .bss.InstrumentTrigger
+                0x008001f4        0xa Sequencer.o
+                0x008001f4                InstrumentTrigger
+ .bss.OutputSR  0x008001fe        0xa Sequencer.o
+                0x008001fe                OutputSR
+ .bss.trigger   0x00800208        0xa trigger.o
+                0x00800208                trigger
+ .bss.timer0_fract
+                0x00800212        0x1 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .bss.timer0_millis
+                0x00800213        0x4 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00800213                timer0_millis
+ .bss.timer0_overflow_count
+                0x00800217        0x4 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                0x00800217                timer0_overflow_count
+ *(COMMON)
+ COMMON         0x0080021b        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0080021b                __brkval
+                0x0080021d                __flp
+                0x0080021f                PROVIDE (__bss_end, .)
+                0x00000c10                __data_load_start = LOADADDR (.data)
+                0x00000c2a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080021f        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x0080021f                _end = .
+                0x0080021f                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x30
+ *(.comment)
+ .comment       0x00000000       0x30 helperFunctions.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000030       0x31 input.o
+ .comment       0x00000030       0x31 output.o
+ .comment       0x00000030       0x31 Sequencer.o
+ .comment       0x00000030       0x31 ShiftRegister/ShiftRegister74HC595.o
+ .comment       0x00000030       0x31 trigger.o
+ .comment       0x00000030       0x31 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .comment       0x00000030       0x31 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .comment       0x00000030       0x31 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .comment       0x00000030       0x31 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+ .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x3c
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x240
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 helperFunctions.o
+ .debug_aranges
+                0x00000020       0x30 input.o
+ .debug_aranges
+                0x00000050       0x38 output.o
+ .debug_aranges
+                0x00000088       0x38 Sequencer.o
+ .debug_aranges
+                0x000000c0       0x70 ShiftRegister/ShiftRegister74HC595.o
+ .debug_aranges
+                0x00000130       0x38 trigger.o
+ .debug_aranges
+                0x00000168       0x30 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_aranges
+                0x00000198       0x48 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_aranges
+                0x000001e0       0x38 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_aranges
+                0x00000218       0x28 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x41c1
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .debug_info    0x000005f4      0x1c0 helperFunctions.o
+ .debug_info    0x000007b4      0x8d2 input.o
+ .debug_info    0x00001086      0x766 output.o
+ .debug_info    0x000017ec      0xc31 Sequencer.o
+ .debug_info    0x0000241d      0x905 ShiftRegister/ShiftRegister74HC595.o
+ .debug_info    0x00002d22      0x6cf trigger.o
+ .debug_info    0x000033f1      0x237 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_info    0x00003628      0x2cb C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_info    0x000038f3      0x5fe C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_info    0x00003ef1      0x2d0 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_abbrev   0x00000000     0x188c
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .debug_abbrev  0x000005a2       0xd1 helperFunctions.o
+ .debug_abbrev  0x00000673      0x2d4 input.o
+ .debug_abbrev  0x00000947      0x26c output.o
+ .debug_abbrev  0x00000bb3      0x338 Sequencer.o
+ .debug_abbrev  0x00000eeb      0x272 ShiftRegister/ShiftRegister74HC595.o
+ .debug_abbrev  0x0000115d      0x250 trigger.o
+ .debug_abbrev  0x000013ad      0x12d C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_abbrev  0x000014da      0x146 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_abbrev  0x00001620      0x15b C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_abbrev  0x0000177b      0x111 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_line     0x00000000     0x17bc
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x133 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .debug_line    0x00000133      0x12c helperFunctions.o
+ .debug_line    0x0000025f      0x2dc input.o
+ .debug_line    0x0000053b      0x21b output.o
+ .debug_line    0x00000756      0x29f Sequencer.o
+ .debug_line    0x000009f5      0x3ca ShiftRegister/ShiftRegister74HC595.o
+ .debug_line    0x00000dbf      0x22f trigger.o
+ .debug_line    0x00000fee      0x165 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_line    0x00001153      0x299 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_line    0x000013ec      0x252 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_line    0x0000163e      0x17e C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_frame    0x00000000      0x568
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x38 helperFunctions.o
+ .debug_frame   0x00000038       0xa4 input.o
+ .debug_frame   0x000000dc       0x68 output.o
+ .debug_frame   0x00000144       0x70 Sequencer.o
+ .debug_frame   0x000001b4      0x124 ShiftRegister/ShiftRegister74HC595.o
+ .debug_frame   0x000002d8       0x70 trigger.o
+ .debug_frame   0x00000348       0x54 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_frame   0x0000039c       0xc4 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_frame   0x00000460       0x7c C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_frame   0x000004dc       0x8c C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_str      0x00000000     0x1267
+ *(.debug_str)
+ .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.1.130/gcc/dev/atmega328/avr5/crtatmega328.o
+ .debug_str     0x00000208      0x29c helperFunctions.o
+                                0x2e3 (size before relaxing)
+ .debug_str     0x000004a4      0x521 input.o
+                                0x808 (size before relaxing)
+ .debug_str     0x000009c5      0x33b output.o
+                                0x74e (size before relaxing)
+ .debug_str     0x00000d00      0x11b Sequencer.o
+                                0xad9 (size before relaxing)
+ .debug_str     0x00000e1b       0xb4 ShiftRegister/ShiftRegister74HC595.o
+                                0x5f6 (size before relaxing)
+ .debug_str     0x00000ecf       0x75 trigger.o
+                                0x742 (size before relaxing)
+ .debug_str     0x00000f44       0xe3 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+                                0x2e8 (size before relaxing)
+ .debug_str     0x00001027      0x147 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+                                0x27e (size before relaxing)
+ .debug_str     0x0000116e       0xcd C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+                                0x2e3 (size before relaxing)
+ .debug_str     0x0000123b       0x2c C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+                                0x252 (size before relaxing)
+
+.debug_loc      0x00000000     0x179e
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x7f helperFunctions.o
+ .debug_loc     0x0000007f      0x23d input.o
+ .debug_loc     0x000002bc      0x10a output.o
+ .debug_loc     0x000003c6       0xdc Sequencer.o
+ .debug_loc     0x000004a2      0x715 ShiftRegister/ShiftRegister74HC595.o
+ .debug_loc     0x00000bb7       0x77 trigger.o
+ .debug_loc     0x00000c2e      0x28d C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_loc     0x00000ebb      0x5fc C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_loc     0x000014b7      0x2e7 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x1d0
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x10 helperFunctions.o
+ .debug_ranges  0x00000010       0x38 input.o
+ .debug_ranges  0x00000048       0x28 output.o
+ .debug_ranges  0x00000070       0x28 Sequencer.o
+ .debug_ranges  0x00000098       0x78 ShiftRegister/ShiftRegister74HC595.o
+ .debug_ranges  0x00000110       0x28 trigger.o
+ .debug_ranges  0x00000138       0x20 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(main.o)
+ .debug_ranges  0x00000158       0x38 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring.o)
+ .debug_ranges  0x00000190       0x28 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_digital.o)
+ .debug_ranges  0x000001b8       0x18 C:\Users\Michael\DOCUME~1\GitHub\ANALOG~1\SEQUEN~1\MICROC~1\ATMELN~2\SEQUEN~1\ARDUIN~1\Debug\libArduinoCore.a(wiring_shift.o)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(Sequencer_DrumMachine.ino.elf elf32-avr)
+LOAD linker stubs
